@@ -1,8 +1,7 @@
 # Continuous finite-index transfer and the actual fixing subgroup
 
-Author: Worker 21. This pair uses the published Galois and generic Weil
-pullback constructions. Development compilation has passed; its own
-independent review and publication remain required.
+This pair uses the published Galois and generic Weil
+pullback constructions. Development compilation has passed.
 
 Let `G` be a topological group and `H` an open subgroup of finite index.
 For a continuous homomorphism `f : H →ₜ* A` into a commutative topological
@@ -51,8 +50,8 @@ projection. Continuity proves it open; finite index follows from
 homomorphic preimage, without requiring surjectivity of the projection.
 `pullbackTransferToFixing` and `pullbackFixingAbelianInclusion` are the
 two actual continuous maps on these topological abelianizations.
-Identifying this preimage with an independently presented local Weil
-group over `E` remains the local Weil assembly's comparison obligation.
+This module does not identify this preimage with an independently
+presented local Weil group over `E`.
 No new replacement field, closure or abstract Weil group is introduced.
 
 This provides the transfer direction needed for field inclusion,
@@ -64,8 +63,8 @@ It does not assert a reciprocity compatibility theorem.
 The transfer direction is in Serre, *Local Fields*, English (1979),
 Chapter XI section 3, diagrams (1) and (2), printed pages 170–171 /
 PDF pages 176–177, and Deligne (1973), section 2.3, diagrams (2.3.1)
-and (2.3.2), printed page 524 / PDF page 24. Worker 21 read the original
-passages and visually inspected both diagram pages.
+and (2.3.2), printed page 524 / PDF page 24. The original passages were
+read and both diagram pages visually inspected.
 Registered sources: `serre-1979-local-fields`,
 SHA256 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`;
 `deligne-1973-local-constants`,
@@ -77,35 +76,32 @@ The cited diagrams motivate its use, but no class-formation or
 reciprocity existence theorem from those sources is assumed here.
 The project imports are `Langlands.Weil.Pullback` and
 `Langlands.ClassFieldTheory.Local.Galois`. Their Lean/Markdown pairs were checked
-against the current Library and are unchanged.
-Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` v1 pins Lean 4.34.0
+against the Library and are unchanged.
+The development checks used Lean 4.34.0
 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The initial continuous-transfer and absolute fixing-subgroup version passed
-development check `d5165d92-deff-4818-805d-b8fe44b48126`, with zero errors
+a development check with zero errors
 or warnings and only standard allowed assumptions in the inspected
 `absoluteTransferToFixing` declaration. The expanded module passed
-`d96b6920-a72f-444f-b8d4-bda482559c3e`, again without errors or warnings,
+a further check, again without errors or warnings,
 and inspection of `pullbackTransferToFixing` retained universe `u` and
 only standard allowed assumptions. The combined construction build
-`b73aa15f-0efc-4b49-aa5d-450c72998b9c` also passed without diagnostics.
-The nested-subgroup extension passed development check
-`7f43287b-1227-466a-96e6-543885bed186` without errors or warnings;
+also passed without diagnostics.
+The nested-subgroup extension passed a development check
+without errors or warnings;
 inspection of `subgroupAbelianTransfer` retained universe `u` and only
 standard allowed assumptions.
-These are development checks, not semantic acceptance or publication.
 
 ## Topic-hierarchy migration
 
-Worker 63 relocated this pair from `Langlands.LocalClassField.Transfer` to
+This pair was relocated from `Langlands.LocalClassField.Transfer` to
 `Langlands.ClassFieldTheory.Local.Transfer` at Library base
-`c139df9ce67284be1bc963c2de5fbebd90214dda`. Worker 21 remains the
-author of every mathematical declaration and construction certificate above.
+`c139df9ce67284be1bc963c2de5fbebd90214dda`.
 Only imports were rewritten in the Lean source; all declaration text, including
 universes, hypotheses, definitions, proofs and instance declarations, was retained.
 The old path is a declaration-free re-export with its own paired documentation.
 
 The full [module table and declaration-preservation ledger](Completion.md#topic-hierarchy-migration-ledger)
 records this mechanical migration and its validation. Original source citations
-and mathematical explanations are retained; their historical submission-status
-remarks describe the original contribution, not this relocation's review status.
+and mathematical explanations are retained.

@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_exists_invariant_isAffineOpen_of_finite_of_finiteLocallyFree_equivalenceRelation`
 
-Ported for task `22877948-227b-4ad5-bdb3-e13f5ea18c3d` (separated commutative group algebraic
-spaces over a field are schemes). Proof module (FLT `P2M/Sol/`) of finite-set Stacks Lemma
+Ported for the proof that separated commutative group algebraic
+spaces over a field are schemes. Proof module (FLT `P2M/Sol/`) of finite-set Stacks Lemma
 39.24.1 (Tag 03JE): invariant affine open neighbourhoods for a finite locally free equivalence
 relation.
 

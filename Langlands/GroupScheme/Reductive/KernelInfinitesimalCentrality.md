@@ -1,7 +1,5 @@
 # Kernel centrality through nilpotent thickenings
 
-Worker 626.
-
 This is a derived internal construction for the kernel-centrality step of
 Conrad's *Reductive group schemes*, Proposition 3.3.10, p.103. The source is
 registered as `conrad-2014-reductive-group-schemes`, file

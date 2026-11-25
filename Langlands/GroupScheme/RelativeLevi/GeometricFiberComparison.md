@@ -1,7 +1,5 @@
 # Actual geometric fibres after arbitrary base change
 
-Author: Worker 179.
-
 This internal module constructs the comparison needed to use the unchanged
 `RelativeLevi.geometricFiberHom` after an arbitrary base map `b : T → S`.
 For `t : T`, the actual residue-field map gives an algebra

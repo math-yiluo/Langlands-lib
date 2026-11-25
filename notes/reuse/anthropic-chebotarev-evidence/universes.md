@@ -10,7 +10,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.RingTheory.UniqueFactorizationDomain.NormalizedFactors
  import Mathlib.Data.ZMod.QuotientRing
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -64,7 +64,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 @@ -1,4 +1,7 @@
  import Mathlib
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -85,7 +85,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.Analysis.SpecialFunctions.Pow.Real
  import Mathlib.FieldTheory.Fixed
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -115,7 +115,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.NumberTheory.NumberField.DedekindZeta
  import Mathlib.RingTheory.DedekindDomain.Factorization
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -134,7 +134,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 @@ -1,4 +1,7 @@
  import Definitions.Def_NarrowRayClassGroup
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -155,7 +155,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.GroupTheory.QuotientGroup.Finite
  import Mathlib.Data.Fintype.Units
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  open NumberField nonZeroDivisors IsDedekindDomain
@@ -212,7 +212,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.NumberTheory.LSeries.Basic
  import Mathlib.Analysis.SpecialFunctions.Gamma.Deligne
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -233,7 +233,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.NumberTheory.NumberField.Discriminant.Defs
  import Mathlib.Analysis.SpecialFunctions.Pow.Real
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -262,7 +262,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Definitions.Def_LanglandsTunnell_NormClass
  import Definitions.Def_NumberField_RayCharacterData
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  set_option autoImplicit false
@@ -292,7 +292,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib
  import Definitions.Def_FrobeniusDensity_PrimeSums
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  set_option autoImplicit false
@@ -322,7 +322,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Definitions.Def_NarrowRayClassGroup
  import Mathlib.RingTheory.DedekindDomain.Different
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -343,7 +343,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.LinearAlgebra.Matrix.Trace
  import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -373,7 +373,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.NumberTheory.NumberField.DedekindZeta
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_FrobeniusDensity_idealSum_ne_top
  
@@ -403,7 +403,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.NumberTheory.NumberField.DedekindZeta
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_FrobeniusDensity_primeSum_toReal_add_log_isBigO
  
@@ -433,7 +433,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Definitions.Def_FrobeniusDensity_PrimeSums
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_FrobeniusDensity_tailSum_le
  
@@ -462,7 +462,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.NumberTheory.NumberField.DedekindZeta
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_FrobeniusDensity_tendsto_sub_one_mul_idealSum_test
  
@@ -492,7 +492,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib.LinearAlgebra.Complex.FiniteDimensional
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_M4aTorus_completedRayL_fe
  
@@ -1198,7 +1198,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Mathlib
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_InfinitePlace_sign_norm_eq_prod_sign_embedding_of_isReal
  
@@ -1250,7 +1250,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Definitions.Def_NumberField_PrimeNormSums
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_continuousOn_exp_eq_rayClassLSeries
  
@@ -1280,7 +1280,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Theorems.Thm_M4aTorus_completedRayL_fe
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_differentiable_eq_rayClassLSeries_of_ne_one
  
@@ -1310,7 +1310,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Theorems.Thm_FrobeniusDensity_tailSum_le
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension
  
@@ -1392,7 +1392,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Theorems.Thm_FrobeniusDensity_tailSum_le
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
  attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
@@ -1431,7 +1431,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Theorems.Thm_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
  attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
@@ -1461,7 +1461,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Theorems.Thm_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_exists_prime_isArithFrobAt_of_isGalois
  attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
@@ -1509,7 +1509,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import Definitions.Def_LanglandsTunnell_NormClass
  import P2M.Util
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  namespace P2MW.S_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one
  
@@ -1538,7 +1538,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_FrobeniusDensity_idealSum_ne_top
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  theorem FrobeniusDensity.idealSum_ne_top
@@ -1551,7 +1551,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_FrobeniusDensity_primeSum_toReal_add_log_isBigO
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  open Filter Topology Asymptotics
@@ -1566,7 +1566,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_FrobeniusDensity_tailSum_le
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  open NumberField
@@ -1582,7 +1582,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_FrobeniusDensity_tendsto_sub_one_mul_idealSum_test
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  open NumberField
@@ -1598,7 +1598,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_M4aTorus_completedRayL_fe
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  set_option autoImplicit false
  noncomputable section
@@ -1616,7 +1616,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_InfinitePlace_sign_norm_eq_prod_sign_embedding_of_isReal
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  
  set_option autoImplicit false
@@ -1636,7 +1636,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_continuousOn_exp_eq_rayClassLSeries
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal
  attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -1656,7 +1656,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_differentiable_eq_rayClassLSeries_of_ne_one
  
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
 +
  set_option autoImplicit false
@@ -1676,7 +1676,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_forall_le_tsum_absNorm_rpow_neg_of_isCyclotomicExtension
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
  attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -1697,7 +1697,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_prime_absNorm_eq_and_apply_eq_pow_of_isCyclotomicExtension
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
  attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -1718,7 +1718,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_prime_isArithFrobAt_of_isCyclotomicExtension
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
  attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -1739,7 +1739,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_exists_prime_isArithFrobAt_of_isGalois
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  attribute [-instance] FrobeniusDensity.liesOver_ratBelow FrobeniusDensity.isMaximal_ratPrimeIdeal Deep.NTSupply.instNormalRayClassSubgroup NumberField.NormResidueChar.fintype_G NumberField.NormResidueChar.finite_G
  attribute [-simp] TaylorWiles.Seed.mk.injEq TaylorWiles.Seed.mk.sizeOf_spec
@@ -1760,7 +1760,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
  import P2M.Util
  import P2M.Sol.S_NumberField_ncard_primesOver_eq_finrank_of_isCyclotomicExtension_of_absNorm_modEq_one
 +
-+/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/
++/- Bounded universe-generalization experiment, 25 October 2026. -/
 +universe audit_u audit_v audit_w
  attribute [-instance] Deep.NTSupply.instNormalRayClassSubgroup
  
@@ -1778,7 +1778,7 @@ Apply this diff after the preceding stage, with zero fuzz. It contains the actua
 
 ## Original preparation script
 
-The original experiment used the following script. For a clean reproduction use the procedure in reproduce.md; the historical script assumes its named private input tree already exists.
+The original experiment used the following script; it assumes that its named private input tree already exists.
 
 ```python
 from pathlib import Path
@@ -1801,9 +1801,9 @@ for p in sorted(dest.rglob('*.lean')):
         t=t.replace('∃ (ι : Type*)', '∃ (ι : Type audit_u)')
     if t!=s:
         lines=t.splitlines(True); last=max(i for i,l in enumerate(lines) if l.startswith('import '))
-        lines.insert(last+1,'\n/- Worker 159: bounded universe-generalization experiment, 25 October 2026. -/\nuniverse audit_u audit_v audit_w\n')
+        lines.insert(last+1,'\n/- Bounded universe-generalization experiment, 25 October 2026. -/\nuniverse audit_u audit_v audit_w\n')
         t=''.join(lines);p.write_text(t)
-        md=p.with_suffix('.md');md.write_text(md.read_text()+'\nWorker 159 changed bare carrier universes to polymorphic binders and gave K, L and L\' independent named universes. This is an unaccepted feasibility experiment; see universes.patch.\n')
+        md=p.with_suffix('.md');md.write_text(md.read_text()+'\nThis version changes bare carrier universes to polymorphic binders and gives K, L and L\' independent named universes. This is an unaccepted feasibility experiment; see universes.patch.\n')
         diff.extend(difflib.unified_diff(s.splitlines(True),t.splitlines(True),fromfile=str(p.relative_to(dest)),tofile=str(p.relative_to(dest))))
         changes.append(str(p.relative_to(dest)))
 Path('.private/notes/chebotarev/universes.patch').write_text(''.join(diff))

@@ -1,8 +1,6 @@
 # Actual base-object comparisons of the full smooth orbit representation
 
-Author: Worker 200.
-
-This derived unit extends the existing actual-object reindexing to the full
+This module extends the existing actual-object reindexing to the full
 canonical smooth representation, the actual descended coefficient and the
 original full invariant form. It also constructs a linear isometry for the
 original entire orbit-integral cores and proves its full equivariance. These
@@ -99,9 +97,8 @@ the original reindexing of actual fiber values. Adding the Laurent premise,
 `productInducedSmoothOrbitBaseIsometry_action` is the earlier full-action
 comparison for that same underlying map.
 
-This unit treats changes of the actual base object within the same actual
+This module treats changes of the actual base object within the same actual
 unitary orbit. It introduces no induced irreducibility, arbitrary coefficient
 norm, Hilbert completion, density weight, intertwining continuation,
 constant-term regularity, wave packet estimate or Fourier inversion. Rational
-parabolic realization and all standing whole-task acceptance conditions
-remain separate obligations.
+parabolic realization remains a separate obligation.

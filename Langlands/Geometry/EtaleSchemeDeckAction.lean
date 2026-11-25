@@ -28,12 +28,14 @@ over category. No etaleness of the structure map is required. -/
 def overAction : Action ((Over X)ᵒᵖ) G where
   V := Opposite.op (Over.mk p)
   ρ :=
-    { toFun := fun g => (Over.homMk (aut τ g).hom (hp g)).op
+    { toFun := fun g => End.of (Over.homMk (aut τ g).hom (hp g)).op
       map_one' := by
+        apply End.ext
         apply Quiver.Hom.unop_inj
         apply Over.OverMorphism.ext
         exact congrArg Iso.hom (aut_one τ)
       map_mul' := fun g h => by
+        apply End.ext
         apply Quiver.Hom.unop_inj
         apply Over.OverMorphism.ext
         exact congrArg Iso.hom (aut_mul τ g h) }
@@ -45,7 +47,7 @@ def overAction : Action ((Over X)ᵒᵖ) G where
 
 /-- The bundled action retains each original deck automorphism. -/
 @[simp] theorem overAction_ρ_left (g : G) :
-    ((overAction τ p hp).ρ g).unop.left = (aut τ g).hom := rfl
+    ((overAction τ p hp).ρ g).asHom.unop.left = (aut τ g).hom := rfl
 
 variable {τ p hp}
 variable {σ : G →* (Aut Z)ᵐᵒᵖ} {q : Z ⟶ X}
@@ -145,7 +147,7 @@ def sectionsFunctor : ModuleSheaf X R ⥤ Action (ModuleCat.{u} R) G :=
 /-- The action uses actual geometric section pullback along the supplied
 automorphism, followed by the constructed deck comparison. -/
 theorem sectionsFunctor_obj_ρ (M : ModuleSheaf X R) (g : G) :
-    ((sectionsFunctor τ p hp R).obj M).ρ g =
+    (((sectionsFunctor τ p hp R).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.sectionsPullbackWithCoefficients (aut τ g).hom R
         ((coefficientIso τ p hp R g).hom.app M) :=
   EtaleCanonicalDeckTower.sectionsFunctor_obj_obj_ρ R (tower τ p hp) M
@@ -175,7 +177,7 @@ def cohomologyFunctor (n : ℕ) :
       (EtaleDerivedSectionsPlus.derivedSections Y R).obj ((inverseImage p R).obj M) := rfl
 
 theorem derivedFunctor_obj_ρ (M : ModuleSheaf X R) (g : G) :
-    ((derivedFunctor τ p hp R).obj M).ρ g =
+    (((derivedFunctor τ p hp R).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.sheafDerivedPullbackWithCoefficients (aut τ g).hom R
         ((coefficientIso τ p hp R g).hom.app M) :=
   EtaleCanonicalDeckTower.derivedFunctor_obj_obj_ρ R (tower τ p hp) M
@@ -191,7 +193,7 @@ theorem derivedFunctor_obj_ρ (M : ModuleSheaf X R) (g : G) :
       (EtaleDerivedSections.cohomology Y R n).obj ((inverseImage p R).obj M) := rfl
 
 theorem cohomologyFunctor_obj_ρ (n : ℕ) (M : ModuleSheaf X R) (g : G) :
-    ((cohomologyFunctor τ p hp R n).obj M).ρ g =
+    (((cohomologyFunctor τ p hp R n).obj M).ρ g).asHom =
       EtaleDerivedGlobalPullback.cohomologyPullbackWithCoefficients (aut τ g).hom R n
         ((coefficientIso τ p hp R g).hom.app M) :=
   EtaleCanonicalDeckTower.cohomologyFunctor_obj_obj_ρ R (tower τ p hp) n M

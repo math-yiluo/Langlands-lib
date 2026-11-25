@@ -1,6 +1,6 @@
 # Reduction of the all-parameter spherical functional equation
 
-This internal unit is a conditional step towards the published
+This internal module is a conditional step towards the published
 `SphericalLaurentFunctionalEquationStatement`. It proves that statement from two
 other published statements, which it takes as hypotheses:
 
@@ -108,7 +108,7 @@ Proof, for given `F, n, q, ψ, abv, ϖ, μ, h, ν, π, ℓ, P, c, m` as in the t
    step 4. Since `1^0 = 1 = 1^(n+1)`, the equation also holds with exponent `n + 1`,
    as the target writes it.
 6. **All parameters.** `normalizedFunctionalEquation_of_unitary` (module
-   `SphericalUnitaryExtension`, by Worker 5665),
+   `SphericalUnitaryExtension`),
    applied with `ρ := π̃`, `w := v`, `w' := ṽ`, `ζ := 1`, `c := c^(n+1)`,
    `e := n + 1`, `k := (n + 1) m`, the convergence of steps 1 and 2 (the latter at
    `x⁻¹`), the continuations of step 4 and the unitary equation of step 5, gives the
@@ -130,7 +130,7 @@ It applies the main theorem to `hFE` and `sphericalCorankOneLaurent_of_generatio
 Internal. The hypotheses are published Library statements. The first is
 JPSS 1981, (4.2)(3), for unitary Satake parameters. The second,
 `SphericalCorankOneLaurentStatement`, is JPSS 1983, Theorems (2.7) and (3.1).
-`SphericalLFactorGenerationStatement` adds Jacquet 2012, Lemma 4. This unit adds only the
+`SphericalLFactorGenerationStatement` adds Jacquet 2012, Lemma 4. This module adds only the
 bookkeeping that combines them. It identifies the two L-polynomials through
 `IsNormalizedGenerator.unique` and the continuations through
 `HasRationalContinuation.unique`. It identifies the dual integral through the

@@ -20,8 +20,8 @@ variable (K : Type u) [Field K] [NumberField K] (n : ℕ)
 def matrixUnitDomain : Set (ArchimedeanMatrix K n) :=
   Set.range (Units.val : ArchimedeanGL K n → ArchimedeanMatrix K n)
 
-theorem isOpen_matrixUnitDomain : IsOpen (matrixUnitDomain K n) :=
-  Units.isOpenEmbedding_val.isOpen_range
+theorem isOpen_matrixUnitDomain : IsOpen (matrixUnitDomain K n) := by
+  set_option synthInstance.maxSize 256 in exact Units.isOpenEmbedding_val.isOpen_range
 
 /-- The genuine positive right-translation orbit in the derivative topology. -/
 def derivativeRightOrbit (f : DerivativeSmoothFunctions K n)
@@ -169,6 +169,7 @@ def smoothOrbitCoefficient
     (ℓ : DerivativeSmoothFunctions K n →L[ℂ] ℂ)
     (f : DerivativeSmoothFunctions K n) : SmoothFunctions K n :=
   ⟨fun g => ℓ (derivativeRightOrbit K n f g), by
+    set_option synthInstance.maxSize 256 in
     change ContMDiff 𝓘(ℝ, ArchimedeanMatrix K n) 𝓘(ℝ, ℂ) ∞ _
     have h := (matrixRightOrbit_scalar_contDiffOn K n ℓ f).contMDiffOn.comp_contMDiff
       (Units.contMDiff_val (𝕜 := ℝ) (n := ∞))

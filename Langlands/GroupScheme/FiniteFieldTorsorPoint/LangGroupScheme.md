@@ -1,7 +1,5 @@
 # Lang's theorem for smooth connected affine group schemes over a finite field
 
-Author: Worker 1387.
-
 This module transfers Lang's theorem from
 [`LangCorepresented`](LangCorepresented.md) to actual group schemes, in the form
 used for `Langlands.GroupScheme.FiniteFieldTorsorPointStatement`. Declarations live

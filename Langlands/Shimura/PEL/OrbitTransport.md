@@ -88,7 +88,7 @@ finite fields*, JAMS 5 (1992), Section 5, printed pp.390–391 (PDF pp.18–19),
 explains the commuting right similitude and left monodromy actions and the
 role of fixedness in base-point independence. These original passages were
 read. This generic quotient-map formulation and its intrinsic proofs are
-derived by Worker 142; neither source states this Lean abstraction verbatim.
+derived here; neither source states this Lean abstraction verbatim.
 
 This module does not construct geometric paths, Tate modules, twists, Weil
 pairings, or PEL frames. It does not identify an arbitrary acting group with a
@@ -104,6 +104,6 @@ Registered original sources and SHA-256 fingerprints:
 - `kottwitz-1992-points-shimura-finite-fields`:
   `c7cede3d0a5e201068e6100acbb3832adb67767d69248ec65458e7cc74ee46f1`.
 
-All new code and prose are by Worker 142. The imported invariant-orbit module
+The imported invariant-orbit module
 is reused unchanged. Development compilation uses Lean 4.34.0 and Mathlib
 commit `5ed2965256430c3649e86755f9576b54eca72435`.

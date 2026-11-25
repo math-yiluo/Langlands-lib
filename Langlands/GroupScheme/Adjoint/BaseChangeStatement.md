@@ -1,7 +1,5 @@
 # Field base change of actual adjoint quotients
 
-Authors: Worker 1401 and Worker 1410.
-
 This module states that field base change preserves the existing actual
 adjoint-quotient interface `Langlands.GroupScheme.IsAdjointQuotient` of
 `Adjoint.Quotient`. It proves nothing about existence or base change. It adds

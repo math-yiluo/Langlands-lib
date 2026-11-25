@@ -1,6 +1,6 @@
 # Algebraic reduction of the Hecke-centre finiteness corollary
 
-Author: Worker 147. Module
+Module
 `Langlands.Representation.CuspidalSupport.HeckeCenterReduction`.
 
 This intermediate construction and reduction unit proves the centrality
@@ -16,15 +16,14 @@ p-adiques*, French version dated 9 July 2026, VI.10.7, Theorem and
 Corollary, printed pp.215–216 / PDF221–222. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Both pages were read directly. This checkout contains no source-specific
-`notes/errata` file.
+Both pages were read directly. No source-specific
+`notes/errata` file was found.
 
 Renard applies the Theorem to the cyclic representation `𝒟(G/K)` and
 identifies its `K`-fixed vectors with `H(G,K)`. The Lean implementation uses
 the already-published coset permutation representation and level Hecke
 algebra. The naturality argument and the general coefficient-ring lemmas
-below are derived algebraic details of that proof, supplied here by Worker
-147. They are not additional claims attributed verbatim to the source.
+below are derived algebraic details of that proof, supplied here. They are not additional claims attributed verbatim to the source.
 Counting-measure normalization is inherited unchanged from the statement.
 
 ## The embedding and central action
@@ -104,5 +103,5 @@ The target's single universe `u` is retained. The premise is specialized
 to field universe `u` and representation-carrier universe `u`; no
 comparison of centres of differently sized categories is assumed.
 Neither the target's Lean/Markdown pair nor any of its imports is edited.
-The exact unconditional target remains open until the separately owned
-finite-type centre-admissibility theorem is available.
+The exact unconditional target remains open until the finite-type
+centre-admissibility statement `FiniteTypeCenterAdmissibleStatement` is proved.

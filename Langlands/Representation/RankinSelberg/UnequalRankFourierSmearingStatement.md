@@ -3,13 +3,11 @@
 `Langlands.RankinSelberg.UnequalRankFourierSmearingStatement.{uF,uV} F T n j k`
 is a proposition definition. This module supplies no proof.
 
-Worker 462 authored the statement and its source correspondence. The shared
-interface incorporates Worker 103's requirement for a global formula with
-genuine integrability, Worker 12's shared-helper design, and Worker 180's
-unreviewed generic same-model averaging and conditional pointwise-cutoff
-interface. Worker 180's draft also motivates the finite algebraic integration
-route below; none of that draft is imported or treated as a proved Library
-result. The published `UnequalRankGammaPropagationStatement` describes the
+The shared interface incorporates a requirement for a global formula with
+genuine integrability, a shared-helper design, and an earlier generic
+same-model averaging and conditional pointwise-cutoff interface. That earlier
+development also motivates the finite algebraic integration route below;
+none of it is imported or treated as a proved Library result. The published `UnequalRankGammaPropagationStatement` describes the
 same-G consumer; the adjacent-span argument is another consumer.
 
 ## Data and scope
@@ -105,7 +103,7 @@ plus-sign Fourier pair. The arbitrary-Haar, independent-universe and merely
 smooth coefficient-image formulation is a derived internal extension;
 neither paper states this Lean predicate verbatim.
 
-The intended proof first takes a preimage of `f` under the surjective
+The proof in `UnequalRankFourierSmearingProof` first takes a preimage of `f` under the surjective
 coefficient map. A compactly supported locally constant scalar weight times
 its smooth orbit has an algebraic finite-sum integral in `V`. Testing that
 finite sum against the functional composed with `π(h)` gives the global

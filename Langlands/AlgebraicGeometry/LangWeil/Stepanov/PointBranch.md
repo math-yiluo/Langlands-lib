@@ -1,6 +1,6 @@
 # Point branches of a plane curve
 
-Author: Worker 5406. Internal helper for the proof of
+Internal helper for the proof of
 `Langlands.AlgebraicGeometry.LangWeil.StepanovNormPolynomialsStatement`; own formalisation
 route (see `Branch.md` for the relation to Schmidt's hyperderivatives).
 

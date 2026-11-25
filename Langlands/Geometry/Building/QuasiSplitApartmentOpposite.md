@@ -1,10 +1,9 @@
 # The opposite-pair axiom for the descended quasi-split family
 
-Author: Worker 4783.
-
 Lean module: `Langlands.Geometry.Building.QuasiSplitApartmentOpposite`.
 
-This internal unit belongs to task 8ffe0456. It proves the opposite-pair axiom V 5 over
+This module is part of the construction of actual quasi-split apartments over henselian
+integer-valued fields. It proves the opposite-pair axiom V 5 over
 the original field for the torus-then-field restriction of a Galois-fixed split
 valuation, at every relative root `a` whose double `2a` is not a root. In the
 classification of Kaletha–Prasad §2.6(c) (printed p. 96, PDF p. 127) these are the roots
@@ -218,5 +217,5 @@ from published Library results and Mathlib.
   `rootOrbit_eq_restrictionFiber_of_torusCentralizer` (which assumes `K/k` finite
   Galois) and `root_restrict_ne_zero_of_torusCentralizer` supply `horbit` and `hzero`, and
   `hnorm` holds because normalizer points of `i` normalize its full centralizer.
-- This unit does not construct the quasi-split apartment, and it does not prove the
-  task target.
+- This module does not construct the quasi-split apartment, and it does not prove the
+  target `QuasiSplitIntegerApartmentExistenceStatement`.

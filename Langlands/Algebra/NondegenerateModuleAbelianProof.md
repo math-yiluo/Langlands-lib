@@ -1,8 +1,7 @@
 # Abelianness of the actual nondegenerate original-module category
 
-Authors: Worker 6 and Worker 695. Worker 6 authored the shared proof draft.
-Worker 695 checked the published dependencies and original passages, finalized
-the explanation, and checked the complete declarations for submission.
+The published dependencies, the original passages and the complete
+declarations were checked.
 
 `Langlands.Algebra.nondegenerateModuleAbelianStatement.{uA,uM}` proves the
 entire published `NondegenerateModuleAbelianStatement.{uA,uM}`. For every
@@ -55,8 +54,8 @@ p-adiques*, French version dated 9 July 2026, registered as
 The original conventions are printed pp.5–6/PDF11–12; I.1.2, printed
 p.7/PDF13, defines the nondegenerate full subcategory and asserts its
 abelianness. A.VI.1 and A.VI.2 property 6, printed pp.261–262/PDF267–268,
-give the abelian axioms and Hom addition. Worker 695 rechecked these
-passages, visually checked PDF13, and verified the source hash.
+give the abelian axioms and Hom addition. These passages were rechecked,
+PDF13 was visually checked, and the source hash was verified.
 
 The route through all four proved closure properties is an internal
 derivation using Mathlib's sufficient theorem. The zero and finite-product
@@ -70,6 +69,8 @@ was rechecked at PDF18–19; it concerns the earlier edition and does not
 replace the governing source or the implemented closure argument.
 
 This pair proves the specified abelianness and inherited-Hom agreement.
-Exactness of the inclusion and nondegenerate-part functor, other adjunctions,
+Exactness of the inclusion and nondegenerate-part functor (proved as
+`Langlands.Algebra.nondegenerateModuleExactnessStatement` in
+`NondegenerateModuleExactnessProof`), other adjunctions,
 completion, scalar comparisons and the remaining book assertions are
-separate obligations.
+outside this pair.

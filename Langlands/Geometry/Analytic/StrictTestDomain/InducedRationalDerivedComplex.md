@@ -1,7 +1,5 @@
 # Derived compact complexes and hyperext on actual induced rational spectra
 
-Author: Worker 13.
-
 This module applies the existing derived-complex and hyperext constructions to
 the full locally constant smooth sheaf on the actual induced rational spectrum.
 It constructs the derived object itself, identifies its cohomology naturally

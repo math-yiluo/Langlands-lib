@@ -16,13 +16,11 @@ The registered supplementary `renard-2010-corrections-complements`, SHA256
 at `/home/taskhub/pilot/literature/Renard — Représentations des groupes réductifs p-adiques- corrections et compléments (2010 edition errata).pdf`,
 was read on PDF pages 1–2. Its I.3.2 corrections treat tensor injection and
 the later simple-module argument; the governing 2026 text includes the
-balanced-map argument and the maximal-kernel argument. This unit states neither
+balanced-map argument and the maximal-kernel argument. This module states neither
 of those results. No separate project errata file for these sources was found.
 
 All declarations are in `Langlands.Algebra`. They are definitions returning
-`Prop`, with no proofs of the comparison assertions. Worker 1151 authored
-the Lean and Markdown; Worker 6 supplied the task's passage analysis and
-the elementary ambient-generalization argument described below.
+`Prop`, with no proofs of the comparison assertions.
 
 ## Published constructions and scope
 
@@ -45,7 +43,7 @@ The imports use the actual published constructions:
 | \(J(f)\) | `NonUnitalModuleCorner.restrict e f` |
 
 The module imports `IdempotentAnnihilatorQuotient.NamedCarrier` directly;
-it does not identify its carrier with the other reviewed `ExplicitAction`
+it does not identify its carrier with the other `ExplicitAction`
 interface. The quotient's additive group and original action are explicitly
 installed using `annihilatorQuotientAddCommGroup` and
 `annihilatorQuotientModule`, including the iterated quotients. The corner
@@ -168,8 +166,11 @@ this family, with the same independent universe convention as the
 quotient-idempotence target.
 
 `IdempotentAnnihilatorComparisonsTheorem` conjoins the two closed family
-targets for review of this statement unit. Their separate names remain
-available for independent exact-proof successors after publication.
+targets. Their separate names remain available. The module
+`Langlands.Algebra.IdempotentAnnihilatorComparisons` proves them as
+`idempotentAnnihilatorQuotientIdempotence` and
+`idempotentAnnihilatorFixedPartComparison`, and the conjunction as
+`idempotentAnnihilatorComparisons`.
 
 ## Source correspondence and internal strengthening
 
@@ -178,8 +179,8 @@ page 20 / PDF page 26. The fixed-part comparison records the argument
 on printed page 21 / PDF page 27 that the image under \(j_e\) of the
 canonical quotient projection is an isomorphism, displayed as (I.3.2.2).
 That displayed map has the induced module as its source. The ambient
-statement here specializes to that map once the separate actual induced
-module construction is available. No tensor induction is a premise.
+statement here specializes to that map through the separate actual induced
+module construction (`NonUnitalModuleCornerInduction`). No tensor induction is a premise.
 
 The arbitrary-ring and arbitrary-original-action scope is derived internal
 content. For quotient idempotence, if \(q_M(m)\) is killed by `eA`, each
@@ -201,8 +202,8 @@ invertible between these zero objects.
 
 Restriction to nondegenerate modules recovers the source's underlying
 additive-action assertions. A correspondence respecting the source's
-additional complex scalar structures remains a separate parent
-obligation. The module supplies neither that correspondence nor
+additional complex scalar structures is a separate matter.
+The module supplies neither that correspondence nor
 (I.3.2.1), generatedness, the simple-class bijection, the later equivalence,
 or any proof of the comparison targets.
 

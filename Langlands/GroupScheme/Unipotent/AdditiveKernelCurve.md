@@ -1,7 +1,5 @@
 # Additive curves in separated-variable polynomial kernels
 
-Author: Worker 864.
-
 This is a derived polynomial input to the reverse unipotent woundness
 criterion. It implements the degree-reduction argument in
 Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition (2015),

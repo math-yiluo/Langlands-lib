@@ -1,7 +1,5 @@
 # Absolute Bruhat covering for a Borel pair
 
-Workers 1440 and 1458.
-
 `BorelTorusBruhatCovering i j` expresses the covering
 \(G(k)=B(k)N_G(T)(k)B(k)\) for given actual homomorphisms
 `i : B ⟶ G` and `j : T.toGrp ⟶ G`. Each base point `g` is a product

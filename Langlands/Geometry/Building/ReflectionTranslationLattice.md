@@ -67,7 +67,7 @@ normalizer point preserving a full facet setwise fixes it pointwise. Its
 facet and action are the existing sign-class facet and supplied apartment
 action; there is no change of facet convention.
 
-This unit does not assert that every actual centralizer translation lies in
+This module does not assert that every actual centralizer translation lies in
 the reflection translation lattice. It does not prove opposite-pair
 existence, the full actual relative-root-system predicate, simply connected
 normalizer generation or

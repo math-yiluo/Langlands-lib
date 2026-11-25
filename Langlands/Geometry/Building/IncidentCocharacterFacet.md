@@ -1,6 +1,6 @@
 # Incident facets in prescribed cocharacter directions
 
-This internal unit constructs an incident apartment facet for a prescribed
+This module constructs an incident apartment facet for a prescribed
 actual torus cocharacter, including cocharacters that vanish on some roots.
 It combines the imported local finiteness, short-ray sign, integer-building
 and incident-facet root-filtration theorems. No new external source assertion
@@ -28,5 +28,5 @@ all affine roots vanishing at the origin is retained.
 incident facet with these nonnegative-root fixer equalities for every
 apartment point and every actual cocharacter. Its proved witness is
 `hasPrescribedCocharacterIncidentFacets`. The underlying field has
-arbitrary universe. This unit does not identify special-fibre images or
+arbitrary universe. This module does not identify special-fibre images or
 prove attainment of parabolic subgroup functors.

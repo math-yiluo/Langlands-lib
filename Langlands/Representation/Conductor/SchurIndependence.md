@@ -1,12 +1,12 @@
 # Linear independence of the dominant Schur expressions
 
-This internal unit proves that the integral-weight Schur expressions
+This module proves that the integral-weight Schur expressions
 `torusSchur K lam` (published in `Conductor/SphericalPolynomial`) of the dominant
 weights are linearly independent over any field `K`. A weight
 `lam : Fin (n + 1) → ℤ` is dominant when it is antitone,
-`lam 0 ≥ lam 1 ≥ … ≥ lam n`. The planned uniqueness proof for Jacquet 2012,
-Theorem 1 uses this fact. There, the vanishing of every Laurent coefficient of the
-corank-one integral, expanded in spherical Whittaker values, should force every
+`lam 0 ≥ lam 1 ≥ … ≥ lam n`. The separation result for the uniqueness clause of Jacquet 2012,
+Theorem 1 (`Conductor/SphericalSeparation`) uses this fact. There, the vanishing of every Laurent coefficient of the
+corank-one integral, expanded in spherical Whittaker values, forces every
 dominant torus value of the Whittaker function to vanish. The result is the
 linear-independence half of the classical fact that the Schur polynomials form a
 basis of the symmetric polynomials; the spanning half is not proved here. It is

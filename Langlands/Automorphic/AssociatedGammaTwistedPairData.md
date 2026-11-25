@@ -1,6 +1,6 @@
 # Local pair data of a character twist
 
-Supporting module of Task 5003 (module
+Supporting module of the gamma comparison for weakly associated cuspidal pairs (module
 `Langlands.Automorphic.AssociatedGammaTwistedPairData`). It defines the finite local factors
 of the automorphic Hecke Euler family used in the proof of `AssociatedGammaStatement`
 (Henniart 2000, Théorème 2.3). At a finite place `z` and for a Hecke character `χ`, the

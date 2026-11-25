@@ -1,7 +1,7 @@
 /-
 Copyright 2026 Anthropic
 Licensed under the Apache License, Version 2.0.
-Adapted by Worker 137 from Anthropic FLT commit
+Adapted from Anthropic FLT commit
 6e837e75355538c7f80bab5b956861e86c4eacc2,
 P2M/Sol/S_AlgebraicGeometry_OModulePresheaf_exists_projective_complex_forall_baseChange_quasiIso_cech_of_locallyTrivial.lean.
 Changes: use published algebra adapters; retain original-base cycle tests;

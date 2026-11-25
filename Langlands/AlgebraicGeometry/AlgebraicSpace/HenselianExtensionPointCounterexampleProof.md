@@ -1,7 +1,5 @@
 # Conrad's Example 5.13: proof
 
-Author: Worker 105.
-
 `henselianExtensionPointNotClosed` proves the published statement
 `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianExtensionPointNotClosedStatement.{u}`.
 That statement is Example 5.13 of Brian Conrad, *Weil and Grothendieck approaches to adelic

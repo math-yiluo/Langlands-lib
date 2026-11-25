@@ -1,7 +1,5 @@
 # The stable-lift formula for opposite normalized Jacquet duality
 
-Author: Worker 937.
-
 This module records an explicit evaluation formula for the natural isomorphism
 of `Aubert.General.IwahoriNaturalJacquetDuality`. It packages the formula as a
 proposition about an arbitrary natural isomorphism, and it proves that the

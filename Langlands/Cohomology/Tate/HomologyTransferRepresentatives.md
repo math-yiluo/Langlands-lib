@@ -1,8 +1,5 @@
 # Chain representatives for ordinary homological transfer
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This pair develops the representative formula for the ordinary transfer
 constructed on Mathlib's standard resolution. A homogeneous generator is
 sent to the sum over left cosets of its inverse-coset translate, followed
@@ -23,4 +20,5 @@ Fields*, Greenberg translation, GTM 67 (1979), Chapter VII section 7,
 printed pages 118–119 (PDF pages 124–125). Registered source:
 `serre-1979-local-fields`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-The comparison with negative Tate restriction remains a separate obligation.
+The comparison with negative Tate restriction is not made here; in degrees at
+most minus two it is `restriction_groupHomology` in `NegativeTransferComparison`.

@@ -1,6 +1,6 @@
 # The epsilon side of Tate's spectral conductor formula
 
-Worker 4803 wrote this supporting module for the reduction
+This is a supporting module for the reduction
 `SpectralConductor.spectralConductorRankOneReduction`
 (module `Langlands.LocalFactor.SpectralConductorReduction`). Its declarations
 concern a supplied local-constant system `ε` with `NonabelianSystem.IsSystem F e ε`,

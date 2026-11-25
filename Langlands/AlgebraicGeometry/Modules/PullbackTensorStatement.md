@@ -53,7 +53,11 @@ of sheaves of modules (HTML snapshot 2026-10-21)*, SHA256
 `825127394e5828c3a56f5134b8823afba20547d7ba5173f624b2f9556a058e34`.
 
 This module only defines the proposition. It supplies neither a proof nor
-an `IsIso` instance. A separate proof task must establish it in the pinned
-environment. Associativity, unit and symmetry compatibility, and
-compatibility with pullback identity and composition, remain separate
-obligations of the parent monoidal-pullback development.
+an `IsIso` instance. The Library proves it as `pullbackTensorComparisonIsIso`
+in `Langlands.AlgebraicGeometry.Modules.PullbackTensorProof`.
+Associativity, unit and symmetry compatibility, and compatibility with
+pullback identity and composition, are separate statements, not part of this
+proposition. The Library proves them as `pullbackTensorAssociativity`
+(`PullbackTensorAssociativityProofs`), `pullbackTensorUnitCoherence`
+(`PullbackTensorUnitProofs`) and `pullbackTensorCompatibility` (identity,
+composition and symmetry; `PullbackTensorCompatibilityProofs`).

@@ -1,13 +1,12 @@
 # Ramification and conductors of completions in their canonical packages
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. At the finite places other
 than the distinguished one, Deligne's global argument (1973, proof of Lemma 4.12) uses that almost
 all places are unramified and that a highly ramified twist makes the remaining epsilon factors
 behave stably (Lemmas 4.15 and 4.16). The published local lemmas are stated for the canonical
 realizations of p-adic fields, while the global characters live on completions of number fields.
-This unit translates the needed notions. It is elementary and has no separate literature source.
+This module translates the needed notions. It is elementary and has no separate literature source.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`.
 

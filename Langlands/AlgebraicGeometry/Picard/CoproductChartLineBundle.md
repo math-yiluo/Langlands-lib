@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.CoproductChartLineBundle`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 This is an internal construction with no literature assertion. It glues
 actual line bundles on the members of an open cover whose distinct members
 do not meet, and applies this to the relative space `U ×ₛ X` of a coproduct

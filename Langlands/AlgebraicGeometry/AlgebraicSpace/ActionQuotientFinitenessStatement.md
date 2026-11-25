@@ -1,7 +1,5 @@
 # Quasi-separatedness and finite presentation of action quotients over a field
 
-Author: Worker 79.
-
 `ActionQuotientFinitenessStatement` states that an fppf quotient of a scheme of finite
 type over a field by a quasi-compact group, with a smooth surjective quotient map and a
 quotient locally of finite type, is quasi-separated and of finite presentation. It supplies

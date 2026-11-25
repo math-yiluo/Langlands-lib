@@ -107,7 +107,7 @@ submodule image is Mathlib's actual `Submodule.map`; its invariance,
 monotonicity and endpoints are verified directly. No separate literal
 literature theorem is asserted here.
 
-This unit constructs the fixed image filtrations. Identification of their
+This module constructs the fixed image filtrations. Identification of their
 graded pieces with Jacquet quotients of the original graded representations
 requires a separate statement and proof. It asserts no multiplicity
 comparison or irreducible-head conclusion.

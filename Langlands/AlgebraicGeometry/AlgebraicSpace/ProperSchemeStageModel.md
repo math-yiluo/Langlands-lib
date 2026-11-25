@@ -1,6 +1,6 @@
 # Actual proper scheme models at an affine limit stage
 
-This internally derived unit packages a proper locally finitely presented
+This internally derived module packages a proper locally finitely presented
 scheme model at an actual original stage of a cofiltered affine diagram,
 with its actual cartesian comparison square. `sourceIso` expresses this
 square as an isomorphism of schemes over the limit; `spaceIso` combines

@@ -1,9 +1,7 @@
 # The local restriction formula for induced relative Weil representations
 
 Lean module: `Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionProof`
-(namespace `Langlands.ClassField.Global.RelativeWeilGroup`).
-
-Author: Worker 5078.
+(namespace `Langlands.ClassFieldTheory.Global.RelativeWeilGroup`).
 
 ## Statement
 

@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.ArtinianChartVersalityDescentProof`.
 
-Author: Worker 410, for task `43ead35e-c745-43e8-b3b6-b88e0a294ec9`.
-
 The theorem `artinianChartVersalityDescent.{u}` has exactly the type of the
 companion `ArtinianChartVersalityDescentStatement.{u}`. It is the
 categorical descent step motivated by Stacks Lemma 98.12.3 (Tag 0CXK),

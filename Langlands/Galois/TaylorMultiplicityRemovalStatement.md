@@ -1,6 +1,6 @@
 # Taylor's removal of the cohomological multiplicity
 
-Author: Worker 34. This module states, as an unproved `Prop`, the Galois
+This module states, as an unproved `Prop`, the Galois
 theoretic core of Taylor's argument: a `λ`-adic representation whose
 Frobenius characteristic polynomials are `m`-th powers, and whose Hodge-Tate
 decomposition at a place above `ℓ` has `n` distinct twists each occurring `m`
@@ -55,7 +55,7 @@ Only Harris's printed sketch is used.
   `CompletionPadicTower`): the canonical `ℚ_ℓ`-algebra structures of the
   completions and their finite dimension.
 - `HodgeTate.HasHodgeTateDecomposition` (from
-  `Langlands/Galois/Local/HodgeTate`, in this candidate).
+  `Langlands/Galois/Local/HodgeTate`).
 - Mathlib's `moduleTopology`.
 
 ## Definitions
@@ -140,5 +140,5 @@ the representation; this remark is not used here.
 - Only the statement is formalized. Sen's theorem, the Zariski closure of the
   image, Chebotarev density and Brauer-Nesbitt are not formalized.
 - The application to Shimura varieties, where Kottwitz's and Clozel's results
-  give the hypotheses and Faltings' theorem the Hodge-Tate decomposition, is a
-  separate obligation (Harris 1997, Theorem 2; Harris 1999, Theorem 5.7(i)).
+  give the hypotheses and Faltings' theorem the Hodge-Tate decomposition, is
+  not part of this module (Harris 1997, Theorem 2; Harris 1999, Theorem 5.7(i)).

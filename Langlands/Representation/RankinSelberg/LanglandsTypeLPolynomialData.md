@@ -1,7 +1,5 @@
 # Certified polynomial data for Langlands standard modules
 
-Author: Worker 111.
-
 `Langlands.RankinSelberg.langlandsTypeLPolynomialData` constructs
 `LanglandsTypeLPolynomialData` for every pair of genuine tempered Langlands
 data of positive ranks. It preserves the original data, canonical topology,

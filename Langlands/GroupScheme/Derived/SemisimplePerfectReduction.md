@@ -1,7 +1,5 @@
 # Descent and algebraic-closure reduction for perfectness
 
-Author: Worker 1484.
-
 This module proves reduction lemmas for the published
 `Langlands.GroupScheme.SemisimplePerfectStatement`. It does not prove that
 statement without a premise. The new proposition
@@ -47,7 +45,7 @@ perfection of the input field.
 
 These are internal reductions derived from the already published Library
 definitions and fpqc descent results named above. Their purpose is to isolate
-the algebraically closed case of the existing perfectness proof task. They
+the algebraically closed case of `SemisimplePerfectStatement`. They
 follow the algebraic-closure reduction described in the source discussion of
 `Derived/SemisimplePerfectStatement.md`, but the implemented descent uses
 only the elementary inclusion under base change and effective descent for

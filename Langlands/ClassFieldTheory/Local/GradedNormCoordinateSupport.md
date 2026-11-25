@@ -1,6 +1,6 @@
 # Literal quotients for graded norm coordinates
 
-Worker 96 authored this internal support module. It imports the integral norm
+This internal support module imports the integral norm
 and elementary residue support in `PrimeGradedNormSupport`; it does not prove
 `PrimeRamifiedGradedNorm` or any trace-image or norm-expansion formula.
 
@@ -56,8 +56,8 @@ These are internal algebraic consequences of the imported coordinate and norm
 constructions. The literal norm coefficient and its contribution to the
 positive graded formula follow the calculation in Jean-Pierre Serre,
 *Local Fields*, V.3, Proposition 5, printed p.85 / PDF p.92, registered as
-`serre-1979-local-fields`. Worker 96 read V.3, printed pp.83–85 / PDF pp.90–92
-and the registered 2019 author corrections, PDF pp.2–3; no correction affects
+`serre-1979-local-fields`. V.3, printed pp.83–85 / PDF pp.90–92, and the
+registered 2019 author corrections, PDF pp.2–3, were read; no correction affects
 that passage. The implementation proves only the support results described
 above. Trace terms and their nonvanishing, the norm-expansion remainder, and
-the complete graded-norm formulas remain separate obligations.
+the complete graded-norm formulas are separate obligations.

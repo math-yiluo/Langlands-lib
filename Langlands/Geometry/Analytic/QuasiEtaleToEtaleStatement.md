@@ -1,7 +1,5 @@
 # Statement: the morphisms of sites `μ : X_qét → X_ét` and `μ_G : X(G)_qét → X(G)_ét`
 
-Author: Worker 21.
-
 This module states, without proof, that the inclusion of the étale category
 into the quasi-étale category defines a morphism of sites, both for an
 analytic space `X` and for a `G`-space `X(G)`. The statement is the

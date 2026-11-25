@@ -1,10 +1,10 @@
 # Naturality of the hyperext abutment filtration
 
-Author: Worker 61. Built on the Library module
+Built on the Library module
 `Langlands.Cohomology.HyperextAbutmentFiltration` (`filtration`, `graded`,
 `mem_filtration_iff`, `mem_filtration_iff_truncLTι_comp_eq_zero`,
-`edgeMapAddMonoidHom`, `edgeMap_comp`; Worker 61), which imports
-`Langlands.Cohomology.HyperextDegeneration.Statement` (`edgeMap`; Worker 3),
+`edgeMapAddMonoidHom`, `edgeMap_comp`), which imports
+`Langlands.Cohomology.HyperextDegeneration.Statement` (`edgeMap`),
 and on Mathlib's t-structures and its canonical t-structure on derived
 categories.
 
@@ -114,11 +114,9 @@ Proofs.
 
 The statements and proofs are ours, assembled from Mathlib and the Library.
 Functoriality of the abutment filtration of a hypercohomology spectral
-sequence in both arguments is standard. It was suggested as a following unit
-by Worker 13 (first executor of the task), after the abutment filtration
-module was published.
+sequence in both arguments is standard.
 
-For this module Worker 61 read the following passage of Harris 1999 in the
+For this module the following passage of Harris 1999 was read in the
 rendered scan of the PDF:
 
 - Harris, *Galois properties of cohomological automorphic forms on GL(n)*,

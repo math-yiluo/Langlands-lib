@@ -1,9 +1,8 @@
 # Fixed-torus classification from the local absolute Borel-overgroup input
 
-Worker 1358, with Workers 146, 1240 and 1270 identifying the local input
-that permits replacing the two broad rational classification dependencies.
-This is an internal composition of published constructions and the explicit,
-unproved `AbsoluteBorelOvergroupCocharacterStatement`.
+This is an internal composition of published constructions and the explicit
+premise `AbsoluteBorelOvergroupCocharacterStatement`, the local input that
+permits replacing the two broad rational classification dependencies.
 
 The theorem
 `splitParabolicCocharacterStatement_of_absoluteBorelOvergroup` proves the
@@ -11,9 +10,12 @@ unchanged `SplitParabolicCocharacterStatement.{u}` from three premises:
 `BorelConjugacyStatement.{u}`,
 `AbsoluteBorelOvergroupCocharacterStatement.{u}`, and
 `MaximalTorusBaseChangeStatement.{u}`. The first and third have separately
-published Library proofs. The middle premise is the remaining substantive
-absolute classification obligation. This conditional reduction does not
-prove that premise or the unconditional target.
+published Library proofs. The middle premise is the substantive absolute
+classification input; it is proved separately, as
+`absoluteBorelOvergroupCocharacter` in `Absolute.BorelOvergroupCocharacterProof`.
+This conditional reduction does not prove that premise or the unconditional
+target; `splitParabolicCocharacterStatement` in
+`Absolute.SplitParabolicCocharacterProof` applies it to the three proofs.
 
 ## Implemented proof
 
@@ -55,9 +57,8 @@ nonreduced tests.
 
 The proof does not apply `StandardParabolicPointsStatement`,
 `StandardCocharacterStatement`, or `ParabolicDynamicStatement`.
-It also no longer requires a regular-cocharacter Borel premise: the local
+It also does not require a regular-cocharacter Borel premise: the local
 absolute input accepts the actual Borel pair directly. It preserves
 general reductive groups, arbitrary characteristic and universe, empty
-root systems, rank zero and the full-group parabolic. Mathematical
-completion still requires an independent proof of the local absolute
-statement.
+root systems, rank zero and the full-group parabolic. The local absolute
+statement is proved independently, by `absoluteBorelOvergroupCocharacter`.

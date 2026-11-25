@@ -1,7 +1,5 @@
 # Full strong nested-domain comparisons and quotient localization
 
-Author: Worker 36.
-
 This internal construction identifies the existing full strong transport of
 maps between ambient-image and nested original-domain presentations with the
 independently constructed localization in the actual source-quotient category.

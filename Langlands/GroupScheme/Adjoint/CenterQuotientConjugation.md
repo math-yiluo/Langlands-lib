@@ -1,7 +1,5 @@
 # Commutators with a point whose conjugates commute with it
 
-Author: Worker 1499.
-
 This internal helper module of the proof of
 `Langlands.GroupScheme.CenterQuotientReductiveStatement` proves the geometric
 step of the elementary route. It is derived content: the statements are chosen

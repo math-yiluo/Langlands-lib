@@ -1,6 +1,6 @@
 # Projectivity of the induced Bernstein progenerator (Renard VI.10.1)
 
-Author: Worker 5225. Derived supporting result for Task 5225.
+Derived supporting result for Renard VI.10.1–VI.10.3.
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French
 version dated 9 July 2026 (registered source
@@ -12,14 +12,13 @@ Théorème (printed p.208 / PDF p.214) begins: by Bernstein's second
 adjointness theorem, `i_P^G` is left adjoint to `r_{P̄}^G`, which is exact,
 so `i_P^G` preserves projectives, and `Π_Ω` is projective.
 
-This module formalizes that step. Two unproved Library propositions are
-explicit premises:
+This module formalizes that step. Two Library propositions without an
+unconditional proof in the Library are explicit premises:
 
 - `RepresentedParabolic.LeviSecondAdjointnessStatement.{uF, uV}`, Renard
-  VI.9.6 (second adjointness), owned by another task;
-- `BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement.{uF}`,
-  owned by task `8c39faa0-2a70-4fc4-a027-914987aba924`. The published
-  Library proof of Renard VI.2.1, (a) implies (c), needs it.
+  VI.9.6 (second adjointness);
+- `BruhatTits.SpecialCompact.JointSpecialCompactBasisExistenceStatement.{uF}`.
+  The published Library proof of Renard VI.2.1, (a) implies (c), needs it.
 
 The second premise is used only for the projectivity of `Π_D` in `M(M)`.
 Renard takes that fact from VI.4.1. The Lean proof gets it from compact
@@ -133,8 +132,8 @@ the standard Levi points. They are proved as in the published
 ## Scope
 
 This module is a conditional reduction for the projectivity conjunct of the
-VI.10.1 Theorem. Its two premises are unproved and owned by other tasks. It
+VI.10.1 Theorem. Its two premises are not proved here. It
 does not prove block membership of `Π_Ω`, its finite generation, or the
-generator property. It does not prove `BernsteinInducedProgeneratorStatement`
-and is not submitted as acceptance of that target. Irreducibility of `ρ₀` is
+generator property. It does not prove `BernsteinInducedProgeneratorStatement`.
+Irreducibility of `ρ₀` is
 not needed here; only the injectivity of `j` is used.

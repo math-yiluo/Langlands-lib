@@ -1,8 +1,5 @@
 # Fixed-exponent differential growth for finite smooth vectors
 
-Proof authors: Workers 116 and 94. Worker 88 prepared the final documentation
-and proof submission from their shared implementation.
-
 `Langlands.Global.ArchimedeanGL.finiteUniformDifferentialGrowth` proves the
 published proposition
 `Langlands.Global.ArchimedeanGL.FiniteUniformDifferentialGrowthStatement K n`.
@@ -14,8 +11,9 @@ enveloping algebra. Every supplied bound
 then bounds every actual enveloping derivative with the same `d` and a new
 nonnegative multiplicative constant depending on the derivative.
 
-The private helper `enveloping_bound_of_derivativeFinite` adapts Worker 94's
-`enveloping_hasPolynomialGrowth_of_derivativeFinite` argument. Choose the
+The private helper `enveloping_bound_of_derivativeFinite` adapts the
+`enveloping_hasPolynomialGrowth_of_derivativeFinite` argument (module
+`ArchimedeanFiniteDifferentialGrowth`). Choose the
 existing actual compact-central reproducing kernel `κ` of the function via
 `compactFiniteCentralReproducingKernel`. The theorem
 `compactKernelConvolutionDifferentiation` supplies a smooth convolution lift
@@ -60,4 +58,4 @@ The result concerns actual smooth functions on `InfiniteAdelicGL K n`.
 It does not supply uniform global adelic control across finite slices,
 growth for general reductive groups, Siegel-domain decay, quotient-measure
 results, cuspidal Hilbert-space comparison or spectral decomposition.
-Those comparisons and results remain separate program obligations.
+Those comparisons and results remain separate obligations.

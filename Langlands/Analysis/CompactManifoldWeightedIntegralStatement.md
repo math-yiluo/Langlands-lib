@@ -1,6 +1,6 @@
 # Compact scalar kernels on manifolds with Banach-valued weights
 
-Worker 116 states the internal target
+This module states the internal target
 `Langlands.Analysis.CompactManifoldWeightedIntegralStatement`.
 This file contains a proposition definition and no proof.
 
@@ -24,7 +24,7 @@ exactly the supplied charts and topologies, rather than replacement spaces.
 Compact Hausdorff is an explicit assumption on the integration source `X`; the
 statement does not impose a manifold structure on it or require `j` to be smooth.
 
-## Internal derivation and remaining proof
+## Internal derivation and proof plan
 
 This is derived analytic infrastructure, with no external source transcription.
 The existing public `contDiffOn_infty_compactFamily_of_joint` in
@@ -45,12 +45,13 @@ Compose with the bounded weighted-integral map, restricted to real scalars, and
 sum the pieces. Bochner integrability follows separately from continuity on
 compact `X` and finiteness of `μ`.
 
-That description is a proof plan, not a proved theorem. The finite partition,
-compact support restrictions, exact integral identity and chart-local smoothness
-must all be established by a future exact-target proof. The statement imports no
-unpublished theorem and assumes none of those conclusions as extra hypotheses.
-In particular the unproved Euclidean weighted-parameter target is not a proof
-input of this statement file.
+That description is a proof plan; this file proves no theorem. The finite
+partition, compact support restrictions, exact integral identity and chart-local
+smoothness are established in the proof module
+`Langlands.Analysis.CompactManifoldWeightedIntegralProof` (theorem
+`compactManifoldWeightedIntegral`). The statement imports no unpublished theorem
+and assumes none of those conclusions as extra hypotheses. In particular the
+Euclidean weighted-parameter target is not a proof input of this statement file.
 
 ## Application boundary
 

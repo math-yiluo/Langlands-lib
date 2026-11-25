@@ -1,7 +1,5 @@
 # Images of unipotent parts of solvable groups
 
-Worker 883.
-
 `PreservesUnipotentParts q` says that a supplied smooth closed image of a
 greatest unipotent subgroup under `q` is again a greatest unipotent subgroup.
 The image is specified by a surjective homomorphism `f` and the equation

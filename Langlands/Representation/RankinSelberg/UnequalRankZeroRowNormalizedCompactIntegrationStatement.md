@@ -96,10 +96,12 @@ The published theorem `equalRankNormalizedCompactIntegration` in
 and the compact integration and finite coset expansion helpers provide
 reusable normalization and integration infrastructure. They do not themselves
 prove this unequal-rank target: the pullback along the larger-rank embedding
-and its compatibility with the actual zero-row integrand still require a
-separate proof. This module supplies only the statement; the parent's final
-analytic assembly and the separately owned Iwasawa and Mellin work remain
-separate obligations.
+and its compatibility with the actual zero-row integrand require a
+separate proof, which `unequalRankZeroRowNormalizedCompactIntegration` in
+`UnequalRankZeroRowNormalizedCompactIntegrationProof` gives. This module
+supplies only the statement; the final analytic assembly
+(`unequalRankZeroRowAnalytic` in `UnequalRankZeroRowAnalyticProof`, which uses
+this statement) and the Iwasawa and Mellin steps lie outside it.
 
 Source: `jpss-1983-rankin-selberg`, H. Jacquet, I. I. Piatetski-Shapiro and
 J. A. Shalika, *Rankin–Selberg Convolutions*, American Journal of Mathematics

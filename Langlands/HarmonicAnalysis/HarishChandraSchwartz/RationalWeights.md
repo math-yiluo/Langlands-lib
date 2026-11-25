@@ -1,7 +1,5 @@
 # Waldspurger's weights `Ξ`, `σ` and the Schwartz space `C(G)` on actual rational points
 
-Author: Worker 19, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeights`, namespace
 `Langlands.HarishChandraSchwartz`.
 
@@ -13,7 +11,7 @@ Harish-Chandra*, J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S147474
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Printed page numbers; the
 PDF page is the printed page minus 234. The quotations and paraphrases below are those checked in
 the Library's `Spherical.md`, `Height.md`, `Basic.md`, `TestFunctions.md` and
-`TemperedExponentCone.md`; the present author could not open the PDF in this session.
+`TemperedExponentCone.md`; they were not checked again against the PDF for this page.
 
 - I.1, printed p. 240 (PDF p. 6): `G = P₀ K` for the minimal parabolic `P₀ = M₀ U₀` and the special
   maximal compact subgroup `K`; Haar measures are normalized by `mes(H ∩ K) = 1`.
@@ -75,7 +73,7 @@ unproved `IwasawaExistenceStatement`) supply `hPK` by `isIwasawaPair_of_pointPro
   `U₀(F)` lying in a compact open subgroup of `U₀(F)`, so the two agree whenever `U₀(F)` is the
   union of its compact open subgroups (as follows, for instance, from Renard's exhaustion
   property V.5.2(iii)). This union property is not proved in this module; the companion module
-  `RationalXiLowerBound` (same candidate) proves `δ₀ = 1` on `U₀(F)` from one Renard V.5.2 basis
+  `RationalXiLowerBound` (ported together with this module) proves `δ₀ = 1` on `U₀(F)` from one Renard V.5.2 basis
   member for the minimal parabolic.
 - The identification of `Ξ` with the matrix coefficient `⟨π(g)e, e⟩` of `I_{P₀}^G 1` is not
   proved here (as in the Library's `Spherical`).

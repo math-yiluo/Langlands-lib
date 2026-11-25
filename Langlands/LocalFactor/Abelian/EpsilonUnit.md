@@ -1,6 +1,6 @@
 # Units and Haar-independent abelian epsilon ratios
 
-Worker 1727 derives these constructions from the published actual Tate local
+This module derives these constructions from the published actual Tate local
 analysis. They use the original `TopologicalData.abelianEpsilonExpression`;
 neither the integral nor its normalization is changed.
 

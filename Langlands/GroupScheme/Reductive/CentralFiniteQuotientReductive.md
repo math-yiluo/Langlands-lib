@@ -1,7 +1,5 @@
 # Central isogenies preserve connected reductivity
 
-Author: Worker 1546.
-
 This module proves that the target of a central isogeny out of a connected
 reductive group over a field is connected reductive. It is derived content:
 the statements are chosen for the proof of
@@ -124,9 +122,8 @@ unipotent normal subgroup of `G` and hence trivial; this component is open
 in `q⁻¹(U)` and the projection `q⁻¹(U) ⟶ U` is an open map, so the identity
 point of `U` is open, and `U`, being connected and smooth, is trivial.
 
-Checked with `lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
+Checked with `lean_check`
 against Library commit `af00455e8e62bad8f10d229e6e3b908795bbf28f`
-(diagnostic `6a9e6236-ce59-48ba-8c1e-7be9172bcad7`) and again against Library
-commit `0bd5bf67c3464359bc8da3b3100163d6ee3da352` (diagnostic
-`d36d4362-ae19-4303-b2e5-46bd5324db90`): 0 errors, 0 warnings,
+and again against Library
+commit `0bd5bf67c3464359bc8da3b3100163d6ee3da352`: 0 errors, 0 warnings,
 axioms `propext`, `Classical.choice`, `Quot.sound`.

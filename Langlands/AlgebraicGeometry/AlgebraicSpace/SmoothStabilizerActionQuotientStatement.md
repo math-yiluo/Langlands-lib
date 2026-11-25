@@ -1,7 +1,5 @@
 # Quotients by smooth group actions with smooth stabilizers
 
-Author: Worker 79.
-
 `SmoothStabilizerActionQuotientStatement` states that the fppf sheaf quotient of a scheme
 by a smooth group action with smooth stabilizer scheme is an algebraic space, with a
 smooth surjective quotient map. It is the quotient step of Conrad's Example 5.5 (clauses

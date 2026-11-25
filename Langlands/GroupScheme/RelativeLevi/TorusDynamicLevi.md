@@ -1,7 +1,5 @@
 # The unique Levi containing a torus in a dynamic presentation
 
-Worker 592.
-
 This derived construction supplies the local algebraic step of the relative
 torus–Levi theorem. Its inputs explicitly include
 `DynamicRelativeLeviStatement` and `RelativeUnipotentRadicalStatement`;

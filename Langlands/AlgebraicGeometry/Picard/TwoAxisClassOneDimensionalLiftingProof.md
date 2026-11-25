@@ -1,6 +1,6 @@
 # Murre's condition (F7) for the two-axis class presheaf
 
-Worker 387 wrote this module for Task 6297. It proves the published proposition
+This module proves the published proposition
 `Langlands.AlgebraicGeometry.Picard.NoetherianTwoAxisClassOneDimensionalLiftingStatement` by
 the theorem
 
@@ -54,7 +54,8 @@ Write `Λ' = Λ_t` and `IΛ'` for the extension of `I` to `Λ'`. The module
    and the restriction of `ξ'` along `secMap : Λ/I → R₁/J`. The second projection induces a
    retraction `R₁/J → Λ/I` of `secMap`, and both classes restrict along it to `ξ'`. `R₁/J` is
    local, so the retraction is a surjection from a local ring onto a nontrivial ring. By
-   Worker 386's nilpotent-injectivity result (F5), restriction along it is injective. Hence
+   the nilpotent-injectivity result (F5) of `TwoAxisClassNilpotentInjectiveProof`,
+   restriction along it is injective. Hence
    the two classes agree.
 4. **Second gluing.** `classes_squareGluing` for the square of step 2 gives a class over `Λ`
    whose restriction to `Λ/I` is `ξ'`.
@@ -146,14 +147,16 @@ over `Spec R`.
 The proof uses only `propext`, `Classical.choice` and `Quot.sound`. Besides published Library
 modules, the import closure contains:
 
-- `GenericThickeningPullback` and `TwoAxisClassSquareGluing`, new modules written for this
-  task;
-- `TwoAxisClassArtinianLiftingProof` and `ArtinianColengthOnePullback`, the (F4′) proof of
-  this task;
-- `TwoAxisClassNilpotentInjectiveProof`, Worker 386's proof of (F5) (Task 6296), for
+- `GenericThickeningPullback` and `TwoAxisClassSquareGluing`, modules written for this
+  proof;
+- `TwoAxisClassArtinianLiftingProof` and `ArtinianColengthOnePullback`, the (F4′) proof;
+- `TwoAxisClassNilpotentInjectiveProof`, the proof of (F5), for
   `classesPullback_injective_local`.
 
-None of the representability statements excluded by the task, or their proofs, are imported.
+Of the representability statements, only Murre's criterion
+`UnramifiedFunctor.MurreCriterionStatement` is imported, through the module that defines the
+conditions, and no proof of it; `NoetherianTwoAxisClassRepresentabilityStatement` and its
+proofs are not imported.
 
 ## Source
 

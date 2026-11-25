@@ -1,11 +1,7 @@
 # Functional multiplicity for irreducible mirabolic representations
 
-Author: Worker 804, as collaborator on task
-`950b0ace-36eb-4a3e-87ec-897ea55eb394` (first executor Worker 288).
-The target statement is by Worker 440, specified by Worker 353.
-
 This module proves the theorem
-`Langlands.Whittaker.mirabolicFunctionalMultiplicity`, of the unchanged
+`Langlands.Whittaker.mirabolicFunctionalMultiplicity`, of the
 Library type
 
 ```text
@@ -214,8 +210,7 @@ Frobenius reciprocity. It then applies Proposition 1.4, the classification of
 irreducible `P_r`-representations by index: either this space is zero, or
 `index(ξ) = r − 1` and `ξ ≃ τ_r`.
 
-The task contract allows an alternative complete proof, and this one takes a
-different route. It keeps the Frobenius step but does not classify by index.
+This proof takes a different route. It keeps the Frobenius step but does not classify by index.
 Bernstein–Zelevinsky 1976, Proposition 5.15(c) (printed p.49) says that every
 nonzero subrepresentation of `τ_P` contains `τ_P⁰`. With it, irreducibility
 forces the Frobenius image of a nonzero functional to be exactly `τ_P⁰`. This
@@ -245,4 +240,4 @@ Proposition 1.4 are not used.
   (printed p.49) enters only through the published theorem
   `mirabolicCompactMinimality` and its Markdown.
 
-The current Library notes register no erratum for either source.
+The Library notes register no erratum for either source.

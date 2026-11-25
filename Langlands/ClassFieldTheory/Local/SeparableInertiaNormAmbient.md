@@ -1,6 +1,6 @@
 # Unit norm surjectivity inside a Galois ambient field
 
-Author: Worker 1512. This is the fourth helper module of the proof of
+This is the fourth helper module of the proof of
 `Langlands.ClassFieldTheory.Local.SeparableInertiaUnitNormSurjectivity` (see
 `SeparableInertiaNormProof.md`). It imports `SeparableInertiaNormReduction` and
 `SeparableUnramifiedArithmeticProof`, and Mathlib (infinite Galois theory, normal closures, Henselian rings, discrete

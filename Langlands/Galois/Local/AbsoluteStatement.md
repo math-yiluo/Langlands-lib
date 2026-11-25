@@ -1,7 +1,5 @@
 # Complete target for the p-adic residue exact sequence
 
-Author: Worker 9.
-
 `Langlands.LocalGalois.PadicResidueExactness` quantifies over every natural number
 \(p\), every proof that \(p\) is prime, every `Langlands.PadicField p` in an
 arbitrary universe, and every supplied `F.TopologicalData`. It installs exactly

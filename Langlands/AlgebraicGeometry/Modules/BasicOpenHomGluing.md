@@ -53,9 +53,10 @@ for each `P`-open `V`, compatible with restriction to basic opens:
 
 ## Provenance and scope
 
-This is an internal helper for the trace construction of proof task
-`f2728a31-103a-4d50-ae2d-6cb3f9ce05a9`. There, `P V` will be "`V` is affine and the
-pushforward of the structure sheaf is free over `V`". Mathematically it is the standard
+This is an internal helper for the trace construction in the proof of
+`FiniteFlatCohomologyRetractStatement` (module `FiniteFlatCohomologyRetractProof`). There,
+`P V` is "`V` is affine and the pushforward of the structure sheaf is free over `V`"
+(`IsFreeChart`). Mathematically it is the standard
 reduction of compatibility on an affine basis to compatibility along basic opens:
 basic opens of two affine opens refine their intersection. The basis gluing it
 specializes is that of Stacks Project Lemma 6.30.13 (Tag 009U), as cited in

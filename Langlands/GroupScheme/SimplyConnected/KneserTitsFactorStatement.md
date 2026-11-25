@@ -1,7 +1,5 @@
 # Kneser–Tits for the isotropic almost-simple factors of a simply connected group
 
-Authors: Worker 1526.
-
 `Langlands.GroupScheme.SimplyConnectedKneserTitsFactorStatement.{u}` is a
 proposition definition, not a proof. Let `G` be a simply connected group over
 a nonarchimedean local field `F`, with a maximal split torus `S`. The

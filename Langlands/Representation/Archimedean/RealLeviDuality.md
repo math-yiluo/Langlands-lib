@@ -2,8 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealLeviDuality`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
-of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
+This module is part of the proof of `RealStandardLanglandsQuotientStatement` (module
+`RealLargeLanglandsQuotientReduction`). It
 states and proves `Langlands.Archimedean.RealLeviDualityStatement` (proof `realLeviDuality`).
 
 This is internal infrastructure for the density step of the single-shot Langlands-quotient
@@ -32,7 +32,7 @@ blocks `ds`:
   `principalSeriesRep` and `principalSeriesLie`.
 * The pairing of `v ∈ Y^∨` and `x ∈ X` is `⟨v, x⟩ = ∫_{O(N)} v(k) x(k) d(haarK N)(k)`.
 
-From the earlier module `RealLeviModes` of this task this module uses `exists_ext_conj`,
+From the earlier module `RealLeviModes` this module uses `exists_ext_conj`,
 `mem_kFin_standard_of_annihilates`, `integral_mul_eq_zero_of_mem_standard`,
 `eq_zero_of_integral_norm_sq_eq_zero` and `integrable_of_continuous`. In the module these are
 combined into a double annihilator theorem.

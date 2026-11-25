@@ -1,7 +1,5 @@
 # Finite fixing fields and Krull continuity on actual components
 
-Author: Worker 1604.
-
 This is an internal derived proof of the exact published proposition
 `Langlands.GroupScheme.IdentityComponent.ComponentGaloisKrullContinuityStatement`.
 It combines the published actual-component and affine-coordinate constructions

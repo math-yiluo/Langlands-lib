@@ -16,7 +16,7 @@ set_option autoImplicit false
 
 universe u uV
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open NumberField Langlands.VirtualRepresentation
 open scoped NumberField
@@ -57,4 +57,4 @@ theorem continuousRestrict_inducedReciprocityRepresentation_class
     continuousReciprocityCharacter_comp_eq_weilCharacter ξ u (residuePrime_eq z u) eu (ιu u₀)
       (hτ u₀ eu heu)]
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

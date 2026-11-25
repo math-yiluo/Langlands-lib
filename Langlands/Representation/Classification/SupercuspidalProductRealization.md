@@ -1,7 +1,5 @@
 # Small supercuspidal factors in actual normalized products
 
-Author: Worker 1768.
-
 This internal construction realizes actual supercuspidal representations on
 carriers in any independently prescribed universe. It preserves
 unitarizability and gives an equivalence of the entire normalized product

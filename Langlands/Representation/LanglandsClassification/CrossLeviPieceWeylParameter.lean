@@ -230,7 +230,7 @@ variable [ValuativeRel k] [IsNonarchimedeanLocalField k]
 
 open Langlands.AlgebraicGeometry.PointTopology
 
-local instance : Mono pres.data.i.hom.hom.left :=
+private local instance : Mono pres.data.i.hom.hom.left :=
   pres.isCompatible.maximalSplit.isSplitSubtorus.mono
 
 local instance : IsAffineHom pres.data.T.X.hom :=

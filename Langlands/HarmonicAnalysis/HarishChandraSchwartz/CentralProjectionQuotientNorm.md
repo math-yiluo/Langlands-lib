@@ -1,6 +1,6 @@
 # The actual central projection norm on an arbitrary Haar quotient
 
-This derived unit connects the Library's central-projection square-integrability
+This derived module connects the Library's central-projection square-integrability
 estimate to the arbitrary quotient Haar measure used in Waldspurger VIII.4.2.
 It changes neither the central Haar measure in the defining projection nor the
 specified quotient Haar measure.
@@ -22,6 +22,7 @@ transported function with the literal quotient norm.
 
 `exists_memLp_two_of_mem_schwartzCentralIntegralImage` applies this result to
 an actual raw-image witness. It supplies the norm-L² input needed by the actual
-projected-function positive form. This auxiliary unit retains the central and
+projected-function positive form. This auxiliary module retains the central and
 ambient weight estimates as premises; it proves no closed rational weight
-estimate or closed Task 7440 target.
+estimate or closed target of Waldspurger VIII.4.2 (the cuspidal coefficient
+equality and same-level coefficient lifting).

@@ -1,7 +1,5 @@
 # Galois stability of V 6 apartment classes over the maximal unramified extension
 
-Author: Worker 4356.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedApartmentGaloisStability`.
 
 Let `F` be a nonarchimedean local field and `K = inertiaFixedField F` its maximal

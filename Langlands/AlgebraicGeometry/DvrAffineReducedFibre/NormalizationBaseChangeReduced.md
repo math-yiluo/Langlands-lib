@@ -1,7 +1,5 @@
 # Preserving a reduced normalized residue fibre under extension of DVRs
 
-Worker 594.
-
 `tensorEquivIntegralClosure_of_reduced_residue` identifies the scalar
 extension of a ring with its integral closure in the extended generic
 localization. It assumes an injective flat local map of DVRs inducing

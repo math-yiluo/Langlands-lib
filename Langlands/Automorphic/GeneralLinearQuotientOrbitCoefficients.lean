@@ -69,11 +69,11 @@ namespace GroupSchemeFunctions
 
 open Langlands.Global.AdelicGroupPoints Langlands.Global.PositiveRealTorus Langlands.GroupScheme
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     IsAffine (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   GroupScheme.GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of F)
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     Smooth (GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement (Fin n) (CommRingCat.of F)
 

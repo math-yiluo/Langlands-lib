@@ -4,7 +4,7 @@ Ported from `Theorems/Thm_DoubleComplex_boundedSpectralSequence.lean` of the Ant
 License, Version 2.0; see `licenses/Anthropic-FLT/LICENSE`, `NOTICE` and `ATTRIBUTION.md`.
 The paired Markdown file lists the changes made by the port.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_DoubleComplex
 import Langlands.AnthropicFLT.P2M.Sol.S_DoubleComplex_boundedSpectralSequence
 set_option maxHeartbeats 4000000

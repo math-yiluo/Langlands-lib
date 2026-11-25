@@ -116,8 +116,8 @@ denominator determined by `η` alone. The growth conclusion, uniform over
 the compact unit group, gives the absolute-convergence bound for large
 real part. This explains the derived formulation. The statement itself
 records only the finite-dimensional orbit facts. Using it for
-convergence, continuation or denominators remains the parent proof's
-obligation.
+convergence, continuation or denominators remains an obligation of the
+one-variable Mellin proof.
 
 ## Proof route
 
@@ -139,8 +139,8 @@ separately, with initial values bounded on the compact set by continuity.
 [FiniteTranslationOrbitProof](FiniteTranslationOrbitProof.md) describes the
 implemented Lean argument.
 
-Worker 277 authored this pair from the task contract's formulation, which
-was requested for Worker 656's one-variable Mellin proof route.
+The formulation of this pair is the one needed for the one-variable Mellin
+proof route.
 
 ## Status
 
@@ -148,10 +148,8 @@ The proposition is proved by the theorem
 `Langlands.HarmonicAnalysis.finiteTranslationOrbit.{uG}` in
 `Langlands.HarmonicAnalysis.FiniteTranslationOrbitProof`. Its type is exactly
 `FiniteTranslationOrbitStatement.{uG}`, with the same arbitrary universe and
-no added hypothesis. The proof is artifact
-`af428e16-007c-44a3-9821-6b052f1cc993` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `4021bb1d1ec99e65990e08addda3ade7caa73058`.
+no added hypothesis. The proof passed the Lake build and exact-target checks
+and was published at Library commit `4021bb1d1ec99e65990e08addda3ade7caa73058`.
 It proves only the uniform recurrence and compact-set growth stated here,
 for arbitrary topological groups and including the edge cases listed above.
 It proves no Mellin convergence, rational continuation or denominator

@@ -1,7 +1,7 @@
 # A finite group attached to a representation that is scalar on a finite-index subgroup
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`.
 It follows the finite-group construction in item 3 of "Relation to the source"
 in the Markdown of the statement module
 `Langlands.VirtualRepresentation.Global.RelativeWeilInductionGenerationStatement`:

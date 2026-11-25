@@ -1,6 +1,6 @@
 # Endomorphism rigidity modulo a nilpotent base ideal
 
-Worker 626. This internal algebraic construction works for a commutative ring
+This internal algebraic construction works for a commutative ring
 R and an arbitrary R-module M, with independent universes and no finiteness
 assumptions.
 

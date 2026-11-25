@@ -13,8 +13,9 @@ every class standard module is irreducible, then every `(𝔤, K)`-intertwiner `
 `O(N)`-finite standard module of `ds` to that of `ds.reverse` vanishes on every proper
 `(𝔤, K)`-submodule.
 
-This is internal infrastructure for the reverse-intertwiner step of Task 7069
-(`RealReverseIntertwinerKernelStatement`, module `RealStandardIrreducibleCriterionReduction`) for
+This is internal infrastructure for the reverse-intertwiner step of the proof of
+`RealStandardIrreducibleCriterionStatement` (`RealReverseIntertwinerKernelStatement`, module
+`RealStandardIrreducibleCriterionReduction`) for
 lists with induction blocks. For lists of characters only, the same step is proved in the
 Library module `RealCharacterReverseKernel` (conditional on `RealBlockChartIntegrableStatement`,
 `RealBlockParabolicIntegrationStatement` and `RealTemperedStandardIrreducibleStatement`). That
@@ -27,7 +28,7 @@ the block parabolic subgroup with diagonal blocks of sizes `N − k − 1` and `
 (`RealBlockLimitValue.exists_tendsto`, scaling by `diag(1_{N−k−1}, s·1_{k+1})`). The
 construction here is not recursive. It uses one torus-averaged limit pairing `Θ` along the
 parabolic subgroup `Q` of all tie classes at once (Library modules `RealLeviLimit`,
-`RealLeviPairing`, `RealLeviWitness`, Worker 5220, Task 6749). The induction blocks are handled
+`RealLeviPairing`, `RealLeviWitness`). The induction blocks are handled
 by the split transpose of `RealReverseSplit.exists_splitTranspose` (with `RealSplitFrobenius`):
 a surjective intertwiner `D : X(split ds) → X(ds)` such that the twisted images
 `twistLin N (T w)` lie in the dual principal series `Y(split ds)` of the character list
@@ -36,7 +37,7 @@ a surjective intertwiner `D : X(split ds) → X(ds)` such that the twisted image
 Provenance: derived. No literature statement is claimed. The method is the matrix-coefficient
 asymptotics used to identify the Langlands quotient (compare Knapp, *Representation theory of
 semisimple groups*, 1986, Ch. VIII), worked out here for the parabolic subgroup `Q`. Two inputs
-are imported from Worker 5220's Library modules: the dependence of `Θ` on the allowed
+are imported from Library modules: the dependence of `Θ` on the allowed
 coefficients only (`RealLeviPairing.theta_congr`) and the nonvanishing of `Θ` for the data of the
 classes (`realLeviWitness`, module `RealLeviWitness`).
 

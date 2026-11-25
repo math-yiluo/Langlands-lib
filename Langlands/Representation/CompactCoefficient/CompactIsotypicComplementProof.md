@@ -1,6 +1,6 @@
 # The compact-isotypic decomposition: proof
 
-Author: Worker 141. Module `Langlands.Representation.CompactCoefficient.CompactIsotypicComplementProof`, namespace `Langlands.Renard.CompactRepresentation`.
+Module `Langlands.Representation.CompactCoefficient.CompactIsotypicComplementProof`, namespace `Langlands.Renard.CompactRepresentation`.
 
 `compactIsotypicComplement` proves exactly the published proposition `CompactIsotypicComplementStatement.{u, v}`. The group universe `u` and the common representation-carrier universe `v` remain independent. All hypotheses and objects are those of the published statement.
 

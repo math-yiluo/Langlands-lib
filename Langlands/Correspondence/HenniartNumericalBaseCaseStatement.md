@@ -1,8 +1,5 @@
 # The base case of Henniart's numerical correspondence below the ramification index
 
-Author: Worker 981, Task 7377
-(`1a6c88f2-6edf-40ac-8236-a7679c30909b`), revision 1.
-
 This module states one proposition and proves nothing. It is the base case of
 Option II in the operator's numerical local Langlands route note. Assume the
 GL-side upper bound (I1) and the Laumon–Deligne count (LD). If numerical
@@ -108,7 +105,7 @@ locations below are in `numerical-LLC-route.tex`.
 - §5.4, Proposition `prop:LD` (lines 820–830) and Proposition `prop:LDcount`
   (lines 832–847). §4.3, Remark `rem:upper` (lines 584–594), explains why the
   upper bound suffices once an injection exists.
-- §7.1, item 4 (line 1307), lists this unit for immediate release:
+- §7.1, item 4 (line 1307), lists this proposition for immediate release:
   "Proposition `prop:basecase`, conditional on (LD) and on the GL-side bound
   stated as a premise".
 
@@ -117,7 +114,7 @@ The route note's proof runs as follows. For `s < n e_L`, Proposition
 `|W_L(n,s,f)| ≤ |S_L(n,s,f)|`, and (I1) gives `|S_L(n,s,f)| ≤ ν(n,f,s;q_L)`.
 The condition `s ≤ n x` with `x < e_L` implies `s < n e_L`. That proof is
 recorded here only as provenance. It is not formalized in this module, and
-proving the proposition is a separate task.
+the Library does not prove the proposition.
 
 The original results are in Guy Henniart, *La conjecture de Langlands locale
 numérique pour GL(n)*, Ann. Sci. ÉNS (4) 21 (1988), 497–544. It is registered

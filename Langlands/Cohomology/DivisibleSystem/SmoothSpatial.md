@@ -1,15 +1,15 @@
 # Smooth direct image and proper compact sections of ℓ-divisible systems
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
 - `Langlands.Cohomology.DivisibleSystem`: `ℓ`-divisible systems (Harris 1999,
   (2.1)) and `SmoothSheafDivisibleSystem R G X ℓ`.
 - `Langlands.Cohomology.DivisibleSystem.LeftExact`: `mapLeftExact`,
   `mapLeftExactHom` and `compactSectionsSystem`.
-- Worker 13's `Langlands.Sheaf.Equivariant.SmoothDirectImage`: the smooth
+- `Langlands.Sheaf.Equivariant.SmoothDirectImage`: the smooth
   direct image `SmoothDirectImage.functor f hf`, its `inclusion` into the
   ordinary direct image, `idIso`, `compMap` and their laws.
-- Worker 13's `Langlands.Sheaf.Equivariant.ProperSmoothCompactSections`: the
+- `Langlands.Sheaf.Equivariant.ProperSmoothCompactSections`: the
   natural transformation `natTrans f hf hp` from compact sections of the
   smooth direct image to compact sections, for proper `f`, with
   `natTrans_id` and `natTrans_comp`.
@@ -141,7 +141,7 @@ system of compactly supported sections of a system `S` of smooth sheaves,
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed pp.304–306 (one-based
-PDF pages 6–8). Worker 61 read p.304 in the rendered scan and pp.305–306 in
+PDF pages 6–8). P.304 was read in the rendered scan and pp.305–306 in
 the extracted text.
 
 1. What Harris uses. On p.304 Harris defines `ℓ`-divisible systems of étale
@@ -156,7 +156,7 @@ the extracted text.
    neither a direct image of `ℓ`-divisible systems along a general
    equivariant map nor a pullback of compact sections along a proper map at
    the level of systems.
-2. What is formalized. The module is internal framework. It puts Worker 13's
+2. What is formalized. The module is internal framework. It puts the published
    smooth direct image and proper compact-section pullback at the level of
    `ℓ`-divisible systems, so that constructions on systems can use them. The
    general smooth direct image is only left exact. So the image of a system

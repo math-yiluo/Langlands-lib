@@ -130,12 +130,12 @@ The coordinate maps and their formulas are derived infrastructure
 from the published `Rational` and `PrimeComparison` modules and
 Mathlib's tensor universal property. The arbitrary commutative
 group scheme, test scheme and selected predicate are explicit
-generalizations. Worker 142 adapted Worker 92's root-twist tensor-lift
-construction to these actual group-scheme carriers; no identification
+generalizations. The root-twist tensor-lift construction
+(`TwistRationalPrime`) is adapted here to these actual group-scheme carriers; no identification
 with a root twist is used or asserted.
 
-This unit assumes no characteristic, finiteness, rank or product
+This module assumes no characteristic, finiteness, rank or product
 comparison hypothesis. It asserts no injectivity, surjectivity,
 restricted-product equivalence, rational topology or continuity.
 Compatibility with rational profinite or finite-adele scalars,
-geometric monodromy and Weil pairings remain separate obligations.
+geometric monodromy and Weil pairings is not established in this module.

@@ -1,7 +1,5 @@
 # Existence of the actual algebraic Siegel setup
 
-Worker 715
-
 `Langlands.Global.AdelicSiegelFactors.siegelAlgebraicSetupExistence` proves
 `SiegelAlgebraicSetupExistenceStatement.{u}` for an arbitrary universe `u`. For
 every number field `F : Type u` and every affine, locally finite type, connected

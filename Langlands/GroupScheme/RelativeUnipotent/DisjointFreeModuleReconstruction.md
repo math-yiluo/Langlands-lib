@@ -1,6 +1,7 @@
 # Sheaf-map reconstruction on disjoint free presentations
 
-This internal Task 7200 construction uses an actual disjoint open cover with an
+This internal construction for the finite vector-bundle filtrations of
+supplied relative radicals uses an actual disjoint open cover with an
 actual finite free isomorphism for the source module on each piece. The piece
 ranks may differ, and the target module is arbitrary.
 

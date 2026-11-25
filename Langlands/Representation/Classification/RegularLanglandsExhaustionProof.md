@@ -1,7 +1,5 @@
 # Exhaustion by regular tempered Langlands heads
 
-Author: Worker 595.
-
 `Langlands.glRegularLanglandsExhaustion` proves exactly
 `Langlands.GLRegularLanglandsExhaustionStatement.{uF,uV}`. It has no outer
 parameters or additional hypotheses. All field, topology, positive-rank,
@@ -64,7 +62,7 @@ dominance maximality replaces the defective maximal-block-count selection.
 Equal-exponent grouping and square-integrable Langlands exhaustion are
 not inputs to this composition.
 
-Worker 595 read the retained Silberger pp.99,103–104 and Kudla pp.372–374;
+The retained Silberger pp.99,103–104 and Kudla pp.372–374 were read;
 Kudla p.373 and Silberger p.104 were also checked as page images. The source
 boundaries in [the Jacquet source map](../../../notes/jacquet/source-map.md)
 and the unchanged statement pair are retained. There is no `notes/errata`

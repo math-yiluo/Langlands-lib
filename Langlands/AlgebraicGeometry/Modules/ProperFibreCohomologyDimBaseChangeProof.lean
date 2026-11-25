@@ -24,7 +24,7 @@ theorem properFibreCohomologyDimBaseChange :
   let f := pullback.snd g (T.fromSpecResidueField (h t'))
   let a := pullback.fst g (T.fromSpecResidueField (h t'))
   obtain ⟨K, hK, hmod⟩ := exists_perfectModel f ((Scheme.Modules.pullback a).obj F)
-    (hF.pullback a)
+    (AlgebraicGeometry.Scheme.Modules.IsInvertible.pullbackFLT (hL := hF) a)
   have : ∀ i, Module.Finite (T.residueField (h t')) (K.X i) := fun i => (hK.2 i).1
   -- the fibre over `t` itself: base change along the identity of `κ(t)`
   have hdim₀ : (fibreCohomologyDim g (h t') F p : ℤ) =

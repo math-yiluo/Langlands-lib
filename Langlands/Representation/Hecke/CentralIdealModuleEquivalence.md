@@ -1,6 +1,6 @@
 # Modules over a central Hecke ideal
 
-This derived unit implements the module-category argument used in Renard
+This derived module implements the module-category argument used in Renard
 (9 July 2026), VI.7.4, printed pp.185–186 / PDF pp.191–192. Its inputs are a
 Hausdorff locally compact nonarchimedean group with Borel structure, a left Haar
 measure, smoothness of the left regular test-function representation, and an
@@ -41,4 +41,4 @@ specified functors.
 The result is derived from the published central multiplier and ideal
 constructions and the proved III.1.4 equivalence. No Bernstein decomposition,
 existence of Bernstein projectors, or identification of a Bernstein block with
-the fixed-object category is assumed silently or proved by this unit.
+the fixed-object category is assumed silently or proved by this module.

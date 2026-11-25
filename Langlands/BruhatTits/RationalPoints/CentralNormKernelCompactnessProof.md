@@ -1,7 +1,5 @@
 # Proof of compactness of the full scheme-centre intersection with the rational norm kernel
 
-Authors: Worker 1532 and Worker 1045.
-
 `Langlands.BruhatTits.RationalPoints.centralNormKernelCompactness` proves the Library
 proposition `Langlands.BruhatTits.RationalPoints.CentralNormKernelCompactnessStatement.{u}`
 (module `Langlands.BruhatTits.RationalPoints.SmoothRealStructureStatement`), at an arbitrary
@@ -48,10 +46,10 @@ own Markdown. Over the algebraic closure `K` of `F`:
   of a point follows from the lifting criterion for closed immersions (`PointLifting`) and a
   Laurent-polynomial argument on the coordinate ring of `GL_N` (`Laurent`): in characteristic `p`
   from `ρ(z ^ (q k)) = s ^ (q k)` and Vandermonde independence; in characteristic zero from the
-  interpolation of `u ^ k` by binomial polynomials and Worker 1045's independence of exponential
+  interpolation of `u ^ k` by binomial polynomials and the independence of exponential
   polynomials (`ExponentialPolynomial`);
 - for `z` in the norm kernel every eigenvalue has spectral norm `1`, using an `F`-rational block
-  character and Worker 1045's `exists_blockProjector_spectralNorm` (`Norm`, `SpectralBlock`);
+  character and `exists_blockProjector_spectralNorm` (`Norm`, `SpectralBlock`);
 - the base change of rational points and matrices is in `BaseChange`.
 
 Axioms: `propext`, `Classical.choice`, `Quot.sound`.

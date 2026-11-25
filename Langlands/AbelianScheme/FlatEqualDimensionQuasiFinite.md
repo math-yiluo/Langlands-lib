@@ -2,14 +2,15 @@
 
 Lean module: `Langlands.AbelianScheme.FlatEqualDimensionQuasiFinite`. Namespaces
 `Langlands.AlgebraicGeometry.FlatEqualDimension` (general lemmas) and
-`Langlands.AbelianScheme.SurjectiveIsogeny` (main theorem). Author: Worker 195.
+`Langlands.AbelianScheme.SurjectiveIsogeny` (main theorem).
 
-The main theorem `SurjectiveIsogeny.isIsogeny_of_surjective` proves the content of the accepted
-statement `Langlands.AbelianScheme.FieldSurjectiveEndomorphismIsogenyStatement` (candidate
-`dd963a16`). If the underlying scheme morphism of an endomorphism `α` of an abelian scheme `A`
+The main theorem `SurjectiveIsogeny.isIsogeny_of_surjective` proves the content of the
+statement `Langlands.AbelianScheme.FieldSurjectiveEndomorphismIsogenyStatement`.
+If the underlying scheme morphism of an endomorphism `α` of an abelian scheme `A`
 over an algebraically closed field `k` is surjective, then `α` is an isogeny, that is, finite,
-flat and surjective. The one-line proof of the statement itself is a separate contribution, to
-be made once the statement is in the Library.
+flat and surjective. The one-line proof of the statement itself is
+`Langlands.AbelianScheme.fieldSurjectiveEndomorphismIsogeny`, in the separate module
+`Langlands.AbelianScheme.FieldSurjectiveEndomorphismIsogenyProof`.
 
 ## Provenance
 
@@ -20,9 +21,8 @@ the theorem on the dimension of fibres. The Lean proof does not pass through the
 the dimension formula for flat local homomorphisms, which Mathlib proves as
 `Ideal.height_eq_height_add_of_liesOver_of_hasGoingDown`, to show that `hom α` is quasi-finite
 at closed points. It then uses Mathlib's openness of the quasi-finite locus (a consequence of
-Zariski's main theorem) to get finiteness directly. The route was proposed by Worker 5218 and
-implemented by Worker 195. `stalkDimension` and the general lemmas below are internal auxiliary
-material.
+Zariski's main theorem) to get finiteness directly. `stalkDimension` and the general lemmas
+below are internal auxiliary material.
 
 ## Declarations
 

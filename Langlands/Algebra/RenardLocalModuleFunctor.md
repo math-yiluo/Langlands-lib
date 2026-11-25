@@ -1,6 +1,6 @@
 # The chosen local-module functor and its Mathlib comparison
 
-Author: Worker 1570. This internal construction makes the published chosen
+This internal construction makes the chosen
 module localizations functorial and compares them with the specified Mathlib
 localization functor. All declarations are in
 `Langlands.Renard.ModuleLocalization`.
@@ -18,7 +18,7 @@ subcategory of modules on which the denominators act invertibly, regarded
 as modules over the original ring.
 
 The present functors and their comparison are internal packaging of that
-example and the published actual constructions. They are not a further
+example and the imported actual constructions. They are not a further
 literal theorem asserted in the passage. The implementation imports
 `RenardLocalModuleCategory`, hence `RenardModuleLocalization`, and retains
 their objects, canonical arrows, locality predicate and scalar actions.
@@ -32,15 +32,14 @@ The implementation uses Mathlib commit
 `Algebra/Category/ModuleCat/Ulift.lean`,
 `Algebra/Category/ModuleCat/ChangeOfRings.lean` and
 `RingTheory/Localization/Module.lean`.
-Worker 709 specified the target interface and recorded its feasibility in
-the task context; the present implementation does not reuse the private
-probe. The imported published constructions retain their own authorship.
 
 This file supplies functorial data and its intrinsic laws. It does not
 assert an adjunction or source-sequence exactness for the chosen functor.
-The restricted polynomial-module/endomorphism equivalence, the subsequent
-chosen endomorphism-arrow comparison and their separate publication gates
-are unchanged.
+The restricted polynomial-module/endomorphism equivalence and the subsequent
+chosen endomorphism-arrow comparison are in separate modules,
+`RenardInvertibleEndomorphismCategory` and
+`RenardEndomorphismLocalizationSource` with
+`RenardEndomorphismLocalizationComparison`.
 
 ## Carriers and universes
 
@@ -56,7 +55,7 @@ Let `R : Type u` be any commutative unital ring, `S : Submonoid R`, and
 | `mathlibLocalFunctor.obj M`, abbreviated GLocal(M) | The same G(M), equipped with its proved `IsSLocal S` property |
 
 Here `LocalizedModule S M` is the actual Mathlib quotient of pairs, of
-universe `max u v`. Both F and GLocal target the published
+universe `max u v`. Both F and GLocal target
 `LocalModuleCat.{u,κ} S`, the full subcategory of actual R-modules with
 property `IsSLocal S`. Every ambient R-linear map between its objects is
 a morphism.
@@ -103,7 +102,7 @@ ULift.up (LocalizedModule.mk m s) ↦
 `chosenLocalMap_id` and `chosenLocalMap_comp` follow by quotient
 representative induction and this formula. They provide the functor laws
 of `chosenLocalFunctor`. Its `_obj` and `_map` lemmas expose the exact
-published object and the map just constructed.
+imported object and the map just constructed.
 
 `chosenLocalizationUnit : U ⟶ F ⋙ localModuleInclusion S` has exactly
 `canonicalModuleMap S M` as its component, as recorded by
@@ -167,7 +166,7 @@ ULift.up (LocalizedModule.mk m s) ↦
       (LocalizedModule.mk (ULift.up m) s).
 ```
 
-`chosenMathlibLinearEquiv_comp` proves that composing the published
+`chosenMathlibLinearEquiv_comp` proves that composing
 `canonicalModuleMap S M` with this equivalence gives exactly
 `mathlibCanonicalMap S M`. It evaluates the representative formula at
 denominator 1.

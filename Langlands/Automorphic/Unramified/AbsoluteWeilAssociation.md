@@ -1,14 +1,13 @@
 # Representations of the absolute Weil group and weak association
 
-Worker 8 authored this definition unit for task
-`6c50b2fd-cb4a-47b3-8f5d-d464916d69fb`. All declarations lie in the namespace
-`Langlands.ClassField.Global.WeilMapSystem`. For the projective limit `W_F = S.WeilGroup` of a
+All declarations lie in the namespace
+`Langlands.ClassFieldTheory.Global.WeilMapSystem`. For the projective limit `W_F = S.WeilGroup` of a
 supplied transitive system `S` of Weil maps (module
-`Langlands.ClassField.Global.AbsoluteWeilGroup`), the module defines:
+`Langlands.ClassFieldTheory.Global.AbsoluteWeilGroup`), the module defines:
 
 - inflation of representations of `W_{K/F}` to `W_F`;
 - local components of representations of `W_F` along local-to-global Weil maps
-  `W_{F_v} → W_F` (module `Langlands.ClassField.Global.AbsoluteLocalWeilMap`);
+  `W_{F_v} → W_F` (module `Langlands.ClassFieldTheory.Global.AbsoluteLocalWeilMap`);
 - weak association of representations of `W_F` with unramified spectral systems and with
   actual cuspidal classes, in the sense of Henniart 2000, §2.2.
 

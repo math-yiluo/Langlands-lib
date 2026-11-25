@@ -295,8 +295,8 @@ def TowerBaseChangeHeckeComponentAt (F K : Type) [Field F] [NumberField F]
     D.IsSuccessiveWeakBaseChange.{0, 0, uV, uV} →
     D'.IsSuccessiveWeakBaseChange.{0, 0, uV, uV} →
     ∀ (r : ℕ) (S S' : CuspidalOperatorRealization F r),
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
-      ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S' →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S →
+      ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter S' →
       D.StartsAtCuspidal S.isoClass → D'.StartsAtCuspidal S'.isoClass →
       ∀ (μ μ' : Fin (r + 1) → HeckeCharacter K),
         (∀ i, (μ i).IsUnitary) → (∀ i, (μ' i).IsUnitary) →
@@ -345,7 +345,7 @@ theorem exists_mackeyChain (hP : CuspidalArithmeticSpectralTransportStatement.{0
         letI := Tw.stepAlgebra i
         IsobaricData.IsWeakBaseChangeOf.{0, 0, uV, uV} DE DF)
     (a : Q.L ≃ₐ[Q.E] Q.L) {r : ℕ} (T : CuspidalOperatorRealization D r)
-    (hT : ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
+    (hT : ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T)
     (hTa : Q.IsMackeyConstituent.{uF, uV} D a T.isoClass) :
     letI : Algebra D (Q.mackeyField D a) :=
       (IntermediateField.inclusion (show D ≤ Q.mackeyField D a from le_sup_left)).toAlgebra

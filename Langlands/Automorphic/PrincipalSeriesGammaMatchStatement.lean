@@ -16,7 +16,7 @@ Proposition definition only.
 
 noncomputable section
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 universe u uV uE
 
@@ -74,4 +74,4 @@ def PrincipalSeriesPairGammaMatchStatement : Prop :=
                   ((Correspondence.weilCharacter K e (μ' (σ' i)) g : ℂˣ) : ℂ)) →
       IsPairGammaMatch K eC ε hε ψ π π' X Y
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

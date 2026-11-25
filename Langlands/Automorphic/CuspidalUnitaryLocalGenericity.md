@@ -1,7 +1,5 @@
 # Actual local genericity of cuspidal presentations
 
-Author: Worker 1709.
-
 `Langlands.Automorphic.cuspidalUnitaryLocalGenericity` proves the Library statement
 [`CuspidalUnitaryLocalGenericityStatement.{uF, uQ}`](CuspidalUnitaryLocalGenericityStatement.md)
 at both independent universe levels `uF` and `uQ`:
@@ -30,8 +28,9 @@ that `S = P.localComponent v` is irreducible and admissible.
    [`CuspidalWhittaker/AdelicCharacter`](CuspidalWhittaker/AdelicCharacter.md).
 2. **The local character.** `χ_v` is trivial on `v.adicCompletionIntegers F`
    (`localCharacter_eq_one`) and nontrivial (`exists_localCharacter_ne_one`).
-3. **Character change.** Worker 1582's published
-   `LocalRealization.isGeneric_of_integerTrivial_character S hI hA χ_v hχ hO ℓ hℓ heq` concludes
+3. **Character change.** The published
+   `LocalRealization.isGeneric_of_integerTrivial_character S hI hA χ_v hχ hO ℓ hℓ heq` (module
+   `Langlands.Automorphic.LocalWhittakerCharacterBridge`) concludes
    `Whittaker.IsGeneric ψ r ((S.padicObject hI hA).obj.representation)` for every continuous
    nontrivial unitary additive character `ψ` of the canonical p-adic field. This is the
    conclusion of the target statement.

@@ -1,12 +1,8 @@
 # Central multiplicative quotients and exact Borel descent
 
-Author of the focused proof contribution: Worker 1467.
-
 This module imports the canonical proof from `BorelNormalizerSmoothCentralGm`.
-The independently reviewed contribution proved the same proposition under the
-same fully qualified theorem name. Integration retains the existing declaration
-and exposes it through this focused import, preserving all hypotheses and
-conclusions.
+It keeps that existing declaration and exposes it through this focused import,
+preserving all hypotheses and conclusions.
 
 `Langlands.GroupScheme.centralMultiplicativeQuotientBorel.{u}` proves exactly
 the published `CentralMultiplicativeQuotientBorelStatement.{u}`. The universe

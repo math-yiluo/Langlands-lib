@@ -1,13 +1,12 @@
 # Statement: strongly regular fibres of the canonical class-function quotient
 
-Author: Worker 1729.
-
 This module defines the proposition
 `Langlands.GroupScheme.ClassFunctions.StronglyRegularFibresStatement.{u}`.
 It specializes property 2 of
 `Langlands.GroupScheme.QuasiSplitSteinbergQuotientStatement.{u}` to the
-actual published morphism `ClassFunctions.rho G`. A separate proof must prove
-this exact proposition.
+actual published morphism `ClassFunctions.rho G`. A separate module,
+`Rational.ClassFunctionsStronglyRegularFibres`, proves this exact proposition
+as `stronglyRegularFibres`.
 
 ## Complete Lean proposition
 
@@ -101,7 +100,7 @@ There is no condition on `y` beyond being an `F`-point with the required
 quotient image: in particular its semisimplicity, regularity and strong
 regularity are not premises.
 
-## Sources, derived provenance and later proof obligations
+## Sources, derived provenance and proof obligations
 
 Provenance: derived.
 
@@ -126,13 +125,13 @@ project errata note was found.
 The present arbitrary-field proposition for the fixed invariant-ring map is
 a derived formulation of this geometric fibre argument, rather than a literal
 translation of a single theorem. Steinberg's geometric argument is over an
-algebraically closed field. A later Lean proof must justify passage from the
+algebraically closed field. A Lean proof must justify passage from the
 given field to an algebraic closure within universe `u`, transport the actual
 quotient-image equality and all-test centralizer hypothesis, and use actual
 group points throughout.
 
 The intended argument requires the following substantive results to be proved
-or imported as proved results in that later work. Self-commutation puts `w`
+or imported as proved results in the proof. Self-commutation puts `w`
 in the supplied torus, so it is semisimple after algebraic closure. An actual
 multiplicative group-point Jordan decomposition `y = y_s y_u` must be
 constructed, with commuting semisimple and unipotent parts. Class functions
@@ -141,13 +140,14 @@ to `w`. The conjugated unipotent part centralizes `w` and hence belongs to
 the torus by the retained all-test condition; triviality of a unipotent
 element in a torus must force that part to be the identity. Each of these
 steps, including any necessary field-base-change comparison for the canonical
-class-function algebra, is an obligation of the later proof, not a premise
+class-function algebra, is an obligation of the proof, not a premise
 or a result supplied by this statement. Tangent-element Jordan decomposition
 alone does not establish the required group-point assertions.
 
-This unit supplies no scheme-theoretic smoothness or reducedness of a fibre,
-cross-section, rational lifting, or proof of the parent proposition.
-The parent Lean/Markdown pair, every pair it imports, and the
+This module supplies no scheme-theoretic smoothness or reducedness of a fibre,
+cross-section, rational lifting, or proof of
+`QuasiSplitSteinbergQuotientStatement`. The Lean/Markdown pair of
+`QuasiSplitSteinbergQuotientStatement`, every pair it imports, and the
 `ClassFunctions` pair are unchanged. Borel–Springer 8.6 and
 `QuasiSplitRegularClassRationalStatement` are consumers and are not used
 to justify this proposition.

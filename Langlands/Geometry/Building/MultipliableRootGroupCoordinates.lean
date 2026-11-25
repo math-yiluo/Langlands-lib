@@ -45,6 +45,7 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
   [IsNonarchimedeanLocalField F]
   {G : GroupScheme (Spec (CommRingCat.of (inertiaFixedField F)))} [IsAffineHom G.X.hom]
 
+attribute [local instance 1100] Module.Free.of_divisionRing in
 /-- **Valued scheme-level unitary coordinates of a root group.** For building data `B` over
 the maximal unramified field `K = inertiaFixedField F` and a character `b` of the maximal split
 torus, this records a finite separable extension `E / K` (the field of definition of the double

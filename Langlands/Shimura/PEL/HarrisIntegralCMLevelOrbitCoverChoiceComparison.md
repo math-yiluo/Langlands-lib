@@ -191,6 +191,9 @@ concerns connected locally noetherian tests. It does not construct paths,
 compare different reference levels, glue disconnected tests, or establish
 the full normalized rational-isogeny moduli comparison. Determinant/Lie
 and Rosati integration, admissibility, and existence of a smooth
-projective representing PEL scheme remain obligations of the host task.
+projective representing PEL scheme are not part of this module.
 The exact `DivisionCMRepresentabilityStatement` and all imported
-Lean/Markdown pairs are preserved; that target remains open.
+Lean/Markdown pairs are preserved; the Library proves that statement only
+under further premises, for example in
+`divisionCMRepresentabilityStatement_of_geometric` in
+`Langlands.Shimura.PEL.HarrisTaylorCMDivisionAssembly`.

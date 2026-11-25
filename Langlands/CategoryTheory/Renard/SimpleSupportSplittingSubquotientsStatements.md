@@ -1,8 +1,6 @@
 # Renard A.IX: splitting passes to every actual subquotient
 
-Authors: Worker 6 (complete two-file draft) and Worker 713 (adoption,
-independent source reading, recompilation against the public Library and
-declaration probes). This pair defines one proposition target,
+This pair defines one proposition target,
 `Langlands.Renard.SimpleSupportPartitionSubquotientStatement`, in module
 `Langlands.CategoryTheory.Renard.SimpleSupportSplittingSubquotientsStatements`.
 It proves no splitting theorem.
@@ -16,8 +14,9 @@ Registered original: `renard-2026-representations-groupes-reductifs-padiques`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Both authors read PDF274–275 in full and inspected a rendering of PDF274.
-PDF275 starts A.X, which is outside this unit. PDF269–270 (printed263–264)
+PDF274–275 were read in full twice, independently, and a rendering of
+PDF274 was inspected.
+PDF275 starts A.X, which is outside this module. PDF269–270 (printed263–264)
 was read in full for AB4\*, AB5, the source Grothendieck convention, the
 AB6 footnote, `Irr` and the simple-subquotient identities.
 
@@ -180,13 +179,13 @@ at the source size. The source-size presuppositions stand in for the
 book's informal convention that families are indexed by sets. There is
 no generator, finite-length, Noetherian or concrete-category restriction.
 
-## Scope and independent proof gate
+## Scope and proof boundary
 
-This statement unit imports the support-splitting definitions and the
+This statement module imports the support-splitting definitions and the
 source hypotheses by Lean name. It assumes no support theorem, arbitrary
 sum identity, Hom orthogonality, closure of a full subcategory, or
 subquotient-splitting conclusion as a premise. Those results may be
-separately proved dependencies of the eventual proof. The import
+separately proved dependencies of the proof. The import
 `Mathlib.CategoryTheory.Limits.EssentiallySmall` supplies
 `hasCoproductsOfShape_of_small` for that proof; the statement itself only
 uses `Small` and the public Renard predicates.
@@ -200,17 +199,14 @@ and the other whole-book obligations remain separate.
 
 ## Verification
 
-Worker 713 recompiled the unchanged Lean file (SHA256
+The unchanged Lean file (SHA256
 `e57d7f74a4750c8a275b2a94980e64a097b1f72e927f4e5bad2df0cf225f999b`)
-against the public imports at Library commit
-`3987c3d7445531c2c7f784464a3fd47061ba0865`. Approved-service check
-`bb2244e2-f6dc-4b46-878e-39168ec779c3` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` had zero errors and warnings,
+was recompiled against the public imports at Library commit
+`3987c3d7445531c2c7f784464a3fd47061ba0865`. The check had zero errors and warnings,
 `statement_returns_prop: true`, level parameters `r w v u`, and only the
 axioms `propext`, `Classical.choice` and `Quot.sound`.
 
-A private probe, diagnostic `d59816da-b27d-40dd-b28d-4bf05e9cae71`, also
-had zero errors and warnings. It printed the complete unapplied type and
+A private probe also had zero errors and warnings. It printed the complete unapplied type and
 body shown above, with every instance binder inside the body. It
 instantiated the universes as `{0,1,2,3}` and `{0,4,0,1}`. It derived the
 exact inner and outer coproducts at `X` from `hG.1` and the stated
@@ -221,11 +217,8 @@ conclusion is the partition condition together with existence of the
 coproducts and invertibility of
 `Sigma.desc fun i => (simpleSupportSum (S i) Y).arrow`.
 
-Earlier, Worker 6's development check
-`7c6793b2-ec75-44c9-8cc2-47acd1165af4` and diagnostic
-`dda06672-c0d8-41e6-9e6e-7bd590f90c79` were clean against a byte-identical
-copy of the then-pending splitting dependency.
+An earlier development check and diagnostic were clean against a
+byte-identical copy of the splitting dependency.
 
-Compilation supplies no semantic acceptance. This statement needs
-independent review and publication, followed by a separate exact-target
-proof task.
+The statement is proved by `simpleSupportPartitionSubquotient` in
+`Langlands.CategoryTheory.Renard.SimpleSupportSplittingSubquotients`.

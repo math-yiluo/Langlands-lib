@@ -1,6 +1,7 @@
 # Transpose inverse on the actual archimedean algebras
 
-This is an internal algebraic construction for Task 7294 by Worker 264. Its
+This is an internal algebraic construction for
+`CuspidalTransposeInverseContragredientStatement`. Its
 purpose is to supply the algebra maps used in the transpose-inverse twist of an
 actual automorphic operator realization. It is derived directly from the
 published concrete matrix Lie algebra and Mathlib's scalar extension and
@@ -26,6 +27,6 @@ enveloping algebra automorphism gives preservation of the center; the
 restriction is involutive and commutes with the center inclusion.
 
 These definitions and identities describe the expected differential
-automorphisms for `g ↦ (g⁻¹)ᵗ`. This module does not yet identify them with
+automorphisms for `g ↦ (g⁻¹)ᵗ`. This module does not identify them with
 derivatives of that group map, construct a twisted automorphic realization,
 or prove a Gelfand–Kazhdan or contragredient theorem.

@@ -18,21 +18,21 @@ variable {S S' S'' : Scheme.{u}} (A : AbelianScheme S)
 /-- The identity comparison intertwines the actual pulled-back endomorphism action. -/
 theorem baseChangeId_intertwines (d : D) :
     Rationalization.comp _ _ _
-        (((AbelianScheme.rationalBaseChangeEnd (𝟙 S) A).comp i) d)
+        (((AbelianScheme.rationalBaseChangeEnd (𝟙 S) A).comp i) d).asHom
         (AbelianScheme.rationalBaseChangeIdIso A).hom =
-      Rationalization.comp _ _ _ (AbelianScheme.rationalBaseChangeIdIso A).hom (i d) :=
-  AbelianScheme.rationalBaseChangeHom_id (i d)
+      Rationalization.comp _ _ _ (AbelianScheme.rationalBaseChangeIdIso A).hom (i d).asHom :=
+  AbelianScheme.rationalBaseChangeHom_id (i d).asHom
 
 /-- The composition comparison intertwines direct and successive endomorphism pullback. -/
 theorem baseChangeComp_intertwines (b : S' ⟶ S) (c : S'' ⟶ S') (d : D) :
     Rationalization.comp _ _ _
-        (((AbelianScheme.rationalBaseChangeEnd (c ≫ b) A).comp i) d)
+        (((AbelianScheme.rationalBaseChangeEnd (c ≫ b) A).comp i) d).asHom
         (AbelianScheme.rationalBaseChangeCompIso b c A).hom =
       Rationalization.comp _ _ _ (AbelianScheme.rationalBaseChangeCompIso b c A).hom
         (((AbelianScheme.rationalBaseChangeEnd c ((AbelianScheme.baseChange b).obj A)).comp
-          ((AbelianScheme.rationalBaseChangeEnd b A).comp i)) d) := by
+          ((AbelianScheme.rationalBaseChangeEnd b A).comp i)) d).asHom := by
   simp only [AlgHom.comp_apply, AbelianScheme.rationalBaseChangeEnd_apply]
-  exact AbelianScheme.rationalBaseChangeHom_base_comp b c (A := A) (B := A) (i d)
+  exact AbelianScheme.rationalBaseChangeHom_base_comp b c (A := A) (B := A) (i d).asHom
 
 variable (h : Global.RationalProfiniteIntegerAdeleComparison)
 

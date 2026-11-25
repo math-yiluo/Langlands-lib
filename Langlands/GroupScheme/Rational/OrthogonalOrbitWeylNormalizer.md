@@ -3,13 +3,12 @@
 Module `Langlands.GroupScheme.Rational.OrthogonalOrbitWeylNormalizer`, namespaces
 `Langlands.GroupScheme` and `Langlands.GroupScheme.SplitPinning`.
 
-Worker 163, for Task 6836 (8c04a3ed-3fa6-4680-a59f-856738cb578b), SL2 half.
-
 ## Purpose
 
 The SL2 clause of `AlgebraicRankOneCoordinatesExistenceStatement` requires
 `C.rho SpecialLinear.BinaryUpper.weylMatrix ∈ normalizerPoints i`, where `i` is the
-maximal split torus and `weylMatrix = !![0, -1; 1, 0]`. In Task 6836, `rho` is the
+maximal split torus and `weylMatrix = !![0, -1; 1, 0]`. In
+`Geometry.Building.AlgebraicSL2RootCoordinatesConstruction`, `rho` is the
 descended homomorphism `SplitPinning.fieldSL2 : SL₂(E) →* G(k)` of
 `OrthogonalOrbitSpecialLinear`. This module proves that `fieldSL2` sends the Weyl matrix
 into the normalizer of the torus `i : T ⟶ G` whose base change carries the pinning. It also

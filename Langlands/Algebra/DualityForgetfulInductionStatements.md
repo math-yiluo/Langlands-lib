@@ -5,13 +5,12 @@ Universe parameters `uA`, `uB` (the algebras) and `v` (module carriers).
 The module contains two **statements**, the `Prop`-valued definitions
 `DualityForgetfulStatement` and `DualityInductionStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The Theorem of I.4.2 had no published statement. The
-published note
+The note
 [duality-coefficient-conventions](../../notes/renard/duality-coefficient-conventions.md)
-(Worker 6) analyses why: Renard's hypotheses, read as additive ring-bimodule conditions, do
+analyses what stands in the way of stating the Theorem of I.4.2: Renard's hypotheses, read
+as additive ring-bimodule conditions, do
 not make the complex scalars recovered from `A` agree with those recovered from `B`. The
-evaluation formula of Renard's proof needs that agreement. This unit states the Theorem
+evaluation formula of Renard's proof needs that agreement. This module states the Theorem
 under the common-coefficient reading that the note identifies as sufficient. The
 unrestricted additive reading is not stated here.
 
@@ -21,7 +20,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read I.4.2, printed pp.23–24 / PDF pp.29–30:
+The statements follow I.4.2, printed pp.23–24 / PDF pp.29–30:
 
 > Théorème. Soient `A` et `B` des algèbres à idempotents, et supposons que `B` soit muni
 > d'une structure de `A`-bimodule non dégénéré. On suppose que les actions à droite de `A`
@@ -95,9 +94,11 @@ are naturally isomorphic.
   complex structure on `F_AB(N)` recovered from `A` and the one on `Ñ` recovered from `B`
   need not match. The published note gives the example `A = B = ℂ` with
   `a · b = conj(a) b`: there Renard's evaluation `φ ↦ (b ⊗ n ↦ φ(b)(n))` does not land in
-  complex-linear functionals. Whether some other natural isomorphism exists under the bare
-  additive hypotheses is not decided. That reading is not stated here, and the ledger
-  records it as open.
+  complex-linear functionals. Under the bare additive hypotheses a natural isomorphism
+  need not exist: for a non-surjective ring endomorphism `σ` of `ℂ`,
+  `RenardDualitySourceObstruction.no_naturalIso` and
+  `RenardInductionDualitySourceObstruction.no_naturalIso` exclude one for each identity, and
+  the ledger records that reading as false. That reading is not stated here.
 - **One-sided hypotheses.** Each identity uses only one of the two `A`-actions on `B`. The
   first uses the left action, with the right regular action of `B`. The second uses the
   right action, with the left regular action of `B`. Each statement assumes only the
@@ -131,7 +132,9 @@ are naturally isomorphic.
 
 ## Remaining obligations
 
-The proofs are a separate obligation. The unrestricted ring-bimodule reading of the Theorem
+The proofs are in separate modules: `dualityForgetful` in
+`Langlands.Algebra.DualityForgetfulProof` and `dualityInduction` in
+`Langlands.Algebra.DualityInductionProof`. The unrestricted ring-bimodule reading of the Theorem
 remains a source-correspondence question.
 
 ## Imports

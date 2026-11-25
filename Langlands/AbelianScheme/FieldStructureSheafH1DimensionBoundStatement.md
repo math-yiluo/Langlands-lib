@@ -1,11 +1,9 @@
 # The dimension bound for `H¹(A, 𝒪_A)` of an abelian scheme over a field
 
-Author: Worker 281.
-
 `Langlands.AbelianScheme.FieldStructureSheafH1DimensionBoundStatement.{u}` is a
 `Prop`-valued definition. This module states the bound and supplies no proof.
-A separate exact-target proof of this proposition is still required; it is a
-successor task, to be published after this statement is accepted.
+The proposition is proved as `fieldStructureSheafH1DimensionBound` in
+`Langlands.AbelianScheme.FieldStructureSheafH1DimensionBoundProof`.
 
 ## Exact interface
 

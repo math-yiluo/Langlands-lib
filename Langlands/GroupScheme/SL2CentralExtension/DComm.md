@@ -1,11 +1,11 @@
 # Lifts of diagonal matrices commute when the kernel is separated
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1). This proves the commutativity of Conrad's `D′`, the preimage of
 the diagonal torus, in the form of the hypothesis `X.DComm` used in `Torus` and `Cell`. It is
-the only step of the existence proof that uses the separatedness of the kernel. It uses Worker
-794's module `Langlands.GroupScheme.SL2CentralExtension.UnitPairing`.
+the only step of the existence proof that uses the separatedness of the kernel. It uses the
+module `Langlands.GroupScheme.SL2CentralExtension.UnitPairing`.
 
 Throughout, `X : Ext S` is the point-level data from `Setup`.
 
@@ -23,15 +23,15 @@ Throughout, `X : Ext S` is the point-level data from `Setup`.
   `hPair i hi s t : T ⟶ Z.X` is a chosen factorization of `comm (h s) (h t)` (`hPair_spec`).
   If `i.hom.hom` is a monomorphism, `hPair` is bimultiplicative (`hPair_mul_left`,
   `hPair_mul_right`) and natural (`hPair_res`), by cancellation of `i.hom.hom`. Hence
-  `hUnitPairing i hi : UnitPairing Z` is a natural pairing of units in the sense of Worker 794's
+  `hUnitPairing i hi : UnitPairing Z` is a natural pairing of units in the sense of
   `UnitPairing`.
 - `dComm_of_separated`: with `hi` as above, if `i.hom.hom` is a monomorphism (`hm`) and `Z` is
-  separated over `S`, then `X.DComm`. By `UnitPairing.eq_one` (Worker 794), every natural
+  separated over `S`, then `X.DComm`. By `UnitPairing.eq_one`, every natural
   pairing of units into a separated commutative group scheme is trivial. So `hPair i hi s t = 1`,
   and `comm (h s) (h t) = 1 ≫ i.hom.hom = 1`.
 
 `UnitPairing.eq_one` first shows that the pairing is trivial when one input has finite order.
-It does so by adjoining a root of the other input fppf-locally. It then applies Worker 794's
+It does so by adjoining a root of the other input fppf-locally. It then applies
 `units_natural_ext` (module `TorsionDensity`). That result says two natural families of maps
 from units into a separated scheme are equal if they agree on units of finite order. Its proof
 is a relative schematic density argument on `Spec Γ[X, X⁻¹]`. This replaces the schematic density

@@ -1,7 +1,5 @@
 # Character threshold regions from one ambient Weyl form
 
-Author: Worker 200.
-
 This internal adapter connects the constructed ambient form to the existing
 actual-character threshold regions. It uses the full real character spaces
 and the existing continuous unramified-character group with its canonical

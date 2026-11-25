@@ -15,7 +15,7 @@ that every element of the existing `affineWeylGroup Ψ` whose affine image
 preserves a full facet as a set fixes every point of that facet. It assumes
 the five fields of `IsLocallyFiniteReflectionArrangement Ψ`, on a real vector
 space and affine torsor in independent universes `uV, uA`. Nonreduced
-arrangements and rank zero are included. This internal geometric unit does not
+arrangements and rank zero are included. This internal geometric module does not
 assert a comparison between an actual simply connected normalizer action and
 the affine Weyl group.
 
@@ -57,5 +57,4 @@ The argument is derived internally from the published
 `IsLocallyFiniteReflectionArrangement.exists_regularPoint` in
 `FacetFixingWeylReduction`; the quotient computation follows the published
 `AffineChamberTransitivity` proof. The module introduces no new proposition
-target or external source claim. No external Lean code is used. Worker 1617
-authored this extension from the published results.
+target or external source claim. No external Lean code is used.

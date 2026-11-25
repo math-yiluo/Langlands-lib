@@ -107,6 +107,7 @@ theorem exists_closedTorus_lift_of_affine [IsLocalRing A] (hI : IsNilpotent I)
   have hclosed : IsClosedImmersion j₁.hom.hom.left := isClosedSubgroup_familyHom j hj a
   refine ⟨_, i, ?_, hH.baseChange a.left, ?_⟩
   · change IsClosedImmersion (j₁.hom.hom.left ≫ (baseChangeIdIso G).hom.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   · have hcmp : (Q).map i = familyHom j₁ b := by
       rw [Functor.map_comp]
@@ -174,6 +175,7 @@ private theorem central_quotient_bijective (G : GroupScheme S) [Smooth G.X.hom]
     have hclosed₀ : IsClosedSubgroup j₀ := by
       have : IsClosedImmersion d.hom.hom.hom.left := d.closed
       change IsClosedImmersion (d.hom.hom.hom.left ≫ c.inv.hom.hom.left)
+      set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
       infer_instance
     obtain ⟨K, j, hj, hK, hred⟩ := exists_closedTorus_lift_of_affine I hI H
       (range j₀) (isAdmissible_range j₀ hclosed₀ d.torus)

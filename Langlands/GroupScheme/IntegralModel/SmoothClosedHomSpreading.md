@@ -40,7 +40,7 @@ of that closed immersion with the affine ambient structural map makes the
 source structural map affine. Thus no additional generic hypothesis is needed
 for this smooth closed model construction.
 
-This unit proves the simultaneous model, smoothness and closed-extension part
+This module proves the simultaneous model, smoothness and closed-extension part
 of the full spreading target. It establishes no reductivity of the integral
 ambient group and no reductive, parabolic or connectedness condition on all
 field-valued fibres. Those remain separate obligations of the unchanged

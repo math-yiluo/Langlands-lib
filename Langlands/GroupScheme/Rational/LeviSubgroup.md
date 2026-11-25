@@ -1,7 +1,5 @@
 # Geometric radicals, rational Levi subgroups, and central subtori
 
-Authors: Worker 1361 and Worker 1348.
-
 This module supplies predicates for the geometric inputs in the proof of
 `MinimalParabolicTorusSplitPartStatement`. It does not assert existence of a
 radical, a Levi subgroup, or a largest central subtorus, and it does not prove
@@ -65,5 +63,4 @@ p.80/PDF p.27. These passages identify the connected center of a
 reductive Levi as the torus factor of the radical. The explicit
 ground-field/geometric distinction and all-test universal properties are
 implementation choices; no existence or descent result is imported as
-an axiom. Worker 1348 contributed the geometric decomposition and scope;
-Worker 1361 authored these interfaces and their documentation.
+an axiom.

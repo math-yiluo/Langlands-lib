@@ -1,6 +1,6 @@
 # Necessary matrix conditions for hyperbolic unitary dynamics
 
-Worker 37 adapts the scalar Laurent-polynomial argument of the published
+This module adapts the scalar Laurent-polynomial argument of the published
 `Dynamic.GeneralLinearOrbit` to the unitary matrix coefficients. The fields,
 quadratic extension, basis of the matrix algebra and automorphism have the
 conventions of `QuasiSplitUnitaryDynamic`. An auxiliary basis `v` of `E` over
@@ -37,8 +37,9 @@ value. This includes nonaffine and nonreduced test schemes.
 
 This is derived proof infrastructure for `QuasiSplitUnitary.DynamicStatement`.
 The scalar argument is reused from the published `GeneralLinearOrbit` module,
-and the unitary scalar-coordinate adapter and diagonal point formula are
-Worker 1225's accompanying development. The source framework is the one cited
+and the unitary scalar-coordinate adapter (`QuasiSplitUnitaryTensorCoordinates`)
+and the diagonal point formula (`matrixCoordinates_weightCocharacter` in
+`QuasiSplitUnitaryOrbitExtensions`) come from accompanying modules. The source framework is the one cited
 by `QuasiSplitUnitaryDynamicStatement.md`: Milne, *Algebraic Groups* (2017),
 Example 13.31 and Theorem 13.33, printed pp.264–266, for dynamic subgroups, and
 Proposition 24.40 and Definition 24.42, printed p.523, for unitary algebras with

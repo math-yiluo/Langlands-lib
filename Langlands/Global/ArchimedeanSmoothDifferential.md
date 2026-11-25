@@ -1,6 +1,6 @@
 # Genuine smooth archimedean directional differentiation
 
-Author: Worker 84. Namespace: `Langlands.Global.ArchimedeanGL`.
+Namespace: `Langlands.Global.ArchimedeanGL`.
 
 For a number field `K : Type u` and every natural rank `n`, including zero,
 this module constructs the real-linear map
@@ -94,14 +94,14 @@ specifically views the product of archimedean groups as a real Lie group and
 uses smooth complex-valued functions. The registered original is
 `borel-jacquet-1979-automorphic`, SHA256
 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.
-Worker 84 read these original pages. The chart extension, directional formula,
+These original pages were read. The chart extension, directional formula,
 and closure proofs are implementation details derived from that setting,
 not assertions quoted verbatim from the source.
 
-The construction imports the accepted `ArchimedeanGL` smooth-function model
+The construction imports the published `ArchimedeanGL` smooth-function model
 through `ArchimedeanLieAlgebra` and reuses the pinned Mathlib real Fréchet
 calculus and units manifold. It does not change those published definitions,
 introduce an arbitrary action parameter, assume an analytic law, or impose
 compact-type or enveloping-center finiteness. Complexification, the Lie
-commutator law, and the universal-enveloping-algebra action remain separate
-work.
+commutator law, and the universal-enveloping-algebra action are not part of
+this module.

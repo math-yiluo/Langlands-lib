@@ -13,8 +13,7 @@ The module contains six **statements**, the `Prop`-valued definitions
 
 It proves nothing and introduces no other definition.
 
-Worker 4 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, with the agreement of Worker 1222. Renard recalls these
+Renard recalls these
 facts from Borel–Tits and Springer without proof. The Chapter V item ledger
 (`notes/renard/item-ledger-v.md`, V.3.1 and V.3.2 rows) lists the split-component form of V.3.1
 for non-minimal Levi subgroups as recalled and not stated.
@@ -23,8 +22,8 @@ for non-minimal Levi subgroups as recalled and not stated.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
-`renard-2026-representations-groupes-reductifs-padiques`. Worker 4 read V.2.1 (printed p.104 /
-PDF p.110) and V.3.1–V.3.2 (printed p.110 / PDF p.116).
+`renard-2026-representations-groupes-reductifs-padiques`. The passages read are V.2.1 (printed
+p.104 / PDF p.110) and V.3.1–V.3.2 (printed p.110 / PDF p.116).
 
 V.2.1 defines split components for an arbitrary connected linear algebraic group `G`:
 
@@ -48,7 +47,8 @@ V.3.1 and V.3.2 read:
 > conjugués dans `G`.
 
 Section V.3 refers to [7] (A. Borel and J. Tits, *Groupes réductifs*, Publ. Math. IHÉS 27, 1965)
-and [42] (T. A. Springer, *Linear algebraic groups*, 2nd ed.). Worker 4 did not consult them.
+and [42] (T. A. Springer, *Linear algebraic groups*, 2nd ed.). They were not consulted for
+this module.
 
 ## Already in the Library
 
@@ -58,7 +58,7 @@ The following parts of V.3.1–V.3.2 are published elsewhere and are not restate
   `ParabolicRadicalTorusLeviStatement`, `ParabolicRadicalTorusCentralizerLeviStatement` and
   `RationalLeviConjugacyStatement`.
 - `Z_G(A_M) = M` for a rational Levi `M` with split component `A_M`, `N_G(A_M) = N_G(M)` and the
-  finiteness of `P(M)`: `LeviSplitComponentRecallStatements` (Worker 1222).
+  finiteness of `P(M)`: `LeviSplitComponentRecallStatements`.
 - The opposite parabolic: `OppositeDynamicParabolicUniquenessStatement`.
 - The minimal case of the centralizer description: `MinimalParabolicLeviCentralizerStatement`.
 - The second and third sentences of V.3.2: `MaximalSplitTorusConjugacyStatement` and
@@ -192,9 +192,11 @@ Then `R(P) = Z(M)° ⋉ N`.
   if and only if `A_M` is a maximal split torus of `G`. Since all split components of `P` are
   conjugate, this gives `MinimalParabolicSplitComponentStatement`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are in separate modules: `parabolicSplitComponents` in
+[ParabolicSplitComponentStatementsProof](ParabolicSplitComponentStatementsProof.md) proves the
+conjunction from the five component proofs.
 
 ## Imports
 

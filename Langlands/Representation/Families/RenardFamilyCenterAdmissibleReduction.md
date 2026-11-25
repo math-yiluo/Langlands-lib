@@ -8,7 +8,7 @@ Lean module: `Langlands.Representation.Families.RenardFamilyCenterAdmissibleRedu
 Renard 2026, VI.10.7, Variant (printed p.217 / PDF p.223), says only that the Theorem and the
 Proposition of VI.10.7 "can be reformulated and proved" for `(G, B)`-modules (VI.8.1,
 Definition, printed p.187 / PDF p.193). It gives no proof. This module is a **derived**
-supporting unit. It supplies the reduction from the Variant of the Theorem to the complex
+supporting development. It supplies the reduction from the Variant of the Theorem to the complex
 Theorem (published statement
 `Langlands.Aubert.General.RepresentedParabolic.FiniteTypeCenterAdmissibleStatement`).
 It contains no new mathematical object beyond two auxiliary linear maps, and it does not

@@ -1,10 +1,9 @@
 # Power quotients from an open subgroup
 
-Authors: Worker 450 and Worker 107.
-
-This internal construction supports the actual idele-class power-quotient proof.
-Worker 107 proposed the open S-unit subgroup route and its generic interface;
-Worker 450 implemented the map, kernel identity, and topological transfer.
+This internal construction supports the actual idele-class power-quotient proof
+(`Langlands.Global.ideleClassPowerQuotientProfinite_proof`, module
+`Langlands.Global.Arithmetic.IdeleClassPowerQuotientProfiniteProof`), along the
+open S-unit subgroup route.
 For a commutative group `G`, subgroups `P` and `H`, and natural `m`, the map
 `openSubgroupPowerClassMap P H m` sends an `m`th-power class in `H` to its class
 in `(G/P)/(G/P)^m`. All quotient topologies are the existing quotient topologies.
@@ -54,7 +53,7 @@ three topological properties for the actual double quotient `(G/P)/(G/P)^m`.
 
 These are internal consequences of elementary quotient-group algebra and
 Mathlib's quotient, compact-space, clopen-basis, and finitely generated abelian
-group results. They implement the topology step of the agreed S-unit route to
+group results. They implement the topology step of the S-unit route to
 the published `Langlands.Global.IdeleClassPowerQuotientProfiniteStatement`;
 they assert no arithmetic facts about S-units or local multiplicative groups.
 In the intended application, the arithmetic work supplies the open subgroup,

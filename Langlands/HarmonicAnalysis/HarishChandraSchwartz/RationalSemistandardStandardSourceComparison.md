@@ -1,6 +1,6 @@
 # Actual standard specialization of the semistandard source density
 
-Worker 268, Task 7258. This derived comparison specializes the actual
+This derived comparison specializes the actual
 semistandard density to the published standard Levi, without changing its
 scalar, character restriction, or inducing representation.
 
@@ -70,7 +70,9 @@ equality, and regularity along scalar equality. Density equality uses
 surjectivity of the actual unitary twist orbit map, the two density value
 formulas, and character-restriction equality.
 
-This focused unit proves the standard density comparison. Source formal
+This focused module proves the standard density comparison. Source formal
 degree, Haar and packet comparisons, the standard orbit product-core
 comparison, general model/representative/compact independence and
-invariant-family constructions remain separate units of Task 7258.
+invariant-family constructions are separate (the packet and product-core
+comparisons are `RationalSemistandardStandardPacketComparison` and
+`RationalSemistandardStandardFormComparison`).

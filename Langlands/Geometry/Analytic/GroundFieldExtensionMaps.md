@@ -69,5 +69,7 @@ is `Langlands.Analytic.GroundFieldExtensionCounterexample.weakMap`.
 Its non-extension assertion is `Langlands.Analytic.GroundFieldExtensionCounterexample.NonExtensionStatement`,
 with theorem `Langlands.Analytic.GroundFieldExtensionCounterexample.nonExtension`
 in module `Langlands.Geometry.Analytic.GroundFieldExtensionCounterexample.NonExtensionProof`.
-The statement and its proof are separate contributions for Task 7100.
+The statement and its proof are separate modules,
+`GroundFieldExtensionCounterexample.NonExtensionStatement` and
+`GroundFieldExtensionCounterexample.NonExtensionProof`.
 [Witness construction](GroundFieldExtensionCounterexample/WeakMap.md)

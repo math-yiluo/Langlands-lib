@@ -1,19 +1,19 @@
 # Restriction and induction statements along an extension of p-adic fields
 
-Author: Worker 25. This is a statement contribution: every declaration is a
-`Prop`-valued definition, and nothing here is proved. Proofs belong to separate
-tasks.
+This is a statement module: every declaration is a
+`Prop`-valued definition, and nothing here is proved. Proofs are not part of
+this module.
 
 Fix a prime `p` and p-adic fields `F : PadicField.{u} p` and `E : PadicField.{v} p`.
 Fix also an algebra homomorphism `f : F.Carrier →ₐ[Padic p] E.Carrier`, the
 abstract form of a finite extension `E/F`. Write `ι = extensionWeilMap F E f`
-for Worker 53's published map `W_E → W_F` of actual local Weil groups. It is an
+for the published map `W_E → W_F` of actual local Weil groups. It is an
 injective open embedding whose image has index `[E : F]`. It satisfies
 `localDegreeInt F (ι w) = f_{E/F} · localDegreeInt E w`, where
 `f_{E/F} = extensionResidueDegree F E f` is the residue degree, and
 `localNormCharacter F ∘ ι = localNormCharacter E`.
 
-The restriction and induction constructors are Worker 17's published
+The restriction and induction constructors are in the published
 `Langlands.Weil.Local.ExtensionParameters`:
 - `extensionRestrict F E f`: restriction of representations from `W_F` to `W_E`.
 - `extensionWDRestrict F E f`: restriction of pairs, with the same carrier and
@@ -76,7 +76,7 @@ proved and are not restated.
 
 ## Original sources
 
-The originals were read by Worker 25, and the locators were verified on 2026-10-20.
+The originals were read, and the locators were verified on 2026-10-20.
 
 - `tate-1979-number-theoretic-background`: J. Tate, *Number theoretic
   background*, Proc. Sympos. Pure Math. 33, Part II (1979), retained Corvallis
@@ -103,8 +103,8 @@ are derived, as recorded in the table.
 
 ## Lean dependency map
 
-All imports are Lean modules of the current Library (commit
-`c4076e8f9e0c741ca14fc16ba1cd82671b9de609`); no artifact identity is imported.
+All imports are Lean modules of the Library (commit
+`c4076e8f9e0c741ca14fc16ba1cd82671b9de609`).
 The direct imports are `Langlands.Weil.Local.ExtensionParameters`,
 `Langlands.Weil.Representation.{Dual,SumsTensor,Twist}` and
 `Langlands.WeilDeligne.FrobeniusStatements`.
@@ -125,11 +125,8 @@ The direct imports are `Langlands.Weil.Local.ExtensionParameters`,
 | `Langlands.WeilDeligne.InductionAlong` | (pair induction along `ι`, through `ExtensionParameters`) | `06e1ced26e07b39c1105c8aa763591a2ef1bdc392c3ba3d1971f9dd2b8644ac3` |
 | `Langlands.LocalField.Definitions` | `PadicField` | `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517` |
 
-`ExtensionParameters` and `InductionAlong` are Worker 17's construction modules,
-and `ExtensionWeil`, `ExtensionWeilRange`, `Parameters` and `Assembly` are
-Worker 53's. They belong to the parameter-definition companion task
-`650de61a-84c3-40d1-b791-0544af5824e1`, which recreates the task
-`503968de-16f8-4f63-ba13-b5e167e11dce` named in this task's contract. `FrobeniusStatements` is Worker 1's
+`ExtensionParameters`, `InductionAlong`, `ExtensionWeil`, `ExtensionWeilRange`,
+`Parameters` and `Assembly` are construction modules. `FrobeniusStatements` is a
 statement family; only its relation `IsSemisimplification` is used, and none
 of its targets is assumed. Mathlib is pinned at
 `5ed2965256430c3649e86755f9576b54eca72435`. `Representation.IntertwiningMap`,

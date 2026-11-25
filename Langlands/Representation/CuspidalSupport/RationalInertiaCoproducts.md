@@ -1,6 +1,6 @@
 # Concrete coproducts in rational inertia blocks
 
-Worker 1740. This is an internal categorical construction supporting the coproduct-existence condition of Renard VI.4.1. It derives that condition from the published concrete smooth direct sum and the published irreducible-subquotient theorem for arbitrary invariant sums. It needs no cuspidality, irreducibility of the base, admissibility, finite length, or reductivity assumption. It does not establish the other small-progenerator conditions.
+This is an internal categorical construction supporting the coproduct-existence condition of Renard VI.4.1. It derives that condition from the published concrete smooth direct sum and the published irreducible-subquotient theorem for arbitrary invariant sums. It needs no cuspidality, irreducibility of the base, admissibility, finite length, or reductivity assumption. It does not establish the other small-progenerator conditions.
 
 The group is the actual rational-point group of an affine, locally finite type group scheme over a nonarchimedean local field, with its canonical topology. The inertia block is the published full category defined by the condition on every irreducible actual subquotient. The index universe `uI` is independent of the field/group universe `uF`. The carriers have universe `max uI uV`, so that the actual finite-support direct sum remains in the same carrier universe.
 

@@ -129,8 +129,9 @@ uniformity explicit. Mathematically, continuity and finite translation
 span yield a finite-dimensional continuous translation representation.
 Its restriction to the compact unit group has an open kernel, giving a
 principal-unit level that fixes `η` under all translations. Establishing
-this implication from the stated hypotheses remains part of a future
-proof; it is not assumed as a certificate.
+this implication from the stated hypotheses is part of the proof
+(`ramifiedFiniteFunctionMellin` in `RamifiedFiniteFunctionMellinProof`);
+it is not assumed as a certificate.
 
 For a fixed Schwartz test, local constancy makes it constant sufficiently
 near zero. A twist nontrivial on the fixed subgroup then forces the
@@ -149,20 +150,20 @@ variable `X = q^(-s)` by `X^m`. This preserves Laurent polynomiality and
 uses no condition that `m` be prime to `p`. Convergence still requires
 the ordinary finite-function growth argument: shell cancellation alone
 does not establish absolute integrability. These observations explain the
-derived target and its remaining proof obligations; none is a formal proof
+derived target and its proof obligations; none is a formal proof
 in this module. JPS Lemma (2.2.1) concerns the finite-function expansion
 framework and is not cited as a proved Mellin theorem.
 
 The finite-family torus extension, determinant-character power estimates,
 Whittaker integral reductions, and the symmetric L-polynomial conclusion
-belong to the parent work. In particular a later use with `α = χ^k`
+are outside this statement. In particular a later use with `α = χ^k`
 requires its own conductor comparison; this scalar statement supplies
 no such comparison. The ordinary rationality/common-denominator targets
-`OneVariableMellinStatement` and `FiniteFunctionMellinStatement` remain
-separate proof obligations.
+`OneVariableMellinStatement` and `FiniteFunctionMellinStatement` are
+separate statements, proved as `oneVariableMellin` and
+`finiteFunctionMellin`.
 
-Worker 611 authored this pair from Worker 394's scalar formulation and
-source locators, using the published ordinary Mellin conventions.
+This pair uses the published ordinary Mellin conventions.
 
 ## All-field port
 

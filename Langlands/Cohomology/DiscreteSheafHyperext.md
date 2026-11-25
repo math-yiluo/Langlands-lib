@@ -1,6 +1,6 @@
 # Hyperext spectral sequences for equivariant compactly supported cohomology
 
-Author: Worker 26. Applies the published hyperext spectral sequence to Worker 26's
+Applies the published hyperext spectral sequence to the
 derived complex `RΓ_c(X{G}, F)` of smooth compactly supported sections of discrete
 sheaves on a twisted site
 (`Langlands.Cohomology.DiscreteSheafDerivedComplex`: `compactComplex`,
@@ -10,11 +10,11 @@ sheaves on a twisted site
 `Langlands.Cohomology.HyperextSecondPage` (`secondPageExtIso`,
 `isZero_secondPage_of_neg`) and
 `Langlands.Cohomology.SmoothHyperextSecondPage` (`SmoothHyperext.secondPageAddEquiv`),
-with Worker 13's smooth Ext (`SmoothExt.ext`, `SmoothExt.bifunctor`,
-`SmoothExt.extZeroIso`), and Worker 26's
+with the smooth Ext (`SmoothExt.ext`, `SmoothExt.bifunctor`,
+`SmoothExt.extZeroIso`), and
 `Langlands.Sheaf.Equivariant.TwistedCompactSupport` (`discreteCompactSections`,
 `discreteCompactDerived`, `discreteCompactDerivedZeroIso`). The construction
-follows Worker 13's `compactHyperextSpectralSequence` on induced rational spectra
+follows `compactHyperextSpectralSequence` on induced rational spectra
 (`Langlands.Geometry.Analytic.StrictTestDomain.InducedRationalDerivedComplex`).
 
 All names are in the namespace `Langlands.Cohomology.DiscreteSheafHyperext`.
@@ -90,7 +90,7 @@ So `E₂^{p,q} = Ext^p(H^{d-q}_c(X{G}, F), W)` for `q ≤ d`, the page vanishes 
 ## Provenance and scope
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999),
-Proposition 4.4, printed p.309 = PDF p.11, read in the original by Worker 26:
+Proposition 4.4, printed p.309 = PDF p.11, read in the original:
 
 > There is a spectral sequence of `𝒪_m`-modules
 > (4.4.1) `E_2^{i,j} = Ext^i(H_c^{2(n-1)-j}(M̆_N, 𝒪_m(n-1)), 𝒜_ℓ(GJ, ℒ, K(m))) ⇒ H^{i+j}(S̄_{K(N,m)}, ℒ̃)`.
@@ -102,7 +102,7 @@ For `d = 2(n - 1)`, position `(i, j)` of `compactHyperextSpectralSequence` is
 the Drinfeld space `M̆_N` and `W` in place of the space of algebraic automorphic
 forms `𝒜_ℓ(GJ, ℒ, K(m))`. Harris's `Ext^i` is the same derived functor
 (`SmoothExt.ext`). The construction is derived, not a definition from the source:
-a published general construction applied to Worker 26's derived complex. Harris
+a published general construction applied to the derived complex `compactComplex`. Harris
 constructs (4.4.1) from a complex of projective smooth modules computing
 `H^*_c(M̆_N, 𝒪_m)` (proof of Prop. 4.4, p.310), not from a t-structure; that
 the two agree is not claimed here.

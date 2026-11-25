@@ -1,6 +1,6 @@
 # Nilp-base extension on actual framed comparison classes
 
-This internal unit descends actual representative base extension through the
+This module descends actual representative base extension through the
 existing original framed comparison quotient. `ComparisonClass.baseChange`
 uses the proved actual `Comparison.baseChange` to identify the classes of
 extended representatives at every original comparison step. It therefore
@@ -26,5 +26,9 @@ coefficient/residue and height-certified frame assumptions remain explicit,
 with Nilp universes `{v,u}`. Actual representative framings retain their local
 kernel-rank height-zero certificates. Covers may be infinite and scalar maps
 may merge generators. Identity and composition laws for this class map,
-action laws and representability remain further obligations; a functor is not
-yet asserted by this unit.
+action laws and representability are outside this module, and it asserts no
+functor. The identity and composition laws are `ComparisonClass.baseChange_id`
+in `DrinfeldFramedIdentityComparison` and `ComparisonClass.baseChange_comp` in
+`DrinfeldFramedCompositionComparison`; `DrinfeldFramedClassFunctor` uses them
+to construct the functor `comparisonClassFunctor`. Action laws and
+representability remain separate.

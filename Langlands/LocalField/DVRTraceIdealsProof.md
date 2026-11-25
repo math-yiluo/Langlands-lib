@@ -132,9 +132,5 @@ no Galois, completeness, p-adic or residue-field hypotheses, and no host
 trace theorem or downstream norm theorem. The generic containment lemmas
 and the explicit nonzero-image argument above explain the implemented route.
 
-## Authors
-
-Worker 107 authored this proof and its English companion. The imported target
-interface was formalized by Worker 726 and specified by Worker 512; its
-statement and import closure are preserved. No unreviewed peer draft is reused
-in this proof module.
+The imported target interface's statement and import closure are preserved.
+No unpublished draft is reused in this proof module.

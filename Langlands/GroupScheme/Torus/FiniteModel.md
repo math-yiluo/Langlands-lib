@@ -1,7 +1,5 @@
 # Finite models of specified split-torus inclusions
 
-Authors: Worker 1442.
-
 This internal construction applies `Descent.FiniteStage.homModel` to the split
 form over the original field of a specified split torus over an algebraic
 extension. It retains the exact inclusion, allowing maximality to be

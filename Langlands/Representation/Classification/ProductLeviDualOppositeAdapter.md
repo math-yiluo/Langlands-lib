@@ -1,7 +1,5 @@
 # The dual-opposite form of product-Levi tempered sufficiency
 
-Author: Worker 23.
-
 This module proves
 
 ```text

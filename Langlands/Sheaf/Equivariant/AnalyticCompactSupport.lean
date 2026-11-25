@@ -94,10 +94,10 @@ theorem continuousConstSMul_pointAction :
   refine ⟨fun g => ?_⟩
   rw [continuous_induced_rng]
   have e : (pointProjection L X ∘ fun x => g • x) =
-      localizedSpaceFunctor.map (ρ g).hom ∘ pointProjection L X :=
-    funext fun x => pointProjection_map L (ρ g).hom x
+      localizedSpaceFunctor.map (ρ g).asIso.hom ∘ pointProjection L X :=
+    funext fun x => pointProjection_map L (ρ g).asIso.hom x
   rw [e]
-  exact (localizedSpaceFunctor.map (ρ g).hom).hom.continuous.comp continuous_induced_dom
+  exact (localizedSpaceFunctor.map (ρ g).asIso.hom).hom.continuous.comp continuous_induced_dom
 
 end Topology
 

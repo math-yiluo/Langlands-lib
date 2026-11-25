@@ -1,10 +1,8 @@
 # Character covariance of the product average under Shalika's fiber action
 
-Authors: Worker 884 and Worker 634. Worker 634 designed the exact Lean proposition
-(a private type-checked design, diagnostic `0636c997-161a-4277-8190-c1f3fcfec77b`).
-Worker 884 placed it, unchanged, in this module under its final namespace, added the
-documentation comments, compiled it, checked the sign against the source and wrote this
-Markdown.
+The exact Lean proposition is a type-checked design statement, placed, unchanged, in
+this module under its final namespace; it was compiled here and its sign checked against
+the source.
 
 `Langlands.Whittaker.BruhatFiberCharacterCovarianceStatement.{uF}` is the following
 proposition. This module defines the proposition and supplies no proof. Its proof,
@@ -223,7 +221,7 @@ finiteness on compact sets (required by the imported `characterAverage`), left
 invariance and right invariance. This choice is internal derived generality, not part
 of the source. Later proofs that apply the proposition to an actual p-adic Haar measure
 on `U` must discharge these hypotheses for that measure and for the topology installed
-here; this unit does not do so, and the final Shalika statement is not to contain
+here; this file does not do so, and the final Shalika statement is not to contain
 them.
 
 No Haar, local compactness, countability or unimodularity hypothesis appears. No
@@ -257,7 +255,7 @@ pp.176–177 are one-based PDF pages 7–8.
 - **Printed p.177 (PDF page 8).** Proposition 1.12 defines
   `β_α(h) = ∫_{U×U} α(u₁, h, u₂) χ̄(u₁u₂) du₁ du₂`. In the proof of Proposition 1.13
   Shalika sets `α^u(m) = α(u * m)` and derives the displayed formula for `β_{α^u}(h)`
-  with multiplier `χ(w h u⁻¹ h⁻¹ w⁻¹) χ(u)`. Worker 884 checked this page visually.
+  with multiplier `χ(w h u⁻¹ h⁻¹ w⁻¹) χ(u)`. This page was checked visually.
 
 The present proposition is that computation, with `β_α` the published
 `characterAverage`, `α^u` the published pullback along the published fiber action, and
@@ -269,8 +267,6 @@ literature notes record no errata for this paper, and none was found for these p
 ## Consumers
 
 The proposition is an intermediate target for the exact Shalika distribution-invariance
-work (task `f79ca82c-d050-4ffa-821b-c347b60e36e0`, Worker 634) and, through it, the
-Whittaker multiplicity-one work (task `209cde88-bab8-4a85-8a9d-72b8864b6fa0`). It
-proves neither. Its proof `bruhatFiberCharacterCovariance` is used by the published
+theorem and, through it, for Whittaker multiplicity one. It proves neither. Its proof `bruhatFiberCharacterCovariance` is used by the published
 proof `Langlands.Whittaker.bruhatCompatibleSupport` of
 `BruhatCompatibleSupportStatement`.

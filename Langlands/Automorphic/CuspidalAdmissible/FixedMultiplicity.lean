@@ -185,6 +185,7 @@ theorem finiteDimensional_annihilatedMultiplicitySpace
       exact Submodule.mem_inf.mpr
         ⟨f.val.property, (S.mem_centralEigenspace a f.val.val).mpr he⟩
     let i : P →ₗ[ℂ] Wₐ := (W.subtype.comp P.subtype).codRestrict Wₐ hP
+    haveI : IsNoetherian ℂ Wₐ := IsNoetherian.iff_fg.mpr ‹_›
     exact Module.Finite.of_injective i (fun _ _ h => Subtype.ext (Subtype.ext
       (congrArg (fun x : Wₐ => x.val) h)))
   let z := centralElement F n
@@ -207,7 +208,8 @@ theorem finiteDimensional_annihilatedMultiplicitySpace
     { toFun := fun T => T.val.codRestrict W (S.mem_multiplicityValueSpan J L.toSubgroup σ T)
       map_add' := fun _ _ => LinearMap.ext fun _ => Subtype.ext rfl
       map_smul' := fun _ _ => LinearMap.ext fun _ => Subtype.ext rfl }
-  exact Module.Finite.of_injective c (fun _ _ h => Subtype.ext (LinearMap.ext fun v =>
+  haveI : FiniteDimensional ℂ ((Fin m → ℂ) →ₗ[ℂ] W) := LinearMap.finiteDimensional
+  exact FiniteDimensional.of_injective c (fun _ _ h => Subtype.ext (LinearMap.ext fun v =>
     congrArg (fun T : (Fin m → ℂ) →ₗ[ℂ] W => (T v).val) h))
 
 end OperatorRealization

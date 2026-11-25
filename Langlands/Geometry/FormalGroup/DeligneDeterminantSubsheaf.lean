@@ -174,7 +174,7 @@ def translatedIntegralFrameSheafMap (hπ : algebraMap O F π ≠ 0) (n : ℤ) :
       (ModuleCat.of O (Fin d → O)) ⟶
         (rationalRestriction F X).obj (rationalLattice F X d π M.lattice.sheaf) :=
   M.integralFrameSheafMap F ≫ (rationalRestriction F X).map
-    (rationalPiAut F X d π M.lattice.sheaf hπ ^ n).hom
+    (rationalPiAut F X d π M.lattice.sheaf hπ ^ n).asIso.hom
 
 /-- The translated sheaf map has the previously constructed Pi-translated frame stalk image. -/
 theorem translatedIntegralFrameSheafMap_stalk_range

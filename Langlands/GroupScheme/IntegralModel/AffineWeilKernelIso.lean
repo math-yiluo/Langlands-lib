@@ -24,7 +24,7 @@ variable (A k : Type u) [CommRing A] [Field k] [Algebra A k]
   {G H : GroupScheme (Spec (CommRingCat.of K))}
   {M M' : IntegralModel O K G} {N N' : IntegralModel O K H}
 
-local instance {G₀ : GroupScheme (Spec (CommRingCat.of K))}
+private local instance {G₀ : GroupScheme (Spec (CommRingCat.of K))}
     (P : IntegralModel O K G₀) : IsAffine P.group.X.left :=
   isAffine_of_isAffineHom P.group.X.hom
 

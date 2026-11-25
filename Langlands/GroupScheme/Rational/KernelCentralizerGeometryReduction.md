@@ -1,7 +1,5 @@
 # Full-kernel centralizer quotients from geometric inputs
 
-Author: Worker 1465.
-
 This internal construction combines the published full-kernel action and
 quotient adapters with three explicit, unproved geometric propositions. It is
 uniform in an arbitrary universe `u` and an arbitrary field `k`. Its inputs are

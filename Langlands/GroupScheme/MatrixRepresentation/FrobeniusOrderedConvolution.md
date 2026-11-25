@@ -48,7 +48,7 @@ those basis elements span the whole underlying vector space.
 
 All results are derived from the imported Library ordered coefficient,
 convolution-action, and separation constructions. No additional external
-source is used. In particular this unit proves no existence of root
+source is used. In particular this module proves no existence of root
 subgroups, Steinberg representation or extremal vector, no rectangular
 support bound for an entire induced representation, and no irreducibility
 claim.

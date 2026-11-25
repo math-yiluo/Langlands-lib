@@ -1,12 +1,10 @@
 # Reduction of Henniart's cuspidal factor comparison
 
-Author: Worker 5178.
-
 This module proves the implication from the published
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement`
-and `Langlands.ClassField.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedSupercuspidalInductionStatement`
+and `Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedTemperedFactorStatement`
 to the exact published
-`Langlands.ClassField.Global.RelativeWeilGroup.AssociatedCuspidalFactorStatement`.
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.AssociatedCuspidalFactorStatement`.
 The two input propositions are explicit premises. The module is an
 intermediate reduction and does not supply an unconditional proof of any
 of those three propositions.
@@ -47,7 +45,7 @@ published tempered statement. No transport between merely
 propositionally equal topology instances is needed.
 
 The other proved Library input is
-`Langlands.ClassField.Global.RelativeWeilGroup.localComponent_isUnitary`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.localComponent_isUnitary`
 from `Langlands.LocalFactor.UnitaryArithmeticPair`.
 It restricts each supplied globally unitary Weil action along the
 original local map `ι`. The proof then applies the supplied tempered

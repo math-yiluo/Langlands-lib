@@ -97,7 +97,7 @@ theorem numberFieldPlace_algebraMap_integral_iff
     q.valuation L (algebraMap K L x) ≤ 1 ↔ p.valuation K x ≤ 1 := by
   rw [← HeightOneSpectrum.valuation_liesOver L p q]
   exact pow_le_one_iff_of_nonneg zero_le
-    (Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver q.asIdeal p.ne_bot)
+    (Ideal.ramificationIdx_pos_of_isDedekindDomain' q.asIdeal p.ne_bot).ne'
 
 omit [NumberField K] [NumberField L] in
 /-- Restriction of every upper finite place is the given lower place. -/

@@ -17,5 +17,6 @@ spectrum isomorphisms.
 
 Provenance is internal affine duality, using the existing affine-coordinate
 and affine-quotient-presentation results and Mathlib's finite-morphism and
-surjectivity APIs. The cover structure is Worker 239's interface. This
+surjectivity APIs. The cover structure is the interface `FiniteEffectiveCover` of
+`GroupoidCoactionFiniteEffectiveCover`. This
 constructor neither assumes nor establishes the final acyclicity theorem.

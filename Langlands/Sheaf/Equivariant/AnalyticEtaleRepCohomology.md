@@ -1,15 +1,15 @@
 # The action of `G` on `H^q(X, b^*F)` and `H^q_c(X, b^*F)` for étale `G`-sheaves
 
-Author: Worker 26. Builds on the following modules:
+Builds on the following modules:
 
-- `Langlands.Sheaf.Equivariant.TwistedRepCohomology` (this candidate): for a twisted site,
+- `Langlands.Sheaf.Equivariant.TwistedRepCohomology` (ported together with this module): for a twisted site,
   `sheafGlobalRepDerived J R q` and `sheafCompactRepDerived J R E q` (right derived functors
   of the representation-valued global sections and compactly supported global sections),
   and the isomorphisms `restrictionGlobalCohomologyIso` and `restrictionCompactCohomologyIso`
   of their underlying modules with the cohomology of the restriction. It also provides, via
   `TwistedLeftInduction`, `discrete_hasColimitsOfShape` and
   `discrete_hasExactColimitsOfShape`.
-- `Langlands.Sheaf.Equivariant.AnalyticEtaleCohomology` (accepted candidate `a9296ab9`):
+- `Langlands.Sheaf.Equivariant.AnalyticEtaleCohomology`:
   `etaleCohomology X R q`, the cohomology `H^q(X, F)` of module sheaves on the étale site of
   `X`.
 - Through it, `Langlands.Sheaf.Equivariant.AnalyticEtaleComparison`: `etaleGSheafRestriction ρ R`

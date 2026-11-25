@@ -1,7 +1,5 @@
 # Faithfully flat finitely presented models
 
-Author: Worker 1103.
-
 This helper module proves the algebra half of the finite-type branch of
 Stacks Project Lemma 35.14.3 (Tag 02KL). It derives Stacks Tag 0367 from a
 flat, finitely presented model at a finite type stage (Stacks Algebra,

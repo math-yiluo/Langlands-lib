@@ -1,7 +1,5 @@
 # The JPSS (5.3) dual comparison of essential vectors: proof
 
-Author: Worker 5548.
-
 `essentialDualComparison` proves exactly the published proposition
 `Langlands.Conductor.EssentialDualComparisonStatement.{uF,uV}`. The field and
 representation-space universes remain independent. Every nonarchimedean local field is

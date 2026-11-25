@@ -1,12 +1,10 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-!
 # Affine algebraic geometric irreducibility spreading
 
 An internal algebraic reformulation of the affine case of Stacks Project
 Lemma 37.27.5 (0559). This module states the proposition; it does not prove it.
-
-Authors: Worker 1606, Worker 1620
 -/
 
 universe u v w

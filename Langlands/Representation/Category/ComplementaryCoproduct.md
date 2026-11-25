@@ -1,6 +1,6 @@
 # Actual coproduct of complementary invariant subspaces
 
-Worker 491 constructs the coproduct universal property of supplied complementary
+This module constructs the coproduct universal property of supplied complementary
 invariant subspaces of a smooth representation. This is an internal algebraic
 construction from the existing actual subrepresentation objects, Mathlib's
 `LinearMap.ofIsCompl`, and the existing A.IX `IsCoproductOfComponents` predicate.
@@ -27,13 +27,12 @@ the exact existing A.IX predicate when the two actual subrepresentations satisfy
 the given Bool-indexed object properties. This does not assume that the category
 has coproducts of all families of any index size.
 
-The application motivating this unit is the first decomposition in Renard
+The application motivating this module is the first decomposition in Renard
 VI.3.5 (French edition dated 9 July 2026, printed pp.146–147 / PDF pp.152–153),
 whose categorical convention is A.IX (printed p.268 / PDF p.274). The source's
 existence of the relevant invariant summands, compact-restriction comparisons
-and full whole-category decomposition remain separate proof obligations. This
-module does not change the published statement or any imported pair, and its
-implemented proof is the direct linear universal-property argument described
+and full whole-category decomposition remain separate proof obligations. The
+module's implemented proof is the direct linear universal-property argument described
 above. It also differs from `idempotentCofanIsColimit`, which starts with an
 idempotent and constructs its kernel and range; here the supplied invariant
 subspaces and their literal inclusions are retained.

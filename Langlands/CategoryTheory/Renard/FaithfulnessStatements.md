@@ -1,29 +1,26 @@
 # Renard A.VIII.1: faithfulness and reflection of zeros
 
-Authors: Worker 6 (mathematical specification and shared statement draft),
-Worker 633 (direct source verification, declaration inspection and submission).
-
-This statement unit records two faithfulness criteria from David Renard,
+This statement module records two faithfulness criteria from David Renard,
 *Représentations des groupes réductifs p-adiques*, French edition dated
 9 July 2026, A.VIII.1, printed page 266 / PDF page 272. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`. The original is
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 The original page was reread directly and the source fingerprint and
-296-page count verified on 26 October 2026 by Worker 6. Worker 633 reread
-and visually checked PDF272 and independently verified the same source
-fingerprint and page count on 28 October 2026.
+296-page count verified on 26 October 2026. On 28 October 2026 PDF272 was
+reread and visually checked, and the same source fingerprint and page count
+were verified independently.
 
 The available 2010-edition errata,
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-were reread in full on PDF pages 18–19 by Worker 6 on 26 October 2026
-and Worker 633 on 28 October 2026. The old printed-page-308 argument
+were reread in full on PDF pages 18–19 on 26 October 2026 and again on
+28 October 2026. The old printed-page-308 argument
 is corrected from faithfulness to exactness when asserting preservation
 of epimorphisms and monomorphisms. The governing 2026 paragraph already
 uses exactness. The following erratum about sufficiency concerns the
 subsequent Hom argument. No project `notes/errata` directory was present
-in the workspace or its startup Library base; this is a bounded observation.
+in the Library when this module was written; this is a bounded observation.
 
 ## Source assertions and derived content
 
@@ -46,7 +43,8 @@ introduces no additional premise into our statement.
 `FaithfulnessCriteriaStatement` is an internal conjunction of these two
 propositions. The converse in the first criterion and this conjunction
 have derived provenance. This module contains statement definitions;
-neither criterion is proved here.
+neither criterion is proved here. Both are proved by `faithfulnessCriteria`
+in `Langlands.CategoryTheory.Renard.Faithfulness`.
 
 ## Complete context and proposition bodies
 
@@ -86,7 +84,7 @@ and its additivity instance. In particular, the first body's elaboration
 does not need additivity, so merely declaring a section variable
 `[F.Additive]` would allow Lean to omit it. The explicit binder preserves
 the stated source context. The first criterion has a preadditive
-generalization, but this unit retains the common abelian scope.
+generalization, but this module retains the common abelian scope.
 
 There are no smallness, concreteness, module-category, representation,
 finite-dimensionality or additional completeness assumptions.
@@ -120,8 +118,7 @@ and imposes no equality with a chosen zero object. In an abelian category
 this is the categorical meaning of the source's notation that an object
 is zero.
 
-The imported `Langlands.CategoryTheory.RenardExactFunctor`, authored by
-Worker 595 with Worker 6's mathematical specification, supplies the
+The imported `Langlands.CategoryTheory.RenardExactFunctor` supplies the
 already published source predicates. With the common context above,
 
 ```lean
@@ -141,7 +138,7 @@ one-sided condition restricts its inputs to short exact sequences.
 The second faithfulness criterion uses precisely this source exactness,
 without adding a finite-preservation comparison as a premise.
 
-## Proof and program boundaries
+## Proof boundaries
 
 At inspected Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`,
@@ -149,12 +146,13 @@ At inspected Mathlib commit
 `CategoryTheory/Limits/Preserves/Shapes/Zero.lean` are useful for the
 necessary direction. `Functor.mapAddHom` and `Functor.map_sub` in
 `CategoryTheory/Preadditive/AdditiveFunctor.lean` provide a route for
-the sufficient zero-morphism criterion. These are navigation for
-subsequent proof work, rather than proofs in this unit. The actual
-abelian image-factorization route for the exact zero-object criterion
-remains a separate proof obligation.
+the sufficient zero-morphism criterion. These are navigation for the
+proof, rather than proofs in this module. The actual abelian
+image-factorization route for the exact zero-object criterion is the one
+followed by the separate proof in `Langlands.CategoryTheory.Renard.Faithfulness`.
 
 No faithful instance or faithfulness theorem is installed here. Finite
 preservation, preservation of arbitrary exact complexes or homology,
 Hom object-property dictionaries, smallness, presentations and
-categorical equivalence remain separate whole-book obligations.
+categorical equivalence are separate obligations of the formalization of
+the whole book.

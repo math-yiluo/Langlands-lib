@@ -1,6 +1,6 @@
 # Affine relative fibre dimension and open source charts
 
-This helper module in Worker 105's proof of relative-dimension sublevel
+This helper module in the proof of relative-dimension sublevel
 openness first restricts an open
 source embedding to an actual point fibre. Open embeddings preserve local
 topological dimension, so this restriction identifies the two local fibre
@@ -18,5 +18,6 @@ The companion module `RelativeDimensionSublevelOpennessProof` transfers
 this affine assertion to arbitrary locally finite-type scheme morphisms.
 This argument supplies an internal prerequisite toward Conrad
 Theorem 3.4(2), rather than that theorem's filtered-descent conclusion.
-Retrocompactness and geometric-connectedness constructibility remain
-separate obligations.
+Retrocompactness and geometric-connectedness constructibility are
+separate results, proved in `RelativeDimensionSublevelRetrocompactnessProof`
+and `GeometricallyConnectedFiberConstructibilityProof`.

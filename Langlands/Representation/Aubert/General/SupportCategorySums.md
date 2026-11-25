@@ -24,7 +24,7 @@ directly from the invariant-submodule supremum.
 
 This construction does not assert that the supported sum is a direct summand,
 construct a block decomposition, or establish preservation by induction or
-Jacquet restriction. Those representation-theoretic steps remain separate
+Jacquet restriction. Those representation-theoretic steps are separate
 obligations for the general Aubert support-stability target. No classification,
 geometric-lemma, adjunction, or character independence theorem is invoked by
-this unit. The target and its imported Lean/Markdown pairs are unchanged.
+this module. The target and its imported Lean/Markdown pairs are unchanged.

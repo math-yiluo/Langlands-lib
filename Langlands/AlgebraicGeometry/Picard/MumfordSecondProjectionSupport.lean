@@ -50,9 +50,7 @@ lemma mumfordSecondInclusionOver_left (x : Over.mk (𝟙 S) ⟶ A.X) :
     (mumfordSecondInclusionOver A x).left = squareSecondInclusion A.X.hom x.left x.w := by
   apply pullback.hom_ext
   · simp [mumfordSecondInclusionOver, mumfordProductLift]
-    exact pullback.lift_fst _ _ _
   · simp [mumfordSecondInclusionOver, mumfordProductLift]
-    exact pullback.lift_snd _ _ _
 
 /-- The inclusion `z ↦ (z, x)` followed by the addition map is translation by `x`. -/
 lemma squareSecondInclusion_mumfordAddition (x : Over.mk (𝟙 S) ⟶ A.X) :

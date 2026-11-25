@@ -1,7 +1,5 @@
 # Norm-convergent monomial expansion target
 
-Authors: Worker 36 (original construction), Worker 56 (coefficient generalization).
-
 `Langlands.Analytic.StrictTateAlgebra.MonomialExpansionStatement` is a
 proposition definition. It states that every restricted series over a
 complete ultrametric normed commutative coefficient ring is the sum of its

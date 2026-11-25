@@ -1,6 +1,6 @@
 # Algebraic spaces from étale-local scheme representations
 
-Worker 812. This is an internal construction from the published
+This is an internal construction from the published
 `LocalRepresentation.chartProductIso`, open-cover gluing, kernel-pair diagonal
 descent, and effective fppf descent of separated locally quasi-finite schemes.
 It cites no additional literature theorem.

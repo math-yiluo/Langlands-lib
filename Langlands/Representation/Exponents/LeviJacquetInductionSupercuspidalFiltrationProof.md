@@ -1,6 +1,6 @@
 # Renard VI.5.3 (iii) for represented parabolics: proof
 
-Author: Worker 5106. Module
+Module
 `Langlands.Representation.Exponents.LeviJacquetInductionSupercuspidalFiltrationProof`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 

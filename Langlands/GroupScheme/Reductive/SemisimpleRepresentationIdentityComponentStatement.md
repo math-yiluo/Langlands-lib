@@ -191,7 +191,7 @@ of the map to `π₀(X)`) and p. 478 ("proof of 22.42. The V_i in the first
 decomposition should be the eigenspaces for the action of Z."). None of them
 changes the statements used here.
 
-## For the later proof (not part of this unit)
+## For the proof (in `SemisimpleRepresentationIdentityComponentProof`, not part of this module)
 
 Milne's proofs, printed p. 478 (PDF p. 494), use Theorem 22.42 (printed
 p. 477): for a connected algebraic group `G` over `k` of characteristic zero,

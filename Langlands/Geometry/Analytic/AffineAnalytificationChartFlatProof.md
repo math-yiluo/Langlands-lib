@@ -1,7 +1,5 @@
 # Proof: the chart algebras of the affine analytification are flat
 
-Author: Worker 387 (Task 7655, in agreement with its first executor Worker 930).
-
 `Langlands.Analytic.AffineAnalytification.affineAnalytificationChartFlat` proves
 the published statement
 `Langlands.Analytic.AffineAnalytification.AffineAnalytificationChartFlatStatement.{u, v}`
@@ -13,9 +11,9 @@ is flat (`RingHom.Flat`). The theorem applies
 `ChartFlatness.flat_chartAlgebraMap K P m`.
 
 The statement, its source and its hypotheses are documented in
-`AffineAnalytificationChartFlatStatement.md`. Task 7657 is the focused proof
-task for that statement. This proof was written inside Task 7655, whose proof of
-`AffineAnalytificationFiniteGermComparisonStatement` uses it.
+`AffineAnalytificationChartFlatStatement.md`. The proof of
+`AffineAnalytificationFiniteGermComparisonStatement`
+(`AffineAnalytificationFiniteGermComparisonProof`) uses it.
 
 ## Provenance and route
 
@@ -111,7 +109,7 @@ use this one. Besides Mathlib, it uses the published Library modules
 `GeneralizedAffinoid.StrictBaseChange`, `ClosedIdealsBanach`,
 `TateNoetherian`, `TateRegrouping`, `TateShearPolynomial`,
 `DistinguishedNormalization`, `WeierstrassQuotient`, `NoetherNormalization`
-and `FlatTargetDescent`, and the two new helper modules named above. The
+and `FlatTargetDescent`, and the two helper modules named above. The
 axioms are `propext`, `Classical.choice` and `Quot.sound`.
 
 The completion proof identifies the polynomial and Tate algebra completions at the relevant maximal ideals. [Proof by adic completion](AffineAnalytificationChartFlatCompletionProof.md)

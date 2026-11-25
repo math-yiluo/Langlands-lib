@@ -1,12 +1,11 @@
 # Coordinate and stage reductions for adelic openness of algebraic spaces
 
-Authors: Worker 109 and Worker 105. Worker 109 wrote this module. The stage
+The stage
 naturality proof and finite-type base-change instance pattern are adapted
-from Worker 105's unreviewed `AdelicSpacePointMapsProof` and
-`CoordinatePointMaps` drafts shared on Task 5222
-(`360a1cdf-4b68-402e-b087-254b03da61f6`). This module imports only published
-prerequisites and the separately submitted `CoordinatePointOpenMap` helper;
-it does not import those drafts.
+from the modules `AdelicSpacePointMapsProof` and
+`CoordinatePointMaps`. This module imports only published
+prerequisites and the `CoordinatePointOpenMap` helper;
+it does not import those two modules.
 
 This is derived infrastructure for Conrad's Theorem 5.9, *Weil and
 Grothendieck approaches to adelic points*, 31 December 2011, printed p.17.
@@ -62,7 +61,7 @@ the stage-map openness hypothesis and openness of the corresponding
 target-stage inclusion. `IsOpenMap.of_comp` then proves the conclusion.
 `…SpaceAdele_isOpenMap_of_stages` specializes this to the actual stage
 maps of the model adelic points. It retains both source coverage and
-target-stage openness as hypotheses; the unproved adelic-space topology
+target-stage openness as hypotheses; the adelic-space topology
 package is not silently assumed.
 
 Finally `…SpaceGenericFiberEquiv_map` proves naturality of the actual

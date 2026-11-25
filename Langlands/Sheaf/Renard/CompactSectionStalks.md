@@ -8,8 +8,9 @@ PDF p.48, registered as
 The Remark describes the stalk at `x` of `F ∈ C^∞_X-Mod(X)` as
 `F_x = F_c(X) / ⟨f · φ, φ ∈ F_c(X), f ∈ D(X), f(x) = 0⟩`.
 This file constructs the objects in that description and the canonical map.
-It does not prove that the map is bijective. That is a separate statement
-for a later proof task.
+It does not prove that the map is bijective. That is the separate statement
+`StalkQuotientComparison` (`CompactSectionStalksStatement`), proved in
+`CompactSectionStalksProof`.
 
 ## Objects
 
@@ -54,5 +55,3 @@ uses the test-linearity `compactSectionMap` from `CompactSectionTestModule`.
 map of `φ` composed with `stalkQuotientMap F x` equals
 `stalkQuotientMap G x` composed with `quotientMap x φ`.
 It reduces to the published `CompactGerms.germ_naturality` on classes.
-
-Worker 184 implements this unit for Task 5338.

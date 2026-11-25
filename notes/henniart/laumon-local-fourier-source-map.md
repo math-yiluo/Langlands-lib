@@ -1,11 +1,9 @@
 # Laumon's local Fourier transform for E1b: source map
 
-Author: Worker 816, executor of Task 7342 (`d74e3763-4a09-4fc2-b83b-4f04643f3186`)
-together with Worker 619. Written on 17 November 2026 and checked against Library
-commit `b369a8f280229cf081a17f96b81c7a8c1ff1f539`.
+Written on 17 November 2026 and checked against Library commit `b369a8f280229cf081a17f96b81c7a8c1ff1f539`.
 
-This note is a planning document. It proves nothing, states no Lean declaration
-and publishes no task. It maps the part of Laumon's 1987 paper that the
+This note is a planning document. It proves nothing and states no Lean
+declaration. It maps the part of Laumon's 1987 paper that the
 numerical step uses (statement E1b) onto exact source locations, records what
 the published edition does and does not contain, and lists the obligations that
 remain. It complements item R3 of the
@@ -19,7 +17,7 @@ constantes d'équations fonctionnelles et conjecture de Weil*, Publ. Math. IHÉS
 + 129. All PDF page numbers in this note count from 1 in the central-library
 file. "H88" is Henniart 1988 (`henniart-1988-numerical`); printed page = PDF page + 495.
 Numbers in parentheses such as (2.4.3) are La87's own numbering. "The route
-note" and "the plan note" are the two operator notes of 16 November 2026
+note" and "the plan note" are two planning notes
 (`operator-numerical-llc-route-2026-11-16`,
 `operator-external-inputs-plan-2026-11-16`).
 
@@ -30,14 +28,13 @@ the plan note §2.5. For `K' = F_q((t))`, `ℓ ≠ p` and `d, s ≥ 1`, it gives
 bijection between the isomorphism classes of irreducible continuous
 `Q̄_ℓ`-representations of `Gal(K'^sep/K')` of dimension `d` and Swan conductor
 `s` and those of dimension `d + s` and Swan conductor `s`. The bijection
-commutes with twists by unramified characters. Task 7342 must prove the form
-published by Task 5584. At the commit above the Library has no E1b statement.
-Worker 5733 will publish it as a child of Task 5584 (working name
-`Langlands.Henniart.LaumonNumericalStatement`).
+commutes with twists by unramified characters. At the commit above the Library
+had no E1b statement. The Library now states the route note's combined p-adic
+statement (LD), which combines E1a and E1b, as `LaumonDeligneCountStatement`
+(`Correspondence/HenniartLaumonDeligneStatement.lean`).
 
-The executors of Task 7342 split the proof at a named premise **S**. S is
-not an established result: it is what the sheaf-theoretic children must
-deliver. Fix `k = F_q`, `ℓ ≠ p` and a non-trivial additive character `ψ`.
+The proof splits at a named premise **S**. S is not an established result:
+it is what the sheaf-theoretic part of the proof must deliver. Fix `k = F_q`, `ℓ ≠ p` and a non-trivial additive character `ψ`.
 La87 (2.4.1), p. 162, allows for `T` and `T'` any two henselian traits of
 equal characteristic `p` with residue field `k` and chosen uniformizers `π`,
 `π'`. This note takes them complete: `T = Spec k[[π]]` (Laumon's trait at
@@ -58,7 +55,7 @@ finite-dimensional `Q̄_ℓ`-representations:
 - **S4.** `F(χ ⊗ V) = χ ⊗ F(V)` for every continuous character `χ` of
   `Gal(k̄/k)`, inflated to `G` and to `G'`.
 
-The sheaf-free remainder (owner: Worker 816) is:
+The sheaf-free remainder is:
 
 - (a) transport along the `k`-isomorphisms `k((π)) ≅ F_q((t)) ≅ k((π'))`
   sending `π` and `π'` to `t` (H88 §4.3 takes `K = K'` with matching
@@ -78,24 +75,22 @@ The sheaf-free remainder (owner: Worker 816) is:
   characters `χ` with `χ ⊗ V ≅ V`);
 - (d) the passage from orbits of `ℓ`-adic Galois classes to orbits of complex
   Weil classes under unramified twists, preserving dimension, Swan conductor
-  and torsion number (H88 §§4.1–4.2, pp. 509–510). This step imports the
-  general finite-image Weil/Galois dictionary of Task 7341
-  (`2009f3d2-7069-40b6-8ec4-14271918a1f1`), whose statements Task 7426
-  (`b8526cc7-9056-458a-87e4-1515596580fd`) publishes as
-  `Langlands.Henniart.WeilGaloisDictionaryStatement`; it is not proved twice.
-  Task 7426 leaves the comparison of `ℓ`-adic with complex representations to
-  Task 7342.
+  and torsion number (H88 §§4.1–4.2, pp. 509–510). This step imports a
+  general finite-image Weil/Galois dictionary (this note names it
+  `Langlands.Henniart.WeilGaloisDictionaryStatement`; no proof of it is found
+  by name in the Library); it is not proved twice. The dictionary leaves the
+  comparison of `ℓ`-adic with complex representations to this step.
 
-The two executors have agreed on the formal hand-over point, which is not yet
-published: a single statement, for `X = F_q((t))` (Mathlib's `LaurentSeries`)
+The formal hand-over point between the sheaf-theoretic and the sheaf-free
+parts is a single statement, for `X = F_q((t))` (Mathlib's `LaurentSeries`)
 and each `d ≥ 1`, `s ≥ 0`, of a bijection between the irreducible `ℓ`-adic
 classes of dimension `d` and Swan conductor `s` and those of dimension `d + s`
 and Swan conductor `s`, given by one map that commutes with every unramified
 twist. S is the list of obligations behind that statement; neither S nor the
 statement is an assumption that discharges Laumon's theorem.
 
-Worker 619 owns everything sheaf-theoretic. That includes proving S, choosing
-the base library (an operator decision after the reuse audit), and comparing
+The sheaf-theoretic part includes proving S, choosing the base library (a
+decision after the reuse audit), and comparing
 the complete traits with henselizations. Lemma (2.4.2.1) relates `T` and `T'`
 to the global sheaves on `A` and `A'` through the `k`-morphisms `π ↦ x` and
 `π' ↦ 1/x'` (and their variants), that is, through the henselizations of `A`
@@ -103,7 +98,7 @@ at `0` and of `A'` at `∞'`. So the proof of (2.4.2.1) for complete traits
 needs the restriction isomorphism from the Galois group of the completion to
 that of the henselization, compatible with inertia, upper numbering and Swan
 conductors, together with the corresponding comparison of nearby cycles. This
-is bridge (b2) of the plan note §4.1. If the sheaf children work with
+is bridge (b2) of the plan note §4.1. If the sheaf-theoretic part works with
 henselizations instead, the same restriction isomorphism, not a field
 isomorphism, must precede (a).
 
@@ -123,7 +118,7 @@ with it commutes with `j_!`, with `pr*`, with the Artin–Schreier kernel and wi
 modules; `RΨ`, `RΦ` are defined in SGA 7 XIII 2.1.1). Its restriction to the
 generic point of `T'` is the same character `χ`, now as a character of
 `G'`. I found no numbered statement of this projection formula in SGA 7 XIII.
-A child that proves S4 must either prove it from the definitions or locate it
+A proof of S4 must either derive it from the definitions or locate it
 in the chosen base.
 
 La87 uses the isomorphism-class form of (2.4.3)(i) itself, in the special
@@ -242,16 +237,16 @@ that La87 §1.3 uses. La87 cites it on pp. 135, 138, 147, 149, 155 and 160.
 
 1. Prove S (S1–S4) on the chosen base, including the twist compatibility S4,
    which has no numbered source (section 2), and the slope inclusion of
-   section 3. Owner: Worker 619's sheaf children.
+   section 3.
 2. Compare the complete traits with the henselizations of `A` at `0` and of
    `A'` at `∞'` that Lemma (2.4.2.1) uses (section 1): the restriction
    isomorphism of Galois groups must respect inertia, the upper-numbering
    filtrations and the Swan conductors used in the Library, and the nearby and
    vanishing cycles over the complete trait must agree with those over the
-   henselization (plan note §4.1, bridges (b1)–(b4)). Owner: Worker 619, with
-   the Galois-side layer of Task 7341.
-3. Prove (a)–(c) of section 1, and (d) by importing Task 7341's dictionary.
-   Owner: Worker 816. Child tasks will follow publication of Task 7341's
-   characteristic-`p` definitions and Task 5584's E1b statement.
-4. Lemma (2.4.2.1) is stated in La87 as immediate. A formal child must
+   henselization (plan note §4.1, bridges (b1)–(b4)). This uses the Galois
+   side of nonarchimedean local fields in both characteristics.
+3. Prove (a)–(c) of section 1, and (d) by importing the Weil/Galois
+   dictionary. This needs the characteristic-`p` definitions of the Galois
+   side and a statement of E1b.
+4. Lemma (2.4.2.1) is stated in La87 as immediate. The formalization must
    supply its proof from the definitions of `RΦ` and the traits.

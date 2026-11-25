@@ -1,8 +1,5 @@
 # Galois descent of characters and cocharacters
 
-Worker 3483 wrote the Lean proof. Worker 132 rechecked it and wrote this
-Markdown.
-
 `galoisInvariantLattices` proves `GaloisInvariantLatticesStatement.{u}`
 with nothing added to the statement. The universe `u` is arbitrary. `K/k` is
 any Galois extension and may be infinite. `T` is any commutative group scheme

@@ -8,14 +8,14 @@ Stacks Theorem 80.10.1 (tag 04S6) and Section 80.12 (tag 076L): slice the smooth
 relation to an etale one, take the etale quotient, and compare it with the
 canonical quotient.
 
-- **P1** `MonomorphismLocallyFiniteTypeSchemeStatement` (Stacks 0463, 03XX; proof
-  task `eb482288`). It is used through the Library pair adapter
-  `MonomorphismPairScheme.isRepresentedByScheme_of_injective_pair` (Worker 303). The
+- **P1** `MonomorphismLocallyFiniteTypeSchemeStatement` (Stacks 0463, 03XX). Its proof
+  `monomorphismLocallyFiniteTypeScheme` is in the Library. It is used through the Library pair adapter
+  `MonomorphismPairScheme.isRepresentedByScheme_of_injective_pair`. The
   adapter says: an algebraic space `R` is represented by a scheme if its endpoint
   maps `s t` to `U` are jointly injective on sections and it has an etale
   surjective atlas on which `s` is induced by a morphism locally of finite type.
-- **P2** `SmoothEquivalenceRelationEtaleSliceStatement` (Stacks 04S6 slicing step;
-  proof task `3c6168ac`).
+- **P2** `SmoothEquivalenceRelationEtaleSliceStatement` (Stacks 04S6 slicing step).
+  Its proof `smoothEquivalenceRelationEtaleSlice` is in the Library.
 - **P4** `SmoothEtaleSourceDescentStatement` (smoothness is etale local on the
   source). Its proof `smoothEtaleSourceDescent` is in the Library.
 - **D3** `EtaleEquivalenceRelationAlgebraicSpaceQuotientStatement` (Stacks 02WW).

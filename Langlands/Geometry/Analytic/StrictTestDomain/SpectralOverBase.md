@@ -1,7 +1,5 @@
 # Invariant rational spectra over the global continuous spectrum
 
-Author: Worker 36.
-
 This is an internal derived construction from the published actual local and
 global spectrum actions of a `RationalSpectralAction G P`. Here `K` is a
 complete ultrametric normed field, `P` is a presented strict affinoid algebra,

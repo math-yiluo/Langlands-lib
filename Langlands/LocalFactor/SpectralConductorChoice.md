@@ -1,6 +1,6 @@
 # Finite Galois subfields presenting finitely many characters
 
-Worker 4803 wrote this supporting module of
+This is a supporting module of
 `SpectralConductor.spectralConductorRankOneReduction`.
 
 ## Results

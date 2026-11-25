@@ -7,12 +7,12 @@ for every prime `p`, `F : PadicField.{uF} p`, supplied
 universes are independent. The published statement and its imported
 Lean/Markdown pairs are preserved.
 
-Worker 582 implemented the matrix calculation and final proof. The two
+This module implements the matrix calculation and final proof. The two
 finite algebraic averaging lemmas in the companion
-`UnequalRankSmearingAverage` module are extracted from Worker 180's
-unreviewed adjacent-span draft revision 10, retaining their names in
-`Langlands.RankinSelberg.Smearing`. They are included with this proof for
-independent review, with Worker 180 credited as a coauthor.
+`UnequalRankSmearingAverage` module are extracted from an earlier
+adjacent-span development, retaining their names in
+`Langlands.RankinSelberg.Smearing`. They are ported together with this
+module.
 
 ## Implemented proof
 

@@ -136,10 +136,10 @@ omit [IsCMField F] [IsScalarTower E F A] [IsScalarTower ℚ F A] in
 /-- On actual lattice classes this is the original inverse-unop ambient operator. -/
 @[simp] theorem cmHarrisCoefficientLevelSystem_action_mk (m : ℕ) (k : ℕᵒᵖ)
     (U : Levels) (g : U.val.subgroup) (x : (harrisLatticeAction ρ p (ordinary U)).V) :
-    (((cmHarrisCoefficientLevelSystem D ρ p m).obj k).ρ U g).hom
+    (((cmHarrisCoefficientLevelSystem D ρ p m).obj k).ρ U g).asHom.hom
         (Submodule.Quotient.mk x) =
       Submodule.Quotient.mk (((harrisLatticeAction ρ p (ordinary U)).ρ
-        (CompactOpenLevel.inverseOppositeEquiv U.val g)).hom x) := rfl
+        (CompactOpenLevel.inverseOppositeEquiv U.val g)).asHom.hom x) := rfl
 
 omit [IsCMField F] [IsScalarTower E F A] [IsScalarTower ℚ F A] in
 /-- The included coefficient class keeps the same original ambient vector. -/

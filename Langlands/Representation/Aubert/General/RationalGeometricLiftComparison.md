@@ -1,6 +1,6 @@
 # Actual geometric terms for arbitrary surviving-class lifts
 
-Worker 167. This internal construction derives representative comparisons from
+This internal construction derives representative comparisons from
 the actual full-Levi geometric-term isomorphism, the published composition and
 inner-conjugation comparisons, and the actual normalizer/full-centralizer
 quotient. It introduces no additional literature assertion.

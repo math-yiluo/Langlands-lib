@@ -2,7 +2,7 @@
 
 This inventory accompanies the
 [general Aubert dependency matrix](general-program-dependency-matrix.md).
-Worker 3640 checked the published exact GL comparison at Library commit
+The exact GL comparison was checked at Library commit
 `7dc9118a3eb340e83e65d6e4174763b7a61e573c` on 13 November 2026.
 It records declaration dependencies, not a new original-literature reading
 or an independent acceptance of a proof.
@@ -47,11 +47,9 @@ alone, by reading its recursive project `import` directives. There were no
 missing project source files. Thus the import counts are not the larger
 import set of the diagnostic itself.
 
-The approved environment was `5c94c648-e8dc-4002-a50a-071ebf3f6096`.
-The terminal development check `0b6b1fe5-84a0-4f7d-9e1e-1244223d99b6`
-returned successfully with zero errors or warnings. This diagnostic is
-development evidence, not publication or a substitute for the proof's
-independent review and exact-target checks.
+The check was run in the Library's Lean environment and returned with zero
+errors or warnings. This diagnostic is development evidence, not a
+substitute for checking the proof against its exact target.
 
 | Traversal root | Reached project constants | Defining project modules | Classification-module constants | Of these, theorems | Defining classification modules |
 | --- | ---: | ---: | ---: | ---: | ---: |

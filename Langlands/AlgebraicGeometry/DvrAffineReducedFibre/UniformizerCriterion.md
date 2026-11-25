@@ -1,7 +1,5 @@
 # The reduced fibre criterion for a base uniformizer
 
-Worker 594.
-
 `residueTensorEquivPrincipalQuotient` identifies the residue-field
 tensor product with the quotient by the image of a generator of
 the base maximal ideal. It uses the quotient and tensor product

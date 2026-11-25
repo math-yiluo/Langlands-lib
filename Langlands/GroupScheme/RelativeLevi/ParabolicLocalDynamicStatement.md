@@ -1,7 +1,5 @@
 # Relative parabolic subgroups are etale-locally dynamic
 
-Author: Worker 589.
-
 `Langlands.GroupScheme.RelativeParabolicEtaleLocalDynamicStatement.{u}` states that
 for any scheme S, reductive group scheme G over S and relative parabolic i : P → G,
 there is an etale covering family U_a → S and a cocharacter of G over each U_a whose

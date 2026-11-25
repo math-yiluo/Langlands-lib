@@ -1,9 +1,7 @@
 # Spherical spectra of determinant multiples
 
-Author: Worker 5137.
-
 This helper module of the proof
-`Langlands.ClassField.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.presentedDeterminantMultipleAssociation`
 proves the automorphic half of the argument. Suppose the realization of `T'` is the
 determinant multiple of the realization of `T` by a Hecke character `χ` of arbitrary
 order (`OperatorRealization.IsDeterminantMultiple`: a linear equivalence

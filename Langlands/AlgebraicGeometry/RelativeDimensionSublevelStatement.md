@@ -1,6 +1,6 @@
 # General relative-dimension sublevel statements
 
-Worker 105 states the two general assertions about the actual source sets
+This module states the two general assertions about the actual source sets
 `relativeDimensionSublevel f n` from Stacks Section 29.29, tag 02FW.
 The retained original HTML belongs to the registered source
 `stacks-fibre-constructibility-local-dimension-2026-11-04`, SHA-256
@@ -47,7 +47,7 @@ The source sublevels become constructible by openness and retrocompactness.
 The reduction requires no quasi-separatedness premise on the morphism
 in addition to the explicit hypotheses.
 
-This unit supplies an exact general-dimension proof target and proves how
+This module supplies an exact general-dimension proof target and proves how
 it would provide the dimension part of the constructibility prerequisite
 for Conrad Theorem 3.4(2). It does not prove the two general sublevel
 assertions, geometric-connectedness locus constructibility, or Conrad's

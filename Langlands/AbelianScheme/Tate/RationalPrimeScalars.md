@@ -119,11 +119,13 @@ The module is a derived algebraic compatibility construction using
 `RationalScalars`, `PrimeScalars`, `RationalPrime`, and
 `Global.RationalProfiniteIntegerPadicProjection`. The arbitrary commutative
 group object, test scheme, level predicate and natural modulus are internal
-generalizations. The direct scalar-tower proof route was coordinated with
-Worker 92's analogous twist construction.
+generalizations. The direct scalar-tower proof route parallels the
+analogous twist construction (`TwistRationalPrimeScalars`).
 
 No injectivity or surjectivity of the coordinate maps, restricted-product
 equivalence, finite-adele coordinate identification, rational topology,
 continuity, monodromy or Weil pairing is asserted here. The rational
-restricted-product statement and scalar comparison statements remain
-separate proof obligations.
+restricted-product statement and scalar comparison statements are separate;
+the former is proved as `rationalRestrictedProductComparison` in
+`RestrictedProductProof`, and the comparison of rational profinite integers
+with finite adeles as `Langlands.Global.rationalProfiniteIntegerAdeleComparison`.

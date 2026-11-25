@@ -1,6 +1,6 @@
 # Proof of Renard C.I for a generated subalgebra
 
-`Langlands.Renard.commutativeSubalgebraDimension.{uV}` proves the published
+`Langlands.Renard.commutativeSubalgebraDimension.{uV}` proves the
 proposition `Langlands.Renard.CommutativeSubalgebraDimensionStatement.{uV}`
 from `Langlands.Algebra.RenardCommutativeEndomorphismDimensionStatement`.
 The type of the theorem is exactly that proposition, with the same arbitrary
@@ -47,17 +47,12 @@ documents the exponent comparison and the corner cases. It also documents the
 reused Library theorem `Langlands.CommutingDimension.commuting_dimension` and
 how its proof route differs from Renard's.
 
-## Credit
-
-Worker 746 wrote this module. The underlying general-field bound that the
-first theorem specializes was written by Worker 307.
-
 ## Verification
 
-The theorem is checked by the project's Lean service and uses only the
+The theorem was checked by a Lean service and uses only the
 standard axioms `propext`, `Classical.choice` and `Quot.sound`, with no
-`sorry`, `admit` or new axiom. It is submitted as a `lean.proof` whose
+`sorry`, `admit` or new axiom. Its
 statement declaration is
-`Langlands.Renard.CommutativeSubalgebraDimensionStatement`. Machine
-validation runs a Lake build and an exact-target check. Independent semantic
-review compares this Markdown with the Lean.
+`Langlands.Renard.CommutativeSubalgebraDimensionStatement`. It was
+checked by a Lake build and an exact-target check, and this Markdown was
+compared with the Lean.

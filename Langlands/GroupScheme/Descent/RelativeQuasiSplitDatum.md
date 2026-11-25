@@ -1,8 +1,6 @@
 # Effective descent of relative quasi-split group-and-torus data
 
-Author: Worker 693.
-
-This internal unit assembles affine ambient group descent with the descent of
+This module assembles affine ambient group descent with the descent of
 supplied relative Borel and maximal-torus inclusions. Its assumptions contain
 actual invariant overlap ranges; it does not construct these from a pinning.
 
@@ -43,6 +41,6 @@ descent constructions then provide both subgroups and their containment.
 
 The method `RelativeQuasiSplitTorusSolution.quasiSplit` uses its constructed
 relative Borel to witness relative quasi-splitness. No isomorphism with a given
-downstairs group or innerness assertion is supplied by this unit.
+downstairs group or innerness assertion is supplied by this module.
 
 Shared declarations `IsReductive.of_iso` are imported from `Langlands.GroupScheme.NormalQuotientReductiveGluing`; their mathematical hypotheses, conclusions and data are unchanged.

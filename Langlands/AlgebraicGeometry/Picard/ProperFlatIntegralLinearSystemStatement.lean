@@ -30,10 +30,10 @@ surjective when also every `H⁰(Y_t, M_t)` is nonzero. -/
 def ProperFlatIntegralLinearSystemStatement : Prop :=
   ∀ (T : Scheme.{u}) [IsLocallyNoetherian T] {Y : Scheme.{u}} (g : Y ⟶ T),
     IsProper g → Flat g → GeometricallyIntegral g →
-    ∀ M : Y.Modules, Scheme.Modules.IsInvertible M →
+    ∀ M : Y.Modules, Scheme.Modules.IsInvertibleFLT M →
       ∃ (Λ : Scheme.{u}) (l : Λ ⟶ T) (W : RelativeEffectiveDivisor (pullback.snd g l))
         (N : Λ.Modules),
-        IsProper l ∧ Scheme.Modules.IsInvertible N ∧
+        IsProper l ∧ Scheme.Modules.IsInvertibleFLT N ∧
         Nonempty (W.toEffectiveCartierDivisor.lineBundle.obj ≅
           (Scheme.Modules.pullback (pullback.fst g l)).obj M ⊗
             (Scheme.Modules.pullback (pullback.snd g l)).obj N) ∧
@@ -43,7 +43,7 @@ def ProperFlatIntegralLinearSystemStatement : Prop :=
               W.ideal.comap
                 (pullback.map g t' g l (𝟙 Y) k (𝟙 T) (by simp) (by simp [hk])) = E) ↔
             ∃ hE : IsRelativeEffectiveCartierIdeal (pullback.snd g t') E,
-              ∃ N' : T'.Modules, Scheme.Modules.IsInvertible N' ∧
+              ∃ N' : T'.Modules, Scheme.Modules.IsInvertibleFLT N' ∧
                 Nonempty ((EffectiveCartierDivisor.lineBundle ⟨E, hE.1⟩).obj ≅
                   (Scheme.Modules.pullback (pullback.fst g t')).obj M ⊗
                     (Scheme.Modules.pullback (pullback.snd g t')).obj N')) ∧

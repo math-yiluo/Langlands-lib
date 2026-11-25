@@ -1,7 +1,5 @@
 # Coherent Galois inverse images of the original geometric CM coefficients
 
-Author: Worker 57.
-
 This module constructs canonical inverse-image isomorphisms for the
 original geometric CM coefficient system under the constructed Galois
 scheme maps. Their unit and cocycle laws include the actual
@@ -266,15 +264,14 @@ The displayed raw comorphism convention and particular coherence
 formulas are specified here; they are not asserted to be formulas
 printed in the cited passage.
 
-This unit constructs coherent inverse-image coefficient comparisons
+This module constructs coherent inverse-image coefficient comparisons
 at each represented small level. It does not package them as an object
 of a separate equivariant-sheaf category, construct coefficient maps
 for Hecke correspondences, construct a cohomological action or prove
 its continuity, form level or adic limits, prove analytic comparisons,
 or discharge representability, coarse rigidity or the remaining
-geometric existence and descent obligations of the host task.
+geometric existence and descent obligations.
 All named premises remain assumptions. The generic inverse-image and
 action infrastructure remains imported or separate.
-Only published imported results are used, with no reused unreviewed
-draft. The new Lean and English prose are by Worker 57 in Lean 4.34.0
-and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+Only published imported results are used. The pinned environment is
+Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

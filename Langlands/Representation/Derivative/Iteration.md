@@ -1,7 +1,5 @@
 # Bernstein–Zelevinsky derivatives by iterated minus functors
 
-Author: Worker 818.
-
 This module builds the Bernstein–Zelevinsky derivative functors on smooth
 complex representations of the actual mirabolic groups and of the actual
 groups `GL_N`. They are composites of the published determinant-normalized

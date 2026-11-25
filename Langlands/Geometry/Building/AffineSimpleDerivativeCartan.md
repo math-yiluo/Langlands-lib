@@ -26,4 +26,4 @@ left-kernel marks and vertex-transitive matrix automorphisms.
 These are internal consequences of the imported constructions and finite
 reindexing. Existence of the base, the geometric premises and an identification
 of this base with an actual absolute group root datum remain explicit inputs.
-This unit supplies no actual-group or splitting theorem.
+This module supplies no actual-group or splitting theorem.

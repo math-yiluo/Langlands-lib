@@ -1,7 +1,5 @@
 # Reconstruction of an unlinked multisegment from cuspidal content
 
-Author: Worker 328.
-
 The proposition `Langlands.Classification.UnlinkedCuspidalContentInjectivity`
 states that the cuspidal content determines an unlinked multisegment. This
 module defines a proposition target; it does not prove it.
@@ -63,7 +61,7 @@ of the present formal formulation.
 
 The cited page was read and visually checked in the registered original, and
 its source hash was verified. No source-specific errata note was found under
-the current Library's `notes/errata`.
+the Library's `notes/errata`.
 
 ## Proof obligations and dependency boundary
 
@@ -72,21 +70,23 @@ actual cuspidal isomorphism classes, justify their finite interval model, and
 prove reconstruction with repetitions retained. One possible combinatorial
 route recovers intervals on each free integral orbit from the connected
 components of superlevel sets of the multiplicity function. This is a
-prospective proof route, not an implemented proof or an additional hypothesis.
+possible proof route, not an implemented proof or an additional hypothesis.
 Nontriviality of the twisting character alone is not freeness on
 isomorphism classes.
 
 The 48-module transitive project import closure of `SegmentCuspidalContent`
-was checked against the current Library. All imported Lean/Markdown pairs
+was checked against the Library. All imported Lean/Markdown pairs
 are unchanged. It supplies lower-level field, group, smooth representation,
 twisting, induction and segment interfaces. This statement has no dependency
 on generic segment-product uniqueness, multisegment exhaustion, ordered
 strong-head existence, quotient coverage, ordered conversion, tempered
 uniqueness, `SquareIntegrableLanglandsClassification`, square-integrable
-exhaustion or regular exhaustion. Any proof successor must preserve that
+exhaustion or regular exhaustion. Any proof of it must preserve that
 independence and audit every additional dependency.
 
 The target does not assert existence or uniqueness of representation-theoretic
 cuspidal support, or a classification of induced representations. Proposition
-definitions, source citations and pending proof tasks supply no proof of this
-target or of its prerequisites.
+definitions and source citations supply no proof of this
+target or of its prerequisites. The proof is
+`Langlands.Classification.unlinkedCuspidalContentInjectivity` in
+`UnlinkedCuspidalContentInjectivityProof`.

@@ -6,9 +6,7 @@ The module contains two **statements**, the `Prop`-valued definitions
 `StandardLeviNormalizerQuotientStatement` and `StandardMaximalLeviWeylStatement`. It proves
 nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The Chapter V item ledger found both assertions
-unstated. The Library states only the finiteness of `N_G(M)(F)/M(F)`
+The Library also states the finiteness of `N_G(M)(F)/M(F)`
 (`LeviNormalizerFiniteQuotientStatement`) and a bound of at most two parabolics through a
 maximal Levi (`MaximalLeviParabolicCountStatement`).
 
@@ -18,8 +16,8 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.4.3–V.4.4 (printed p.119 / PDF p.125) and V.4.8 (printed p.122 /
-PDF p.128) in the rendered PDF.
+The passages read are V.4.3–V.4.4 (printed p.119 / PDF p.125) and V.4.8 (printed p.122 /
+PDF p.128), in the rendered PDF.
 
 V.4.3. For a standard Levi subgroup `M` with split component `A`,
 `W_M = N_M(A_∅)/Z_M(A_∅)` (V.4.3.1) embeds in `W_G`, `w · M = gMg⁻¹` for a lift `g` of `w`,
@@ -140,9 +138,11 @@ where it is 1. Clause 3: `n · P_I` has Levi factor `L_J`. By clause 2, `P(L_J)`
 equal. Then `n` normalizes `P_I` and `L_I`, so `n ∈ L_I(k)` and the class of `n` lies in
 `W_I`, a contradiction. Hence `n · P_I = P̄_J = P(-ζ)`.
 
-## Remaining obligations
+## Proofs
 
-Both proofs are separate obligations. They need conjugacy of maximal split tori in a
+Both proofs are in separate modules: `standardLeviNormalizerQuotient`
+(`Rational.StandardLeviNormalizerQuotientProof`) and `standardMaximalLeviWeyl`
+(`Rational.StandardMaximalLeviWeylProof`). They need conjugacy of maximal split tori in a
 standard Levi, the published standard-parabolic classification and standard cocharacters,
 self-normalization of parabolics (published `StandardParabolicPointsStatement`), and
 opposite-parabolic uniqueness (`OppositeDynamicParabolicUniquenessStatement`).

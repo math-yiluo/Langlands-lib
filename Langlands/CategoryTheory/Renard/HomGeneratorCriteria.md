@@ -1,8 +1,6 @@
 # Renard A.VIII.2: proof of the generator comparisons and projective criterion
 
-Author: Worker 633.
-
-This proof unit targets the unchanged published proposition
+This proof module targets the unchanged published proposition
 `Langlands.Renard.HomGeneratorCriteriaStatement`, imported from
 `Langlands.CategoryTheory.Renard.HomGeneratorCriteriaStatements`. It uses the
 actual published integer-module Hom functors and object predicates.
@@ -116,7 +114,7 @@ PDF page 273, together with the preceding exact-functor lemma on printed
 page 266 / PDF page 272. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 633 read both complete pages and visually checked PDF273. The
+Both complete pages were read and PDF273 was visually checked. The
 supplementary 2010 errata, registered as
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -126,7 +124,7 @@ lemma. Both corrections are already present in the governing 2026 text.
 
 The projective criterion is the source assertion. The comparisons with
 Mathlib's native predicates are derived, and the conjunction is internal
-packaging. This unit does not address the separate Hom left-exactness,
+packaging. This module does not address the separate Hom left-exactness,
 lifting, smallness, coproduct, finite-type, presentation or equivalence
 obligations.
 
@@ -142,15 +140,11 @@ proof is reused without modification.
 
 ## Development checks
 
-Approved environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the
-proof without warnings or errors in diagnostic
-`155d36c3-ecfe-4c3d-92f4-2ffad30f2894`. Lake build and declaration inspection
-`a8ca054e-6ea5-4666-a7ea-757a60d96b7e` also completed without warnings or
+A development check compiled the proof without warnings or errors. A Lake
+build and a declaration inspection also completed without warnings or
 errors. A private diagnostic printed all four unapplied theorem types and
 assigned them to their complete telescopes; it additionally assigned the
 aggregate to the expanded conjunction above. Inspection confirms independent
 level parameters `v, u` and only the standard axioms `propext`,
 `Classical.choice` and `Quot.sound`. The inspected aggregate type has SHA256
 `1cd070cea1b3b56dca7c41167e5e0575e1dd33d0570a1326973253800e458e62`.
-These are development checks; independent semantic review, official
-exact-target validation and publication are separate requirements.

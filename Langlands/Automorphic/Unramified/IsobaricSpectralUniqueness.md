@@ -1,6 +1,7 @@
 # Uniqueness of the spectral systems attached to isobaric data
 
-Worker 5130 wrote this module for Task 7784 (distinct Mackey components from B6). B6's
+This module serves the proof of distinct Mackey components from B6 (module
+`Langlands.Global.Arithmetic.HarrisProposition48ExactStabilizerDistinctnessReduction`). B6's
 isobaric chains relate consecutive levels by `IsobaricData.IsWeakBaseChangeOf`. That relation
 is existential: some system attached to the lower data and some system attached to the upper
 data satisfy the numerical base-change identity. A computation that follows a chain from

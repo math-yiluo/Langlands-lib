@@ -1,8 +1,8 @@
 # Semisimple-locus openness from affine torus neighbourhoods
 
-Worker 801. This internal derived reduction uses the published relative split-torus
-lifting statement and an explicit affine local-neighbourhood premise. It proves the
-unchanged `IdentityComponentSemisimpleLocusOpenStatement` in every universe under
+This internal derived reduction uses the published relative split-torus
+lifting statement and an explicit affine local-neighbourhood premise. It proves
+`IdentityComponentSemisimpleLocusOpenStatement` in every universe under
 these two premises; the affine premise is not assumed to hold without proof here.
 
 The affine premise asks for an open neighbourhood of a semisimple geometric

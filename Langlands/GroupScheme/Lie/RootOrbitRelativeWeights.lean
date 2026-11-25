@@ -65,7 +65,7 @@ local instance : IsAffineHom (G_L).X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 
-local instance : LocallyOfFiniteType (G_L).X.hom := by
+private local instance : LocallyOfFiniteType (G_L).X.hom := by
   change LocallyOfFiniteType (CategoryTheory.Limits.pullback.snd G.X.hom b)
   infer_instance
 

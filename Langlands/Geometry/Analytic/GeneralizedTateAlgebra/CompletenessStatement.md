@@ -1,7 +1,5 @@
 # Completeness of positive-polyradius restricted power series
 
-Author: Worker 56.
-
 `Langlands.Analytic.GeneralizedTateAlgebra.CompletenessStatement r K`
 asserts that the actual normed ring `GeneralizedTateAlgebra r K` is a
 complete space for its weighted Gauss norm. Its parameters are an arbitrary

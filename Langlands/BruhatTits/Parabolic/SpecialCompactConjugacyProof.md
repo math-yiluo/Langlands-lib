@@ -1,7 +1,5 @@
 # Parabolic conjugacy under a subgroup satisfying Iwasawa factorization
 
-Author: Worker 283.
-
 The theorem `Langlands.BruhatTits.specialCompactParabolicConjugacy` proves exactly
 `Langlands.BruhatTits.SpecialCompactParabolicConjugacyStatement`, with its universe
 parameter and hypotheses unchanged.

@@ -6,10 +6,8 @@ The module contains three **statements**, the `Prop`-valued definitions
 `RationalNormKernelUnimodularStatement`, `RationalNormKernelRestrictionStatement` and
 `RationalNormKernelCompactCenterStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The Chapter V item ledger found that every other
-assertion of these three paragraphs is published. These are the assertions it found
-unstated. The V.2.6 Lemma assertion `⁰A_G = ⁰G ∩ A_G` is not restated here: it is the
+Every other assertion of these three paragraphs was found published elsewhere in the
+Library; these are the assertions that were found unstated. The V.2.6 Lemma assertion `⁰A_G = ⁰G ∩ A_G` is not restated here: it is the
 published `Langlands.Plancherel.RenardCartan.SplitComponentKernelStatement` (module
 `RenardLatticeComparisonStatement`).
 
@@ -19,7 +17,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read V.2.3–V.2.6, printed pp.105–108 / PDF pp.111–114.
+V.2.3–V.2.6, printed pp.105–108 / PDF pp.111–114, were read.
 
 - V.2.3, Proposition (printed p.106 / PDF p.112): « Le groupe `⁰G` est un sous-groupe
   ouvert, fermé et distingué unimodulaire de `G`. […] ». The proof ends: « Comme `⁰G`
@@ -86,8 +84,9 @@ The other assertions of the V.2.3 Proposition are proved: `isOpen_rationalCommon
 `isClosed_rationalCommonNormKernel`, the normality instance `rationalCommonNormKernel_normal`,
 `compactSubgroup_le_rationalCommonNormKernel` and `derivedPoints_le_rationalCommonNormKernel`.
 Unimodularity of `G(F)` (V.5.4) is the proved `rationalReductiveUnimodularity`. For V.2.6,
-the equality `⁰A_G = ⁰G ∩ A_G` is the published, not yet proved
-`RenardCartan.SplitComponentKernelStatement`, and the finite index of `Λ(A_G)` in `Λ(G)` is
+the equality `⁰A_G = ⁰G ∩ A_G` is the published
+`RenardCartan.SplitComponentKernelStatement`, proved as `splitComponentKernel` (module
+`SplitComponentKernelProof`), and the finite index of `Λ(A_G)` in `Λ(G)` is
 the proved `splitComponentLattice`. The finiteness
 of `G/⁰G A_G` follows from it by `finite_rationalCentralQuotient`, and compactness of
 `⁰G ∩ Z(G)` is `isCompact_rationalCommonNormKernel_inf_center`.
@@ -107,9 +106,14 @@ of `G/⁰G A_G` follows from it by `finite_rationalCentralQuotient`, and compact
   It embeds in the torsion-free group `Λ(G)`, so it is trivial. Renard argues in the same
   way with powers of `g`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are separate obligations.
+The proofs are in separate modules: `rationalNormKernelUnimodular`
+([`RationalNormKernelUnimodularProof`](RationalNormKernelUnimodularProof.md)),
+`rationalNormKernelRestriction`
+([`RationalNormKernelRestrictionProof`](RationalNormKernelRestrictionProof.md)) and
+`rationalNormKernelCompactCenter`
+([`RationalNormKernelCompactCenterProof`](RationalNormKernelCompactCenterProof.md)).
 
 ## Imports
 

@@ -1,7 +1,5 @@
 # A reducedness criterion for commutative Artinian rings
 
-Author: Worker 1575.
-
 These internal commutative-algebra lemmas support the finite Hopf-algebra
 characteristic-zero reducedness proof. They use Mathlib's
 `IsArtinianRing.nilradical_pow_eq_iInf`, which identifies powers of the

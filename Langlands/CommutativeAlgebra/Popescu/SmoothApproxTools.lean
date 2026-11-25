@@ -1,5 +1,5 @@
 import Langlands.CommutativeAlgebra.Popescu.EssentiallySmooth
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Tools for the assembly of Stacks Lemma 16.11.2 (07FH) -/
 

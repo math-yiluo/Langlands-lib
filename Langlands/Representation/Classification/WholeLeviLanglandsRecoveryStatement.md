@@ -44,25 +44,27 @@ untwisted input. No tensor decomposition, support witness, common literal
 quotient, prescribed parameter equality, or universe domination is assumed.
 A single block is allowed; strict decrease is then vacuous.
 
-This is a derived interface for the standard-data part of the semistandard
-conjugacy project, corresponding to task
-`707cfa4e-a9aa-4748-8f7a-0074d8ee5a3d`. The existing
+This is a derived interface for the standard-data part of semistandard
+conjugacy (`GLSemistandardLanglandsConjugacyStatement`, module
+`SemistandardLanglandsStatement`). The existing
 `GLRegularLanglandsParameterUniquenessStatement` and
 `GLRegularLanglandsTensorRecoveryStatement` express related recovery goals
 for supplied tempered block factors in a common enlarged universe. This
 statement expresses the additional whole-Levi and universe adapter needed
-by the parent, without assuming that adapter as a premise. The closed
+by the proof of semistandard conjugacy, without assuming that adapter as a premise. The closed
 `CuspidalSupport.padicLeviAdmissibleFactorization` supplies an algebraic
 factorization tool in the original carrier universe, but does not by itself
 establish analytic temperedness of each factor or this recovery theorem.
 A proof must discharge those analytic, induction-transport and universe
 obligations using closed results, rather than assume the related Prop-valued
-targets. No completed proof of this statement is claimed here.
+targets. This file contains no proof; the proof is
+`Langlands.glWholeLeviLanglandsRecovery` in
+`Representation.Classification.WholeLeviLanglandsRecoveryProof`.
 
 The only direct import is `RelativeRegularComparisonStatement`, providing
 the actual analytic predicate and induction definitions. Neither this file
 nor its import closure depends on `SemistandardLanglandsStatement`, so this
-standard-data interface does not create a circular dependency on the parent
-conjugacy target. Its provenance is the explicit whole-Levi formulation and
+standard-data interface does not create a circular dependency on the
+semistandard conjugacy statement. Its provenance is the explicit whole-Levi formulation and
 adapter rationale above, not a claim that this precise dependent-type and
 universe formulation occurs verbatim in external literature.

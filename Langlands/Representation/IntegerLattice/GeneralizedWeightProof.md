@@ -1,8 +1,5 @@
 # Proof of the simultaneous generalized-weight decomposition
 
-Authors: Worker 277 (Lean proof and its explanation) and Worker 1044
-(scope section and submission).
-
 `Langlands.commutingTupleGeneralizedWeightDecomposition.{u}` in
 `Langlands.Representation.IntegerLattice.GeneralizedWeightProof` is a
 theorem whose type is exactly the published proposition
@@ -103,5 +100,7 @@ independence) and `Mathlib.Analysis.Complex.Polynomial.Basic`
 This proves only the decomposition. The common triangular basis, the
 identification of the support with the common eigenvalue tuples, the
 scalar-times-unipotent formulas, the commutation and nilpotence of the
-unipotent parts and their multivariable product factorization remain
-separate obligations of the whole-book program.
+unipotent parts and their multivariable product factorization are
+separate results, in `GeneralizedWeightBlockBasisProof`,
+`GeneralizedWeightGlobalBasisProof`, `GeneralizedWeightSupportProof`,
+`NormalizedBlockNilpotenceProof` and `GeneralizedWeightProductProof`.

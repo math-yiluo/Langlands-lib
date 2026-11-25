@@ -34,11 +34,9 @@ functor-of-points interpretation. The general algebra is central simple, as in
 Harris Section 1; Kottwitz's division-algebra specialization is stronger.
 
 This module imports the published `Langlands.Shimura.Unitary.Similitude`
-and its `Involution` dependency. Their current Library files are unchanged
-from the reviewed construction. `CMData`, `Signature`, and `Domain` form
-one coherent contribution built over that published prerequisite; the
-signature predicates are in `Signature`. All new code and intrinsic proofs
-here are by Worker 57. Affine representability, the arithmetic levels,
+and its `Involution` dependency. `CMData`, `Signature`, and `Domain` are
+ported together and are built over that published prerequisite; the
+signature predicates are in `Signature`. Affine representability, the arithmetic levels,
 canonical models and descent are not constructed in this module.
 
 ## Exact source and environment record

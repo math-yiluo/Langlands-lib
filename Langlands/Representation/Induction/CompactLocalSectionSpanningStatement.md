@@ -1,6 +1,6 @@
 # Spanning compact induction by translated local sections
 
-Worker 630 defines the proposition
+This module defines the proposition
 `Langlands.Induction.CompactLocalSectionSpanning.{uG,uV}`.
 It states that actual compact induction is spanned over `ℂ` by right
 translates of the published compact double-coset sections centered at `1`.
@@ -73,7 +73,7 @@ and asserts nothing about coinvariants or quotient-integral injectivity.
 
 ## Intended finite-support proof route
 
-The following explains the intended argument for a future proof; none of
+The following explains the intended argument for a proof; none of
 these steps is a premise or a theorem proved in this pair.
 
 Fix an actual `f : CompactFunctions H sigma`. Its uniform open right
@@ -102,19 +102,18 @@ by `H ∩ L`. The section centered at `x` should equal the right translate
 by `x⁻¹` of the section centered at `1` for `L`: at `y`, that translate
 evaluates the identity-centered section at `y * x⁻¹`. This also explains
 the translation direction in the statement. The needed finite-cover,
-section-sum and conjugation identities remain proof obligations.
+section-sum and conjugation identities are not proved in this pair.
 
 The existing `exists_finset_doubleCoset_cover` assumes
 `CompactSpace (LeftQuotient H)`. That assumption is absent here, so that
-theorem cannot directly supply this argument's finite cover. The future
+theorem cannot directly supply this argument's finite cover. A
 proof must use the compact projected support of each actual `f`.
 
-## Provenance and ownership
+## Provenance
 
 This is an internal finite compact-support decomposition target derived
 from the published actual-function definitions, right-translation action,
-and double-coset section construction. Worker 199 specified the interface
-and intended proof route; Worker 630 authored this Lean/Markdown pair.
+and double-coset section construction.
 Its sole import is
 `Langlands.Representation.Induction.CompactLocalSection`, which imports
 `CompactQuotientProof` and the underlying
@@ -123,20 +122,18 @@ This statement is not a quotation or formalization of a spanning lemma in
 Bernstein and Zelevinsky (1977); no external source theorem is used as a
 premise or claimed as proved.
 
-Worker 199 retains the proof successor and the final actual
-quotient-integral bijectivity assembly in task
-`cbaf9d61-f090-41e3-8269-9ae5a6992693`. Reusable finite compact-support
-decomposition should be coordinated with Worker 182's compact-surjectivity
-work before proof implementation. This pair contains only the focused
+The proof is `compactLocalSectionSpanning`, in
+`CompactLocalSectionSpanningProof`, and the final actual
+quotient-integral bijectivity assembly is `compactCoinvariantIntegralBijective`,
+in `CompactCoinvariantBijectivityProof`. This pair contains only the focused
 statement.
 
 ## Development check
 
-The module compiled without errors or warnings in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`).
+The module compiled without errors or warnings with Lean 4.34.0 and Mathlib
+commit `5ed2965256430c3649e86755f9576b54eca72435`.
 Inspection of the exact declaration reported a definition returning
 `Prop`, with level parameters `uG` and `uV`. Its axiom closure contains
 only `propext`, `Classical.choice` and `Quot.sound`.
-These development checks establish neither the truth of the spanning
-proposition nor independent acceptance or publication.
+These development checks do not establish the truth of the spanning
+proposition.

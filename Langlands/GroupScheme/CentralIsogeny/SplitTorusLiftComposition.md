@@ -1,11 +1,10 @@
 # Composition from a surjective split parametrization
 
-Author: Worker 1437. The imported torus-image proof is reused unchanged
-from Worker 1358. The finite-map maximality reduction is reused
-unchanged from Worker 1482, with
-Worker 1437's contribution to its interface and original geometric route. The
-power lift and split-multiplication helpers are reused unchanged from Worker
-1508.
+The imported torus-image proof (`Torus.ImageProof`) is reused unchanged.
+The finite-map maximality reduction (`Torus.FiniteHomMaximalityReduction`)
+is reused unchanged. The power lift and split-multiplication helpers
+(`CentralIsogeny.PowerLift`, `Torus.SplitMultiplication`) are reused
+unchanged.
 
 This module gives conditional reductions for
 `CentralIsogenySplitMaximalTorusLiftStatement`. The entry theorem in
@@ -23,7 +22,7 @@ scheme-surjective homomorphism `b : D → S`, and the equation
 tori. The published dominant split-image construction, followed by
 closed-containment descent and actual homomorphism factorization, gives
 a closed split torus `j : T → G` and a scheme-surjective map `f : T → S`
-with the same square. This is precisely the independently reviewed
+with the same square. This is precisely the
 `SplitParametrization` helper.
 
 The finite-map maximality reduction applies because the central isogeny
@@ -42,16 +41,16 @@ binders, obtains these two maps, and applies the pointwise helper with
 `D = S`. No flatness or local
 finite presentation of the resulting `f` is required by this target.
 
-`exists_splitParametrization_of_kernel_pow_eq_one` now constructs that
+`exists_splitParametrization_of_kernel_pow_eq_one` constructs that
 parametrization conditional on a positive integer `N` killing every point
-of the actual scheme-theoretic kernel. Worker 1508's `PowerLift` descends
+of the actual scheme-theoretic kernel. `PowerLift` descends
 the `2N`-th power from the inverse image of `S`. The commutator of two
 points of this inverse image lies in the central kernel; centrality and
 its exponent make this power map multiplicative. It kills the full
 kernel of the projection to `S`, so fpqc homomorphism descent gives the
 actual map `a : S → G`. Its composite with `π` is multiplication by `2N`
 followed by `i`. The proof takes this multiplication as `b`, wrapped as a
-morphism of commutative group schemes by `Additive.ofMul`. Worker 1508's
+morphism of commutative group schemes by `Additive.ofMul`.
 `SplitMultiplication` proves that `b` is flat and surjective because
 `2N` is nonzero. Only its scheme surjectivity is used.
 
@@ -60,16 +59,16 @@ explicit premise: for every field `k : Type u`, connected reductive
 groups `G` and `H`, and central isogeny `π : G → H`, some positive
 integer kills all points of `kernel π` over every `k`-scheme. It takes
 this exponent and applies the preceding construction. These are the
-same quantifiers as Worker 1508's
-`CentralSplitTorusLift.statement_of_kernel_exponent` input. The
+same quantifiers as the input of
+`CentralSplitTorusLift.statement_of_kernel_exponent`. The
 composition needs only this exponent theorem for central-isogeny
 kernels; the general finite-group-scheme exponent proposition is not a
-prerequisite of this draft. The kernel exponent proof is not supplied
+prerequisite of this module. The kernel exponent proof is not supplied
 here.
 
 The provenance of the assembly is internal composition of the explicit
 helper statements and their proofs. The entry theorem supplies the
-kernel exponent premise using Worker 1384's proof in
+kernel exponent premise using the proof in
 `CentralIsogeny.KernelTorsion`. None of
 the arguments replace the full kernel by its reduction or require it to
 be smooth, and no separability, perfection or characteristic restriction

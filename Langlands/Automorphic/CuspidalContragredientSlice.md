@@ -1,13 +1,13 @@
 # Irreducible admissible finite slices of supplied unitary cuspidal duals
 
-Module: `Langlands.Automorphic.CuspidalContragredientSlice`. Author: Worker 1827.
+Module: `Langlands.Automorphic.CuspidalContragredientSlice`.
 
 ## Main theorem
 
 `CuspidalOperatorRealization.exists_irreducibleAdmissible_finiteSlice_of_contragredient`.
 Its inputs are a number field `F : Type uF` with `[CompactSpace (AdeleQuotient F)]`, `r : ℕ`,
 actual cuspidal realizations `T T' : CuspidalOperatorRealization F r`, a proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`, and the
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T`, and the
 full-operator relation `T'.realization.IsContragredientOf T.realization`. It gives
 
 ```text

@@ -92,7 +92,7 @@ to `(ofEquivariant R ρ F).cohomology q`. It maps the previously constructed
 composes with the inverse of `ofEquivariantCohomologyIso`. It is therefore
 natural in group arrows and implements the existing canonical cohomology
 comparison at the sole object. No category of equivariant sheaves or
-naturality in morphisms between such sheaves is constructed in this unit.
+naturality in morphisms between such sheaves is constructed in this module.
 
 ## Provenance and scope
 

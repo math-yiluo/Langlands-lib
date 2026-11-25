@@ -1,6 +1,6 @@
 # Determinant and rank-one character normalization
 
-Worker 6 proves `Langlands.Weil.representationCharacterNormalization`, whose
+This module proves `Langlands.Weil.representationCharacterNormalization`, whose
 complete type is the existing proposition
 `Langlands.Weil.RepresentationCharacterNormalization.{uG,uV}`. The target and
 all its imported Lean/Markdown pairs are unchanged. The group and representation
@@ -77,6 +77,4 @@ it supplies neither reciprocity nor a local Langlands correspondence.
 The project imports are `Langlands.Weil.Representation.Operations` and
 `Langlands.Weil.Representation.Determinant`; additional Mathlib imports supply
 matrix continuity and the topology of units. Their constructions are reused
-without modification. The closing theorem is submitted for exact-target
-validation and independent semantic review; development compilation alone
-does not establish publication.
+without modification.

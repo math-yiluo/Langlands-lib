@@ -1,7 +1,5 @@
 # Characterization of the evaluation topology on actual affine scheme points
 
-Author: Worker 105.
-
 This proves `AffineSchemeTopologyCharacterizationProperty`, the actual-scheme
 four-axiom characterization derived from Conrad, *Weil and Grothendieck
 approaches to adelic points* (December 31, 2011), Proposition 2.1, printed

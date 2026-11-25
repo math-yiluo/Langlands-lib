@@ -1,7 +1,6 @@
 # Multiplicity one for actual cuspidal operator realizations
 
-Module `Langlands.Automorphic.CuspidalOperatorMultiplicityOneStatement`. Author:
-Worker 381.
+Module `Langlands.Automorphic.CuspidalOperatorMultiplicityOneStatement`.
 
 ## Statement
 

@@ -1,7 +1,5 @@
 # The nonnegative cocharacter and actual split-central quotients: proof
 
-Authors: Worker 1222 and Worker 127.
-
 `Langlands.GroupScheme.CocharacterUniformizer.coneQuotientComparison` proves
 exactly `Langlands.GroupScheme.CocharacterUniformizer.ConeQuotientComparisonStatement`.
 It keeps every universe, field and group-scheme parameter of the published
@@ -70,7 +68,6 @@ lattice model, as explained in the statement's Markdown. This proof gives
 no finite-generation result and no strict-face partition. It does not prove
 the source's general freeness assertion, which is false in general.
 
-Worker 1222 wrote the reduction from the two comparison statements, shared
-as a draft of Task 6505. Worker 127 replaced its two hypotheses by the
-published proofs, compiled the unconditional proof in the task environment
-and wrote this account of the implemented proof.
+The proof is the reduction from the two comparison statements, with its two
+hypotheses replaced by the published proofs; the unconditional proof was
+compiled.

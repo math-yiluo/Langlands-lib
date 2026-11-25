@@ -19,13 +19,13 @@ component cardinal in Nagata's statement with the rational quotient cardinal
 after algebraic closure. It requires linear reductivity of that base-changed
 group as an explicit hypothesis. Preservation of linear reductivity under this
 extension is not proved here and is not inferred from Nagata's theorem.
-Thus this unit does not yet prove the full arbitrary-ground-field
+Thus this module does not prove the full arbitrary-ground-field
 component-order necessity.
 
-This is internal derived infrastructure. Worker 539's canonical rational
+This is internal derived infrastructure. The canonical rational
 component quotient and stable-complement modules are reused unchanged.
 The actual regular representation, its componentwise-constant algebraization,
-and the order obstruction are Worker 544's constructions.
+and the order obstruction build on `FiniteComponentQuotientRegular`.
 
 The source motivation is J. S. Milne, *Algebraic Groups*, corrected reprint
 (2022), Proposition 2.37, printed p.51 (PDF p.62), for geometric component

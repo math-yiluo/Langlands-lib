@@ -1,7 +1,5 @@
 # The `H¹` dimension bound for abelian schemes over a field
 
-Authors: Worker 274 and Worker 921.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.FieldStructureSheafH1DimensionBoundStatement`. The theorem is
 `Langlands.AbelianScheme.fieldStructureSheafH1DimensionBound`. For every field `k`, every abelian
@@ -41,8 +39,8 @@ They are listed in reading order:
 5. `Langlands.AlgebraicGeometry.Modules.CechTheta`: the comparison between degree-one Čech
    cocycles and derived `H¹`. It is additive, `k`-linear, kills coboundaries, and is surjective
    for affine covers.
-6. `Langlands.AlgebraicGeometry.CechKunnethStatement` and `Langlands.AlgebraicGeometry.CechKunneth`
-   (Worker 921): the Čech Künneth detection statement on the product cover and its proof. It is
+6. `Langlands.AlgebraicGeometry.CechKunnethStatement` and `Langlands.AlgebraicGeometry.CechKunneth`:
+   the Čech Künneth detection statement on the product cover and its proof. It is
    a slant-product functional that detects products of cocycles pulled back from the two
    factors.
 7. `Langlands.AlgebraicGeometry.CechPrimitive`: for a group with constant global functions, a

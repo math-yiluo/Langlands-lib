@@ -1,7 +1,5 @@
 # Aubert transition maps indexed by cuts
 
-Author: Worker 164.
-
 This internal helper identifies the shape order needed by the actual Aubert
 diagram. It adds no exactness or effectivity assumption or conclusion.
 

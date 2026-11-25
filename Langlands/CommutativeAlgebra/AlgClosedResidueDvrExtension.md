@@ -1,7 +1,5 @@
 # DVR extensions with algebraically closed residue field
 
-Worker 519.
-
 `exists_algClosedResidueDvrExtension` gives a faithfully flat DVR extension in
 the universe of the original DVR, with algebraically closed residue field.
 The construction realizes the extension as a subalgebra of an algebraic

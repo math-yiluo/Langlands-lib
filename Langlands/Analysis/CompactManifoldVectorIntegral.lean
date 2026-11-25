@@ -77,6 +77,7 @@ theorem contMDiffOn_partialFDeriv {s : Set V} (hs : IsOpen s) {h : V × N → E}
     (fun p : V × N => fun q : V => h (q, p.2)) (fun p : V × N => p.1)
     contMDiffAt_fst (by simp)
   simp only [inTangentCoordinates_model_space, mfderiv_eq_fderiv] at hd
+  erw [inTangentCoordinates_model_space] at hd
   exact hd.contMDiffWithinAt
 
 variable (a : C(X, ℂ)) (j : C(X, N))

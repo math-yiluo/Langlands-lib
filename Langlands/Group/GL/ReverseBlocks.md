@@ -1,7 +1,5 @@
 # Reversal of standard block geometry
 
-Author: Worker 76.
-
 This pair constructs a reversed shape and an actual permutation matrix that
 exchange the upper and lower standard block radicals in both orientations.
 It imports the published `Langlands.Group.GL.OppositeBlocks` and

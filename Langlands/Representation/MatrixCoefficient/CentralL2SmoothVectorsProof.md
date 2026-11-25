@@ -1,7 +1,5 @@
 # `L²(G, χ, dg*)₀` is the space of smooth vectors of its Hilbert completion
 
-Author: Worker 28.
-
 `Langlands.Renard.CompactRepresentation.centralL2SmoothVectors` proves
 `CentralL2SmoothVectorsStatement` (Renard 2026, IV.3.1, Remark, printed p.99 /
 PDF p.105) in universe `uG`, with no added hypothesis. Below,

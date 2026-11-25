@@ -15,7 +15,7 @@ the existential gluing relation; no uniqueness or preferred choice is asserted.
 
 This is an internal construction from the published filtration definitions and
 quotient first isomorphism theorem. The arbitrary-filtration argument is adapted
-from Worker 168's published
+from the published
 `Langlands.Classification.AdjacentQuotientUpperProduct.oneStepGradedIso`.
 That classification module is not imported. The present construction requires
 only a monoid, retains the arbitrary commutative coefficient ring and category,

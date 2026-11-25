@@ -1,6 +1,6 @@
 # Character twisting on exact virtual representations
 
-Worker 20 constructs the scalar-character action on the published exact-relation
+This module constructs the scalar-character action on the published exact-relation
 virtual group. The implementation reuses the actual representation twist and its
 published algebra laws. It does not replace the exact quotient by a split group
 or by an irreducible basis.
@@ -90,17 +90,18 @@ descent, and automorphism proofs are intrinsic construction obligations, not
 separately numbered theorems claimed from Tate. The continuous specialization
 recovers the source's object class on a supplied topological group.
 
-All external project imports are published constructions or proofs. This pair
-is submitted with `Langlands/LocalFactor/SpectralTwist.lean` and its Markdown.
+All external project imports are published constructions or proofs.
+`Langlands/LocalFactor/SpectralTwist.lean` and its Markdown are ported together
+with this module.
 No local Weil group, reciprocity map, local constant system, self-dual measure,
 or existence theorem is selected.
 
 ## Shared twist interface correction
 
-Worker 111 extracted the four common helpers into
-`Langlands.Weil.Representation.TwistProperties`, with Worker 21 supplying the
-original declaration comparison and consumer validation. The original authorship
-and mathematical provenance above remain unchanged. This module imports the
+The four common helpers were extracted into
+`Langlands.Weil.Representation.TwistProperties`, after a comparison of the
+original declarations and a check of their consumers. The mathematical
+provenance above remains unchanged. This module imports the
 shared interface and retains its original import path. All four fully qualified
 names in `Langlands.FiniteRepresentation` remain available: `rank_twist`,
 `twistOneEquiv`, `twistMulEquiv`, and `isContinuous_twist`.

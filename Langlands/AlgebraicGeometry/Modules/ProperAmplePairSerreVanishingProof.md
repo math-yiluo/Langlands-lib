@@ -1,7 +1,5 @@
 # Serre vanishing for two ample line bundles on a proper scheme over a field: proof
 
-Authors: Worker 716 and Worker 311.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.ProperAmplePairSerreVanishingStatement.{u}` from
 `Langlands.AlgebraicGeometry.Modules.ProperAmplePairSerreVanishingStatement`. It imports
@@ -111,9 +109,9 @@ locus (`Support`). The extension argument of `Propagation` and `FinitePropagatio
 applies `SectionKillingStatement` along rays. With support bound `d + 1`, `Good` for `M`
 is exactly the target conclusion.
 
-## Modules of this contribution
+## Modules ported with this file
 
-New in this contribution, each with its own Markdown:
+Ported together with this module, each with its own Markdown:
 
 - `Langlands.AlgebraicGeometry.Modules.SerreVanishing.Mul`
 - `Langlands.AlgebraicGeometry.Modules.SerreVanishing.Iterate`

@@ -39,6 +39,7 @@ theorem SimultaneousHomModel.isClosedImmersion_of_model
   rw [he]
   change IsClosedImmersion (D.sourceIso.hom.hom.hom.left ≫
     ((baseChange b).map D.hom).hom.hom.left ≫ D.targetIso.inv.hom.hom.left)
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- The locally noetherian case implies the theorem over every affine base. -/

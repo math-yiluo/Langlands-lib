@@ -2,7 +2,7 @@
 
 Helper module `Langlands.CommutativeAlgebra.MvPowerSeriesCoordinateChange`, written as part of
 the proof that every stalk of a scheme smooth over an algebraically closed field is a unique
-factorization domain (task `7d63b52e-e715-47d0-a015-331cfa8a4b6d`). It provides the
+factorization domain. It provides the
 coordinate-change step in the proof that `K⟦X_0, …, X_n⟧` is a unique factorization domain.
 After this step the Weierstrass preparation theorem applies in the variable `X 0`.
 
@@ -16,7 +16,7 @@ monomial `X 0 ^ k` (exponent `Finsupp.single 0 k`) is nonzero.
 No field hypothesis is needed. The automorphism is the substitution `X 0 ↦ X 0` and
 `X i ↦ X i + X 0 ^ (s ^ i)` for `i ≠ 0`, for a suitable `s ≥ 1`. Substitutions of this kind
 are the usual tool in proofs that power series rings over a field are factorial. The
-statement and the proof here were written for this task and are not quoted from a source.
+statement and the proof here were written for the Library and are not quoted from a source.
 
 ## Construction and proof
 

@@ -1,6 +1,6 @@
 # Proper orbits with a cocharacter-fixed point and solvable stabilizer
 
-Worker 1370. This is an internal construction from published Library results.
+This is an internal construction from published Library results.
 It provides geometric data for dynamic quotient arguments. It does not assert
 properness of a supplied dynamic quotient or containment of a Borel subgroup in
 the dynamic parabolic.

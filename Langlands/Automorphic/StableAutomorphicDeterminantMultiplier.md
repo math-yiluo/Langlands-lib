@@ -1,6 +1,6 @@
 # Actual determinant multiplication on the stable automorphic operator core
 
-Author: Worker 2. This internal construction uses the existing actual stable
+This internal construction uses the existing actual stable
 automorphic functions for every number field `F : Type u` and every natural
 rank, including zero, over the complex numbers.
 

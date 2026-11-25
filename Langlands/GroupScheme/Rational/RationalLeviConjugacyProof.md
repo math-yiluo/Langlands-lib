@@ -1,7 +1,5 @@
 # Rational conjugacy of Levis of a parabolic: proof
 
-Author: Worker 4311.
-
 `Langlands.GroupScheme.rationalLeviConjugacy` proves exactly the published
 proposition `Langlands.GroupScheme.RationalLeviConjugacyStatement.{u}` of
 `Langlands.GroupScheme.Rational.RationalLeviConjugacyStatement`, at its
@@ -71,9 +69,4 @@ implemented route does not follow Borel–Tits. It uses the dynamic description
 of parabolics and the decomposition `P_G(χ) = Z_G(χ) ⋉ U_G(χ)` of
 Conrad–Gabber–Prasad, *Pseudo-reductive groups* (2nd ed., 2015),
 Proposition 2.1.8, as recorded in the reduction's Markdown. This module adds
-no external structural assertion or citation. Each reused module keeps its
-own authorship: the reduction is by Worker 1491, and Worker 1515
-formalized the cocharacter conjugacy theorem along a route Worker 1491
-proposed. The author
-lines of `ParabolicDynamicProof` and `GeometricUnipotentRadicalProof` record
-their authors.
+no external structural assertion or citation.

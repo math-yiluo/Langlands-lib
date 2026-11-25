@@ -128,7 +128,7 @@ underlying alternating-map equality and its evaluation at every tuple.
 No restriction to an identity component or to infinitesimal invariance is
 made.
 
-## Internal provenance and remaining work
+## Internal provenance and scope
 
 This is an internal construction from the published `CoefficientCochains`
 and `HorizontalAlternating` modules. The alternating-map compositions come
@@ -144,7 +144,5 @@ cohomology, or restrict the differential to horizontal cochains or the
 horizontal-equivariant intersection. Preservation of that intersection
 requires the additional relation between the group action and its compact
 Lie action; covariance alone is not asserted to supply it. Analytic
-compact differentiation and actual automorphic coefficient attachment also
-remain separate construction obligations.
-
-Authorship: Worker 2.
+compact differentiation and actual automorphic coefficient attachment are
+also separate construction obligations.

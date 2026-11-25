@@ -1,6 +1,6 @@
 # Proper maps on actual full-adele fixed-model points
 
-This unit isolates the full-adelic properness step after a proper arithmetic
+This module isolates the full-adelic properness step after a proper arithmetic
 model has been chosen in Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), printed p.11, Proposition 4.4, first two
 proof paragraphs. The registered source is
@@ -48,7 +48,7 @@ uniformizer on the affine line shows. This statement uses the correct
 preimage equality for a proper morphism and compactness of integral source
 factors in the level properness argument, and requires no such identification.
 
-This unit states no proof. Proper-model spreading for arbitrary generic-fibre
+This module states no proof. Proper-model spreading for arbitrary generic-fibre
 morphisms, the comparison with the intrinsic adelic topology, compactness and
-eventual stabilization, and the remaining assertions of the paper are separate
-obligations of the parent program.
+eventual stabilization, and the remaining assertions of the paper are not part
+of this statement.

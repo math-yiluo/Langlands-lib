@@ -113,8 +113,7 @@ def wholeLeviGeometricPieceEquiv :
   have hρ : IsSmooth ρ := isSmooth_comp e.toMonoidHom
     (flattenedLeviEquivContinuous F.Carrier B S).continuous J.isSmooth
   have hτ : IsSmooth τ := isSmooth_transport (B.flatten S) C w hw hρ
-  change (T.normalizedRefinedInduced C R Q'.representation).Equiv τ
-  exact fullRefinedInductionEquiv T C R hfullR Q'.representation τ eQ' hτ
+  exact (fullRefinedInductionEquiv T C R hfullR Q'.representation τ eQ' hτ : _)
 
 end Representation
 end Langlands.Geometric

@@ -46,8 +46,8 @@ module proves none of them, and the matching is `SplitMatchingStatement`.
 code never builds an isomorphism `GL_n(F^l) ≃ GL_n(F)^l` nor a product measure. Instead the
 `i`-th component of `g : GL_n(F^l)` is its image
 `Matrix.GeneralLinearGroup.map (Pi.evalRingHom (fun _ : Fin l => F) i) g` under the `i`-th
-coordinate ring homomorphism `F^l → F`; items 3–5 and Task 7457's `splitTensor` use only these
-components.
+coordinate ring homomorphism `F^l → F`; items 3–5 and `splitTensor` (`Langlands.BaseChange.CuspForm`)
+use only these components.
 
 ## Definitions
 
@@ -69,8 +69,8 @@ components.
    `[TopologicalSpace F] [IsTopologicalRing F]`, `n l : ℕ` implicit, σ-algebras on
    `GL_n(F)` and `GL_n(F^l)` as instance arguments, `μF` on `GL_n(F)` and `μE` on
    `GL_n(F^l)`: for every `ψ : Fin l → SchwartzBruhat (GL_n(F))`,
-   `∫ g, splitTensor (fun i => ψ i) g ∂μE = ∏ i, ∫ g, ψ i g ∂μF`, where Task 7457's
-   `splitTensor ψ` is `g ↦ ∏ i, ψ i (g_i)`.
+   `∫ g, splitTensor (fun i => ψ i) g ∂μE = ∏ i, ∫ g, ψ i g ∂μF`, where
+   `splitTensor ψ` (`Langlands.BaseChange.CuspForm`) is `g ↦ ∏ i, ψ i (g_i)`.
    - *Meaning.* Under `GL_n(F^l) = GL_n(F)^l`, the product measure `μF ⊗ ⋯ ⊗ μF` integrates
      `ψ₀ ⊗ ⋯ ⊗ ψ_{l-1}` to `∏ i, ∫ ψ i dμF` (Fubini), so the condition says that `μE` behaves
      like that product measure on split tensors: HL II.2.15's normalization `dg_E = (dg)^d`.
@@ -95,7 +95,7 @@ components.
    - *Relation to HL.* HL II.2.15 (printed p. 76) use the operator
      `A(v₁ ⊗ ⋯ ⊗ v_d) = v_d ⊗ v₁ ⊗ ⋯ ⊗ v_{d-1}` and write `Π(δ^σ) = A⁻¹ ∘ Π(δ) ∘ A`. The
      condition of HL II.1.3 (printed p. 56) for an isomorphism of `Π` onto `Π^σ`, which
-     Task 7432's `SigmaIntertwiner` formalizes, is `A ∘ Π(g) = Π(g^σ) ∘ A`. The inverse of
+     `SigmaIntertwiner` (`Langlands.BaseChange.TwistedCharacter`) formalizes, is `A ∘ Π(g) = Π(g^σ) ∘ A`. The inverse of
      HL's operator in II.2.15 satisfies it; `splitTensorShift` is that inverse, and lemma
      `splitTensorShift_comp` proves the condition.
 
@@ -108,7 +108,8 @@ components.
   cast of `k : ℕ` to `Fin (l + 1)` modulo `l + 1`), by induction on `k` using Mathlib's
   `finRotate_apply`.
 - `isCyclicAlgebra_splitCyclicShift`: for a field `F` and `l : ℕ`,
-  `IsCyclicAlgebra (splitCyclicShift F (l + 1)) (l + 1)` (Task 7405's predicate: finite,
+  `IsCyclicAlgebra (splitCyclicShift F (l + 1)) (l + 1)` (the predicate of
+  `Langlands.BaseChange.Norm`: finite,
   of dimension `l + 1`, reduced, `σ` of order `l + 1`, `σ`-fixed elements in `F`). Proof:
   finiteness, dimension (`Module.finrank_fin_fun`) and reducedness are instances; the order
   is `l + 1` by `orderOf_eq_iff`, since `σ^{l+1} = 1` by the two previous lemmas and, for
@@ -123,7 +124,7 @@ components.
 - `splitTensorShift_tprod`:
   `splitTensorShift V l (tprod ℂ v) = tprod ℂ (fun i => v (finRotate l i))`.
 - `map_evalRingHom_entrywiseAut_splitCyclicShift`: the `i`-th component of
-  `entrywiseAut (splitCyclicShift F l) n g` (Task 7405's `g^σ`) is the
+  `entrywiseAut (splitCyclicShift F l) n g` (the `g^σ` of `Langlands.BaseChange.Norm`) is the
   `finRotate l i`-th component of `g` (by extensionality and `rfl`).
 - `splitTensorShift_comp`: for every `g : GL_n(F^l)`,
   `(splitTensorShift V l).toLinearMap ∘ₗ splitTensorRep ρ g =
@@ -135,8 +136,8 @@ components.
 
 ## Dependencies and names
 
-The module imports Task 7405's `Langlands.BaseChange.Norm` (`entrywiseAut`,
-`IsCyclicAlgebra`), Task 7457's `Langlands.BaseChange.CuspForm` (`splitTensor`) and the
+The module imports `Langlands.BaseChange.Norm` (`entrywiseAut`,
+`IsCyclicAlgebra`), `Langlands.BaseChange.CuspForm` (`splitTensor`) and the
 Library's `Langlands.Representation.Hecke.Convolution` (`Hecke.TestFunction.convolution`,
 `HarmonicAnalysis.SchwartzBruhat`). All names are used as published, with the argument orders
-cited in the task.
+of those modules.

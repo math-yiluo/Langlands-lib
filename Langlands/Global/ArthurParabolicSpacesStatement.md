@@ -1,7 +1,7 @@
 # Comparison of `𝔞_P` and `𝔞_P^*` with the relative root data
 
 Module `Langlands.Global.ArthurParabolicSpacesStatement`, namespace
-`Langlands.Global.ArthurParabolicSpaces`. Worker 128, Task 5536, item 1. The maps are those of
+`Langlands.Global.ArthurParabolicSpaces`. The maps are those of
 `Langlands.Global.ArthurParabolicSpaces`.
 
 ## Source

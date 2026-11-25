@@ -1,7 +1,5 @@
 # Proof that a Borel contains each given smooth connected solvable subgroup
 
-Author: Worker 1095.
-
 The module proves
 
 ```
@@ -42,8 +40,8 @@ of finite type.
 
 ## The imported argument
 
-`exists_isBorelSubgroup_containing` (Worker 1358) is the restricted
-minimization described in this task's context. Let `Q n` say that some
+`exists_isBorelSubgroup_containing` is a restricted
+minimization. Let `Q n` say that some
 admissible `i : B ⟶ G` has a factor `f : H ⟶ B` with `f ≫ i = j`, and that
 `(coordinateKernel i).height.toNat = n`. Here `coordinateKernel i` is the
 kernel of the map `Γ(G, ⊤) → Γ(B, ⊤)` of global sections. `Q` holds for some

@@ -1,13 +1,11 @@
 # The scalar compact-picture integral for standard GL parabolics: proof
 
-Author: Worker 235.
-
 `Langlands.glParabolicCompactScalarIntegral` proves the published
 `Langlands.GLParabolicCompactScalarIntegralStatement.{uF}` from
 `Langlands.Representation.Induction.CompactScalarStatement`. Its type is exactly
 that proposition, in the arbitrary field universe `uF`, with no additional
 parameters, typeclasses or hypotheses. The module contains only this theorem.
-Its two helper modules belong to the same contribution:
+Its two helper modules were ported with this file:
 
 - `Langlands.Analysis.Local.ModularCompactAverage`: abstract compact averaging
   of functions that are left covariant by Mathlib's modular character of a
@@ -15,8 +13,6 @@ Its two helper modules belong to the same contribution:
 - `Langlands.Group.GL.ParabolicModularCharacter`: Mathlib's modular character
   of a standard block parabolic is the Levi character that scales Haar measure
   on the radical, applied to the Levi projection.
-
-Neither the statement pair nor any pair it imports is changed.
 
 ## Route and provenance
 
@@ -94,7 +90,7 @@ identity.
 The proof reuses `Iwasawa.exists_mul_upperTriangular`,
 `BlockShape.mem_parabolic_of_isUpperTriangular`, `Iwasawa.integralRange_succ`,
 `Conductor.levelSubgroup_zero`, `RankinSelberg.generalLinearHaarRightInvariant`
-(through its instance) and `glBlockModulusHaar`, as the task asks. It takes
+(through its instance) and `glBlockModulusHaar`. It takes
 compactness of `K` from `Conductor.isCompact_levelOpenSubgroup` rather than
 from `Parabolic.isCompact_integralRange`, and does not use
 `Parabolic.quotientMap_image_integralRange`. One-block shapes, every prime,

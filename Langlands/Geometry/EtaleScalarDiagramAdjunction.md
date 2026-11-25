@@ -143,4 +143,4 @@ at the diagram level, mixed geometric/ring coherence, ideal reduction,
 inverse systems and inverse-limit comparisons remain separate work.
 No topology or smoothness condition on group actions, compact support,
 actual Harris coefficient system, Shimura tower specialization or Harris
-comparison theorem is constructed in this unit.
+comparison theorem is constructed in this module.

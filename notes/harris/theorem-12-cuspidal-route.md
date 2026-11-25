@@ -1,12 +1,6 @@
 # Harris 1998, Theorem 1.2 in the cuspidal case
 
-Worker 773 and Worker 853 prepared this route for Task 6698
-(`cd19dd55-136e-42e9-b062-5a23b2c7a6b2`). The declaration and proof status
-below refers to Library `168b7fb5bf8d14e1be7bf425cb6cd43c1995d50d`.
-The later publication of the strong base-change statement is recorded in the
-complex-place discussion.
-Shared graph revision 586 records the proof route under
-`proof.harris-global-galois-existence`.
+The proof status of the declarations below was checked against the Library.
 
 The published target is
 [`Langlands.GaloisRepresentation.Harris1998Theorem12CuspidalStatement`](../../Langlands/Galois/Harris1998ExistenceStatement.md).
@@ -14,9 +8,9 @@ The conditional reduction is
 [`Harris1998Theorem12CuspidalReductionStatement`](../../Langlands/Galois/Harris1998CuspidalReductionStatement.md).
 Its consequent is that exact target with all four universes. At field universes
 zero the two representation-carrier universes are still independent. Identifying
-them gives the `.{0, 0, uV, uV}` instance used by the Proposition 4.8 reduction in
-Task 6413 (`bca10e59-d4e2-40a4-be9b-5d70eaa1acd2`). The owner of the exact original
-proof is Task 7874 (`a2d0f23a-d026-467f-998d-8e1b9cd12b4d`).
+them gives the `.{0, 0, uV, uV}` instance used by the
+[Proposition 4.8 reduction](proposition-48-route.md). The Library proves
+neither the target nor the reduction.
 
 The hypotheses are the actual CM composite `E = E₀ K₀`, regular algebraicity,
 conjugate self-duality, and an actual square-integrable local component at a finite
@@ -73,18 +67,15 @@ The normalized finite quotient comparisons of the corrected character use the
 geometric Frobenius convention and must give inertia triviality outside the
 conductor and coefficient characteristic.
 
-Task 7875 (`f508c2ec-5e33-4087-abcb-a493b26ccbb9`) owns the reusable avatar
-and its finite normalized reciprocity inputs, including the algebraic nonunitary
-characters needed for the CM central correction. It has published
-`AlgebraicHeckeCharacterAvatarStatement`, `AlgebraicHeckeAvatarAssemblyStatement`
-and `FiniteHeckeAvatarLiftStatement`. Task 7345
-(`d60e084d-9218-49be-9468-da445fab6919`) audited the class-field interfaces.
+The reusable avatar and its finite normalized reciprocity inputs, including
+the algebraic nonunitary characters needed for the CM central correction, are
+stated as `AlgebraicHeckeCharacterAvatarStatement`,
+`AlgebraicHeckeAvatarAssemblyStatement` and `FiniteHeckeAvatarLiftStatement`;
+the Library proves the last (`finiteHeckeAvatarLift`) and not the first two.
 The finite lift uses normalized Artin at each avatar kernel and a local
-comparison for inertia and geometric Frobenius. Task 7904
-(`e5c80696-f292-40b6-b926-6bcd4a6bce5b`) owns the proof plan for the isolated
-prescribed-kernel input `Langlands.Global.FiniteAbelianClassFieldExistenceStatement`.
-The current class-formation quotient leaves prescribed-kernel existence and
-normalized Frobenius identification on ideles open.
+comparison for inertia and geometric Frobenius. The isolated
+prescribed-kernel input `Langlands.Global.FiniteAbelianClassFieldExistenceStatement`
+is proved in the Library (`finiteAbelianClassFieldExistence`).
 [Avatar statements](../../Langlands/Galois/AlgebraicHeckeAvatarStatement.md),
 [finite lift](../../Langlands/Galois/FiniteHeckeAvatarLift.md),
 [Class-field theory audit](../reuse/nyll-global-cft-audit.md)
@@ -102,8 +93,8 @@ normalized Frobenius identification on ideles open.
    reflex calculation. The `HarrisSignatureCharts` reflex calculation uses a
    second real place in rank two. Clozel's printed rank bound in §5 comes from
    his reflex calculation, while the even-real-degree case has that second
-   place. Task 7862 (`32049389-5976-4c11-b29f-689ff00e4006`) owns the exact
-   one-place arithmetic existence result.
+   place. The exact one-place arithmetic existence result
+   (`ClozelOnePlaceExistenceStatement`) is open (the Library derives it from `UnitaryLocalProfileRealizationStatement`: `clozelOnePlaceExistence_of_localProfile`).
 2. Clozel 1991, pp. 129–130 Proposition 4.11 and §5.2–5.3, gives the route from
    Jacquet–Langlands transfer to cohomological stable unitary descent and the
    similitude extension. The proof needs actual occurrence in the middle-degree
@@ -115,14 +106,14 @@ normalized Frobenius identification on ideles open.
    root of an actual polynomial power descends over a characteristic-zero
    coefficient field by successive coefficients at the top of the polynomial.
    `CMHarrisKottwitzLambdaAdicStatement` expresses Kottwitz's proposition on
-   `cmHarrisLambdaHeckeMultiplicityObjects`. Task 7863
-   (`8a28eeaa-d329-4955-97f9-754852c627cc`) owns its exact proof. The published
+   `cmHarrisLambdaHeckeMultiplicityObjects`; its exact proof is open. The published
    `cmHarrisKottwitzLambdaAdic_of_traceComparison` derives this theorem from
    `CMHarrisKottwitzTraceComparisonStatement`. The virtual Frobenius trace
    identity and the comparisons with actual cohomology in that premise remain
-   open. The constructions of Task 5484 (`a88c0cf4-5010-4c43-921a-d9f53bcf6acb`) and
-   the unramified polynomial objects of Task 5424
-   (`90fec325-2a43-439a-b699-ee0d8dcfd52c`) are reused.
+   open. The Library's λ-adic cohomology of Harris's CM Shimura tower with
+   coefficient systems (level and finite-adelic actions, isotypic parts and
+   their Galois representations) and its unramified parameters and
+   Kottwitz polynomials `P(π_p, E_v)` are reused.
    [Kottwitz trace deduction](../../Langlands/Shimura/PEL/HarrisTaylorCMKottwitzDeduction.md)
 3. `CMHarrisLambdaCohomologyHodgeTateStatement` gives the published underlying
    `ℚ_ℓ`-linear finite-level comparison. The labels, the multiplicity projector,
@@ -136,17 +127,15 @@ normalized Frobenius identification on ideles open.
    the chosen label for every coefficient prime. A proof must apply the
    geometric comparison at the other coefficient primes as well.
 
-Task 7864 (`28558a33-d44c-404f-939e-a3f1bfa41108`) owns these missing transfer,
-model, occurrence, central normalization and labelled geometric comparisons
-and their proof planning. The endpoint is `HarrisEvenGeometricPowerStatement`,
+These transfer, model, occurrence, central normalization and labelled
+geometric comparisons are missing. Their endpoint is `HarrisEvenGeometricPowerStatement`,
 which asks for an actual completion-valued `HarrisPowerSystem` and regular
 `HarrisLabelledWeights` for the same representations. The Kottwitz trace
 calculation alone is insufficient for this endpoint. The geometric model
 and labelled comparison keep the virtual Euler characteristic from being
-used as a Galois representation. Task 34
-(`bd93b48c-db25-4739-89f5-97cabc0f6491`) supplied the published compatible-family
-and comparison statements. The broader framework belongs to
-`b91b0934-0122-4c05-b359-4e7ed64bbe3d`.
+used as a Galois representation. The compatible-family and comparison
+statements of the Library are reused, within the broader Harris–Berkovich
+cohomological framework.
 [Coverage of the published comparison statements](../henniart/galois-family-coverage.md)
 
 ## Removing multiplicity over one coefficient field
@@ -206,17 +195,16 @@ gives the third conjunct of B7 after totally complex specialization. For
 actual unitary isobaric data related by weak lifting along a prime-degree
 cyclic extension, it asserts equivalence of the aggregate parameter relation
 at a lower complex place and the transported relation at each actual upper
-place. Task 7340 uses this equivalence, the singleton and permutation
-comparisons, and the regular-orbit induction comparison to derive canonical
-B7 conditionally. The general strong-lift assertion of Arthur–Clozel III.5.1
-(pp. 212–213) at complex places and its translation to the Library's aggregate
-predicate remain an external proof input under the operator's B7 ruling.
-Task 7889 subsequently published the named premise as
-`231ee3e9-faaf-4345-b03f-a7860e747e94` at Library commit
+place. The planned conditional derivation of canonical B7 uses this
+equivalence, the singleton and permutation comparisons, and the
+regular-orbit induction comparison. The general strong-lift assertion of
+Arthur–Clozel III.5.1 (pp. 212–213) at complex places and its translation to
+the Library's aggregate predicate remain an external proof input (see the design decisions of the
+[exact-stabilizer route](proposition-48-exact-stabilizer-route.md)).
+The named premise first appeared in the Library at commit
 `032961776f43ccd672c6266d265a9c644faeba13`. Its separate finite-place clause
-uses the σ-lift vocabulary published by Task 7513
-(`b4232035-f988-4ae7-84e0-3f644a479933`) as
-`abd1655c-871c-4880-aa12-210c36ce9e29`. The R2 complex-place comparison requires
+uses the σ-lift vocabulary of
+`Langlands.BaseChange.IsSigmaLiftOnSupercuspidals`. The R2 complex-place comparison requires
 a supercuspidal pair, whereas Harris's parity input permits a square-integrable
 component at the prescribed split place.
 [Canonical B7 statements](../../Langlands/Automorphic/Unramified/CyclicWeakBaseChangeComplexPlaceStatement.md),
@@ -235,41 +223,41 @@ model, transport the label from an upper field, and descend by the same regular
 Hodge–Tate argument. `HarrisOddNormalizedExistenceReductionStatement` gives the
 odd output through these explicit inputs and the even-degree result.
 
-## The named inputs and their owners
+## The named inputs and their status
 
 All declaration names in the table are relative to `Langlands.GaloisRepresentation`
 unless their namespace is given. The reduction and the two branch reductions are
-published conditional statements with open proof tasks. The original conclusion
+conditional statements whose proofs are open. The original conclusion
 still requires the exact proofs of all its premises. In particular, even-degree
-geometry is an open input with its own planning task.
+geometry is an open input.
 
-| Declaration or gap | Scope and owner |
-|---|---|
-| `HarrisRankOneHeckeSpectrumStatement` | Actual spectrum of the supplied regular algebraic conjugate self-dual GL(1) class. Task 8076 (`060a607e-cab0-4a79-9c19-c50b6968ca45`) |
-| `AlgebraicUnitaryHeckeCharacterRealizationStatement` | Uniform weight-zero λ-adic realization of the algebraic unitary character. Task 8077 (`8093ec6f-ed6e-409c-9e11-0fa0af0b1260`). The broader avatar and finite reciprocity program is Task 7875 (`f508c2ec-5e33-4087-abcb-a493b26ccbb9`). |
-| `HarrisEvenGeometricPowerStatement` | Transfer, middle-degree occurrence, uniform arithmetic power, and regular labelled cohomology on the same family. Task 7864 (`28558a33-d44c-404f-939e-a3f1bfa41108`) owns the missing comparisons and their proof decomposition. |
-| `Langlands.Shimura.FiniteUnitary.ClozelOnePlaceExistenceStatement` | Exact one-place algebra and involution proof, Task 7862 (`32049389-5976-4c11-b29f-689ff00e4006`). |
-| `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisKottwitzLambdaAdicStatement` | Exact Kottwitz multiplicity-space proof, Task 7863 (`8a28eeaa-d329-4955-97f9-754852c627cc`). |
-| `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisLambdaCohomologyHodgeTateStatement` and the labelled graded comparison | Underlying comparison statement is published and its proof remains open. The geometric comparison program Task 7864 (`28558a33-d44c-404f-939e-a3f1bfa41108`) owns the reduction to the actual cohomology comparison and the missing labelled interface. |
-| `HodgeTate.TateTwistInvariantsStatement` | Degree-zero fixed field and nonzero twist vanishing of the completed algebraic closure. Task 7978 (`28be7ac6-cae5-43ca-a1ab-4fbfe10a5530`) |
-| `TaylorLabelledMultiplicityRemovalStatement` | Local multiplicity extraction with one label and actual finite coefficient extension. Task 7997 (`56ae86cc-a5a8-47c5-bd11-809a242aeb0c`) |
-| `RegularHodgeTateCoefficientDescentStatement` | Actual model over the original completion with the same labelled weights. Task 8075 (`c91668fe-5ea6-474e-9b14-cc9bd1474ff6`) |
-| `HarrisEvenMultiplicityReductionStatement` | Conditional even collection assembly from the three named inputs. Task 8078 (`e4229a6a-2be3-44c4-a2d8-a46609c255b4`) |
-| `Langlands.Global.Harris.HarrisParityAuxiliaryFieldsStatement` | Totally real quadratic supply and biquadratic cover. Task 7919 (`b861d3e8-af91-480f-840f-246620037eb6`) |
-| `Langlands.Global.Harris.ConjugateSelfDualUnitaryCentralCharacterStatement` | Central-character transport. Statement owner Task 7822 (`364f76f1-154a-4269-9b0b-4cd6dc277a09`). Task 8014 (`72fdcf4b-aa1d-4c82-a60a-fdd66ed14bca`) |
-| `Langlands.Automorphic.Unramified.CyclicPrimeIsobaricBaseChangeTCStatement` | Arthur–Clozel III.4.2(c) existence and uniqueness for the totally complex weak lift. Proof Task 7860 (`835f1bf4-f1d3-4a52-ac52-54475877d275`). |
-| `Langlands.Automorphic.Unramified.QuadraticWeakBaseChangeSplitSquareIntegrableStatement` | III.5.1 at a split square-integrable place and singleton cuspidality of the lift. Task 7968 (`77f4211e-5a47-4f28-aef7-858306db19f3`) |
-| `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceTCStatement` | Task 7479 (`abcbb7a8-e133-45df-b7cf-6413542ec954`) published canonical B7 and its totally complex form. Task 7340 (`0407c885-1c0b-496b-a8bf-829f3c1a7038`) owns the conditional derivation. |
-| `Langlands.Automorphic.Unramified.CyclicStrongBaseChangeSupportStatement`, clause C | Task 7889 (`daa579fe-3dfe-42c0-98d3-87cc6da1bc8c`) published the statement as `231ee3e9-faaf-4345-b03f-a7860e747e94`. The aggregate complex-place comparison from Arthur–Clozel III.5.1 remains an unproved external input under Task 7343 (`d6ca8ef3-60ca-4650-a436-8b5a00655394`). |
-| `Langlands.Automorphic.CuspidalComplexParameterBridgeTCStatement` | Actual infinitesimal character comparison and regular algebraicity. Task 7870 (`a97be363-c387-4cc1-b0d8-75e4761b29a1`) published `Langlands.Automorphic.cuspidalComplexParameterBridgeTC`, artifact `059c3673-af5d-4313-8777-42e5f877949a`. |
-| `HarrisParityBaseChangeStatement` | Conditional assembly of the four automorphic comparisons for the lifted class. Task 7971 (`225355e9-9b94-4cd7-bf6c-e9d8e60874c9`) |
-| `QuadraticPatchingStatement` | Patching and uniqueness for a rich family of actual quadratic restrictions. Task 7920 (`ec9a652c-b05e-4bc7-a62e-cee2e9b08970`) |
-| `QuadraticFrobeniusPatchingStatement` | Invariance and agreement from the arithmetic root-power identities and recovery at split places. Task 7967 (`97c25937-0d6a-4902-9289-fba8bf52875d`) |
-| `AbsoluteGeometricFrobeniusDensityStatement` | Krull density of good geometric Frobenius conjugates, from finite Chebotarev and completion compatibility. Task 7917 (`294ffeaa-9096-4ce6-9d78-56e243b84a91`), proof candidate `6abde398-db7e-4a07-8287-33f19c14db4c` awaiting Library publication at this pin. |
-| `FiniteCoefficientModelStatement` | Finite local model over a field in the spectral algebraic closure, containing the given finite intermediate field, from rational trace. Task 7918 (`4d7bf80a-8544-48ea-b6e9-5c73730858f4`) |
-| `HarrisOddNormalizedExistenceReductionStatement` | Conditional odd collection assembly from even existence and the supplied automorphic and patching results. Task 7972 (`2c9724b1-d9aa-422c-87e1-c2d892e30572`) |
-| `Harris1998Theorem12CuspidalReductionStatement` | Exact conditional cuspidal reduction. Task 8079 (`fca5291b-2d81-4ea7-bcfe-8ebf46b16757`) |
-| `Harris1998Theorem12CuspidalStatement` | Final unconditional assembly, Task 7874 (`a2d0f23a-d026-467f-998d-8e1b9cd12b4d`). |
+| Declaration or gap | Scope and proof status |
+| --- | --- |
+| `HarrisRankOneHeckeSpectrumStatement` | Actual spectrum of the supplied regular algebraic conjugate self-dual GL(1) class. Open. |
+| `AlgebraicUnitaryHeckeCharacterRealizationStatement` | Uniform weight-zero λ-adic realization of the algebraic unitary character. Open; it is part of the avatar and finite reciprocity inputs described above. |
+| `HarrisEvenGeometricPowerStatement` | Transfer, middle-degree occurrence, uniform arithmetic power, and regular labelled cohomology on the same family. Open; the missing comparisons are described above. |
+| `Langlands.Shimura.FiniteUnitary.ClozelOnePlaceExistenceStatement` | Exact one-place algebra and involution. Open (the Library has the conditional `clozelOnePlaceExistence_of_localProfile`, from `UnitaryLocalProfileRealizationStatement`). |
+| `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisKottwitzLambdaAdicStatement` | Exact Kottwitz multiplicity space. Open (the Library has the conditional `cmHarrisKottwitzLambdaAdic_of_traceComparison`, from `CMHarrisKottwitzTraceComparisonStatement`). |
+| `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel.CMHarrisLambdaCohomologyHodgeTateStatement` and the labelled graded comparison | The underlying comparison statement is in the Library and its proof is open; the reduction to the actual cohomology comparison and the missing labelled interface belong to the geometric comparisons described above. |
+| `HodgeTate.TateTwistInvariantsStatement` | Degree-zero fixed field and nonzero twist vanishing of the completed algebraic closure. Open. |
+| `TaylorLabelledMultiplicityRemovalStatement` | Local multiplicity extraction with one label and actual finite coefficient extension. Open. |
+| `RegularHodgeTateCoefficientDescentStatement` | Actual model over the original completion with the same labelled weights. Open. |
+| `HarrisEvenMultiplicityReductionStatement` | Conditional even collection assembly from the three named inputs. Open. |
+| `Langlands.Global.Harris.HarrisParityAuxiliaryFieldsStatement` | Totally real quadratic supply and biquadratic cover. Proved: `harrisParityAuxiliaryFields`. |
+| `Langlands.Global.Harris.ConjugateSelfDualUnitaryCentralCharacterStatement` | Central-character transport. Proved: `conjugateSelfDualUnitaryCentralCharacter`. |
+| `Langlands.Automorphic.Unramified.CyclicPrimeIsobaricBaseChangeTCStatement` | Arthur–Clozel III.4.2(c) existence and uniqueness for the totally complex weak lift. Open (the Library has the conditional `cyclicPrimeIsobaricBaseChangeTC_of_cuspidal`). |
+| `Langlands.Automorphic.Unramified.QuadraticWeakBaseChangeSplitSquareIntegrableStatement` | III.5.1 at a split square-integrable place and singleton cuspidality of the lift. Open (the Library has the conditional `quadraticWeakBaseChangeSplitSquareIntegrable_of_strongSupport`, from `CyclicStrongBaseChangeSupportStatement`). |
+| `Langlands.Automorphic.Unramified.CyclicWeakBaseChangeComplexPlaceTCStatement` | Canonical B7 in its totally complex form. Open; the Library states no conditional derivation of it. |
+| `Langlands.Automorphic.Unramified.CyclicStrongBaseChangeSupportStatement`, clause C | The aggregate complex-place comparison from Arthur–Clozel III.5.1. An unproved external input. |
+| `Langlands.Automorphic.CuspidalComplexParameterBridgeTCStatement` | Actual infinitesimal character comparison and regular algebraicity. Proved: `Langlands.Automorphic.cuspidalComplexParameterBridgeTC`. |
+| `HarrisParityBaseChangeStatement` | Conditional assembly of the four automorphic comparisons for the lifted class. Proved: `harrisParityBaseChange`. |
+| `QuadraticPatchingStatement` | Patching and uniqueness for a rich family of actual quadratic restrictions. Proved: `quadraticPatching`. |
+| `QuadraticFrobeniusPatchingStatement` | Invariance and agreement from the arithmetic root-power identities and recovery at split places. Proved: `quadraticFrobeniusPatching`. |
+| `AbsoluteGeometricFrobeniusDensityStatement` | Krull density of good geometric Frobenius conjugates, from finite Chebotarev and completion compatibility. Proved: `absoluteGeometricFrobeniusDensity`. |
+| `FiniteCoefficientModelStatement` | Finite local model over a field in the spectral algebraic closure, containing the given finite intermediate field, from rational trace. Proved: `finiteCoefficientModel`. |
+| `HarrisOddNormalizedExistenceReductionStatement` | Conditional odd collection assembly from even existence and the supplied automorphic and patching results. Open. |
+| `Harris1998Theorem12CuspidalReductionStatement` | Exact conditional cuspidal reduction. Open. |
+| `Harris1998Theorem12CuspidalStatement` | Final unconditional assembly. Open. |
 
 ## Registered originals
 

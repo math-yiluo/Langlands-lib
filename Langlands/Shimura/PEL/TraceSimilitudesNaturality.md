@@ -1,6 +1,6 @@
 # Coefficient naturality of the actual Harris trace similitudes
 
-Worker 57. This internal derived unit makes coefficient extension explicit for
+This internal derived module makes coefficient extension explicit for
 the already constructed original-involution Harris trace-form comparison.
 
 The trace pairing commutes with every homomorphism f of commutative rational
@@ -40,7 +40,7 @@ adeles, finite place, finite completion and finiteEvaluation algebra map.
 Its compatibility with the original algebraic comparison and the rational
 diagonal are proved specializations of the general identities.
 
-All provenance is internal: this unit derives the results from the published
+All provenance is internal: this module derives the results from the published
 trace pairing, tensor extension, opposite-group comparison, recovered-unit
 inverse, involution-twist cancellation and actual adelic coefficient maps.
 It adds no source theorem as an assumption. No topology on the bilinear group,

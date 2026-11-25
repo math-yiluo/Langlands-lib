@@ -1,6 +1,6 @@
 # Multiplication with Frobenius-powered regular coordinates
 
-Worker 669 derives this construction from the existing coordinate-product,
+This construction is derived from the existing coordinate-product,
 regular-representation and Frobenius-coordinate constructions, together with
 Mathlib linear algebra. Its proofs use no external structural existence result.
 
@@ -67,9 +67,9 @@ of coordinate `chi * psi^q`. This containment follows directly from covariance
 multiplication and power containment and requires no characteristic,
 perfectness, reducedness or group-like premise on the coordinates.
 
-Tensor irreducibility remains an explicit premise. This unit does not construct
+Tensor irreducibility remains an explicit premise. This module does not construct
 Steinberg modules, identify an entire induced covariance space with the product,
 or prove the general `SteinbergBigCellStatement`.
 
-Integration gives the local instances used here module-specific names to permit
+The local instances used here have module-specific names to permit
 joint imports. Their types, values, and local scopes are unchanged.

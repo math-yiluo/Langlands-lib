@@ -1,7 +1,5 @@
 # Exclusion for one character from separated geometric-lemma pieces
 
-Author: Worker 5120.
-
 This internal supporting module applies the abstract isolated-grade theorem of
 `InducedTwistExclusionAlgebra` to the actual normalized Jacquet module `r_P(i_P(σ))` of an
 actual rational parabolic `P = MU`. Its provenance is internal: it combines published

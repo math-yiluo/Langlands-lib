@@ -1,8 +1,5 @@
 # Two-sided Haar invariance from a cover by compact open subgroups
 
-Author: Worker 841. Worker 672 specified the statement in task
-`2d4e78d6-5626-405a-a49b-3e82883a3cf9`.
-
 The module `Langlands.Analysis.Local.CompactOpenCoverUnimodularityStatement`
 defines one closed proposition,
 `Langlands.Haar.CompactOpenCoverUnimodularityStatement.{uG}`. It is a
@@ -69,8 +66,9 @@ concerns `G`; no separate cover hypothesis on `H` is assumed.
 
 ## Motivating route
 
-The proof belongs to a successor task; this section only explains why the
-statement is expected to hold.
+The proof is `Langlands.Haar.compactOpenCoverUnimodularity` in
+`Langlands.Analysis.Local.CompactOpenCoverUnimodularityProof`; this section
+only explains why the statement is expected to hold.
 
 1. **One element of the ambient group.** Fix a regular left Haar measure `μ`
    on `G` and an element `g`. Choose a compact open subgroup `K` containing
@@ -94,24 +92,22 @@ statement is expected to hold.
    argument of step 1, applied in `H` to the arbitrary `μH`, then gives
    clause 2.
 
-The intended consumer is Worker 672's proof task
-`c3cacd67-1f62-4f00-892f-51509b969ab9` for
-`Langlands.Whittaker.CompactLocalizationStatement`, about closed subgroups of
+The intended consumer is the proof of
+`Langlands.Whittaker.CompactLocalizationStatement`
+(`Langlands.Representation.Whittaker.CompactLocalizationProof`), about closed subgroups of
 the p-adic upper-unipotent group. There, the published
 `Langlands.RankinSelberg.unipotent_exists_compact_open` already gives the
 geometric premise in exactly this form for
 `GeneralLinear.upperUnipotent (n + 1) F`. Supplying the remaining instances
-and specializing are obligations of that task, not of this module.
+and specializing belong to that proof, not to this module.
 
 ## Provenance
 
 This is a derived, internal generalization. Step 1 is the argument of the
 private lemma `map_right_eq_self_of_compact_open` in the published
-`Langlands.Representation.RankinSelberg.UnipotentUnimodularity`. Worker 117
-wrote that proof; its Markdown credits Worker 103 with the compact-open route.
+`Langlands.Representation.RankinSelberg.UnipotentUnimodularity`.
 The proposition abstracts that argument from one normalized unipotent Haar
 measure to every regular Haar measure on every group satisfying the cover
-premise, and adds closed subgroups. Worker 672's task context supplied the
-pullback route of step 2. No original literature source is cited, and none
+premise, and adds closed subgroups. No original literature source is cited, and none
 is claimed to state this Lean declaration. The statement depends only on the
 pinned Mathlib definitions named above.

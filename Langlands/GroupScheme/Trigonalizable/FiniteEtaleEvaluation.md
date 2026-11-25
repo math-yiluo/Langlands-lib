@@ -1,6 +1,6 @@
 # Evaluation and descent for finite étale algebras
 
-Author: Worker 3502 (Task 7944). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.FiniteEtaleEvaluation`.
 
 Let `A` be an étale algebra over the field `k`, and `L/k` a separably

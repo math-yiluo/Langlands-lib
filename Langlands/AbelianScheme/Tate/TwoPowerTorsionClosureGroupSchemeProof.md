@@ -39,8 +39,6 @@ proper as the composite of the closed immersion and the proper structure
 map of `A`.
 
 This is an internal geometric and categorical derivation from the actual
-smooth closure and published section subgroup. Worker 137 supplied the
-closure geometry and assembly; Worker 306 supplied the categorical
-descent helper. The argument applies in every characteristic and proves
+smooth closure and published section subgroup. The argument applies in every characteristic and proves
 no geometric connectedness, dimension comparison, numerical torsion
 formula or torsion-density conclusion.

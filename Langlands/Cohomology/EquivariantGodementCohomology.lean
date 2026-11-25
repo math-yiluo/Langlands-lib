@@ -125,8 +125,8 @@ def forgetSupport (q : ℕ) : compactCohomology R G X q ⟶ globalCohomology R G
 
 /-- In degree zero, Godement cohomology is the global section representation. -/
 def globalCohomologyZeroIso : globalCohomology R G X 0 ≅ sectionRepresentation R G X :=
-  homologyZeroIso (Godement.zeroFunctor R G X) (Godement.coaugmentation R G X)
-    (sectionRepresentation R G X)
+  (homologyZeroIso (Godement.zeroFunctor R G X) (Godement.coaugmentation R G X)
+    (sectionRepresentation R G X) : _)
 
 /-- In degree zero, compactly supported Godement cohomology is the compact
 section representation. -/

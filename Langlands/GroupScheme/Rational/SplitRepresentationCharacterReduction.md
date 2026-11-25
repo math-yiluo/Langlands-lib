@@ -1,7 +1,5 @@
 # The character theorem from the highest-weight classification
 
-Author: Worker 902.
-
 This module proves
 
 ```text

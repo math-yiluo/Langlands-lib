@@ -2,7 +2,9 @@
 
 This is a derived **statement target**, with no proof of
 `RelativePolePairingStatement` in this file. It is the concrete pairing adapter
-for H1, task `205503d3-82c7-4b1a-a4f0-90d02bbe9a2e`. Its conclusion concerns
+for the finite-place comparison (track H1 of the program ledger
+`notes/automorphic/global-program-coverage.md`). It is proved as
+`relativePolePairing` (`RelativePolePairingProof`). Its conclusion concerns
 generated integral spans at a finite place.
 
 The index is the existing
@@ -61,8 +63,7 @@ functional-equation comparison engine is responsible for deriving the
 relevant local identities from actual global functional equations,
 almost-everywhere matching and the prescribed auxiliary twist identities.
 Those global functional equations, highly ramified stability and the
-necessary existence inputs remain obligations of the parent program and
-the factor owners. Boundary nonvanishing, including the global input used
+necessary existence inputs are not discharged here. Boundary nonvanishing, including the global input used
 by Henniart from Shahidi 1981, Theorem 5.2, remains an additional explicit
 analytic input; omitted local regularity does not prove it.
 

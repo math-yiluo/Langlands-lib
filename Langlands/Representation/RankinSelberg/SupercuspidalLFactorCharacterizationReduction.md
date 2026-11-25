@@ -1,6 +1,5 @@
 # Henniart 2002, Théorème 1.6(b), from its inputs
 
-Author: Worker 1719.
 This module, in namespace
 `Langlands.RankinSelberg.SupercuspidalLFactorCharacterization`, proves the
 characterization of supercuspidal representations by L-factors of pairs,

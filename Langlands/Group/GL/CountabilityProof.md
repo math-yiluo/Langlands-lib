@@ -1,7 +1,5 @@
 # Countability of actual p-adic general linear groups and parabolics
 
-Author: Worker 164.
-
 This internal certificate module works with every prime `p`, every actual finite
 extension `F : PadicField p`, every supplied compatible `F.TopologicalData T`,
 every rank `n` (including zero), and every block shape `B` of that rank. The field

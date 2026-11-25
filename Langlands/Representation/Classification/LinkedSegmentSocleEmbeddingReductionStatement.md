@@ -1,7 +1,5 @@
 # Local linked-segment reduction for irreducible socle-product embeddings
 
-Author: Worker 561.
-
 `Langlands.Classification.LinkedSegmentSocleEmbeddingReduction.{uF,uV} F T`
 is a proposition definition for the local reduction in Zelevinsky §6.7.
 This module states the reduction and proves no representation-theoretic theorem.
@@ -72,9 +70,9 @@ Ann. Sci. ENS (4) 13 (1980), 165–210, literature ID
 The retained PDF is
 `/home/taskhub/central-library/Zelevinsky--Induced representations of reductive p-adic groups II, irreducible representations of GL(n)--1980.pdf`.
 The local disjunction is the step preceding Cases 1 and 2 of §6.7,
-printed p.190 / one-based PDF p.27. Worker 561 read this page and
-§§4.1–4.6, printed pp.184–186 / PDF pp.21–23, and visually checked
-printed pp.185 and 190. No matching source errata entry was found in the
+printed p.190 / one-based PDF p.27. This page and §§4.1–4.6, printed
+pp.184–186 / PDF pp.21–23, were read, and printed pp.185 and 190 were
+visually checked. No matching source errata entry was found in the
 available project notes or literature index.
 
 Proposition 4.6, printed pp.185–186 / PDF pp.22–23, assumes `Δ'` precedes
@@ -88,7 +86,7 @@ of composition factors of the two orders, not a canonical short exact
 sequence for the forward pair. Exactness and associativity of normalized
 induction are in Proposition 1.1(a),(c), printed p.170 / PDF p.7, with
 tensor compatibility in Proposition 1.5, printed p.171 / PDF p.8.
-Worker 561 read these passages as well.
+These passages were read as well.
 
 The exact statement is a derived formulation of that source step in the
 Library's actual-data language. Its proof must construct a finite filtration
@@ -107,7 +105,8 @@ to the corresponding successive quotient remains injective. After the
 graded-quotient equivalence, this is an embedding into one layer. A layer
 containing `K` embeds into the swapped product by the reverse-pair
 embedding and exactness; the other layer is the union/intersection
-replacement. These are proof obligations, not results implemented here.
+replacement. These steps belong to the proof
+(`LinkedSegmentSocleEmbeddingReductionProof`), not to this module.
 
 ## Independence and remaining inputs
 
@@ -116,20 +115,14 @@ constituent relations; neither is a premise asserting this reduction.
 This statement assumes no exhaustion or analytic classification result.
 An exact proof must independently establish the two-factor filtration,
 the generic finite-filtration and induction steps, replacement data with
-degree preservation, and actual transport. Existing owners must be reused
-where their precise targets apply.
+degree preservation, and actual transport. Existing Library results must be
+reused where their precise statements apply.
 
 The proof must exclude, directly and transitively, the conclusions of
-socle exhaustion `f3a69bc8-7312-4f82-8a7d-ea3c8188cb63`, analytic segment
-classification `aca8805b-054f-4d56-8045-12db7f623404`, special-head
-exhaustion `3bfb61fa-1129-4fc9-83fd-7fcfec22106e`, ordered special-head
-existence `ebea9a8a-9b21-4208-aa31-98c2dea1f8a3`, quotient coverage
-`20e4e1c6-0f4f-4ca7-96b9-a214ba1a7584`, tempered block uniqueness
-`52e97845-36bb-457d-b76f-70753334b88c`,
-`SquareIntegrableLanglandsClassification` and task
-`1cb45da2-7007-4351-a694-594fb148b8d1`, square-integrable exhaustion
-`cd8ab97c-0b78-4bce-97c4-d307a28159a4`, and regular exhaustion
-`bf433f0a-921a-428c-b0c0-6475438125ac`. Proof successors of those
-conclusions are also excluded. Independently justified lower inputs may
-be reused after a dependency audit. No proposition definition, citation,
-conditional assembly lemma, or pending task counts as a proved input.
+socle exhaustion, analytic segment classification, special-head
+exhaustion, ordered special-head existence, quotient coverage, tempered
+block uniqueness, `SquareIntegrableLanglandsClassification`,
+square-integrable exhaustion, and regular exhaustion. The files proving
+those conclusions are also excluded. Independently justified lower inputs
+may be reused after a dependency audit. No proposition definition, citation,
+or conditional assembly lemma counts as a proved input.

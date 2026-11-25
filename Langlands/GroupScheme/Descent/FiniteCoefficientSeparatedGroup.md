@@ -1,6 +1,6 @@
 # Finite coefficient models of separated finitely presented groups
 
-Worker 700. This internal construction supplies the separated target-group
+This internal construction supplies the separated target-group
 model in the arbitrary-base limit reduction for reductive group
 monomorphisms. Its provenance is the combination of published general scheme
 approximation, group-law descent and eventual separation; it does not require

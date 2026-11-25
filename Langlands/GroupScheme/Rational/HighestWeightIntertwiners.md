@@ -1,7 +1,5 @@
 # Intertwiners, weight spaces and the positive-root order
 
-Author: Worker 900.
-
 This module collects elementary facts about actual intertwiners
 (`MatrixRepresentation.Intertwines`, module `Lie.RepresentationSubquotient`) and
 the highest-weight predicate `SplitPinning.IsHighestWeight` (module

@@ -139,7 +139,7 @@ hypotheses.
 
 `eq_zero_of_tendsto_sum_pow_mul_eval_of_le` is proved by induction on `N`, following the proof of
 `Langlands.BruhatTits.RationalPoints.CentralNormKernel.eq_zero_of_sum_pow_mul_eval_eq_zero_of_le`
-(Worker 1045) with the vanishing hypothesis replaced by convergence to `0`. If some `Q j ≠ 0`, the
+with the vanishing hypothesis replaced by convergence to `0`. If some `Q j ≠ 0`, the
 difference operator `a ↦ (k ↦ a (k + 1) - ν j * a k)` replaces `Q i` by
 `ν i * Q i (X + 1) - ν j * Q i`; the new sequence again tends to `0`, and the total size
 decreases (strictly at `j`), so the new polynomials all vanish by induction. Comparing leading

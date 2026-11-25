@@ -65,40 +65,40 @@ theorem comap_mem_locus_of_displacement_lt (d : RationalData K P) {ε : ℝ}
 rational subset: control the finitely many forward and inverse input displacements. -/
 theorem locus_image_eq_of_displacement_lt (d : RationalData K P) {ε : ℝ}
     (hε : ∀ x ∈ d.locus, ε ≤ x d.denominator) (g : Aut P)
-    (hb : ‖g.hom.toAlgHom d.denominator - d.denominator‖ < ε)
-    (hf : ∀ j, ‖g.hom.toAlgHom (d.numerator j) - d.numerator j‖ < ε)
-    (hib : ‖g.inv.toAlgHom d.denominator - d.denominator‖ < ε)
-    (hif : ∀ j, ‖g.inv.toAlgHom (d.numerator j) - d.numerator j‖ < ε) :
+    (hb : ‖g.asIso.hom.toAlgHom d.denominator - d.denominator‖ < ε)
+    (hf : ∀ j, ‖g.asIso.hom.toAlgHom (d.numerator j) - d.numerator j‖ < ε)
+    (hib : ‖g.asIso.inv.toAlgHom d.denominator - d.denominator‖ < ε)
+    (hif : ∀ j, ‖g.asIso.inv.toAlgHom (d.numerator j) - d.numerator j‖ < ε) :
     (fun x : BanachSpectrum P => g • x) '' d.locus = d.locus := by
   apply Set.Subset.antisymm
   · rintro _ ⟨x, hx, rfl⟩
-    exact comap_mem_locus_of_displacement_lt d hε g.inv hib hif hx
+    exact comap_mem_locus_of_displacement_lt d hε g.asIso.inv hib hif hx
   · intro x hx
     refine ⟨g⁻¹ • x, ?_, smul_inv_smul g x⟩
-    exact comap_mem_locus_of_displacement_lt d hε g.hom hb hf hx
+    exact comap_mem_locus_of_displacement_lt d hε g.asIso.hom hb hf hx
 
 variable {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
 
 /-- Norm-continuous algebra-element orbits make the actual rational-locus
 stabilizer open in any topological parameter group. -/
 theorem isOpen_rationalLocusStabilizer (ρ : G →* Aut P)
-    (hρ : ∀ a : P, Continuous (fun g : G => (ρ g).hom.toAlgHom a))
+    (hρ : ∀ a : P, Continuous (fun g : G => (ρ g).asIso.hom.toAlgHom a))
     (d : RationalData K P) :
     IsOpen {g : G |
       (fun x : BanachSpectrum P => (ρ g) • x) '' d.locus = d.locus} := by
   obtain ⟨ε, hε, hbound⟩ := exists_pos_le_denominator d
-  have hf (a : P) : ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).hom.toAlgHom a - a‖ < ε := by
-    have hc : Continuous (fun g : G => ‖(ρ g).hom.toAlgHom a - a‖) :=
+  have hf (a : P) : ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).asIso.hom.toAlgHom a - a‖ < ε := by
+    have hc : Continuous (fun g : G => ‖(ρ g).asIso.hom.toAlgHom a - a‖) :=
       ((hρ a).sub continuous_const).norm
-    have hz : ‖(ρ (1 : G)).hom.toAlgHom a - a‖ < ε := by
+    have hz : ‖(ρ (1 : G)).asIso.hom.toAlgHom a - a‖ < ε := by
       rw [map_one]
       change ‖a - a‖ < ε
       simpa only [sub_self, norm_zero] using hε
     exact hc.continuousAt.eventually (gt_mem_nhds hz)
-  have hi (a : P) : ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).inv.toAlgHom a - a‖ < ε := by
-    have hc : Continuous (fun g : G => ‖(ρ g).inv.toAlgHom a - a‖) :=
+  have hi (a : P) : ∀ᶠ g in 𝓝 (1 : G), ‖(ρ g).asIso.inv.toAlgHom a - a‖ < ε := by
+    have hc : Continuous (fun g : G => ‖(ρ g).asIso.inv.toAlgHom a - a‖) :=
       ((continuous_inv_apply ρ hρ a).sub continuous_const).norm
-    have hz : ‖(ρ (1 : G)).inv.toAlgHom a - a‖ < ε := by
+    have hz : ‖(ρ (1 : G)).asIso.inv.toAlgHom a - a‖ < ε := by
       rw [map_one]
       change ‖a - a‖ < ε
       simpa only [sub_self, norm_zero] using hε

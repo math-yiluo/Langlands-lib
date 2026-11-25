@@ -192,16 +192,16 @@ def normContinuousActionOfCoordinates
     {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
     (A : PresentedAffinoidAlgebra K) (σ : G →* Aut A)
     (hc : ∀ i, ContinuousAt
-      (fun g : G => (σ g).hom.toAlgHom (coordinate K A i)) 1) :
+      (fun g : G => (σ g).asIso.hom.toAlgHom (coordinate K A i)) 1) :
     NormContinuousAction K G :=
   NormContinuousAction.ofAut A σ (fun b => by
-    have hm (g h : G) : (σ (g * h)).hom = ((σ g).hom).comp (σ h).hom := by
-      change (σ (g * h)).hom = ((σ g) * (σ h)).hom
+    have hm (g h : G) : (σ (g * h)).asIso.hom = ((σ g).asIso.hom).comp (σ h).asIso.hom := by
+      change (σ (g * h)).asIso.hom = ((σ g) * (σ h)).asIso.hom
       rw [map_mul]
     apply continuous_map_of_continuousAt_one
-      (fun g => (σ g).hom) hm ?_ b
+      (fun g => (σ g).asIso.hom) hm ?_ b
     intro a
-    apply continuousAt_map_of_coordinates (fun g => (σ g).hom) hc
+    apply continuousAt_map_of_coordinates (fun g => (σ g).asIso.hom) hc
     intro i
     rw [map_one]
     exact norm_coordinate_le K A i)
@@ -211,7 +211,7 @@ theorem normContinuousActionOfCoordinates_actionAut
     {G : Type v} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
     (A : PresentedAffinoidAlgebra K) (σ : G →* Aut A)
     (hc : ∀ i, ContinuousAt
-      (fun g : G => (σ g).hom.toAlgHom (coordinate K A i)) 1) :
+      (fun g : G => (σ g).asIso.hom.toAlgHom (coordinate K A i)) 1) :
     (normContinuousActionOfCoordinates A σ hc).actionAut = σ :=
   NormContinuousAction.actionAut_ofAut _ _ _
 

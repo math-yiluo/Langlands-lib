@@ -161,7 +161,7 @@ variable (M : IntegralModel (fixedFieldIntegers F) (inertiaFixedField F) G)
     [Smooth M.group.X.hom] [GeometricallyConnected M.group.X.hom]
     (hM : M.integralPoints = E.zeroPoints ⊓ C.pointwiseFixer (C.apartmentMap ''
       {ε • C.cocharacterDirection
-      (AddEquiv.symm (IntegralSplitTorusData.cocharacterSpecialization A) ν) +ᵥ x}))
+        (AddEquiv.symm (IntegralSplitTorusData.cocharacterSpecialization A) ν) +ᵥ x}))
     (φ : M.Hom D.neutral (𝟙 G))
     (B : IntegralSplitTorusData M C.i)
 

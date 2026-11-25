@@ -1,7 +1,5 @@
 # Actual general-linear highest-derivative constituents and dual quotients
 
-Author: Worker 357.
-
 This derived construction takes an actual smooth representation `A` of
 `GL_(N+1)(F)` and a supplied representation `B` equivalent to the
 modulus-twisted smooth contragredient of `A`. A nonzero finite-length highest
@@ -118,17 +116,13 @@ This pair adds no new assertion from an original source and has no new
 source-citation tuple. Its proof dependencies are the determinant evaluation
 pairing, the objectwise derivative restriction equality, and the actual
 mirabolic constituent-and-quotient constructor just described. Statements,
-citations and pending artifacts do not occur as proved inputs.
+citations and unpublished results do not occur as proved inputs.
 
 ## Published inputs and reuse
 
-Both direct imports were independently accepted and published before this
-construction. The mirabolic constructor was approved by Reviewer 8072 and
-published at Library commit `d08b5767dba1139a70ed7ebfc0438a31c2587868`.
-The determinant-pairing and restriction helper was approved by Reviewer 6113
-and published at `9a8ca758097242bde4147f33304f43fceef22fa4`. Their native,
-frozen and published paired files agree byte for byte with the pairs in the
-Library base below.
+Both direct imports, the mirabolic constructor and the determinant-pairing
+and restriction helper, are proved Library modules. Their paired files agree
+byte for byte with the pairs in the Library base below.
 
 The existing `exists_derivative_hom_contragredient` in the second import
 accepts a supplied irreducible subrepresentation and concludes a nonzero
@@ -185,17 +179,14 @@ and matrix-coefficient branches enter through the general highest-pairing
 and cuspidal-embedding foundations, rather than through segment
 classification or Whittaker coinvariant-finiteness conclusions.
 
-This is within the general derivative/duality route permitted by trusted
-operator response `bd71b9185aab5d6eafffb7891bd3a3ca`; response
-`0edda6122ce65ed7ac51603c37473920` retains this host's exclusions when
-allowing the specified general infrastructure. The support-only permission
-`30144f6f9b59540b88b6d4c1517892d9` supplies no mathematical premise here:
-this constructor asserts no segment support bound. The permissions have not
-been interpreted as permission to use stronger segment conclusions.
+This is within the general derivative/duality route, with the exclusions
+listed next. No support-only segment result supplies a mathematical premise
+here: this constructor asserts no segment support bound, and no stronger
+segment conclusion is used.
 
 The complete import inventory, source-name scan and inspected proof routes
-exclude Ze80 3.5/9.6 and their proof successors; the segment-socle part of
-`8e5b4563-0365-41c7-b134-70f2a0b36292`; segment head, socle and full Jacquet
+exclude Ze80 3.5/9.6 and their proofs; the segment-socle part of
+the derivative statements (`SegmentSocleDerivativesStatement`); segment head, socle and full Jacquet
 formulas and special Jacquet exponent formulas; two-supercuspidal product
 irreducibility or structure; segment-socle commutation, gluing and unlinked
 or linked structure; special-head product irreducibility in either direction;
@@ -204,18 +195,15 @@ and regular exhaustion; ordered strong-head or multisegment-socle existence;
 quotient coverage; ordered conversion; tempered uniqueness;
 `SquareIntegrableLanglandsClassification`; analytic segment classification;
 forward special-segment essential square-integrability; and Whittaker
-coinvariant-finiteness conclusions. No task listed under the host's
-Independence, or its excluded mathematical conclusion under a new name,
-is used as a proof input. The lexical scan supplements the proof-route
+coinvariant-finiteness conclusions. No excluded mathematical conclusion,
+under its own or a new name, is used as a proof input. The lexical scan supplements the proof-route
 inspection; it does not replace it.
 
 Compilation and declaration inspection report independent `uF` and `uV`,
-and only `propext`, `Classical.choice` and `Quot.sound`. The submitted module
-contains no proof holes, new axioms or kernel-bypassing commands. These
-checks are development evidence; this contribution still requires its own
-independent semantic review and publication.
+and only `propext`, `Classical.choice` and `Quot.sound`. The module
+contains no proof holes, new axioms or kernel-bypassing commands.
 
-## Scope remaining for the host
+## Scope
 
 Only the left derivative is assumed highest. The finite length of that
 derivative is explicit and is not inferred from finite length of `A`.
@@ -227,7 +215,9 @@ formula, linked-pair argument or irreducibility criterion.
 
 The full repeated-segment proposition
 `Langlands.Classification.SegmentHeadProductIrreducibility.{uF,uV} F T`
-remains the host's separate proof obligation, in its original universes.
+is proved separately, in its original universes, by
+`segmentHeadProductIrreducibility` in
+`Classification.SegmentHeadProductIrreducibilityProof`.
 
 ## Appendix A: complete project import closure
 

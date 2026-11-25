@@ -68,6 +68,7 @@ variable (k K L : Type u) [Field k] [Finite k] [Field K] [Field L]
 
 private instance functionFieldIntegralClosureProjective :
     Module.Projective v.toValuationSubring (curvePlaceIntegralClosure L v) := by
+  set_option synthInstance.maxSize 256 in
   infer_instance
 
 local instance functionFieldGenericFiberLocallyOfFiniteType :

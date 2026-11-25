@@ -24,7 +24,7 @@ equivariance. Exact intertwining modulo the bottom subspace is converted to
 and `genericMap_isIntertwiner` expose its two properties.
 
 This is internal derived content from the imported Frobenius, multiplier and landing
-results. The proof follows the forward composite in Worker 763's character-induced
-construction, replacing its tail multiplier by a nonvanishing generic multiplier.
+results. The proof follows the forward composite in the character-induced
+construction of `RealCharacterInducedSwap`, replacing its tail multiplier by a nonvanishing generic multiplier.
 The theorem retains its two generic-parameter premises and does not itself assert the
 full unlinked swap.

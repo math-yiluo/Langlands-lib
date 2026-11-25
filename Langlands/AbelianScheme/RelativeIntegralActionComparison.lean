@@ -35,15 +35,15 @@ def relativeBaseChangeComparisonIso (f : T' ⟶ T) :
 /-- Relative restriction is ordinary pullback conjugated by the actual comparison. -/
 theorem relativeEndRestrict_eq_comparison (f : T' ⟶ T)
     (v : CategoryTheory.End ((baseChange T.hom).obj B)) :
-    relativeEndRestrict B f v =
-      (relativeBaseChangeComparisonIso B f).hom ≫ (baseChange f.left).map v ≫
+    (relativeEndRestrict B f v).asHom =
+      (relativeBaseChangeComparisonIso B f).hom ≫ (baseChange f.left).map v.asHom ≫
         (relativeBaseChangeComparisonIso B f).inv := rfl
 
 /-- The comparison intertwines relative restriction with ordinary pullback. -/
 theorem relativeEndRestrict_comparison_intertwines (f : T' ⟶ T)
     (v : CategoryTheory.End ((baseChange T.hom).obj B)) :
-    relativeEndRestrict B f v ≫ (relativeBaseChangeComparisonIso B f).hom =
-      (relativeBaseChangeComparisonIso B f).hom ≫ (baseChange f.left).map v := by
+    (relativeEndRestrict B f v).asHom ≫ (relativeBaseChangeComparisonIso B f).hom =
+      (relativeBaseChangeComparisonIso B f).hom ≫ (baseChange f.left).map v.asHom := by
   rw [relativeEndRestrict_eq_comparison]
   simp only [Category.assoc, Iso.inv_hom_id, Category.comp_id]
 
@@ -61,31 +61,33 @@ def integralActionRationalExtension (a : O →+* CategoryTheory.End B) :
 @[simp]
 theorem integralActionRationalExtension_coe
     (a : O →+* CategoryTheory.End B) (x : O) :
-    integralActionRationalExtension B b a (x : A) = homToHom0 (a x) :=
+    integralActionRationalExtension B b a (x : A) = CategoryTheory.End.of (homToHom0 (a x).asHom) :=
   IntegralOrderExtension.extend_coe b _ x
 
 /-- An actual intertwiner remains an intertwiner for the full rational extensions. -/
 theorem integralActionRationalExtension_intertwines
     {B C : AbelianScheme S}
     (a : O →+* CategoryTheory.End B) (a' : O →+* CategoryTheory.End C)
-    (v : B ⟶ C) (hv : ∀ x : O, a x ≫ v = v ≫ a' x) (x : A) :
-    comp0 B B C (integralActionRationalExtension B b a x) (homToHom0 v) =
-      comp0 B C C (homToHom0 v) (integralActionRationalExtension C b a' x) := by
+    (v : B ⟶ C) (hv : ∀ x : O, (a x).asHom ≫ v = v ≫ (a' x).asHom) (x : A) :
+    comp0 B B C (integralActionRationalExtension B b a x).asHom (homToHom0 v) =
+      comp0 B C C (homToHom0 v) (integralActionRationalExtension C b a' x).asHom := by
   let L : A →ₗ[ℚ] Hom0 B C :=
     ((comp0 B B C).flip (homToHom0 v)).comp
-      (integralActionRationalExtension B b a).toLinearMap
+      (CategoryTheory.End.linearEquiv.toLinearMap.comp
+        (integralActionRationalExtension B b a).toLinearMap)
   let R : A →ₗ[ℚ] Hom0 B C :=
     ((comp0 B C C) (homToHom0 v)).comp
-      (integralActionRationalExtension C b a').toLinearMap
+      (CategoryTheory.End.linearEquiv.toLinearMap.comp
+        (integralActionRationalExtension C b a').toLinearMap)
   have eqMaps : L = R := by
     apply (b.extendOfIsLattice (M := O.toSubmodule) ℚ).ext
     intro k
     change comp0 B B C
         (integralActionRationalExtension B b a
-          (b.extendOfIsLattice (M := O.toSubmodule) ℚ k)) (homToHom0 v) =
+          (b.extendOfIsLattice (M := O.toSubmodule) ℚ k)).asHom (homToHom0 v) =
       comp0 B C C (homToHom0 v)
         (integralActionRationalExtension C b a'
-          (b.extendOfIsLattice (M := O.toSubmodule) ℚ k))
+          (b.extendOfIsLattice (M := O.toSubmodule) ℚ k)).asHom
     simp only [Basis.extendOfIsLattice_apply, integralActionRationalExtension_coe,
       comp0_homToHom0]
     exact congrArg (fun f : B ⟶ C => homToHom0 f) (hv (b k))
@@ -100,7 +102,7 @@ theorem integralActionRationalExtension_baseChange {S' : Scheme.{u}} (c : S' ⟶
   intro x
   simp only [integralActionRationalExtension_coe, AlgHom.comp_apply,
     baseChangeOrderAction_apply]
-  exact (rationalBaseChangeHom_ofHom c (a x)).symm
+  exact congrArg CategoryTheory.End.of (rationalBaseChangeHom_ofHom c (a x).asHom).symm
 
 /-- The direct and successive action families are equivariantly rationally isomorphic. -/
 def relativeIntegralActionRationalComparisonIso (f : T' ⟶ T)
@@ -116,11 +118,11 @@ def relativeIntegralActionRationalComparisonIso (f : T' ⟶ T)
   intro x
   change comp0 _ _ _
       (integralActionRationalExtension ((baseChange T'.hom).obj B) b
-        ((relativeEndRestrict B f).comp a) x)
+        ((relativeEndRestrict B f).comp a) x).asHom
       (homToHom0 (relativeBaseChangeComparisonIso B f).hom) =
     comp0 _ _ _ (homToHom0 (relativeBaseChangeComparisonIso B f).hom)
       (((rationalBaseChangeEnd f.left ((baseChange T.hom).obj B)).comp
-        (integralActionRationalExtension ((baseChange T.hom).obj B) b a)) x)
+        (integralActionRationalExtension ((baseChange T.hom).obj B) b a)) x).asHom
   rw [← integralActionRationalExtension_baseChange]
   exact integralActionRationalExtension_intertwines b
     ((relativeEndRestrict B f).comp a)

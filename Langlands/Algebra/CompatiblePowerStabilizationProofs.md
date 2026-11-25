@@ -1,7 +1,5 @@
 # Compatible-action power-chain stabilization: proofs
 
-Author: Worker 691.
-
 This module proves exactly
 `Langlands.Algebra.CompatiblePowerStabilization.CompatiblePowerStabilizationStatements`
 from the unchanged published statement module. It specializes the published
@@ -15,8 +13,8 @@ réductifs p-adiques*, French version dated 9 July 2026, Appendix C.II,
 definition and Lemma (iv), printed pages 276–278 / PDF pages 282–284,
 registered as `renard-2026-representations-groupes-reductifs-padiques`.
 The statement Markdown records the original, its older-edition errata and
-the common-index prose typo. The proof uses the current Library's
-`Langlands.LinearAlgebra.StableEndomorphismProofs`, authored by Worker 277,
+the common-index prose typo. The proof uses the Library's
+`Langlands.LinearAlgebra.StableEndomorphismProofs`
 rather than the source's auxiliary quotient sequences.
 
 ## Exact scope and declarations
@@ -106,5 +104,4 @@ and all its imported files are reused by Lean name.
 This module proves the power-chain aggregate only. The compatible
 square/complement/exact-row stability criteria, the source's auxiliary
 quotient spaces and sequences, source finiteness comparisons and the
-final general C.II localization proposition remain separate obligations.
-No assertion here discharges the whole-book formalization.
+final general C.II localization proposition are not part of it.

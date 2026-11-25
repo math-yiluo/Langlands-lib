@@ -29,7 +29,7 @@ set_option backward.defeqAttrib.useBackward true
 variable {G : Type u} [Group G] [TopologicalSpace G] {P : ObjectProperty (CompactOpenLevel G)}
   {T : P.FullSubcategory ⥤ Scheme.{u}} (R : Type u) [CommRing R] {X : Scheme.{u}}
   (p : T ⟶ (Functor.const P.FullSubcategory).obj X)
-  {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.hom ≫ p = p)
+  {Γ : Type v} [Group Γ] (ρ : Γ →* (Aut T)ᵐᵒᵖ) (hρ : ∀ γ, (ρ γ).unop.asIso.hom ≫ p = p)
 
 /-! ## The action at a fixed level -/
 
@@ -40,23 +40,25 @@ def levelAction (K : P.FullSubcategory) (n : ℕ) (M : ModuleSheaf X R) :
     Action (ModuleCat.{u} R) Γ where
   V := (cohomology (T.obj K) R n).obj ((inverseImage (p.app K) R).obj M)
   ρ :=
-    { toFun γ := LevelTowerCohomology.projectionCohomologyMap R (p.app K) (p.app K)
-        ((ρ γ).unop.hom.app K) (NatTrans.congr_app (hρ γ) K) n M
+    { toFun γ := End.of (LevelTowerCohomology.projectionCohomologyMap R (p.app K) (p.app K)
+        ((ρ γ).unop.asIso.hom.app K) (NatTrans.congr_app (hρ γ) K) n M)
       map_one' := by
+        apply End.ext
         rw [LevelTowerCohomology.projectionCohomologyMap_congr R (p.app K) (p.app K)
-          (show (ρ 1).unop.hom.app K = 𝟙 (T.obj K) by
+          (show (ρ 1).unop.asIso.hom.app K = 𝟙 (T.obj K) by
             rw [map_one, MulOpposite.unop_one]; rfl)
           _ (by rw [Category.id_comp]) n M]
         exact LevelTowerCohomology.projectionCohomologyMap_id R (p.app K) _ n M
       map_mul' γ δ := by
+        apply End.ext
         rw [End.mul_def, LevelTowerCohomology.projectionCohomologyMap_comp]
         exact LevelTowerCohomology.projectionCohomologyMap_congr R _ _
           (by rw [map_mul, MulOpposite.unop_mul, Aut.Aut_mul_def, Iso.trans_hom]; rfl) _ _ n M }
 
 theorem levelAction_ρ (K : P.FullSubcategory) (n : ℕ) (M : ModuleSheaf X R) (γ : Γ) :
-    (levelAction R p ρ hρ K n M).ρ γ =
+    ((levelAction R p ρ hρ K n M).ρ γ).asHom =
       LevelTowerCohomology.projectionCohomologyMap R (p.app K) (p.app K)
-        ((ρ γ).unop.hom.app K) (NatTrans.congr_app (hρ γ) K) n M :=
+        ((ρ γ).unop.asIso.hom.app K) (NatTrans.congr_app (hρ γ) K) n M :=
   rfl
 
 /-- The action at the level `K` is natural in the sheaf. -/
@@ -96,10 +98,10 @@ variable [∀ {K L : P.FullSubcategory} (a : K ⟶ L), Etale (T.map a)]
 action at the level `K` with the action of `Γ` on the colimit. -/
 theorem automorphismAction_ρ_ι_apply (n : ℕ) (M : ModuleSheaf X R) (γ : Γ)
     (K : P.FullSubcategory) (x : (levelAction R p ρ hρ K n M).V) :
-    SmoothRep.hom ((automorphismAction R p hT ρ hρ n M).ρ γ)
+    SmoothRep.hom ((automorphismAction R p hT ρ hρ n M).ρ γ).asHom
         ((RestrictedLevelColimit.ι ((canonicalCoefficients R p M).cohomology n) K).hom x) =
       (RestrictedLevelColimit.ι ((canonicalCoefficients R p M).cohomology n) K).hom
-        (((levelAction R p ρ hρ K n M).ρ γ).hom x) :=
-  congrArg (fun f => f.hom x) (canonicalPullback_ι R p (ρ γ).unop.hom (hρ γ) M n K)
+        (((levelAction R p ρ hρ K n M).ρ γ).asHom.hom x) :=
+  congrArg (fun f => f.hom x) (canonicalPullback_ι R p (ρ γ).unop.asIso.hom (hρ γ) M n K)
 
 end Langlands.Shimura.LevelAutomorphismAction

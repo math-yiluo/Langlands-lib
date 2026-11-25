@@ -1,7 +1,5 @@
 # Proof of normalized induction in stages inside a product Levi
 
-Author: Worker 379.
-
 `Langlands.normalizedNestedInduction` proves exactly
 `Langlands.NormalizedNestedInductionStatement.{uF,uV,uM,uW}` from
 `Langlands.Representation.Classification.NestedInductionStatement`. It is the

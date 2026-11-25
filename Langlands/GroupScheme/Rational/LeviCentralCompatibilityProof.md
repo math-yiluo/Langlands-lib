@@ -1,6 +1,6 @@
 # Split components of nested Levis and characters of standard Levis: the conjunction
 
-Worker 962, Task 7818. Module
+Module
 `Langlands.GroupScheme.Rational.LeviCentralCompatibilityProof`, namespace
 `Langlands.GroupScheme`, universe parameter `u` (the universe of the base
 field).

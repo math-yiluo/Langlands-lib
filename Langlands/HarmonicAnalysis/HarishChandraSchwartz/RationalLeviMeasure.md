@@ -17,10 +17,10 @@ p.313 (PDF p.79), defines the integral pairing. The registered source is
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.
 
-The comparisons here are internal consequences of the published
+The comparisons here are internal consequences of
 `leviSchemePointsEquiv`, the Xi and height identities in `RationalLeviScheme`, and
 `rationalLeviSchwartzEquiv`. They do not supply a new estimate from the article.
-The conditional consumers additionally specialize the published
+The conditional consumers additionally specialize
 `RationalXiSquareIntegrableStatement` and its proved reduction
 `rationalXiSquareIntegrable_of_upperBound`; their provenance is this specialization
 and the measure comparisons, rather than a separate analytic argument.
@@ -87,7 +87,7 @@ The actual Levi weight comparisons have these additional explicit premises:
 
 There is no faithfulness or closed-embedding premise on `ρ`. The restricted
 representation on the scheme is `ρ.restrict (Standard.leviHom i ν J)`.
-The scheme's compact subgroup and Iwasawa pair are the published transports of
+The scheme's compact subgroup and Iwasawa pair are the transports of
 `K ∩ M` and `hM`.
 
 `lintegral_squareWeight_leviSchemeMeasure` identifies the integral with the
@@ -141,10 +141,10 @@ the weight equivalence above transports that hypothesis.
 The proofs apply Mathlib's measurable-equivalence change-of-variables identities
 to `e` or its inverse. Haar transport uses the topological group isomorphism.
 The compact-volume proof identifies the exact preimage subgroup. The weight proofs
-rewrite by the published `rationalXi_leviScheme` and
+rewrite by the `rationalXi_leviScheme` and
 `rationalHeight_restrict_leviHom` identities. Multiplication and inversion
 preservation identify the two convolution integrands. The Schwartz specializations
-use the published pointwise formula for `rationalLeviSchwartzEquiv`.
+use the pointwise formula for `rationalLeviSchwartzEquiv`.
 
 ## Conditional Levi II.1.5 consumers
 
@@ -167,7 +167,7 @@ The last three requirements strengthen the hypotheses of the preceding
 change-of-variables comparisons. In particular, closedness of `ρ` is needed for
 this application of II.1.5, though it is unnecessary for the comparisons.
 `K0L` may differ from `leviSchemeCompact K i ν J`. The basis and covering
-premises are imposed on the Levi scheme itself; this unit does not derive them
+premises are imposed on the Levi scheme itself; this module does not derive them
 from corresponding data on `G`. No ambient Iwasawa factorization is required
 in addition to the displayed Levi factorization `hM`.
 
@@ -194,7 +194,7 @@ For both lemmas, the implemented proof uses
 `isGenericCocharacter_leviTorusHom` to apply the group statement to `L`.
 The restricted matrix representation is closed by
 `isClosedSubgroup_restrict_leviHom`. The compact subgroup and Iwasawa
-factorization are `leviSchemeCompact K i ν J` and its published transport.
+factorization are `leviSchemeCompact K i ν J` and its transport.
 The measure is `leviSchemeMeasure i ν J μM`, which is Haar by the existing
 instance. Applying respectively
 `squareIntegrableWeight_leviSchemeMeasure_iff` and
@@ -214,6 +214,6 @@ as structural data.
 No characteristic-zero, splitness or quasisplitness assumption is imposed.
 The Levi Iwasawa factorization, simultaneous basis and Cartan cover remain
 explicit where used. The conditional consumers do not prove the analytic Xi
-upper bound or an unconditional Levi integrability theorem. This unit
+upper bound or an unconditional Levi integrability theorem. This module
 establishes no convolution closure or continuity theorem, density result,
 formal-degree normalization, spectral transform, or Plancherel inversion.

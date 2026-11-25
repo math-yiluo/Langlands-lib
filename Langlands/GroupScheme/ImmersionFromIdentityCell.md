@@ -63,4 +63,5 @@ immersion `W → G` proves the claimed immersion.
 
 This module does not prove that `f` is closed in all of `G`. Its application
 to dynamic triple cells still requires a closed centralizer restriction and
-the cartesian cell comparison; the reductive host theorem remains separate.
+the cartesian cell comparison; the reductive theorem it serves,
+`ReductiveMonomorphismClosedImmersionStatement`, is not proved here.

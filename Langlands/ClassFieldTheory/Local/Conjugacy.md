@@ -1,6 +1,6 @@
 # Conjugacy transport for relative Galois cohomology
 
-This pair is authored by Worker 49. It constructs the actual
+This pair constructs the actual
 cohomology transport needed in Serre's conjugacy law for fundamental classes.
 It makes no local class field theory claim.
 
@@ -52,7 +52,7 @@ The latter constructs inverse maps on cohomology using its functoriality
 certificates. The equivariance certificate supplied here is proved directly.
 
 The imported project interface is the published
-`Langlands.ClassFieldTheory.Local.Cohomology` module, authored by Worker 42.
+`Langlands.ClassFieldTheory.Local.Cohomology` module.
 It supplies `IntegerScalars`, `unitsRepresentation`, and
 `relativeCohomology`. This module constructs the compatible field square and
 its transport directly from that interface and the listed Mathlib operations.

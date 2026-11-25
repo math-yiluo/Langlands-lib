@@ -88,6 +88,6 @@ def HarrisCMPrimeToGaloisSmoothStatement : Prop :=
       d).obj M).V),
     ∃ V : OpenSubgroup Galois, ∀ σ ∈ V,
       SmoothRep.hom (((primeToGaloisCohomologyFunctor m hm K₀ existence geometry hRigid
-        criterion R d).obj M).ρ σ) x = x
+        criterion R d).obj M).ρ σ).asHom x = x
 
 end Langlands.Cohomology.HarrisCMPrimeToGaloisSmooth

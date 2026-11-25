@@ -1,7 +1,5 @@
 # The exact compact open orbit of the last row
 
-Author: Worker 88.
-
 `Langlands.RankinSelberg.LastRowCompactOrbitStatement.{uF} F T n` is a
 proposition definition for every prime `p`, finite extension
 `F : PadicField.{uF} p`, supplied `T : F.TopologicalData`, and natural number

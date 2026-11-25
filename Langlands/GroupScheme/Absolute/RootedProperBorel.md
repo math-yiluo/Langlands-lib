@@ -1,7 +1,5 @@
 # Proper Borel subgroups through a split torus with a root
 
-Author: Worker 1549.
-
 This internal prerequisite works over an algebraically closed field `k : Type u`,
 in every characteristic. The ambient group is pseudo-reductive and a split
 torus maps to it with an actual relative root, defined using the adjoint

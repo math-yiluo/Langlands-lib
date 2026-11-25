@@ -1,6 +1,6 @@
 # Residue comparison squares for recovered apartment tori
 
-This derived unit specializes the actual torus map in
+This derived module specializes the actual torus map in
 `UnramifiedRecoveredTorusMap` along the residue coefficient square. Its
 constructions work at arbitrary universe and in all characteristics on the
 supplied recovered models.

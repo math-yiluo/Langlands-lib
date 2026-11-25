@@ -1,6 +1,6 @@
 # Certified adjacent L-divisibility above the second-twist bound
 
-Worker 486. This internal composition proves
+This internal composition proves
 `adjacentRankLargeTwistLDivisibility`, of the predicate
 `AdjacentRankLargeTwistLDivisibility`, for arbitrary full Whittaker-type first
 and test representations of the same rank. Reducible inputs, every natural

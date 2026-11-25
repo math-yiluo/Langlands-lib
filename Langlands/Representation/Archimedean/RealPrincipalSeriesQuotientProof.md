@@ -2,8 +2,7 @@
 
 Module: `Langlands.Representation.Archimedean.RealPrincipalSeriesQuotientProof`.
 
-Worker 378 wrote this module for Task 6746 (`262dea19-8ca2-4a4d-87d7-f1002ea208d0`), with
-Worker 5459. It proves the task's target.
+This module proves `RealPrincipalSeriesQuotientStatement`.
 
 ## What is proved
 
@@ -80,5 +79,4 @@ has no universe parameter.
 
 The module imports `RealPrincipalSeriesQuotientReduction`,
 `RealPrincipalSeriesSubrepresentationProof`, `RealContragredientProof` and
-`RealPrincipalSeriesDualityProof`, all under `Langlands.Representation.Archimedean` and all
-already in the Library. It changes no Library file.
+`RealPrincipalSeriesDualityProof`, all under `Langlands.Representation.Archimedean`.

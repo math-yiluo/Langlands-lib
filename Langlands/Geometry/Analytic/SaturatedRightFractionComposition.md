@@ -119,7 +119,7 @@ category laws as input data.
 iterated actual composite representatives have a full common refinement.
 It follows from the equality criterion, interpretation of composition and
 associativity. No definitional equality of their retained-chart sources is
-claimed. This unit equips the computed hom quotients with composition and
+claimed. This module equips the computed hom quotients with composition and
 identities; it does not introduce a replacement localization category.
 
 ## Underlying continuous maps and remaining scope
@@ -137,9 +137,8 @@ substitutes the previously proved continuous-map formula for each factor.
 This is the composite of their actual numerator-after-inverse-denominator
 continuous maps, with the same order as categorical composition.
 
-The unit constructs fraction composition in the existing saturated
+The module constructs fraction composition in the existing saturated
 presentation localization. Comparison with an independently specified
 Berkovich analytic-space category, etale, quasi-etale and equivariant sites,
 compact and distinguished domains, and the Harris tower specializations
-remain obligations of the surrounding task. The preceding fraction and Ore
-units retain their independent acceptance and publication gates.
+lie outside this module.

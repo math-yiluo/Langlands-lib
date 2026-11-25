@@ -1,7 +1,5 @@
 # Uniqueness of supercuspidal support
 
-Author: Worker 55.
-
 `Langlands.glSupercuspidalSupportUniqueness` proves exactly the published
 `Langlands.GLSupercuspidalSupportUniquenessStatement.{uV,uF}`. For every
 prime, actual p-adic field, compatible topological data and positive rank,

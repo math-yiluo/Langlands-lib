@@ -1,7 +1,5 @@
 # Closed irreducibility implies algebraic irreducibility
 
-Authors: Worker 203.
-
 `Langlands.admissibleClosedIrreducibilityComparison` proves the complete
 proposition
 [`Langlands.AdmissibleClosedIrreducibilityComparisonStatement`](ClosedIrreducibilityComparisonStatement.md).
@@ -71,8 +69,8 @@ lattice of `ρ` a simple order, which is Mathlib's
 ## Scope and provenance
 
 This is internal derived infrastructure, not a transcription of a literature
-theorem. It follows the proof route proposed in the statement's documentation
-and its proof task. It uses only each operator `π g` being a continuous linear
+theorem. It follows the proof route proposed in the statement's documentation.
+It uses only each operator `π g` being a continuous linear
 map, continuity of the inner product in its second variable, and the Hausdorff
 property of the normed space `H`. It does not assume completeness of `H`,
 joint continuity of the action, injectivity of `j`, or any norm or topology on

@@ -1,6 +1,6 @@
 # Canonical mixed character braid from a compact polynomial premise
 
-This derived internal unit proves the actual three-character braid for mixed
+This derived internal module proves the actual three-character braid for mixed
 canonical multipliers, conditional on the explicit full normalized compact
 polynomial braid. It combines the proved integral generic comparison, polynomial
 grid extension and finite specialization formulas. It does not prove the full
@@ -62,9 +62,9 @@ three specified multiplier kinds.
 identity. `realCanonicalCharacterBraid` proves it. The provenance is the
 explicit existing multipliers and Frobenius maps, the proved finite grid and
 specialization arguments, and the explicit retained polynomial premise.
-Worker 769 supplied the small compact polynomial braid and scalar degeneration
-results used upstream.
+The small compact polynomial braid and the scalar degeneration results
+(`RealGenericMultiplierDegeneration`) are used upstream.
 
 The unrestricted compact polynomial premise, identification of any previously
 chosen interlaced equivalence with these explicit maps, and either GL4
-filtration kernel-image containment remain open.
+filtration kernel-image containment are not proved in this module.

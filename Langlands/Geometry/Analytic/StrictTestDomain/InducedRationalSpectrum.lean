@@ -205,14 +205,16 @@ end Hom
 def inducedSpectrumAction : Action TopCat.{max u v} G where
   V := TopCat.of X.InducedSpectrum
   ρ :=
-    { toFun := fun g => TopCat.ofHom
-        ⟨fun z => g • z, continuous_const_smul g⟩
+    { toFun := fun g => End.of (TopCat.ofHom
+        ⟨fun z => g • z, continuous_const_smul g⟩)
       map_one' := by
+        apply End.ext
         apply TopCat.ext
         intro z
         exact one_smul G z
       map_mul' := by
         intro g h
+        apply End.ext
         apply TopCat.ext
         intro z
         exact mul_smul g h z }

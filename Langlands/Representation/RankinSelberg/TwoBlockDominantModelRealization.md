@@ -1,6 +1,6 @@
 # Ordinary Jacquet realization of every induced coefficient model
 
-Worker 484 supplies this internal coefficient-model assembly for the
+This module is an internal coefficient-model assembly for the
 dominant-rank proof. It uses the published full-type, coefficient-model and
 ordinary Jacquet theorems through `TwoBlockDominantJacquetSeries`. It proves
 no functional equation, rational comparison or final gamma/L theorem.

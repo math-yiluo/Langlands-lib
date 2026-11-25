@@ -1,6 +1,5 @@
 # Actual nested-parabolic extension through a rational Levi
 
-Original formulation by Worker 1758; Markdown expanded by Worker 1801.
 `LeviParabolicExtensionStatement` is a proposition defining a geometric
 prerequisite for represented induction in stages. It is unproved in this
 file, and nothing here asserts that it has been proved.

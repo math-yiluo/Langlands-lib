@@ -1,10 +1,9 @@
 # Closedness, density and completeness targets for the actual right-image inverse limit
 
-Authors: Worker 6 and Worker 1126.
-
 This module contains statement targets only: Prop-valued definitions and
-one closed master target. It proves none of them. The proof is a separate
-exact-target successor task.
+one closed master target. It proves none of them. The proof is
+`Langlands.Algebra.idempotentedRingRightLimitDensityCompletenessTheorem_proof`, in
+`Langlands.Algebra.IdempotentedRingRightLimitCompletenessProof`.
 
 ## Source
 
@@ -69,7 +68,7 @@ All targets use the published constructions, imported by Lean name from
 
 None of these uniformities is a global instance. Each statement therefore
 passes the intended topology or uniformity explicitly with `@`. This is
-deliberate. Worker 6 found that leaving `IsDenseEmbedding` to instance
+deliberate: leaving `IsDenseEmbedding` to instance
 inference on the subtype could pick a different topology from the intended
 one. With explicit arguments, no inferred or substitute topology can occur.
 No statement has a topology parameter, a replacement family space, or an
@@ -175,8 +174,8 @@ transfers this to the actual family uniformity.
 
 ## Remaining obligations
 
-Proving the master target is a separate exact-target proof task, to be
-published after this statement is accepted and published. The following
+The master target is proved in
+`Langlands.Algebra.IdempotentedRingRightLimitCompletenessProof`. The following
 are also outside this module:
 
 - the uniform equivalence of `Ā` with `UniformSpace.Completion` and its

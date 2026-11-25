@@ -1,7 +1,5 @@
 # Composition of actual standard integrals with a common Levi
 
-Worker 241, with Worker 360 contributing the paired local product module.
-
 `conditionalDynamicCommonLeviComposition` proves exactly
 `Langlands.Plancherel.DynamicCommonLeviComposition.ConditionalDynamicCommonLeviCompositionStatement.{u, uV}`.
 It imports the published statement by Lean name and preserves its hypotheses,

@@ -63,7 +63,7 @@ private theorem completedMap_algebra [Algebra K L] (v : InfinitePlace K) (w : In
     completedMap (algebraMap K L) v w (InfinitePlace.LiesOver.comap_eq w v) =
       LiesOver.completionMap (v := v) (w := w) := by
   apply DFunLike.ext'
-  refine eq_onCompletion (continuous_completedMap _ _ _ _) LiesOver.continuous_completionMap
+  refine eq_onCompletion (continuous_completedMap _ _ _ _) (LiesOver.continuous_completionMap v w)
     fun x => ?_
   rw [completedMap_coe]
   exact IsScalarTower.algebraMap_apply K v.Completion w.Completion x
@@ -243,7 +243,7 @@ private theorem normComp_comap_component (e : T ≃+* A) (χ : HeckeCharacter T)
     apply Units.ext
     have hu : w.IsUnramified A := InfinitePlace.isUnramified_iff.mpr
       (Or.inr (hp.symm ▸ IsTotallyComplex.isComplex p))
-    change InfiniteExtension.localNorm p w (LiesOver.completionMap y.val) = y.val
+    change InfiniteExtension.localNorm p w (LiesOver.completionMap p w y.val) = y.val
     rw [InfiniteExtension.localNorm_algebraMap, hu.finrank_eq_one p, pow_one]
   change (HeckeCharacter.comap e.symm χ).infiniteComponent p
     (InfiniteExtension.localUnitNorm p w
@@ -442,14 +442,14 @@ private theorem isRelativelyRegular_mackeyCharacter [IsTotallyComplex D] [IsTota
     have h1 : (Units.map (LiesOver.completionMap (v := v) (w := z)).toMonoidHom y) =
         Units.map r.toMonoidHom x := by
       apply Units.ext
-      change LiesOver.completionMap (LiesOver.completionMap x.val) = r x.val
+      change LiesOver.completionMap v z (LiesOver.completionMap τ v x.val) = r x.val
       rw [← completedMap_algebra v z, ← completedMap_algebra τ v]
       exact RingHom.congr_fun (completedMap_comp (mackeyEmbedding_comp Q D a).symm
         τ v z _ _ _) x.val
     have h2 : (Units.map (completedMap f (q z) z rfl).toMonoidHom x') =
         Units.map r.toMonoidHom x := by
       apply Units.ext
-      change completedMap f (q z) z rfl (LiesOver.completionMap x.val) = r x.val
+      change completedMap f (q z) z rfl (LiesOver.completionMap τ (q z) x.val) = r x.val
       rw [← completedMap_algebra τ (q z)]
       exact RingHom.congr_fun (completedMap_comp rfl τ (q z) z _ rfl _) x.val
     rw [h1, ← h2]

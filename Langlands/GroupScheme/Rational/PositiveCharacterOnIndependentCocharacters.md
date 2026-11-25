@@ -1,6 +1,6 @@
 # Positive characters on independent cocharacters
 
-Worker 1633. The theorem
+The theorem
 `Langlands.GroupScheme.positiveCharacterOnIndependentCocharacters.{u,v}`
 proves the whole proposition
 `Langlands.GroupScheme.PositiveCharacterOnIndependentCocharactersStatement.{u,v}`.
@@ -21,8 +21,7 @@ produces an integer dot-product functional whose values equal `b²` times
 the prescribed values. The multiplier is strictly positive. This is the
 same elementary finite denominator-clearing method used, for the dual
 character-to-cocharacter direction, in the published
-`Rational.IndependentStandardCocharacter` module. No unpublished draft is
-used.
+`Rational.IndependentStandardCocharacter` module.
 
 The second generic helper applies this coordinate result to a chosen basis
 of any finite free integer module. The index type of the independent family

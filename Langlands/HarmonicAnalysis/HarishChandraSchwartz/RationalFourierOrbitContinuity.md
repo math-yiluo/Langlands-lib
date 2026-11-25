@@ -1,17 +1,15 @@
 # Proposition VII.1.3 on actual points: continuity of `f ↦ ψ_f[O, P]`
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitContinuity`,
 namespace `Langlands.HarishChandraSchwartz`. It imports two published modules:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness` (this
-  author's Unit 24). It provides:
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness`. It
+  provides:
   - `rationalFourierOrbitSmoothSectionLinear`, the linear map `f ↦ ψ_f[O, P]` from `C(G)` into
     `C^∞(O, P)` on actual points, with `rationalFourierOrbitSmoothSectionLinear_val`;
   - `rationalLeviXi_inv`, `rationalLeviTranslationWeights` and
     `laurentExponent_leviRationalUnitaryCoordinates`.
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitContinuity` (Worker 249). It
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.FourierOrbitContinuity`. It
   provides:
   - `fourierOrbitLaurentSectionCLM`, the abstract continuous linear map `f ↦ ψ_f[O, P]`, with
     `toSections_fourierOrbitLaurentSectionCLM`;
@@ -22,8 +20,8 @@ Through these imports the module also uses:
 - the topology of `C^∞(O, P)` (`OrbitSectionTopology`: `OrbitSectionSpace`,
   `orbitSectionLevelSubmodule`, `OrbitSectionSpace.toSections`) and
   `productInducedOrbitRepresentation`;
-- `rationalFourierOrbitSection` (`ψ_f[O, P]`, Unit 23) and `rationalInducedSmoothOrbitSections`
-  (Unit 20);
+- `rationalFourierOrbitSection` (`ψ_f[O, P]`, `RationalInducedOrbitFourierPairing`) and
+  `rationalInducedSmoothOrbitSections` (`RationalInducedOrbitWavePacket`);
 - the actual data of `P_I(F)`: `isSemidirectDecomposition_standard`,
   `isClosed_standardUnipotentPoints`, `isClosed_standardParabolicPoints_rootSet`,
   `continuous_projection_standard`, `exists_standardParabolicPoints_rootSet_mul`,
@@ -41,7 +39,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the
 rendered PDF pages 67, 80 and 82.
 
 - Proposition VII.1.3, printed p. 316: "Pour tout `f ∈ C(G)`, la fonction `ψ_f[O, P]` appartient
@@ -76,7 +74,7 @@ What this module adds:
 
 ## Setting
 
-As in Unit 24 (`RationalFourierOrbitSmoothness.md`):
+As in `RationalFourierOrbitSmoothness.md`:
 
 - `G` connected reductive over a nonarchimedean local field `F`, with `hG`, a maximal split torus
   `i` (`hi`), a generic cocharacter `ν` (`hν`), and a finite set `I` of simple roots;
@@ -90,7 +88,7 @@ As in Unit 24 (`RationalFourierOrbitSmoothness.md`):
 - `hTA`: every representative of the orbit is tempered;
 - `μG` with `hsw` (Lemma II.1.5 for `G`).
 
-The continuous linear map and the level membership also take, as in Unit 24:
+The continuous linear map and the level membership also take, as in `RationalFourierOrbitSmoothness`:
 
 - `μG` inverse-invariant and σ-finite with `hμK : μG(K) = 1`;
 - `μL` on `M_I(F)` with `hswM` (Lemma II.1.5 for `M_I`) and `hMK : μL(K ∩ M_I(F)) = 1`;
@@ -115,9 +113,9 @@ The continuous linear map and the level membership also take, as in Unit 24:
   `C^∞(O, P)^{H × H}` (`orbitSectionLevelSubmodule … H`).
 - **`rationalFourierOrbitSectionCLM …`** (definition, the recorded declaration): the continuous
   ℂ-linear map `C(G) → C^∞(O, P)`, `f ↦ ψ_f[O, P]`. It is the Library's
-  `fourierOrbitLaurentSectionCLM` with the inputs of Unit 24.
+  `fourierOrbitLaurentSectionCLM` with the inputs of `RationalFourierOrbitSmoothness`.
 - **`toSections_rationalFourierOrbitSectionCLM f`**: the image of `f` in
-  `rationalInducedSmoothOrbitSections` is `rationalFourierOrbitSmoothSectionLinear … f` (Unit 24).
+  `rationalInducedSmoothOrbitSections` is `rationalFourierOrbitSmoothSectionLinear … f` (`RationalFourierOrbitSmoothness`).
 - **`rationalFourierOrbitSectionCLM_apply_val f`**: the underlying section is
   `rationalFourierOrbitSection f`.
 
@@ -125,13 +123,13 @@ The continuous linear map and the level membership also take, as in Unit 24:
 
 - `productInducedOrbitRepresentation_rationalFourierOrbitSection` applies the Library's
   `productInducedOrbitRepresentation_fourierOrbitSection` with `(G := rationalPoints G)`,
-  `(M := standardLeviPoints …)` and the actual data of Units 19–23. It then unfolds
+  `(M := standardLeviPoints …)` and the actual data of `P_I(F)` listed above. It then unfolds
   `rationalFourierOrbitSection` and closes with `with_reducible_and_instances exact`.
 - The level membership pairs the smoothness of the section (the property of
   `rationalFourierOrbitSmoothSectionLinear … f`) with the fixedness above, after rewriting with
   `rationalFourierOrbitSmoothSectionLinear_val`.
 - `rationalFourierOrbitSectionCLM` passes to `fourierOrbitLaurentSectionCLM` the same inputs as
-  Unit 24's definition passes to `fourierOrbitLaurentSmoothSectionLinear`:
+  the definition in `RationalFourierOrbitSmoothness` passes to `fourierOrbitLaurentSmoothSectionLinear`:
   - `Nonempty (CompactOpenSubgroup M_I(F))` from `K ∩ M_I(F)`;
   - `L2Weights` on `M_I` from `rationalLeviXi_pos` and `hswM`;
   - the inverse invariance of `Ξ^{M_I}` and `σ`, the constant-term data with `hE`, and the
@@ -145,10 +143,11 @@ The continuous linear map and the level membership also take, as in Unit 24:
 ## Scope and hypotheses
 
 - Only standard parabolics `P_I ⊇ P₀` are covered, not all semi-standard ones.
-- The hypotheses are those of Unit 24's `rationalFourierOrbitSmoothSectionLinear`:
-  - analytic inputs whose actual statements are published but unproved: `hsw` and `hswM`
+- The hypotheses are those of `rationalFourierOrbitSmoothSectionLinear`:
+  - analytic inputs whose actual statements are in the Library: `hsw` and `hswM`
     (Lemma II.1.5 for `G` and `M_I`), `hE` (Proposition II.4.5), and `hTA` and `hTπ`
-    (Corollary III.1.2);
+    (Corollary III.1.2); Proposition II.4.5 (`RationalConstantTermEstimateStatement`) is not
+    proved in the Library;
   - the structural fact `hPKiw`;
   - the measure normalizations `hμK`, `hMK` and `hUK`;
   - the height bound `hnσ` and the integrability `hint`.

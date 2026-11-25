@@ -58,7 +58,7 @@ end GeneralLinear.BlockShape
 namespace Classification
 
 /-- A scalar character of a smooth nonzero representation has open kernel.
-The stabilizer argument is adapted from Worker 349's
+The stabilizer argument is adapted from
 `TemperedExponentEdgeProof.scalarCharacter_open_kernel`. -/
 theorem HasScalarCharacter.isOpen_ker
     {G : Type uG} [Group G] [TopologicalSpace G]

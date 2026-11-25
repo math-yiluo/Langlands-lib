@@ -1,6 +1,6 @@
 import Langlands.LocalFactor.BrauerKernel.LocalRelation
 import Langlands.LocalFactor.BrauerKernel.PlaceEpsilon
-import Langlands.ClassField.Global.LocalRelativeWeilMapStatement
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMapStatement
 import Langlands.VirtualRepresentation.Global.RelativeWeilLocalRestrictionReduction
 import Langlands.ClassFieldTheory.Local.CommonClosureGeometricProof
 import Langlands.Global.AdelicFunctoriality.LocalDegree
@@ -17,7 +17,7 @@ namespace Langlands.LocalFactor.NonabelianBrauer
 
 open NumberField IsDedekindDomain
 open Langlands.Global Langlands.Global.CompletionPadic Langlands.Global.AdelicFunctoriality
-open ClassField.Global ClassField.Global.RelativeWeilGroup VirtualRepresentation
+open ClassFieldTheory.Global ClassFieldTheory.Global.RelativeWeilGroup VirtualRepresentation
 open scoped NumberField
 
 attribute [local instance] relativeGaloisTopology

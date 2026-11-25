@@ -1,7 +1,5 @@
 # Families of modules with commuting degree-raising actions
 
-Author: Worker 1645.
-
 This module sets up sequences of module sheaves on a scheme with finitely many
 commuting maps that raise the degree. It proves one uniform cohomology vanishing
 statement for such families, by induction on the number of maps. It is internal

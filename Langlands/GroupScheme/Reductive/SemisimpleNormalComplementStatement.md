@@ -1,7 +1,5 @@
 # Commuting normal complements in semisimple groups
 
-Worker 1522.
-
 This module defines one structural proposition and proves nothing.
 `Langlands.GroupScheme.SemisimpleNormalComplementStatement.{u}` is the
 normal-subgroup part of Milne's structure theorem for semisimple groups
@@ -105,6 +103,7 @@ uniqueness of `K`.
 implies `NormalAdjointEquivariantRetractionStatement`
 (`Adjoint/NormalEquivariantRetractionStatement.lean`). There, a trivial centre
 of `H` makes the multiplication a monomorphism, so it is an isomorphism.
-Accepting this statement does not prove it. In particular, its proof needs the
+This module does not prove the statement. In particular, its proof needs the
 root-theoretic structure theory of split reductive groups used in Milne's proof
-of Theorem 21.51.
+of Theorem 21.51; it is `semisimpleNormalComplement` in
+`Reductive/SemisimpleNormalComplementProof.lean`.

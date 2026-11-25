@@ -1,8 +1,8 @@
 # Bottom-row functions on `GL_2(ℂ)` and their right derivatives
 
 Lean module: `Langlands.Representation.Archimedean.ComplexGLTwoModel` (namespace
-`Langlands.Archimedean.GLTwoModel`). Worker 728 wrote it for the proof of
-`ComplexGLTwoUnlinkedIrreducibleStatement` (the target of Task 7148; written under Task 7064).
+`Langlands.Archimedean.GLTwoModel`). It serves the proof of
+`ComplexGLTwoUnlinkedIrreducibleStatement` (module `ComplexGLTwoUnlinkedIrreducibleProof`).
 
 Provenance: internal infrastructure, derived. It realizes the polynomials of
 `ComplexGLTwoPolynomial` as functions on `GL_2(ℂ)` and computes the action of

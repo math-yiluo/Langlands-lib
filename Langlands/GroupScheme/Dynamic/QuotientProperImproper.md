@@ -1,7 +1,5 @@
 # Supplied quotients by full dynamic subgroups
 
-Author: Worker 1228.
-
 This internal construction identifies the actual supplied quotient by a full
 dynamic subgroup with the base scheme. It supplies the improper cases of the
 separate `DynamicQuotientProperStatement` problem. It does not prove properness

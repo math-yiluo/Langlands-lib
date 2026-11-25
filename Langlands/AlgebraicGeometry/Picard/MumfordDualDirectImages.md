@@ -1,10 +1,7 @@
 # Higher direct images of the Mumford coefficient along the parameter projection
 
-Author: Worker 1164.
-
 Module `Langlands.AlgebraicGeometry.Picard.MumfordDualDirectImages`, steps 1–4 of the
-proof of `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement` (task
-`6b1ab3e8-b3b0-4567-9251-7566e7a6dba3`). Steps 5 and 7 are in
+proof of `Langlands.AbelianScheme.AlgClosedFieldMumfordDualEulerStatement`. Steps 5 and 7 are in
 `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerReduction`, Step 6 is in
 `Langlands.AlgebraicGeometry.Picard.FiniteFlatPointFibreSections`, and the assembly is in
 `Langlands.AlgebraicGeometry.Picard.AlgClosedFieldMumfordDualEulerFromPrerequisites`.
@@ -60,6 +57,10 @@ The Mumford coefficient is `Q = m^* N ⊗ snd^* M`.
 ## Status
 
 Compiles against Library `2c43e36f` with no errors or warnings. The three prerequisite
-statements enter only as hypotheses of `mumfordDual_higherDirectImage`; their proofs (tasks
-`32297f48-…` Poincaré direct images, `5b778a75-…` flat base change, `d0088789-…` projection
-formula) will replace them once published.
+statements enter only as hypotheses of `mumfordDual_higherDirectImage`. Their proofs are
+`algClosedFieldPoincareDirectImage` (Poincaré direct images, module
+`AlgClosedFieldPoincareDirectImageProof`), `flatHigherDirectImageBaseChange` (flat base change,
+module `Langlands.AlgebraicGeometry.Modules.FlatHigherDirectImageBaseChangeProof`) and
+`lineBundleHigherProjectionFormula` (projection formula, module
+`LineBundleHigherProjectionFormulaProof`); the module `AlgClosedFieldMumfordDualEulerProof`
+imports all three together with the assembly.

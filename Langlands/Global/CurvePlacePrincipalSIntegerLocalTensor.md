@@ -46,4 +46,6 @@ constant-field structure. All fields share an arbitrary universe. No
 separability hypothesis is used. The principal exceptional sets form the
 previously proved cofinal family; arbitrary finite levels are not asserted
 here. This is a coefficient-ring comparison; the scheme point topology and
-adelic Weil comparison remain obligations of the host task.
+adelic Weil comparison are left to the proof of the statement this module serves,
+`AdelicProjectiveWeilComparisonStatement` (Example 4.2), which the Library
+proves as `adelicProjectiveWeilComparison` in `AdelicProjectiveWeilComparisonProof`.

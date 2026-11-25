@@ -68,6 +68,6 @@ isomorphisms gives `closedFieldIso`. Their forward-map identities give
 `closedFieldIso_hom`.
 
 The supplied split fibrewise maximal torus and generic isomorphism remain
-essential inputs. This unit constructs a closed-field-fibre isomorphism;
-it does not yet prove an isomorphism over `R` or the general reductive
+essential inputs. This module constructs a closed-field-fibre isomorphism;
+it does not prove an isomorphism over `R` or the general reductive
 monomorphism closed-immersion statement.

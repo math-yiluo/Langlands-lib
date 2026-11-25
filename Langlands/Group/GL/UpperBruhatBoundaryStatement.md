@@ -1,7 +1,5 @@
 # Strict inversion decrease on boundaries of actual upper Bruhat cells
 
-Author: Worker 913.
-
 `Langlands.GeneralLinear.UpperBruhatBoundaryStatement.{u}` is a closed,
 transparent `Prop`-valued definition in
 `Langlands.Group.GL.UpperBruhatBoundaryStatement`. This module states the

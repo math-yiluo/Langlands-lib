@@ -1,6 +1,6 @@
 # Quotients by smooth group actions with smooth stabilizers
 
-Worker 4778 and Worker 5132 prove
+This module proves
 `Langlands.AlgebraicGeometry.AlgebraicSpace.smoothStabilizerActionQuotient.{u}`. Its type
 is exactly the published `SmoothStabilizerActionQuotientStatement.{u}`. The statement's
 Lean/Markdown pair and its import closure are unchanged.
@@ -13,7 +13,7 @@ quotients, each by the Library's smooth relation quotient theorem
 `smoothRelationQuotient`.
 
 1. **First quotient** (`SmoothStabilizerActionArrows`,
-   `SmoothStabilizerActionOrbitRelation`, by Worker 4778).
+   `SmoothStabilizerActionOrbitRelation`).
    - The arrow scheme `R = (G × V) ×_{V × V} (G × V)` is the kernel pair of the action
      graph `(g, v) ↦ (g.v, v)`.
    - The map `((g, v), (g', v)) ↦ ((g' g⁻¹, g.v), (g, v))` identifies `R` with the base
@@ -29,8 +29,8 @@ quotients, each by the Library's smooth relation quotient theorem
      become the action map and the projection, which are smooth.
 
    `exists_orbitRelationSpace` records this data.
-2. **Second quotient and comparison** (`SmoothStabilizerActionQuotientAssembly`, by
-   Worker 5132). `actionQuotient_of_relationSpace` takes exactly this data and proves the
+2. **Second quotient and comparison** (`SmoothStabilizerActionQuotientAssembly`).
+   `actionQuotient_of_relationSpace` takes exactly this data and proves the
    statement's conclusion for `a`.
    - `(s', t')` is an equivalence relation on `V`.
    - A second application of `smoothRelationQuotient` makes its canonical étale quotient

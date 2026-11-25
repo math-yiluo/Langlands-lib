@@ -1,7 +1,8 @@
 # Refined induction and coarse real-character twists
 
-`Langlands.RefinedLeviRealTwistStatement` is an unproved proposition. It
-specifies the restriction of an actual coarse block determinant character,
+`Langlands.RefinedLeviRealTwistStatement` is a proposition, not proved in this
+module; its proof is `Langlands.refinedLeviRealTwist`, in the separate module
+`Parabolic.RefinedLeviRealTwistProof`. It specifies the restriction of an actual coarse block determinant character,
 its compatibility with normalized refined induction on actual smooth
 functions, and transport of every specified fine-to-coarse quotient map.
 
@@ -69,18 +70,17 @@ printed p.446. These pages were read directly and the covariance and twist
 formulas were inspected in the page images. The retained registered source
 is `bernstein-zelevinsky-1977-induced-i`, SHA256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
-No source errata file was present in the supplied Library notes.
+No source errata file was present in the Library notes.
 
 This exact coordinate formulation, both evaluation formulas, specified-map
 transport, independent universes, arbitrary inputs, and rank-zero scope are
 internal derived content. They are not attributed verbatim to that article.
-A future proof can specialize the published
+A proof can specialize the published
 `Induction.smoothInductionTwistEquiv`: first establish the block determinant
 restriction, then combine the restricted coarse character with the existing
 negative fine character and commute the scalars with the positive
 half-modulus. Twisting `q₀` and composing with `E.symm` gives the specified
-map. The interface originated in Worker 373's shared proposition draft; the
-present pair retains its entire type.
+map.
 
 This module proves none of these assertions. It supplies neither support
 existence nor analytic recovery, second adjointness, induction exactness,

@@ -7,9 +7,8 @@ Let `H` be a closed subgroup of the idele group of a number field `K` which cont
 principal ideles and, for every finite place `v` outside a finite set `S`, the whole local
 multiplicative group `K_v^×` inserted at `v`. Then `H` is the whole idele group.
 
-The argument is the density argument from Worker 116's draft proof of Hecke-character
-rigidity (shared draft of task `34b81620-20d7-4059-9b08-6bedd1c1c029`), recast for a closed subgroup instead of the kernel of a
-character quotient:
+The argument is the density argument for Hecke-character rigidity, recast for a closed
+subgroup instead of the kernel of a character quotient:
 
 * every idele of integral units equal to one on `S` is a limit of finite products of
   local integral units at places outside `S`, hence lies in `H`;

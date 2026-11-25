@@ -1,7 +1,5 @@
 # Lifted rank-one character for the extension construction
 
-Author: Worker 469.
-
 `Langlands.RankinSelberg.rankOneExtensionCharacter` names the exact scalar
 representation used in the published `RankOneExtensionLDivisibilityStatement`.
 For a canonical p-adic field and a bundled continuous complex quasicharacter,
@@ -28,7 +26,7 @@ This is an internal derivation from the published scalar theorem and
 representation-equivalence API. It introduces no independent literature
 result. Continuity of the quasicharacter and continuity, unitarity and
 nontriviality of the additive character remain in their existing bundles.
-There is no restriction on field or carrier universes. This unit constructs
+There is no restriction on field or carrier universes. This module constructs
 neither an induced Whittaker functional nor a pair polynomial; the compact
 section, Fourier smoothing, analytic comparison and final divisibility
 obligations remain separate.

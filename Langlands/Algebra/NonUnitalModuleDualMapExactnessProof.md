@@ -26,7 +26,7 @@ The implemented argument uses full vector-space dual extension and an
 idempotent projection. Renard instead identifies each fixed part with the
 dual of the original fixed part and tests exactness there. This file uses
 the actual published duals and pullbacks throughout and does not use or
-reprove the separately owned fixed-part inverse, equivalence or naturality.
+reprove the separately proved fixed-part inverse, equivalence or naturality.
 The helper lemmas are internal steps of this exactness proof.
 
 First, `NonUnitalModuleDual.pullback_lift_of_full` starts with an actual
@@ -75,11 +75,10 @@ algebra supplies the right-module original-map versions; the separate
 categorical proof accounts for the actual right-to-left functor's
 published double-opposite transport.
 
-The proof and explanation originate with Worker 702. Worker 6's import
-compatibility correction gives the three local `fullAction` instances
-the explicit names `mapExactnessFullActionM`, `mapExactnessFullActionN`
-and `mapExactnessFullActionP`. Previously their generated names collided
+The three local `fullAction` instances have the explicit names
+`mapExactnessFullActionM`, `mapExactnessFullActionN` and
+`mapExactnessFullActionP`. Automatically generated names would collide
 with those in the separately published `NonUnitalModuleBidualEvaluation`
-when both import closures were loaded. Each named instance still has
-exactly the same type and definition, and the argument above is unchanged.
+when both import closures are loaded. Each named instance is exactly the
+corresponding `fullAction`.
 The original-map target and every imported statement remain unchanged.

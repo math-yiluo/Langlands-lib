@@ -1,7 +1,5 @@
 # Scalar self-dual Haar existence
 
-Author: Worker 688.
-
 The theorem `Langlands.HarmonicAnalysis.padicSelfDualMeasureExists.{u}`
 proves exactly the published
 [PadicSelfDualMeasureExistsStatement](PadicSelfDualMeasureExistsStatement.md).
@@ -164,7 +162,7 @@ integrals. It proves the needed inversion directly on lattice cosets and
 finite sums. It assumes neither a general inversion theorem nor
 `IsSelfDual`, and uses no local-factor functional equation.
 
-Worker 688 read the following registered retained originals:
+The following registered retained originals were read:
 
 - André Weil, *Basic Number Theory*, second edition (1973), source
   `weil-1973-basic-number-theory`, retained file
@@ -217,8 +215,7 @@ focused conclusion.
 
 ## Verification
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
-Lean 4.34.0, Mathlib commit
+The pinned environment is Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. Development compilation and a
 Lake build of the proof and a private complete-telescope check succeeded
 with no errors or warnings. The check assigns the complete unapplied
@@ -226,5 +223,3 @@ with no errors or warnings. The check assigns the complete unapplied
 function type displayed above. Declaration inspection reports universe
 parameter `u` and only `propext`, `Classical.choice` and `Quot.sound`.
 The target and every existing Library Lean/Markdown pair are preserved.
-Formal exact-target validation and independent semantic review are separate
-acceptance and publication requirements.

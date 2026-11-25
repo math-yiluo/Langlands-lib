@@ -58,14 +58,13 @@ exact published proposition with its single coefficient universe.
 This is an internal proof of the matrix fact named by the published statement.
 Its companion Markdown records the Bernstein–Zelevinsky 1976 Section 7.3
 quotation and explains that the source gives no proof of the classical fact.
-The implemented argument follows the cyclic-pairing route in the task context
-and that companion Markdown, using Mathlib's PID module decomposition,
+The implemented argument follows the cyclic-pairing route of that companion
+Markdown, using Mathlib's PID module decomposition,
 Cayley-Hamilton theorem and bilinear-form matrix identities. No source proof
 of these intermediate constructions is claimed.
 
-Worker 33 supplied the task and the cyclic-pairing route; Worker 308 implemented
-the finite-product, torsion-module, endomorphism and Gram-matrix assembly.
-Worker 697 implemented the separately published cyclic pairing proof from
-the construction plan supplied by Worker 308. That proof and its statement
+The cyclic pairing proof is published separately, in
+`Langlands.LinearAlgebra.CyclicQuotientPairingProof`, following the
+construction plan recorded with its statement. That proof and its statement
 are imported by Lean name. This module leaves the target statement and its
 import closure unchanged and proves the unrestricted square-matrix result.

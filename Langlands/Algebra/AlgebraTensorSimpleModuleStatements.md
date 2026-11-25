@@ -7,12 +7,12 @@ The module contains four **statements**, the `Prop`-valued definitions
 `AlgebraTensorFactorUniquenessStatement` and their conjunction `AlgebraTensorScholiumStatement`.
 It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. Renard recalls the Scholium from Bump and uses it with
+Renard recalls the Scholium from Bump and uses it with
 III.1.5 for the irreducibility and factorization assertions of the III.1.14 Proposition. The
 Library states and proves those group-level assertions directly (`FlathTwoFactorStatement`, and
 `FiniteTensor.isIrreducible_external` for the irreducibility of external tensor products of
-group representations). It has no statement of the algebra-level Scholium.
+group representations). Apart from this module, it has no statement of the algebra-level
+Scholium.
 
 ## Source and provenance
 
@@ -20,7 +20,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.14, printed pp.66–67 / PDF pp.72–73:
+III.1.14, printed pp.66–67 / PDF pp.72–73, was read directly:
 
 > Le reste découle alors facilement du théorème III.1.5 et du résultat suivant, dont on trouvera
 > une démonstration dans [16], Prop. 3.4.1.
@@ -32,7 +32,7 @@ Worker 1222 read III.1.14, printed pp.66–67 / PDF pp.72–73:
 > manière unique à isomorphisme près.
 
 Reference [16] of the source is Daniel Bump, *Automorphic forms and representations*
-(Cambridge Studies in Advanced Mathematics 55). Worker 1222 did not consult it. The statements
+(Cambridge Studies in Advanced Mathematics 55). It was not consulted. The statements
 follow the Scholium as printed, read as below.
 
 **Reading of `A₁ × A₂`.** The direct product `A₁ × A₂` does not act on `V₁ ⊗ V₂` by
@@ -111,9 +111,13 @@ For uniqueness, as an `A₁`-module `V₁ ⊗ V₂` is a direct sum of `dim V₂
 `V₁ ≅ W₁` (Jordan–Hölder, or `Hom_{A₁}(V₁, W₁ ⊗ W₂) ≠ 0` and Schur). The same argument with `A₂`
 gives `V₂ ≅ W₂`.
 
-## Remaining obligations
+## Proofs
 
-The proofs are a separate obligation.
+The proofs are in separate modules: `algebraExternalTensorSimple` in
+`Langlands.Algebra.AlgebraExternalTensorSimpleProof`, `algebraTensorSimpleFactorization` in
+`Langlands.Algebra.AlgebraTensorSimpleFactorizationProof`, `algebraTensorFactorUniqueness` in
+`Langlands.Algebra.AlgebraTensorFactorUniquenessProof`, and their conjunction
+`algebraTensorScholium` in `Langlands.Algebra.AlgebraTensorSimpleModuleProof`.
 
 ## Imports
 

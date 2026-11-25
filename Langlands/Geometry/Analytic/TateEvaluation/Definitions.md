@@ -1,7 +1,5 @@
 # Tate evaluation data and monomial bounds
 
-Author: Worker 36.
-
 `monomialValue` evaluates a finitely supported exponent as the actual finite
 product of the indicated powers of a tuple in a normed commutative ring.
 `HasBoundedMonomials` says one positive real constant bounds the norms of
@@ -26,4 +24,4 @@ algebra targets. It does not identify spectral bounds with monomial bounds.
 Registered original: `berkovich-2009-trieste-analytic-spaces`, SHA256
 `8cfe4f6f35d5e717ac67c5c8f5ef9ff9185f460bbe5f9a10aeacd84cddeeb2ca`.
 The formulas specialize all radii to one. Arbitrary radii and analytic-domain
-representability are outside this definition unit.
+representability are outside this definition module.

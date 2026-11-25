@@ -1,7 +1,5 @@
 # Second countability of adelic levels of separated algebraic spaces
 
-Author: Worker 105.
-
 Helper module for the countable base in Conrad's p.17 claims
 (`Langlands.Global.AdelicSpacePointTopologyStatement`). The source is Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (2011), printed p.17. Let `X` be a separated

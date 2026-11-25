@@ -1,14 +1,12 @@
 # Centre comparison for relative central quotients
 
-Worker 226.
-
 `Langlands.GroupScheme.RelativeCentralQuotientCenterReductionStatement.{u}` is the named `Prop`-valued statement recording
 the centre-preimage equality conditional on the normal multiplicative-type centrality theorem, reductive source and target, and a closed central multiplicative-type kernel.
 `Langlands.GroupScheme.relativeCentralQuotientCenterReduction` proves this proposition by the existing helper theorem.
 The helper signatures and all mathematical hypotheses are retained; the
 other results below are proved companion helpers.
 
-This internal unit supplies two all-test subgroup-functor comparisons used in
+This internal module supplies two all-test subgroup-functor comparisons used in
 the centre clause of `RelativeCentralQuotientStatement`. It is derived from
 the published definitions, relative-centre theorem, and actual subgroup
 pullback construction.
@@ -37,6 +35,6 @@ connected residue fibres follow from source reductivity.
 The second result is a conditional assembly step for Conrad's
 Corollary 3.3.5: it does not prove the assumed normal multiplicative-type
 theorem, establish target reductivity, or show that an arbitrary flat
-central closed kernel is of multiplicative type. Those are separate
-obligations. The unchanged full relative central quotient target remains
-unproved by this module.
+central closed kernel is of multiplicative type. Those are not proved
+here. The full relative central quotient target is not proved by this
+module.

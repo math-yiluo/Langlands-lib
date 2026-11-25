@@ -161,9 +161,9 @@ local notation "coverMap" k:arg => cmHarrisGeometricCoarseTowerPullbackCoverMap 
 /-- Equivariance on the original T representatives follows from actual transporter composition. -/
 theorem cmHarrisGeometricCoarseTowerFineMap_equivariant_mk
     (k : ℕᵒᵖ) (g : T.obj.subgroup) :
-    ((commonCovers).ρ k (QuotientGroup.mk g)).left ≫ fineMap k =
+    ((commonCovers).ρ k (QuotientGroup.mk g)).asHom.left ≫ fineMap k =
       fineMap k ≫ ((pairCovers).ρ k
-        (((groupMap).app k).hom (QuotientGroup.mk g))).left := by
+        (((groupMap).app k).hom (QuotientGroup.mk g))).asHom.left := by
   change (geometricSchemes).map
       (smallCMNormalInverseArrow D T (commonLevel k.unop) (commonh k.unop) g) ≫
       (geometricSchemes).map (smallCMInclusion D (refinement k.unop)) =
@@ -179,8 +179,8 @@ theorem cmHarrisGeometricCoarseTowerFineMap_equivariant_mk
 /-- The original fine map is equivariant for the constructed T-to-V residual map. -/
 @[reassoc] theorem cmHarrisGeometricCoarseTowerFineMap_equivariant
     (k : ℕᵒᵖ) (g : (commonGroups).obj k) :
-    ((commonCovers).ρ k g).left ≫ fineMap k =
-      fineMap k ≫ ((pairCovers).ρ k (((groupMap).app k).hom g)).left := by
+    ((commonCovers).ρ k g).asHom.left ≫ fineMap k =
+      fineMap k ≫ ((pairCovers).ρ k (((groupMap).app k).hom g)).asHom.left := by
   induction g using QuotientGroup.induction_on with
   | H g => exact cmHarrisGeometricCoarseTowerFineMap_equivariant_mk D C preservation composition unitCoherence associativity comparison symmetry stability square universality dualityNaturality polarizationStability compatibility h htor q U V T hVU hTV ρ p m hm existence geometry hRigid hRigidV k g
 
@@ -191,15 +191,15 @@ def cmHarrisGeometricCoarseTowerPullbackActionMap (k : ℕᵒᵖ) :
   hom := coverMap k
   comm g := by
     apply MorphismProperty.Over.Hom.ext
-    change ((commonCovers).ρ k g).left ≫ (coverMap k).left =
-      (coverMap k).left ≫ ((pulledCovers).ρ k (((groupMap).app k).hom g)).left
-    have hfst : ((pulledCovers).ρ k (((groupMap).app k).hom g)).left ≫
+    change ((commonCovers).ρ k g).asHom.left ≫ (coverMap k).left =
+      (coverMap k).left ≫ ((pulledCovers).ρ k (((groupMap).app k).hom g)).asHom.left
+    have hfst : ((pulledCovers).ρ k (((groupMap).app k).hom g)).asHom.left ≫
         pullback.fst ((pairCovers).obj.obj k).hom coarseMap =
       pullback.fst ((pairCovers).obj.obj k).hom coarseMap ≫
-        ((pairCovers).ρ k (((groupMap).app k).hom g)).left :=
+        ((pairCovers).ρ k (((groupMap).app k).hom g)).asHom.left :=
       etaleTorsorPullbackFunctor_ρ_fst coarseMap
         ((pairCovers).action k) (((groupMap).app k).hom g)
-    have hsnd : ((pulledCovers).ρ k (((groupMap).app k).hom g)).left ≫
+    have hsnd : ((pulledCovers).ρ k (((groupMap).app k).hom g)).asHom.left ≫
         pullback.snd ((pairCovers).obj.obj k).hom coarseMap =
       pullback.snd ((pairCovers).obj.obj k).hom coarseMap :=
       etaleTorsorPullbackFunctor_ρ_snd coarseMap
@@ -212,7 +212,7 @@ def cmHarrisGeometricCoarseTowerPullbackActionMap (k : ℕᵒᵖ) :
     · rw [Category.assoc, cmHarrisGeometricCoarseTowerPullbackCoverMap_snd,
         Category.assoc, hsnd,
         cmHarrisGeometricCoarseTowerPullbackCoverMap_snd]
-      exact MorphismProperty.Over.w ((commonCovers).ρ k g)
+      exact MorphismProperty.Over.w ((commonCovers).ρ k g).asHom
 
 /-- The actual original level inclusions commute with every exponent reduction. -/
 @[reassoc] theorem cmHarrisGeometricCoarseTowerFineMap_naturality

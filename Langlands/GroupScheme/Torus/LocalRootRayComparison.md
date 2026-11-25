@@ -1,6 +1,6 @@
 # Root-ray geometry between field fibres over a local ring
 
-This is an internal derived supporting unit. It extends the published
+This is an internal derived module. It extends the published
 `LocalRootSupportComparison` from actual roots to their divisibility and
 positive-ray data, using actual split-torus lattice coordinates. It introduces
 no new root-system realization and asserts no reductivity on a special fibre.
@@ -28,6 +28,7 @@ as well. The proofs quantify over both field algebras in the same arbitrary
 universe `u`. They require no connectedness, reductivity, maximality or
 monomorphy hypothesis on the ambient group or torus map.
 
-The unit supplies only the ray data for a later integral product comparison.
-It does not establish an integral product isomorphism or the parahoric-model
-target.
+The module supplies only the ray data for the integral product comparison in
+`Rational.LocalRootProducts`. It does not establish an integral product
+isomorphism or the parahoric-model statement
+`UnramifiedParahoricModelStatement`.

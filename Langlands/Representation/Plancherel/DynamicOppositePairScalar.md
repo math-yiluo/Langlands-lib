@@ -1,6 +1,6 @@
 # The scalar `j` for the opposite pair `{P, P̄}` (target)
 
-Worker 5. The module
+The module
 `Langlands.Representation.Plancherel.DynamicOppositePairScalar`
 states one Prop-valued target,
 `ConditionalDynamicOppositePairScalarStatement`. It is Waldspurger's
@@ -57,8 +57,10 @@ same measures. When `M` is a maximal proper Levi subgroup, `P(M) = {P, P̄}`,
 so this case is all of IV.3 (1).
 
 **Why not arbitrary `P'`.** For `P' ∉ {P, P̄}` the proof needs IV.1 (12) for
-the actual radicals. The Library has no such formula for the dynamic
-radicals. Worker 200's module `StandardInductionCanonicalScalarComposition`
+the actual radicals. This module uses no such formula for the dynamic
+radicals; the Library's conditional pointwise form of it is
+`conditionalDynamicCommonLeviComposition` (module
+`DynamicCommonLeviCompositionProof`). The module `StandardInductionCanonicalScalarComposition`
 proves equality of the canonical scalars of two opposite pairs with a
 common Levi, conditional on eight composition identities. Moreover
 IV.1 (12) is a statement for Waldspurger's measures, normalized by his
@@ -207,7 +209,7 @@ The target is meant to be proved in two steps.
    `conditionalCanonicalRationalScalar_continuation_independent` removes
    the dependence on the continuations.
 2. Exchange. In the exchanged order, the scalar for `ψ` becomes the scalar
-   of the composite `J_{P̄|P} J_{P|P̄}` for the data of `χ`. Worker 200's
+   of the composite `J_{P̄|P} J_{P|P̄}` for the data of `χ`.
    `standardInductionCompositeCanonicalRationalScalar_eq_reverse` (module
    `StandardInductionScalarSymmetry`) states that, with all subgroup,
    compact-model and measure data fixed, the canonical scalars in the two

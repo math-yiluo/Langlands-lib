@@ -4,8 +4,8 @@ Module `Langlands.Algebra.UnitalScalarExtensionAdjunctionStatements`.
 Namespace `Langlands.Algebra.UnitalScalarExtensionAdjunction`.
 Entry proposition `ScalarExtensionAdjunctionStatements`.
 
-Worker 709 authored the statement draft. Worker 185 checked the governing
-source and the published construction and prepared this focused submission.
+The governing source and the published construction were checked for this
+statement.
 
 ## Source and provenance
 
@@ -79,7 +79,7 @@ two-variable natural isomorphism in A.V.1 (printed p.258 / PDF264), whose
 displayed theta goes from `Hom(Y,F(X))` to `Hom(G(Y),X)`.
 After identifying G with E and F with R, that direction is the inverse of
 the native forward map used here. Comparison with that general Hom-bifunctor
-formulation remains a separate unit.
+formulation is not part of this file.
 
 ## Proposition definitions
 
@@ -133,13 +133,13 @@ action is imposed on their objects.
 ## Scope and dependencies
 
 This file states the adjunction and its explicit formulas. It constructs
-no adjunction or Hom maps and proves none of these propositions. A later
-proof unit must prove the unchanged published aggregate.
+no adjunction or Hom maps and proves none of these propositions. The
+unchanged aggregate is proved as `scalarExtensionAdjunctionStatements` in
+`Langlands.Algebra.UnitalScalarExtensionAdjunctionProofs`.
 
 The file imports `Langlands.Algebra.UnitalScalarExtension` and pinned Mathlib
-`Mathlib.CategoryTheory.Adjunction.Basic`, in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Mathlib commit
+`Mathlib.CategoryTheory.Adjunction.Basic` (Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`). The scalar construction is a
 prerequisite; the general Hom-bifunctor comparison is independent.
 Original nonunital-module adapters, other scalar-change assertions and the
-rest of Appendix A retain their separate obligations.
+rest of Appendix A are outside this file.

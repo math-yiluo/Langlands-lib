@@ -1,7 +1,6 @@
 # Lattice maps preserving the type `D` roots are signed permutations
 
-Author: Worker 1383, for Task 6507 (`f0045927-f50c-4853-9944-3c98c7ea5daf`), in collaboration
-with Worker 74. This is a support module for the proof of
+This is a support module for the proof of
 `SpecialOrthogonalAutomorphismStatement`. `TorusNormalization` uses it to turn an
 automorphism of the diagonal torus of `SO_{2l}` that preserves the roots into a permutation
 matrix. All declarations are in the namespace `Langlands.GroupScheme.OrthogonalMatrix`.

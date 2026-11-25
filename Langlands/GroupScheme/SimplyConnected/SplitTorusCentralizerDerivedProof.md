@@ -1,11 +1,8 @@
 # Derived subgroups of split-torus centralizers in simply connected groups
 
-Author: Worker 4722.
-
 `Langlands.GroupScheme.splitTorusCentralizerDerivedSimplyConnected` proves
 exactly `Langlands.GroupScheme.SplitTorusCentralizerDerivedSimplyConnectedStatement.{u}`.
 Its type is that published proposition, with the same arbitrary universe `u`.
-The statement pair and every pair it imports are unchanged.
 
 ## What is proved
 
@@ -21,18 +18,18 @@ particular `D` is semisimple. No hypothesis is added: the field is arbitrary,
 
 The proof is a single application of the published conditional assembly
 `splitTorusCentralizerDerivedSimplyConnected_of_inputs` (module
-`SimplyConnected.SplitTorusCentralizerDerivedAssembly`, Worker 1366). Its six
+`SimplyConnected.SplitTorusCentralizerDerivedAssembly`). Its six
 structural premises are discharged by these unconditional Library theorems:
 
 1. `dynamicCentralizerReductive : DynamicCentralizerReductiveStatement.{u}`
-   (module `Dynamic.CentralizerReductiveProof`, Workers 1325 and 1326). Every
+   (module `Dynamic.CentralizerReductiveProof`). Every
    closed representative of a cocharacter centralizer in a connected reductive
    group over a field is connected reductive.
 2. `derivedSubgroupSemisimple : DerivedSubgroupSemisimpleStatement.{u}`
-   (module `Derived.SemisimpleProof`, Worker 4065). The actual derived subgroup
+   (module `Derived.SemisimpleProof`). The actual derived subgroup
    of a connected reductive field group is semisimple.
 3. `splitSimplyConnectedCorootSpan : SplitSimplyConnectedCorootSpanStatement.{u}`
-   (module `SimplyConnected.SplitNecessity`, Worker 4342). For a simply
+   (module `SimplyConnected.SplitNecessity`). For a simply
    connected group with a split maximal torus and a finite reduced root datum
    of it, the integral coroots span the cocharacter lattice.
 4. `splitCorootSpanSimplyConnected : SplitCorootSpanSimplyConnectedStatement.{u}`
@@ -41,15 +38,15 @@ structural premises are discharged by these unconditional Library theorems:
    connected.
 5. `splitTorusCentralizerDerivedCorootComparison :
    SplitTorusCentralizerDerivedCorootComparisonStatement.{u}` (module
-   `SimplyConnected.SplitTorusCentralizerDerivedCorootComparisonProof`,
-   Workers 1352 and 1577). Over an algebraically closed field, the integral
+   `SimplyConnected.SplitTorusCentralizerDerivedCorootComparisonProof`).
+   Over an algebraically closed field, the integral
    coroot span of the derived subgroup maps, under a closed torus map into a
    split maximal torus of `G`, onto the integral span of a subset of the simple
    coroots of a base of the root datum of `G`.
 6. `IsSimplyConnectedAlgebraicClosureAscentStatement.{u}` is supplied by the
    term `fun k _ G hG => isSimplyConnectedFieldExtension k (AlgebraicClosure k) G hG`.
    Here `isSimplyConnectedFieldExtension : IsSimplyConnectedFieldExtensionStatement.{u}`
-   (module `SimplyConnected.SimplyConnectedFieldExtensionProof`, Worker 4034)
+   (module `SimplyConnected.SimplyConnectedFieldExtensionProof`)
    is ascent of simple connectedness along every field extension `k → K`. It is
    specialized to `K = AlgebraicClosure k`. The base-change morphism
    `toAlgebraicClosure k` is an `abbrev` for

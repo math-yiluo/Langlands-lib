@@ -1,6 +1,6 @@
 # Henniart's route with local constants and rank-one conductor transport discharged
 
-Worker 4803 wrote this module (Task 4803). It imports
+This module imports
 `Langlands.Correspondence.HenniartCorrespondenceFiveInputs`,
 `Langlands.LocalFactor.NonabelianSystemExistsProof` and
 `Langlands.LocalFactor.SpectralConductorRankOneProof`.
@@ -46,6 +46,4 @@ The theorem depends only on the standard axioms `propext`, `Classical.choice` an
 
 This is a derived reduction. It composes a published Library reduction with two
 published theorems and introduces no new literature result. The Library statements
-document the sources of the target and of the remaining three inputs. On 13 November 2026
-the open inputs had these TaskHub proof tasks: input 1, Task 5583; input 2, Task 5584;
-input 3, Task 5032.
+document the sources of the target and of the remaining three inputs.

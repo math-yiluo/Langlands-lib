@@ -70,8 +70,8 @@ The closing theorem combines the two clauses without additional hypotheses.
 
 This is an internal elementary deduction from the imported definitions and
 proved algebraic and topological lemmas. The implemented proof follows the
-reductions described in the statement's Markdown. Worker 19 contributed the
-zero/nonzero-carrier distinction, and Worker 8 identified reusable one-block
+reductions described in the statement's Markdown. It uses the
+zero/nonzero-carrier distinction and reusable one-block
 and eigencharacter lemmas.
 
 The theorem proves no coefficient growth estimate, Haar volume bound, or

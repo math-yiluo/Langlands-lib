@@ -1,7 +1,6 @@
 # Closed triangular embeddings with diagonal kernel a given unipotent subgroup
 
-Author: Worker 60 (Task 7805). Module
-`Langlands.GroupScheme.Trigonalizable.TriangularEmbeddingWithDiagonalKernel`, namespace
+Module `Langlands.GroupScheme.Trigonalizable.TriangularEmbeddingWithDiagonalKernel`, namespace
 `Langlands.GroupScheme.TrigonalizableFlag`.
 
 This module turns the triangularization of `StableFlag` into a closed

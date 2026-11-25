@@ -98,6 +98,7 @@ def restrictionCompIso {K : Type w''} [Group K] (ψ : K →* H) :
 theorem restriction_cohomology_ρ (F : EquivariantSheaf R ρ) (q : ℕ) (h : H) :
     (pullbackCohomologyAction R (ρ.comp φ) ((restrictionFunctor R ρ φ).obj F) q).ρ h =
       (pullbackCohomologyAction R ρ F q).ρ (φ h) := by
+  apply End.ext
   rw [pullbackCohomologyAction_ρ, pullbackCohomologyAction_ρ]
   rfl
 
@@ -107,10 +108,10 @@ def restrictionCohomologyIso (F : EquivariantSheaf R ρ) (q : ℕ) :
       (Action.res (ModuleCat.{u} R) φ).obj (pullbackCohomologyAction R ρ F q) :=
   Action.mkIso (Iso.refl ((EtaleDerivedSections.cohomology Y R q).obj F.obj))
     (fun h => by
-      change (pullbackCohomologyAction R (ρ.comp φ) ((restrictionFunctor R ρ φ).obj F) q).ρ h ≫
-        𝟙 _ = 𝟙 _ ≫ (pullbackCohomologyAction R ρ F q).ρ (φ h)
+      change ((pullbackCohomologyAction R (ρ.comp φ) ((restrictionFunctor R ρ φ).obj F) q).ρ h).asHom ≫
+        𝟙 _ = 𝟙 _ ≫ ((pullbackCohomologyAction R ρ F q).ρ (φ h)).asHom
       rw [Category.comp_id, Category.id_comp]
-      exact restriction_cohomology_ρ R ρ φ F q h)
+      exact congrArg End.asHom (restriction_cohomology_ρ R ρ φ F q h))
 
 /-- Taking ordinary cohomology commutes naturally with group restriction,
 with identity maps on the underlying cohomology modules. -/
@@ -143,11 +144,11 @@ def restrictionSectionsIso (F : EquivariantSheaf R ρ) :
       (Action.res (ModuleCat.{u} R) φ).obj ((pullbackSectionsFunctor R ρ).obj F) :=
   Action.mkIso (Iso.refl ((EtaleDerivedSections.sections Y R).obj F.obj))
     (fun h => by
-      change ((pullbackSectionsFunctor R (ρ.comp φ)).obj
-        ((restrictionFunctor R ρ φ).obj F)).ρ h ≫ 𝟙 _ =
-        𝟙 _ ≫ ((pullbackSectionsFunctor R ρ).obj F).ρ (φ h)
+      change (((pullbackSectionsFunctor R (ρ.comp φ)).obj
+        ((restrictionFunctor R ρ φ).obj F)).ρ h).asHom ≫ 𝟙 _ =
+        𝟙 _ ≫ (((pullbackSectionsFunctor R ρ).obj F).ρ (φ h)).asHom
       rw [Category.comp_id, Category.id_comp]
-      exact restriction_sections_ρ R ρ φ F h)
+      exact congrArg End.asHom (restriction_sections_ρ R ρ φ F h))
 
 /-- Global sections commute naturally with group restriction. -/
 def restrictionSectionsFunctorIso :

@@ -1,7 +1,5 @@
 # Stabilizer fibres are equidimensional
 
-Author: Worker 79.
-
 `StabilizerFibreLocalDimensionStatement` states that every fibre of the stabilizer scheme of
 a group action is equidimensional. It is an input to the semicontinuity argument for the
 orbit-dimension strata of Conrad's Example 5.5 (clause 1 of

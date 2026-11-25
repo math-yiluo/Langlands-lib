@@ -1,6 +1,6 @@
 # Actual adjacent dual transport
 
-This internal unit supplies actual smooth-duality transport for the two
+This module supplies actual smooth-duality transport for the two
 adjacent factors. It identifies the dual of an actual simple
 subrepresentation with a quotient by an actual nonzero proper kernel,
 identifies two-factor product duals without reversing their order, and
@@ -50,4 +50,4 @@ All field-dependent results retain the supplied topological data \(T\).
 The provenance is internal algebraic transport from actual smooth-dual
 exactness and admissible biduality, normalized product duality,
 admissibility, and determinant-twist laws. No product irreducibility input
-or local triple Jacquet transfer is proved in this unit.
+or local triple Jacquet transfer is proved in this module.

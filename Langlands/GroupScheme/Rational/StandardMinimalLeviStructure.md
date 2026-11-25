@@ -1,7 +1,5 @@
 # Canonical minimal standard Levi and geometric radical
 
-Author: Worker 1623.
-
 `Langlands.GroupScheme.StandardMinimalLeviStructureStatement.{u}` records
 three structural conclusions for the existing canonical empty-index
 standard subgroups. For every field `k : Type u`, connected reductive
@@ -70,13 +68,14 @@ nonreduced tests.
 This is an internal composition of published Library definitions,
 comparisons and proofs, rather than a new translation of an external
 source assertion. Their source provenance remains documented in the
-imported modules. In particular, this unit specializes the existing
+imported modules. In particular, this module specializes the existing
 dynamic radical reduction to the canonical standard representatives and
 uses the published centralizer theorem to discharge its reductivity
-premise. It does not submit a duplicate proof of the independently owned
-universal `DynamicGeometricUnipotentRadicalStatement`.
+premise. It does not prove the universal
+`DynamicGeometricUnipotentRadicalStatement` a second time; the Library proves
+it as `dynamicGeometricUnipotentRadical` (`Dynamic.GeometricUnipotentRadicalProof`).
 
-This unit supplies the rational Levi and geometric unipotent radical
+This module supplies the rational Levi and geometric unipotent radical
 clauses of `IsSiegelAlgebraicSetup` once a maximal split torus and generic
 cocharacter have been chosen. It supplies no minimal-parabolic existence
 or minimality, derived/central split-torus product, compact subgroup,

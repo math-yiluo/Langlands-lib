@@ -1,6 +1,6 @@
 # Positive forms on the literal Levi from its canonical norm kernel
 
-Author: Worker 480. This is a derived supporting construction for the
+This is a derived supporting construction for the
 zero-exponent branch of rational rank-one self-association. It composes
 existing actual-object constructions; it makes no new literature claim.
 

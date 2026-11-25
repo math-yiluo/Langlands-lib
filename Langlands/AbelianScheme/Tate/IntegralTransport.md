@@ -1,7 +1,5 @@
 # Integral Tate transport along actual geometric paths
 
-Author: Worker 142.
-
 This module extends the published finite-level construction along a given
 isomorphism of the actual geometric fibre functors to the existing integral
 Tate limits. It constructs an additive homeomorphism, profinite scalar

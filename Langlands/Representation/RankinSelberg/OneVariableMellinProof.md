@@ -2,9 +2,9 @@
 
 `Langlands.RankinSelberg.oneVariableMellin.{uF}` proves exactly
 `Langlands.RankinSelberg.OneVariableMellinStatement.{uF}`. The field universe
-is arbitrary. The statement and its imported pairs are unchanged. Worker 656
-assembled the proof; the two private spectral proofs identified below
-are adapted from Worker 235's published work.
+is arbitrary. The statement and its imported pairs are unchanged. The two
+private spectral proofs identified below are adapted from
+`RamifiedFiniteFunctionMellinProof`.
 
 The theorem covers every prime, supplied p-adic field and topological data,
 positive natural weight `m`, and continuous function `η` with finite-dimensional
@@ -21,7 +21,7 @@ The proof imports and applies these theorems by Lean name:
 
 - `Langlands.RankinSelberg.finiteFunctionShellSeries` from
   `Langlands.Representation.RankinSelberg.FiniteFunctionShellSeriesProof`
-  (Worker 277) supplies an order-one uniformizer `π`, a complex recurrence
+  supplies an order-one uniformizer `π`, a complex recurrence
   `E`, and a real growth base `B ≥ 1`, all chosen before the test function.
   For each test `Φ`, its coefficients are the actual set integrals
   `c(n) = ∫ u in K, Φ(↑(π^n*u)) * η(π^n*u) ∂dA` over integral units.
@@ -32,7 +32,7 @@ The proof imports and applies these theorems by Lean name:
   integral with `∑' n : ℤ, c(n)*w^n`.
 - `Langlands.Analysis.eventuallyRecurrentLaurentSeriesStatement_proof`
   from `Langlands.Analysis.EventuallyRecurrentLaurentSeriesProof`
-  (Worker 740) supplies a positive radius `ρ` depending only on `E`.
+  supplies a positive radius `ρ` depending only on `E`.
   For each positive `m`, the nonzero Laurent denominator is
   `D = (Q.comp (Polynomial.X ^ m)).toLaurent`, where
   `Q = 1 - ∑ i : Fin E.order, C(E.coeffs i)*X^(E.order-i.val)`.
@@ -51,7 +51,7 @@ unchanged parent hypotheses and the actual shell coefficients.
 ## Complex powers and the half-plane
 
 The private lemmas `mellin_natCast_zpow_cpow_eq` and
-`mellin_exists_re_threshold` adapt Worker 235's private
+`mellin_exists_re_threshold` adapt the private
 `natCast_zpow_cpow_eq` and `exists_re_threshold` in
 `Langlands.Representation.RankinSelberg.RamifiedFiniteFunctionMellinProof`.
 They use elementary complex and real power identities; no ramified Mellin
@@ -59,9 +59,7 @@ conclusion is used.
 
 Nonvanishing uses the existing public theorem
 `Langlands.RankinSelberg.spectralPoint_ne_zero` from
-`Langlands.Representation.RankinSelberg.EpsilonFactor`. Its statement and
-proof coincide with the private helper in the reviewed contribution, so the
-integrated module reuses it.
+`Langlands.Representation.RankinSelberg.EpsilonFactor`.
 
 Positivity of `q` gives argument zero for its complex image. The integer
 complex-power identities therefore give
@@ -137,7 +135,7 @@ scope are recorded in the unchanged statement Markdown:
   retained SHA-256
   `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
 
-These passages were read directly in developing this task; JPSS pp.391–392
+These passages were read directly; JPSS pp.391–392
 and the JPS definition on p.181 were also inspected visually. The arbitrary
 positive weight is the existing statement's derived extension of the JPSS
 weights, realized here by substitution `X^m`. This module establishes only

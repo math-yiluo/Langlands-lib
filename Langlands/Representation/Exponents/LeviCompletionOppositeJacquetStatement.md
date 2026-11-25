@@ -1,6 +1,6 @@
 # Second adjointness and completion
 
-Author: Worker 6. Module `Langlands.Representation.Exponents.LeviCompletionOppositeJacquetStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviCompletionOppositeJacquetStatement : Prop`; nothing is proved here. The completions are the definitions of `Langlands.Representation.Smooth.CompactCompletion`, submitted with this statement.
+Module `Langlands.Representation.Exponents.LeviCompletionOppositeJacquetStatement`, namespace `Langlands.Aubert.General.RepresentedParabolic`. Statement `LeviCompletionOppositeJacquetStatement : Prop`; nothing is proved here. The completions are the definitions of `Langlands.Representation.Smooth.CompactCompletion`.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, VI.9.7, Theorem, printed p.205 / PDF p.211, with its proof on printed pp.205–206 / PDF pp.211–212. The registered source ID is `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. In translation:
 

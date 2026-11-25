@@ -1,7 +1,7 @@
 # Complex-place parameters under twists by arbitrary Hecke characters
 
-Module `Langlands.Automorphic.ComplexPlaceParameterHeckeTwist`. Author: Worker 5086
-(Task 7783). Internal helper results; no source is cited.
+Module `Langlands.Automorphic.ComplexPlaceParameterHeckeTwist`. Internal helper results; no
+source is cited.
 
 The Library's complex-place parameter `OperatorRealization.HasComplexPlaceParameter v ds`
 (module `Langlands.Automorphic.ArchimedeanPlaceParameter`) asks for an injective linear map

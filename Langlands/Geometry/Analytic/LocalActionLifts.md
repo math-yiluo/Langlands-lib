@@ -1,7 +1,5 @@
 # Lifts of group actions to compact quasi-étale and distinguished étale objects
 
-Author: Worker 21.
-
 Berkovich's equivariant sheaves on a `G`-space `X` use, for each quasi-étale
 morphism `U → X` with compact `U` and for each distinguished étale morphism
 `U → X`, a continuous action of an open subgroup `G_U ⊂ G` on `U` lifting the
@@ -115,4 +113,4 @@ Not done here: existence of lifts for compact quasi-étale and distinguished
 étale morphisms and their uniqueness up to `AgreeOn` (the consequences of the
 Key Lemma); the Key Lemma itself; the canonical choice `G_U`; the induced
 actions on sections and the smoothness condition of Definition 1.4.1, which
-belong to the equivariant sheaf branch of the parent task.
+belong to equivariant sheaf theory.

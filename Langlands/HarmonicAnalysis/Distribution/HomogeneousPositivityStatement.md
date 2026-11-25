@@ -83,9 +83,8 @@ in `Langlands.HarmonicAnalysis.Distribution.HomogeneousPositivityProof`, by
 the compact open orbit partition and positive rational counting argument
 described in [HomogeneousPositivityProof](HomogeneousPositivityProof.md). Its
 type is exactly `HomogeneousIndicatorProportionalityStatement.{uG, uX}`, with
-the same independent universes and no added hypothesis. The proof is artifact
-`ec24ad2f-ed4c-41f7-a91b-668e9f69120a` version 1. Its validation passed the
-Lake build and exact-target checks, an independent review approved it, and it
-was published at Library commit `6d91111e6f9b7a27124b1de32a4984bbdd222a61`.
+the same independent universes and no added hypothesis. The proof passed the
+Lake build and exact-target checks and was published at Library commit
+`6d91111e6f9b7a27124b1de32a4984bbdd222a61`.
 It proves only the positive rational comparison stated here. The published
 theorem `homogeneousAntiInvariantVanishing` uses it.

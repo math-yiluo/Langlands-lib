@@ -1,7 +1,7 @@
 # The parabolic orbit piece as the normalized compact orbit source
 
 Module: `Langlands.Representation.Aubert.General.RationalGeometricOrbitSource`,
-namespace `Langlands.Aubert.General`. Author: Worker 4021.
+namespace `Langlands.Aubert.General`.
 
 `ParabolicSupportFiltration` filters `r_Q ∘ i_P`. Its published
 `jacquetSupportOrbitIso` identifies the successive quotient at an orbit `P w⁻¹ Q`

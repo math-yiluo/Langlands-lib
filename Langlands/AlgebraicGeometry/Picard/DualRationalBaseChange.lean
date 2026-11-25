@@ -162,24 +162,24 @@ theorem IsInvolutionCompatible.baseChange_of_naturality
       comparison symmetry stability hA' additivityChangedAA MA' evaluationA' geometryA'
       ((rationalBaseChangeEnd b A).toRingHom.comp i) (pullDual lam) := by
   intro r
-  change comp0 baseA baseA DA' (rationalBaseChangeHom b (i r))
+  change comp0 baseA baseA DA' (rationalBaseChangeHom b (i r).asHom)
       (comp0 baseA ((baseChange b).obj DA) DA'
         (rationalBaseChangeHom b lam) (homToHom0 (EA).hom)) =
     comp0 baseA DA' DA'
       (comp0 baseA ((baseChange b).obj DA) DA'
         (rationalBaseChangeHom b lam) (homToHom0 (EA).hom))
-      (dual0' (rationalBaseChangeHom b (i (star r))))
+      (dual0' (rationalBaseChangeHom b (i (star r)).asHom))
   have hleft :
       comp0 baseA baseA ((baseChange b).obj DA)
-          (rationalBaseChangeHom b (i r)) (rationalBaseChangeHom b lam) =
-        rationalBaseChangeHom b (comp0 A A DA (i r) lam) :=
-    (rationalBaseChangeHom_comp b (i r) lam).symm
+          (rationalBaseChangeHom b (i r).asHom) (rationalBaseChangeHom b lam) =
+        rationalBaseChangeHom b (comp0 A A DA (i r).asHom lam) :=
+    (rationalBaseChangeHom_comp b (i r).asHom lam).symm
   have hright :
-      rationalBaseChangeHom b (comp0 A DA DA lam (dual0 (i (star r)))) =
+      rationalBaseChangeHom b (comp0 A DA DA lam (dual0 (i (star r)).asHom)) =
         comp0 baseA ((baseChange b).obj DA) ((baseChange b).obj DA)
           (rationalBaseChangeHom b lam)
-          (rationalBaseChangeHom b (dual0 (i (star r)))) :=
-    rationalBaseChangeHom_comp b lam (dual0 (i (star r)))
+          (rationalBaseChangeHom b (dual0 (i (star r)).asHom)) :=
+    rationalBaseChangeHom_comp b lam (dual0 (i (star r)).asHom)
   rw [← comp0_assoc, hleft, hlam r, hright, comp0_assoc]
   rw [dualHom0_baseChange_of_naturality preservation stability composition unitCoherence
     associativity comparison symmetry universality compatibility b A hA geometryA MA evaluationA

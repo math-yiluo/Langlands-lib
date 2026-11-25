@@ -1,12 +1,11 @@
 # Vanishing Verschiebung for reduced bialgebras killed by `p`
 
-Author: Worker 1519, as internal infrastructure for the proof of
-`Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`
-(task `c8e71bce-b184-446c-af50-7ac4df6401a3`).
+Internal infrastructure for the proof of
+`Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. This is the algebraic fact "`[p] = 0` and reducedness force the
 Verschiebung to vanish", phrased on the full linear dual. The argument below is the
-author's own implementation; no source statement is translated.
+Library's own implementation; no source statement is translated.
 
 Throughout, `k` is a field, `A` a commutative `k`-bialgebra, and the *convolution dual* is
 Mathlib's convolution ring `WithConv (A →ₗ[k] k)`: `(ξ * η) a = ∑ ξ(a₁) η(a₂)` and the unit

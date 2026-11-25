@@ -32,7 +32,7 @@ root-system classification axiom. The common torus and inclusion `M ≤ L`
 make the choice of compatible Levis explicit. The target asserts no
 existence of compatible data for an unrelated pair of chosen Levis.
 Dynamic subgroup functors are already defined; their representability,
-parabolicity and centralizer reductivity have separate structural owners.
+parabolicity and centralizer reductivity are separate structural statements.
 
 ## Source and derived scope
 
@@ -66,11 +66,12 @@ targets. In particular it retains all-test products for
 `standardParabolic`, `standardLevi` and `standardUnipotent`, and recovers
 `StandardLeviIntersectionStatement`. Those structural targets are
 hypotheses of that bridge, not hypotheses of this final target.
-The existing standard-index proof task
-`1d7d4767-a668-4ce1-9989-319a625f6de3` remains an independent obligation.
+`StandardLeviIntersectionStatement` is also proved independently, as
+`standardLeviIntersection` in `StandardLeviIntersectionProof`.
 
 This module defines a `Prop`; it provides no proof, instance or axiom
-asserting it. Its exact proof remains a separate successor task.
+asserting it. Its exact proof is `dynamicNestedParabolicDecomposition` in
+[DynamicNestedParabolicDecompositionProof](DynamicNestedParabolicDecompositionProof.md).
 
 Source IDs:
 `renard-2026-representations-groupes-reductifs-padiques`,

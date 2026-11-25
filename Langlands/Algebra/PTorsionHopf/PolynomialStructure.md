@@ -1,6 +1,6 @@
 # Coordinate algebras of commutative groups killed by `p` are polynomial rings
 
-Author: Worker 1519, as internal infrastructure for the proof of
+Internal infrastructure for the proof of
 `Langlands.GroupScheme.RelativeRoot.SmoothCommutativePTorsionVectorStatement`.
 
 Provenance: internal. The final theorem is the Hopf-algebraic form of the connected,
@@ -8,7 +8,7 @@ algebraically closed case of Conrad–Gabber–Prasad, *Pseudo-reductive Groups*
 Lemma B.1.10 (printed pp.565–566 / PDF pp.591–592): a smooth connected commutative group of
 exponent `p` is a vector group. The implemented route (vanishing Verschiebung, generation by
 primitives, additive minimal relations and Euclid reduction) differs from the source's
-argument with composition series and Witt vectors; it is the author's own.
+argument with composition series and Witt vectors; it is the Library's own.
 
 ## Assembly lemmas
 

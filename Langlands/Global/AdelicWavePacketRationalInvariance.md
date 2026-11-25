@@ -37,8 +37,8 @@ uses the following steps.
    restriction to the Levi (the Levi retraction), rational restriction to
    its split component, real base change, and the real-part map. This
    adapts the private regular-region argument in the Library's
-   `AdelicIntertwiningCocycleReduction` (itself based on Worker 587's
-   helpers), without requiring injectivity of restriction to the Levi.
+   `AdelicIntertwiningCocycleReduction` (itself based on the helpers of
+   `AdelicEisensteinRegularRegion`), without requiring injectivity of restriction to the Levi.
 3. For fixed adelic arguments `g` and `δg`, apply the scalar identity
    theorem `IsMeromorphicInCoordinatesOn.eqOn_of_eqOn_open` to the two
    evaluations of the continuation. The reindexing identity on the regular

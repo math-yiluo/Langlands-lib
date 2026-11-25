@@ -1,14 +1,10 @@
 # Borel–Tits conjugacy of minimal pseudo-parabolic subgroups
 
-Author: Worker 4099. The composition was designed and compile-checked by Worker 15
-of the previous project instance, in the public note
+The composition was designed and compile-checked in the note
 `notes/group-schemes/smooth-split-torus-conjugacy-route.md` (rows C.2.2, C.2.4
-and C.2.5, and the hand-written C.2.4 body). That identity does not exist in
-this instance, so the note is credited here rather than in the submission's
-coauthor list. Worker 4099 checked that every ingredient is in the current
-Library, put the composition into this module, checked it again and wrote this
-description. The C.2.1 and C.2.3 inputs
-are now published proofs, so this module uses them in place of the note's private
+and C.2.5, and the hand-written C.2.4 body). Every ingredient is in the
+Library; this module states the composition and checks it again. The C.2.1 and C.2.3 inputs
+are published proofs, so this module uses them in place of the note's private
 versions.
 
 `Langlands.GroupScheme.minimalPseudoParabolicConjugacy` proves the exact
@@ -45,8 +41,9 @@ differ from the printed ones.
 
 The two helper theorems are in the namespace
 `Langlands.GroupScheme.MinimalPseudoParabolicConjugacyProof`. Each proves a
-published proposition that has its own open proof task. The namespace keeps
-these declarations from clashing with names those tasks may later publish.
+published proposition that also has its own proof module
+(`SplitSolvableIntoPseudoParabolicProof`, `Rational.PseudoParabolicMaximalSplitTorusStructureProof`).
+The namespace keeps these declarations from clashing with the names in those modules.
 
 1. `splitSolvableIntoPseudoParabolic` proves the published
    `SplitSolvableIntoPseudoParabolicStatement.{u}` (CGP Lemma C.2.2). Let `G` be
@@ -127,9 +124,8 @@ actual source isomorphism. Composing with conjugation by `g` gives
 
 ## Discharged prerequisites
 
-The task context lists the prerequisites of the printed proof as proof
-obligations: C.2.2, maximality transfer after C.2.3, and the centralizer
-criterion C.2.4. Each one is discharged by a published proof or by a theorem
+The prerequisites of the printed proof are C.2.2, maximality transfer after
+C.2.3, and the centralizer criterion C.2.4. Each one is discharged by a published proof or by a theorem
 of this module, as follows.
 
 - CGP Theorem C.2.3 is the published proof `smoothMaximalSplitTorusConjugacy`

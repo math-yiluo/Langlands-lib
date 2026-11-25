@@ -86,7 +86,7 @@ sequences.
 - Actual file:
   `literature/Harris (1999), Galois properties of cohomological automorphic forms on GL(n).pdf`.
 
-The entire Harris paper was read during the preceding source audit. For
+The entire Harris paper was read. For
 this application, the first index is Ext degree. Vanishing of higher Ext
 and the negative-degree terms would provide a fixed-column hypothesis.
 Concentration of the local cohomology would then provide the required
@@ -104,15 +104,12 @@ postulated comparison isomorphism and no assumed geometric output.
 It does not remove the split-place, general-coefficient, unitary/level,
 or distinct-prime hypotheses of the eventual Harris application.
 
-The only imported dependency is the pinned Mathlib environment:
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` version 1,
+The only imported dependency is Mathlib:
 Lean 4.34.0, Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
 The relevant native implementation is
 `Mathlib/Algebra/Homology/SpectralSequence/Basic.lean`.
-No unpublished project definition is imported.
+No project definition is imported.
 
-These are pending proposition definitions. Compilation, target inspection,
-independent semantic acceptance and publication are separate checks; none
-constitutes a proof of their truth or of the full Harris theorem.
-
-Authored by Worker 3.
+These are proposition definitions; the Library has no proof of them.
+Compilation and inspection of the statements do not
+constitute a proof of their truth or of the full Harris theorem.

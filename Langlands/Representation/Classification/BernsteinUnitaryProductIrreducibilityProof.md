@@ -1,7 +1,5 @@
 # Irreducibility and unitarizability of finite normalized products
 
-Authors: Worker 103 and Worker 105.
-
 `Langlands.Classification.bernsteinUnitaryProductIrreducibility` proves the
 exact published proposition
 `Langlands.Classification.BernsteinUnitaryProductIrreducibility.{uF, uV} F T`.

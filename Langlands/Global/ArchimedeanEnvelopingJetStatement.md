@@ -1,6 +1,6 @@
 # From genuine enveloping vanishing to ambient matrix zero jets
 
-Authors: Worker 94 (original draft) and Worker 878. Namespace:
+Namespace:
 `Langlands.Global.ArchimedeanGL`.
 
 `Langlands.Global.ArchimedeanGL.EnvelopingZeroJetStatement K n` is a
@@ -15,8 +15,8 @@ the complexified real matrix Lie algebra, the differential action
 `GL_n(InfiniteAdeleRing K)` to the mixed-coordinate group
 `ArchimedeanGL K n`, and the ambient expression
 `coordinateExtension K n f : ArchimedeanMatrix K n → ℂ`. It does not
-depend on any unpublished Casimir, Cartan-symbol, analytic-jet or
-polynomial-annihilation draft.
+depend on the Casimir, Cartan-symbol, analytic-jet or
+polynomial-annihilation modules.
 
 ## The proposition and its quantifier order
 
@@ -98,19 +98,17 @@ external literature theorem in these coordinates. Mathematically it
 expresses the standard fact that left-invariant vector fields form a
 global frame on a Lie group, so that ordinary derivatives at a point are
 controlled by enveloping derivatives there; the route below indicates how
-the moving frame must be handled in the published coordinates. Worker 94
-formulated it as a focused prerequisite of the automorphic
-differential-growth task `e0d3fab3-d5c8-47ae-bd65-d85037d6fd80`. That
-task's source map, `notes/automorphic/differential-growth-source-map.md`,
+the moving frame must be handled in the published coordinates. It is a
+prerequisite of the automorphic differential-growth theorem. Its source map,
+`notes/automorphic/differential-growth-source-map.md`,
 describes how vanishing of all jets enters Harish-Chandra's density
 argument and lists analytic regularity and jet uniqueness among separate
-obligations. The statement is published through task
-`3353797b-5844-4dda-a22b-075247445ee8`. Its conclusion has exactly the
+obligations. Its conclusion has exactly the
 form of the jet hypothesis of the published
 `AnalyticMatrixJetUniquenessStatement` for the same `f` and `x₀`.
 Neither proposition assumes the other.
 
-## Prospective proof route
+## Proof route
 
 No proof is included. One route fixes `x₀` and inducts on the order `k`,
 for all enveloping elements simultaneously. Write `p` for the
@@ -133,5 +131,5 @@ terms at higher orders.
 This module defines only the proposition. It does not prove analytic
 regularity, analytic uniqueness, vanishing outside the basepoint or on
 its connected component, Lie-orbit density, reproduction, or the final
-automorphic differential-growth theorem. Its proof requires a separate
-exact-target task after independent publication of this statement.
+automorphic differential-growth theorem. The proposition is proved by
+`envelopingZeroJet` in `Langlands.Global.ArchimedeanEnvelopingJetProof`.

@@ -1,10 +1,8 @@
 # The linear system of an invertible module on a proper flat family with integral fibres (proof)
 
-Authors: Worker 5705.
-
-Worker 5705 wrote this proof for Task 5705 (`07219dde-fd87-48cf-83be-db16cbb3707c`). It proves the
-published statement `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemStatement`
-(the target also of Task 5987). It contains no `sorry` and no new axioms; the axioms used are
+This module proves the
+published statement `Langlands.AlgebraicGeometry.Picard.ProperFlatIntegralLinearSystemStatement`.
+It contains no `sorry` and no new axioms; the axioms used are
 `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Theorem
@@ -59,7 +57,7 @@ step 5 through `LinearSystemGluing.properFlatIntegralLinearSystem_of_localFibreF
 
 Library: the Čech projective representative (`NoetherianCechProjectiveRepresentativeProof`), the
 Grassmannian representability and properness (`RingTheory/Grassmannian`), relative effective
-divisors and their base change (`RelativeEffectiveDivisorBaseChangeProof`), W22's Picard-class
+divisors and their base change (`RelativeEffectiveDivisorBaseChangeProof`), the Picard-class
 lemmas (`PicardHilbertPiecesRepresentabilityReduction*`), semicontinuity
 (`ProperFlatFibreCohomologySemicontinuityProof`), the base-change invariance of fibre cohomology
 dimensions (`ProperFibreCohomologyDimBaseChangeProof`), the Čech–derived comparison in degree one

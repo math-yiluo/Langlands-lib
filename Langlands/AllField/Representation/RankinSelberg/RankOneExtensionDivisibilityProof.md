@@ -30,11 +30,12 @@ full normalized Whittaker type and symmetric polynomial existence.
 - `Langlands.AllField.RankinSelberg.rankOneExtensionUpper_whittakerType_of_normalizedProduct` (theorem): Conditional preservation specialized to the exact upper block family.
   The dependent-data transport follows the published two-block assembly pattern;
   no multiplicativity assertion is used.
-- `Langlands.AllField.RankinSelberg.rankOneExtension_certificates_of_inputs` (theorem): Construct the actual two certificates conditionally on the separately
-  owned full-type and common-existence statements at the needed universes.
+- `Langlands.AllField.RankinSelberg.rankOneExtension_certificates_of_inputs` (theorem): Construct the actual two certificates conditionally on the full-type
+  statement `NormalizedProductWhittakerTypeStatement` and the common-existence
+  statement `SymmetricLPolynomialExistenceStatement` at the needed universes.
 - `Langlands.AllField.RankinSelberg.rankOneExtensionLDivisibility_of_certificates_and_span` (theorem): The algebraic assembly, conditional on the actual certificates and the
   strict base-to-lower-induced span comparison.
-- `Langlands.AllField.RankinSelberg.rankOneExtensionLDivisibility_of_inputs` (theorem): Assemble the exact parent proposition from full type, common existence
+- `Langlands.AllField.RankinSelberg.rankOneExtensionLDivisibility_of_inputs` (theorem): Assemble the exact proposition `RankOneExtensionLDivisibilityStatement` from full type, common existence
   at both carrier universes, and the strict span comparison.
 - `Langlands.AllField.RankinSelberg.rankOneExtensionLDivisibility` (theorem): JPSS Lemma 5.5 in its original strict rank range, for the actual ordered
   upper normalized induction `(χlift, σ₁)`. Both certified polynomials and

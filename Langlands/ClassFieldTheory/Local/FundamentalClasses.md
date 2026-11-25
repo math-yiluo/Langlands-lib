@@ -1,6 +1,6 @@
 # Predicates for fundamental classes in relative Galois cohomology
 
-This pair is authored by Worker 49. It defines predicates on the actual
+This pair defines predicates on the actual
 `relativeCohomology K L 2`, not a substitute cyclic group. The invariant
 argument is only an additive homomorphism into the actual quotient
 `ℚ / ℤ`; injectivity, image, arithmetic normalization, and existence are
@@ -56,12 +56,12 @@ classes have invariant positive `1/[L:K]`. In Chapter XI, §3, the
 fundamental class is the left factor of the Tate cup map. In degree
 `-2`, that map goes from the abelianized Galois group to the norm quotient,
 and its inverse is Serre's arithmetic reciprocity homomorphism.
-The host's geometric reciprocity differs by inversion in the abelianized
+The Library's geometric reciprocity differs by inversion in the abelianized
 Galois group: `rec_geom(a) = rec_arith(a)⁻¹`. In the reverse direction,
 the geometric map is `theta_geom(g) = theta_arith(g⁻¹)`.
 Serre's local arithmetic normalization is also explicit in XIII.4,
 Proposition 13, printed page 197 (PDF page 202).
-The host convention is Henniart, *Une preuve simple des conjectures de
+The Library's convention is Henniart, *Une preuve simple des conjectures de
 Langlands pour GL(n) sur un corps p-adique* (2000), §1.1, printed page 439
 (PDF page 1): the map from the Weil group to field units sends geometric
 Frobenius to a uniformizer. Retained source `henniart-2000-simple-proof`,
@@ -82,7 +82,7 @@ genuine Tate transfer through the positive-degree comparisons.
 The published [ClassFormationStatement](ClassFormationStatement.md) defines
 `LocalRelativeClassFormationStatement` and
 `LocalCompatibleClassFormationStatement`. For every prime, each
-existentially quantifies Worker 42's data-only
+existentially quantifies the data-only
 `InvariantFamily.{u,u}` in an arbitrary common carrier universe and
 asserts the class-formation properties, unique fundamental classes with
 their exact order and generation, and all four functorial laws.
@@ -93,8 +93,12 @@ family. [FiniteComparison](FiniteComparison.md) constructs the comparison,
 and [FiniteInvariantCompatibility](FiniteInvariantCompatibility.md)
 defines the ordinary-class diagram and proves its equivalence with the
 continuous finite-stage formulation. These constructions and proposition
-definitions are published; proofs of the local realization targets
-remain separate obligations.
+definitions are published. The local realization targets are proved
+separately: `localRelativeClassFormation` (module
+`LocalRelativeClassFormationProof`) proves the relative one, and
+`localAbsoluteCorestrictionCompatibleClassFormation` (module
+`ClassFormationAbsoluteCorestrictionProof`) proves a realization whose
+clauses contain those of the compatible one.
 
 The published `Langlands.ClassFieldTheory.Local.Cohomology` module supplies
 the actual relative cohomology, restriction, inflation, rational quotient, and

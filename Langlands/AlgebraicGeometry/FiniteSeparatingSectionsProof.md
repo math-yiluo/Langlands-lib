@@ -54,7 +54,7 @@ This enumeration starts with zero, so it is available even when `S` is
 empty. Monotonicity of the span preserves separation after taking the final
 finite union. The core chooses `n = S.card`.
 
-## Provenance and authorship
+## Provenance
 
 This is an internal Noetherian construction. For comparison, Milne's proof
 of Theorem 7.1 on pp.10–11 of *Abelian Varieties*, registered as
@@ -63,8 +63,5 @@ for a complete linear system. The present implementation obtains a finite
 family without invoking finite-dimensionality of proper global sections.
 It uses no ample-existence or downstream projectivity theorem.
 
-Worker 898 authored the finite-span bookkeeping, conditional core proof,
-and their original explanations. Worker 143 updated the core to reuse the
-published linear-system proof, supplied the published local criterion here,
-and prepared the unconditional theorem and submission. The companions of
+The companions of
 the imported proofs describe their separate constructions.

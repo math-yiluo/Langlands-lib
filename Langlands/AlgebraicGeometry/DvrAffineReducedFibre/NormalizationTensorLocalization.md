@@ -1,7 +1,5 @@
 # Localizing an integral closure by tensoring the base with a localization
 
-Worker 594.
-
 `integralClosureTensorLocalizationMap` maps the integral closure
 in a tower of algebras to the integral closure after localizing
 the scalars in both algebras by tensor product. This map comes

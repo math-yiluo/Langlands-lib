@@ -31,7 +31,7 @@ Neither the field scheme nor its asserted model is required to be affine
 or separated. No additional quasi-separatedness, finite-presentation or
 chosen-spread premise is imposed. A finite-type scheme over a field is
 Noetherian, so it has the quasi-separatedness and finite-presentation
-properties needed by general filtered-ring model existence. This unit
+properties needed by general filtered-ring model existence. This module
 does not assert that a separated field scheme has a separated model;
 that conclusion additionally uses eventual separatedness. It also makes
 no assertion about topological properties of adelic point spaces.
@@ -65,6 +65,7 @@ specified finite extension of the rational-function field. Restricting
 to finite constants and Conrad's nonempty place sets recovers his
 function-field case.
 
-This pair states existence. Its proof, the actual integer-colimit proof
-and generic filtered-ring model-existence proof retain their own
-independent review and publication obligations.
+This pair states existence. Its proof is `adelicSpreadExistence` in
+`AdelicSpreadExistenceProof`, which uses the actual integer-colimit proof
+`AdelicSIntegersColimitProof` and the generic filtered-ring model-existence
+proof `schemeFilteredModelExistence` (`SchemeFilteredModelExistenceProof`).

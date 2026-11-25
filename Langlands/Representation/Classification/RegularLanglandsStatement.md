@@ -1,7 +1,5 @@
 # The regular-chamber Langlands quotient theorem for GL_n
 
-Author: Worker 19.
-
 `Langlands.GLRegularLanglandsQuotientStatement` is the conjunction of three
 proposition definitions for actual complex representations of `GL_n(F)` over
 every finite extension of `Q_p`. It states the regular-positive tempered form
@@ -79,8 +77,7 @@ and every Borel Haar measure. It is independent of the conclusions here.
 The retained Silberger article was read in full; its theorem and
 formula-bearing pages were checked as page images. Kudla's printed
 pp.367–368 and 372–374 were also read directly for the explicit block and
-analytic conventions. No errata file for either source was present in the
-current Library when this pair was prepared.
+analytic conventions. The Library has no errata file for either source.
 
 | Source | Exact locations | Correspondence |
 | --- | --- | --- |
@@ -183,8 +180,18 @@ its own adaptation:
   this corrected statement. It does not certify the printed selection
   argument, and it does not prove any of the three clauses of this pair.
 
-When this text was revised, `glMaximalConeJacquetQuotient` was the only
-Library proof of a statement in this list.
+Every statement in this list except `GLRelativeGenericParameterStatement` is
+proved in the Library: by `glRelativeGenericJacquetMultiplicity`,
+`glRelativeGenericHead` and `glRelativeGenericComparison` in
+`Classification/RelativeGenericComparisonProof`; by
+`glRelativeRegularComparison` in `Classification/RelativeRegularComparisonProof`;
+by `glSupportedRelativeRecovery`, `glTemperedRelativeQuotientReflection` and
+`glRelativeRecovery` in `Classification/SupportedRelativeRecoveryProof`,
+`Classification/TemperedRelativeQuotientReflectionProof` and
+`Classification/RelativeRecoveryProof`; by `relativeCosocleMultiplicity` in
+`Classification/RelativeCosocleMultiplicityProof`; by
+`glSemistandardLanglandsConjugacy` in `Classification/SemistandardLanglandsProof`;
+and by `glMaximalConeJacquetQuotient`.
 
 The other inputs to Silberger's route also have separate targets, and their
 status differs:
@@ -214,13 +221,17 @@ status differs:
   `glTemperedDiscreteSeriesJacquetQuotient`.
   `GLTemperedInductionPrerequisitesStatement` combines unitarity, proved by
   `glTemperedUnitarity`, with `GLTemperedInductionStatement`, which is
-  unproved. None of the three conjunctions is a named Library theorem.
+  proved by `glTemperedInduction` in `Classification/TemperedInductionProof`.
+  None of the three conjunctions is a named Library theorem.
 - No Lean result converts Silberger's regular chamber into the `StrictAnti`
   condition. That conversion is the computation documented above.
-- The three clauses of this pair are unproved.
+- The three clauses of this pair are proved separately, by
+  `glRegularLanglandsHeadExistence`, `glRegularLanglandsDataUniqueness` and
+  `glRegularLanglandsExhaustion` in
+  `Classification/RegularLanglandsHeadExistenceProof`,
+  `Classification/RegularLanglandsDataUniquenessProof` and
+  `Classification/RegularLanglandsExhaustionProof`. Their conjunction
+  `GLRegularLanglandsQuotientStatement` is not a named Library theorem.
 
 The sole project import is `LanglandsData`. No proposition from these
 families is imported, either as a proved fact or as a hypothesis.
-
-Worker 1058 updated this status paragraph for the 2026-10-29 documentation
-audit; the Lean file is unchanged.

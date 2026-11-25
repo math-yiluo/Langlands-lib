@@ -1,6 +1,6 @@
 # Scaling the quadratic root coordinates and their depths
 
-Worker 1676 derives this module internally from the displayed coordinate equation and group operations of `SU3RootParameters` and the depth and filtration definitions of `SU3RootValuation` and `SU3RootFiltration`. It makes no additional literature claim.
+This module is derived internally from the displayed coordinate equation and group operations of `SU3RootParameters` and the depth and filtration definitions of `SU3RootValuation` and `SU3RootFiltration`. It makes no additional literature claim.
 
 Over any commutative ring `A` with the published involution `c`, `Parameters.scale a` sends `(u,v)` to `(a*u, (a*bar(a))*v)`. The trace of its second coordinate is the scalar `a*bar(a)` times the original trace. The coordinate equation therefore remains true. The multiplication formula is preserved because each cross term is multiplied by the same scalar `a*bar(a)`. These calculations prove that this is an actual group homomorphism, including for nonunits. The coordinate formulas are recorded separately.
 

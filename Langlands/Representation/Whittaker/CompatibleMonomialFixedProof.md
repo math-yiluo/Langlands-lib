@@ -1,7 +1,5 @@
 # Compatible monomial representatives are fixed by Weyl-conjugated transpose
 
-Author: Worker 826.
-
 The theorem `Langlands.Whittaker.compatibleMonomialFixed` has type exactly
 `Langlands.Whittaker.CompatibleMonomialFixedStatement.{uF}`. That statement is
 imported unchanged from

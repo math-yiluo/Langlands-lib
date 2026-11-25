@@ -1,6 +1,6 @@
 # Degree-zero Tate corestriction and field norms
 
-This derived supporting unit proves the comparison of actual degree-zero Tate
+This module proves the comparison of actual degree-zero Tate
 corestriction with the determinant norm in a finite Galois tower `M/L/K`,
 in common arbitrary universe `u`.
 

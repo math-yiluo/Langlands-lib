@@ -1,10 +1,13 @@
 # Intertwining kernels of compact induction from an open subgroup
 
-Worker 3557 states
+This file states
 `Langlands.Induction.CompactInductionIntertwiningStatement.{uR,uG,uV,uW}`,
 the conjunction of three propositions about maps between compactly induced
-representations. These are proposition definitions and targets for separate
-proofs. Defining them does not assume their truth.
+representations. These are proposition definitions; the three are proved
+separately, by `Langlands.Induction.compactInductionKernel`
+(`OpenIntertwiningKernelProof`), `compactInductionDoubleCoset`
+(`OpenIntertwiningDoubleCosetProof`) and `compactInductionFiniteTypeKernel`
+(`OpenIntertwiningFiniteTypeProof`). Defining them does not assume their truth.
 
 ## Conventions of the imported constructions
 
@@ -113,10 +116,10 @@ Birkhäuser, 1996.
 - SHA-256:
   `4d2daeee16515f994dfb04157915179b55b30d5bf2f874a16f13e7cb6fa7d657`.
 
-Printed page `n` of Chapter I is PDF page `n + 18`. The author read and
-visually checked I.8 introduction, 8.1 and 8.2 (printed pp.64–65, PDF
+Printed page `n` of Chapter I is PDF page `n + 18`. The
+I.8 introduction, 8.1 and 8.2 (printed pp.64–65, PDF
 pp.82–83), the proof of 8.3 (i), (iii) (printed p.66, PDF p.84) and 8.5
-(printed pp.67–68, PDF pp.85–86).
+(printed pp.67–68, PDF pp.85–86) were read and checked visually.
 
 I.8.5 takes closed subgroups `K`, `H` of a locally profinite group `G` with
 `K` open, `(σ, W) ∈ Mod_R K` of finite type and `(π, V) ∈ Mod_R H`. It
@@ -128,7 +131,7 @@ cosets `HgK` and b) `f(hgk) = π(h) f(g) σ(k)`. The dictionary is
 two important cases. In §8, `K` is an open subgroup that is compact modulo the
 centre (introduction of §8, printed p.64).
 
-This unit treats the case of one subgroup `K = H` for both representations,
+This file treats the case of one subgroup `K = H` for both representations,
 with the source's `(σ, W)` and `(π, V)` renamed `(σ, V)` and `(τ, W)`, so
 values lie in `Hom_R(V, W)`.
 
@@ -180,13 +183,16 @@ source.
   the first statement describes all maps between depth-zero compact
   inductions by kernels on `G(K)`, and the second and third by values at
   double cosets of `G^0(R)` when `G^0(R)` is compact. This is the "basic
-  intertwining or double-coset theorem" that the Kaletha–Prasad source ledger
-  (`notes/bruhat-tits/kp-source-ledger.md`, Section 13.2.6 consumer) lists as
-  open. Openness and compactness of `D.neutral.integralPoints` are not
+  intertwining or double-coset theorem" of the Section 13.2.6 consumer in the
+  Kaletha–Prasad source ledger (`notes/bruhat-tits/kp-source-ledger.md`);
+  `Langlands.BruhatTits.IntegralModels.DepthZeroIntertwining` specializes the
+  three proofs to depth zero. Openness and compactness of `D.neutral.integralPoints` are not
   established on supplied models. For the canonical topology of a local field,
   `localFieldDepthZeroInductionHomEquiv` derives openness from its premise
-  `LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement`; compactness
-  is a separate obligation. This unit records no depth-zero specialization as a Lean
+  `LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement`, which
+  `congruenceNeighborhoodBasis_proof` (in
+  `GroupScheme.IntegralModel.CongruenceNeighborhoodBasisProof`) proves; its first
+  conjunct also gives compactness. This file records no depth-zero specialization as a Lean
   declaration and states nothing about irreducibility or supercuspidality.
 
 ## Proof obligations for the separate proofs
@@ -224,16 +230,13 @@ not an input to the statements.
 `quotientSupport`. `Mathlib.GroupTheory.DoubleCoset` (imported) supplies
 `DoubleCoset.Quotient` and `DoubleCoset.mk`. Mathlib supplies
 `Representation.asModule` and `MonoidAlgebra`. This file introduces only the
-two predicates and the four propositions; every imported Lean/Markdown pair is
-unchanged.
+two predicates and the four propositions.
 
 ## Development check
 
-The module compiled in environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`
+The module compiled
 with no errors or warnings. Declaration inspection of each of the four
 propositions and the two predicates reported `statement_returns_prop: true`.
 The axioms were exactly `propext`, `Classical.choice` and `Quot.sound`, except
 for `IsLocalIntertwinerFamily`, which uses only `propext` and `Quot.sound`.
-The entry declaration has level parameters `uR`, `uG`, `uV` and `uW`. This is
-development evidence; independent semantic review and publication are
-separate.
+The entry declaration has level parameters `uR`, `uG`, `uV` and `uW`.

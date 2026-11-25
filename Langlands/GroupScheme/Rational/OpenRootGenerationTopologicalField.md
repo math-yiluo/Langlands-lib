@@ -1,6 +1,6 @@
 # Open root generation over a general topological field
 
-This internal derived unit generalizes the Library's canonical-topology
+This internal derived module generalizes the Library's canonical-topology
 open-root argument to fields with a topological ring structure and open
 units. It uses the already proved actual ordered relative-root products,
 generic cocharacter and centralizer comparison, and the general-field
@@ -32,6 +32,6 @@ operations then proves openness.
 The argument uses no Hausdorffness, local compactness, completeness,
 valuation, or residue-field finiteness. The scheme-chart topology in the
 opposite-cell theorem is identified with the canonical affine topology by
-the published equality. This unit supplies an openness implication from
+the published equality. This module supplies an openness implication from
 actual open root and centralizer subgroups; it neither constructs integral
 models nor identifies a generated subgroup with a neutral model's points.

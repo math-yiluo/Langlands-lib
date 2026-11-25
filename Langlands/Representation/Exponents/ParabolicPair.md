@@ -1,8 +1,6 @@
 # Concrete block parabolic pairs and character restriction
 
-Author: Worker 19.
-
-This definition unit represents a parabolic pair of `GL_n` by a positive ordered
+This module of definitions represents a parabolic pair of `GL_n` by a positive ordered
 block shape and a conjugating matrix. The actual parabolic is the conjugate of
 the standard upper block parabolic. The split component is the image of the
 conjugated block-scalar homomorphism. These are constructed subgroups; there are
@@ -43,7 +41,7 @@ standard refinements is built into the ordering. The source's algebraic-group
 conjugacy theorem is not proved here, nor is this an abstract algebraic-group
 formalization. The same subgroup and coordinate constructions work over any
 commutative ring as an internal extension. Field/ring universe is arbitrary;
-no representation carrier occurs in this unit.
+no representation carrier occurs in this module.
 
 No dual-exponent finiteness, nilpotence comparison, weak-critical support theorem,
 Jacquet transitivity, or Haar-modulus assertion is made here. This construction

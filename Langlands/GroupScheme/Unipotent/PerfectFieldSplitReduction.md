@@ -1,6 +1,6 @@
 # A represented unipotent split series over a perfect field
 
-Worker 1569, generalizing the Library's algebraically closed induction.
+This module generalizes the Library's algebraically closed induction.
 
 `perfectFieldSplit_of_oneDimensional` constructs a finite represented split
 series for every smooth connected affine unipotent group over a perfect field,

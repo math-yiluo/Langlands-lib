@@ -83,4 +83,5 @@ axioms, and the module comparison is ordinary tensor commutation and
 base-change cancellation. The file supplies these ring-level constructions
 and comparisons only. Extraction of the coordinate equivalence from a scheme
 cover, transfer of cocycle vanishing, and geometric Noetherian dévissage are
-separate remaining steps of the host task.
+separate steps, outside this file, of the finite-cover acyclicity argument
+that it serves.

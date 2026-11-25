@@ -1,7 +1,5 @@
 # Rational normalizer points acting on adelic torus points
 
-Author: Worker 2.
-
 This internal helper module supplies the elementary identity behind the Weyl
 group argument in Springer's overlap estimate (Springer, *Reduction theory over
 global fields*, 1994, Proposition 2.6). A rational representative `n` of a Weyl

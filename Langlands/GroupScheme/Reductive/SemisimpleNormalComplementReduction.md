@@ -1,7 +1,5 @@
 # Normal complements from almost-simple generation
 
-Author: Worker 1454.
-
 `CommutingNormalComplement j` bundles an actual group scheme, its closed
 inclusion into the ambient group, normality of its full range, commutation with
 the given subgroup on every test scheme, and flatness and surjectivity of

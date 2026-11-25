@@ -1,7 +1,5 @@
 # Topology of actual discrete curve-place adelic levels
 
-Author: Worker 208.
-
 `CurvePlaceAdeleLevelTopologyStatement` quantifies arbitrary fields `k` and
 `F` with a `k`-algebra structure in a common universe `u`. It concerns the
 existing concrete `AlgebraicCurve.Place k F`: nontrivial principal valuation

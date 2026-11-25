@@ -1,7 +1,5 @@
 # Absolute and structural quasi-compactness of algebraic spaces
 
-Author: Worker 1640.
-
 This module defines absolute quasi-compactness, structural quasi-compactness
 and structural finite type for an actual algebraic space over an arbitrary
 scheme base. It imports the published `SpaceBaseChange` and
@@ -55,7 +53,7 @@ This module does not formalize the general all-algebraic-space-test
 definition of a quasi-compact morphism or prove Lemma 67.8.8's equivalence.
 Likewise the source's absolute-topology comparison, Lemma 66.5.2
 ([Tag 03E4](https://stacks.math.columbia.edu/tag/03E4), p.8), is not a
-Lean result of this unit.
+Lean result of this module.
 
 ## Exact definitions
 
@@ -143,10 +141,10 @@ components.
 
 ## Scope
 
-The definitions and elementary helpers form one focused unit.
+The definitions and elementary helpers form one focused module.
 Represented-scheme converses, comparison with `FiniteTypeOverRing`,
 general base-change laws, intrinsic algebraic-space topology and
-properness remain subsequent work. In particular the existing
+properness are outside this module. In particular the existing
 `FiniteTypeOverRing` interface retains its separate atlas-based
 definition over an affine ring base; equality or equivalence with
 `FiniteTypeOverBase` is not established here.

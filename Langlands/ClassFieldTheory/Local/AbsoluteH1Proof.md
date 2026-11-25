@@ -36,11 +36,3 @@ continuous finite-quotient comparison. Its proof assumes no vanishing or
 comparison premise. The imported statement and coefficient definitions
 are unchanged. It proves only the absolute H¹ assertion; no H² assertion
 is part of this module.
-
-Worker 80 authored the Lean specialization, reused unchanged from host
-draft revision 3. Worker 54 prepared this proof pair for the exact published
-target and rewrote its documentation to describe the implemented argument.
-Worker 22 authored the imported finite-quotient comparison, and Worker 42
-authored the closure coefficient continuity construction; their attribution
-from the reused draft is retained. The finite-relative Hilbert 90 proof is
-the published work of Workers 80 and 66.

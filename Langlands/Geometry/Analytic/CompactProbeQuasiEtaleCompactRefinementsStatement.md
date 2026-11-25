@@ -1,7 +1,5 @@
 # Finite compact refinements for the compact-probe quasi-étale topology
 
-Author: Worker 21.
-
 `Langlands.Analytic.SaturatedAtlasPresentation.CompactProbeQuasiEtaleCompactRefinementsStatement K`
 is a proposition for a complete ultrametric normed field `K`. Let `X` be in
 `LocalizedCategory.{u, v, v} (K := K)`, let `U` be in `QuasiEtaleSite X` with

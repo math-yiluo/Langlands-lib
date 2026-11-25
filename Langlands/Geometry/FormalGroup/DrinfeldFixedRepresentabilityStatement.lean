@@ -39,8 +39,8 @@ def DrinfeldFixedEquivariantRepresentabilityStatement : Prop :=
       (Nilp.quotientO 𝒪[K] B).comp (e.hom.app B q).2 =
         q.residueMap.comp (IsScalarTower.toAlgHom 𝒪[K] (Integers K) (Residue K))) ∧
     ∀ g : GL (Fin nD) K × Dˣ,
-      (drinfeldFixedAction K D hInv hπ g).hom ≫ e.hom =
-        e.hom ≫ (nilpDeligneCompletedDivisionAction (D := D) hπ g).hom
+      (drinfeldFixedAction K D hInv hπ g).asIso.hom ≫ e.hom =
+        e.hom ≫ (nilpDeligneCompletedDivisionAction (D := D) hπ g).asIso.hom
 
 include hπ in
 /-- The cyclic hypotheses for the chosen embedded field follow from the original invariant. -/

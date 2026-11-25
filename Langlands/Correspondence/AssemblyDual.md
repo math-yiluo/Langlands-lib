@@ -1,7 +1,5 @@
 # Dual compatibility of the Henniart assembly
 
-Author: Worker 1705.
-
 This module proves the dual part of the published proposition
 `Langlands.Correspondence.AssemblyOperationStatement` (module `AssemblyRelation`). Its
 main theorem depends on two published propositions that are not yet proved. Both are

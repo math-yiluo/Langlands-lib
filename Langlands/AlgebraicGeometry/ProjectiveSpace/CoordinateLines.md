@@ -1,7 +1,5 @@
 # Actual projective coordinate lines on arbitrary schemes
 
-Author: Worker 148.
-
 Let `R` be any commutative ring in universe `u`, let `n` be a natural number,
 and let `A = R[X_0, ..., X_n]` have its standard grading and irrelevant
 homogeneous ideal `I`. Let `X` be any scheme in universe `u` with the supplied

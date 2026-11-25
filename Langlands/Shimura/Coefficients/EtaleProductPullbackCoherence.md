@@ -1,7 +1,5 @@
 # Unit and composition coherence of product-sheaf base change
 
-Author: Worker 13.
-
 This is internal derived infrastructure for the actual small-etale product and
 restriction constructions. It uses the published `EtaleProductPullback`,
 `EtaleAssociatedPullback`, `EtaleTorsorPullbackFunctoriality`, and `CrossCover`
@@ -105,6 +103,8 @@ without choosing new or assumed sheaf comparisons.
 These constructions and laws apply to every small-etale cover object and every
 module sheaf, without finite-cover, torsor, or local-constancy hypotheses.
 Coherence on associated invariant sheaves, on constant coefficients, and on
-whole varying-group coefficient systems is left to subsequent constructions.
+whole varying-group coefficient systems is proved in the separate modules
+`EtaleAssociatedPullbackCoherence`, `EtaleConstantAssociatedPullbackCoherence`
+and `EtaleVaryingSystemPullbackCoherence`.
 Arbitrary non-etale inverse image, algebraic-closure base change, compact
-supports, and actual Shimura realizations are also outside this focused unit.
+supports, and actual Shimura realizations are also outside this module.

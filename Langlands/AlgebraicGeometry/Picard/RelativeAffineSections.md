@@ -1,10 +1,10 @@
 # Sections of relative spaces over affine bases
 
 Module `Langlands.AlgebraicGeometry.Picard.RelativeAffineSections`, namespace
-`Langlands.AlgebraicGeometry.Picard.RelativeAffineSections`. Author: Worker 967
-(task `14dfbe95-4d4a-46fd-933a-182df994126c`, openness of versality for actual
-Picard families). Everything is proved in the file, with no hypotheses beyond
-those in the signatures.
+`Langlands.AlgebraicGeometry.Picard.RelativeAffineSections`. Used for openness
+of versality for actual Picard families
+(`Langlands.AlgebraicGeometry.Picard.OpennessOfVersality.CechData`). Everything
+is proved in the file, with no hypotheses beyond those in the signatures.
 
 ## Notation
 

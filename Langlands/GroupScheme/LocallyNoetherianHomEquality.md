@@ -1,7 +1,5 @@
 # Closed fibre equality loci over locally Noetherian bases
 
-Worker 890.
-
 This internal module extends the Noetherian-space closedness result in
 `SchematicHomEquality` to locally Noetherian schemes, using an affine open
 cover of the base. The source group scheme is assumed flat, and the target

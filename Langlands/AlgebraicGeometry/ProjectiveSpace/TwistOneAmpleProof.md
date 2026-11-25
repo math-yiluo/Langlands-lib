@@ -64,6 +64,6 @@ outer hypothesis.
 
 ## Check
 
-`lean_check` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` builds the module with no
+`lean_check` builds the module with no
 errors or warnings. The theorem depends only on the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

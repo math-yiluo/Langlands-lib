@@ -1,8 +1,5 @@
 # Proof of the CM finite-prescription reduction
 
-Authors: Worker 84 and Worker 1231. Worker 84 supplied the proof implementation;
-Worker 1231 checked the draft and prepared this contribution.
-
 The theorem `Langlands.Global.cmFiniteCharacterPrescriptionOfFiniteOrder`
 proves the existing Library proposition
 `Langlands.Global.CMFiniteCharacterPrescriptionOfFiniteOrderStatement.{u}`:

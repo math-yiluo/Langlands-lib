@@ -1,8 +1,5 @@
 # Refined orbit strata for Henniart's numerical correspondence
 
-Author: Worker 360, Task 7370
-(`67ed0c1d-b4a2-42ea-9861-a79f84aff975`), revision 1.
-
 This module defines the Swan exponents, torsion numbers, refined orbit strata
 and counts used in Option II of the operator's numerical local Langlands
 route. It states four propositions and proves none of them. All mathematical
@@ -28,7 +25,7 @@ The Artin-integrality source is Jean-Pierre Serre, *Local Fields*, translated
 by Marvin Jay Greenberg, Graduate Texts in Mathematics 67, Springer, 1979,
 registered `serre-1979-local-fields`, SHA-256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-The retained file is `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`.
+The retained file is `Serre--Local Fields--1979.pdf` in the central library.
 Chapter VI §2, Theorem 1′, printed p.99 (PDF page 106), says that the Artin
 conductor of every finite-group character is a nonnegative integer; the
 ramification-sum expression is Proposition 2, Corollary 1′, pp.100–101
@@ -37,7 +34,8 @@ The Weil-class existence proposition below is the corresponding derived
 target for the Library's finite inertia presentations, rather than a literal
 statement in Serre about the Library's classes. Establishing presentations,
 their surjective inertia restrictions, and applying finite-group integrality
-remain obligations for its separate proof.
+are the work of its separate proof, `weilArtinConductorExistence` (module
+`HenniartWeilArtinConductorExistenceProof`).
 
 The source note treats non-archimedean local fields in §2 and p-adic fields in
 §6. This module covers precisely all `K : PadicField.{uK} p`, for all primes
@@ -104,7 +102,7 @@ universe `uW`, and supercuspidal carrier universe `uV` are independent.
    equal `encard`, and the supercuspidal stratum is finite. The slopes use
    real arithmetic, with natural rank and Swan exponent coerced to `ℝ`.
    There is no hypothesis `x ≥ 0` or `N ≥ 1`; the formula applies to every
-   real `x` and natural `N`, as specified by the task.
+   real `x` and natural `N`.
 
 All stratum counts use `Set.encard : Set α → ℕ∞`, so an infinite set has
 count `⊤`. Equality of these counts together with the stated
@@ -151,8 +149,8 @@ The converse's explicit conductor hypothesis accounts for the fact that
 `HasArtinConductor` is a relation based on finite inertia presentations:
 conductor preservation alone does not give a natural conductor for a
 preimage. The paper lemma uses the underlying existence implicitly. The
-hypothesis here is precisely the bounded-rank hypothesis required by the
-task, with no global integrality assumption or proof included. GL-side
+hypothesis here is precisely a bounded-rank hypothesis, with no global
+integrality assumption or proof included. GL-side
 finiteness in the intended proof is supplied by the published
 `Langlands.Henniart.supercuspidalOrbitStratumFiniteness`; it is not added
 as a hypothesis of this statement.
@@ -162,11 +160,14 @@ as a hypothesis of this statement.
 It packages preservation and the counting lemma, without adjoining
 `WeilArtinConductorExistenceStatement`.
 
-## Dependencies and remaining work
+## Dependencies and proofs
 
 The module imports the unchanged published numerical-statement module and
 Mathlib's set-cardinality and natural-divisor interfaces. It introduces no
-proofs or axioms. Each of the four proposition targets remains to be proved
-in a separate task. In particular no correspondence, finiteness theorem,
+proofs or axioms. The proposition targets are proved in other modules:
+`RefinedStrataStatement`, and with it its two components, as `refinedStrata`
+(module `HenniartRefinedStrataProof`), and `WeilArtinConductorExistenceStatement`
+as `weilArtinConductorExistence` (module `HenniartWeilArtinConductorExistenceProof`).
+In particular no correspondence, finiteness theorem,
 stabilizer theorem, or explicit counting formula is established by these
 definitions.

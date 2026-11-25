@@ -18,7 +18,7 @@ def GeometricTateDeterminantKernelStatement : Prop :=
   ∀ (k : Type u) [Field k] [IsAlgClosed k] [CharZero k]
     (A : AbelianScheme (Spec (CommRingCat.of k)))
     (p : ℕ) [Fact p.Prime] (f : End A),
-    ‖LinearMap.det (Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p f)‖ =
-      ‖(Nat.card (GroupScheme.pointsHom (groupHom f) (Over.mk (𝟙 _))).ker : ℚ_[p])‖
+    ‖LinearMap.det (Tate.PrimeAdic.rationalMap (Over.mk (𝟙 _)) p f.asHom)‖ =
+      ‖(Nat.card (GroupScheme.pointsHom (groupHom f.asHom) (Over.mk (𝟙 _))).ker : ℚ_[p])‖
 
 end Langlands.AbelianScheme

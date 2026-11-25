@@ -28,8 +28,8 @@ right-coset fibers on all tests. A subgroup functor is contained in its full
 normalizer, so those fibers meet the required normalizer condition. No
 self-normalizer hypothesis is needed for this construction.
 
-This unit constructs an actual parabolic family on a supplied parameter scheme.
+This module constructs an actual parabolic family on a supplied parameter scheme.
 It does not construct that scheme, prove the parameterization injective or
 surjective onto a local conjugacy type, or prove smooth proper representability
-of the complete parabolic functor. Those remain separate obligations of the
-host proof task.
+of the complete parabolic functor. Those are separate parts of the proof of
+`RelativeParabolicSchemeStatement`, which `ParabolicSchemeProof` proves.

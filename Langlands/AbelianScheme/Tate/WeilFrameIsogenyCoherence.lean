@@ -86,10 +86,10 @@ product of its actual geometric multipliers. -/
 def weilAdelicFrameIsogenyComp (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -107,10 +107,10 @@ local notation "isogenyComp" => weilAdelicFrameIsogenyComp preservation composit
 theorem weilAdelicFrameIsogenyComp_eq_trans (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -127,8 +127,8 @@ theorem weilAdelicFrameIsogenyComp_eq_trans (q r : ℚˣ)
 /-- Transport for the inverse rational isogeny, with its derived inverse
 geometric multiplier. -/
 def weilAdelicFrameIsogenyInverse (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : FrameB ≃ FrameA :=
   isogenyBA q⁻¹ e.symm (rationalIntertwines_inverse iA iB e he)
@@ -140,8 +140,8 @@ local notation "isogenyInverse" => weilAdelicFrameIsogenyInverse preservation co
 
 /-- Reversing the rational isogeny gives the inverse frame equivalence. -/
 theorem weilAdelicFrameIsogeny_symm (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     (isogenyAB q e he hqe).symm = isogenyInverse q e he hqe := by
@@ -182,10 +182,10 @@ product of its actual geometric multipliers. -/
 def weilPrimeToAdelicFrameIsogenyComp (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -203,10 +203,10 @@ local notation "isogenyComp" => weilPrimeToAdelicFrameIsogenyComp preservation c
 theorem weilPrimeToAdelicFrameIsogenyComp_eq_trans (q r : ℚˣ)
     (e : Rationalization.of A ≅ Rationalization.of B)
     (f : Rationalization.of B ≅ Rationalization.of C)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
-    (hf : ∀ d, Rationalization.comp B B C (iB d) f.hom =
-      Rationalization.comp B C C f.hom (iC d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
+    (hf : ∀ d, Rationalization.comp B B C (iB d).asHom f.hom =
+      Rationalization.comp B C C f.hom (iC d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB))
     (hrf : multipleBC (r : ℚ) f.hom
@@ -223,8 +223,8 @@ theorem weilPrimeToAdelicFrameIsogenyComp_eq_trans (q r : ℚˣ)
 /-- Transport for the inverse rational isogeny, with its derived inverse
 geometric multiplier. -/
 def weilPrimeToAdelicFrameIsogenyInverse (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) : FrameB ≃ FrameA :=
   isogenyBA q⁻¹ e.symm (rationalIntertwines_inverse iA iB e he)
@@ -236,8 +236,8 @@ local notation "isogenyInverse" => weilPrimeToAdelicFrameIsogenyInverse preserva
 
 /-- Reversing the rational isogeny gives the inverse frame equivalence. -/
 theorem weilPrimeToAdelicFrameIsogeny_symm (q : ℚˣ) (e : Rationalization.of A ≅ Rationalization.of B)
-    (he : ∀ d, Rationalization.comp A A B (iA d) e.hom =
-      Rationalization.comp A B B e.hom (iB d))
+    (he : ∀ d, Rationalization.comp A A B (iA d).asHom e.hom =
+      Rationalization.comp A B B e.hom (iB d).asHom)
     (hqe : multipleAB (q : ℚ) e.hom
       (Rationalization.ofHom lamA) (Rationalization.ofHom lamB)) :
     (isogenyAB q e he hqe).symm = isogenyInverse q e he hqe := by

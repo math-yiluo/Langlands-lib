@@ -1,7 +1,5 @@
 # Proof: simple connectedness forces integral coroot generation
 
-Author: Worker 4342.
-
 This module proves the published proposition
 `Langlands.GroupScheme.SplitSimplyConnectedCorootSpanStatement`
 ([`SplitNecessityStatement`](SplitNecessityStatement.md)) at its original

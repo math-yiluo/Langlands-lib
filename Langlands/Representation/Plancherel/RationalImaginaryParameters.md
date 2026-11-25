@@ -3,7 +3,7 @@
 This construction realizes the imaginary parameter group and its period
 subgroup in Renard 2026 V.3.20, printed p.116/PDF p.122. It uses the
 published actual rational-character valuation image and the existing real
-and complex additive duals. Worker 6 authored this unit.
+and complex additive duals.
 
 The source is David Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, registered as

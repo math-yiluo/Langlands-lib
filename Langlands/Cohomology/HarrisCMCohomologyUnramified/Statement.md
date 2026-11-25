@@ -1,15 +1,13 @@
 # Unramified Galois actions on geometric CM torsion cohomology
 
-Author: Worker 3, for the Harris and Berkovich cohomological
-theorem-statement framework (task `b91b0934-0122-4c05-b359-4e7ed64bbe3d`).
-
 This module states one proposition, `HarrisCMCohomologyUnramifiedStatement`,
-about Worker 57's étale cohomology of the geometric CM levels with torsion
+about the étale cohomology of the geometric CM levels with torsion
 coefficients. Fix a small CM level `U`, write `F̄ = AlgebraicClosure F` and
-`X̄_U = X_U ×_{Spec F} Spec F̄`, and let `B_r` be the `r`-th stage of Worker
-57's original stable-lattice torsion coefficient system pulled back to
-`X̄_U`. Worker 57 constructs an action of `F̄ ≃ₐ[F] F̄` on every cohomology
-module `H^d(X̄_U, B_r)`. The proposition says that there is one finite set
+`X̄_U = X_U ×_{Spec F} Spec F̄`, and let `B_r` be the `r`-th stage of the
+original stable-lattice torsion coefficient system `cmHarrisCoefficientSystem`
+pulled back to `X̄_U`. The module
+`Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology` constructs an
+action of `F̄ ≃ₐ[F] F̄` on every cohomology module `H^d(X̄_U, B_r)`. The proposition says that there is one finite set
 `S` of finite places of `F` such that for every degree `d`, every stage `r`
 and every finite place `w ∉ S`, this action is unramified at `w`: the
 inertia subgroup of the completion `F_w` acts trivially. The set `S` does not
@@ -18,14 +16,14 @@ published `Langlands.Shimura.DecompositionGroupAction`. Nothing is proved
 here.
 
 The published companion
-[HarrisCMCohomology](../HarrisCMCohomology/Statement.md), by the same
-author, states that the same modules are finite and that the same action is
+[HarrisCMCohomology](../HarrisCMCohomology/Statement.md)
+states that the same modules are finite and that the same action is
 smooth for the Krull topology.
 
 ## Objects
 
-All arithmetic types live in `Type` (universe zero), as in Worker 57's
-modules. The binders are copied from
+All arithmetic types live in `Type` (universe zero), as in the imported
+`Langlands.Shimura.PEL` modules. The binders are copied from
 `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology`, as in the
 companion. They are:
 
@@ -49,19 +47,19 @@ companion. They are:
   premises `existence`, `geometry` and `hRigid` (coarse rigidity at `U.obj`);
 - the instances
   `[HasDerivedCategory.{wS} (EtaleDerivedSections.ModuleSheaf X̄_U R)]` and
-  `[HasDerivedCategory.{wR} (ModuleCat.{0} R)]`, which Worker 57's action
+  `[HasDerivedCategory.{wR} (ModuleCat.{0} R)]`, which the Galois action
   needs. They fix sizes of localizations and do not change the module
   `H^d(X̄_U, B_r)`. The proposition has the universe parameters `wS` and
   `wR` of these instances.
 
 ### Proof status of the premises
 
-The Lean definition keeps every premise as an explicit hypothesis, as Worker
-57's modules do. That a premise is a parameter does not mean that it is
+The Lean definition keeps every premise as an explicit hypothesis, as the
+imported `Langlands.Shimura.PEL` modules do. That a premise is a parameter does not mean that it is
 unproved. In Library commit `568f1cff4df2c51ba08b932716bf99235d0032c7`,
 thirteen of the premise types have published proofs, so a user can pass these
-theorems as the corresponding arguments. Check `5377f756` (see the checks
-below) confirms that each theorem, at universe zero, has the premise type.
+theorems as the corresponding arguments. The first of the checks
+below confirms that each theorem, at universe zero, has the premise type.
 
 | Premise | Type | Library theorem | Module |
 | --- | --- | --- | --- |
@@ -102,12 +100,20 @@ is the premise type.
   says that it "is not inferred from sufficiently small level", and every
   Library module that uses it takes it as a hypothesis.
 
+In the Library as it is now, `square`, `existence` and `geometry` are proved as
+well: `Langlands.AbelianScheme.mumfordBundlePicardZero` (module
+`Langlands.AlgebraicGeometry.Picard.MumfordBundlePicardZeroProof`),
+`Langlands.AbelianScheme.relativeDualSchemeExistence` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeExistenceProof`) and
+`Langlands.AbelianScheme.relativeDualSchemeGeometry` (module
+`Langlands.AlgebraicGeometry.Picard.RelativeDualSchemeGeometryProof`).
+
 Since `q` is unproved, the proposition is a statement about the objects that
 any witness `q` produces. A proof must work for every such witness.
 
 ### Notation
 
-As in the companion and Worker 57's Markdown:
+As in the companion and the page of `HarrisTaylorCMGeometricGaloisCohomology`:
 
 - `X_U = (cmSchemeTower ... q).obj U`, the scheme chosen from `q`. The
   witness `q U` provides a smooth structure morphism `X_U ⟶ Spec F` and an
@@ -125,12 +131,12 @@ As in the companion and Worker 57's Markdown:
   `EtaleInverseImage.inverseImage π R`.
 - `H_d = EtaleDerivedSections.cohomology X̄_U R d`, the `d`-th right derived
   functor of global sections on sheaves of `R`-modules on the small étale
-  site of `X̄_U` (Worker 13).
+  site of `X̄_U`.
 - `G = F̄ ≃ₐ[F] F̄`. For `σ ∈ G`, `g_σ : X̄_U ⟶ X̄_U` is the identity on the
   factor `X_U` times `Spec σ` on `Spec F̄`, and `Ψ_σ` is the canonical
   isomorphism `g_σ^* B_r ≅ B_r`.
 - `cmHarrisGeometricGaloisCohomologyAction ... d : ℕᵒᵖ ⥤ Action (ModuleCat R) G`
-  is Worker 57's action. Its object at `r` has underlying module
+  is the action of `HarrisTaylorCMGeometricGaloisCohomology`. Its object at `r` has underlying module
   `H_d(B_r)`, and `σ` acts by
   `cohomologyPullbackWithCoefficients g_σ R d (Ψ_σ.hom.app r)`: pullback
   along `g_σ` followed by `Ψ_σ`. The companion's Markdown explains this
@@ -143,14 +149,14 @@ The predicate:
 - `DecompositionGroupAction.IsUnramifiedAt V w M`, for an object `M` of
   `Action V (Field.absoluteGaloisGroup F)`, says that every element of
   `localInertia w`, the kernel of the action of the absolute Galois group of
-  the completion `F_w` on the residue field of its algebraic closure (Worker
-  41's `Langlands.Galois.CompatibleFamily`), acts trivially on `M` after
+  the completion `F_w` on the residue field of its algebraic closure
+  (`Langlands.Galois.CompatibleFamily`), acts trivially on `M` after
   restriction to `Gal(F̄/F)` along Mathlib's chosen closure embedding. The
   published theorem `isUnramifiedAt_iff_along` shows that the condition does
   not depend on the closure embedding.
 - Mathlib defines `Field.absoluteGaloisGroup F` as
   `AlgebraicClosure F ≃ₐ[F] AlgebraicClosure F`, with the same group
-  structure. So Worker 57's action, an object of `Action (ModuleCat R) G`,
+  structure. So the Galois action, an object of `Action (ModuleCat R) G`,
   is passed to `IsUnramifiedAt` without any conversion; Lean accepts it by
   definitional unfolding.
 
@@ -176,7 +182,7 @@ set `S` comes before `d` and `r` in the quantifiers.
 
 ## Consequence for Frobenius elements
 
-The test lemma `frobenius_eq_of_unramified` of check `5377f756` (below)
+The test lemma `frobenius_eq_of_unramified` of the first check below
 proves that the proposition gives a finite set `S` such that for every
 degree, every stage, every finite place `w ∉ S` and every closure embedding
 `ι` at `w`, every geometric Frobenius lift `g` at `w`
@@ -190,17 +196,16 @@ proof combines `isUnramifiedAt_iff_along` with the published
 - The published [HarrisCMCohomology](../HarrisCMCohomology/Statement.md)
   states finiteness and Krull smoothness for the same modules and action.
   The present statement is independent of it.
-- The candidates `c1c7da7d-650b-424c-a2c5-a19a36cab4c0`
-  (`GaloisCohomologyUnramifiedStatement`) and
-  `13557424-c36b-4129-8ddd-01aa8d416fe0`
-  (`GaloisCohomologyGoodReductionStatement`), by the same author, approved
-  and not yet in Library `568f1cff`, state unramifiedness for Worker 13's
-  `galoisCohomologyRep`. That object has constant coefficients on a scheme
-  over a number field. It is not Worker 57's action on the CM levels:
-  Worker 13 reports that no comparison between the two actions is available
-  yet. So these statements do not apply here.
-- `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology` (no Author
-  line) restricts the Galois actions on the shrinking-level and prime-to-`m`
+- `GaloisCohomologyUnramifiedStatement` (module
+  `Langlands.Cohomology.EtaleGaloisUnramified.Statement`) and
+  `GaloisCohomologyGoodReductionStatement` (module
+  `Langlands.Cohomology.EtaleGaloisGoodReduction.Statement`) state
+  unramifiedness for `galoisCohomologyRep` (`Langlands.Geometry.EtaleGaloisAction`).
+  That object has constant coefficients on a scheme
+  over a number field. It is not the action on the CM levels used here, and
+  the Library has no comparison between the two actions.
+  So these statements do not apply here.
+- `Langlands.Shimura.PEL.HarrisTaylorCMDecompositionCohomology` restricts the Galois actions on the shrinking-level and prime-to-`m`
   colimit cohomology of the CM tower to decomposition groups. Its Frobenius
   lemma `cmPrimeToHeckeFrobenius_eq_of_lift` takes unramifiedness as a
   hypothesis. Those colimits over levels can be ramified at places dividing
@@ -213,9 +218,9 @@ This argument is derived. It combines Library facts with the cited sources;
 none of them states the proposition. Let `S` be the set of places of `F`
 dividing `p N` for an integer `N ≥ 1` chosen in step 4. The argument uses
 only that `q U` gives a smooth projective `X_U` with a universal class, and
-Worker 57's construction of the coefficient system.
+the Library's construction of the coefficient system.
 
-1. *The coefficient covers.* Fix a stage `k`. Worker 57's
+1. *The coefficient covers.* Fix a stage `k`.
    `HarrisTaylorCMCoefficientReduction` defines
    `V_k = cmHarrisCoefficientLevel ... k`, the sublevel of `U` cut out by
    `cmHarrisCongruenceKernel ... k`, the kernel of the action of `U` on the
@@ -230,7 +235,7 @@ Worker 57's construction of the coefficient system.
    `M_k` is a finite `R`-module, and every prime number other than `p` is a
    unit in `R`, so `M_k` has `p`-power order.
 
-   Worker 57's `HarrisTaylorCMCoefficientSystem.md` describes the cover:
+   The page `HarrisTaylorCMCoefficientSystem.md` describes the cover:
    `Y_k`, the scheme of the tower at `V_k`, with the forgetful map
    `Y_k ⟶ X_U`, is a finite geometric torsor under the finite group
    `SmallCMResidualGroup D U V_k`, the quotient `U / V_k`. It is étale and
@@ -343,12 +348,14 @@ Worker 57's construction of the coefficient system.
    universal δ-functor (Tôhoku Proposition 2.2.1).
 
 7. *Inertia acts trivially.* The argument is that of steps 4 and 5 for
-   `GaloisCohomologyGoodReductionStatement` (candidate `13557424`), with
+   `GaloisCohomologyGoodReductionStatement`
+   ([EtaleGaloisGoodReduction](../EtaleGaloisGoodReduction/Statement.md)), with
    `T'` in place of its base. For `σ ∈ Gal(F̄/F)`, `Spec σ` is an
    automorphism of the geometric point `Spec F̄ → T'`, and the identification
    of step 6 is natural in the geometric point. So the action of `σ` on the
    stalk `H^d(X̄_U, B_k)` is the pullback along `g_σ` followed by the
-   canonical coefficient isomorphism, Worker 57's action, possibly with `σ`
+   canonical coefficient isomorphism, the action of
+   `HarrisTaylorCMGeometricGaloisCohomology`, possibly with `σ`
    replaced by `σ⁻¹`. Such an inversion does not change which subgroup acts
    trivially. The stalk of the locally constant constructible sheaf
    `R^d f'_* 𝒜_k` is a `π_1(T')`-set (SGA 1 V §7, SGA 4 IX 2.2), so
@@ -375,13 +382,13 @@ of weight m". Theorem 5.7 there concerns the representation of
 `Gal(F̄/F)` on `H^{n-1}(S_K(N), W)[π]`, the cohomology of a unitary Shimura
 variety with coefficients in a coefficient system. Harris–Taylor (2001),
 III.1-III.2, pp.89-97, construct these Shimura varieties and their
-coefficient systems; Worker 57's construction follows them.
+coefficient systems; the Library's construction follows them.
 
 The proposition is the finite-level, torsion-coefficient input to such
 `λ`-adic statements, for the Library's objects:
 
 - Harris's `S_K(N)` and sheaves are not the Library's `X̄_U` and `B_r`;
-  Worker 57's levels are the Harris–Taylor CM PEL levels, conditional on the
+  the Library's levels are the Harris–Taylor CM PEL levels, conditional on the
   premises above;
 - the statement is at one fixed level `U` and for each coefficient stage
   `r`, with one exceptional set for all stages and degrees. The `λ`-adic
@@ -392,7 +399,7 @@ The proposition is the finite-level, torsion-coefficient input to such
 | Lean | Source |
 | --- | --- |
 | `∃ S, S.Finite ∧ ∀ degree r w, w ∉ S → IsUnramifiedAt ...` | Harris 1999 §5, p.313, "unramified at all but finitely many places", for all torsion stages at once |
-| `X̄_U`, `B_r`, the action of `F̄ ≃ₐ[F] F̄` | Harris–Taylor III.1-III.2, as constructed by Worker 57 |
+| `X̄_U`, `B_r`, the action of `F̄ ≃ₐ[F] F̄` | Harris–Taylor III.1-III.2, as constructed in `Langlands.Shimura.PEL` |
 | truth argument | Harris–Taylor III.1 p.91 (monodromy); Stacks 01ZM, 0C0C, 081F, 03H0 (model); SGA 1 V 8.2; SGA 4 XV 2.1 and XVI 2.1 |
 
 ## Scope
@@ -406,9 +413,9 @@ The statement does not cover:
 - Frobenius eigenvalues, purity, Euler factors, or local-global
   compatibility, including Harris 1999 Theorem 5.7 itself;
 - Hecke operators, compact supports, or intersection cohomology;
-- a proof of any premise. The open premises `square`, `q`, `existence`,
-  `geometry` and `hRigid` stay open, and the proved ones are not
-  instantiated here.
+- a proof of any premise. The premises `q` and `hRigid` are not proved in
+  the Library; the others are proved there (see "Proof status of the
+  premises") but are not instantiated here.
 
 ## Registered sources
 
@@ -475,28 +482,27 @@ The statement does not cover:
 ## Formal dependencies and checks
 
 Direct project imports, in Library commit
-`568f1cff4df2c51ba08b932716bf99235d0032c7` and the workspace:
+`568f1cff4df2c51ba08b932716bf99235d0032c7`:
 
-| Module | Author | Lean SHA-256 | Markdown SHA-256 |
-| --- | --- | --- | --- |
-| `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology` | Worker 57 | `e7f01f64e60e606662cb0adeebb1c8c49573b552311129ee4ff8c5bbb3213f27` | `66fae2ad97f30b2658051f14135ae87e7e339b1455f95fcda9ff597be7ec9cde` |
-| `Langlands.Shimura.DecompositionGroupAction` | no Author line | `9a5ae46b57a07e743845d7980e90a00a4db618f2e14fee54dc16f303e91cda43` | `317291d8aad940a67f73157ad08598516b9d3cb5731f195dd524085ac58b4cfc` |
+| Module | Lean SHA-256 | Markdown SHA-256 |
+| --- | --- | --- |
+| `Langlands.Shimura.PEL.HarrisTaylorCMGeometricGaloisCohomology` | `e7f01f64e60e606662cb0adeebb1c8c49573b552311129ee4ff8c5bbb3213f27` | `66fae2ad97f30b2658051f14135ae87e7e339b1455f95fcda9ff597be7ec9cde` |
+| `Langlands.Shimura.DecompositionGroupAction` | `9a5ae46b57a07e743845d7980e90a00a4db618f2e14fee54dc16f303e91cda43` | `317291d8aad940a67f73157ad08598516b9d3cb5731f195dd524085ac58b4cfc` |
 
-Through these imports the module uses Worker 13's `EtaleDerivedSections`,
-the Library's `EtaleInverseImage`, and Worker 41's
+Through these imports the module uses the Library's `EtaleDerivedSections`,
+`EtaleInverseImage`,
 `Langlands.Galois.ClosureRestriction` (`chosenClosureEmbedding`) and
 `Langlands.Galois.CompatibleFamily` (`localInertia`). The truth argument
 also cites `HarrisTaylorCMCoefficientReduction`,
 `HarrisTaylorCMCoefficientSystem`, `HarrisTaylorCMCoefficientSchemes`,
 `HarrisTaylorCMPolarizedDisconnectedPresheaf` and
 `HarrisIntegralCMLevelMonodromy`. The environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`: Lean 4.34.0, Mathlib commit
+Lean 4.34.0, Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 
 Checks against Library `568f1cff`. None reported errors or warnings.
 
-- `5377f756-b049-44a0-8d48-ca0bf23024d8` compiled the file from a draft
-  directory together with two test files, neither part of the candidate:
+- The first compiled the file together with two test files, neither part of the Library:
   `Langlands/Inspect/HarrisCMCohomologyUnramifiedPrint.lean` (SHA-256
   `be228c0d647bd14b0213d5fdd7c23293080dfcd09ec88d12497b3c2fca89cf3f`) and
   `Langlands/Inspect/CMCohomologyUnramifiedPremises.lean` (SHA-256
@@ -508,9 +514,9 @@ Checks against Library `568f1cff`. None reported errors or warnings.
   universe zero is closed by the cited theorem. `#print axioms` shows that
   `frobenius_eq_of_unramified` and the thirteen theorems depend only on
   `propext`, `Classical.choice` and `Quot.sound`.
-- `066927d8-ccc8-401e-b0bf-267ddc9d216b` built the same Lean file (SHA-256
+- The second built the same Lean file (SHA-256
   `1c0576c7d6f3a1117a2507c2bf4d1e7c626d0055e557cf03ba533b2a77e37e51`) with
-  Lake from the workspace and inspected
+  Lake and inspected
   `HarrisCMCohomologyUnramifiedStatement`: a `Prop`-valued definition with
   universe parameters `wS` and `wR`, depending only on `propext`,
   `Classical.choice` and `Quot.sound` (type hash

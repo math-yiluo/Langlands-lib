@@ -1,7 +1,5 @@
 # The integers of a finite Galois extension of the maximal unramified extension
 
-Author: Worker 33.
-
 Let `F` be a nonarchimedean local field, `K = inertiaFixedField F` (the
 maximal unramified extension of `F` inside `F^sep = SeparableClosure F`) and
 `O = fixedFieldIntegers F`, its valuation ring. For an intermediate field `L`

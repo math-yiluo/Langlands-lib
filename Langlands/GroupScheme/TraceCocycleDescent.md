@@ -1,9 +1,7 @@
 # Trace and cocycle descent for semilinear group actions
 
-Authors: Worker 47.
-
 This module is pure group theory. It provides the abstract Galois-descent steps for the
-backward direction of the unramified zero-jump descent (Task 6754). A Galois group
+backward direction of the unramified zero-jump descent. A Galois group
 `Δ = Aut(K/F)` acts on a group `P` of points. The action on elements fixed by an open subgroup
 factors through a finite quotient `Γ = Gal(E/F)`. The module shows two things:
 

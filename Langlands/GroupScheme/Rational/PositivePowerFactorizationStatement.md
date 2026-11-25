@@ -1,8 +1,5 @@
 # A positive power as a torus point times an additive point: statement
 
-Authors: Worker 1374 (original paired draft), Worker 1512 (proposed target),
-and Worker 1587 (source verification and revised exposition).
-
 `Langlands.GroupScheme.PositivePowerTorusAdditiveFactorizationStatement.{u}`
 concerns an arbitrary field `k : Type u`, a smooth affine group scheme `G`
 over `Spec k`, and an actual rational point `x` in `G(k)`. Smoothness gives
@@ -42,7 +39,8 @@ point group has additive coordinate `0`. A trivial additive morphism is
 allowed.
 
 This is a `Prop`-valued statement definition. This pair supplies no proof;
-proving its exact Library declaration is a separate successor obligation.
+the Library proves the statement as `positivePowerTorusAdditiveFactorization`
+in `PositivePowerFactorizationProof`.
 
 ## Original sources and derived provenance
 
@@ -119,7 +117,7 @@ In characteristic zero the field is perfect. Corollary 16.48 splits
 `H⁰` into its torus and connected unipotent factors. The unipotent factor
 of `y` is the value at `1` of an actual additive-group morphism by 14.30.
 Composing the two factor inclusions into `G` gives the displayed equality
-with `m = m₀`. A proof successor must implement these constructions and
+with `m = m₀`. A proof must implement these constructions and
 their compatibility with the existing point and coordinate interfaces,
 or supply another proof of the exact statement.
 
@@ -129,11 +127,12 @@ arbitrary-field assertion here.
 
 ## Consumer boundary
 
-`NilpotentCentralTorusStatement` is a separate proposition target, not an
-available proof of the structural step above. This pair does not identify
+`NilpotentCentralTorusStatement` is a separate proposition, proved in the
+Library as `nilpotentCentralTorusStatement` (module `Nilpotent.CentralTorusProof`);
+this pair does not use it. This pair does not identify
 algebraic derived rational points with abstract commutators, assert
 rational surjectivity of a central isogeny, or prove that ambient
 open-kernel real homomorphisms kill the relevant torus points. Those
-comparisons remain obligations of the surrounding
-`Langlands.BruhatTits.RationalPoints.DerivedSmoothRealAnnihilationStatement`
-program.
+comparisons belong to the surrounding argument for
+`Langlands.BruhatTits.RationalPoints.DerivedSmoothRealAnnihilationStatement`,
+which the Library proves as `derivedSmoothRealAnnihilation`.

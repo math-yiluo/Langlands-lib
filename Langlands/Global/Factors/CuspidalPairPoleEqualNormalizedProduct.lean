@@ -23,7 +23,7 @@ open Automorphic CompletionPadic RankinSelberg RankinSelbergGlobal ArchimedeanLo
 open HarmonicAnalysis (UnitaryAdditiveCharacter)
 open FiniteWhittakerSemilocal FiniteWhittakerDual InfiniteWhittakerSlice EqualIntegrandProducts EqualSchwartzTensor
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
-open ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 
 attribute [local instance] archimedeanRealQMeasurable archimedeanRealQBorel
   archimedeanComplexQMeasurable archimedeanComplexQBorel archimedeanRealGLMeasurable

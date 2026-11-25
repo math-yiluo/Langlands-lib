@@ -50,4 +50,4 @@ classification theorem is used in these proof bodies.
 The construction does not extend the character identity from `T` to all of
 `Z`, prove opposite Haar reciprocity on all centralizer points, or establish
 the common-Levi squared-modulus identity or rational exact-K0 expansion.
-Those remain separate obligations of the host task.
+Those remain separate steps toward the statement this module serves.

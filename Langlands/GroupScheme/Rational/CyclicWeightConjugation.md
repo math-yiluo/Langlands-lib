@@ -1,7 +1,5 @@
 # Conjugation by a torus-fixed point on cyclic weight subgroups
 
-Author: Worker 1423.
-
 Helper module for the proof of
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentVectorFiltrationStatement`.
 All declarations are in namespace `Langlands.GroupScheme.Corepresented`.

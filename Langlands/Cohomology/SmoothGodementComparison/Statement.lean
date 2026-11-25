@@ -4,7 +4,7 @@ import Langlands.Sheaf.Godement.ExactnessStatement
 /-!
 # Smooth Godement compact cohomology computes derived compact sections
 
-Worker 61's compactly supported smooth Godement cohomology of a smooth
+The compactly supported smooth Godement cohomology of a smooth
 equivariant module sheaf is the homology of compact sections of its smooth
 Godement complex. These proposition definitions compare it with the right
 derived functors of compact sections in the abelian category of smooth

@@ -1,0 +1,487 @@
+/-
+Copyright (c) 2026 Christian Merten. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Christian Merten
+-/
+module
+
+public import Mathlib.CategoryTheory.Sites.Hypercover.Zero
+public import WeilConjectures.Mathlib.CategoryTheory.Limits.Shapes.FiniteLimits
+public import WeilConjectures.Mathlib.CategoryTheory.Limits.Shapes.WidePullbacks
+public import WeilConjectures.Mathlib.CategoryTheory.MorphismProperty.Basic
+public import WeilConjectures.CategoryTheory.MorphismProperty.IndSpreads
+
+/-!
+# Another attempt at pro-contractions.
+
+In this file we work in `CommRingCatᵒᵖ`, to be able to use the `0`-hypercover API.
+The construction is very similar to the stacks project construction, but
+has some subtle differences.
+-/
+
+@[expose] public section
+
+universe s t w' w v u
+
+namespace CategoryTheory
+
+open Limits
+
+namespace MorphismProperty
+
+instance {C : Type*} [Category C] (P Q : MorphismProperty C) [P.ContainsIdentities] (X : C) :
+    Nonempty (P.Over Q X) :=
+  ⟨Over.mk _ _ (P.id_mem X)⟩
+
+lemma of_isLimit_widePullbackCone {C : Type*} [Category C]
+    [HasFiniteWidePullbacks C] {ι : Type*} [Finite ι] {X : C}
+    {Y : ι → C} {f : ∀ i, Y i ⟶ X}
+    (P : MorphismProperty C)
+    (s : WidePullbackCone f) (hs : IsLimit s) [P.IsStableUnderBaseChange]
+    [P.IsStableUnderComposition] [P.ContainsIdentities] (hf : ∀ i, P (f i)) :
+    P s.base := by
+  induction ι using Finite.induction_empty_option with
+  | of_equiv e h =>
+    let s' := s.reindex e
+    have hs' : IsLimit s' := (WidePullbackCone.reindexIsLimitEquiv _ _).symm hs
+    change P s'.base
+    apply h _ hs'
+    intro
+    apply hf
+  | h_empty =>
+    have : IsIso s.base := by
+      use WidePullbackCone.IsLimit.lift hs (𝟙 X) (fun i ↦ i.elim) (by simp)
+      simp only [WidePullbackCone.IsLimit.lift_base, and_true]
+      apply WidePullbackCone.IsLimit.hom_ext hs <;> simp
+    exact P.of_isIso _
+  | h_option ih =>
+    let s' : WidePullbackCone (fun i ↦ f (some i)) :=
+      limit.cone _
+    let hs' : IsLimit s' := limit.isLimit _
+    have H : P s'.base := by
+      apply ih _ hs'
+      intro
+      apply hf
+    have H' : P (s.π none) := by
+      apply P.of_isPullback _ H
+      · exact f none
+      · exact WidePullbackCone.IsLimit.lift hs' s.base (fun i ↦ s.π (some i)) (by simp)
+      · apply IsPullback.flip
+        apply CategoryTheory.Limits.WidePullbackCone.isPullback_of_isCompl'
+        · exact Option.some_injective _
+        · rw [← Set.compl_range_some]
+          exact IsCompl.symm isCompl_compl
+        · exact hs
+    rw [← s.condition none]
+    exact P.comp_mem _ _ H' (hf none)
+
+lemma widePullbackBase {C : Type*} [Category C] [HasFiniteWidePullbacks C]
+    {ι : Type*} [Finite ι] {X : C}
+    {Y : ι → C} {f : ∀ i, Y i ⟶ X}
+    (P : MorphismProperty C) [P.IsStableUnderBaseChange]
+    [P.IsStableUnderComposition] [P.ContainsIdentities] (hf : ∀ i, P (f i)) :
+    P (WidePullback.base f) := by
+  apply of_isLimit_widePullbackCone
+  · exact limit.isLimit _
+  · exact hf
+
+end MorphismProperty
+
+variable {C : Type u} [Category.{v} C] (K : Precoverage C)
+
+instance [EssentiallySmall.{w} C] [Nonempty C] : Nonempty (SmallModel C) :=
+  Nonempty.map (equivSmallModel C).functor.obj ‹_›
+
+@[ext]
+structure FiniteFamilies (C : Type*) [Category C] where
+  set : Set C
+  finite : set.Finite
+
+instance : Preorder (FiniteFamilies C) where
+  le U V := U.set ⊆ V.set
+  le_refl _ := le_rfl
+  le_trans _ _ _ := le_trans
+
+instance [Nonempty C] : Nonempty (FiniteFamilies C) :=
+  ⟨⟨{Nonempty.some ‹_›}, by simp⟩⟩
+
+instance : IsDirected (FiniteFamilies C) (· ≤ ·) where
+  directed U V :=
+    ⟨⟨U.set ∪ V.set, U.finite.union V.finite⟩, Set.subset_union_left, Set.subset_union_right⟩
+
+/-- If `F` is an equivalence, this functor is NOT necessarily an equivalence, because
+`FiniteFamilies` is a preorder, so every equivalence would be an isomorphism. -/
+@[simps]
+def FiniteFamilies.map {D : Type*} [Category D] (F : C ⥤ D) :
+    FiniteFamilies C ⥤ FiniteFamilies D where
+  obj s :=
+    { set := F.obj '' s.set
+      finite := s.finite.image _ }
+  map f := homOfLE (Set.image_mono (leOfHom f))
+
+namespace FiniteFamilies
+
+variable {P : MorphismProperty C} {X : C} [EssentiallySmall.{w, v, max u v} (P.Over ⊤ X)]
+
+def Index (A : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X))) : Type w := A.set
+
+instance (A : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X))) : Finite A.Index :=
+  A.finite
+
+@[simps]
+def indexHom {A B : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X))}
+    (h : A ≤ B) (i : A.Index) : B.Index :=
+  ⟨i.1, h i.2⟩
+
+noncomputable def family (A : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X)))
+    (i : A.Index) : C :=
+  ((equivSmallModel _).inverse.obj i.1).left
+
+noncomputable def hom (A : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X)))
+    (i : A.Index) : A.family i ⟶ X :=
+  ((equivSmallModel _).inverse.obj i.1).hom
+
+lemma property_hom (A : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X)))
+    (i : A.Index) : P (A.hom i) :=
+  ((equivSmallModel _).inverse.obj i.1).prop
+
+variable (P) in
+set_option backward.defeqAttrib.useBackward true in
+noncomputable
+def diag (X : C) [EssentiallySmall.{w} (P.Over ⊤ X)]
+    [HasFiniteWidePullbacks C] :
+    (FiniteFamilies (SmallModel.{w} (P.Over ⊤ X)))ᵒᵖ ⥤ Over X where
+  obj U :=
+    Over.mk (WidePullback.base <| U.unop.hom)
+  map {U V} f :=
+    Over.homMk <| WidePullback.lift (WidePullback.base _)
+    (fun j ↦ WidePullback.π _ (indexHom (leOfHom f.unop) j))
+    (by intro; exact WidePullback.π_arrow _ _)
+
+end FiniteFamilies
+
+structure SCov (K : Precoverage C) (X : C) where
+  presieve : Presieve X
+  mem : presieve ∈ K X
+
+structure Cov (K : Precoverage C) (X : C) where
+  toZeroHypercover : Precoverage.ZeroHypercover.{w} K X
+
+variable {K : Precoverage C} {X : C}
+
+instance : Preorder (SCov K X) where
+  le U V := U.presieve ≤ V.presieve
+  le_refl _ := le_rfl
+  le_trans _ _ _ := le_trans
+
+def SCov.zeroHypercover (U : SCov K X) : K.ZeroHypercover X where
+  I₀ := U.presieve.uncurry
+  X i := i.1.1
+  f i := i.1.2
+  mem₀ := by
+    simp only [PreZeroHypercover.presieve₀]
+    convert U.2
+    refine le_antisymm ?_ ?_
+    · intro Z g ⟨i⟩
+      exact i.2
+    · intro Z g hg
+      exact .mk (⟨⟨Z, g⟩, hg⟩ : U.presieve.uncurry)
+
+namespace Cov
+
+@[ext]
+structure Hom (U V : Cov K X) where
+  σ : V.1.I₀ → U.1.I₀
+  iso (i : V.1.I₀) : U.1.X (σ i) ⟶ V.1.X i
+  [isIso (i : V.1.I₀) : IsIso (iso i)]
+  w (i : V.1.I₀) : iso i ≫ V.1.f _ = U.1.f _ := by cat_disch
+
+attribute [reassoc (attr := simp)] Hom.w
+attribute [instance] Hom.isIso
+
+@[simps]
+def Hom.id (U : Cov K X) : U.Hom U where
+  σ := _root_.id
+  iso _ := 𝟙 _
+
+@[simps]
+def Hom.comp {U V W : Cov K X} (f : U.Hom V) (g : V.Hom W) : U.Hom W where
+  σ i := f.σ (g.σ i)
+  iso _ := f.iso _ ≫ g.iso _
+
+open Limits
+
+variable [∀ (X : C), ∀ (U : Cov K X), HasWidePullback _ U.1.X U.1.f]
+
+variable (X P) in
+set_option backward.defeqAttrib.useBackward true in
+@[simps! id_σ id_iso comp_σ comp_iso]
+instance : Category (Cov K X) where
+  Hom := Hom
+  id := Hom.id
+  comp := Hom.comp
+  id_comp := by
+    intros; ext <;> simp only [Hom.comp_σ, Hom.id_σ, id_eq, heq_eq_eq]; ext; simp
+  comp_id := by
+    intros; ext <;> simp only [Hom.comp_σ, Hom.id_σ, id_eq, heq_eq_eq]; ext; simp
+  assoc := by
+    intros; ext <;> simp only [Hom.comp_σ, heq_eq_eq]; ext; simp
+
+instance [K.HasIsos] : Nonempty (Cov K X) :=
+  ⟨⟨Precoverage.ZeroHypercover.singleton (𝟙 X) (K.mem_coverings_of_isIso _)⟩⟩
+
+variable (K) in
+set_option backward.defeqAttrib.useBackward true in
+@[simps -isSimp, simps! obj_hom]
+noncomputable
+def diag (X : C) : Cov.{w} K X ⥤ Over X where
+  obj U := Over.mk (WidePullback.base U.1.f)
+  map {U V} f := Over.homMk <| WidePullback.lift (WidePullback.base _)
+    (fun j ↦ WidePullback.π _ (f.σ j) ≫ (f.iso j)) (by simp)
+
+end Cov
+
+namespace SCov
+
+variable (K) in
+@[simps]
+def toCov (X : C) : (SCov K X)ᵒᵖ ⥤ Cov.{max u v} K X where
+  obj U := ⟨U.1.zeroHypercover⟩
+  map {U V} f :=
+    { σ i := ⟨i.1, leOfHom f.1 _ _ i.2⟩
+      iso i := 𝟙 _
+      w i := by simp only [Category.id_comp]; rfl }
+  map_id _ := rfl
+  map_comp _ _ := by apply Cov.Hom.ext <;> cat_disch
+
+variable [∀ (X : C) (U : SCov K X), HasWidePullback _ _ U.zeroHypercover.f]
+
+variable (K) in
+set_option backward.defeqAttrib.useBackward true in
+@[simps! -isSimp obj_hom]
+noncomputable
+def diag (X : C) : (SCov K X)ᵒᵖ ⥤ Over X where
+  obj U := Over.mk (WidePullback.base U.1.zeroHypercover.f)
+  map {U V} f := Over.homMk <| WidePullback.lift (WidePullback.base _)
+    (fun j ↦ WidePullback.π _ (⟨j.1, leOfHom f.1 _ _ j.2⟩ : U.1.zeroHypercover.I₀))
+    (by intro; exact WidePullback.π_arrow _ _)
+
+instance [K.HasIsos] : Nonempty (SCov K X) :=
+  ⟨⟨.singleton (𝟙 X), K.mem_coverings_of_isIso _⟩⟩
+
+instance [K.IsStableUnderSup] : IsDirected (SCov K X) (· ≤ ·) where
+  directed U V :=
+    ⟨⟨U.presieve ⊔ V.presieve, K.sup_mem_coverings U.2 V.2⟩,
+      le_sup_left (a := U.1), le_sup_right (a := U.1)⟩
+
+example [K.HasIsos] [K.IsStableUnderSup] : IsCofiltered (SCov K X)ᵒᵖ :=
+  inferInstance
+
+end SCov
+
+variable [∀ (X : C) (U : SCov K X), HasWidePullback _ _ U.zeroHypercover.f]
+
+namespace MorphismProperty
+
+variable (P Q : MorphismProperty C)
+
+variable (X : C)
+
+section
+
+variable [EssentiallySmall.{w} (P.Over ⊤ X)]
+
+noncomputable
+def precontraction (X : C) [EssentiallySmall.{w} (P.Over ⊤ X)]
+    [HasFiniteWidePullbacks C] [HasLimit (FiniteFamilies.diag.{w} P X)] : Over X :=
+  limit (FiniteFamilies.diag.{w} P X)
+
+variable [HasFiniteWidePullbacks C] [HasLimit (FiniteFamilies.diag.{w} P X)]
+
+noncomputable
+def Precontraction.π {Y : C} (f : Y ⟶ X) (hf : P f) :
+    P.precontraction X ⟶ CategoryTheory.Over.mk f :=
+  letI U : FiniteFamilies (SmallModel.{w} (P.Over ⊤ X)) :=
+    { set := { (equivSmallModel _).functor.obj (.mk _ _ hf) }
+      finite := by simp }
+  limit.π (FiniteFamilies.diag.{w} P X) ⟨U⟩ ≫
+    CategoryTheory.Over.homMk (WidePullback.π U.hom ⟨_, rfl⟩)
+      (WidePullback.π_arrow _ _) ≫
+    (Functor.mapIso (Over.forget P ⊤ _)
+      ((equivSmallModel <| P.Over ⊤ X).unitIso.app _)).inv
+
+@[reassoc (attr := simp)]
+lemma Precontraction.π_arrow {Y : C} (f : Y ⟶ X) (hf : P f) :
+    (Precontraction.π P X f hf).left ≫ f = (P.precontraction X).hom := by
+  simpa using (Precontraction.π P X f hf).w
+
+set_option backward.defeqAttrib.useBackward true in
+lemma pro_precontraction_hom [P.IsMultiplicative] [P.IsStableUnderBaseChange] :
+    pro.{w} P (precontraction.{w} P X).hom := by
+  refine ⟨(FiniteFamilies (SmallModel.{w} (P.Over ⊤ X)))ᵒᵖ, inferInstance, inferInstance,
+    FiniteFamilies.diag _ _ ⋙ CategoryTheory.Over.forget _, ?_, ?_, ?_, fun j ↦ ⟨?_, ?_⟩⟩
+  · exact { app _ := ((FiniteFamilies.diag _ _).obj _).hom }
+  · exact Functor.whiskerRight
+      (limit.cone <| FiniteFamilies.diag P X).π
+      (CategoryTheory.Over.forget X)
+  · exact isLimitOfPreserves (CategoryTheory.Over.forget X) (limit.isLimit _)
+  · simp only [Functor.comp_obj, Over.forget_obj, Functor.const_obj_obj]
+    apply widePullbackBase
+    intro i
+    apply FiniteFamilies.property_hom
+  · simp only [Functor.const_obj_obj, Functor.comp_obj, Over.forget_obj,
+      limit.cone_x, Functor.whiskerRight_app, limit.cone_π, Over.forget_map, CategoryTheory.Over.w]
+    rfl
+
+end
+
+variable [HasFiniteWidePullbacks C]
+  [∀ X, EssentiallySmall.{w} ((P ⊓ Q).Over ⊤ X)]
+  [∀ X : C, HasLimitsOfShape (FiniteFamilies (SmallModel.{w} ((P ⊓ Q).Over ⊤ X)))ᵒᵖ (Over X)]
+
+namespace Contraction.Construction
+
+noncomputable
+def obj : ℕ → C
+  | 0 => X
+  | n + 1 => (precontraction.{w} (P ⊓ Q) (obj n)).left
+
+variable (K) in
+noncomputable
+def diag : ℕᵒᵖ ⥤ C := Functor.ofOpSequence (X := obj P Q X)
+  fun _ ↦ ((P ⊓ Q).precontraction _).hom
+
+variable (K) in
+noncomputable
+def objBase (n : ℕ) : obj P Q X n ⟶ X :=
+  (diag P Q X).map (homOfLE <| n.zero_le).op
+
+lemma diag_map_le_succ (n : ℕ) (hn : n ≤ n + 1) :
+    (diag P Q X).map (homOfLE hn).op = ((P ⊓ Q).precontraction _).hom := by
+  simp [diag]
+
+
+set_option backward.defeqAttrib.useBackward true in
+@[simps]
+noncomputable
+def diagHomBase : diag P Q X ⟶ (Functor.const _).obj X where
+  app n := objBase P Q X n.1
+  naturality n m f := by
+    simp only [Functor.const_obj_obj, objBase, Opposite.op_unop, homOfLE_leOfHom,
+      Functor.const_obj_map, Category.comp_id, homOfLE_leOfHom, ← Functor.map_comp]
+    rfl
+
+end Contraction.Construction
+
+open Contraction
+
+variable [HasLimitsOfShape ℕᵒᵖ C]
+
+variable (K) in
+noncomputable
+def contraction : C :=
+  limit (Contraction.Construction.diag P Q X)
+
+variable (K) in
+noncomputable
+abbrev contraction.π (n : ℕ) : contraction P Q X ⟶ Construction.obj P Q X n :=
+  limit.π _ _
+
+variable (K) in
+noncomputable def Contraction.base : contraction P Q X ⟶ X :=
+  contraction.π _ _ _ 0
+
+lemma contraction.w (n m : ℕ) (hmn : n ≤ m) :
+    contraction.π P Q X m ≫ (Construction.diag P Q X).map ⟨homOfLE hmn⟩ = contraction.π P Q X n :=
+  limit.w _ _
+
+lemma pro_pro_contractionπ [PreProSpreads.{w} P] [Limits.HasPullbacks C] [LocallySmall.{w} C]
+    (H : P.op ≤ isFinitelyPresentable.{w} Cᵒᵖ)
+    [P.IsStableUnderBaseChange] [P.IsMultiplicative]
+    [Q.IsStableUnderBaseChange] [Q.IsMultiplicative] (X : C) (n : ℕ) :
+    pro.{0} (pro.{w} P) (contraction.π P Q X n) := by
+  have := IsMultiplicative.pro_of_le_isFinitelyPresentable H
+  apply pro_coneπ
+  · exact limit.isLimit _
+  · intro k f
+    apply ofOpSequence_map_of_isMultiplicative
+    intro m
+    apply pro_mono inf_le_left
+    exact pro_precontraction_hom.{w} (P ⊓ Q) (Construction.obj P Q X m)
+
+lemma pro_pro_contractionBase [PreProSpreads.{w} P] [Limits.HasPullbacks C] [LocallySmall.{w} C]
+    (H : P.op ≤ isFinitelyPresentable.{w} Cᵒᵖ)
+    [P.IsStableUnderBaseChange] [P.IsMultiplicative]
+    [Q.IsStableUnderBaseChange] [Q.IsMultiplicative] (X : C) :
+    pro.{0} (pro.{w} P) (Contraction.base P Q X) :=
+  pro_pro_contractionπ _ _ H _ 0
+
+lemma prop_contractionπ
+    (h : pro.{w} Q = Q)
+    [P.IsStableUnderBaseChange] [P.IsMultiplicative]
+    [Q.IsStableUnderBaseChange] [Q.IsMultiplicative]
+    (X : C) (n : ℕ) :
+    Q (contraction.π P Q X n) := by
+  have h' : pro.{0} Q = Q := by
+    refine le_antisymm (le_trans ?_ h.le) ?_
+    · apply pro_of_univLE
+    · exact Q.le_pro
+  nth_rw 1 [← h']
+  apply pro_coneπ
+  · exact limit.isLimit _
+  · intro k f
+    apply ofOpSequence_map_of_isMultiplicative
+    intro m
+    nth_rw 1 [← h]
+    apply pro_mono inf_le_right
+    exact pro_precontraction_hom.{w} (P ⊓ Q) (Construction.obj P Q X m)
+
+lemma exists_comp_eq_id_contraction
+    (h : pro.{w} Q = Q)
+    (H : ∀ {X Y Z : C} (f : X ⟶ Y) (g : Y ⟶ Z),
+      Q (f ≫ g) → Q f → P g → Q g)
+    [PreProSpreads.{0} P] [Limits.HasPullbacks C]
+    [Q.IsMultiplicative] [Q.IsStableUnderBaseChange]
+    [P.IsMultiplicative] [P.IsStableUnderBaseChange]
+    {Y : C} (f : Y ⟶ contraction.{w} P Q X) (hf : P f) (hf' : Q f) :
+    ∃ (g : contraction.{w} P Q X ⟶ Y), g ≫ f = 𝟙 (contraction.{w} P Q X) := by
+  obtain ⟨n, D', u, v, hv, hu⟩ :
+      ∃ (n : ℕ) (D' : C) (u : D' ⟶ Construction.obj P Q X n) (v : Y ⟶ D'),
+        IsPullback f v (contraction.π P Q X n) u ∧ P u := by
+    obtain ⟨⟨n⟩, D', f', g, h, hf'⟩ := P.exists_isPullback_of_isCofiltered
+      (J := ℕᵒᵖ) (D := Construction.diag P Q X)
+      (limit.cone _) (limit.isLimit _) f hf
+    use n, D', f', g, h
+  have hu' : Q u := by
+    apply H v
+    · rw [← hv.w]
+      apply Q.comp_mem _ _ hf'
+      apply prop_contractionπ
+      exact h
+    · apply Q.of_isPullback hv
+      apply prop_contractionπ
+      apply h
+    · exact hu
+  let l : P.contraction Q X ⟶ Y := by
+    refine hv.lift (𝟙 _) (contraction.π P Q X (n + 1) ≫
+      (Precontraction.π (P ⊓ Q) _ u ⟨hu, hu'⟩).left) ?_
+    have := limit.w (Construction.diag P Q X) ⟨homOfLE (Nat.le_succ n)⟩
+    dsimp only [Nat.succ_eq_add_one, homOfLE_leOfHom] at this
+    simp only [contraction.π, Category.id_comp, Category.assoc, Precontraction.π_arrow, ← this]
+    simp [Construction.diag, Functor.ofOpSequence]
+  use l
+  simp [l]
+
+lemma pro_contractionBase [LocallySmall.{w} C]
+    (H : P.op ≤ isFinitelyPresentable.{w} Cᵒᵖ)
+    [PreProSpreads.{w} P] [Limits.HasPullbacks C]
+    [P.IsStableUnderBaseChange] [P.IsMultiplicative]
+    [Q.IsStableUnderBaseChange] [Q.IsMultiplicative] (X : C) :
+    pro.{w} P (Contraction.base P Q X) := by
+  rw [← pro_pro (P := P) H]
+  apply pro_of_univLE.{0, w}
+  exact P.pro_pro_contractionBase _ H _
+
+end MorphismProperty
+
+end CategoryTheory

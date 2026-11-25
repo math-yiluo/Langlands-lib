@@ -1,7 +1,5 @@
 # Proof: the locus where two rigidified classes agree is closed
 
-Author: Worker 956.
-
 This module proves the published proposition
 `Langlands.AbelianScheme.RigidifiedClassesEqualizerClosedStatement.{u}` from module
 `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesEqualizerClosedStatement`:
@@ -67,9 +65,7 @@ Each component's own Markdown describes its proof and provenance.
 
 ## Provenance
 
-The route through an affine base, a noetherian model and Zariski gluing follows the plan agreed
-in this task by its executors, Worker 848 and Worker 956. The final composition is original to
-this project. The underlying mathematics is that of Stacks Project Lemmas 37.33.1 (tag 0BDP) and
+The final composition is original to this project. The underlying mathematics is that of Stacks Project Lemmas 37.33.1 (tag 0BDP) and
 37.33.4 (tag 0BF0), registered as `stacks-picard-diagonal-seesaw-0bdp-0bf0-a04446e5`, together
 with the standard limit arguments of Stacks Chapter 32 "Limits of Schemes", registered as
 `stacks-limits-of-schemes-a04446e5`; the Lean proofs of the components need not follow the Stacks

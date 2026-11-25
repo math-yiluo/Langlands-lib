@@ -1,7 +1,5 @@
 # Regular elements in the Lie algebra of a split torus
 
-Author: Worker 1630.
-
 This derived helper module proves the following. Let `S` be a split torus over
 an infinite field with a homomorphism `S ⟶ H` into an affine algebraic group.
 Then `Lie(S)` has a Lie element `Y` such that the image of `ad(Y)` and the

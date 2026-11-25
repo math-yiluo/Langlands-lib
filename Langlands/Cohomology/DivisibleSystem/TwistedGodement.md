@@ -1,12 +1,12 @@
 # ℓ-divisible systems of discrete Godement resolutions on a twisted site
 
-Author: Worker 26. Applies Worker 61's generic constructions for a coaugmented exact
-endofunctor to Worker 26's discrete Godement functor on a twisted site. Uses
+Applies the generic constructions for a coaugmented exact
+endofunctor to the discrete Godement functor on a twisted site. Uses
 `Langlands.Cohomology.DivisibleSystem` (`DivisibleSystem`, `map`, `obj`, `degree`),
 `Langlands.Cohomology.DivisibleSystem.Coaugmented` (`coaugmentation`,
 `residualSystem`, `termSystem`), `Langlands.Cohomology.DivisibleSystem.Resolution`
 (`resolutionSystem`, `resolutionSystemDegreeIso`, `resolutionSystemObjIso`,
-`resolutionSystem_obj_exactAt`) and Worker 26's
+`resolutionSystem_obj_exactAt`) and
 `Langlands.Sheaf.Equivariant.TwistedGodement` (`discreteZeroFunctor`,
 `discreteCoaugmentation`, `mono_discreteCoaugmentation_of_jointlyFaithful`,
 `discreteComplexFunctor`). From Mathlib it uses
@@ -44,7 +44,7 @@ Exactness of `F` is not proved. It enters as instance arguments
 `[PreservesFiniteLimits F]` and `[PreservesFiniteColimits F]`. This is Harris's
 Fact 3; Berkovich derives it from the explicit stalks of `ν_* ν^*`. For the site
 Godement functor it is part of the open statement
-`Langlands.Sheaf.Godement.ModuleZeroFunctorExactnessStatement` (Worker 3). The
+`Langlands.Sheaf.Godement.ModuleZeroFunctorExactnessStatement`. The
 constructions in the section `Exact` also take
 `hpoints : JointlyFaithful (fun i => (points i).sheafFiber)`. This makes the
 coaugmentation monic (published `mono_discreteCoaugmentation_of_jointlyFaithful`).
@@ -79,7 +79,7 @@ coaugmentation monic (published `mono_discreteCoaugmentation_of_jointlyFaithful`
 ## Provenance and scope
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §2,
-printed p.304 = PDF p.6, read in the original by Worker 26 (checked against the page
+printed p.304 = PDF p.6, read in the original (checked against the page
 image):
 
 > **Fact 3.** The functor `T → F(T)` is exact.
@@ -102,7 +102,8 @@ In the twisted-site model, discrete sheaves on the twisted site stand for Harris
 Godement functor; `TwistedGodement` explains the correspondence. This module carries
 out the inductive construction for an arbitrary `ℓ`-divisible system `T` in place of
 the constant sheaves `ℤ/ℓ^mℤ`. It is a derived specialization: the construction is
-Worker 61's, and the functor is Worker 26's.
+that of the generic `Coaugmented` and `Resolution` modules, and the functor is
+`discreteZeroFunctor` of `Langlands.Sheaf.Equivariant.TwistedGodement`.
 
 Not constructed or proved here: exactness of `F` (Fact 3); `RΓ_c`-acyclicity of the
 terms (Berkovich Prop. 1.5.1); the constant `ℓ`-divisible system `ℤ/ℓ^mℤ` on a

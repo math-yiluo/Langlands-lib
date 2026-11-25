@@ -1,7 +1,5 @@
 # Zariski locality and gluing of relative homomorphisms
 
-Authors: Worker 1042.
-
 This module proves that relative homomorphisms of commutative group schemes
 form a Zariski sheaf on the test scheme: they are determined by their
 restrictions to an open cover, and compatible families on an open cover

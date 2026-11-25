@@ -167,7 +167,7 @@ theorem complementaryProduct_unitarizableOnInterval {n : ℕ} (hn : 0 < n)
     intro s hs
     let e : (π s).Equiv (π (-s)) :=
       (E s).some.trans ((SmoothRep.equivOfIso
-        (complementaryProduct_swap F T hn A hAi s (hirr s hs)).some).trans
+        (complementaryProduct_swap.{uF, uV} F T hn A hAi s (hirr s hs)).some).trans
           (E (-s)).some.symm)
     have : Nontrivial (Induction.SmoothFunctions (B.parabolic F.Carrier) σ) :=
       complementary_nontrivial_of_irreducible

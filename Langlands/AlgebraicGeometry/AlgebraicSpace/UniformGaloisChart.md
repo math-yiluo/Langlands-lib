@@ -1,7 +1,5 @@
 # One affine chart for all rational points lifting over a Galois extension
 
-Author: Worker 105.
-
 Helper module for the second countability of rational points
 (`EtaleChartSecondCountable`), used for Conrad's p.17 claims
 (`Langlands.Global.AdelicSpacePointTopologyStatement`).

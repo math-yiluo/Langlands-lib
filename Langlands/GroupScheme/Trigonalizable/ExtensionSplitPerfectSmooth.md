@@ -1,6 +1,6 @@
 # Milne 16.26 from the étale case
 
-Author: Worker 60 (Task 7805). Module
+Module
 `Langlands.GroupScheme.Trigonalizable.ExtensionSplitPerfectSmooth`,
 namespaces `Langlands.GroupScheme.TrigonalizableExtensionSplit` and
 `Langlands.GroupScheme`.

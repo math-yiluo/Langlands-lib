@@ -2,13 +2,14 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealBlockParabolicIntegrationStatement`.
 
-Worker 5220 wrote this module for Task 6749 (`5dd3db87-6f14-4d0f-b9a7-3d0065415fd8`), the proof
+This module was written for the proof
 of `RealStandardLanglandsQuotientStatement` (module `RealLargeLanglandsQuotientReduction`). It
 states one proposition and proves nothing (two determinant lemmas used to build the matrices are
-proved). The proposition is the integration formula needed for the Langlands lemma along the
+proved); the proposition is proved as `realBlockParabolicIntegration` in
+`RealBlockParabolicIntegrationProof`. The proposition is the integration formula needed for the Langlands lemma along the
 maximal parabolic subgroup `P_{a,k}` (upper block triangular, blocks of sizes `a` and `k`); see
 "Use". It is the real analogue of `ComplexBlockParabolicIntegrationStatement` (module
-`ComplexBlockParabolicIntegrationStatement`, Worker 140, Task 7063), and for `k = 1` it is
+`ComplexBlockParabolicIntegrationStatement`), and for `k = 1` it is
 equivalent to the published `MaximalParabolicIntegrationStatement`.
 
 ## Definitions
@@ -69,8 +70,11 @@ finite by (ii) applied to `E`.
 
 ## Use
 
-In Task 6749 the formula is applied to `F(y) = u(y a_t) h(y)` with `a_t = diag(1_a, e^t 1_k)`
-central in the Levi factor, `h` in a principal series and `u` in its dual, to compute the leading
-term of the `O(a+k)`-pairing along `a_t` (Langlands lemma along `P_{a,k}`). Since `a_t` commutes
+In the proof of `RealStandardLanglandsQuotientStatement` for which this module was written, the
+formula is applied to `F(y) = u(y a_t) h(y)` with `a_t = diag(1_a, e^t 1_k)` central
+in the Levi factor, `h` in a principal series and `u` in its dual, to compute the leading term
+of the `O(a+k)`-pairing along `a_t` (Langlands lemma along `P_{a,k}`). Since `a_t` commutes
 with `diag(κ₁, κ₂)` and `n̄(X) a_t = a_t n̄(e^{-t} X)`, the limit `t → ∞` gives the pairing of `u`
-restricted to the Levi factor with the partial Jacquet integral `∫ h(n̄(X) ·) dX`.
+restricted to the Levi factor with the partial Jacquet integral `∫ h(n̄(X) ·) dX`. The Library's
+proof of that statement (`RealLargeLanglandsQuotientInjectiveProof`) goes through
+`realLeviLanglandsQuotient` and does not import `RealBlockParabolicIntegrationProof`.

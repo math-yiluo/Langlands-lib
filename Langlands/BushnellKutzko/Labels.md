@@ -17,7 +17,7 @@ simple types ((3.7), (3.8)); none of that theory is used or formalised here.
 ## The fields `𝔽_{q^D}`
 
 BK94 identifies isomorphic finite fields and writes `𝔍(M, q^D) = 𝔍(M, 𝔽_{q^D})`. Here the
-fields are the family that Task 7369 uses for the polar-part number `polarPartCount`, imported
+fields are the family used for the polar-part number `polarPartCount`, imported
 from `Langlands.Correspondence.HenniartPolarPart` (namespace `Langlands.Henniart.Numerical`):
 
 - `polarBaseField q = GaloisField q.minFac (q.factorization q.minFac)`; for `q = p ^ k` a prime
@@ -31,8 +31,8 @@ The imported fields need `Fact q.minFac.Prime`, and `polarExtensionField q D` al
 `polarExtensionField (labelFieldSize q) D`, with `D : ℕ+`. The supplied instance
 `labelFieldSize_minFac_prime` follows from `labelFieldSize q ≠ 1` and
 `Nat.minFac_prime`. For every prime power `q`, `q ≠ 1`, so `labelFieldSize q = q` and these
-are precisely Task 7369's fields. In particular `𝔽_q` is the degree-one extension
-`polarExtensionField q 1`, also used for `f = 1` in that task. At `q = 1` the arbitrary
+are precisely the fields of `HenniartPolarPart`. In particular `𝔽_q` is the degree-one extension
+`polarExtensionField q 1`, also used for `f = 1` there. At `q = 1` the arbitrary
 ambient fields are the degree-`D` extensions for parameter `2`; the label sets are empty
 by their `IsPrimePow q` guards. They are likewise empty for every other non-prime-power
 `q`. This convention extends BK94, which only uses prime powers.
@@ -43,7 +43,7 @@ needed for the definitions.
 
 `𝔍(M, k)` is the set of monic irreducible polynomials in `k[X]` of degree `M`, with `X`
 removed when `M = 1` (BK94, printed p. 115). It is
-`Langlands.FieldTheory.irreduciblePolynomialLabels M k`, published by Task 7401 in the module
+`Langlands.FieldTheory.irreduciblePolynomialLabels M k`, published in the module
 `Langlands.FieldTheory.IrreduciblePolynomialLabels` and imported here; this module does not
 define a second copy. That definition is
 `{P | P.Monic ∧ Irreducible P ∧ P.natDegree = M} \ {X}`; it is used here only with

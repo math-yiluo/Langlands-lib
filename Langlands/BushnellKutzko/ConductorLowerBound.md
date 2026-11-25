@@ -1,7 +1,5 @@
 # The lower bound for the functional-equation exponent
 
-Lean proof by Worker 408 for Task 7683.
-
 ## Setting
 
 As in `ConductorUpperBound`: `K` is a `p`-adic field with canonical order `T.ord`

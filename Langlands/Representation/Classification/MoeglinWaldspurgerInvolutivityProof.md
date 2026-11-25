@@ -1,6 +1,6 @@
 # Involutivity of the Moeglin–Waldspurger recursion
 
-Worker 5734 proves `Langlands.MoeglinWaldspurger.involutivity`. Its type is exactly
+This module proves `Langlands.MoeglinWaldspurger.involutivity`. Its type is exactly
 the published proposition `Langlands.MoeglinWaldspurger.Involutivity` from
 `MoeglinWaldspurgerStatements`:
 
@@ -18,7 +18,7 @@ The statement comes from Moeglin–Waldspurger, *Sur l'involution de Zelevinski*
 representations* (2014), lines 116–136. Moeglin and Waldspurger obtain
 involutivity from representation theory. The proof here is instead a direct
 combinatorial argument about the actual published recursion, developed for this
-task. It uses no representation theory, and it uses no other published
+proof. It uses no representation theory, and it uses no other published
 combinatorial property as an input.
 
 The proof uses three helper modules:

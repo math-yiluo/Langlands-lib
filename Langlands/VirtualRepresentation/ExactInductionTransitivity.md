@@ -1,7 +1,7 @@
 # Transitivity of finite-index induction
 
 Helper module for the proof of
-`Langlands.ClassField.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.InducedCharacterGenerationStatement`
 (Brauer induction for relative Weil groups). It proves that induction in two
 steps, from `T` to `S` and then from `S` to `G`, is induction from `T` to `G`.
 This holds both for the published function model of induction and for the

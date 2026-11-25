@@ -1,7 +1,5 @@
 # Finiteness from close approximations of the coordinates
 
-Author: Worker 1010.
-
 This file proves a finiteness criterion for bounded maps of presented strict
 affinoid algebras. It also proves four general lemmas that the criterion uses.
 

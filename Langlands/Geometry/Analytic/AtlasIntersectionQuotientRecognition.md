@@ -1,6 +1,6 @@
 # Tensor admissibility and full intersections from a recognized quotient
 
-Worker 1685 packages the last tensor and geometric steps for a global
+This module packages the last tensor and geometric steps for a global
 intersection candidate. This is internal infrastructure derived from the actual
 bounded completed-tensor comparison, admissible epimorphism composition,
 presented closed quotients and finite full-domain recognition.

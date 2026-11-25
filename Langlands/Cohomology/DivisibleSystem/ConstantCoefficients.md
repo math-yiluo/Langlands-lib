@@ -1,45 +1,45 @@
 # Constant coefficient systems
 
-Author: Worker 61. This module builds on the following published modules:
+This module builds on the following published modules:
 
 - `Langlands.Cohomology.DivisibleSystem`: `ℓ`-divisible systems (Harris 1999,
   (2.1)), multiplication `powSMul ℓ m X` by `ℓ ^ m`, the functor
   `mapFunctor C ℓ F` and its object map `DivisibleSystem.map`, and
   `SmoothSheafDivisibleSystem R G X ℓ`.
-- `Langlands.Cohomology.DivisibleSystem.Reduction` (Worker 61): for an object
+- `Langlands.Cohomology.DivisibleSystem.Reduction`: for an object
   `L` with `ℓ` a monomorphism on it, the system `reductionSystem ℓ L` of the
   cokernels `L / ℓ ^ m L` (`reductionTower ℓ L`), with projections
   `reductionπ ℓ L m : L ⟶ L / ℓ ^ m L`. Its maps `j` are induced by the
   identity of `L` (`reductionπ_map`); its maps `i` are the maps
   `reductionInclusion`, induced by multiplication by `ℓ ^ (m - m')`
   (`reductionπ_inclusion`).
-- `Langlands.Cohomology.DivisibleSystem.ReductionAdic` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.ReductionAdic`:
   `powSMul_moduleCat_hom_apply`, `powSMul ℓ m` on a module is scalar
   multiplication by `(ℓ : R) ^ m`.
-- `Langlands.Cohomology.DivisibleSystem.PermutationProjective` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.PermutationProjective`:
   the trivial smooth representation functor
   `smoothTrivialFunctor R G : ModuleCat R ⥤ SmoothRep R G` (Mathlib's
   `Rep.trivialFunctor R G` lifted to smooth representations) and the
   adjunction `smoothTrivialAdjunction R G` with the invariants functor.
-- `Langlands.Cohomology.DivisibleSystem.StandardResolution` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.StandardResolution`:
   `groupStandardResolutionSystem T`, the standard resolutions along
   `Ind_1^Γ Res_1^Γ` of the levels of a system `T` of representations of a
   finite group `Γ`.
-- `Langlands.Cohomology.DivisibleSystem.Resolution` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.Resolution`:
   `smoothGodementResolutionSystem h T` and
   `smoothGodementResolutionSystemObjIso`, the smooth Godement resolutions of
   the levels of a system `T` of smooth sheaves, given
-  `h : SmoothGodementZeroExactStatement R G X` (Worker 3's hypothesis that the
+  `h : SmoothGodementZeroExactStatement R G X` (the hypothesis that the
   degree-zero smooth Godement functor is additive and exact).
-- `Langlands.Cohomology.DivisibleSystem.SmoothLocallyConstant` (Worker 61):
+- `Langlands.Cohomology.DivisibleSystem.SmoothLocallyConstant`:
   `smoothLocallyConstantSystemFunctor R ℓ G X`,
   `smoothRestrictionSystemFunctor R ℓ H`, `mapFunctorCompIso`, and the
   comparison isomorphisms `smoothRestrictLocallyConstantSystemIso` and
   `smoothInduceLocallyConstantSystemIso` under spatial induction.
   Through it, `LocallyConstantSheaf.smoothFunctor R G X`, which sends a smooth
   representation `A` to the sheaf whose sections over an open `U` are all
-  locally constant functions `U → A` (Worker 13's
-  `Langlands.Sheaf.Equivariant.LocallyConstant` and `LocallyConstantSmooth`).
+  locally constant functions `U → A`
+  (`Langlands.Sheaf.Equivariant.LocallyConstant` and `LocallyConstantSmooth`).
 - Mathlib: `Rep.trivialFunctor`, `Rep.invariantsAdjunction`,
   `Rep.coinvariantsAdjunction` (imported from
   `Mathlib.RepresentationTheory.Coinvariants`) and
@@ -228,7 +228,7 @@ Same namespace; `Γ`, `G` and `X` lie in `Type`, and `hℓ : ℓ ≠ 0`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), section 2, printed p.304 (one-based PDF
-page 6). Worker 61 read the page in the rendered scan.
+page 6). The page was read in the rendered scan.
 
 1. What Harris uses. After defining `ℓ`-divisible systems by (2.1), Harris
    states: "Lemma 2.2. For each m the constant sheaf Z/ℓ^mZ admits an

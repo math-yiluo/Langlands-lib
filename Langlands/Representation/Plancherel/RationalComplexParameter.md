@@ -1,7 +1,5 @@
 # The actual-image complex exponential and its periods
 
-Authors: Worker 6 (original proof), Worker 1444 (verification and submission).
-
 `Langlands.Plancherel.rationalComplexParameter` proves the exact published
 `Langlands.Plancherel.RationalComplexParameterStatement`. It retains all eight
 clauses, the arbitrary field universe, every field, valuation, topology and

@@ -20,11 +20,11 @@ The hypotheses are arbitrary commutative rings `O : Type u` and
 type `σ : Type`, and `S : CommAlgCat.{v} R`. Coefficient tests for the new
 atlas are `A : CommAlgCat.{v} S`. The original chart set can be infinite;
 its covering hypothesis is `Ideal.span X.opens = ⊤`. No flatness or
-injectivity of `R → S` is required. This unit constructs an atlas and
+injectivity of `R → S` is required. This module constructs an atlas and
 individual chart comparisons. Independence from the chosen generators,
 compatibility with iterated base change, a comparison of complete
 compatible-family point functors, refinement descent, and preservation of
-order actions, specialness or heights remain separate obligations.
+order actions, specialness or heights remain separate.
 
 `restrictTest` views an `S`-algebra as an `R`-algebra through its structural
 map, and `restrictTestHom` restricts the coefficient homomorphism. The

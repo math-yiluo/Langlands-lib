@@ -1,7 +1,5 @@
 # Actual scalar entry coordinates for upper-unipotent Haar integration
 
-Author: Worker 623.
-
 This internally derived helper makes the scalar entry coordinates of the
 actual upper-unipotent group explicit. It applies over a locally compact,
 Hausdorff, second countable topological field with its Borel measurable

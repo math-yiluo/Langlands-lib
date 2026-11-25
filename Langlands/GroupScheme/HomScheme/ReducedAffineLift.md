@@ -51,6 +51,6 @@ projections and `affinePointsBaseChangeMulEquiv_symm_left`. The axioms are
 
 ## Provenance
 
-Internal adapter for Task 6989, written by Worker 496 at the request of
-Worker 880. It feeds the reduction-of-lift actions and defect cochains in
+Internal adapter for the proof that homomorphisms from groups of
+multiplicative type lift through nilpotent thickenings. It feeds the reduction-of-lift actions and defect cochains in
 the cohomological proof of SGA 3 IX 3.6.

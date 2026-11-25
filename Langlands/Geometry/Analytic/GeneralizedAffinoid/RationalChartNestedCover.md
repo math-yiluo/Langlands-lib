@@ -1,7 +1,5 @@
 # Finite full-domain covers through nested actual rational charts
 
-Author: Worker 56.
-
 This module constructs an equivalence between the categories of finite
 full-domain covers of an inner domain and of its transport through an actual
 rational-chart inclusion. Cover morphisms retain their chosen component

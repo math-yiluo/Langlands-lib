@@ -1,6 +1,6 @@
 # Constituent compatibility statements
 
-Worker 47 authored this proposition family as a prerequisite to the segment,
+This proposition family is a prerequisite to the segment,
 special-quotient and multisegment statements. These are statements, with no
 proofs or existence assumptions for classification quotients.
 
@@ -79,42 +79,34 @@ Registered original fingerprints:
 - `henniart-2002-characterization`:
   `40c0ed7c7bfb05f1415fd66642d0b1984052f0af7cb5f3061b328216e2d24306`.
 
-## Dependency and acceptance boundary
+## Dependency boundary
 
 The direct project imports are the companion `ConstituentRelations`,
 the existing scalar twist definition, the existing smooth contragredient
-definition, and the existing `PadicField` definition. The following exact
-versions were checked against the current Library at commit
+definition, and the existing `PadicField` definition. The following modules
+were checked against the Library at commit
 `1804f2a6d98d21c2bbfa3c73ccf807df74c484bb` and the local source hashes.
-All seven dependency modules have the same Lean bytes as in the successful
-development check below. Their transitive definition imports are also listed.
-Module names are the import interface; the archived submission identifiers
-below retain the original publication provenance.
+All seven dependency modules have the same Lean bytes as in the
+check below. Their transitive definition imports are also listed.
 
-| Imported module suffix | Artifact and version |
-| --- | --- |
-| `LocalField.Definitions` | `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`, v1 |
-| `Representation.Twist.Definitions` | `c83db975-8b79-4fbb-9901-2db836910a0a`, v1 |
-| `Representation.Dual.Definitions` | `079d7c1a-8b96-4917-997a-536d6954d55b`, v1 |
-| `Representation.Smooth.Definitions` | `665022df-625b-44ae-9dbd-425f6e266bab`, v1 |
-| `Representation.Smooth.SmoothPart.Definitions` | `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`, v1 |
-| `Representation.Smooth.Contragredient.Definitions` | `be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`, v1 |
-| `Representation.Classification.ConstituentRelations` | `6e37a13c-981a-4b66-89fe-9f6852097fad`, v1; independently accepted and published in the current Library. |
+| Imported module suffix |
+| --- |
+| `LocalField.Definitions` |
+| `Representation.Twist.Definitions` |
+| `Representation.Dual.Definitions` |
+| `Representation.Smooth.Definitions` |
+| `Representation.Smooth.SmoothPart.Definitions` |
+| `Representation.Smooth.Contragredient.Definitions` |
+| `Representation.Classification.ConstituentRelations` |
 
-The final aggregate was checked by `lean_check`, diagnostic
-`b243f60b-5778-48ba-9958-205d01aa6872`, with zero errors and warnings.
-Inspection returned `statement_returns_prop: true` and the whole-target
-fingerprint
-`9eb7aa6cc3026f8921e6f20e9f8966e6afec3e4ce62b8b829d7d0aedecd007fa`.
+The final aggregate was checked with zero errors and warnings.
+Inspection showed that the statement returns a `Prop`.
 The elaborated component definitions were also printed with explicit
 universes: the field universe and carrier universe are independent.
-These are development checks, not proof or semantic acceptance.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d` v1,
-Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-This family is a concrete prerequisite, not completion of the assigned
+The checks used Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+This family is a concrete prerequisite, not completion of the
 segment/tempered/unitary-generic classification. In particular, it has no
 induction functor, supercuspidality predicate, segment or multisegment data,
 genericity predicate, or square-integrability/temperedness classification.
-Those interfaces retain their assigned owners and must be integrated into
-the remaining statements.
+Those interfaces are defined in other modules.

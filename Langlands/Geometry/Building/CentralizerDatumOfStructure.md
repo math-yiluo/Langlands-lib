@@ -1,7 +1,5 @@
 # Actual centralizer data over an arbitrary field from two structural statements
 
-Author: Worker 1045.
-
 This internal module constructs
 `Langlands.Geometry.Building.CentralizerDatum.ofStructure` at arbitrary universe
 `u`. Let `k : Type u` be any field, `G` a group scheme over

@@ -1,7 +1,5 @@
 # Conjugate represented inducing data and embeddings
 
-Original transport construction: Worker 1281.
-
 Internal support for point 3 of Renard VI.5.4 Corollary, printed p.175 /
 PDF p.181 of Renard's 2026 edition. This is a derived transport argument,
 using the published normalized Jacquet conjugation equivalence and represented
@@ -14,7 +12,7 @@ composition with a product isomorphism. This module reuses
 `isIso_subgroupMultiplication_iso_comp` to retain the specified multiplication
 isomorphism, `pointImage_iso_comp` to preserve the literal point image, and
 `IsRationalLeviSubgroup.iso_comp` to transport rational Levi structure.
-The duplicate helper declarations have been removed.
+The module declares no duplicates of these helpers.
 
 `leviJacquetConjugatePresentationEquiv` combines this source change with
 ambient conjugation. If the original parabolic inclusion is `p`, its Levi

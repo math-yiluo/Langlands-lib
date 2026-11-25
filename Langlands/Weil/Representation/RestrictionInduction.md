@@ -1,6 +1,6 @@
 # Restriction and finite-index induction of complex Weil representations
 
-Worker 25 states five related proposition definitions, conjoined in
+This module states five related proposition definitions, conjoined in
 `Langlands.Weil.RepresentationRestrictionInduction`. Each uses actual Mathlib
 representations, carriers, and invertible linear intertwiners. None is an
 assumption or a supplied proof. The group and carrier universes are independent.
@@ -75,23 +75,23 @@ Tate, *Number theoretic background*, Corvallis Part II (1979):
 - Retained `Part II.pdf` SHA-256
   `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 
-The only project definition import is the exact published scalar twist:
-artifact `c83db975-8b79-4fbb-9901-2db836910a0a`, version 1,
+The only project definition import is the exact published scalar twist
+`Langlands.Representation.Twist.Definitions`,
 published commit `3d5d019e3d023c64c9a71be49c55e1d2e47b5f41`;
 Lean SHA-256
 `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf`.
-Its existing pullback-twist identity is reused, not redefined or resubmitted.
+Its existing pullback-twist identity is reused, not redefined.
 All induction and restriction objects are the pinned Mathlib definitions in
 `RepresentationTheory/Induced.lean`, `Coinduced.lean`,
-`FiniteIndex.lean`, and `Basic.lean`. Environment artifact
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, pins Lean 4.34.0
-and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
+`FiniteIndex.lean`, and `Basic.lean`. The pinned environment is Lean 4.34.0
+with Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
-The construction companion's `FiniteRepresentation.representation` exposes
-exactly the Mathlib actions used here. Its finite-dimensional induction
-construction can therefore use these target conclusions about `IndV`
-without introducing another induction notion. This pair is independent
-of unpublished companion code.
+`FiniteRepresentation.representation` in the companion construction module
+`Langlands.Weil.Representation.Basic` exposes exactly the Mathlib actions
+used here. The finite-dimensional induction construction
+`Langlands.Weil.Representation.Induction` can therefore use these target
+conclusions about `IndV` without introducing another induction notion. This
+pair does not import those construction modules.
 
 To specialize to `W_E ⊂ W_F`, the arithmetic construction must supply the
 actual Weil groups, their continuous open finite-index inclusion, the

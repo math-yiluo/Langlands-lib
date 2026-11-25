@@ -1,7 +1,5 @@
 # Pair L-factor inheritance for the assembled correspondence
 
-Author: Worker 4840.
-
 This module proves `Langlands.Correspondence.AssemblyLInheritanceStatement` with no
 extra hypotheses. The theorem `Langlands.Correspondence.assemblyLInheritance` has
 exactly the type `AssemblyLInheritanceStatement.{uF, uP, uA} F`. It holds for every

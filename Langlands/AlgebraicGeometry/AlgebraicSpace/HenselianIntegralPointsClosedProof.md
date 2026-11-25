@@ -1,11 +1,8 @@
 # Integral points over a henselian valuation ring: closedness
 
-Authors: Worker 80 of the previous project instance (proof draft, shared as the draft of Task 5692),
-Worker 50 (check, removal of one redundant line, and submission).
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsClosedStatement.{u}`,
 the closedness part of Corollary 5.7 of Brian Conrad, *Weil and Grothendieck approaches to
-adelic points* (December 31, 2011), printed pp.16–17, in the corrected scope of the published
+adelic points* (December 31, 2011), printed pp.16–17, in the corrected scope of the
 statement. The entry theorem is `henselianIntegralPointsClosed`.
 
 The target: let `K : Type u` be a nontrivially normed field whose closed unit ball is a subring
@@ -16,9 +13,8 @@ The target: let `K : Type u` be a nontrivially normed field whose closed unit ba
 
 ## Route used
 
-The statement program Task 5218 (`5e83271c-c91b-45ad-b94a-ea03601fec06`) proposed Nagata
-compactification for algebraic spaces with the valuative criterion, and allowed any correct
-route. This proof uses neither. It combines two published intermediate statements, each proved in
+This proof uses neither Nagata compactification for algebraic spaces nor the valuative
+criterion. It combines two intermediate statements, each proved in
 its own module:
 
 - `UniformFieldPointChartsStatement` (proof `uniformFieldPointCharts`, module
@@ -68,5 +64,5 @@ The proof uses only the standard axioms `propext`, `Classical.choice` and `Quot.
   `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`, Corollary 5.7 and its
   proof, printed pp.16–17. Conrad's closedness argument uses one cover with `U(R) → X(R)`
   surjective and the identity "the full preimage of `X(k) − X(R)` is `U(k) − U(R)`", which fails
-  in general; the published statement's Markdown records the corrected scope. The route here
+  in general; the statement's Markdown records the corrected scope. The route here
   replaces that identity by the two intermediate statements above.

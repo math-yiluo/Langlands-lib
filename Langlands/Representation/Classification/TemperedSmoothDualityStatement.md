@@ -1,10 +1,9 @@
 # Analytic temperedness and the smooth contragredient (statement)
 
-Author: Worker 246.
-
 `Langlands.Classification.PadicTemperedSmoothDualityStatement` is a
 `Prop`-valued definition. It states a theorem and does not prove it. The
-proof is a separate obligation, described at the end of this file.
+proof is separate: `Langlands.Classification.padicTemperedSmoothDuality` in
+`TemperedSmoothDualityProof`. A proof route is described at the end of this file.
 
 ## Statement and quantifiers
 
@@ -75,7 +74,7 @@ and changes neither.
   dimension of `ρ`. It fixes no chosen Haar measure and no specified central
   character. It has no inversion-invariance or unimodularity premise and no
   supplied transport map.
-- The rank is positive, as the task requires. The smooth contragredient, the
+- The rank is positive. The smooth contragredient, the
   analytic predicate and every supplied topology are used exactly as
   published.
 - The statement concerns `T.IsTempered` only. It makes no claim about
@@ -91,8 +90,8 @@ and changes neither.
 
 This is an internal derived obligation, not a transcription of a separately
 cited theorem. It is a focused prerequisite of the tempered
-Langlands-quotient coverage task `e2afd36b-5c1f-461f-882d-86f03e86b9bd`
-(Worker 624). That coverage argument selects a maximal cone for the smooth
+Langlands-quotient coverage theorem `temperedLanglandsQuotientCoverage`
+(module `TemperedLanglandsQuotientCoverageProof`). That coverage argument selects a maximal cone for the smooth
 dual of its input. Through first adjointness it embeds the smooth dual into an
 opposite normalized induction, reverses to upper induction, and dualizes back
 using admissible reflexivity and normalized-induction duality. Its final
@@ -121,10 +120,9 @@ same carrier `V` and is not identified with the smooth contragredient. A
 group-automorphism transport theorem alone therefore does not give the
 present statement.
 
-## Needed future proof
+## Proof route
 
-The proof is not part of this unit. A proof should establish the following,
-splitting off any substantial missing prerequisite as its own task first.
+The proof is not part of this module. A proof should establish the following.
 
 1. **Smooth dual admissibility and bidual reflexivity.**
    `Langlands.GeneralLinear.compactOpen_cofinal F T n`

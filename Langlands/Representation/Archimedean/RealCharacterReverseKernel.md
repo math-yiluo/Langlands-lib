@@ -2,11 +2,12 @@
 
 Lean module: `Langlands.Representation.Archimedean.RealCharacterReverseKernel`.
 
-Worker 5 wrote this module for Task 7069 (`79f2a631-6cbb-4805-97c7-163e69df5de3`), the proof of
-`RealStandardIrreducibleCriterionStatement`. It proves the statement
+This module was written for the proof of
+`RealStandardIrreducibleCriterionStatement`; the Library's proof of that statement (in
+`RealLargeLanglandsQuotientInjectiveProof`) does not import this module. It proves the statement
 `RealReverseIntertwinerKernelStatement` (Rev, Library module
 `RealStandardIrreducibleCriterionReduction`) for lists of character blocks, ties allowed. The
-proof is conditional on three statements stated in the Library whose proofs are open. The
+proof is conditional on three statements stated in the Library (see "The statement"). The
 statement is `Langlands.Archimedean.RealCharacterReverseKernelStatement`, proved as
 `Langlands.Archimedean.realCharacterReverseKernel`. Lists with induced `GL_2` blocks are not
 covered.
@@ -34,9 +35,9 @@ which are in `Langlands.Archimedean`.
 
 `RealCharacterReverseKernelStatement` assumes three statements stated in the Library:
 
-* `RealBlockChartIntegrableStatement` (proof Task 7165);
-* `RealBlockParabolicIntegrationStatement` (proof Task 7166);
-* `RealTemperedStandardIrreducibleStatement` (proof Task 7158).
+* `RealBlockChartIntegrableStatement` (proved as `realBlockChartIntegrable`);
+* `RealBlockParabolicIntegrationStatement` (proved as `realBlockParabolicIntegration`);
+* `RealTemperedStandardIrreducibleStatement` (proved as `realTemperedStandardIrreducible`).
 
 Under these assumptions it says the following. Let `n : ℕ` and `ds : List RealBlock`, let
 `T : I(ds) →ₗ[ℂ] I(ds.reverse)` be `ℂ`-linear, and let `W` be a `ℂ`-submodule of `I(ds)`. Assume:
@@ -66,8 +67,9 @@ Knapp 1986, Theorem 8.54 (printed p. 267) and Proposition 8.61 (printed p. 274) 
 `provided-40cace9c0f8c2361e7b3d7459f7908362f819b68114945405f1c16d968b21855`, PDF page = printed
 page + 14). For a character list, `I(ds)` is the principal series of the position characters and
 `I(ds.reverse)` that of the reversed characters. The proof below does not use Langlands'
-theorem. It is internal: it combines Worker 5220's block Jacquet functional (Task 6749) with the
-transposition and twist device of Worker 5677's complex reversal argument (Task 7064).
+theorem. It is internal: it combines the block Jacquet functional of `RealBlockFunctional` with the
+transposition and twist device of the complex reversal argument (modules `ComplexReverseTransfer`
+and `ComplexReverseTwist`).
 
 ## Auxiliary results
 
@@ -156,15 +158,15 @@ Axioms of `realCharacterReverseKernel`: `propext`, `Classical.choice`, `Quot.sou
 
 ## Dependencies
 
-Besides the Library, the proof uses:
+The proof uses the following modules:
 
-* Worker 5220's modules for Task 6749: `RealBlockChartBound`, `RealBlockLimit`, `RealBlockDual`,
+* the modules of the block Langlands-quotient argument: `RealBlockChartBound`, `RealBlockLimit`, `RealBlockDual`,
   `RealBlockJacquet`, `RealBlockFunctional`, `RealBlockNonvanishing`, `RealTiedIrreducible` and
   `RealCharacterLanglandsQuotient` (`exists_signs`, `exists_blocks`, `exponent_ord`);
-* the modules written for Task 7069: `RealBlockLimitValue`, `RealBlockSliceDecomposition`,
+* the modules of the reversal argument: `RealBlockLimitValue`, `RealBlockSliceDecomposition`,
   `RealReverseTwist`, `RealReverseRecursion` and `RealReverseTransfer`.
 
-From the Library it uses `JacquetKernel` (the annihilator),
+From the rest of the Library it uses `JacquetKernel` (the annihilator),
 `RealStrictCharacterLanglandsQuotient` (`isSignedPower`, `IsCharacterList`) and
 `RealLargeLanglandsQuotientReduction` (`IsRealStandardIntertwiner.map_realStandardRep`,
 `map_realStandardLie`).

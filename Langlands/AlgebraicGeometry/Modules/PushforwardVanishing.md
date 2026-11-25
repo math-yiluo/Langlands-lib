@@ -1,8 +1,7 @@
 # Total cohomology vanishing from vanishing of every direct image
 
-This module packages the published pushforward comparison and injective
-acyclicity theorem for actual structure-sheaf modules. Worker 1013 implemented
-it from the proof design supplied by Worker 727, who is a coauthor.
+This module packages the Library's pushforward comparison and injective
+acyclicity theorem for actual structure-sheaf modules.
 Its provenance is internal and derived entirely from those Library results;
 it introduces no new source transcription or geometric theorem.
 
@@ -48,7 +47,7 @@ has the complete type
 
 The quantifier on `q` includes degree zero. The proof transports the
 degree-zero vanishing along `(higherDirectImageZeroIso f).app M` to
-obtain `IsZero ((Scheme.Modules.pushforward f).obj M)`. The published lemma
+obtain `IsZero ((Scheme.Modules.pushforward f).obj M)`. The lemma
 `Langlands.Cohomology.AcyclicComparison.isZero_rightDerived_obj_of_isZero`
 shows that the right-derived functor of `relativeGlobalSections g` sends
 this zero pushforward to a zero object. This lemma uses preservation of
@@ -61,9 +60,12 @@ line bundle, finite-generation, or field hypotheses. Only the final
 structure morphism `g` has an affine codomain, which specifies the
 scalar ring of the cohomology. No spectral sequence is constructed.
 
-This is a helper unit for the first-projection exact proof task
-`651d1a6b-549e-4d79-ae47-19627b02f30d`. The theorem takes vanishing
+This is a helper module for the proof of the first-projection statement
+`Langlands.AbelianScheme.AlgClosedFieldSquareFirstProjectionAcyclicityStatement`
+(`algClosedFieldSquareFirstProjectionAcyclicity`, module
+`Langlands.AlgebraicGeometry.Picard.SquareFirstProjectionAcyclicityProof`,
+which imports this module). The theorem takes vanishing
 of all actual higher direct images as a hypothesis; it does not prove
-that vanishing from rational fibres and does not prove the host task's
+that vanishing from rational fibres and does not prove that
 unconditional abelian-square proposition. That geometric input and
-the final exact-target proof remain separate obligations.
+the final proof are in other modules.

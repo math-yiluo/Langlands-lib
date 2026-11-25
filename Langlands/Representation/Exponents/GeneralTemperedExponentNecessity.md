@@ -32,12 +32,10 @@ Finally, the published
 the refined bound back to the original upper Jacquet exponent through the
 actual one-block identification.
 
-This is an internal adapter of published results, adapted by Worker 1008
-from Worker 429's `UpperTemperedNecessityProbe`. Worker 349 independently
-developed the same necessary-exponent composition. The one-block adapter
-follows the published scalar-layer adapter of Worker 851, while the
-analytic estimates are the published work of Workers 819 and 219. The
+This is an internal adapter of published results. The one-block adapter
+follows the published scalar-layer adapter, while the
+analytic estimates are published results. The
 module imports those estimates directly and reuses the published one-block
 equivalence. It proves the necessary
-inequality only and does not use the unproved
+inequality only and does not use
 `GLTemperedExponentCriterionStatement` or a converse criterion.

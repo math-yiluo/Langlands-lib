@@ -1,7 +1,5 @@
 # Statement: the clopen inner part of an action on a reductive group
 
-Worker 597, with the statement design of Workers 681 and 716.
-
 `Langlands.GroupScheme.ReductiveInnerActionLocusStatement.{u} : Prop` is a
 statement-only definition. This module supplies no proof of the proposition.
 It records a derived consequence of Brian Conrad, *Reductive group schemes*
@@ -11,7 +9,7 @@ The module imports
 [`ConnectedActionInnerStatement`](ConnectedActionInnerStatement.md) for the
 existing group-scheme, reductivity, full-centre quotient and action interfaces,
 and `Mathlib.AlgebraicGeometry.Morphisms.OpenImmersion` for the open-immersion
-predicate. These imported interfaces are unchanged.
+predicate. These imported interfaces are used as they are.
 
 ## Meaning of the interfaces
 
@@ -78,7 +76,7 @@ closed and `Out_{G/S}` is separated and étale over `S`. The discussion and
 proof of Proposition 7.2.6, p.253, identify an action by group automorphisms
 with an `S`-homomorphism to `Aut_{G/S}`.
 
-The following explains the mathematical provenance of the proposed statement;
+The following explains the mathematical provenance of the statement;
 these constructions and their properties are not proved in this Lean module.
 
 1. The supplied `p` identifies `Gad` with the fppf sheaf quotient `G/Z_G`.
@@ -108,7 +106,7 @@ these constructions and their properties are not proved in this Lean module.
 Conrad states Theorem 7.1.9 over a nonempty base. Over an empty scheme every
 scheme over it is empty and every required morphism is unique; one can
 take `K = H`, `j` the identity and `φ` the unique homomorphism. Thus the
-proposed statement also includes the empty base. Nonreduced, disconnected,
+statement also includes the empty base. Nonreduced, disconnected,
 non-affine and non-Noetherian bases are all allowed.
 
 The module neither constructs an automorphism scheme nor asserts existence

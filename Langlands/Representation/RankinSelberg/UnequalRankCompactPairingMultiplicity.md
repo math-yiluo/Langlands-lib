@@ -1,7 +1,5 @@
 # The unequal-rank compact generic pairing from Whittaker multiplicity one
 
-Author: Worker 896.
-
 Module `Langlands.Representation.RankinSelberg.UnequalRankCompactPairingMultiplicity`.
 This module proves that the Library proposition
 `Langlands.Whittaker.MultiplicityOneStatement` implies the Library proposition

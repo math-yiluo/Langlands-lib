@@ -123,13 +123,13 @@ theorem spectralInvariantDiscretePresheaf_isSheaf (H : OpenSubgroup G)
         intro x
         apply hr
         funext i
-        change (F.map (f i).op).hom.hom (q (ConcreteCategory.hom (E.obj.ρ g) x)) =
+        change (F.map (f i).op).hom.hom (q (ConcreteCategory.hom (E.obj.ρ g).asHom x)) =
           (F.map (f i).op).hom.hom
-            (ConcreteCategory.hom ((F.obj (Opposite.op d)).obj.ρ g) (q x))
+            (ConcreteCategory.hom ((F.obj (Opposite.op d)).obj.ρ g).asHom (q x))
         have hmap := congrArg (fun k => k (q x)) ((F.map (f i).op).hom.comm g)
         change (F.map (f i).op).hom.hom
-            (ConcreteCategory.hom ((F.obj (Opposite.op d)).obj.ρ g) (q x)) =
-          ConcreteCategory.hom ((F.obj (Opposite.op (D i))).obj.ρ g)
+            (ConcreteCategory.hom ((F.obj (Opposite.op d)).obj.ρ g).asHom (q x)) =
+          ConcreteCategory.hom ((F.obj (Opposite.op (D i))).obj.ρ g).asHom
             ((F.map (f i).op).hom.hom (q x)) at hmap
         rw [hmap, hq, hq]
         exact congrArg (fun k => k x) ((p (f i) (hf i)).hom.comm g) }

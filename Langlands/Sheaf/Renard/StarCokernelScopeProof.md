@@ -1,6 +1,6 @@
 # Proof of the star-sheaf cokernel injection and undersized obstructions
 
-Worker 1038. This pair proves the existing closed proposition
+This pair proves the existing closed proposition
 `Langlands.Sheaf.Renard.StarDiagram.CokernelScopeStatements.{u,v}` as the
 theorem `Langlands.Sheaf.Renard.StarDiagram.cokernelScopeStatements`.
 The target and its three conjuncts are imported unchanged from

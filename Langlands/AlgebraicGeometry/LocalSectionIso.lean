@@ -62,7 +62,7 @@ lemma localSectionBasis_iso
 /-- A local sheaf intertwining equation gives the section intertwining equation. -/
 lemma localSectionIso_intertwine (h : M.over U ≅ N.over U)
     (a : End (M.over U)) (b : End (N.over U))
-    (hab : a ≫ h.hom = h.hom ≫ b) (V : Over U) (x : Γ(M, V.left)) :
+    (hab : a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) (x : Γ(M, V.left)) :
     localSectionIso h V (localSectionEndomorphism M V a x) =
       localSectionEndomorphism N V b (localSectionIso h V x) := by
   exact congrArg (fun t : M.over U ⟶ N.over U => t.val.app (op V) x) hab
@@ -72,7 +72,7 @@ theorem localSectionEndomorphism_toMatrix_iso
     (e : SheafOfModules.free (R := X.ringCatSheaf.over U) I ≅ M.over U)
     (h : M.over U ≅ N.over U)
     (a : End (M.over U)) (b : End (N.over U))
-    (hab : a ≫ h.hom = h.hom ≫ b) (V : Over U) :
+    (hab : a.asHom ≫ h.hom = h.hom ≫ b.asHom) (V : Over U) :
     LinearMap.toMatrix (localSectionBasis e V) (localSectionBasis e V)
         (localSectionEndomorphism M V a) =
       LinearMap.toMatrix (localSectionBasis (e ≪≫ h) V)
@@ -94,7 +94,7 @@ theorem localSectionDeterminant_matrix_iso
     (e : SheafOfModules.free (R := X.ringCatSheaf.over U) I ≅ M.over U)
     (h : M.over U ≅ N.over U)
     (a : ι → End (M.over U)) (b : ι → End (N.over U))
-    (hab : ∀ i, a i ≫ h.hom = h.hom ≫ b i) (V : Over U) :
+    (hab : ∀ i, (a i).asHom ≫ h.hom = h.hom ≫ (b i).asHom) (V : Over U) :
     Langlands.Shimura.HodgeDeterminant.matrix (localSectionBasis e V)
         (fun i => localSectionEndomorphism M V (a i)) =
       Langlands.Shimura.HodgeDeterminant.matrix (localSectionBasis (e ≪≫ h) V)
@@ -109,7 +109,7 @@ theorem localSectionDeterminant_iso
     (e : SheafOfModules.free (R := X.ringCatSheaf.over U) I ≅ M.over U)
     (h : M.over U ≅ N.over U)
     (a : ι → End (M.over U)) (b : ι → End (N.over U))
-    (hab : ∀ i, a i ≫ h.hom = h.hom ≫ b i) (V : Over U) :
+    (hab : ∀ i, (a i).asHom ≫ h.hom = h.hom ≫ (b i).asHom) (V : Over U) :
     localSectionDeterminant e a V = localSectionDeterminant (e ≪≫ h) b V := by
   unfold localSectionDeterminant Langlands.Shimura.HodgeDeterminant.polynomial
   exact congrArg Matrix.det (localSectionDeterminant_matrix_iso e h a b hab V)
@@ -121,7 +121,7 @@ theorem localSectionDeterminant_iso_any_chart
     {J : Type u} [Fintype J]
     (e' : SheafOfModules.free (R := X.ringCatSheaf.over U) J ≅ N.over U)
     (a : ι → End (M.over U)) (b : ι → End (N.over U))
-    (hab : ∀ i, a i ≫ h.hom = h.hom ≫ b i) (V : Over U) :
+    (hab : ∀ i, (a i).asHom ≫ h.hom = h.hom ≫ (b i).asHom) (V : Over U) :
     localSectionDeterminant e a V = localSectionDeterminant e' b V := by
   rw [localSectionDeterminant_iso e h a b hab V]
   exact localSectionDeterminant_trivialization_independent _ _ b V

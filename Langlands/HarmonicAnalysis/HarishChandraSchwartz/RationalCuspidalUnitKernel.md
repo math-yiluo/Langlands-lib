@@ -6,19 +6,19 @@ DOI 10.1017/S1474748003000082, literature ID `waldspurger-2003-plancherel`.
 Relevant passage: the proof of Proposition VIII.4.1, printed pp. 328–330
 (PDF pp. 94–96).
 
-This module belongs to unit 3 ("rank adapter") of Task 7439, revision 2. Its
-provenance is **derived**. It contains no new mathematics. It joins modules of
-the same task, bundles six existing laws into one definition, and reads one
+This module belongs to the rank adapter for the proof of VIII.4.1, with
+`RationalCuspidalUnit` and `RationalCuspidalUnitAssembly`. Its provenance is **derived**. It
+contains no new mathematics. It joins the modules below, bundles six existing laws into one definition, and reads one
 conjunct off the Library's closed statement of Corollary VIII.3.2.
 
-* `RationalCuspidalUnit` (unit 3, first layer) defines the predicate
+* `RationalCuspidalUnit` (the abstract layer of the rank adapter) defines the predicate
   `IsRationalCuspidalUnit` for the properties of `°e`. It derives that predicate
   for `P(1_H)` from six named laws of an arbitrary complex-linear operator `P` on
   the actual rational Schwartz space.
-* `RationalCuspidalCentralKernelStep` (unit 2) defines the structure
+* `RationalCuspidalCentralKernelStep` (the local kernel step) defines the structure
   `IsRationalCuspidalLevelKernel` for the same properties; this is the
   hypothesis on `°e` of the local kernel step.
-* `RationalCuspidalCentralKernelPairing` (a follow-up of unit 2) defines
+* `RationalCuspidalCentralKernelPairing` (a continuation of the kernel step) defines
   `RationalLevelKernelConjugationIntegrable`, the integrability form of VIII.3.2
   at `E`; this is the second hypothesis on `°e` of the local kernel step.
 * `RationalCuspidalConjugationStatement` (Library) states the closed
@@ -35,7 +35,7 @@ records that `°e ∈ °C_H`, that `°e` is real and that `°e` is supported in 
 `A_G \ G` to converge, which the source deduces from Corollary VIII.3.2
 (pp. 329–330). This module proves that `°e`, for an operator with the
 laws of VIII.2, satisfies the two hypotheses on `°e` of the kernel step as
-formalized in Task 7439: the properties above, and the VIII.3.2 integrability
+formalized in the Library: the properties above, and the VIII.3.2 integrability
 form at `°e`.
 
 ## What this module proves
@@ -61,7 +61,7 @@ the six laws of `RationalCuspidalUnit`, in this order:
 `RationalDegreeZeroRangeLaw`, `RationalDegreeZeroTranslationLaw`,
 `RationalDegreeZeroConjLaw`, `RationalDegreeZeroCheckLaw`,
 `RationalDegreeZeroTwistLaw` and `RationalDegreeZeroLeftConvolutionLaw μG`.
-It adds no condition to them. Its purpose is to give the later instantiation
+It adds no condition to them. Its purpose is to give the instantiation
 (`P := degreeZero`) and the assembly a single hypothesis.
 
 ### The two hypotheses of the kernel step for `°e` (proved)
@@ -94,13 +94,11 @@ It adds no condition to them. Its purpose is to give the later instantiation
 
 The local kernel step itself (finite dimensionality of
 `rationalCuspidalCentralLevelSpan hKc hPK ρ muA χ H.toSubgroup` from these two
-hypotheses on `°e`) is not composed here. Unit 2 proves it, and Worker 825's
-staged follow-up `RationalCuspidalCentralKernelLocalStep` (candidate
-`b46ce0f0-0164-4091-b359-d77221dc0431`) removes its convolution-weight
-hypothesis. The composition with that step is a later module of Task 7439, after
-that module is in the Library.
+hypotheses on `°e`) is not composed here. `RationalCuspidalCentralKernelStep` proves it, and
+`RationalCuspidalCentralKernelLocalStep` removes its convolution-weight
+hypothesis. The composition with that step is `RationalCuspidalUnitAssembly`.
 
-## Open hypotheses and their owners
+## Open hypotheses
 
 This module assumes no same-rank finiteness, no same-rank reconstruction, no
 VIII.4.1 target and no dimension bound. Its theorems assume only the laws bundled
@@ -108,22 +106,21 @@ in `IsRationalDegreeZeroOperator`, Haar measures, and, for the two VIII.3.2
 theorems, the Library's closed VIII.3.2 statement with its structural data.
 
 * **The operator and its six laws.** The actual degree-zero projection
-  `degreeZero` and its strictly-smaller-rank inputs: **Task 7277**; global
-  well-founded assembly: **Task 3642**. The range, conjugation, check, twist and
-  left-convolution laws for `degreeZero`: **Task 7277** (VIII.2.1–VIII.2.3
-  targets). The translation law (the source's "relation évidente"
-  `°(ρ(g₁)λ(g₂)f) = ρ(g₁)λ(g₂)°f`) is not among Task 7277's listed targets.
-  Worker 3642 (Task 3642) has assigned it to **Task 7277** as a supporting
-  compatibility. Instantiating `P := degreeZero` and discharging the laws from the
-  published targets: **Task 7439**, unit 3, after Task 7277 publishes.
+  `degreeZero` of VIII.2, with its strictly-smaller-rank inputs from a global
+  well-founded assembly over rank, is not in the Library. The range, conjugation,
+  check, twist and left-convolution laws for `degreeZero` are the VIII.2.1–VIII.2.3
+  targets. The translation law (the source's "relation évidente"
+  `°(ρ(g₁)λ(g₂)f) = ρ(g₁)λ(g₂)°f`) is not among those targets; it is a supporting
+  compatibility. Instantiating `P := degreeZero` and discharging the laws needs the
+  operator and these targets.
 * `RationalCuspidalConjugationIntegrabilityStatement` (Corollary VIII.3.2): its
-  statement is in the Library; its proof is owned by **Task 7500**.
+  statement is in the Library; it is not proved there.
 * The structural premise `SimultaneousStandardBasisAt i ν K0` of that statement:
   the Library statement `CuspidalSupport.RationalSpecialVertexCompactInputsStatement`
   supplies such a `K0` for every maximal split torus and generic cocharacter. The
-  Library derives it from `JointSpecialCompactBasisExistenceStatement`, owned by
-  **Task 4169**. Using it in the closed assembly is Task 7439's work.
+  Library derives it from `JointSpecialCompactBasisExistenceStatement`, which is not
+  proved unconditionally there. `RationalCuspidalUnitAssembly` uses it in the per-group
+  assembly.
 
 The closed target `RationalCuspidalCentralProjectionFiniteStatement` is not proved
-here. This module is an intermediate unit; Task 7439's completion still requires
-that closed theorem.
+here.

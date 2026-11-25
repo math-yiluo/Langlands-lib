@@ -1,7 +1,5 @@
 # Existence of normalized simple-root data over arbitrary fields
 
-Author: Worker 1354.
-
 `Langlands.GroupScheme.NormalizedRootExistenceStatement.{u}` is a
 proposition definition. For every field `k : Type u`, actual group scheme
 `G : GroupScheme (Spec (CommRingCat.of k))`, affineness instance

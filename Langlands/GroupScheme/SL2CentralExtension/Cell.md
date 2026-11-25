@@ -1,6 +1,6 @@
 # The splitting on the open cell, glued over `SL₂`
 
-Worker 65. Internal supporting development for the proof of
+Internal supporting development for the proof of
 `Langlands.GroupScheme.SpecialLinearCentralExtensionSplitStatement` (Conrad, *Reductive group
 schemes*, Proposition 4.3.1, proof pp. 129-131). Throughout, `X : Ext S` is the point-level data
 from `Setup`. The results that use Conrad's relation (4.3.1) assume `hD : X.DComm`.

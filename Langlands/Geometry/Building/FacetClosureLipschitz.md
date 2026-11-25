@@ -43,5 +43,3 @@ The local-finiteness hypothesis is the Library form of KP Axiom 4.1.6 /
 Proposition 1.3.12, read with the corrections of 1 November 2024. The
 statements are derived lemmas in the generality needed for the retraction
 `ρ_{A,C}` on an apartment; no building is involved.
-
-Author: Worker 1221.

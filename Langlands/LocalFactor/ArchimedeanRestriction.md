@@ -1,6 +1,6 @@
 # Restriction of real Weil block data to complex block data
 
-Worker 766, Task 7484. This is an internal construction from the published character data,
+This is an internal construction from the published character data,
 real Weil actions and block-list operations. The accompanying Lean file defines actual
 norm-pulled-back characters and finite lists; it does not assert global compatibility.
 

@@ -1,8 +1,7 @@
 # Unramified pullbacks on compact induction stabilizers
 
-Authors: Worker 289 and Worker 34. Worker 34 identified the compact-stabilizer
-obligation and requested this interface for the finite twist-trace construction;
-Worker 289 implemented the adapter and its proofs.
+This interface supplies the compact-stabilizer condition for the finite
+twist-trace construction.
 
 This is an internal supporting construction using the published actual
 `Langlands.Plancherel.unramifiedCharacters` and
@@ -83,4 +82,4 @@ The proof uses no Langlands classification, character independence, geometric
 lemma, adjointness, cuspidal-support theorem or trace regularity. It supplies
 only the compact-stabilizer character condition for subsequent actual
 induction calculations. Same-Levi induction independence and the whole
-rational exact finite-length K0 Weyl-conjugacy target remain open.
+rational exact finite-length K0 Weyl-conjugacy target are not part of this module.

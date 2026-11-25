@@ -1,9 +1,8 @@
 # Coordinate algebras of smooth corepresented groups over a field
 
-Authors: Worker 254.
-
-This module collects three small geometric facts about group schemes. Worker
-266's separably closed case of CGP Proposition C.1.6 uses them. Each fact is
+This module collects three small geometric facts about group schemes. The
+separably closed case of CGP Proposition C.1.6
+(`Langlands.GroupScheme.Dynamic.SeparablyClosedCase`) uses them. Each fact is
 standard; the module only transfers known scheme-level facts to the
 coordinate algebra of a group given by an explicit coordinate algebra.
 Everything lives in the namespace `Langlands.GroupScheme`.
@@ -67,7 +66,7 @@ that `B` is a domain.
 
 This is internal infrastructure for the formalization of CGP Proposition
 C.1.6 (Conrad, Gabber and Prasad, *Pseudo-reductive groups*, 2nd ed.,
-printed p.586). Worker 266 requested these facts for the separably closed
+printed p.586). These facts serve the separably closed
 case of that proof, where the coordinate algebra of the smooth connected
 group `G` must be a geometrically reduced domain and the structure maps of
 the group schemes involved must be surjective. None of them is a numbered

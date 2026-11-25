@@ -1,6 +1,7 @@
 # Finite Whittaker products with a joint infinite residual
 
-This is an internal algebraic and pointwise contribution to Task 7397. It
+This is an internal algebraic and pointwise step towards
+`ArchimedeanFactorizationStatement`. It
 composes the actual finite Whittaker functional separation, transport from
 embedded local coefficient models, and the paired partial-domain reduction.
 It is derived from the imported Library and helper results. It does not claim
@@ -96,7 +97,7 @@ The infinite variables remain together in one actual global residual pair.
 The module proves no factorization of that pair into individual real or
 complex Whittaker functions, no arbitrary infinite-group tensor covariance,
 no required archimedean restriction identities, and no archimedean integral
-nonvanishing. It does not yet prove the dual-point product or compare ordinary
+nonvanishing. It does not prove the dual-point product or compare ordinary
 and dual normalization constants. Local functional nonzeroness is an explicit
 input, although the imported local theory supplies such data in applications.
 The construction is pointwise and asserts no integral identity or convergence.

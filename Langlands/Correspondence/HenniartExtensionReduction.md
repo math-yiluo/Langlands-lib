@@ -1,6 +1,6 @@
 # Henniart's construction from stable images, and the route to the correspondence
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartExtensionReduction`,
+Module `Langlands.Correspondence.HenniartExtensionReduction`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers and local constants), `uV` (supercuspidal carriers), and `uE` for
 the local constants of an arbitrary construction statement. All are independent.
@@ -12,7 +12,7 @@ the local constants of an arbitrary construction statement. All are independent.
 The implication
 
 1. `CandidateExistenceStatement.{uK, uW, uV, uW, uK}` (Henniart 2000, Théorème 3.1
-   with §§3.7–3.8, published by Worker 14 in `HenniartStableMapStatement`),
+   with §§3.7–3.8, stated in `HenniartStableMapStatement`),
 2. `StableCorrespondenceStatement.{uK, uW, uV, uW}` (Théorème 4.2 (a) and the
    bijectivity in (b)),
 3. `UnramifiedTwistIndependenceStatement.{uK, uW, uV, uW}` (§4.4 with Henniart
@@ -51,7 +51,7 @@ Internal. Henniart (2000), §4.4, printed p. 453 (PDF p. 15), defines `π(σ)` f
 all irreducible `σ` by unramified twisting from the classes with determinant of
 finite order. It derives Théorème 1.2 "par les arguments (faciles) de [He 4,
 §4]", that is Henniart (1993), §§4.2–4.4, printed pp. 348–349. The first
-statement formalizes that step from the components of Worker 14's
+statement formalizes that step from the components of
 `HenniartStableMapStatement` and the standard inputs listed. The second combines
 it with the published uniqueness from local converse (Henniart 1993, Théorème
 4.1). The sources of the two new inputs are given in
@@ -81,7 +81,7 @@ combines it with the published
 `supercuspidalCorrespondenceStatement_of_localConverse_of_existence`.
 `supercuspidalCorrespondenceHenniartReduction` composes the two reductions.
 
-## Library correction carried by this contribution
+## A correction in `BaseReciprocityCoherence`
 
 `Langlands/Correspondence/BaseReciprocityCoherence.lean` declared an unnamed
 local instance `TopologicalSpace F.Carrier`. In a common import closure it

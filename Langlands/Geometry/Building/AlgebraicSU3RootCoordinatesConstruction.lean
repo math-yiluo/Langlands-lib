@@ -185,7 +185,7 @@ def fiberNegativeUnitary :
       exact congrArg (fun φ => Additive.ofMul (CommGroupScheme.groupHom φ))
         (rootOf_mem_restrictionFiber k K f j hP hf hcent hT ν hν hGK hi _
           (partner_mem k K f j hP hf hcent hT ν hν hGK hi hjc ha h2a (basePoint_mem k K f j hP hf hcent hT ν hν hGK hi ha)))
-    rw [map_neg, hpos, map_neg, map_neg]
+    rw [map_neg, hpos, AddEquiv.map_neg, map_neg]
   conjugation z q := by
     rw [SplitPinning.lowerUnitaryEquiv_apply, SplitPinning.lowerUnitaryEquiv_apply]
     refine SplitPinning.conj_unitaryRho_lower k K j hAdj (Dₚ).pinning (Dₚ).torusIso (Dₚ).inclusion_eq (Dₚ).rootMaps

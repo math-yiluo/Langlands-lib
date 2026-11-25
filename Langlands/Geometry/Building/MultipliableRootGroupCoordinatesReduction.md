@@ -15,7 +15,7 @@ statements as explicit hypotheses. It does not assert that either of them holds.
 Provenance: the module is internal. The record `ValuedUnitaryRootGroupCoordinates` models the
 isomorphism `R_{E/K} U_{L/E} → U_a` of Kaletha–Prasad, *Bruhat–Tits theory: a new approach*,
 Construction 2.9.16, together with the valuation of Construction 6.1.17. The proof here only
-assembles published or separately staged Lean results, listed below.
+assembles published Lean results, listed below.
 
 ## Split coroot points and scaling
 

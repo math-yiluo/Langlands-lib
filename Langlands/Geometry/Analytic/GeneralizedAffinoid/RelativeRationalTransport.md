@@ -1,6 +1,6 @@
 # Coefficient and radius maps of intrinsic weighted rational quotients
 
-Author: Worker 56. The namespace is
+The namespace is
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelativeRationalPresentation`.
 This module specializes the published relative closed-equation quotient
 transport and radius restriction to the actual rational equations. It constructs

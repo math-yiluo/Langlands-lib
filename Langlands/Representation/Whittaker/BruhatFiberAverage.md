@@ -1,7 +1,5 @@
 # Shalika's fiber action on torus coordinates and the raw fiber integral
 
-Author: Worker 724.
-
 This pair constructs Shalika's action of `U_w⁺` on the torus-coordinate space of an upper
 Bruhat cell, proves its elementary algebraic and topological laws, and constructs the
 unweighted orbit integral of a test function as a complex linear map into complex

@@ -2,8 +2,6 @@
 
 Module `Langlands.BruhatTits.IntegralModels.QuotientRootCoefficientDescent`.
 
-Author: Worker 99.
-
 ## Setting
 
 The setting is that of the published `FacetRootSignBaseChange`, at arbitrary

@@ -1,7 +1,5 @@
 # Surjectivity of affine-chart Weil restrictions
 
-Author: Worker 185.
-
 This module supplies the second local input for the affine-atlas step in
 Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Lemma 5.10, printed pp.17–18 (registered source

@@ -6,7 +6,7 @@ continuous characters, reciprocal-entire L-factors, and scaled epsilon units
 of `ArchimedeanAttachment` and `ArchimedeanScaling`. All declarations are in
 `Langlands.LocalFactor`, with character-specific declarations in its
 `Archimedean.RealCharacterData` and `Archimedean.ComplexCharacterData`
-namespaces. Worker 20 authors this extension.
+namespaces.
 
 ## Inverse character data
 
@@ -130,7 +130,7 @@ SHA-256 is
 `c890894fe19783890cc4def2c5bf92a18d71619acf8ba7005aefce4984fe70d6`.
 The fingerprint and original printed pp.12-15 / PDF pp.21-24 were checked;
 printed p.13 was also read visually. No source-specific erratum file was
-present in the project or Library notes roots checked for this contribution.
+present in the project or Library notes roots checked for this module.
 
 The declaration-level source correspondence is:
 
@@ -141,7 +141,7 @@ The declaration-level source correspondence is:
 | `gammaValue_standard` and the imported epsilon values | Equations (3.2.4)-(3.2.5), printed p.13 / PDF22, specify the standard characters, measures and phases `i^e` and `i^abs(m)`. |
 | `gammaValue_measure_scale` and the explicit harmonic arguments | Equations (3.2.2)-(3.2.3), printed p.13 / PDF22, give positive measure scaling and fixed-measure character scaling. Applied to `chi * omega_s`, the latter contributes `chi(a)*abs(a)^(s-1)` for real data and `chi(a)*norm(a)^(2*(s-1))` for complex data, as already implemented by `ArchimedeanScaling`. |
 
-The source fixes conventions; this contribution does not prove or assume
+The source fixes conventions; this module does not prove or assume
 Tate's local functional equation. The generic regular subtype, ratio,
 reflection equivalence, inverse data, and construction identities are derived
 packaging of the existing concrete objects. It supplies rank-one real and
@@ -156,13 +156,11 @@ The sole direct project import is
 `Langlands.LocalFactor.ArchimedeanScaling`; its published dependency chain
 supplies `ArchimedeanAttachment`, `Archimedean.Definitions`,
 `Analytic.ReciprocalEntire`, and the actual Weil character representations.
-They are reused by Lean name. Their accepted constructions were authored by
-Workers 33 and 40 and are dependencies, not new draft contributions to this
-module. No new external code is copied.
+They are reused by Lean name. Their constructions are dependencies, not new
+contributions of this module. No new external code is copied.
 
 The environment is Lean 4.34.0 with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. Development compilation and complete
 declaration checks passed without errors or warnings. Private probes also
 checked the pointwise inverse formulas and exclusion of `s=0` and `s=1` for
-the trivial real character. These checks do not replace independent semantic
-review and publication.
+the trivial real character.

@@ -1,7 +1,5 @@
 # Finite volume of the norm-one adelic rational quotient
 
-Author: Worker 3994. Proof for task 40747bb3.
-
 This module proves the Library target
 `Langlands.Global.AdelicGroupPoints.NormOneRationalQuotientFiniteVolumeStatement`
 (`Langlands/Global/AdelicFiniteVolumeStatement.lean`). This is Getz–Hahn, Theorem 2.6.3, over
@@ -17,7 +15,7 @@ The proof follows the Library's Siegel-set route for connected reductive groups,
 change: no finite-place Iwasawa decomposition `P(𝔸_F) K = G(𝔸_F)` is used. Instead it uses the
 weaker data of `Langlands/Global/AdelicOpenIwasawaCompact.lean`, together with the measure
 bound of `Langlands/Global/AdelicSiegelMeasureOpenSubgroup.lean`. Those two modules and
-`Langlands/Analysis/Local/OpenCompactFactorizationHaar.lean` are part of this contribution.
+`Langlands/Analysis/Local/OpenCompactFactorizationHaar.lean` were ported together with this module.
 
 The final theorem uses only the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.

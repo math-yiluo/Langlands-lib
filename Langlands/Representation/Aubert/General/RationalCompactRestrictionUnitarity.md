@@ -1,6 +1,6 @@
 # Positive forms from compact coefficients on the actual norm kernel
 
-This derived supporting construction supplies an invariant positive form on
+This construction supplies an invariant positive form on
 the original carrier of an irreducible smooth complex representation. It is
 intended for the zero-exponent branch of rational rank-one self-association.
 It composes published constructions and has no new literature claim.
@@ -54,9 +54,9 @@ nonarchimedean group assumptions. The generic positive-form definition now
 applies. `isUnitarizable_of_compact_normKernel_restriction` records its
 nonempty conclusion.
 
-This unit does not prove compact restriction from cuspidality or establish the
+This module does not prove compact restriction from cuspidality or establish the
 central valuation index. It does not construct a unitary central character
 from split-center exponent data or transport a literal Levi representation
 to the canonical Levi point group. Those are separate obligations. In
-particular, this supporting construction does not prove
+particular, this construction does not prove
 `RationalRankOneSelfAssociationStatement` or add any premise to that target.

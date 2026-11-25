@@ -20,4 +20,4 @@ The exact denominator on the left is `lowerInUpper`, as in the existing quotient
 
 `imageFiltrationGradedIso` applies this construction at each adjacent pair of a supplied actual finite filtration. It identifies every grade of the fixed `imageFiltration` with the native quotient of the corresponding original grade. It retains all indices, including repeated steps and zero grades. No finiteness, admissibility, flatness or Noetherian premise is present.
 
-This unit supplies the native support-image exactness bridge needed in the coefficient geometric-lemma route. The rational-parabolic finite orbit geometry, passage from subgroup-stable support to the ambient quotient, normalized orbit-Jacquet formulas, cuspidal elimination and final compact-open fixed-module finiteness are separate obligations.
+This module supplies the native support-image exactness bridge needed in the coefficient geometric-lemma route. The rational-parabolic finite orbit geometry, passage from subgroup-stable support to the ambient quotient, normalized orbit-Jacquet formulas, cuspidal elimination and final compact-open fixed-module finiteness are separate obligations.

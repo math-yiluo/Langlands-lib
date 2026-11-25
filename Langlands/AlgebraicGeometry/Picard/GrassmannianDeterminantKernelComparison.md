@@ -1,6 +1,6 @@
 # Actual quotient comparison from affine generator kernels
 
-This internal unit converts explicit actual generator-kernel information
+This internal module converts explicit actual generator-kernel information
 into the existing actual affine-point Grassmannian quotient comparison.
 It does not prove any geometric kernel identity.
 
@@ -29,4 +29,4 @@ premise. The actual tensor maps, their surjectivity and their classified
 kernel equalities remain explicit inputs. The provenance is internal:
 ordinary quotient linear algebra and the already established actual
 Grassmannian determinant criterion provide the whole argument. No
-parabolic orbit or kernel equality is asserted by this unit.
+parabolic orbit or kernel equality is asserted by this module.

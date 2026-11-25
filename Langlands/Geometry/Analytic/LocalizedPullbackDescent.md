@@ -1,7 +1,5 @@
 # Pullback universal properties from refined strong maps
 
-Author: Worker 250.
-
 This internal categorical construction gives a sufficient condition for a
 square of strong maps to become a pullback in the existing localized
 analytic category. It does not construct analytic fibre products.

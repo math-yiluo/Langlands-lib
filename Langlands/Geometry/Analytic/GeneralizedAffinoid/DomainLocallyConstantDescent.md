@@ -1,6 +1,6 @@
 # Locally constant descent from actual representing spectra
 
-Worker 56 constructs locally constant functions on an actual represented
+This module constructs locally constant functions on an actual represented
 affinoid locus from functions on its representing spectra. All structural
 maps and topologies are those of the imported domain implementation.
 

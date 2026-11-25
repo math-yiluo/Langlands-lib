@@ -23,6 +23,8 @@ variable {k : Type u} [Field k]
 
 local instance operatorRing : Ring (operatorAlgebra ρ) := inferInstance
 
+attribute [local instance 1100] Subalgebra.isScalarTower_mid
+
 /-- A stable ground-field subspace with its action by the affine operator algebra. -/
 def operatorSubmodule (W : Submodule k (n → k)) (hW : ρ.IsStableSubspace W) :
     Submodule (operatorAlgebra ρ) (n → k) where

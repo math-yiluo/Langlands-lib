@@ -93,8 +93,8 @@ theorem exists_pos_nsmul_mem_realizedSet (nu : cocharacterLattice p.torus)
       apply P.toLinearMap.flip.toPerfPair.injective
       apply LinearMap.ext
       intro y
-      rw [map_zero, LinearMap.zero_apply, LinearMap.toPerfPair_apply, LinearMap.flip_apply,
-        pairing_eq, h y]
+      rw [LinearEquiv.map_zero, LinearMap.zero_apply, LinearMap.toPerfPair_apply,
+        LinearMap.flip_apply, pairing_eq, h y]
     obtain ⟨x, hxS, hxS', hxpos, hxo⟩ :=
       exists_neg_mem_realizedSet_of_central p i tH htH j hU n hcent hne
     have hxA : x ∈ A := ⟨hxS, hxS', fun r => by rw [pairing_eq]; exact hxo r⟩

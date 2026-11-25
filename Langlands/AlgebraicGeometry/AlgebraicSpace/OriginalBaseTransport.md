@@ -1,13 +1,11 @@
 # Transporting an absolute presheaf representative to its original base
 
-Author: Worker 336.
-
 This is an internal categorical support construction. It supplies the
 original-base transport used when a representability argument temporarily
 forgets a scheme's map to its base. The construction uses only Yoneda,
 functoriality and fibres of maps of types; it is not a transcription of a
-literature theorem. Its provenance is the original-base obligation in the
-quasi-affine-source AF representability task.
+literature theorem. Its provenance is the original-base step of a route to
+quasi-affine-source AF representability.
 
 ## Objects and universes
 
@@ -90,6 +88,6 @@ quasi-affine or Noetherian hypothesis is used. The input absolute
 representing isomorphism is assumed. The module constructs the relative
 representer and the comparison isomorphism; it supplies no approximation
 theorem or representability existence theorem for algebraic spaces.
-In particular it does not prove the host task's unconditional
+In particular it does not prove the unconditional
 `FiniteSurjectiveQuasiAffineSourceAFStatement`, nor does it establish
 relative-to-absolute comparison of geometric properties.

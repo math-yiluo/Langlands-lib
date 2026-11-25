@@ -193,8 +193,10 @@ theorem rationalMatrix_negRoot_mulVec_eq_self_of_root_fixed_reflection
     (ρ.rationalMatrix g : Matrix n n k) *ᵥ v = v := by
   have hc := RelativeRoot.normalizer_conj_mem p.inclusion (-(p.rootDatum.root a))
     s.normalizerPoint hg
+  have hneg : ∀ x, p.rootDatum.reflection a (-x) = -p.rootDatum.reflection a x :=
+    fun x => (p.rootDatum.reflection a).toLinearMap.map_neg x
   simp only [GroupScheme.constantPoint_self,
-    SimpleReflectionRepresentative.weylAction_normalizerPoint, map_neg,
+    SimpleReflectionRepresentative.weylAction_normalizerPoint, hneg,
     RootPairing.reflection_apply_self, neg_neg] at hc
   have hfix := hw (s.point * g * s.point⁻¹) hc
   rw [Matrix.mulVec_mulVec, ← Units.val_mul, ← map_mul,

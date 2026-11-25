@@ -1,7 +1,7 @@
 # Naturality of the actual normalized complex
 
-Internal construction by Worker 194, using Worker 23's normalization
-adapter and the published generic signed-diagram and subgroup naturality results.
+Internal construction, using the normalization adapter of
+`General.Parabolic` and the published generic signed-diagram and subgroup naturality results.
 
 `termMap` is the actual normalized induction–Jacquet functor applied to an
 ambient smooth morphism. The adapter's natural normalization comparison proves

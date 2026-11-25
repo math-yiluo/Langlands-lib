@@ -1,7 +1,5 @@
 # Ordered monomials in the universal enveloping algebra
 
-Author: Worker 1431.
-
 For a field `k : Type u`, a Lie ring `L : Type v` with `LieAlgebra k L`,
 a natural number `n`, and a supplied basis `b : Module.Basis (Fin n) k L`,
 `Langlands.Algebra.UniversalEnveloping.orderedPBWMonomial b e` is the element

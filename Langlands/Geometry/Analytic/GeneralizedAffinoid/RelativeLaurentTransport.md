@@ -95,7 +95,8 @@ and trivial valuations. No strictness, radius independence, reducedness or
 nonzero hypothesis is imposed. Empty spectra and zero quotient algebras are
 allowed by the universally quantified maps and identities.
 
-This supporting unit constructs transport and its Gauss-section compatibility.
+This module constructs transport and its Gauss-section compatibility.
 It does not establish scalar extension of represented domains, strictification,
-rational pullback decomposition, or the host finite ambient rational covering
-proposition.
+rational pullback decomposition, or the finite ambient rational covering
+proposition `Domain.FiniteRationalCoverStatement` (proved as
+`Domain.finiteRationalCover` in `DomainRationalCoverProof`).

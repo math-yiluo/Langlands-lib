@@ -1,7 +1,5 @@
 # Proof of Conrad's Theorem 4.5 on actual adelic points
 
-Author: Worker 245. Worker 3519 supplied the composition in the task context.
-
 `Langlands.Global.adelicSpreadSmoothOpen` proves the unchanged published
 `Langlands.Global.AdelicSpreadSmoothOpenStatement.{u}` for every universe `u`.
 The theorem has no additional premise.

@@ -1,7 +1,7 @@
 # Closed subgroup descent for maximal split torus conjugacy
 
-This module records an unproved structural descent proposition and proves a
-conditional assembly theorem. It does not prove the general smooth-group
+This module records a structural descent proposition, which it does not prove,
+and proves a conditional assembly theorem. It does not prove the general smooth-group
 conjugacy theorem: both the solvable conjugacy result and the structural
 descent proposition remain explicit premises of the assembly theorem.
 
@@ -42,7 +42,9 @@ pseudo-parabolic subgroup. The source's point can be inverted to match
 `innerIso`'s `g x g⁻¹` convention. This proposition retains just those two
 consequences, without installing them as proved facts. Radical and quotient
 constructions, the solvable envelope, pseudo-parabolic geometry, the split
-solvable bridge and rational containment all remain proof obligations.
+solvable bridge and rational containment all remain proof obligations here;
+`smoothMaximalSplitTorusDescent` (module `MaximalSplitTorusDescentProof`) proves
+the proposition.
 
 `smoothMaximalSplitTorusConjugacy_of_solvable_of_descent` implements the
 assembly using `smoothAffineGroup_closedSubgroup_induction`. Its induction
@@ -54,6 +56,3 @@ and the closed-overgroup conjugacy reduction transports its result back
 to `G`. This gives exactly the conclusion of the published
 `SmoothMaximalSplitTorusConjugacyStatement`, conditional on the two stated
 premises. The support induction replaces the source's dimension induction.
-
-Worker 1305 proposed the support route and coordinated the geometric
-branches; Worker 1295 implemented this statement and conditional assembly.

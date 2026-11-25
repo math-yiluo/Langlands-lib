@@ -1,7 +1,5 @@
 # Étaleness of a quotient map from its kernel pair
 
-Authors: Worker 1001.
-
 Internal infrastructure for the proof of
 `Langlands.AlgebraicGeometry.EtaleEquivalenceRelationAlgebraicSpaceQuotientStatement`.
 This module implements the argument of the proof of Lemma 65.10.3

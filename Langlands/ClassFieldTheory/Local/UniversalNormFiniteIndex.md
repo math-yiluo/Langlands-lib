@@ -39,6 +39,10 @@ upper norm groups. These inputs are proved in the imported supporting modules;
 they are not premises of this module's theorems. No reciprocity map or norm
 correspondence is assumed.
 
-This module supplies finite-index containment. The host task's exact
-unconditional separation theorem still requires its separately proved topology
-separation result and final assembly.
+This module supplies finite-index containment. The exact unconditional
+separation theorem `NormSubgroupsSeparatePoints` is proved as
+`normSubgroupsSeparatePoints` in
+`Langlands.ClassFieldTheory.Local.NormSubgroupsSeparatePointsProof`, which
+combines the same containment, from the same inputs, with the topological
+separation result of
+`Langlands.ClassFieldTheory.Local.OpenFiniteIndexSeparationProof`.

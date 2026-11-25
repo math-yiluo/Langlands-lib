@@ -23,7 +23,7 @@ neighborhoods formed by contained affinoid domains. Its contained affinoid
 domains supply an atlas, and its inclusion has unique factorization for every
 morphism whose image is contained in the domain.
 
-The implementation is a derived construction in the current model. Here
+The implementation is a derived construction in the Library's model. Here
 `S : B.presentation.atlas.OriginalChartDomain` uses the contained **original**
 charts and their finite relative neighborhoods. `B.hasAllLocalDomains` asserts
 closure under every full local affinoid domain of an original chart. It does
@@ -138,7 +138,6 @@ arrows whose image lies in `S`. Its forward map is postcomposition with the
 actual inclusion, its inverse is `domainLift`, and monicity and the triangle
 prove the inverse laws.
 
-This unit constructs no new finite-gluing saturation, analytic gluing,
+This module constructs no new finite-gluing saturation, analytic gluing,
 etale or quasi-etale morphism class, site, equivariant site, compact or
-distinguished domain class, or Harris tower specialization. Those remain
-obligations of the surrounding task.
+distinguished domain class, or Harris tower specialization.

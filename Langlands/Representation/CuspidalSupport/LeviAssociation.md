@@ -1,7 +1,5 @@
 # Block counts, transport and association laws for standard Levis
 
-Author: Worker 241.
-
 This module adds, on top of the published
 `Langlands.Representation.CuspidalSupport.AssociationLawsProof`, the results
 about Levi association that the two-block cuspidal-induction argument uses:

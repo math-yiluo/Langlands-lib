@@ -1,11 +1,10 @@
 # Proof of actual right Haar Hermitian approximation
 
-Worker 116 authored
+The module proves
 `Langlands.Analysis.rightHaarHermitianApproximation`, whose type is exactly
 `Langlands.Analysis.RightHaarHermitianApproximationStatement`, with
-independent group and Hilbert-space universes. Worker 1679 adopts the
-complete proof unchanged for this focused submission. It imports the
-unchanged published target and the independently accepted and published
+independent group and Hilbert-space universes. It imports the
+unchanged published target and the published
 generic assembly and Haar inversion-density proofs by their public
 Lean module names.
 The proof constructs the monoid homomorphism
@@ -32,11 +31,10 @@ desired ones by definitional equality and proof irrelevance.
 
 This is an internal specialization of the general assembly, using the
 Getz–Hahn convention and source locators in the unchanged statement
-Markdown. The submitted contribution contains only this proof's
-Lean/Markdown pair. It imports
+Markdown. It imports
 `Langlands.Representation.Unitary.IntegratedHermitianApproximationProof`
 and `Langlands.Analysis.Local.HaarInversionDensityProof`, including the
 published Haar proof's reuse of the public density-transport helper.
 Smooth adelic weights, the split-centre quotient, original automorphic
 L² specializations, compactness, density and spectral decomposition
-remain separate obligations.
+are not part of this proof.

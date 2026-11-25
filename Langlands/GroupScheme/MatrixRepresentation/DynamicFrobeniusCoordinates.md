@@ -1,6 +1,6 @@
 # Polynomial coordinates and Frobenius quotients of dynamic unipotent groups
 
-Worker 1369 derives this construction from the published dynamic unipotent
+This construction is derived from the published dynamic unipotent
 action, positive augmentation weights, polynomial eigen-coordinate theorem,
 tangent-coordinate comparison, and Frobenius quotient model. No external
 literature statement is asserted.
@@ -45,5 +45,5 @@ polynomials outside the quotient.
 This construction supplies actual dynamic subgroup coordinates and the
 corresponding exact Frobenius quotient. It does not prove injectivity
 of restriction of an entire Steinberg covariant space to a fixed-height
-quotient, a dimension bound for that entire space, or the host
+quotient, a dimension bound for that entire space, or
 `SteinbergBigCellStatement`.

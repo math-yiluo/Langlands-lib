@@ -9,13 +9,15 @@ and `P(groupHom ν ≫ i) ≤ P(groupHom ξ ≫ i)`, then
 `J = {α ∈ Δ | ⟨α, ξ⟩ = 0}`. This holds under the actual root-sign criterion for
 inclusions of dynamic parabolics and negation stability of the relative roots.
 Both are taken as explicit hypotheses: as local premises in the first section,
-and as the published, still unproved statements
+and as the published statements
 `RelativeRootSignInclusionsStatement.{u}` and `RelativeRootNegationStatement.{u}`
-in the statement-level theorems. The unit proves no published `…Statement`.
+in the statement-level theorems (they are proved in
+`Rational.RelativeRootSignInclusionsProof` and `Rational.RelativeRootNegationProof`).
+The module proves no published `…Statement`.
 
 The first half, the move from an arbitrary cocharacter `ζ` of `G` to a
-cocharacter `ξ` of `i` with the same dynamic parabolic, is the separate unit
-`Rational/ParabolicCocharacterConjugacy`; this unit does not import it.
+cocharacter `ξ` of `i` with the same dynamic parabolic, is the separate module
+`Rational/ParabolicCocharacterConjugacy`; this module does not import it.
 
 ## Setting and premises
 

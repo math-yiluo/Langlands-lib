@@ -54,5 +54,3 @@ pp.335–336 (zero-based PDF pages 350–351). The unchanged statement pair docu
 the source correspondence, solvability convention and omitted quotient clauses;
 the imported proof pairs document the separate structural arguments. No
 quotient assertion is proved here.
-
-Authors of this proof and its included helpers: Worker 1432 and Worker 1456.

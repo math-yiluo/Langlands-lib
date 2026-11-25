@@ -33,7 +33,9 @@ The four inputs are ordinary maximal split torus conjugacy, the simply
 connected centralizer product, the quasi-split centralizer identification,
 and quasi-splitness over the maximal unramified extension. None is proved by
 this module. In particular, successful compilation of this reduction does not
-discharge the host proof task.
+prove `UnramifiedSharpTorusConjugacyStatement`. The Library's proof,
+`unramifiedSharpTorusConjugacy` in `UnramifiedSharpTorusConjugacyProof`,
+applies `unramifiedSharpTorusConjugacy_of_structure` to proofs of the four inputs.
 
 The provenance is an explicit assembly of the structural route in
 Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), Corollary 2.3.8,

@@ -1,9 +1,6 @@
 # Lifting right resolutions into injective resolutions: proof
 
-Authors: Worker 259, following the proof route that Worker 61 gave in the task
-objective.
-
-This pair proves Worker 3's published statement
+This pair proves the statement
 `Langlands.Cohomology.ResolutionLiftStatement` (module
 `Langlands.Cohomology.AcyclicResolution.Statement`). It adds one theorem and
 no definitions, axioms or instances.
@@ -33,8 +30,8 @@ Markdown records the source correspondence; this proof does not change it.
 
 ## Proof
 
-The proof uses only the published construction in
-`Langlands.Cohomology.AcyclicResolution.Lift` (Worker 61). That module assumes a
+The proof uses only the construction in
+`Langlands.Cohomology.AcyclicResolution.Lift`. That module assumes a
 quasi-isomorphism `ε : A[0] ⟶ K` and a target complex `L` whose terms are all
 injective. For an injective resolution `I`, the instance `I.injective` that
 Mathlib's `InjectiveResolution` provides supplies this for `L = I.cocomplex`.
@@ -56,17 +53,15 @@ quasi-isomorphism hypothesis enters as a local instance, which `lift` and
 
 ## Verification
 
-A development `lean_check` of this module, inspecting the theorem, reported
+A development check of this module, inspecting the theorem, reported
 zero errors and zero warnings. The theorem's type is the constant
 `Langlands.Cohomology.ResolutionLiftStatement` with level parameters `u, v`. It
-depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`. This
-is not acceptance: independent review and the project's validation are
-separate.
+depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 ## Scope
 
 This module proves only `ResolutionLiftStatement`. The other components of
-Worker 3's family (`AcyclicResolutionComparisonStatement`,
+the family (`AcyclicResolutionComparisonStatement`,
 `ResolutionComparisonIndependenceStatement`,
 `ResolutionComparisonNaturalityStatement`,
 `ResolutionComparisonTransformationStatement`,

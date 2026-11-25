@@ -39,11 +39,13 @@ semidirect reduction.
 
 This is an internal deduction from the named published interfaces and proof
 results. It does not prove the seven structural statements or the
-unconditional rational-parabolic modulus target. General joint-basis and
-Cartan existence, opposite reciprocity, and dynamic-centralizer reductivity
-remain separate obligations.
+unconditional rational-parabolic modulus target (that is
+`rationalParabolicModulus` in `RationalParabolicModulusProof`). Of these
+inputs, the Library proves opposite reciprocity
+(`rationalOppositeHaarReciprocity`) and dynamic-centralizer reductivity
+(`dynamicCentralizerReductive`), but not general joint-basis and Cartan
+existence (`JointSpecialCompactBasisExistenceStatement`).
 
-Workers 103 and 53 authored the reused proof draft. Worker 1660 checked its
-assembly against the published interfaces and prepared this paired proof for
-submission. The copied development dependencies from the shared draft are
-excluded; the Lean module imports their published declarations by name.
+The assembly was checked against the published interfaces. The Lean module
+imports its development dependencies by name, as published declarations,
+rather than copying them.

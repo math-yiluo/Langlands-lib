@@ -1,7 +1,5 @@
 # Tensor factors and characters for the mirabolic restriction sequence
 
-Author: Worker 1163.
-
 This helper module of the proof of
 `Langlands.Derivative.MirabolicProductRestrictionStatement` identifies the block
 tensor of the binary shape with the binary tensor product, and the positive half

@@ -1,12 +1,13 @@
 # Herbrand's theorem for quotients and the tower laws in any characteristic
 
-Worker 988 authors this statement unit for Task 7421. It states, over the general
-finite-level declarations of `Herbrand.GeneralFinite` (Task 7403), the six
+This module states, over the general
+finite-level declarations of `Herbrand.GeneralFinite`, the six
 quotient and tower properties whose p-adic forms are in
 `Herbrand/ArithmeticStatement.lean`, and their conjunction. All seven are
-Prop-valued definitions in `Langlands.Ramification.Local`. They are targets for
-later proof tasks; nothing here proves them, and none of them is used as a
-hypothesis of a construction. The module contains no hypothesis on any
+Prop-valued definitions in `Langlands.Ramification.Local`. They are proof
+targets; nothing here proves them, and none of them is used as a
+hypothesis of a construction. The three subgroup and quotient components are
+proved in `Herbrand.LocalQuotientProof`. The module contains no hypothesis on any
 characteristic.
 
 ## Fields, embeddings and realizations
@@ -15,9 +16,9 @@ The module has four fields in independent universes `u₀`, `uK`, `uE`, `uL`:
 
 - the base `K₀`, implicit in the six components, with
   `[Field K₀] [ValuativeRel K₀] [TopologicalSpace K₀]`. This is exactly the
-  structure that Task 7403's `LocalField.TopologicalData K₀ L` requires of its
-  base. The intended bases are `K₀ = K` (with Task 7403's
-  `localTopologicalData K L`) for a nonarchimedean local field `K` of either
+  structure that `LocalField.TopologicalData K₀ L` requires of its
+  base. The intended bases are `K₀ = K` (with the
+  `localTopologicalData K L` of `Herbrand.GeneralFinite`) for a nonarchimedean local field `K` of either
   characteristic, and `K₀ = Padic p` for the published p-adic layer;
 - `K`, with `[Field K] [Algebra K₀ K]`;
 - `L`, with `[Field L] [Algebra K₀ L] [FiniteDimensional K₀ L] [Algebra K L]
@@ -37,10 +38,10 @@ It is kept explicit to match the p-adic interface.
 `T : LocalField.TopologicalData K₀ L` is an arbitrary realization of `L`: a
 topology, a valuative relation extending that of `K₀`, the `K₀`-module topology
 and a certificate that `L` is a nonarchimedean local field. When needed,
-`S : LocalField.TopologicalData K₀ E` realizes `E` in the same way. Task 7403
+`S : LocalField.TopologicalData K₀ E` realizes `E` in the same way. The general finite-level construction
 builds its lower groups, Herbrand functions and upper groups from the integer
 ring `T.Integers` of the realization (respectively `S.Integers`). These components are stated
-in the generality of Task 7403's finite-level declarations: every field and
+in the generality of those finite-level declarations: every field and
 realization argument that the p-adic statement fixes as a `PadicField` or quantifies
 over is a parameter here, and the p-adic statements are the case `K₀ = Padic p`
 (see the comparison below).
@@ -101,8 +102,8 @@ less than the PDF page numbers.
   `ψ_(L/K)(v) = ψ_(L/E)(ψ_(E/K)(v))`.
   These are the two formulas of Serre IV §3 Proposition 15 (stated p. 74, proved
   p. 75). The compositions have opposite orders. Serre states them on his domain
-  `[-1, ∞)`. Here they are stated for every real index, as the task requires. Below
-  `0` all the functions are the identity in Task 7403's construction, and the
+  `[-1, ∞)`. Here they are stated for every real index. Below
+  `0` all the functions are the identity in the general construction, and the
   published p-adic tower theorems of `Herbrand/TowerProof.lean` already hold for
   every real index.
 - `UpperRestrictionCompatibility K L E T S`: for every real `v ≥ -1`, the image
@@ -119,8 +120,8 @@ p-adic statements. The tower laws have no lower bound.
 ## Relation to the p-adic statements
 
 The p-adic objects are the general ones at `K₀ = Padic p` with
-`T.toLocalData : LocalField.TopologicalData (Padic p) L.Carrier` (Task 7403's
-in-place scheme). A private check file compiled the following `example`s in this
+`T.toLocalData : LocalField.TopologicalData (Padic p) L.Carrier` (the
+in-place specialization scheme of `Herbrand.GeneralFinite`). A private check file compiled the following `example`s in this
 environment, with `K L E : PadicField p` and the p-adic instance hypotheses of
 `Herbrand/ArithmeticStatement.lean` (`Padic` and `Local` abbreviate
 `Langlands.Ramification.Padic` and `Langlands.Ramification.Local`):
@@ -193,7 +194,7 @@ p-adic base unfolds by `Iff.rfl` to the conjunction of the six general component
 quantified over all `T : LocalField.TopologicalData (Padic p) L.Carrier` and
 `S : LocalField.TopologicalData (Padic p) E.Carrier`. The p-adic aggregate
 `FiniteHerbrandArithmetic` also contains `HerbrandPsiIntegral` and
-`HasseArfIntegrality`, which this task leaves out.
+`HasseArfIntegrality`, which this module leaves out.
 
 | General statement (`Langlands.Ramification.Local`) | P-adic counterpart (`Langlands.Ramification.Padic`) | Relation at `K₀ = Padic p` |
 | --- | --- | --- |
@@ -237,5 +238,5 @@ extensions, so the cited results apply in both characteristics. The registered
 author corrections `serre-book-corrections-2019` (Local Fields, PDF pp. 2–3)
 change only the glyph of φ at p. 74 line −7 and in Lemma 5.
 
-This unit does not edit the published p-adic statement module, the proof modules,
-or the definition modules of Tasks 7403 and 7404.
+This module does not edit the published p-adic statement module, the proof modules,
+or the general definition modules of the ramification filtrations and of inertia.

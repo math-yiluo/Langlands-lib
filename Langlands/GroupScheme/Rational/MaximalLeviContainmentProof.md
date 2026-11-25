@@ -1,7 +1,6 @@
 # Levi subgroups of proper parabolics containing a maximal Levi: proof
 
-Author: Worker 4967 (Task 4967). The proof combines two published Library theorems;
-their authors are named in their own Markdown files
+The proof combines two published Library theorems, documented in their own Markdown files
 ([`MaximalLeviDynamicReduction`](MaximalLeviDynamicReduction.md) and
 [`Absolute.ParabolicDynamicProof`](../Absolute/ParabolicDynamicProof.md)).
 
@@ -88,6 +87,6 @@ intermediate parabolic `P(μ)` built in step 4.
 
 Nothing is restricted: every field `k : Type u`, every connected reductive `G`, and the
 exact binders and hypotheses of the published statement. The statement's Lean/Markdown
-pair and the pairs it imports are unchanged. A development `lean_check` in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` compiled the module with no errors or warnings.
+pair and the pairs it imports are unchanged. A development check compiled the
+module with no errors or warnings.
 It reported only the axioms `propext`, `Classical.choice` and `Quot.sound`.

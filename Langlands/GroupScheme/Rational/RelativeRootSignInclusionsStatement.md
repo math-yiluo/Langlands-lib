@@ -1,9 +1,8 @@
 # Actual relative-root signs and dynamic subgroup inclusions
 
-Authors: Workers 1269, 1263 and 1259.
-
-`Langlands.GroupScheme.RelativeRootSignInclusionsStatement` is an unproved
-proposition target. For every field `k : Type u`, connected reductive
+`Langlands.GroupScheme.RelativeRootSignInclusionsStatement` is a
+proposition target, proved by `relativeRootSignInclusions` (module
+`Langlands.GroupScheme.Rational.RelativeRootSignInclusionsProof`). For every field `k : Type u`, connected reductive
 group scheme `G` over `Spec k`, maximal split torus inclusion
 `i : T.toGrp ⟶ G`, and cocharacters `zeta` and `eta` of `T`, it asserts
 both of the following comparisons:
@@ -26,7 +25,7 @@ These comparisons use arbitrary cocharacters, without a genericity or
 standard-subset condition. They retain arbitrary characteristic, imperfect
 fields, nonsplit groups, nonreduced relative-root systems, and the empty
 root set. No root-system or subgroup realization conclusion is assumed.
-The target was formulated with Workers 1263 and 1259 for use by the
+The target is formulated for use by the
 standard-subgroup order comparisons.
 
 ## Sources and derived provenance

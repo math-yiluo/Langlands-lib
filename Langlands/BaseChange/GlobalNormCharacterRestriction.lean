@@ -14,7 +14,7 @@ universe u
 namespace Langlands.BaseChange
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
-open ClassField.Global ClassField.Global.FundamentalClass
+open ClassFieldTheory.Global ClassFieldTheory.Global.FundamentalClass
 open Global Global.AdelicFunctoriality
 open scoped NumberField FiniteExtension
 

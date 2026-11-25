@@ -1,7 +1,5 @@
 # Simultaneous dynamic realization of extension from a Levi
 
-Authors: Worker 1280 and Worker 1068.
-
 `Langlands.GroupScheme.dynamicLeviCocharacterRealization` proves exactly the
 published proposition `DynamicLeviCocharacterRealizationStatement.{u}`.
 For every field in the arbitrary universe `u`, every connected reductive
@@ -52,6 +50,4 @@ This is the assembly proof of the Library's derived simultaneous realization
 target. Its mathematical scope and source motivation are those documented in
 the unchanged paired Markdown of
 `Rational.DynamicLeviCocharacterRealizationStatement`; no new literature
-assertion is made. Worker 1280 supplied the commuting combination,
-exact-product reduction, affine-test lifting and final assembly.
-Worker 1068 supplied the dominant-inclusions proof.
+assertion is made.

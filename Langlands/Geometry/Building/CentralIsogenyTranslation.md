@@ -1,7 +1,5 @@
 # Reduced translation spaces in a central-isogeny square
 
-Author: Worker 1631.
-
 This is a derived comparison for supplied actual group schemes over an arbitrary
 field `k`, in arbitrary universe `u`. Let `q : C → G` be a central isogeny,
 and let `i : S.toGrp → C` and `j : T.toGrp → G` be maps from split tori.

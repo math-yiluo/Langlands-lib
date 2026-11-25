@@ -218,6 +218,7 @@ theorem cmHarrisCommonRefinementIso_eq_successive :
     dualityNaturality polarizationStability compatibility h htor q U existence geometry
     hRigid ρ p m hm k V W₁ hV hW
   apply Iso.ext
+  have : Mono rWT := IsIso.mono_of_iso _
   apply (cancel_mono rWT).1
   rw [cmHarrisCommonRefinementIso_hom_comp]
   rw [← cmHarrisSuccessiveRefinementIso_hom D C preservation composition
@@ -283,6 +284,7 @@ theorem cmHarrisCommonRefinementIso_hom_unique
     unitCoherence associativity comparison symmetry stability square universality
     dualityNaturality polarizationStability compatibility h htor q U existence geometry
     hRigid ρ p m hm k V W₁ hV hW
+  have : Mono rWT := IsIso.mono_of_iso _
   apply (cancel_mono rWT).1
   exact hf.trans (cmHarrisCommonRefinementIso_hom_comp D C preservation composition
     unitCoherence associativity comparison symmetry stability square universality

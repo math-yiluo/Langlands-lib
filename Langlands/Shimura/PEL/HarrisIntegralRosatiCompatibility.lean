@@ -55,12 +55,12 @@ local notation "Compatible" => IsInvolutionCompatible preservation composition u
 
 /-- Actual integral equations on the finite basis of the positive Harris order. -/
 def IntegralRosatiBasisEquations (a : O →+* CategoryTheory.End B) (lam : B ⟶ DB) : Prop :=
-  ∀ k, a (basisO k) ≫ lam = lam ≫ dualInt (a (tauO (basisO k)))
+  ∀ k, (a (basisO k)).asHom ≫ lam = lam ≫ dualInt (a (tauO (basisO k))).asHom
 
 /-- The corresponding equations in the actual rational Hom group. -/
 def RationalRosatiBasisEquations (a : O →+* CategoryTheory.End B) (lam : Hom0 B DB) : Prop :=
-  ∀ k, comp0 B B DB (Rationalization.ofEnd B (a (basisO k))) lam =
-    comp0 B DB DB lam (dual0 (Rationalization.ofEnd B (a (tauO (basisO k)))))
+  ∀ k, comp0 B B DB (Rationalization.ofEnd B (a (basisO k))).asHom lam =
+    comp0 B DB DB lam (dual0 (Rationalization.ofEnd B (a (tauO (basisO k)))).asHom)
 
 /-- Full rational compatibility is equivalent to these finitely many rational equations. -/
 theorem rationalAction_involutionCompatible_iff
@@ -77,25 +77,26 @@ theorem rationalAction_involutionCompatible_iff
   constructor
   · intro h k
     have hk := h (basisO k : A)
-    change comp0 B B DB (g (basisO k : A)) lam =
-      comp0 B DB DB lam (dual0 (g (star (basisO k : A)))) at hk
+    change comp0 B B DB (g (basisO k : A)).asHom lam =
+      comp0 B DB DB lam (dual0 (g (star (basisO k : A))).asHom) at hk
     simpa only [starOrder, onOrder] using hk
   · intro h
-    let L : A →ₗ[ℚ] Hom0 B DB := ((comp0 B B DB).flip lam).comp g.toLinearMap
+    let L : A →ₗ[ℚ] Hom0 B DB :=
+      ((comp0 B B DB).flip lam).comp (CategoryTheory.End.linearEquiv.toLinearMap.comp g.toLinearMap)
     let R : A →ₗ[ℚ] Hom0 B DB :=
       ((comp0 B DB DB) lam).comp
-        ((dual0).comp (g.toLinearMap.comp
-          (D.harrisHodgePELAlgebra C).toSecondKindInvolution.rationalInvolution.linear))
+        ((dual0).comp (CategoryTheory.End.linearEquiv.toLinearMap.comp (g.toLinearMap.comp
+          (D.harrisHodgePELAlgebra C).toSecondKindInvolution.rationalInvolution.linear)))
     have eqMaps : L = R := by
       apply ((basisO).extendOfIsLattice (M := (O).toSubmodule) ℚ).ext
       intro k
-      change comp0 B B DB (g ((basisO).extendOfIsLattice (M := (O).toSubmodule) ℚ k)) lam =
+      change comp0 B B DB (g ((basisO).extendOfIsLattice (M := (O).toSubmodule) ℚ k)).asHom lam =
         comp0 B DB DB lam (dual0 (g
           ((D.harrisHodgePELAlgebra C).toSecondKindInvolution.rationalInvolution
-            ((basisO).extendOfIsLattice (M := (O).toSubmodule) ℚ k))))
+            ((basisO).extendOfIsLattice (M := (O).toSubmodule) ℚ k))).asHom)
       simp only [Basis.extendOfIsLattice_apply]
-      change comp0 B B DB (g (basisO k : A)) lam =
-        comp0 B DB DB lam (dual0 (g (star (basisO k : A))))
+      change comp0 B B DB (g (basisO k : A)).asHom lam =
+        comp0 B DB DB lam (dual0 (g (star (basisO k : A))).asHom)
       simpa only [starOrder, onOrder] using h k
     intro x
     exact DFunLike.congr_fun eqMaps x
@@ -108,8 +109,8 @@ theorem IntegralRosatiBasisEquations.rationalize
     RationalRosatiBasisEquations D C preservation composition unitCoherence associativity
       comparison symmetry stability B hB additivity MB evaluationB geometryB a (homToHom0 lam) := by
   intro k
-  change comp0 B B DB (homToHom0 (a (basisO k))) (homToHom0 lam) =
-    comp0 B DB DB (homToHom0 lam) (dual0 (homToHom0 (a (tauO (basisO k)))))
+  change comp0 B B DB (homToHom0 (a (basisO k)).asHom) (homToHom0 lam) =
+    comp0 B DB DB (homToHom0 lam) (dual0 (homToHom0 (a (tauO (basisO k))).asHom))
   rw [dualHom0_homToHom0, comp0_homToHom0, comp0_homToHom0]
   exact congrArg (fun f : B ⟶ DB => homToHom0 f) (h k)
 

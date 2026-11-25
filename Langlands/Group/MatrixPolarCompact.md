@@ -1,7 +1,5 @@
 # The compact subgroup of a polar matrix realization
 
-Author: Worker 1571.
-
 This internal auxiliary construction isolates the compact-overgroup part of a
 possible matrix proof of archimedean Iwasawa existence. It does not construct a
 matrix realization, polar factors, or an Iwasawa decomposition for a reductive

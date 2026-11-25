@@ -1,7 +1,5 @@
 # Simultaneous dynamic realization in the original common torus
 
-Author: Worker 1776.
-
 This internal conditional adapter fixes the torus already supplied by a full
 represented geometric-lemma datum. `DynamicRealization` stores two integral
 cocharacters of that same torus. The first realizes the original target

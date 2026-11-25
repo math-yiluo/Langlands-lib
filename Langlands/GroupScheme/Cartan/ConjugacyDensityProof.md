@@ -1,7 +1,5 @@
 # Proof: conjugacy and density of Cartan subgroups
 
-Worker 387.
-
 The module proves
 
 ```lean
@@ -58,7 +56,7 @@ smooth, affine and connected, `χ : (Gm (Spec k)).toGrp ⟶ G` a cocharacter, an
 `(conjugation iZ).left` contains an open dense subset of `G.X.left`.
 
 Proof. This is the proof of the Library lemma
-`BorelPointContainment.denseRange_conjugation_centralizer` by Worker 1095
+`BorelPointContainment.denseRange_conjugation_centralizer`
 ([`Absolute.BorelPointContainmentProof`](../Absolute/BorelPointContainmentProof.md)), copied
 with only its last step changed. That lemma has the same hypotheses and concludes
 `DenseRange (conjugation iZ).left`.
@@ -147,7 +145,7 @@ For part 2 Milne cites Theorem 17.33(a) (printed p.362): `⋃_{g∈G(k)} g|C|g�
 open subset of `G`, proved through Lemma 17.32(b) (pp.361-362) and a dimension count. The Lean
 proof argues differently. It chooses a cocharacter `χ` of the split torus `T` with
 `C_G(χ) = C_G(T)`, and shows that the conjugation map `G × C ⟶ G` is surjective on tangent spaces
-at the `k`-point `(1, χ(u)⁻¹)` for a generic `u ∈ 𝔾_m(k)`; this argument is Worker 1095's, from
+at the `k`-point `(1, χ(u)⁻¹)` for a generic `u ∈ 𝔾_m(k)`; this argument is taken from
 the Library proof that every rational point lies in a Borel subgroup. The image of the smooth
 locus of the conjugation map is then a nonempty open subset of `G`, dense because `G` is
 irreducible. The statement Markdown explains why this scheme-theoretic form of density is

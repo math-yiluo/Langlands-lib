@@ -15,7 +15,7 @@ namespace Langlands.BushnellKutzko.PureApproximation
 
 universe uF uV uE
 
-/-- BK93 (2.3.12), printed p. 61, as a premise (the content of Task 8150): a split derived
+/-- BK93 (2.3.12), printed p. 61, as a premise: a split derived
 stratum prevents the perturbed element from generating a field. -/
 def SplitObstructionPremise : Prop :=
   ∀ (F : Type uF) [Field F] [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F]

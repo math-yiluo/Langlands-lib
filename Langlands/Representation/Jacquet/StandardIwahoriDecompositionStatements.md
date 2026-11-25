@@ -17,8 +17,7 @@ The module contains three `Prop`-valued definitions and three proved comparison 
 
 The three statements are not proved here. There are no new objects.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`.
-It addresses the framework comparison **F3** of the Chapter VI item ledger
+This module addresses the framework comparison **F3** of the Chapter VI item ledger
 (`notes/renard/item-ledger-vi.md`). The published statements
 `StandardCanonicalSectionStatement`, `StandardFixedVectorSubquotientGenerationStatement` and
 `StandardFixedVectorHeckeEquivalenceStatement` assume that `K` satisfies the published
@@ -33,8 +32,8 @@ other hypotheses and conclusions.
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The author read the following pages,
-checking every formula with overbars on the rendered pages:
+one-based and equal printed page numbers plus six. The following pages were read, and
+every formula with overbars was checked on the rendered pages:
 
 - V.5.2, Theorem, printed p.123 / PDF p.129, and the second Lemma of V.5.3,
   printed p.124 / PDF p.130;
@@ -175,7 +174,7 @@ replaces the basis-member hypothesis by its first conjunct, the Iwahori decompos
 
 So the new statements are at least as strong as the published ones. They cover more
 subgroups `K` as soon as some compact open `K` has an Iwahori decomposition but does not
-satisfy `ContractionAndCofinality`. The author expects such `K` to exist, because a compact
+satisfy `ContractionAndCofinality`. Such `K` are expected to exist, because a compact
 open subgroup of `N(F)` need not be stable under conjugation by every element of `C_A^+`.
 This is not claimed or proved here.
 
@@ -228,7 +227,7 @@ For VI.9.4, the source's proof of the Corollary uses:
 - the generalized Jacquet lemma VI.9.1 for `K` with an Iwahori decomposition along the
   standard parabolic considered. The source states VI.9.1 under exactly that hypothesis.
   The companion statement `RepresentedGeneralizedJacquetLemmaStatement` (namespace
-  `Langlands.Aubert.General.RepresentedParabolic`, the accepted unit for the comparison F2
+  `Langlands.Aubert.General.RepresentedParabolic`, the module for the comparison F2
   of the same ledger) states it in that form, in the represented-parabolic framework.
   `RepresentedJacquetLemmaStatement`, cited above, is in the same module.
 

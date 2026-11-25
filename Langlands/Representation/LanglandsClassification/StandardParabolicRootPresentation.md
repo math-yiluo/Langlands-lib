@@ -1,6 +1,6 @@
 # Verified root presentations for the canonical standard data
 
-Worker 148. This internal construction verifies the existing
+This internal construction verifies the existing
 `ParabolicRootPresentation` interface for the original canonical standard
 parabolic datum. It fixes a connected reductive group over any field, a
 maximal split torus, a generic cocharacter and any subset of the actual simple

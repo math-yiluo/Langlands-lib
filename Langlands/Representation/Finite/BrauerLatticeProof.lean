@@ -1,16 +1,16 @@
 import Langlands.Representation.Finite.BrauerStatement
 import Langlands.Representation.Finite.InducedCharacterProof
-import Langlands.AnthropicFLT.Theorems.Thm_BrauerInduction_exists_trace_eq_sum_zsmul_induced_linearCharacter
+import Langlands.Representation.Finite.BrauerTrace
 
 /-!
 # The integral Brauer character lattice
 
 A proof of `Langlands.FiniteRep.IntegralBrauerCharacterLatticeStatement`: the integral span of
 the characters of actual rank-one subgroup inductions is the whole virtual-character image.
-The Brauer trace expansion is the ported Anthropic theorem
-`BrauerInduction.exists_trace_eq_sum_zsmul_induced_linearCharacter`, stated for matrix
-representations of finite groups in `Type`; this module transports it to finite groups in an
-arbitrary universe and identifies its normalized sums with actual induced characters.
+The Brauer trace expansion is
+`Langlands.FiniteRep.BrauerTrace.exists_trace_eq_sum_zsmul_induced_linearCharacter`, stated for
+matrix representations of finite groups in any universe; this module identifies its normalized sums
+with actual induced characters.
 -/
 
 noncomputable section
@@ -93,19 +93,19 @@ variable {G : Type uG} [Group G] [Fintype G]
 the integral span of the induced rank-one characters. -/
 theorem character_mem_inducedCharacterLattice (V : FDRep ℂ G) :
     V.character ∈ inducedCharacterLattice (k := ℂ) (G := G) := by
-  obtain ⟨K, _, _, ⟨e⟩⟩ := Finite.exists_type_univ_nonempty_mulEquiv.{uG, 0} G
-  obtain ⟨m, H, ψ, a, h⟩ := BrauerInduction.exists_trace_eq_sum_zsmul_induced_linearCharacter
-    ((matrixModel V.ρ).comp e.symm.toMonoidHom)
-  have hV : V.character = ∑ i : Fin m, a i • inducedCharacter (pullbackDatum e (H i) (ψ i)) := by
+  obtain ⟨m, H, ψ, a, h⟩ :=
+    BrauerTrace.exists_trace_eq_sum_zsmul_induced_linearCharacter (matrixModel V.ρ)
+  have hV : V.character =
+      ∑ i : Fin m, a i • inducedCharacter (pullbackDatum (MulEquiv.refl G) (H i) (ψ i)) := by
     funext g
-    have hg := h (e g)
-    rw [MonoidHom.comp_apply, MulEquiv.toMonoidHom_eq_coe, MonoidHom.coe_coe,
-      MulEquiv.symm_apply_apply, matrixModel_trace] at hg
+    have hg := h g
+    rw [matrixModel_trace] at hg
     rw [Finset.sum_apply]
     change Representation.character V.ρ g = _
     rw [hg]
     refine Finset.sum_congr rfl fun i _ => ?_
     rw [Pi.smul_apply, inducedCharacter_pullbackDatum, zsmul_eq_mul]
+    rfl
   rw [hV]
   exact Submodule.sum_mem _ fun i _ =>
     Submodule.smul_mem _ _ (Submodule.subset_span ⟨_, rfl⟩)

@@ -30,8 +30,7 @@ This is an internal general lemma formulated for the Library's
 `Langlands.GroupScheme.FieldFiniteEndomorphismSurjectiveStatement`. It is
 derived from elementary scheme topology and the properties of finite
 morphisms; it is not presented as a transcription of an external theorem.
-The generic-point argument below was proposed in the task context supplied by
-Worker 414. In particular, this general statement is not attributed to
+In particular, this general statement is not attributed to
 Milne's Proposition 8.1 about abelian varieties.
 
 The statement does not assume or import
@@ -42,7 +41,7 @@ those settings must separately establish the topological hypotheses.
 ## Possible noncircular proof route
 
 The following argument explains the intended mathematical content and a
-possible route for the separate proof task. It is not a Lean proof in this
+possible route for the separate proof. It is not a Lean proof in this
 module.
 
 1. Let `η` be the generic point of `X`, available because schemes are sober
@@ -94,9 +93,9 @@ surjectivity or isogeny assertions it is intended to help prove.
 ## Separate proof obligation
 
 This module defines the proposition and proves no instance of it. The
-successor must prove this exact proposition in every universe, with no
+proof is `finiteIrreducibleEndomorphismSurjective` in the separate module
+`Langlands.AlgebraicGeometry.FiniteIrreducibleEndomorphismSurjectiveProof`. It
+proves this exact proposition in every universe, with no
 additional hypotheses, supplied proof certificate, proof holes, or new
-axioms. The topology steps above remain obligations of that proof. Any small
-helpers specific to this route can stay with the proof; substantial reusable
-prerequisites require duplicate searches and focused tasks in dependency
-order.
+axioms. It follows the topology argument above, with the descending chain
+replaced by well-founded induction on closed singleton closures.

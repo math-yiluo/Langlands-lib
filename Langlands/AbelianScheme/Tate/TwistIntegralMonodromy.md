@@ -78,7 +78,7 @@ commutes with the geometric action. The away finite-étale hypotheses in this
 formula are exactly the restrictions of the full hypotheses. The equation
 holds coordinatewise by definition.
 
-This unit establishes the integral actions and their compatibility with full
+This module establishes the integral actions and their compatibility with full
 and away scalar structures and restriction. Prime-adic and rational actions,
 path transport, finite-étaleness theorems, Weil pairings, and PEL level
 structures are separate obligations. It makes no trivialization of the twist.

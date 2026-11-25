@@ -1,9 +1,8 @@
 # A family of finite first-order local characters
 
-Worker 84 implements a family-construction lemma used by the final assembly.
+This module implements a family-construction lemma used by the final assembly.
 It imports the separate deep-unit character and principal-unit extension
-theorems by Lean name. The exact proof task records their independent
-prerequisites; their original authorship remains in those separate pairs.
+theorems by Lean name.
 
 For each supplied topology T and nontrivial continuous unitary additive character
 psi, choose the fixed natural offset C=max(0,-conductor(psi)). Since the positive

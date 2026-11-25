@@ -1,7 +1,5 @@
 # Tempered block induction and classification for GL_n
 
-Authors: Worker 15; grouping interface coordinated with Worker 19.
-
 This pair states normalized induction, exhaustion, unordered uniqueness and
 equal-exponent grouping for tempered representations of GL_n. All declarations
 are proposition definitions; none proves or assumes the asserted theorem.
@@ -132,7 +130,8 @@ uniqueness. Ro82 Proposition 12 and Ku94 Proposition 2.2.1 both cite Jacquet,
 but their citation does not fill that gap. Here Ro82 and Ku94 are the explicit
 sources for the exhaustion statement. A sufficient proof source for general
 tempered support/exhaustion, and its comparison with the analytic predicate,
-remains to be obtained and audited before a proof is claimed. The uniqueness
+is not among these sources; the Library proves exhaustion in
+`TemperedBlockExhaustionProof`. The uniqueness
 statement has the separate multisegment-classification route specified in the
 table; it is not attributed to Ja77. Bernstein's square-integrable converse
 and the multisegment classification remain proof dependencies. The Library's
@@ -154,7 +153,7 @@ measure up to positive scalar and invariance of `L^p` membership under that
 scaling. Admissible smooth matrix coefficients agree with the smooth-dual
 coefficients used here. Comparison with a Schwartz-space or exponent-based
 notion of temperedness is a separate theorem, not a definition. These
-comparison proofs remain obligations. The ordinary unitary central-character
+comparisons are separate proof obligations. The ordinary unitary central-character
 condition alone is never substituted for existence of an invariant positive form.
 
 ## Published dependencies and retained source editions
@@ -175,9 +174,9 @@ interfaces are:
 | `Whittaker.GeneralLinear` | `Whittaker.IsGeneric` and the standard upper-unipotent character |
 | `HarmonicAnalysis.Basic` | `UnitaryAdditiveCharacter` |
 
-These are current published mathematical definitions at that commit; no draft
-module is imported. The source-derived clauses have no theorem-valued input
-standing in for classification. The later proof may use the separately published
+These are current published mathematical definitions at that commit. The
+source-derived clauses have no theorem-valued input
+standing in for classification. A proof may use the separately published
 `SegmentEssentialSquareIntegrableClassification`,
 `SegmentSpecialParameterUniqueness`, and
 `EssentialSquareIntegrabilityExponentUniqueness` statements as proof targets,

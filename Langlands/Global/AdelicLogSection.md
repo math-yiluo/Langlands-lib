@@ -1,7 +1,5 @@
 # An actual adelic logarithm section from character restriction
 
-Author: Worker 112.
-
 For a number field `F`, an actual group scheme `G`, an actual commutative group
 scheme `T`, and an actual homomorphism `i : T.toGrp ⟶ G`, this module constructs
 a continuous section of the normalized adelic character logarithm. The inputs

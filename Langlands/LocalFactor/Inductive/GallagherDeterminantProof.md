@@ -1,6 +1,6 @@
 # Gallagher determinant transfer for actual induction
 
-Worker 1767 proves
+This module proves
 `Langlands.LocalFactor.Inductive.gallagherDeterminant`, whose complete type is
 `Langlands.LocalFactor.Inductive.GallagherDeterminantStatement.{uK,uG,uV}`.
 The theorem imports the existing statement without changing its Lean/Markdown
@@ -85,8 +85,6 @@ and pinned Mathlib's quotient, transfer and determinant lemmas through imports.
 
 ## Validation
 
-The complete proof module is checked in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`). Compilation and declaration inspection
-are development checks; independent semantic review and publication remain
-separate requirements.
+The complete proof module is checked in Lean 4.34.0, Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. Compilation and declaration inspection
+are development checks.

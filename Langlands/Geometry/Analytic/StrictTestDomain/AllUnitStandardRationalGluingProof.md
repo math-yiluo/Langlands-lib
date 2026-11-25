@@ -28,10 +28,7 @@ The source motivation is the all-unit case of Achinger's proof of Theorem
 7.0.1, p.67, in the retained November 22, 2020 original identified in the
 statement Markdown. The Lean implementation uses proved actual refinements,
 universal scalar Laurent descent, and a formal descent transfer with local
-separation. Worker 105 authored the all-unit refinement; Worker 84 the
-iterated cover construction; Worker 101 the formal reindexing transport;
-Worker 146 the compatibility preparation; Worker 572 this adapter and the
-iterated descent proof.
+separation.
 
 The argument permits trivial scalar valuations, zero and nonreduced bases,
 and empty rational loci. It proves scalar degree-zero descent for the

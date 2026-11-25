@@ -87,8 +87,8 @@ obtains the equivalence from the published
 `Langlands.gelfandKazhdanContragredient`, described above. The target retains
 the generic irreducible admissible scope. Existence of a nonzero functional together
 with irreducible multiplicity one gives the source's Whittaker-type
-hypothesis; that multiplicity-one fact remains a separate proof obligation,
-not an axiom imported by this target. Inverse-character genericity of the
+hypothesis; that multiplicity-one fact is a separate result, not an axiom
+imported by this target. Inverse-character genericity of the
 dual is the reformulation obtained from the transformed model and the
 existential equivalence. The pointwise Weyl-transformed model identity and
 the functional equations themselves remain separate targets.
@@ -101,38 +101,32 @@ The cited original pages, including displayed formulas, were read.
 
 ## Definitions, dependencies and status
 
-Direct project definition dependencies, all accepted and published version 1:
+Direct project definition dependencies:
 
-- `ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0`,
-  `Langlands.LocalField.Definitions`.
-- `be3f8221-aa6f-4069-8faa-f04e1f5dc4b7`,
-  `Langlands.Representation.Smooth.Contragredient.Definitions`.
+- `Langlands.LocalField.Definitions`.
+- `Langlands.Representation.Smooth.Contragredient.Definitions`.
   The effective Lean SHA256 is
   `878b6130d7c563ead853cbdd50a6c70aac01f9104062049e696f9e68cbb30de3`;
   the effective Markdown SHA256 is
   `531fc58fb846d22f48363964f7fb5af0ab9459747c7ca08a683df6ada7c8aae0`.
-  Publication commit: `933f2719b54fcf01bebb367c9cae56b8d5f17edc`;
-  final review receipt: `60084e7c-d793-42be-9a0a-6906ca4a95e9`.
+  Publication commit: `933f2719b54fcf01bebb367c9cae56b8d5f17edc`.
 
-The contragredient construction imports the accepted algebraic-dual
-definitions `079d7c1a-8b96-4917-997a-536d6954d55b` and smooth-part
-definitions `9fb5627f-6e8c-48a5-a92f-a4ddcf319b2d`; foundational
-smoothness and admissibility are from
-`665022df-625b-44ae-9dbd-425f6e266bab`, all version 1.
-The complete current dependency availability and final contragredient
-semantic report were checked at Library commit
+The contragredient construction imports the algebraic-dual
+definitions `Langlands.Representation.Dual.Definitions` and smooth-part
+definitions `Langlands.Representation.Smooth.SmoothPart.Definitions`;
+foundational smoothness and admissibility are from
+`Langlands.Representation.Smooth.Definitions`.
+The availability of all dependencies was checked at Library commit
 `9007729971e6e6ecea63b5567b6d1621769ccfb0`.
-No pending Whittaker construction or theorem proof is imported.
+No Whittaker construction or theorem proof is imported.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
-Lean 4.34.0 and Mathlib commit
+The environment is Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
 Mathlib supplies the actual general linear matrices, their determinant,
 transpose and inverse, complex linear equivalences, representations,
 irreducibility and additive characters.
 
-Worker 11 authored this target. Development check
-`36ca2703-49de-45cb-a6f7-1dd7a3ab5a5b` compiled the entry module and reused
+A development check compiled the entry module and reused
 its five unchanged project dependencies, with zero errors and warnings.
 Exact inspection reports a proposition definition with the two universe
 parameters `uF` and `uV` and target fingerprint

@@ -1,7 +1,7 @@
 # Finite-place separation of the actual cuspidal Whittaker coefficient
 
-This internal unit proves the finite-place part of Whittaker factorization on
-the exact supplied cuspidal tensor presentation. It uses the published
+This module proves the finite-place part of Whittaker factorization on
+the exact supplied cuspidal tensor presentation. It uses the existing
 nonarchimedean local Whittaker multiplicity-one theorem, the actual global
 Whittaker coefficient, and the Library's algebraic tensor constructions.
 
@@ -56,17 +56,17 @@ The proof proceeds as follows.
    the genuine finite action. This follows from the existing local-insertion
    pure-tensor formula and the proved finite covariance of the full equivalence.
 2. `whittakerMultilinear` composes this vector-valued multilinear map with the
-   published linear functional `x ↦ cuspWhittaker F T ψ x g`. The supporting
+   existing linear functional `x ↦ cuspWhittaker F T ψ x g`. The supporting
    slot-membership lemma takes a global local-equivariance certificate and
    proves that every one-slot linear form satisfies the same Whittaker identity
    on the given local factor.
-3. For `g_v = 1`, the published `whittakerFunctional_mem` gives that global
+3. For `g_v = 1`, the existing `whittakerFunctional_mem` gives that global
    certificate. Its character is the canonical standard local character by
    `genericCharacter_localPoint`. Thus the slice is in the actual
    `FactorFunctionals` subspace. No local uniqueness conclusion is presumed
    in this step.
 4. `factorFunctionals_eq_smul` applies the proved
-   `Whittaker.localFieldMultiplicityOne` to the supplied factor. The published
+   `Whittaker.localFieldMultiplicityOne` to the supplied factor. The existing
    local-component equivalences transfer the original irreducibility and
    admissibility assumptions to this factor. `localGL_topology_eq` transports
    admissibility from the native completion topology to the canonical p-adic
@@ -79,7 +79,7 @@ The proof proceeds as follows.
    finite set of coordinates replaced from `a₀` by the input tuple gives
    `L a = (∏ i, ℓ i (a i)) * L a₀`. It includes the empty family. Applying this
    proves `coefficient_eq_product` at `g` without finite translation.
-6. For `d` integral outside `S`, the published finite tensor action formula
+6. For `d` integral outside `S`, the existing finite tensor action formula
    transforms `finitePure a` into the same-stage pure tensor with coordinates
    `(P.localFactor v).representation d_v (a v)`. Genuine finite covariance of
    `P.allPlaceTensorEquiv` and `cuspWhittaker_finiteRepresentation` move this

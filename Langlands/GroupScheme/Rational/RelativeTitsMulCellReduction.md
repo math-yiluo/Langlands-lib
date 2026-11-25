@@ -1,7 +1,8 @@
 # The relative Tits multiplication axiom from the rank-one factorization
 
-This internal auxiliary module supports the proof task for
-`Langlands.GroupScheme.RelativeTitsSystemStatement`. It derives the multiplication axiom
+This internal auxiliary module serves the proof of
+`Langlands.GroupScheme.RelativeTitsSystemStatement` (`relativeTitsSystem`, module
+`Rational.RelativeTitsSystemProof`). It derives the multiplication axiom
 `mul_mem_cell` of the relative Tits data from the following inputs:
 
 - the published rank-one factorization `RelativeRoot.HasRankOneFactorization i` (module

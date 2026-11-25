@@ -135,7 +135,7 @@ or the `FieldMumfordPoint` helpers; it computes directly on `A ×_K A`. The
 constant-factor isomorphisms are not canonical, which is why the statement only
 asserts `Nonempty`.
 
-## Provenance and authorship
+## Provenance
 
 The statement is an internal tensor generalization of the two displayed
 restrictions in the proof of Edixhoven, van der Geer and Moonen,
@@ -156,6 +156,3 @@ notes mentioning this source were searched for source-specific errata. None
 was found in those locations. The later citation of Lemma (7.15) on printed
 p.106, apparently intended as (7.19) with (7.20), concerns a subsequent
 cohomological step and does not affect the displayed restrictions.
-
-Worker 1089 wrote the Lean proof and this documentation. It reuses no
-unpublished drafts.

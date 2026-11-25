@@ -1,9 +1,5 @@
 # Degree-one vanishing from prime-index normal sections: proof
 
-Authors: Worker 58 (original draft of the three pointwise theorems) and
-Worker 263 (closed wrapper, adaptation to the published Sylow proof and this
-description).
-
 This module proves the closed proposition of
 `Langlands.Cohomology.PrimeSectionH1Statement`:
 
@@ -21,7 +17,7 @@ All objects are Mathlib's actual ones: ordinary group cohomology
 `groupCohomology`, restriction `Rep.res` along subgroup inclusions, and
 `Rep.quotientToInvariants`. There is no finiteness hypothesis on `k`, on `A`
 or on any cohomology module, and the universe `u` is arbitrary. The module
-imports the statement module, the published Sylow proof module
+imports the statement module, the Sylow proof module
 `Langlands.Cohomology.SylowDetectionProof`, and
 `Mathlib.GroupTheory.Nilpotent`. It sets no options. Only the standard axioms
 `propext`, `Classical.choice` and `Quot.sound` are used.
@@ -102,7 +98,7 @@ strong induction on `m = Nat.card H`, generalizing over `H`. By
   The inflation–restriction step, applied to the representation
   `Rep.res H.subtype A` of `H` and its normal subgroup `N`, concludes.
 
-Finally the proof applies the published closed theorem
+Finally the proof applies the closed theorem
 `Langlands.Cohomology.sylowSubsingleton` at `k`, `G`, `A`, degree `1` and
 `Nat.one_pos`. This reduces the goal to: for every prime `p` and every
 `P : Sylow p G`, the module `groupCohomology (Rep.res P.1.subtype A) 1`
@@ -114,7 +110,7 @@ vanishes. That is `hpSub` for the subgroup `P.1`, which is a `p`-group by
 `primeSectionH1Vanishing` introduces `k`, its ring instance, `G`, its group
 and finiteness instances, `A` and the premise, in the statement's order. It
 then applies `primeSectionH1Vanishing_of_sections`. The theorem is unapplied,
-and its type is exactly the published constant
+and its type is exactly the constant
 `Langlands.Cohomology.PrimeSectionH1Vanishing.{u}`.
 
 ## Provenance
@@ -136,7 +132,7 @@ induction. Case 2 uses injectivity of restriction to Sylow subgroups on
 primary parts.
 
 The Lean proof follows the same two ingredients in a different arrangement.
-It applies Sylow detection once, to `G` itself, through the published
+It applies Sylow detection once, to `G` itself, through
 `sylowSubsingleton`. It runs the induction only over `p`-subgroups of `G`.
 Within a `p`-group it chooses a normal subgroup of index exactly `p`, which
 exists because finite `p`-groups are nilpotent. The quotient term is then a

@@ -1,7 +1,6 @@
 # Strong irreducible heads from a positive total count
 
-Authors: Worker 166, with Worker 429's proposed boundary and the published
-multiplicity-one interface of Workers 495 and 502. This is a derived internal
+This is a derived internal
 algebraic statement, extending `Classification.multiplicityOneHeadCore` from
 `MultiplicityOneConstituentProof`. No external source theorem is asserted.
 

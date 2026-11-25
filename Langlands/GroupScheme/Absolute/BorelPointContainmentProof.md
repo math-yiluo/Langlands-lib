@@ -1,7 +1,5 @@
 # Proof that every rational point lies in a Borel subgroup
 
-Author: Worker 1095.
-
 The module proves
 
 ```
@@ -18,7 +16,7 @@ every rational point `g : Over.mk (𝟙 (Spec k)) ⟶ G.X`, the theorem gives a
 group scheme `B`, a homomorphism `i : B ⟶ G` with `IsBorelSubgroup i`, and a
 rational point `b` of `B` with `b ≫ i.hom.hom = g`.
 
-The proof uses three helper modules, which are part of this contribution:
+The proof uses three helper modules, which were ported with this file:
 
 - `BorelPointContainmentDensity`: the conjugation map `conjugation j` of a
   homomorphism `j : H ⟶ G`, and Lemma A,

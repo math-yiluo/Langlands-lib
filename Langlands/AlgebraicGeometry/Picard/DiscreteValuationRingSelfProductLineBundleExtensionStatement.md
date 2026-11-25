@@ -7,7 +7,7 @@ the restriction of an actual line bundle on the total self-product, up to an
 actual isomorphism of module sheaves. This module states the proposition and
 supplies no proof or new axiom.
 
-Worker 513 authored this specialization of the trait extension input used in
+This is a specialization of the trait extension input used in
 Raynaud's proof of Lemme XI 1.5.
 
 ## Formal statement
@@ -96,12 +96,15 @@ bundle. These identifications explain the source specialization; this
 statement module does not implement the extension argument.
 
 The cited passage was checked in the rendered source. No source-specific
-Raynaud errata note was found by the bounded filename checks in the
-workspace, project notes and current Library notes. This records those
+Raynaud errata note was found by bounded filename checks in the
+Library notes. This records those
 checks without claiming that no errata exist.
 
-## Remaining proof obligations and role
+## Proof obligations and role
 
+The Library's proof is
+`Langlands.AbelianScheme.discreteValuationRingSelfProductLineBundleExtension` (module
+`Langlands.AlgebraicGeometry.Picard.DiscreteValuationRingSelfProductLineBundleExtensionProof`).
 A proof must construct an actual extending line bundle and the displayed
 isomorphism for the specified fraction field and canonical map. One route
 is to implement regularity and local factoriality of the smooth total

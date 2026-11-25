@@ -57,6 +57,7 @@ that generic fibre. -/
 theorem isLocalization_integralClosure_genericFibre :
     IsLocalization (Algebra.algebraMapSubmonoid N S₀) G := by
   have : IsLocalization (Algebra.algebraMapSubmonoid D S₀) G := IsLocalization.tensor K S₀
+  have : IsScalarTower S N G := Subalgebra.isScalarTower_mid (S := N)
   refine (isLocalization_iff (Algebra.algebraMapSubmonoid N S₀) G).mpr ⟨?_, ?_, ?_⟩
   · rintro ⟨_, m, hm, rfl⟩
     rw [← IsScalarTower.algebraMap_apply S N G, IsScalarTower.algebraMap_apply S D G]
@@ -69,7 +70,7 @@ theorem isLocalization_integralClosure_genericFibre :
       ⟨algebraMap S N m, Algebra.mem_algebraMapSubmonoid_of_mem ⟨m, hm⟩⟩⟩, ?_⟩
     simpa only [← IsScalarTower.algebraMap_apply] using hx
   · intro x y hxy
-    exact ⟨1, by simpa using Subtype.ext hxy⟩
+    exact ⟨⟨1, Submonoid.one_mem _⟩, by simpa using Subtype.ext hxy⟩
 
 /-- The fraction-field base change of the integral closure is isomorphic over the fraction field
 to the generic fibre of the original algebra. -/
@@ -83,6 +84,7 @@ def integralClosureGenericFibreEquiv : K ⊗[S] N ≃ₐ[K] K ⊗[S] D := by
   let e : K ⊗[S] N ≃ₐ[N] G :=
     IsLocalization.algEquiv (Algebra.algebraMapSubmonoid N S₀) (K ⊗[S] N) G
   have he : e.toRingHom.comp (algebraMap K (K ⊗[S] N)) = algebraMap K G := by
+    have : IsScalarTower S N G := Subalgebra.isScalarTower_mid (S := N)
     apply IsLocalization.ringHom_ext S₀
     ext s
     change e (algebraMap K (K ⊗[S] N) (algebraMap S K s)) =

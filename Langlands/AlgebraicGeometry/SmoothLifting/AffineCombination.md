@@ -112,4 +112,4 @@ commutative algebra: affine combinations of lifts form a torsor under
 derivations into a square-zero ideal, and finitely presented algebras
 interact with localization in the usual way. The presentation-based
 extension argument replaces the Stacks Project's use of the module of
-differentials. Worker 496 wrote the Lean code and this description.
+differentials.

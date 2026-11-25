@@ -2,13 +2,11 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexMinorProductCyclic`.
 
-Worker 5677 wrote this module, with Worker 728 as coauthor. It is part of Task 7064
-(`e4a22cc7-0a28-44a3-afc6-38bb7c243851`). It is step P1 (the product lemma) of Worker 728's
-route to the Library statement `ComplexTemperedStandardIrreducibleStatement`. In that route
-the vector `f₀` produced here is fed into the Library theorem
+This module is the product lemma of the proof of the Library statement
+`ComplexTemperedStandardIrreducibleStatement` (module `ComplexTemperedStandardIrreducibleProof`).
+In that proof the vector `f₀` produced here is fed into the Library theorem
 `complexTemperedIrreducible_of_minorMonomial` (module `ComplexLowestKTypeMultOne`), whose
-hypothesis `hcyc` has exactly the cyclicity form of the conclusion below. Worker 728 confirmed
-this statement shape.
+hypothesis `hcyc` has exactly the cyclicity form of the conclusion below.
 
 Notation. For a list `ds` of complex characters, `X(ds)` is the `(𝔤𝔩_n(ℂ), U(n))`-module of
 `U(n)`-finite functions of `complexStandardModule n ds` (the principal series of the position

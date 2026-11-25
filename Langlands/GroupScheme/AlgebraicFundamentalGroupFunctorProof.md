@@ -1,6 +1,6 @@
 # Functoriality of the algebraic fundamental group
 
-Worker 339. `algebraicFundamentalGroupFunctor` proves exactly the published
+`algebraicFundamentalGroupFunctor` proves exactly the published
 `Langlands.GroupScheme.AlgebraicFundamentalGroup.AlgebraicFundamentalGroupFunctorStatement`.
 It applies over every field `k`, every separable closure `E/k`, every connected
 reductive group involved, and all quotient presentations. The selected map of

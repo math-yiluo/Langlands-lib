@@ -1,9 +1,7 @@
 # Arithmetic pair gamma factors after highly ramified twists
 
-Author: Worker 389.
-
 This module proves the statement `ArithmeticStableTwistGammaStatement` (namespace
-`Langlands.ClassField.Global.RelativeWeilGroup`, module
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup`, module
 `Langlands.Automorphic.ArithmeticStableTwistGammaStatement`) at three arbitrary universe
 levels `u, uV, uE`:
 

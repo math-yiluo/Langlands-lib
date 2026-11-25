@@ -1,6 +1,6 @@
 import Langlands.TraceFormula.GeneralLinearWeilAdelicTwistStatement
 import Langlands.Global.AdelicGaloisTwistDescent
-import Langlands.ClassField.Global.IdeleGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 
 /-! # The adelic comparison for the Weil restriction of the general linear group -/
 
@@ -15,11 +15,11 @@ open Langlands.TraceFormula.AdelicGroupAutomorphism
 
 namespace Langlands.TraceFormula
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     IsAffine (GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.left :=
   GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of K)
 
-local instance (K : Type u) [Field K] (n : ℕ) :
+private local instance (K : Type u) [Field K] (n : ℕ) :
     Smooth (GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)).X.hom :=
   GeneralLinear.smoothStatement (Fin n) (CommRingCat.of K)
 
@@ -113,7 +113,7 @@ private theorem ringEquiv_eq_adeleEquiv (σ : L ≃ₐ[K] L) :
   | tmul a b =>
       rw [AdeleGalois.ringEquiv_tensor, numberFieldAdeleTensorEquiv_tmul,
         numberFieldAdeleTensorEquiv_tmul, map_mul, AdelicFunctoriality.adeleEquiv_diagonal,
-        Langlands.ClassField.Global.IdeleGaloisDescentProof.adeleEquiv_adeleInclusion]
+        Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof.adeleEquiv_adeleInclusion]
       rfl
   | add s t hs ht => simp only [map_add, hs, ht]
 

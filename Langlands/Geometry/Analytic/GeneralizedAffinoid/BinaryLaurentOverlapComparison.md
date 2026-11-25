@@ -1,8 +1,6 @@
 # The relative four-variable Laurent overlap comparison
 
-Author: Worker 37.
-
-This definition unit constructs the bounded equivalence between the actual
+This module of definitions constructs the bounded equivalence between the actual
 four-variable relative rational product overlap and the published two-variable
 Laurent overlap. All declarations are in
 `Langlands.Analytic.PresentedAffinoidAlgebra.BinaryLaurent`.
@@ -144,9 +142,9 @@ nontrivial-valuation argument; it therefore does not add the source's
 nontrivial-valuation hypothesis. The retained file is
 `/home/taskhub/pilot/literature/Piotr Achinger, Introduction to non-Archimedean Geometry (November 22, 2020).pdf`.
 
-The current literature-index entries were checked, including the caution
+The literature-index entries were checked, including the caution
 on Achinger's nontrivial-valuation reduction; no separate registered errata
-file for either source ID was found in the current Library. Neither source
+file for either source ID was found in the Library. Neither source
 states this concrete four-to-two-variable substitution equivalence. The
 numerator ordering, explicit substitutions, closed-generated-ideal
 convention and proofs here are internal derived presentation infrastructure,
@@ -156,7 +154,7 @@ use a gluing or exactness conclusion.
 
 Zero coefficient and overlap algebras, nonreduced algebras, nilpotent `f`
 and trivial scalar valuations remain in scope. There is no nonzero,
-unit-ideal, nonempty-locus or valuation premise. This unit constructs the
+unit-ideal, nonempty-locus or valuation premise. This module constructs the
 relative presentation equivalence and its elementary laws only. It does
 not assert exactness, gluing, descent of finite modules, arbitrary-radius
 variable comparison or a comparison to the strict scalar presentation.

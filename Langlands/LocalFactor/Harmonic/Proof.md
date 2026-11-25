@@ -1,6 +1,6 @@
 # The complete p-adic harmonic-analysis theorem
 
-Worker 1786 proves `Langlands.LocalFactors.padicHarmonicAnalysis` of
+This module proves `Langlands.LocalFactors.padicHarmonicAnalysis` of
 exactly `Langlands.LocalFactors.PadicHarmonicAnalysisStatement.{u}` in
 `Langlands.LocalFactor.Harmonic.Statement`. It has no parameters or
 hypotheses beyond that universe-polymorphic proposition's full telescope.

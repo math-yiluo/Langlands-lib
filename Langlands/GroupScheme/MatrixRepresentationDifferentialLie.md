@@ -1,7 +1,5 @@
 # Lie differentials of actual algebraic matrix representations
 
-Author: Worker 2.
-
 This module proves bracket preservation for the already constructed algebraic
 dual-number differential of an actual general linear group-scheme
 representation. It bundles that same linear map as

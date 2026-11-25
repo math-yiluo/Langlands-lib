@@ -1,7 +1,5 @@
 # Actual shifted analytic L-products for supplied segment heads
 
-Author: Worker 1765.
-
 This internal adapter keeps the supplied segment heads and actual base actions.
 The segment-head L-factor formula is an explicit premise. It does not prove
 that formula or the associated-pair induction theorem.

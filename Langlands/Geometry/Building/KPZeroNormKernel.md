@@ -39,10 +39,10 @@ the minus signs in the character-valuation maps of Sections 2.5(b) and 2.6(d),
 add the Henselian and perfect-residue-field hypotheses before Definition 2.6.20,
 and specify a reductive group over the given field in Definition 2.6.23.
 The sign changes preserve the kernels. The local-field instances and the
-existing prescribed valuations are unchanged. No project errata file for these
-sources was present in the workspace.
+existing prescribed valuations are unchanged. The project has no errata file for these
+sources.
 
-The contribution derives new comparisons from the already published
+This module derives new comparisons from the already published
 `KPZeroSubgroups`, `GaloisPointRational`, rational-character evaluation,
 scheme-theoretic derived-subgroup annihilation, and normalized local-field norm
 APIs. It does not redefine any of those source objects. The generic norm
@@ -102,11 +102,17 @@ the full supplied centralizer-zero subgroup. The definition
 Finally, `zeroSubgroup_le_rationalCommonNormKernel` combines the derived-cover
 image with the mapped centralizer-zero subgroup by `sup_le`.
 
-## Remaining obligations
+## Not proved here
 
-This unit proves containment, not finite index or equality with the norm kernel.
+This module proves containment, not finite index or equality with the norm kernel.
 It proves neither compactness, closedness nor openness of the centralizer-zero
-subgroup. It also leaves independence and existence of the supplied zero data,
+subgroup. It also does not prove independence and existence of the supplied zero data,
 normality of the derived-cover image, equality of the source joins with product
-sets, and the full chamber Iwahori compact-openness target to their respective
-proof obligations.
+sets, or the full chamber Iwahori compact-openness target. Of these, the Library
+proves independence (`unramifiedZeroPointsIndependence`, module
+`UnramifiedZeroIndependenceProof`, and for `ZeroSubgroupDatum`
+`ZeroSubgroupDatum.zeroSubgroup_eq_of_datum`, module
+`ZeroSubgroupDatumIndependence`), normality of the derived-cover image (the
+instances `simplyConnectedImage_normal` of `SimplyConnectedImageNormal`) and the
+compact-openness target (`ParahoricBuildingData.chamberIwahoriCompactOpen`, module
+`ChamberIwahoriCompactOpenProof`) elsewhere.

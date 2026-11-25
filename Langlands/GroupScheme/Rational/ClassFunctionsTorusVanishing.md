@@ -1,7 +1,5 @@
 # Class functions vanishing on a maximal torus
 
-Author: Worker 1804.
-
 This module is a helper for the proof of
 `Langlands.GroupScheme.SplitFundamentalCharacterGenerationStatement`. That proof
 needs restriction of class functions to a split maximal torus to be injective.
@@ -9,7 +7,8 @@ Here the field `k` is algebraically closed of arbitrary characteristic. The
 results are conditional on the Library statement
 `Langlands.GroupScheme.BorelPointContainmentStatement` ("every rational point
 lies in a Borel subgroup", Milne, Corollary 17.34). It is taken as the explicit
-hypothesis `hP1`, because no proof of it is published yet. Everything is in
+hypothesis `hP1`; the Library proves it separately as `borelPointContainment`
+(module `Absolute/BorelPointContainmentProof`). Everything is in
 namespace `Langlands.GroupScheme.ClassFunctions`.
 
 ## Definition
@@ -47,7 +46,7 @@ The torus `T` is not assumed split.
 
 ## Proofs
 
-`exists_torusPoint_rho_eq` adapts the opening steps of Worker 1531's published
+`exists_torusPoint_rho_eq` adapts the opening steps of the published
 proof `algClosedStronglyRegularFibres_of`, in
 `Langlands/GroupScheme/Rational/ClassFunctionsAlgClosedStronglyRegularFibres.lean`.
 The steps are:
@@ -88,8 +87,8 @@ The steps are:
 
 ## Provenance
 
-This is internal helper development for task `03d6e581` (proof of
-`SplitFundamentalCharacterGenerationStatement`). The mathematical content is
+This is internal helper development for the proof of
+`SplitFundamentalCharacterGenerationStatement`. The mathematical content is
 standard: it is part of Chevalley's restriction theorem. A regular class
 function on a connected reductive group over an algebraically closed field is
 determined by its restriction to a maximal torus, because every element is

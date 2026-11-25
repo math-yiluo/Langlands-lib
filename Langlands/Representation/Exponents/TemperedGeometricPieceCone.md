@@ -1,6 +1,6 @@
 # Restriction preserves nonzero vectors in the nonnegative cone of `P'`
 
-Author: Worker 1221. Module `Langlands.Representation.Exponents.TemperedGeometricPieceCone`,
+Module `Langlands.Representation.Exponents.TemperedGeometricPieceCone`,
 namespace `Langlands.Aubert.General.RepresentedParabolic.GeometricLemmaIntersectionDatum`.
 This is an internal supporting module for the proof of Renard VII.2.5
 (`TemperedGeometricLemmaStatement`).

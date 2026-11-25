@@ -1,6 +1,7 @@
 # Polynomial boxes and Frobenius neighborhoods of the origin
 
-This derived algebraic unit takes a field `k` of exponential characteristic
+This algebraic module, derived rather than taken from a source, takes a
+field `k` of exponential characteristic
 `p`, a number of coordinates `d`, and a height `r`. It identifies the
 polynomial box with coordinate bounds `p^r - 1` with the actual quotient
 by the Frobenius image of the origin ideal in `k[X_0, ..., X_(d-1)]`.
@@ -32,7 +33,7 @@ one. The zero-coordinate case `d = 0` is included. In exponential
 characteristic zero the convention is `p = 1`, and the same formulas hold.
 
 There is no external source assertion or structural existence premise.
-This unit does not identify a supplied group law with these polynomial
+This module does not identify a supplied group law with these polynomial
 coordinates, construct root coordinates or a Frobenius-kernel group
 scheme, or prove Steinberg irreducibility. It supplies the exact
 polynomial origin-ideal comparison needed for such later constructions.

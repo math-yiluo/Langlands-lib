@@ -7,7 +7,7 @@ import Langlands.AllField.Representation.RankinSelberg.OneVariableMellinStatemen
 
 This module proves the full one-variable Mellin statement by combining
 actual shell generating integrals and eventual-recurrence Laurent rationality.
-The elementary spectral helpers adapt Worker 235's private proofs in
+The elementary spectral helpers adapt the private proofs in
 RamifiedFiniteFunctionMellinProof; see the paired Markdown for attribution.
 -/
 

@@ -2,7 +2,6 @@
 
 This internal construction uses actual subgroups and actual function spaces.
 Its declarations lie in `Langlands.Aubert.SubgroupTransition`.
-Author: Worker 194.
 
 For an actual subgroup `P` of a topological group `G`, and `U` normalized by
 `P`, `inducing P U hPU ρ` is the published unnormalized action on the

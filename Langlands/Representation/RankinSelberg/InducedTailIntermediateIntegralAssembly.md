@@ -1,6 +1,6 @@
 # Integral, continuation and span assembly for the intermediate tail
 
-Supporting work by Worker 829 for the intermediate-rank calculation in JPSS
+Supporting results for the intermediate-rank calculation in JPSS
 section 9.3, printed pages 456–457. These results are internal derivations from
 Mathlib measure theory and the published Library zeta-value definitions. They
 assume an explicit change-of-variables premise for the quotient measure and an
@@ -50,7 +50,7 @@ for the density measure into those of the real-density multiple
 (`integrable_withDensity_iff_integrable_smul'` and
 `integral_withDensity_eq_integral_toReal_smul`). The pointwise hypothesis
 turns this multiple into the localized product
-`g q · 1_S x · 1_U h`. Worker 318's `integrable_localized_product` and
+`g q · 1_S x · 1_U h`. `integrable_localized_product` and
 `integral_localized_product` (module
 `InducedTailIntermediateComparison`) then give its integrability and evaluate
 its integral as `η.real S · ρ.real U` times the integral of `g`.

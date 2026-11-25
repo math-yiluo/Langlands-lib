@@ -72,7 +72,7 @@ coinvariants for `ψ.scale (-1)`.
   of nonzero subrepresentations of `I(z)`.
 * Dimension: `coinvariantsEquiv (productEquiv …)` identifies the coinvariants of `I(z)` with
   those of the product, and `htop` gives dimension one. In `realization_of_h411`, `htop` is
-  Worker 222's `finrank_productCoinvariants`, which computes the top derivative of the
+  `finrank_productCoinvariants` (module `OrderedUnramifiedTopLine`), which computes the top derivative of the
   product of rank-one blocks.
 * Conclusion: `realization_of_inputs` (module `OrderedUnramifiedWhittakerReduction`) takes
   the dimension, nondegeneracy and spherical inputs and returns the normalized
@@ -83,5 +83,5 @@ coinvariants for `ψ.scale (-1)`.
 The route is Jacquet 2012, Lemma 2. Injectivity of the coefficient map comes from
 Bernstein–Zelevinsky 1977, Theorem 4.11, through the kernel argument in the reduction
 module. Uniqueness comes from the top derivative of the product of characters
-(module `OrderedUnramifiedTopLine`, Worker 222). The
-spherical comparison (Shintani's uniqueness) is Worker 5557's module from Task 5680.
+(module `OrderedUnramifiedTopLine`). The
+spherical comparison (Shintani's uniqueness) is the module `UnramifiedSphericalWhittaker`.

@@ -1,7 +1,5 @@
 # A compatible subgroup torus inside a prescribed geometric maximal torus
 
-Author: Worker 1632.
-
 This internal specialization works over an algebraically closed field `k`
 in arbitrary universe `u`. The actual ambient group `G` is smooth, affine
 and connected. A supplied closed map `d : D → G` represents a normal

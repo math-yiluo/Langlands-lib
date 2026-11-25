@@ -1,7 +1,5 @@
 # Local rings of the actual ordinary-open affinoid sheaf
 
-Author: Worker 36.
-
 Let `K` be a complete ultrametric normed field and let `A` be a
 `PresentedAffinoidAlgebra K`. Rational charts retain their actual closed
 positive-polyradius Tate quotient algebras and bounded restriction maps over

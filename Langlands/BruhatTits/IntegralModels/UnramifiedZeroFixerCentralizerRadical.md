@@ -1,6 +1,6 @@
 # Independence of centralizer radical preimages
 
-This internal supporting unit proves that the intrinsic radical-preimage subgroup
+This internal supporting module proves that the intrinsic radical-preimage subgroup
 of the actual integral centralizer has the same image in the specified generic
 centralizer for any two characterized smooth zero-fixer models on nonempty
 apartment subsets. The subsets need not belong to the same facet. The conclusion
@@ -35,7 +35,9 @@ intrinsic independence proposition.
 
 All results are derived from the published centralizer constructions, generic
 rigidity, radical uniqueness and existence, and reduction naturality, together
-with the separately staged model-independence and connectedness support. No
+with the model-independence and connectedness support of
+`UnramifiedZeroFixerCentralizerIndependence` and `UnramifiedZeroFixerConnected`. No
 root-generation or common-subgroup conclusion is asserted here. The radical
-intersection premise must be proved before the conditional comparison can
-supply the original upstairs target without additional hypotheses.
+intersection premise is proved as `torusCentralizerUnipotentRadical` in
+`Langlands.GroupScheme.Absolute.TorusCentralizerUnipotentRadicalProof`; with it
+the conditional comparison holds without additional hypotheses.

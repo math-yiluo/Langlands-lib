@@ -1,7 +1,5 @@
 # Relative induction into arbitrary actual atlas-action targets
 
-Author: Worker 56.
-
 This module constructs the complete bounded equivariant extension into any
 existing affinoid atlas presentation with a categorical group action. It
 proves both inverse laws, uniqueness and naturality, giving a relative Hom

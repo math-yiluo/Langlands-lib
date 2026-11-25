@@ -1,10 +1,7 @@
 # Subgroup intersections over a field and over its algebraic closure
 
-Author: Worker 1240.
-
 Module `Langlands.GroupScheme.SubgroupIntersectionDescent`. It is derived infrastructure for
-`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement` (task
-`7c372114-27b9-49eb-8f69-5b1df15fbbca`). That statement asks for smoothness of a
+`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement`. That statement asks for smoothness of a
 group-scheme pullback `pullback j j'` over a field `k` and connectedness of its base change
 to `AlgebraicClosure k`. Geometric arguments produce these facts for the pullback of the
 base-changed maps instead. This module transfers them back.

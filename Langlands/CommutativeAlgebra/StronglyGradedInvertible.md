@@ -1,7 +1,7 @@
 # Invertibility of the components of a strongly graded ring
 
-Worker 159. This is internal algebra for Task 7608: character lifting from a
-Picard-trivial split reductive target. The module adds no new definitions of
+This is internal algebra for character lifting from a Picard-trivial split
+reductive target. The module adds no new definitions of
 gradings. It reuses the published
 `Langlands.CommutativeAlgebra.StronglyGraded` interface:
 
@@ -50,7 +50,7 @@ this assumption the results describe the component of degree `m`.
   `e (y i) * e.symm 1`. So `∑ i, x i * e (y i)` is an inverse of the
   generator: multiplying gives `∑ i, x i * y i = 1`.
 
-## Use in Task 7608
+## Use in character lifting
 
 Let `H` be a group scheme with coordinate ring `A`, and let a diagonalizable
 subgroup `K` act on `H` by translation. The coaction grades `A` by the

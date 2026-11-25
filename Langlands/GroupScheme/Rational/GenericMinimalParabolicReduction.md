@@ -1,7 +1,5 @@
 # A structural reduction for generic minimal rational parabolics
 
-Author: Worker 1298.
-
 This is an internal, derived reduction toward the exact published
 `GenericMinimalParabolicStatement`. It does not prove any of its structural
 premises, and is not an unconditional proof of that statement.

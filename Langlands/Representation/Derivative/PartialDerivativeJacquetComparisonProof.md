@@ -1,8 +1,9 @@
 # Positive two-block Jacquet-to-derivative comparison
 
-Worker 321 assembles the comparison using Worker 593's normalization and
-right-hand quotient constructions and the left-hand quotient adapter of
-Worker 321. Worker 1004 contributed the organization of the latter adapter.
+The comparison is assembled from the normalization and right-hand quotient
+constructions (`PartialDerivativeJacquetNormalization`,
+`PartialDerivativeJacquetRHS`, `PartialDerivativeJacquetRHSComparison`) and
+the left-hand quotient adapter (`PartialDerivativeJacquetLHS`).
 
 The theorem `Langlands.Derivative.partialDerivativeJacquetComparison` has
 exactly the published proposition
@@ -256,8 +257,8 @@ the initial general-linear restriction. Registered source
 The retained original is
 `/home/taskhub/central-library/Bernstein-Zelevinsky--Induced representations of reductive p-adic groups I--1977.pdf`.
 
-The cited original pages were read and visually inspected during this
-task, including the negative half exponent on BZ77 printed p.444.
+The cited original pages were read and visually inspected,
+including the negative half exponent on BZ77 printed p.444.
 Both PDF fingerprints were checked. No applicable source-specific
 errata file was found in the checked project literature, public notes
 and central-library locations; this is a bounded check.
@@ -270,7 +271,8 @@ formalization steps.
 
 The source allows nonnegative ranks. This theorem proves precisely the
 published positive two-block specialization `k>0,m>0`. It makes no
-assertion about the separately owned `k=0` top-localization comparison,
+assertion about the separate `k=0` top-localization comparison
+(`TopLocalization.topLocalizationIso`),
 the `m=0` identity adapter, the exterior-tensor comparison of §3.7(a),
 or a product or Leibniz filtration. Arbitrary representations of `GL_0`
 in the underlying constructions retain their full carriers.
@@ -278,15 +280,13 @@ in the underlying constructions retain their full carriers.
 ## Imports and independence
 
 The direct imports are the existing comparison statement, the left
-carrier adapter and the right carrier adapter. This proof adds only its
-own Lean/Markdown pair and changes no imported pair. The actual
+carrier adapter and the right carrier adapter. The actual
 transitive project closure has 96 modules, listed below with the prefix
 `Langlands.` suppressed. All 192 imported Lean/Markdown files were
-compared byte for byte with supplied Library
+compared byte for byte with Library
 `c5eebf94883144ce00adc4e252995c28082f08a7`. Both specialized carrier
-adapter pairs are published there and also match their immutable
-independently reviewed source copies. Complete current pairs in this
-closure were read during this task.
+adapter pairs are published there. The complete pairs in this
+closure were read.
 
 The proof inputs are concrete subgroup and character identities,
 character-localization universal properties and the proved supplied-twist
@@ -311,7 +311,7 @@ conclusions is needed for the reused determinant calculation.
 truth is not assumed here.
 
 The actual closure and helper provenance preserve the full positive
-and socle exclusion set of the task: no special-head product
+and socle exclusion set: no special-head product
 irreducibility, generic segment-product uniqueness, multisegment
 exhaustion, ordered strong-head existence, quotient coverage, ordered
 conversion, tempered uniqueness, square-integrable classification or
@@ -323,7 +323,7 @@ and two-segment socle commutation, linked socle gluing and ordered
 multisegment socle-existence conclusions and their proof-successor
 routes are also absent.
 
-The inherited stronger restrictions of the lower tower construction
+The stronger restrictions of the lower tower construction
 are preserved: no two-supercuspidal product theorem, individual
 special-head or reverse-socle existence, segment Jacquet or derivative
 formula, segment-product criterion, or Whittaker coinvariant-finiteness
@@ -337,7 +337,7 @@ adjunction, pairing, duality or derivative-filtration theorem.
 The source/proof inspection, as well as an exclusion-name scan of the
 actual Lean closure, supports these independence claims.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`, Lean 4.34.0,
+Environment: Lean 4.34.0,
 Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 
 The full transitive project closure is:

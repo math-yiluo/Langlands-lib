@@ -1,8 +1,8 @@
 # Renard A.VI.2: sums of indexed families of subobjects
 
-This unit constructs the sum of an arbitrary indexed family of subobjects as the image of the coproduct map, and proves that it is the least upper bound of the family in Mathlib's existing order on subobjects. It realizes the source remark after AB5 in Renard's Appendix A.VI.2, printed page 263 / PDF269: the sums in AB5 exist because of AB4\*. Module: `Langlands.CategoryTheory.Renard.IndexedSubobjectSums`, namespace `Langlands.Renard`. It imports `Langlands.CategoryTheory.RenardGrothendieckAxioms` unchanged.
+This module constructs the sum of an arbitrary indexed family of subobjects as the image of the coproduct map, and proves that it is the least upper bound of the family in Mathlib's existing order on subobjects. It realizes the source remark after AB5 in Renard's Appendix A.VI.2, printed page 263 / PDF269: the sums in AB5 exist because of AB4\*. Module: `Langlands.CategoryTheory.Renard.IndexedSubobjectSums`, namespace `Langlands.Renard`. It imports `Langlands.CategoryTheory.RenardGrothendieckAxioms` unchanged.
 
-The unit proves existence of sums and the intrinsic laws of the construction. It does not prove the AB5 distributivity law `N ∩ (∑ᵢ Mᵢ) = ∑ᵢ (N ∩ Mᵢ)`, which is an axiom in the source.
+The module proves existence of sums and the intrinsic laws of the construction. It does not prove the AB5 distributivity law `N ∩ (∑ᵢ Mᵢ) = ∑ᵢ (N ∩ Mᵢ)`, which is an axiom in the source.
 
 ## Source and reading record
 
@@ -117,7 +117,7 @@ Since `Subobject X : Type (max u v)`, every set `s` of subobjects is indexed by 
 
 ## Scope and deferred obligations
 
-Specified by Worker 6's task `5a53b608-497a-4bd9-9923-f0b0db212357`, successor of the definition unit `Langlands.CategoryTheory.RenardGrothendieckAxioms` (task `99601a3d-50ed-4a01-a5d7-0503d8ede01a`). The following remain separate obligations:
+This module builds on the definition module `Langlands.CategoryTheory.RenardGrothendieckAxioms`. The following remain separate obligations:
 
 - the AB5 distributivity law itself, and comparisons of source AB5 with filtered-colimit exactness (Mathlib's `AB5OfSize`);
 - source A.VI.2(10): complete or cocomplete abelian categories have all limits or colimits;
@@ -125,4 +125,4 @@ Specified by Worker 6's task `5a53b608-497a-4bd9-9923-f0b0db212357`, successor o
 
 The file contains no proof holes and no new axioms; the theorems depend only on `propext`, `Classical.choice` and `Quot.sound`.
 
-The explanation of the `w = max u v` specialization, and the docstring of `isLUB_subobjectSum_set`, were corrected for finding P2-01 of the external Library audit of 2026-10-29 (task `a56ac3da-fc21-4ec6-896c-1841166342af`). That correction changed documentation only. No declaration, type, hypothesis, universe or proof changed.
+The explanation of the `w = max u v` specialization, and the docstring of `isLUB_subobjectSum_set`, were corrected for finding P2-01 of the external Library audit of 2026-10-29. That correction changed documentation only. No declaration, type, hypothesis, universe or proof changed.

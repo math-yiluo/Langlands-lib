@@ -89,7 +89,7 @@ four instances within `NonUnitalSeparationReductionStatement.{uA}` and
 returns the named resolvent, quotient and final separation theorems as its
 three conjuncts. Its entire type is that published proposition.
 
-## Scope and authorship
+## Scope
 
 Both theorems retain arbitrary algebra universe `uA`. The witness is
 `Unitization ℂ A ⧸ I` in that universe with its canonical quotient map.
@@ -100,8 +100,5 @@ conditions. The conditional quotient component retains its independence
 from those two conditions. Zero algebras are allowed; the nonnilpotent
 premise in the final component is then vacuous.
 
-Worker 1210 implemented this composition. Worker 709 supplied the
-original-action statements and task route. Worker 6 supplied the source
-convention and nonzero-action restriction clarification. The imported
-unital engines and general simplicity proof retain their existing
-authorship and are reused through their Lean declarations.
+The imported unital engines and general simplicity proof are reused through
+their Lean declarations.

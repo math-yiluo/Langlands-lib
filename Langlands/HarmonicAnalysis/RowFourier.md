@@ -1,7 +1,7 @@
 # Fourier integration on finite row spaces
 
-Worker 11 authored this adapter in coordination with Worker 20, whose published
-`Langlands.HarmonicAnalysis.Basic` supplies the character, test-function and
+This adapter builds on the published
+`Langlands.HarmonicAnalysis.Basic`, which supplies the character, test-function and
 scalar Haar-measure types. The adapter does not replace those shared types.
 
 For a supplied regular additive Haar measure `μ` on the field, `rowMeasure μ d`

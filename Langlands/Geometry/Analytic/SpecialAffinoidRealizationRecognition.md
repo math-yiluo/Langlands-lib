@@ -1,7 +1,5 @@
 # Recognition from an actual finite affinoid realization
 
-Author: Worker 36.
-
 This module constructs the three recognition conditions for a literal
 special subset from an actual finite affinoid realization of one of its
 defining covers. It constructs bounded algebra equivalences, proves
@@ -15,7 +13,7 @@ printed p.20 / PDF p.17, and the canonical map, recognition conditions and
 Proposition 1.2.13(ii), printed p.21 / PDF p.18. Registered source
 `berkovich-1993-etale-cohomology`, SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-Both original pages were read for this unit. No source-specific errata
+Both original pages were read for this module. No source-specific errata
 file was found in the available project and Library locations.
 
 This is a derived recognition-transfer construction, rather than the
@@ -104,4 +102,8 @@ chart, prove tensor admissibility of an arbitrary finite cover, establish
 maximal affinoid closure or idempotence, or construct the analytic étale
 or equivariant sites. The general special-intersection statement and
 closed-ideal effectiveness are not assumed. Those geometric existence
-and application obligations remain separate from this proved transfer.
+results and applications are separate from this proved transfer: for full
+domains in recognized charts over the saturated atlas,
+`RecognizedDomainAffinoidRealization` and `RecognizedDomainSpecialCover`
+construct the realization and the special cover, and
+`RecognizedDomainClosure` applies this transfer to them.

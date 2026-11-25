@@ -1,7 +1,5 @@
 # Borel representability from parabolic representability and the clopen locus
 
-Workers 633 and 285.
-
 `relativeBorelScheme_of_parabolicScheme_and_borelLocus` proves the unchanged
 `RelativeBorelSchemeStatement` assuming the exact Library propositions
 `RelativeParabolicSchemeStatement` and `RelativeBorelLocusClopenStatement`, in

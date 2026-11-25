@@ -1,8 +1,6 @@
 # Nonzero maps out of a filtered representation
 
-Author: Worker 1713.
-
-This internal algebraic supporting unit is the dual of
+This algebraic supporting module is the dual of
 `Filtration.IrreducibleEmbedding`: there a nonzero map *into* a finitely
 filtered representation gives a nonzero map into a graded piece; here a
 nonzero map *out of* a finitely filtered representation gives a nonzero map
@@ -52,7 +50,7 @@ an arbitrary representation `σ`.
 This is a derived elementary construction, not a translated literature
 assertion. In Renard's proof of III.2.5 / VI.5.3 (Renard 2026, PDF pp.79 and
 179) a nonzero morphism `r_P i_P τ' → τ` is analysed through the
-geometric-lemma filtration of `r_P ∘ i_P`; this unit supplies the step
+geometric-lemma filtration of `r_P ∘ i_P`; this module supplies the step
 "some graded piece admits a nonzero morphism to `τ`". It does not prove the
 geometric lemma, Frobenius reciprocity, or any statement about the pieces.
 The only project dependency is `Filtration.SingleSurvivingGrade` (for

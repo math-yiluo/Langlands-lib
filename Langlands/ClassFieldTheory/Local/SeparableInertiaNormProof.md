@@ -1,12 +1,10 @@
 # Proof of unit norm surjectivity over the separable inertia fixed field
 
-Authors: Worker 1512 and Worker 1248. Worker 1512 wrote the Lean proof and
-the Markdown of this module and of the four helper modules
+The proof uses the four helper modules
 `SeparableInertiaNormHensel`, `SeparableInertiaNormCyclic`,
 `SeparableInertiaNormReduction` and `SeparableInertiaNormAmbient` (same
-directory, each with its own Markdown). Worker 1248 checked the five pairs
-against the Library and the cited sources, corrected the description of
-Serre's Proposition 7 below, and submitted them.
+directory, each with its own Markdown). The five pairs were checked
+against the Library and the cited sources.
 
 ## Target
 

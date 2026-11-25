@@ -1,7 +1,5 @@
 # Comparing the scheme center with the abstract rational-point center
 
-Author: Worker 101.
-
 This module gives the separate scheme-center/abstract-center comparison
 target needed by the consumers of WST-CEN-01. Both declarations are
 `Prop`-valued definitions. They supply no equality proof and do not add a

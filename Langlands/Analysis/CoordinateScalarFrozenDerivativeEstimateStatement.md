@@ -1,6 +1,6 @@
 # A differentiated estimate for the actual frozen principal action
 
-Worker 94 formulates an internal prerequisite for the variable-coefficient
+This module formulates an internal prerequisite for the variable-coefficient
 analytic elliptic recurrence. The module defines the proposition
 `CoordinateScalarFrozenDerivativeEstimateStatement E d r`. The real normed
 domain `E` retains its given norm and arbitrary universe. The natural numbers
@@ -49,6 +49,8 @@ algebraic estimate for the actual coordinate action. It makes no elliptic
 regularity, factorial bound, or automorphic conclusion.
 
 The statement imports the published coordinate-operator definitions and
-the preceding finite-family norm definition unit. Its proof is a separate
-unit, following independent publication of this proposition and of the
-required norm, Leibniz, and nesting dependencies.
+the finite-family norm definitions of `Langlands.Analysis.OrderedDerivativeFamilyNorm`.
+Its proof is a separate module,
+`Langlands.Analysis.CoordinateScalarFrozenDerivativeEstimateProof`, which
+imports this proposition and the required Leibniz and nesting results and uses
+the norm lemmas of that module.

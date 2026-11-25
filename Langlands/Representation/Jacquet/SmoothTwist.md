@@ -20,7 +20,7 @@ a smooth representation along the continuous subtype inclusion gives a smooth
 `M` representation. Surjectivity of the equivariant quotient map then gives
 smoothness of the descended action. If the character has open kernel,
 intersecting each fixing open subgroup with this kernel proves that the
-twisted action remains smooth. The implementation reuses the accepted
+twisted action remains smooth. The implementation reuses the
 pullback, surjective-intertwiner and open-kernel twist results.
 
 All coefficient and carrier assumptions are explicit: a commutative coefficient
@@ -31,8 +31,8 @@ and admissibility are unnecessary for these constructions and certificates.
 This is derived infrastructure for the Jacquet construction in
 Bernstein--Zelevinsky (1977), Section 1.8(b), printed pages 444--445, and
 Casselman, Chapter III (April 29, 2019), Section 3, pages 3--4.
-The normalized specialization will use the inverse positive half-modulus,
-not the arbitrary character in this file. Exactness and reciprocity require
+The normalized specialization in `Normalized` uses the inverse positive
+half-modulus, not the arbitrary character in this file. Exactness and reciprocity require
 separate results.
 
 The original source tuples are:
@@ -52,24 +52,21 @@ constructions use a specific inverse-half-modulus character. Smoothness here
 is derived using the following exact project versions, rather than importing
 the stronger source results concerning exactness or admissibility:
 
-| Dependency | Artifact, version |
+| Dependency | Module |
 | --- | --- |
-| Actual Jacquet quotient action | `6574bc6a-331d-4a8e-b089-969b377e4598`, 1 |
-| Smoothness definitions | `665022df-625b-44ae-9dbd-425f6e266bab`, 1 |
-| Character twisting definitions | `c83db975-8b79-4fbb-9901-2db836910a0a`, 1 |
-| Continuous pullback preserves smoothness | `e064c7c1-aa21-4d84-b915-953b42d5f779`, 1 |
-| Surjective intertwiners preserve smoothness | `4b00bba5-86eb-4d6d-98a2-94e697e2ac73`, 1 |
-| Open-kernel twists preserve smoothness | `bfc0af4a-747e-42b0-befc-a12ca0239b22`, 1 |
+| Actual Jacquet quotient action | `Jacquet.Coinvariants` |
+| Smoothness definitions | `Smooth.Definitions` |
+| Character twisting definitions | `Twist.Definitions` |
+| Continuous pullback preserves smoothness | `Smooth.Transfer.PullbackProof` |
+| Surjective intertwiners preserve smoothness | `Smooth.Transfer.SubquotientProof` |
+| Open-kernel twists preserve smoothness | `Twist.SmoothProof` |
 
-These six exact versions were verified accepted, published and current at
-Library commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
-The quotient-action core was published in that commit with effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`
-and semantic publication receipt `46f6dce250ca48d98be047905af8d5d6`.
-Its integrated Lean and Markdown are unchanged from the construction used here.
+(each prefixed by `Langlands.Representation.`). These six dependencies were
+checked at Library commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
+The Lean and Markdown of the quotient-action module are unchanged from the
+construction used here.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-Lean 4.34.0, with Mathlib commit
+The environment is Lean 4.34.0, with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.
-The same contribution contains `PositiveCharacter.lean` and `Normalized.lean`
-with their paired explanations.
+`PositiveCharacter.lean` and `Normalized.lean`, with their paired
+explanations, are ported together with this module.

@@ -64,7 +64,7 @@ uses `(k⁻¹h)(h⁻¹g) = k⁻¹g`.
 
 No affine structure on the apartment subtype is installed by the type
 equivalence alone. No bijection with actual maximal split subtori is
-constructed here. In particular, this unit does not identify the vector
+constructed here. In particular, this module does not identify the vector
 space of a translated apartment with the real cocharacters of its actual
 conjugate torus, and does not supply A2's natural derivative between two
 such spaces. Those comparisons, the existence of the supplied data,

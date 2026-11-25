@@ -29,10 +29,9 @@ over a nonarchimedean local field `F`, from the Library's group scheme
 
 The module is derived. Its statements are standard facts about `SL_n` over a
 discrete valuation ring. Here they are obtained by applying published Library
-results to the standard model. The task objective (Task 3557) asks for proved
-examples in its "Regression examples" section. Its "Representation layer"
-section asks that the Library's concrete `GL_n` results be recovered from the
-general theory, with proved comparisons. The comparison here relates the
+results to the standard model. The module is a proved regression example.
+`GeneralLinearDepthZero` recovers the Library's concrete `GL_n` results from
+the general theory, with proved comparisons. The comparison here relates the
 `SL_n` depth-zero subgroups to those concrete `GL_n` subgroups.
 
 The comparison values come from Kaletha–Prasad, *Bruhat–Tits Theory: A New

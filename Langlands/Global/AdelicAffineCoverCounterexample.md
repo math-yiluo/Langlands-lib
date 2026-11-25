@@ -35,8 +35,9 @@ adelic points and their union can depend on the affine cover, without
 specifying this binary affine-line example. The cover proof, the
 unit-coordinate descriptions of its point images, the existence of the
 needed distinct places and failure of coverage for these explicit points
-are separate statement and proof obligations. This definition unit alone
-does not claim them proved.
+are proved in `AdelicAffineCoverCounterexampleProof`. All but the existence
+of the places are stated in `AdelicAffineCoverCounterexampleStatement`.
+This module of definitions alone does not claim them proved.
 
 Registered source `conrad-2011-weil-grothendieck-adelic-points`, SHA-256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.

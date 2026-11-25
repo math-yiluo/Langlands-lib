@@ -9,8 +9,6 @@ Actual invariant-submodule inclusions and quotient projections give the exact
 relations needed to telescope any composition series. The generic theorem
 retains independent coefficient, group and carrier universes; the actual GL
 and product-Levi cases are direct specializations.
-
-Original proof: Worker 320. Preparation and verification: Worker 585.
 -/
 
 noncomputable section

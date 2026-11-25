@@ -1,6 +1,6 @@
 # Parabolic images of recovered neutral models
 
-This derived unit connects compatible full and neutral unramified recovery to
+This derived module connects compatible full and neutral unramified recovery to
 the actual schematic image of a neutral special-fibre comparison. All
 constructions and results are at arbitrary universe `u`.
 

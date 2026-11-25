@@ -1,7 +1,5 @@
 # Proof of the upper unipotent stability of the two-block cell submodule
 
-Author: Worker 731.
-
 The theorem `Langlands.Whittaker.twoBlockCellUnipotentStability` proves exactly
 the published proposition
 `Langlands.Whittaker.TwoBlockCellUnipotentStabilityStatement.{uF,uV}`. The

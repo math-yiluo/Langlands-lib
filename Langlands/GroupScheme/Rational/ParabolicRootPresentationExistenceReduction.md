@@ -1,7 +1,5 @@
 # Presentations from simultaneous dynamic realization of specified maps
 
-Authors: Worker 1294.
-
 This is an internal supporting reduction for the exact published parabolic-root
 presentation target. It does not prove general presentation existence. The
 unproved `GenericMinimalParabolicStatement` and

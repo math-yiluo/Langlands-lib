@@ -13,7 +13,7 @@ un corps p-adique* (2000), Section 3.5, Lemma 1 and its proof, printed
 p.450 (one-based PDF p.12). Registered source:
 `henniart-2000-simple-proof`, SHA-256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
-Worker 1231 read that page directly. The original uses a quotient by
+That page was read directly. The original uses a quotient by
 the conjugation norm and a character-extension argument. This module
 instead uses a continuous power map into a subgroup of finite index;
 the construction is internal and the resulting theorem is derived.

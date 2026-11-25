@@ -5,7 +5,9 @@ reductive over `k`; `chi` is an arbitrary cocharacter of `G`. This ambient
 hypothesis is retained for the fixed-Levi reparametrization and the regular
 rational-direction application.
 
-This internal structural unit for Task 5515 packages the published actual
+This internal structural module for the rational parabolic gallery, in the
+argument for the existence of an irreducible induced unramified twist,
+packages the published actual
 affine dynamic decomposition with rational parabolic and rational Levi
 structure. Dynamic centralizer reductivity and geometric unipotent radical
 identification supply the structural proofs.

@@ -26,8 +26,7 @@ Write `Spec K` for `Spec (CommRingCat.of K)` and `K[ε]` for Mathlib's
       IsClosedImmersion (f ∣_ V)
 ```
 
-The Lean body is the interface given in the task objective, unchanged. The
-predicates `Picard.IsRationalPoint`, `Picard.IsTangentVectorAt` and the map
+The predicates `Picard.IsRationalPoint`, `Picard.IsTangentVectorAt` and the map
 `Picard.dualNumberProjection` are imported unchanged from the published module
 `Langlands.AlgebraicGeometry.Picard.PointTangentSeparation`. Everything else is
 Mathlib.
@@ -42,8 +41,8 @@ Mathlib.
 - `f` is proper in Mathlib's sense `IsProper`: separated, universally closed and
   locally of finite type.
 - The instance `[LocallyOfFiniteType p]` follows from the others, since
-  `p = f ≫ q` is a composite of morphisms locally of finite type. It is kept to
-  match the suggested interface and adds no restriction.
+  `p = f ≫ q` is a composite of morphisms locally of finite type. It is kept in
+  the statement and adds no restriction.
 - `x : Spec K ⟶ X` is a rational point: `Picard.IsRationalPoint p x` is
   `x ≫ p = 𝟙 _`. The scheme `Spec K` has exactly one point,
   `IsLocalRing.closedPoint K`. Write `x₀ = x.base (IsLocalRing.closedPoint K)`
@@ -87,9 +86,8 @@ proposition. Over `V`, every point of `X` is accounted for. Informally, the
 fibre of `f` over `y₀` is then a closed subscheme of `Spec κ(y₀) = Spec K`
 containing `x₀`, so it is the single reduced point `x₀`.
 
-The global companion criterion is the separate statement task
-`ff70fb1d-235d-4247-8160-22c713da74a4`
-(`ProperRationalImmersionClosedImmersionStatement`). It assumes the point and
+The global companion criterion is the separate statement
+`ProperRationalImmersionClosedImmersionStatement`. It assumes the point and
 tangent hypotheses at every rational point and concludes `IsClosedImmersion f`.
 The present local proposition neither assumes nor concludes anything at other
 points. Informally, the global criterion follows from the local one as follows.
@@ -224,10 +222,10 @@ The page's comment thread was read. Comment #7149 reports the misprint "there
 exist" for "there exists" in condition (2), fixed per comment #7299. It does
 not change the mathematics.
 
-## Expected proof route
+## Proof route
 
-This is guidance for the proof task, not part of the statement; a different
-valid route is allowed.
+This route is not part of the statement. The proof in
+`ProperRationalImmersionLocalClosedImmersionProof` follows it.
 
 1. Use rational points as closed points and Jacobsonness to show that the
    fibre of `f` over `y₀` is `{x₀}`.
@@ -239,11 +237,12 @@ valid route is allowed.
    The published modules `Langlands.AlgebraicGeometry.CotangentDualNumber`,
    `Langlands.AlgebraicGeometry.Picard.StalkTangent` and
    `Langlands.AlgebraicGeometry.Picard.StalkTangentNaturality` give the
-   relevant dual-number algebra maps and stalk algebras. The sibling statement
-   task `0331bf1a-f24e-41dc-a296-9bbd055c9e98` states this step.
+   relevant dual-number algebra maps and stalk algebras. The statement
+   `TangentKernelCotangentSurjectivityStatement` states this step.
 4. Apply Nakayama to the finite local map `𝒪_{Y,y₀} → 𝒪_{X,x₀}` to get its
-   surjectivity. The sibling statement task
-   `e4fa5987-8bef-436d-9702-80bbe4536255` states this algebraic step.
+   surjectivity. The statement
+   `Langlands.CommutativeAlgebra.FiniteLocalCotangentSurjectivityStatement`
+   states this algebraic step.
 5. Over an affine open inside `V₀`, the preimage is affine since `f ∣_ V₀` is
    finite, and the cokernel of `𝒪_Y → f_*𝒪_X` is a finite module whose
    localization at `y₀` vanishes. So it vanishes after shrinking to a smaller

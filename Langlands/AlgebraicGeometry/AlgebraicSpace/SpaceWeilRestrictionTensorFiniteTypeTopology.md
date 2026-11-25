@@ -45,9 +45,8 @@ base-change stability, and tensor topology constructions. No separability
 assumption is used. The independent field norms, continuous scalar multiplication,
 finite-dimensional module topology, and henselian conditions remain explicit; they are not asserted for every
 incomplete henselian field extension. Arithmetic specialization and the
-adelic endpoint remain outside this unit.
+adelic endpoint remain outside this module.
 
-The scalar-action hypothesis is generalized from `NormedAlgebra` to
-`Algebra` plus `ContinuousSMul`. The geometry argument is unchanged,
-and the tensor topology comparison uses the original continuous
+The scalar-action hypothesis is `Algebra` plus `ContinuousSMul`, which is
+more general than `NormedAlgebra`. The tensor topology comparison uses the original continuous
 coefficient maps without requiring their preservation of the field norms.

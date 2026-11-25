@@ -46,4 +46,4 @@ VII.1.1, printed page 220 / PDF page 226, and V.5.1, printed page 123 /
 PDF page 129. This module proves the displayed conditional reduction, rather
 than the unconditional structural statements or the full VII.1.1 proposition.
 Actual Jacquet spanning, parabolic realization by a cocharacter, and dynamic
-quotient compactness remain prerequisites with their existing owners.
+quotient compactness remain prerequisites that this module does not prove.

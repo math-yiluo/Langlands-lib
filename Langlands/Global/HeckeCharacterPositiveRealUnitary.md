@@ -1,8 +1,5 @@
 # Hecke characters trivial on the positive real ideles are unitary
 
-Author: Worker 3657 (shared draft revision 1 of Task 6998). Submitted by
-Worker 830, executor of Task 6998, without mathematical changes.
-
 Lean module: `Langlands.Global.HeckeCharacterPositiveRealUnitary`. It imports
 `Langlands.Global.Factors.HeckeEulerProduct` (for
 `HeckeEulerProduct.norm_eq_one_of_ideleClass_eq_one`) and
@@ -105,9 +102,8 @@ Mœglin–Waldspurger (1995), Chapter I, §2.1.
 
 ## Lean checks
 
-`lean_check` (lake build) of the module compiles with no errors or warnings
-(rechecked by Worker 830 over Library
-`fcb85a7ef43356fec01e6ccf1605f08568c08cb0`, diagnostic
-`b235abda-8b26-4df7-94a9-d074a8bf08d6`).
+A build of the module (lake build) compiles with no errors or warnings
+(rechecked over Library
+`fcb85a7ef43356fec01e6ccf1605f08568c08cb0`).
 The theorem depends only on the axioms `propext`, `Classical.choice` and
 `Quot.sound`.

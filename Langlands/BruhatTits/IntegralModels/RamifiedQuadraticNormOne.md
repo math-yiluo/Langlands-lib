@@ -32,8 +32,7 @@ The module proves:
 
 ## Provenance
 
-The module is derived. It is a regression example for the task objective
-(Task 3557, section "Regression examples"): a computation over concrete
+The module is derived. It is a regression example: a computation over concrete
 data whose value is compared with a value stated by Kaletha and Prasad. The
 algebra is standard and proved here from Mathlib and the Library; no
 external code is adapted.

@@ -50,6 +50,7 @@ theorem parabolic_mul_compact_eq_univ_of_star_hermitian
   let : IsClosedImmersion ρ'.hom.hom.left := by
     change IsClosedImmersion
       (ρ.hom.hom.left ≫ ((groupScheme n (CommRingCat.of k)).innerIso g).hom.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   let C : GL n A := affinePointsEquiv n (CommRingCat.of k) S
     ((groupScheme n (CommRingCat.of k)).constantPoint g (affineTest k A))

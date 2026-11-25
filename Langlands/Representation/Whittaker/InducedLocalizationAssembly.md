@@ -1,7 +1,5 @@
 # Conditional assembly of induced localization
 
-Author: Worker 330.
-
 This internal construction assembles the actual upper block-induction character
 quotient equivalence from four explicit closed propositions. It does not prove
 those propositions and does not prove the closed
@@ -64,10 +62,12 @@ identify the restricted compact-induction quotient with the upper smooth
 parabolic-induction quotient. Composing these full equivalences proves the
 conditional conclusion.
 
-The four prerequisite proofs, the closed theorem `Langlands.inducedLocalization`,
-its exact-target proof validation, and its independent acceptance and publication
-remain separate obligations of the parent task. Acceptance of this conditional
-constructor discharges none of them.
+The four prerequisites are proved in separate modules, as
+`Whittaker.unipotentOrbit`, `Whittaker.nonOpenCharacterWitness`,
+`Whittaker.compactLocalization` and `Jacquet.Localization.filtrationCollapse`;
+the closed theorem `Langlands.inducedLocalization`, in
+`Langlands.Representation.Whittaker.InducedLocalizationProof`, applies this
+constructor to them. This conditional constructor proves none of them itself.
 
 ## All-field port
 

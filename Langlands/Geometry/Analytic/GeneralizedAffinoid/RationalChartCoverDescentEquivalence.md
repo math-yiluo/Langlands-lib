@@ -1,7 +1,5 @@
 # Continuous descent along the actual rational cover equivalence
 
-Author: Worker 56.
-
 This module compares compatible continuous families along the actual inverse
 of rational-chart finite-cover localization, including arbitrary ambient
 covers. It identifies gluing over the restored inner target and proves

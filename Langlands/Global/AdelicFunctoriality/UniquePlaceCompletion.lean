@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.IdeleGaloisDescentProof
+import Langlands.ClassFieldTheory.Global.IdeleGaloisDescentProof
 import Mathlib.GroupTheory.SpecificGroups.Cyclic.Basic
 
 /-! # Galois comparison at a unique finite place -/
@@ -23,7 +23,7 @@ theorem finitePlaceEquiv_eq_of_unique (hw : ∀ w' : FinitePlacesAbove E v, w' =
     (σ : E ≃ₐ[F] E) : finitePlaceEquiv σ.toRingEquiv w.1 = w.1 := by
   let : w.1.asIdeal.LiesOver v.asIdeal := w.2
   let w' : FinitePlacesAbove E v :=
-    ⟨_, ClassField.Global.IdeleGaloisDescentProof.liesOver_finitePlaceEquiv σ v w.1⟩
+    ⟨_, ClassFieldTheory.Global.IdeleGaloisDescentProof.liesOver_finitePlaceEquiv σ v w.1⟩
   exact congrArg Subtype.val (hw w')
 
 /-- The degree of the completion at the unique finite place is the global degree. -/

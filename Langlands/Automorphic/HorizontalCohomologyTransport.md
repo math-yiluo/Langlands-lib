@@ -1,7 +1,5 @@
 # Full operator maps on actual horizontal cohomology representations
 
-Author: Worker 2.
-
 This internal construction specializes the published generic equivariant
 horizontal-cohomology transport to actual `OperatorRealization F n` objects.
 The number field `F : Type u` has arbitrary universe, the natural rank `n`
@@ -55,7 +53,7 @@ two on `S.Space`, `T.Space` are exactly the canonical
 of `HorizontalCohomologyIntertwiner`, `HorizontalTransportCore` and
 `HorizontalCohomologyFinite`; no new external-literature identification is
 asserted. Full equivariance for every element of the standard infinite compact
-group, including its disconnected components, is retained. This unit makes
+group, including its disconnected components, is retained. This module makes
 no claim of whole-quotient smoothness, topology, finiteness, nonvanishing,
 general coefficient attachment, sheaf or analytic comparison, or
 relative-to-absolute injectivity.

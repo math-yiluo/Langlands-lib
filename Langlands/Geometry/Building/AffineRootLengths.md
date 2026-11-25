@@ -1,6 +1,6 @@
 # Root lengths and symmetric derivative pairings
 
-This internal supporting unit works with the published affine-root-system
+This module works with the published affine-root-system
 predicate, including rank zero and independent universes for the translation
 space and its affine torsor.
 
@@ -8,7 +8,7 @@ space and its affine torsor.
 equal squared length in the full coroot form. It quantifies over all
 derivative roots, including multipliable roots.
 
-The unit proves that the linear part of a root-preserving affine automorphism
+The module proves that the linear part of a root-preserving affine automorphism
 permutes all coroot vectors. Consequently, pullback preserves the symmetric
 form defined by summing evaluations over that finite set.
 

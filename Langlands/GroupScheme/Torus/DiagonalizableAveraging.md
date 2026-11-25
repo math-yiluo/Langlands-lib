@@ -1,6 +1,6 @@
 # Translation and invariant coefficient averaging on diagonalizable groups
 
-Worker 1552. Internal generalization of the published split-torus coefficient construction in `Rational.SplitTorusVectorExtension` to an arbitrary abelian character group `Λ`. No finite generation, torsion-free, reducedness or characteristic assumption is used. This is an intermediate construction for the linear additive extension proof, not a proof of the full extension splitting statement.
+Internal generalization of the published split-torus coefficient construction in `Rational.SplitTorusVectorExtension` to an arbitrary abelian character group `Λ`. No finite generation, torsion-free, reducedness or characteristic assumption is used. This is an intermediate construction for the linear additive extension proof, not a proof of the full extension splitting statement.
 
 The actual group scheme is the existing `Diagonalizable.groupScheme R Λ`, represented by `R[Λ]`. Its affine points are unit-valued characters (`pointsEquiv`), and `universalPoint` is the identity of its representing spectrum. `point` extends that universal point from `R` to an arbitrary coefficient algebra `A`.
 

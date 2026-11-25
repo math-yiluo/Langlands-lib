@@ -29,7 +29,7 @@ kinds of pairs, by cases on `x` and `z`. Each kind is proved in this development
   list is the exponent inequality. Its Mœglin data are not pairwise unlinked: `realMoeglinData` of
   the list is `[datum c, datum d]`, so `IsRealMoeglinUnlinked` reduces by `simp` to the negation
   of the hypothesis `¬ AreRealBlocksUnlinked`. Then the Library theorem
-  `realCharacterLinkedJacquetFunctional` (module `RealCharacterCrossing`, Worker 5731) for `n = 2`
+  `realCharacterLinkedJacquetFunctional` (module `RealCharacterCrossing`) for `n = 2`
   gives the functional. Its rank hypothesis `realRank [c, d] = 2` holds by `rfl`.
 * **IC**, an induction block `d` of nonzero weight then a linked character `c`:
   `RealBlockFlatJacquet.realInducedCharacterLinkedJacquetFunctional` (module
@@ -52,7 +52,8 @@ axioms `propext`, `Classical.choice` and `Quot.sound`.
 ## Provenance
 
 The split into four kinds is the Library's (`RealLinkedJacquetPairReduction`). The CC case is a
-specialization of Worker 5731's character case of S2. The other three kinds are proved by the
-flat-multiplier and interlaced methods of `RealBlockFlatJacquet.md` and `RealInterlacedMirror.md`
-(Worker 5667, Task 7070). These follow the cases of the Library's `RealLinkedJacquetFunctional.md`
+specialization of the character case of S2 (`realCharacterLinkedJacquetFunctional`). The other
+three kinds are proved by the
+flat-multiplier and interlaced methods of `RealBlockFlatJacquet.md` and `RealInterlacedMirror.md`.
+These follow the cases of the Library's `RealLinkedJacquetFunctional.md`
 but do not use intertwining operators.

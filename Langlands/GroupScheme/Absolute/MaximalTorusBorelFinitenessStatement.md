@@ -1,7 +1,5 @@
 # Statement: a maximal torus lies in finitely many Borel subgroups
 
-Worker 75.
-
 `Langlands.GroupScheme.MaximalTorusBorelFinitenessStatement.{u} : Prop` is a statement-only,
 `Prop`-valued definition. This module does not prove it, and it adds no other definitions,
 theorems or axioms. It imports [`Absolute.Borel`](Borel.md), for `IsBorelSubgroup`,

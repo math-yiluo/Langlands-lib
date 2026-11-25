@@ -1,7 +1,5 @@
 # The two mirabolic orbits on the binary-parabolic flag variety
 
-Author: Worker 1163.
-
 This helper module of the proof of
 `Langlands.Derivative.MirabolicProductRestrictionStatement` describes the right
 action of the mirabolic subgroup on `P \ GL_N`, where `N = (m+1)+(n+1)` and `P`

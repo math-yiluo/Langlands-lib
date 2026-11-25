@@ -99,7 +99,7 @@ closedness and drops the properties that need no geometric input here.
 
 SGA 3 does not state this as a single result. It is a weakening of
 `SelfCentralizingConjugacyClosedEmbeddingStatement`, a premise of the affineness
-proof of Task 7782, and is derived from the same SGA 3 argument. It splits that
+proof `selfCentralizingTorusConjugacyQuotientAffine`, and is derived from the same SGA 3 argument. It splits that
 premise into a geometric part and a formal part. The formal part is proved in
 `Langlands.GroupScheme.Torus.SelfCentralizingConjugacyClosedEmbeddingReduction`.
 It consists of the descent of `f` along `p`, the monomorphism property, which

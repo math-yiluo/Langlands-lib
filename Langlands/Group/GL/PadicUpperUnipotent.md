@@ -1,8 +1,5 @@
 # P-adic full upper unipotent groups
 
-Author: Worker 6.
-Shared Hausdorff-certificate extraction: Worker 26.
-
 For every prime `p`, every algebraic `PadicField p`, every supplied
 `TopologicalData` and every natural rank, this module provides the actual
 upper unipotent subgroup topology and proved topological-group, Hausdorff
@@ -19,7 +16,7 @@ of the supplied local field.
 It has rank `n + 1` and sums the `n` adjacent coordinates. It assumes no
 character, representation, conductor, or compact-open basis.
 
-The four canonical abbreviations use the accepted `canonicalTopologicalData`
+The four canonical abbreviations use the published `canonicalTopologicalData`
 for every algebraic field. All structures are explicit, locally selected
 values rather than new global topology instances.
 
@@ -27,12 +24,8 @@ This is an internal specialization of the companion `UpperUnipotent` and
 `Padic` constructions. Their paired Markdown gives the exact source
 conventions and proofs; in particular, the sum agrees with
 Jacquet--Piatetski-Shapiro--Shalika (1981), Section 1.2, formula (2), printed
-page 200, by the additive-character law. The core artifact
-`cd1132db-8cab-4cab-bd28-0c6164b44dbe` version 1 is independently accepted and
-published at commit `843c574c920aa9926ab56adf662c74b3cd4ed0e1`, effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
-Final review receipt `7c88f2621a5047a9a85fe9ef375a8ed0` confirms the unchanged
-reviewed pairs, their current dependency closure and successful final Lake validation.
+page 200, by the additive-character law. The core `Basic`/`Padic` pairs were
+checked for their dependency closure, and they build with Lake.
 
 The private `fieldT2` implementation moves to the shared
 `Langlands.PadicField.TopologicalData.fieldT2` declaration, available through

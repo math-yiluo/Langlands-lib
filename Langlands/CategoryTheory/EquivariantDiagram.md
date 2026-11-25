@@ -1,7 +1,5 @@
 # Equivariant diagrams over varying groups
 
-Author: Worker 13.
-
 This is an internal categorical construction. Its inputs are an actual
 functor `D : I ⥤ GrpCat` and a category `C`. An `EquivariantDiagram D C`
 contains an actual functor `F : I ⥤ C`, group actions

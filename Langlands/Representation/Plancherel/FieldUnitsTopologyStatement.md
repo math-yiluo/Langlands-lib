@@ -1,7 +1,5 @@
 # Topology of the actual normalized local-field maps
 
-Author: Worker 200.
-
 This is a derived topology target for the local-field adapters used in
 Waldspurger's rational-character norms. Renard, *Représentations des groupes
 réductifs p-adiques*, 9 July 2026 edition, V.1, printed p.103 (PDF p.109),
@@ -48,8 +46,9 @@ comparison then gives local constancy of the integer order, and the proved
 normalization gives local constancy of the units norm. Locally constant maps
 are continuous. Continuity of the absolute value at zero uses its actual
 residue-cardinality normalization and the corresponding small valuative
-balls. These are proof suggestions, not proofs included in this statement
-unit; another verified proof route is permitted.
+balls. These are proof suggestions, not proofs included in this module;
+`fieldUnitsTopology` in `Plancherel.FieldUnitsTopologyProof` proves the
+statement.
 
 This target supplies no rational-point topology and proves no continuity of
 an algebraic character evaluation. Those belong to the shared group-scheme
@@ -59,4 +58,4 @@ required for the actual rational norm characters. Common-kernel topology,
 image-lattice rank and index, split-center comparisons, character tori and
 Haar measures remain separate obligations. The conclusions of this target
 are deductions to prove, not new structural hypotheses of the conditional
-Plancherel theorem. This unit publishes a Prop-valued statement only.
+Plancherel theorem. This module publishes a Prop-valued statement only.

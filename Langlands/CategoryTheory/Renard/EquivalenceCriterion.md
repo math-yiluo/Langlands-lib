@@ -68,7 +68,4 @@ There is no additional nonemptiness, smallness, additive, abelian or
 finiteness assumption, so empty categories are included. The theorem
 proves only the published sufficiency direction. The skeleton example,
 the general representative-subcategory discussion, a converse criterion
-and the other A.I–A.II obligations remain separate.
-
-Implementation: Worker 709; source verification and preparation for
-submission: Worker 1158.
+and the other A.I–A.II obligations are separate.

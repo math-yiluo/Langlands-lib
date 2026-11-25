@@ -26,8 +26,8 @@ def restrictedGlobalSpectrumAction (H : OpenSubgroup G) : Action TopCat.{u} H :=
 theorem restrictedGlobalSpectrumAction_apply (H : OpenSubgroup G) (g : H)
     (x : BanachSpectrum P) (a : P) :
     BanachSpectrum.toMulRingSeminorm
-      (ConcreteCategory.hom ((ρ.restrictedGlobalSpectrumAction H).ρ g) x) a =
-        x ((ρ.toMonoidHom (g : G)).inv.toAlgHom a) :=
+      (ConcreteCategory.hom ((ρ.restrictedGlobalSpectrumAction H).ρ g).asHom x) a =
+        x ((ρ.toMonoidHom (g : G)).asIso.inv.toAlgHom a) :=
   rfl
 
 /-- The actual structural pullback intertwines the constructed local and

@@ -1,13 +1,14 @@
 # Reversed zero-row tail integrability and continuation
 
-Supporting adapters by Worker 829 for the intermediate-rank calculation in
+Supporting adapters for the intermediate-rank calculation in
 JPSS section 9.3, printed pages 456–457. They turn membership in the actual
 zero-row unequal-rank zeta values into the tail data used by the conditional
 diagonal-extension statement: an integrable quotient integrand on a right
 half-plane, together with the rational continuation of its integral. These
 results are internal derivations from the published Library zeta-value
-definitions and from Worker 318's coefficient and character-transport
-modules. They do not prove any disintegration, compute any integral or prove
+definitions and from the coefficient and character-transport modules
+`InducedTailIntermediateCoefficientAdapters` and
+`InducedTailIntermediateCharacterTransport`. They do not prove any disintegration, compute any integral or prove
 the intermediate-tail span inclusion.
 
 ## Zero rectangular rows
@@ -69,7 +70,7 @@ at the original character `ψ`. It assumes the supplied p-adic topological
 realization with Borel measurable structures, the normalized absolute value,
 residue parameter `T.residueCardinality`, any additive Haar measure `ν` and a
 quotient measure `μ` compatible with the Haar measures of the general linear
-and unipotent groups. Worker 318's
+and unipotent groups.
 `unequalRankZetaValuesAt_scale_neg_one_compatible`, applied with the same
 compatible measure on both sides, rewrites the value set at `ψ` as the value
 set at `ψ.scale (-1)`. The theorem then applies
@@ -79,8 +80,8 @@ is assumed.
 ## Provenance
 
 Internal derivation from the published Library definitions of the unequal-rank
-zeta values and from Worker 318's coefficient recasting and inverse-character
-transport. The motivating source is the zero-row (`j = 0`) case of the
+zeta values and from the coefficient recasting and inverse-character
+transport of those modules. The motivating source is the zero-row (`j = 0`) case of the
 unequal-rank integral in the registered `jpss-1983-rankin-selberg`, section
 9.3, printed pages 456–457,
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,

@@ -26,5 +26,5 @@ Evaluation on basis vectors gives the coefficient formula. Matrix
 group functoriality and basis-vector extensionality prove the laws.
 The actual scheme comparisons apply the coefficient-compatibility
 results of `LinearActionBaseChange` to this coefficient formula.
-No new external source assertion is used. This unit does not construct
+No new external source assertion is used. This module does not construct
 a projective bundle or a moduli scheme.

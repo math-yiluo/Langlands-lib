@@ -1,6 +1,6 @@
 # Simple-preserving pairs for a coatom source
 
-This internal unit proves
+This module proves
 `Langlands.Group.RelativeWeylIndexing.CoatomSimpleSurvivorBoundStatement`
 for any finite Coxeter system, with independent universes for its simple labels
 and group. No connection between these labels and an algebraic group's roots
@@ -59,7 +59,7 @@ elementary finite-set facts. The proof uses
 no representation-theoretic result, classification, support theorem or
 geometric lemma.
 
-This unit supplies only an intrinsic combinatorial count. Applying it to actual
+This module supplies only an intrinsic combinatorial count. Applying it to actual
 Jacquet modules still requires a root/Weyl realization, an indexing comparison
 for surviving geometric pieces, a finite family of actual target Levis, and
 detection of every irreducible subquotient. It does not prove a maximal-Levi

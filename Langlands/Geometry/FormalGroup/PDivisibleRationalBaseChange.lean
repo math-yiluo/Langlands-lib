@@ -23,11 +23,12 @@ variable {G H J : PDivisibleGroup (CommRingCat.of R) p}
 
 /-- Pullback commutes with the natural p-adic scalar on an actual tower. -/
 theorem baseChangeFunctor_map_padicAction (G : PDivisibleGroup (CommRingCat.of R) p) (a : ℤ_[p]) :
-    (baseChangeFunctor R S p).map (G.padicAction a) = (G.baseChange (S := S)).padicAction a := by
+    (baseChangeFunctor R S p).map (G.padicAction a).asHom =
+      ((G.baseChange (S := S)).padicAction a).asHom := by
   apply Hom.ext
   intro n
   let B := CommGroupScheme.baseChange (specBase R S)
-  change B.map (G.levelPadicAction n a) = (G.baseChange (S := S)).levelPadicAction n a
+  change B.map (G.levelPadicAction n a).asHom = ((G.baseChange (S := S)).levelPadicAction n a).asHom
   rw [G.levelPadicAction_eq_nsmul_of_le (le_refl n),
     (G.baseChange (S := S)).levelPadicAction_eq_nsmul_of_le (le_refl n), B.map_nsmul, B.map_id]
   rfl

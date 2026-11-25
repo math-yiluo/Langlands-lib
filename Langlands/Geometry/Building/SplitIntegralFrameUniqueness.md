@@ -16,7 +16,7 @@ Namespace `Langlands.Geometry.Building.IntegerValuationBuildingData`:
   cocharacter `ν` of `B.S`, the torus point `ν(c)` (the published
   `CocharacterUniformizer.cocharacterPoints`) lies in the common kernel of the character
   valuations of `B.S`.
-* `cocharacterPoint B ν c` is the definition of this unit. It is the rational point
+* `cocharacterPoint B ν c` is the definition of this module. It is the rational point
   `i(ν(c)) = rationalPoints.map B.i (cocharacterPoints k B.S ν c)` of `G`.
 * `cocharacterPoint_eq_map_j`: it equals the image of `s(ν(c))` under the centralizer
   inclusion `j`, where `s` and `j` are the maps of `B.centralizer`.

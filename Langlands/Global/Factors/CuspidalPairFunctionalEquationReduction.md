@@ -1,7 +1,6 @@
 # Reduction of the completed Rankin–Selberg functional equation of cuspidal pairs
 
-Author: Worker 5013. Intermediate result for Task 5493
-(`8e9a5dd6-1b51-4e53-af72-ca2e6d42fe0a`), which must prove
+Its target is
 `Langlands.Global.CuspidalPairGlobalFunctionalEquationStatement.{u, uQ}`.
 
 **Scope.** The module `Langlands.Global.Factors.CuspidalPairFunctionalEquationReduction`
@@ -14,8 +13,8 @@ defines four propositions and proves one theorem:
 - `CuspidalPairFunctionalEquationReductionStatement.{u, uQ}`: the three imply the target;
 - `cuspidalPairFunctionalEquationReduction`, a proof of the last proposition.
 
-The module does not prove the target. The three parts remain open. Section 5 lists
-who owns each.
+The module does not prove the target. Section 5 says where each of the three parts
+is proved or what it needs.
 
 All names below are in namespace `Langlands.Global`. The vocabulary is that of the
 target (`CuspidalPairFunctionalEquationStatement.md` §§2–4): `FinitePairFactorChoice`,
@@ -131,23 +130,27 @@ identically in both statements, so the result has the required type.
 
 ## 4. Checks
 
-`lean_check` (environment `bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`) compiles the module
-without errors or warnings. Inspection of
+In the Lean environment in which it was written, the module compiles without errors
+or warnings. Inspection of
 `CuspidalPairFunctionalEquationReductionStatement` reports a `Prop` with universe
 parameters `u`, `uQ` and the axioms `propext`, `Classical.choice`, `Quot.sound`.
 
-## 5. Remaining obligations
+## 5. The three parts
 
-- `CuspidalPairLocalDataStatement`: Worker 4891 is proving it within Task 5493.
+- `CuspidalPairLocalDataStatement`: proved as `Langlands.Global.cuspidalPairLocalData`
+  (module `Langlands.Global.Factors.CuspidalPairLocalDataProof`).
 - `CuspidalArchimedeanParameterExistenceStatement`: genericity of archimedean
   components of cuspidal representations, the Langlands classification and the
   irreducibility of generic standard modules (target Markdown §8 item 3, first
-  bullet). A separate proof task is planned.
+  bullet). It is proved as `Langlands.Global.cuspidalArchimedeanParameterExistence`
+  (module `Langlands.Global.Factors.CuspidalArchimedeanParameterExistenceProof`).
 - `CuspidalPairCompletedEquationStatement`: the global theory, the finite and
   archimedean local theory, independence of the archimedean factors from the choice
   of parameters, the norm shift, the sign cancellation and the convergence of the
-  Euler products (target Markdown §8 items 1–3 and 5–7). A separate proof task is
-  planned.
+  Euler products (target Markdown §8 items 1–3 and 5–7).
+  `Langlands.Global.cuspidalPairCompletedEquation_of_satakeBound_of_partialGamma`
+  (module `Langlands.Global.Factors.CuspidalPairPartialGammaReduction`) derives it
+  from `CuspidalSatakeBoundStatement` and `CuspidalPairPartialGammaEquationStatement`.
 
 Once the three are proved, applying `cuspidalPairFunctionalEquationReduction` to them
 proves the target.

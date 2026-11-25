@@ -1,6 +1,6 @@
 # Actual determinant conjugation of the concrete automorphic operator algebra
 
-Author: Worker 2. This internal construction uses the actual finite-smooth
+This internal construction uses the actual finite-smooth
 complex rational-invariant functions for every number field `F : Type u`
 and natural rank, including zero.
 

@@ -25,9 +25,6 @@ provenance are described in the statement module's Markdown. This file
 describes only the Lean proof. The proof uses no hypothesis beyond the
 statement's five inputs.
 
-Authors: Worker 29, with Worker 3640 (Task 3640, block (iv)). Worker 279
-checked the composition and the exact theorem declaration for Task 6619.
-
 ## Proof
 
 The tactic proof introduces `hwhole`, `hvan`, `hiDyn`, `hrDyn` and `hWeyl`.
@@ -42,7 +39,7 @@ Steps 1–9 derive Sharp irreducibility from the five inputs:
    applied to `rationalSupportCategoryDecomposition_of_wholeStatement hwhole`,
    to `rationalLeviJacquetCuspidalRemainderSplitting_of_wholeStatement hwhole`
    at `.{u, max (u + 1) v}`, and to step 2;
-4. exactness detection, from the block (ii) reductions
+4. exactness detection, from the reductions
    `rationalSupportCategoryZeroDetectionReduction` and
    `rationalSupportCategoryExactnessDetectionReduction` applied to step 1;
 5. support-category Jacquet vanishing, from
@@ -93,11 +90,11 @@ in `RationalLeviInductionExclusionFromWhole`, `RationalCuspidalExtractionInputs`
 ## Published dependencies and scope
 
 The canonical specialization in step 12 uses the published
-`CanonicalRationalComplexTargetBridgesProof` (Task 6425); the class-formula
-reduction in step 6 uses `RationalSharpClassFormulaInputs` (Task 6483);
-and step 11 uses `RationalSharpCuspidalSeriesReduction` (Task 6484).
+`CanonicalRationalComplexTargetBridgesProof`; the class-formula
+reduction in step 6 uses `RationalSharpClassFormulaInputs`;
+and step 11 uses `RationalSharpCuspidalSeriesReduction`.
 Step 4 uses the published `RationalSupportCategoryZeroDetectionProof`
-and `RationalSupportCategoryExactnessReduction` (Tasks 6582 and 6583).
+and `RationalSupportCategoryExactnessReduction`.
 These modules are imported by Lean name, alongside the other published
 modules named above.
 

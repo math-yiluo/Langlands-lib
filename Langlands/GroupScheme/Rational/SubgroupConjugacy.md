@@ -1,6 +1,6 @@
 # Rational conjugacy with an isomorphism of source groups
 
-Worker 1271. This internal interface packages the exact form of subgroup
+This internal interface packages the exact form of subgroup
 conjugacy used by the published maximal split-torus statement. For maps
 `i : H ⟶ G` and `i' : H' ⟶ G`, `SubgroupConjugate i i'` means that an actual
 base point of `G` conjugates `i` to `e.hom ≫ i'` for an actual isomorphism

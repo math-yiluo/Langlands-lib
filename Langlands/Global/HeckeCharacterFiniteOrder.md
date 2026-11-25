@@ -1,6 +1,6 @@
 # Finite-order Hecke characters and norm-triviality
 
-Worker 523. This is internal supporting material for the finite-order
+This is internal supporting material for the finite-order
 determinant-twist relation on supplied actual automorphic realizations.
 
 A continuous function to complex units with a fixed positive exponent factors

@@ -1,7 +1,5 @@
 # Borel subgroup data inside a dynamic parabolic
 
-Author: Worker 1270.
-
 This internal construction supplies an actual Borel subgroup inside a dynamic
 parabolic of a connected reductive group over an algebraically closed field.
 The accompanying recognition theorem proves the dynamic-to-geometric direction
@@ -109,8 +107,10 @@ additional external source assertion. It combines the published regular
 refinement, actual Lie weight sums, dynamic subgroup structure proofs,
 cocharacter factorization through maximal split tori, finite Galois splitting
 of tori, regular-cocharacter Borel theorem, and range factorization.
-It assumes no parabolic classification statement. This contribution supplies
+It assumes no parabolic classification statement. This module supplies
 a Borel construction and its certificates, including the reverse implication
-of the host equivalence. Constructing a rational cocharacter for an arbitrary
-geometrically parabolic subgroup remains the forward obligation of
-`ParabolicDynamicStatement`; this module does not assert that full statement.
+of the equivalence `ParabolicDynamicStatement` that it serves. Constructing a
+rational cocharacter for an arbitrary geometrically parabolic subgroup is the
+forward direction of `ParabolicDynamicStatement`; this module does not assert
+that full statement, which is proved as `parabolicDynamic` in
+`Absolute.ParabolicDynamicProof`.

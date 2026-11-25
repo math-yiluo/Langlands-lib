@@ -5,8 +5,7 @@ This is derived algebraic data for the two rectangles in JPSS (1983), Section
 `jpss-1983-rankin-selberg`, SHA-256
 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 The coordinate change is an internal construction used to formalize covariance;
-it is not an additional displayed formula attributed to JPSS. Its mathematical
-design was supplied by Worker 484.
+it is not an additional displayed formula attributed to JPSS.
 
 The dependent two-block family is `m : Fin 2 → ℕ`, with
 `h : ∑ i, (m i + 1) = t + 1`. Set `a=m 0+1` and `b=m 1+1`.

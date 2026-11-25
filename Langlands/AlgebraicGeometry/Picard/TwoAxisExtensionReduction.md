@@ -91,8 +91,10 @@ including fields, and the specified algebra map and product pullback.
 This final theorem has an outer surjectivity hypothesis. No theorem in
 this module removes it, constructs a representing scheme, proves a
 valuative existence assertion, or proves Raynaud XI 1.5. The module is an
-intermediate definition contribution, not an exact-target proof
-submission for the host task.
+intermediate construction, not a proof of
+`ValuationRingTwoAxisExtensionStatement`, the statement it reduces; that
+statement is proved separately, by `valuationRingTwoAxisExtension` in
+`ValuationRingTwoAxisExtensionProof`.
 
 ## Provenance
 

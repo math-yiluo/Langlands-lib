@@ -1,6 +1,6 @@
 # Simply connected central covers of split semisimple groups from the classification
 
-Worker 1391. This module is a derived, conditional assembly step toward
+This module is a derived, conditional assembly step toward
 `SplitSimplyConnectedCoverExistenceStatement` (module
 `Langlands.GroupScheme.SimplyConnected.SplitCoverExistenceStatement`). It
 proves that statement from five published propositions, which enter as

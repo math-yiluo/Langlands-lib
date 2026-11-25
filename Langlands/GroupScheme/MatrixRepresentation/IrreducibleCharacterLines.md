@@ -1,8 +1,8 @@
 # Stabilizer-fixed character lines in original irreducible representations
 
-Worker 537, with unchanged same-task support by Workers 666 and 539.
 This is an internal prerequisite for the fixed-field endomorphism statement in
-Task 7149.
+the classification of representations of groups of multiplicative type by
+Galois orbits of characters.
 
 For an original representation over `k` and a Galois field extension `K/k`,
 `orbitLineSubspace v` is the sum of the coefficientwise Galois conjugates of the

@@ -14,4 +14,4 @@ Frobenius generator theorem supplies a power giving the restricted automorphism.
 The cardinality-power formula identifies its values with those of Frobenius on
 `K`. No finite dimensionality or normality of `K/k` is assumed.
 
-Worker 1611 derived this adapter from the imported Mathlib results.
+This adapter is derived from the imported Mathlib results.

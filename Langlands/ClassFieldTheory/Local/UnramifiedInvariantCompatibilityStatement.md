@@ -1,7 +1,5 @@
 # Compatibility of finite unramified invariants
 
-Author: Worker 154.
-
 This module states two compatibility properties of the published
 `unramifiedH2Invariant`. Both declarations are propositions in
 `Langlands.ClassFieldTheory.Local`; neither is proved here. Every field carrier
@@ -69,7 +67,7 @@ Galois condition on `M/F`. It does not require `M` to be the compositum
 `LE`: any finite unramified Galois extension over `E` containing the specified
 copy of `L` is covered. It asserts a law for supplied compatible squares;
 it does not construct such an `M`. Existence of suitable squares and their
-comparison with absolute closure restriction remain separate obligations.
+comparison with absolute closure restriction are not part of this statement.
 
 ## Scope and provenance
 
@@ -106,10 +104,10 @@ setting. This module specializes the formulas to the actual ordinary
 cohomology and norm-quotient constructions already in the Library; it does
 not assert that their comparison with that source model has been proved.
 A proof of these targets must establish the finite cocycle, Frobenius and
-valuation comparisons for the named maps. Invoking the unproved absolute
+valuation comparisons for the named maps. Invoking the absolute
 invariant target would be circular in the intended application.
 
-Worker 154 read the cited original pages. Registered source:
+The cited original pages were read. Registered source:
 `serre-1979-local-fields`, retained at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.

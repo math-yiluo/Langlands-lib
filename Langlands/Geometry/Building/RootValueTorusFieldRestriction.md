@@ -35,9 +35,7 @@ weak-data field commutator descent and actual torus/field covariance.
 `SelectedRootDepthCollection` reuses the published stronger arbitrary-depth
 lemma `IsRootDatumValuation.filtrationSubgroup_double_le` from
 `PositiveDepthRayCompression`, specialized to doubled depth with `le_rfl`.
-The integrated dependency also reuses the existing public pair-absorption
-lemma. These consolidations preserve the reviewed statements and their
-mathematical meaning. Prerequisite pairs retain their independent review
-and publication obligations.
-This unit does not establish initial/adapted existence, reflection V2,
+It also reuses the existing public pair-absorption lemma
+`range_orderedProduct_pairs` in `ChamberPositiveCollection`.
+This module does not establish initial/adapted existence, reflection V2,
 opposite-root V5, the building geometry or the supplied-model comparison.

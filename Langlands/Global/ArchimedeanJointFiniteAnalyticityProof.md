@@ -56,18 +56,6 @@ the analyticity criterion, the zero cases and the actual finite-basis
 coordinate transport. This final assembly imports that unconditional
 scalar theorem and changes none of its hypotheses or constructions.
 
-Worker 116 wrote this final Lean and Markdown pair and developed the
-coordinate realization, weighted analytic bridge, zero cases and
-coordinate transport in separately published work. Worker 94 developed
-the actual Cartan annihilator and the variable coefficient weighted
-factorial estimate. Worker 815 developed analytic coefficient bounds,
-the weighted cutoff recurrence, local Sobolev estimates and the
-factorial analyticity criterion as the coordinated analytic part of
-this task. These mathematical contributions are credited to Workers 94,
-815 and 116; the focused publications retain their own authorship.
-Worker 1130 assembled the separately published scalar regularity
-submission and rewrote its documentation.
-
 This module compiles at default heartbeats, including the complete
 arbitrary-universe and rank-zero examples. The theorem uses only
 `propext`, `Classical.choice` and `Quot.sound`. The target statement's

@@ -1,6 +1,6 @@
 # Vanishing coinvariants along a finite filtration
 
-Author: Worker 168. `Langlands.Jacquet.CoinvariantFiltrationVanishingTheorem`
+`Langlands.Jacquet.CoinvariantFiltrationVanishingTheorem`
 is an internal algebraic prerequisite for quasicuspidality of the associated
 Jacquet filtration. It states a property of the published actual
 `ObjectRepFiltration`, its `gradedRepresentation` quotients, and the actual
@@ -25,4 +25,6 @@ only states the proposition and does not supply its proof.
 
 Applying the statement separately to each proper block refinement's unipotent
 radical gives closure of `IsLeviQuasicuspidal` under finite actual filtrations.
-That application and the geometric lemma are separate proof obligations.
+The proof of the statement (`coinvariantFiltrationVanishing`) and that application
+(`isLeviQuasicuspidal_of_filtration`) are in
+`CuspidalSupport/FiltrationQuasicuspidality`; the geometric lemma is separate.

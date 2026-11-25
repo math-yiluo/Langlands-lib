@@ -37,10 +37,11 @@ module proves that step in general. It uses only two facts:
   model lift to integral sections (KP Lemma 8.1.3 for `n = 1`, published as
   `Langlands.GroupScheme.IntegralModel.reduction_surjective`).
 
-The statements and their arrangement are internal design by Worker 4783 for
-Task 6203, which Worker 282 and Worker 4783 share. The conclusion of
+The statements and their arrangement are internal design for the smooth
+connected unipotent kernel of special-fibre maps between unramified parahoric
+models (KP Proposition 8.4.15). The conclusion of
 `Hom.exists_specialFibreKernel_lift` has the form of the hypothesis
-`l ≫ m = kernelι q` of Worker 282's published
+`l ≫ m = kernelι q` of the published
 `Langlands.GroupScheme.KernelProductChart.iso`, so the two results compose.
 
 ## Results over a field

@@ -1,7 +1,5 @@
 # Localized Hom descent for a finite flat affinoid cover
 
-Author: Worker 790.
-
 `faithfullyFlat_of_flat_of_spectrum_surjective` considers a bounded map
 of presented affinoid algebras `A → B` that is flat and surjective on
 bounded spectra. For each proper ideal of `A`, the published spectrum

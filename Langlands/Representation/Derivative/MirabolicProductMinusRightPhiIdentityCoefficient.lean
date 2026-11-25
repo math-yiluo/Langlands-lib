@@ -252,6 +252,7 @@ section Target
 
 variable (T : F.TopologicalData) (k r : ℕ)
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- `Ψ⁻τ(A) ⊗ ρ(D)` on the class of `w ⊗ b`. -/
 theorem rightIdentity_psiMinus_tmul
     (A : letI := T.topology; SmoothRep.{0, uF, uV} ℂ (mirabolic (r + 1) F.Carrier))

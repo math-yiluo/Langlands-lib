@@ -1,7 +1,5 @@
 # Normalization and chamber transport for Renard's centralizer valuation
 
-Author: Worker 1292.
-
 This internal derived helper uses the actual rational points, actual character
 valuation, actual cocharacter uniformizer section, and actual restriction
 evaluation map of the published `RenardDominantComparisonStatement`. It retains

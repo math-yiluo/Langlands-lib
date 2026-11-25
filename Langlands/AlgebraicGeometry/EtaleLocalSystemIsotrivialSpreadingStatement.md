@@ -59,6 +59,7 @@ and the published local-system definitions, as `EtaleLocalSystemNormalIsotrivial
 does. "Isotrivial" means "constant over a finite étale surjective cover", as in that
 statement.
 
-It is a prerequisite for part 1 of `EtaleLocalSystemNormalIsotrivialStatement` on the
-planned route of Task 6942. Part 1 then follows from part 2 applied to the irreducible
+It is a prerequisite for part 1 of `EtaleLocalSystemNormalIsotrivialStatement`: the
+theorem `etaleLocalSystemNormalIsotrivial_of` of `EtaleLocalSystemLevelStructure` takes it
+as its hypothesis `hSpread`. Part 1 then follows from part 2 applied to the irreducible
 normal scheme `Spec 𝒪_{S,s}`, together with this statement.

@@ -1,6 +1,7 @@
 # Normalizer comparison from affine Weyl containment
 
-This internal support draft for Task 6309 completes the passage from converse
+This internal support module for the proof of
+`UnramifiedZeroFixerAffineRootStatement` completes the passage from converse
 normalizer affine Weyl containment to the bounded whole-apartment sharp-fixer
 comparison. It works over any field with supplied `IntegerValuationBuildingData`.
 No local-field instance on the valued field, order-one-unit witness, or extra
@@ -36,7 +37,7 @@ in H and affine Weyl containment for every normalizer point in H.
 
 Finally,
 `UnramifiedZeroDatum.wholeApartmentZeroFixer_sup_sharpFixer_eq_of_mem_affineWeylGroup`
-specializes H to every supplied unramified zero subgroup. The sibling draft
+specializes H to every supplied unramified zero subgroup. The module
 `IntegerValuationSharpCoverImage` supplies sharp-fixer containment through actual
 relative root lifting to the simply connected derived cover. Only the converse
 normalizer affine Weyl containment remains as a conditional premise.
@@ -56,8 +57,11 @@ replacing its centralizer-zero calculation with the actual action kernel.
 The arithmetic and reflection inputs are published in
 `IntegerAffineRootLocalFiniteness`, `IntegerAffineRootArrangement`, and
 `IntegerRootReflections`. The finite and bounded induction is implemented in
-the sibling drafts. This module does not prove converse normalizer affine Weyl
+`GenericZeroFixerNormalizerReduction` and `IntegerValuationFiniteSharpReduction`.
+This module does not prove converse normalizer affine Weyl
 containment unconditionally or the final affine-root-sign target. The final
-specialization is internal composition of the independently submitted
-zero-normalizer transfer with the finite and bounded comparison implemented
-here; it retains the unproved simply connected assertion explicitly.
+specialization is internal composition of the
+zero-normalizer transfer in `UnramifiedZeroNormalizerComparison` with the finite and bounded comparison implemented
+here; it retains the simply connected assertion explicitly as a hypothesis. The
+Library proves that assertion as `MaximalUnramified.simplyConnectedNormalizerAffineWeyl`
+(module `UnramifiedSimplyConnectedNormalizerAffineWeylProof`).

@@ -1,5 +1,5 @@
 import Langlands.Automorphic.AssociatedCentralCharacter.EulerTopCoefficient
-import Langlands.ClassField.Global.RelativeWeilUnramifiedTwist
+import Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist
 import Langlands.Representation.Unramified.HeckeOperators
 
 /-! # The Hecke character of `det S` at the good places of a weak association
@@ -28,7 +28,7 @@ theorem elementaryCoefficient_rank {n : ℕ} (s : Eigenvalues n) :
 
 end Langlands.Unramified
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.AdelicFunctoriality Langlands.Global.CompletionPadic
 open Langlands.Unramified
@@ -76,4 +76,4 @@ theorem eventually_finiteUniformizerValue_eq_elementaryCoefficient
     finiteUniformizerValue_eq_prod_of_isUnramifiedMatchAt hres hn hm (fun w => hram w.1 w.2)
       δ (hT v hvT) hδ]
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

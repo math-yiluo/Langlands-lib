@@ -34,5 +34,8 @@ The proof uses existing Library and Mathlib constructions, with independent
 field, space and coefficient universes. It uses neither analytic equivariant
 comparison statement, nor restricted-injective acyclicity, nor an assumption
 that equivariant restriction preserves injectives. The higher-direct-image
-condition and ordinary compact acyclicity of the special Godement terms remain
-further obligations for the host theorem.
+condition and ordinary compact acyclicity of the special Godement terms are
+the further inputs that
+`analyticEtaleGodementCompactAcyclic_of_correctedLocal_and_ordinary`, in
+`Langlands.Cohomology.AnalyticEtaleSmoothPointProductLocalAcyclicCorrected`,
+takes as hypotheses to reach `AnalyticEtaleGodementCompactAcyclicStatement`.

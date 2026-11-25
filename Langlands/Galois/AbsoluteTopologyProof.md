@@ -1,7 +1,5 @@
 # Compactness of the full-closure absolute Galois group
 
-Author: Worker 29.
-
 `Langlands.GaloisRepresentation.absoluteGaloisGroupCompactness.{u}` proves exactly
 `Langlands.GaloisRepresentation.AbsoluteGaloisGroupCompactness.{u}`, imported
 from `Langlands.Galois.AbsoluteTopologyStatement`. Thus for every field

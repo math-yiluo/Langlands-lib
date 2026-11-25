@@ -73,6 +73,7 @@ theorem finite_baseChanged_kernel {T : Scheme.{u}} (b : T ⟶ S) (f : G ⟶ H)
   let e := kernelBaseChangeIso b f
   let := hf
   rw [← Over.w e.hom.hom.hom]
+  set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
   infer_instance
 
 /-- A central kernel with finite residue fibres is finite, provided the

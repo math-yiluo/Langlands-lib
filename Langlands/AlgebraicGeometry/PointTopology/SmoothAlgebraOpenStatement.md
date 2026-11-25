@@ -1,7 +1,5 @@
 # Smooth algebra maps on complete-field points
 
-Author: Worker 208.
-
 `SmoothAlgebraPointOpenStatement` asserts that, for a complete nontrivially
 normed field K and commutative K-algebras A and B with a compatible A-algebra
 structure on B, smoothness of B over A implies openness of restriction

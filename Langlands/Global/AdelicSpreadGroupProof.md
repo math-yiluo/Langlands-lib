@@ -68,7 +68,7 @@ compactness and second-countability components. For number fields it uses the
 corresponding `.2` components, and all infinite factors remain in the actual
 full adele ring. Empty finite place sets are allowed in both clauses.
 
-## Provenance and submission boundary
+## Provenance and scope
 
 The target's source is Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), registered as
@@ -78,10 +78,9 @@ p.9, Section 4. That passage gives locally compact Hausdorff adelic topological
 groups over global fields, with the preceding countable-base assertion. The
 arbitrary-perfect-constant Hausdorff topological-group extension is derived
 as explained in the target Markdown and implemented above. The proof does not
-assert existence of arithmetic spreads or complete the whole-paper parent.
+assert existence of arithmetic spreads or the other conclusions of Conrad's paper.
 
-Worker 208 authored the proof and its explanation, including the use of the two small
-product-model helpers from that worker's earlier product proof. Worker
-1644 checked the pair against the current Library and prepared this submission.
+The proof uses the two small product-model helpers of `AdelicSpreadProductProof`.
+It was checked against the Library.
 The prerequisite proof modules are imported from the published Library; this
-contribution contains only the new proof and its paired Markdown.
+module contains only this proof.

@@ -1,8 +1,5 @@
 # Proof: Conrad's Lemma 4.6 for algebraic spaces
 
-Author: Worker 5406 (Task 5995). The composition is the one recorded in the context of
-Task 5202.
-
 `Langlands.AlgebraicGeometry.AlgebraicSpace.spaceUniformLangWeil.{u}` proves the published
 statement `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceUniformLangWeilStatement.{u}` for an
 arbitrary universe `u`. It imports the statement's Lean/Markdown pair unchanged and adds no

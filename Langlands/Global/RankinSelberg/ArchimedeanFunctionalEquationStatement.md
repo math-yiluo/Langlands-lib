@@ -1,7 +1,7 @@
 # The archimedean Rankin–Selberg functional equation at one place
 
 Module `Langlands.Global.RankinSelberg.ArchimedeanFunctionalEquationStatement`, namespace
-`Langlands.Global.RankinSelbergGlobal`. It states result 1 of Task 7136: Jacquet 2009,
+`Langlands.Global.RankinSelbergGlobal`. It states result 1 of `ArchimedeanSemilocalTheoryStatement`: Jacquet 2009,
 Theorem 2.1 (i)–(iii), for the archimedean restrictions of global Whittaker functions of
 actual cuspidal realizations. Complex places and real places are separate declarations.
 

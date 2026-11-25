@@ -10,7 +10,7 @@ AbelianSchemeNoetherianModelStatement.{u} →
 
 It lives in module
 `Langlands.AlgebraicGeometry.Picard.RigidifiedClassesNoetherianApproximationReductionStatement`.
-This unit only defines the proposition. It proves nothing. In particular it proves neither
+This module only defines the proposition. It proves nothing. In particular it proves neither
 of the two named propositions. It only says that the second follows from the first.
 
 ## The two propositions
@@ -44,9 +44,11 @@ weak sense, then agreement of two rigidified classes is detected over a noetheri
 
 ## Provenance
 
-Internal. The implication is a decomposition step of this project, made in proof task
-`a825ba6f-ac5b-43b7-8794-52b2039388f7` for the published conclusion. It adds no mathematics
+Internal. The implication is a decomposition step of this project, made in the proof of the
+published conclusion. It adds no mathematics
 of its own: the conclusion's paired Markdown already explains that it is expected to follow
 from base change of `A`, `q` and `r` from a noetherian model, and the hypothesis is exactly
 that model. The geometric input (noetherian descent, Stacks Project Chapter 32) is in the
-hypothesis; see its paired Markdown. A Lean proof of the implication is a separate unit.
+hypothesis; see its paired Markdown. A Lean proof of the implication is in a separate module
+(`rigidifiedClassesNoetherianApproximationReduction`, module
+`RigidifiedClassesNoetherianApproximationReductionProof`).

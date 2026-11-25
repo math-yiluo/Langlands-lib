@@ -1,6 +1,6 @@
 # Extending a rational algebra action on a good model over a DVR
 
-Worker 800. Let `V` be a discrete valuation ring with fraction field `K`
+Let `V` be a discrete valuation ring with fraction field `K`
 and let `j : Spec K ⟶ Spec V` be the fraction-field morphism.
 The declarations are in `Langlands.Shimura.PEL.HarrisTaylorCMWeilLevel`.
 

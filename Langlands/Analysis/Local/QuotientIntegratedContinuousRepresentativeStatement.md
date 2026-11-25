@@ -61,8 +61,11 @@ uniform, which recovers the compact-quotient estimate.
 
 ## Intended proof
 
-A private proof compiles. The separately staged kernel statement
-`QuotientConvolutionKernelStatement` supplies a continuous `v : G → L²(ν)`
+The statement is proved as `quotientIntegratedContinuousRepresentative` in
+`Langlands.Analysis.Local.QuotientIntegratedContinuousRepresentativeProof`.
+The kernel statement `QuotientConvolutionKernelStatement` (module
+`Langlands.Analysis.Local.QuotientConvolutionKernelStatement`, proved as
+`quotientConvolutionKernel`) supplies a continuous `v : G → L²(ν)`
 with `⟪v x, φ⟫ = ∫ f(a) φ(H (x a)) da` and the norm bound. The function
 `x ↦ ⟪v x, φ⟫` is left `H`-invariant, because `H (h x a) = H (x a)`, so it
 descends to a continuous `ψ` on the coset space (`descend`,

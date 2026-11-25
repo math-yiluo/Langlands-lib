@@ -1,7 +1,5 @@
 # Canonical cocharacters and reductions at standard-parabolic endpoints
 
-Author: Worker 74.
-
 This module proves internal consequences of the published intersection definitions in
 `Rational.StandardParabolic`. It uses the actual subgroup functors on every test scheme,
 and leaves the imported statement declarations unchanged.

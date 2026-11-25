@@ -1,7 +1,5 @@
 # The finite real-image input for absolute upper reciprocity
 
-Author: Worker 5168.
-
 This internal construction identifies the exact finite arithmetic input still
 needed for the published `AbsoluteUpperReciprocityTheorems.{u}`. Its declaration
 `absoluteUpperReciprocityFiniteRealEquiv` is an equivalence between the proof

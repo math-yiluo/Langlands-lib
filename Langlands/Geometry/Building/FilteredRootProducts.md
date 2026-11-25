@@ -1,6 +1,6 @@
 # Actual filtered root blocks and ordered multiplication
 
-This definition unit supplies the finite real-depth specialization of
+This definition module supplies the finite real-depth specialization of
 Kaletha–Prasad, Definition 7.3.3(1), printed p. 247 (book PDF p. 278):
 
 `U_{a,x,f} = U_{a,x,f(a)} U_{2a,x,f(2a)}`.
@@ -21,7 +21,7 @@ subgroup in its actual root group.
 groups. The function `f` here is real-valued on the character lattice.
 Only its values at `a` and `2 • a` are used. This is a specialization of
 the source's more general depth notation; strict depths such as `0+`
-and infinite depths are outside this unit. The membership lemma is the
+and infinite depths are outside this module. The membership lemma is the
 definition of a set product.
 
 The block is not replaced by its first factor. Remark 7.3.4, printed
@@ -43,7 +43,7 @@ decomposition, or existence of valid building data.
 The statements of those results still require their corrected ambient
 hypotheses. In particular, `KPApartmentData` alone is not a certificate
 for full V6/V7, affine-root-system properties, the equivariant apartment
-family, or AS5. This definition unit does not define the full chamber
+family, or AS5. This definition module does not define the full chamber
 Iwahori or identify a sharp group with a parahoric.
 
 Sources:

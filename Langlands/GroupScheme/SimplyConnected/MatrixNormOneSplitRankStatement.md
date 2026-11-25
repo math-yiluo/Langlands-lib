@@ -1,7 +1,5 @@
 # Split rank of `SL_m(D)`
 
-Author: Worker 165.
-
 ## Statement
 
 `Langlands.GroupScheme.CentralSimpleUnits.MatrixNormOneSplitRankStatement.{u}`

@@ -1,13 +1,12 @@
 # External Library audit 2026-10-29: P2 scope and hypothesis explanations
 
-Worker 217, with the P2-02–P2-04 verification reports and corrections of
-Worker 1053. This note records the verdicts for the four findings P2-01–P2-04
-assigned by task `a56ac3da-fc21-4ec6-896c-1841166342af`, revision 1. The source
+This note records the verdicts for the four findings P2-01–P2-04 of the
+external Library audit of 2026-10-29. The source
 report is the registered `external-library-audit-2026-10-29-3987c3d`, file
 `FINAL_AUDIT_3987c3d.md`. Its allegations were treated as unverified. They were
 checked against complete Lean declarations, section variables, universes,
-paired Markdown, the original source where one is cited, and the
-authoritative candidate, review and publication records.
+paired Markdown, the original source where one is cited, and the record of
+the corrections that entered the Library.
 
 ## Snapshots and verdict convention
 
@@ -19,30 +18,29 @@ saying that it is degenerate. No Lean statement, definition, hypothesis,
 universe or proof was changed by the corrections.
 
 All corrections are based on A. The later Library commit
-`b58bd42aee6a565b689f0f0c008506e23b1b6560` leaves the eight owned files
+`b58bd42aee6a565b689f0f0c008506e23b1b6560` leaves the eight audited files
 byte-identical to A, so no intervening publication repaired any of these
 findings. The current comparison snapshot of this edition is Library
 `64f062d4c57e9cc6f8151bc80364bc55c16272c5` (C below). It contains all three
 corrections: S and I were published in `bc8de2287e5c24972c55277b2aa9611523dfc5dc`,
-and M in C itself, whose previous head is `bc8de228`. At C every owned file
+and M in C itself, whose previous head is `bc8de228`. At C every audited file
 has exactly the published candidate bytes (see the fingerprints below). No
 finding remains open at C.
 
 All locations are Library-relative. `Renard`, `Par` and `RS` abbreviate
 `Langlands/CategoryTheory/Renard`, `Langlands/Representation/Parabolic` and
-`Langlands/Representation/RankinSelberg`. Line numbers refer to A unless a
-candidate or C is named. A diff of A and C shows that the Lean files differ only in
+`Langlands/Representation/RankinSelberg`. Line numbers refer to A unless C is
+named. A diff of A and C shows that the Lean files differ only in
 docstrings: one in IndexedSubobjectSums, two in InductionFiltration, three in
 RankOneExtensionUnfoldingMeasure, none in RankOneExtensionUnfoldingIntegral.
 Declarations, hypotheses, universes and proofs are unchanged.
 
-The Lean environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). A private `lean_check`
-probe (diagnostic `864a8f3b`, not a Library file) printed the complete types
+The Lean environment is Lean 4.34.0 with Mathlib
+`5ed2965256430c3649e86755f9576b54eca72435`. A `lean_check` probe (not a
+Library file) printed the complete types
 of every declaration named below and reported only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. It also proved the collapse statement of
-P2-01. Worker 1053 printed the same types for P2-03/P2-04 in a separate
-check (`d581bd41`).
+P2-01. A separate check printed the same types for P2-03/P2-04.
 
 ## Per-finding ledger
 
@@ -151,8 +149,7 @@ right factor is s-finite (`Mathlib/MeasureTheory/Measure/Prod.lean:181–231`).
 In `prod_cellScalar_eq_zero` (Lean:525), `Measure.prod_prod` therefore uses
 `SFinite μ'`, and `Measure.prod_apply` uses the s-finiteness of `ν^(t+1)`,
 which follows from `SigmaFinite ν`. Neither formula uses `SFinite dx`.
-Reviewer 4583 confirmed this with a probe (diagnostic
-`9bdf18f1-3897-4a87-ad57-a34289cc306a`) that applies both formulas to an
+A probe confirmed this by applying both formulas to an
 arbitrary `dx`. `SFinite dx` remains an explicit hypothesis of the published
 theorem. The audit's correction asks only that the documentation state it, and
 this edition does not change the Lean interface.
@@ -173,7 +170,7 @@ not a counterexample to the theorems with all their hypotheses. The only
 Library consumer of the unfolding integrals at C,
 RS/RankOneExtensionSpanComparisonCore, binds all four classes explicitly
 (Lean:181–185 at C) and states them in its Markdown (md:56–59 at C). It needs
-no change. No Library file outside the two owned modules uses
+no change. No Library file outside the two audited modules uses
 `productMeasure_cellScalar_eq_zero` or `prod_cellScalar_eq_zero`.
 
 The audit's claim that the existing Lean hypotheses are correct was checked:
@@ -183,31 +180,30 @@ corresponding declaration. The probe cited above shows that the product
 formulas in the proof of `prod_cellScalar_eq_zero` do not use its
 `SFinite dx`, which `integral_cellExchange` merely passes on. This note does
 not claim that every other class is indispensable. Weakening an interface
-would change published Lean statements, which is outside this documentation
-task. No finiteness class was added to an arbitrary measure. The modules cite JPSS 1983, Lemma 5.5,
+would change published Lean statements, which is outside a documentation
+correction. No finiteness class was added to an arbitrary measure. The modules cite JPSS 1983, Lemma 5.5,
 only as the provenance of the change of variables, and they say that the
 measure-theoretic hypotheses are formalization choices. These findings
 therefore involve no claim about the original source.
 
-## Corrections and release evidence
+## Corrections and the commits where they entered the Library
 
-Each correction is a focused ordinary `lean.definition` candidate on base A.
-It edits only Markdown and docstrings of this task's own file pairs.
+Each correction is a focused change on base A. It edits only Markdown and
+docstrings of the file pairs concerned. An earlier version of correction M
+did not enter the Library.
 
-| Key | Findings | Candidate | Author | Machine validation | Independent review | Publication |
-|---|---|---|---|---|---|---|
-| S | P2-01 | `1b080313-804b-444e-8b27-449f685b4507` | Worker 217 | `3175a98b-7d25-442b-8591-6595b3e2e23f` (accepted) | task `4e25dd15-36cb-4346-b538-92add4ed8eb8`, approved by Reviewer 4590, no qualifications | Integration `65d6c73a779647bb9fdce328f9de0222` (batch `498cd055f707477e9a3f5ed7a92e04e5`, approve, no qualifications); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| I | P2-02 | `8a014938-0080-4bfe-ab11-b4c31cce8514` | Worker 1053 | `a3a1f288-f25d-46f2-a680-bda6bc8fa39b` (accepted) | task `daa03ffe-e873-4732-8c91-c01768fdae0b`, approved by Reviewer 4603, no qualifications | Integration `3f8974d1baba4f399e7acb0375654188` (batch `498cd055f707477e9a3f5ed7a92e04e5`, approve, no qualifications); Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
-| M | P2-03, P2-04 | `55fb5456-0b0f-471c-846b-62f527e60b61` | Worker 1053 | `2f39319d-2b2d-45a9-8812-86cbde1258be` (accepted) | task `e853f86a-4851-479b-9dd0-c4b565061359`, approved by Reviewer 4635, no qualifications | Integration `63d5d4b081d14c9f8b89cd3bb8e79c56` (batch `601d50d0ad7d477ba5cfaa8c405869d0`, approve, no qualifications, fresh integrated Lake build accepted); Library `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
-| M (rejected version) | P2-03, P2-04 | `240a5ca3-8f3d-4b35-b661-9ad042bf60f2` | Worker 1053 | `a7511beb-7075-4293-accb-a1b72f1db4f6` (accepted) | task `2732a645-65d3-46df-bc99-31dc619e70bb`: changes requested by Reviewer 4583 (receipt `9c4c2ad7-a4b8-4f49-97b6-41353676d65a`) because the proof explanation attributed the product formulas to `SFinite dx`. Replaced by `55fb5456`, whose only change is that sentence (candidate RankOneExtensionUnfoldingMeasure.md:125–130). | Not published |
+| Key | Findings | Publication |
+|---|---|---|
+| S | P2-01 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| I | P2-02 | Library `bc8de2287e5c24972c55277b2aa9611523dfc5dc` |
+| M | P2-03, P2-04 | Library `64f062d4c57e9cc6f8151bc80364bc55c16272c5` |
 
-Machine validation is not semantic acceptance. This note itself requires
-separate independent review and publication.
+A machine validation is not a check of meaning.
 
 ## File fingerprints
 
-SHA256 of the owned pairs. The A columns identify the defective versions; the
-C columns equal the published candidate bundles (S, I and M), and the
+SHA256 of the audited pairs. The A columns identify the defective versions; the
+C columns equal the corrected versions in the Library (S, I and M), and the
 Integral Lean file is unchanged.
 
 | Pair stem | Lean in A | Markdown in A |

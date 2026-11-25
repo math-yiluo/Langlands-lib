@@ -1,6 +1,6 @@
 # Original counit evaluation on curve-place space stages
 
-This internal unit identifies the constructed fixed-model space Weil stage
+This module identifies the constructed fixed-model space Weil stage
 homeomorphism with evaluation of the original counit, and proves the resulting
 square with the literal full curve adele inclusions. It does not assert the
 full adelic homeomorphism or independence of models.

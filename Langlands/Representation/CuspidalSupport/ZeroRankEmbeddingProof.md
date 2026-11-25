@@ -1,7 +1,5 @@
 # Rank-zero cuspidal embedding
 
-Author: Worker 157.
-
 `Langlands.CuspidalSupport.zeroRankCuspidalEmbedding` proves the published
 `Langlands.CuspidalSupport.ZeroRankCuspidalEmbeddingTheorem.{uF,uV} F T`
 for every prime `p`, `F : PadicField.{uF} p`, and `T : F.TopologicalData`.

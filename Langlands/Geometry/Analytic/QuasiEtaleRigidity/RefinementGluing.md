@@ -1,7 +1,5 @@
 # Local chart covers and gluing equality along a source refinement
 
-Author: Worker 931.
-
 This is a helper module of `QuasiEtaleLiftCompatibilityProof`. It is internal.
 
 ## Local chart covers

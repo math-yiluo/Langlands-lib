@@ -1,6 +1,6 @@
 # Positive inner Jacquet multiplicity from the supported quotient
 
-Worker 429 implements this internal adapter. Worker 435 identified the existing
+This module implements an internal adapter. It uses the existing
 quotient transport, second-adjointness and simple-map detection interfaces.
 The theorem `Langlands.glSupportedRelativeJacquetPositiveBound` proves exactly
 `Langlands.GLSupportedRelativeJacquetPositiveBoundStatement.{uF,uV,uW}`.

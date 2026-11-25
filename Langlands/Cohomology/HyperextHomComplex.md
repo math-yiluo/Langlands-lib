@@ -1,6 +1,6 @@
 # The abutment of the hyperext spectral sequence as cohomology of a Hom complex
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextSpectralSequence` (`hyperextSpectralObject`,
 `abutmentIso`) and `Langlands.Cohomology.HyperextSecondPage` (the additive
 equivalences `precompAddEquiv` and `postcompAddEquiv`), and on Mathlib's Hom
@@ -117,8 +117,8 @@ differentials, edge maps or filtration of the spectral sequence is claimed.
 
 Harris constructs his spectral sequences by computing compactly supported
 cohomology with a complex of smooth projective modules and then taking `Hom`
-into the coefficient module term by term. The passages below were read by
-Worker 61 in the rendered page scans.
+into the coefficient module term by term. The passages below were read
+in the rendered page scans.
 
 - Harris, *Supercuspidal representations in the cohomology of Drinfel'd
   upper half spaces; elaboration of Carayol's program*, Invent. Math. 129

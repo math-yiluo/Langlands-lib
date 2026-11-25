@@ -8,6 +8,6 @@ Suppose a coordinate cocharacter pairs with each supplied root as a positive nat
 
 If the actual positive-term ambient inclusion represents the contracting subgroup of that cocharacter, `range_ambientInclusion_eq_cutoff` upgrades the comparison to equality of the full ambient subgroup functors on every scheme test. The forward direction factors each term through the positive group. For the reverse direction, the positive intrinsic cutoff lies in the first cutoff, which equals the actual contracting subgroup, so it lifts to the actual positive representative. The pullback comparison then lifts it to the original term representative.
 
-The represented contracting-subgroup identification is an explicit premise of this generic theorem; the separate split face-cocharacter realization theorem proves that premise in the intended application. This unit does not itself prove parabolic normality or global compatibility/descent.
+The represented contracting-subgroup identification is an explicit premise of this generic theorem; the separate split face-cocharacter realization theorem proves that premise in the intended application. This module does not itself prove parabolic normality or global compatibility/descent.
 
 Provenance: internal combination of actual cocharacter point formulas, closed equivariant intrinsic reflection, positive-term polynomial coordinate comparison, and actual contracting representability.

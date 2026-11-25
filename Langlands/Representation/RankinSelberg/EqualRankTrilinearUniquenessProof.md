@@ -1,6 +1,6 @@
 # Equal-rank trilinear-form uniqueness: proof
 
-Worker 353 authored this final composition of published Library proofs.
+This module is the final composition of published Library proofs.
 The theorem `Langlands.RankinSelberg.equalRankTrilinearUniqueness` has type
 `EqualRankTrilinearUniquenessStatement.{uF,uV,uW} F T n`, with independent
 field and carrier universes, for every prime `p`, `F : PadicField.{uF} p`,

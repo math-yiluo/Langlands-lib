@@ -1,6 +1,6 @@
 # Nested standard Levi intersections from standard cocharacters and the parabolic order
 
-Worker 778. This module reduces the published `StandardLeviIntersectionStatement` to two
+This module reduces the published `StandardLeviIntersectionStatement` to two
 other published statements, `StandardCocharacterStatement` and
 `StandardParabolicOrderStatement`. It proves neither of them. Its final theorem takes both as
 explicit hypotheses, so it does not prove `StandardLeviIntersectionStatement` without

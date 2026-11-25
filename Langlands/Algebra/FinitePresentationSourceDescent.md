@@ -1,7 +1,5 @@
 # Descent of finite presentation along a faithfully flat map on the source
 
-Author: Worker 293.
-
 This module proves the finite presentation case of Stacks Project, Descent,
 Lemma 35.14.1 (Tag 02KK; Lemma 14.1 on p.42 of the registered PDF source
 `stacks-descent-ed88ff78-2026`): for ring maps `R → A → B` with `A → B`

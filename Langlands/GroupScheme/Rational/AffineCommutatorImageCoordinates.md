@@ -9,8 +9,8 @@ coordinate calculation and uses no smoothness, reducedness or split-torus
 assumption.
 
 Over any field in an arbitrary universe, take affine group schemes `G`, `H`,
-`K` and group homomorphisms `i : H ⟶ G`, `j : K ⟶ G`. The earlier image module
-defines the actual range subalgebra of the commutator pullback in the independent
+`K` and group homomorphisms `i : H ⟶ G`, `j : K ⟶ G`. The image module
+`AffineCommutatorImage` defines the actual range subalgebra of the commutator pullback in the independent
 tensor coordinates, its spectrum `imageScheme`, and the actual morphism
 `imageFactor : H.X ⊗ K.X ⟶ imageScheme i j`.
 
@@ -27,11 +27,12 @@ and uses affine point-coordinate naturality. `imageFactor_pullback_injective`
 then follows from injectivity of this subalgebra inclusion and of the image
 coordinate equivalence.
 
-This unit establishes the concrete injectivity needed for later equivariant
+This module establishes the concrete injectivity needed for later equivariant
 support transport. It does not assert a weight decomposition, a commutator
 weight bound or a generated-subgroup theorem.
 
-The affine-product instance follows the base-change construction also used by
-Worker 1228 in the product-coordinate development. The product coordinates here
+The affine-product instance follows the base-change construction also used in
+the product-coordinate development (`PointedCoordinateWeights.prod_isAffineHom`,
+module `PointedTensorWeights`). The product coordinates here
 are specialized to the existing commutator presentation; no product action or
 tensor weight-space interface is introduced.

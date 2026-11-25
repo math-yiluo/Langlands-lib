@@ -1,6 +1,6 @@
 # Zariski local transporter descent
 
-Worker 799. Internal derivation from the published split torus cocycle trivializations,
+Internal derivation from the published split torus cocycle trivializations,
 local coset descent, and transporter identities. For any base scheme, transporters for
 two maps from a commutative split torus descend Zariski locally from an affine flat
 surjective cover when the second map is monomorphic and its full centralizer equals

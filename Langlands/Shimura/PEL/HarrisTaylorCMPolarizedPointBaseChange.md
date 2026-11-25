@@ -1,7 +1,5 @@
 # Mixed point and base change for normalized CM polarized Harris towers
 
-Author: Worker 57.
-
 This derived construction proves that actual normalized CM polarized pullback
 commutes with point transport. It constructs the path-independent diagonal
 map of the existing numerical Harris class towers and its canonical geometric

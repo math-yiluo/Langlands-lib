@@ -1,6 +1,7 @@
 # Nonzero invariant pairings on irreducible cuspidal realizations
 
-This internal helper for Task 7294 reduces the requirements on a prospective
+This internal helper for the cuspidal contragredient of dual cusp forms
+(`CuspidalTransposeInverseContragredientStatement`) reduces the requirements on a prospective
 contragredient pairing. It derives its assertions from the existing actual
 operator realizations, the published contragredient comparison lemmas, the
 published existence of an actual irreducible cuspidal contragredient, and
@@ -40,7 +41,8 @@ invariant pairing between two such realizations is a contragredient
 pairing, and its existence suffices for `T.IsContragredientOf S`.
 The proper constant-term hypothesis remains the existing
 `CompactSpace (AdeleQuotient F)`. The nonzero invariant pairing itself is
-an explicit premise, so this criterion does not complete Task 7294.
+an explicit premise, so this criterion does not by itself prove
+`CuspidalTransposeInverseContragredientStatement`.
 
 `CuspidalNonzeroInvariantPairingCriterionStatement` packages this conclusion
 as a proposition over every field universe;

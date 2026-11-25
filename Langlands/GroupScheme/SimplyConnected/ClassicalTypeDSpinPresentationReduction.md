@@ -1,7 +1,5 @@
 # Reduction of the type-D spin presentation to an aligned cover
 
-Author: Worker 64.
-
 `Langlands.GroupScheme.classicalTypeDSpinPresentation_of_aligned` is the
 theorem
 

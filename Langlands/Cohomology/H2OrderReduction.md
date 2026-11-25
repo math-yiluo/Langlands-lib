@@ -1,6 +1,6 @@
 # Order bounds for second cohomology from prime-index layers
 
-Author: Worker 229. The module imports the published degree-two
+The module imports the published degree-two
 inflation–restriction exactness `Langlands.Cohomology.h2InflationRestrictionExactness`
 (module `Langlands.Cohomology.H2InflationProof`) and the published Sylow
 module `Langlands.Cohomology.SylowDetectionProof`, without modification. From

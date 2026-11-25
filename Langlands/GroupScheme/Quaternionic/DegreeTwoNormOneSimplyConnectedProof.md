@@ -1,7 +1,5 @@
 # Proof: actual degree-two reduced-norm-one groups are simply connected
 
-Author: Worker 170.
-
 The closing theorem
 `Langlands.GroupScheme.CentralSimpleUnits.degreeTwoNormOneSimplyConnected.{u}`
 has exactly the type of the published proposition

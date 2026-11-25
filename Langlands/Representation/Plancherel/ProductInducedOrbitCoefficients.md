@@ -1,6 +1,6 @@
 # Actual coefficients on coherent smooth orbit sections
 
-Worker 200. This derived construction descends the existing actual induced
+This derived construction descends the existing actual induced
 coefficient map to coherent smooth sections on a discrete-series orbit. The
 source is Waldspurger V.1, printed p.288/PDF p.54, which defines `E_P^G` by
 coefficients of actual normalized induction, and VI.1, printed pp.295–296/
@@ -36,7 +36,7 @@ assumption on the inducing carrier, and no induced irreducibility assumption.
 The domain is precisely the existing `productInducedSmoothOrbitSections`: a
 normalized product-induced value at every actual inducing representative,
 coherent under every inducing equivalence, with finite scalar-smooth compact
-restriction in the fixed torus coordinates. This unit uses the existing
+restriction in the fixed torus coordinates. This module uses the existing
 section space and the existing orbit, with no replacement quotient or carrier.
 No continuity of the coordinate equivalence or character-orbit measure is
 needed for the map, integral formula or common bi-invariance theorem.
@@ -96,11 +96,11 @@ chosen coefficient stabilizers.
 
 ## Remaining scope
 
-This unit supplies the actual orbit coefficient function, its original integral,
+This module supplies the actual orbit coefficient function, its original integral,
 representative and parameter comparisons, full equivariance and uniform
 bi-invariance. Smoothness or continuity in the orbit parameter is a separate
 consumer obligation. It constructs no wave-packet integral, density weighting,
 Schwartz estimate, Fourier transform or inversion map, and proves no form of
-Plancherel surjectivity or whole-task completion. The fixed compact normalization
+Plancherel surjectivity. The fixed compact normalization
 is retained throughout; independence under changing that compact model is not
 asserted here.

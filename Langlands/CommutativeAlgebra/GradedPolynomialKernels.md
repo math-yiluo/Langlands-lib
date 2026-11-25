@@ -72,5 +72,6 @@ spanning set proves the asserted finite generation.
 The theorem permits arbitrary valuation rank and fields, and independent
 universes for the ring and variable type. It does not prove that arbitrary
 polynomial kernels are closed under projections. Homogenization, polynomial
-coherence for arbitrary matrices, and the exact host geometric extension
-statement remain outside this contribution.
+coherence for arbitrary matrices, and the exact geometric extension statement
+that this module serves, `Langlands.AbelianScheme.ValuationRingTwoAxisExtensionStatement`,
+remain outside this module.

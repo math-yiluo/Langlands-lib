@@ -1,6 +1,6 @@
 # Local compactness through actual affine open charts
 
-This proof establishes the published target
+This proof establishes the target
 `Langlands.AlgebraicGeometry.PointTopology.SchemePointLocalCompactnessProperty`
 through `schemePointLocalCompactness_proof`. It retains commutative rings `R`
 and `S` in a common arbitrary universe, `Algebra R S`, and a topology only on
@@ -13,7 +13,7 @@ Each actual point lifts through an actual affine open chart using localness.
 The chart inherits locally finite type over the base. Its actual coordinate
 ring is therefore finitely generated, and the existing evaluation-topologized
 algebra point space is locally compact by `affineLocalCompactness_proof` from
-`AffineProofs`. The published affine point homeomorphism transfers this to
+`AffineProofs`. The affine point homeomorphism transfers this to
 the actual scheme point carrier of that chart.
 
 `isOpenEmbedding_schemeAffineChart` from `SchemeOpenPointProofs` gives an
@@ -30,7 +30,5 @@ to adelic points* (December 31, 2011), Proposition 3.1 and gluing proof,
 printed page 4. Registered source:
 `conrad-2011-weil-grothendieck-adelic-points`, SHA256
 `fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb`.
-The relative formulation is documented by the published target. The
-independent publication of the imported open-chart proof is a prerequisite
-for submitting this clean proof unit; it is developed in focused child
-`aea22f5c-f1ed-4922-8abe-e8bcdd9747f0` of the same parent program.
+The relative formulation is documented with the target. This proof depends
+on the open-chart proof in `SchemeOpenPointProofs`, which it imports.

@@ -1,7 +1,5 @@
 # Polynomial Cartan coefficient bound from weak normalized Jacquet exponent bounds
 
-Author: Worker 960.
-
 `Langlands.GLCartanCoefficientBoundStatement` is a `Prop`-valued definition
 that states an estimate. This pair does not prove the estimate. It also does
 not prove temperedness or any integrability statement. The proposition is a
@@ -311,10 +309,9 @@ The direct Lean imports are only
 actual group, the compact subgroup, the representatives and weights, the
 Jacquet exponents, and the smooth dual. No imported pair is changed. No
 statement is assumed as a hypothesis or field, and no envelope replaces the
-explicit formula. Published statements, pending tasks, and literature
+explicit formula. Published statements and literature
 citations are not treated as proofs.
 
 A proof must not go through regular Langlands uniqueness, square-integrable
 classification, or anything depending on them. This pair states only the
-target; an exact-target proof task is to be published separately after this
-statement is in the Library.
+target; the Library does not prove it.

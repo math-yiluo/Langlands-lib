@@ -9,8 +9,8 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 `renard-2026-representations-groupes-reductifs-padiques`, I.4.2, Theorem,
 printed pp.23–24 / PDF pp.29–30. The implementation follows the direct evaluation
 proof under the common complex coefficient hypothesis of the published statement.
-Worker 261 implements this specialization of Worker 264's common
-`NonUnitalTensorDuality` construction.
+The proof is a specialization of the common
+`NonUnitalTensorDuality` construction (module `Langlands.Algebra.NonUnitalTensorDuality`).
 
 Apply `NonUnitalTensorDuality.naturalIso` with `S = B`, `R = A`, and `X = B`,
 using the original left regular B-action and the supplied right A-action.

@@ -8,7 +8,7 @@ of KP Theorem 7.5.3(2): `N(F) ∩ G(F)^♮` acts on the apartment through exactl
 `IwahoriWeylChamberSplittingStatement.{u}` (KP 7.8.2).
 `iwahoriWeylNormalizerAffineWeylReduction` proves this implication.
 
-The range statement remains an explicit premise. This unit does not prove
+The range statement remains an explicit premise. This module does not prove
 either target without it; it shows that the range statement is the only
 missing input of the published assembly.
 
@@ -27,7 +27,8 @@ range statement are replaced by published proofs:
   `ZeroSubgroupCommutatorNormality`. `G(F)^0` contains `G(F)^♮`, which contains
   every commutator of `G(F)`, so `G(F)^0` is normal; normality of `Z(F)^0` then
   follows from the cover comparison. This route does not use KP Lemma 2.6.24,
-  which remains unproved and is not claimed here.
+  which is not claimed here; the Library proves it separately as
+  `unramifiedZeroPointsIndependence` (module `UnramifiedZeroIndependenceProof`).
 - KP Fact 2.6.22 is the published theorem
   `Langlands.GroupScheme.simplyConnectedCentralizerProduct`.
 - KP Corollary 2.6.28 for the data of `P` is

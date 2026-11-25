@@ -477,9 +477,10 @@ theorem powPoly_ne_zero {n : ℕ} (hn : 0 < n) {q : ℕ} (hq : q ≠ 0) (c : Fin
   classical
   intro h0
   have h1 := congrArg (MvPolynomial.eval (Pi.single (⟨0, hn⟩ : Fin n) (1 : k))) h0
-  simp only [powPoly, map_sum, map_mul, MvPolynomial.eval_C, map_pow, MvPolynomial.eval_X,
+  simp only [powPoly, MvPolynomial.eval_sum, MvPolynomial.eval_mul, MvPolynomial.eval_C,
+    MvPolynomial.eval_pow, MvPolynomial.eval_X,
     Pi.single_apply, ite_pow, one_pow, zero_pow hq, mul_ite, mul_one, mul_zero,
-    Finset.sum_ite_eq', Finset.mem_univ, ite_true, map_zero] at h1
+    Finset.sum_ite_eq', Finset.mem_univ, ite_true, RingHom.map_zero] at h1
   exact hc0 _ h1
 
 /-- `R_{k'/k}(𝔾ₘ)` is connected: its coordinate algebra is a localization of a polynomial

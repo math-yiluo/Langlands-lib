@@ -1,7 +1,7 @@
 import Langlands.AbelianScheme.RelativeGlobalUnits
 import Langlands.AlgebraicGeometry.Units.RelativeGlobalUnitsGluing
 import Langlands.AlgebraicGeometry.Picard.SmoothUnitBaseChange
-import Langlands.TauCeti.Algebra.Polynomial.Laurent.Smooth
+import Langlands.Algebra.Polynomial.Laurent.Smooth
 
 /-! # The multiplicative group represents global units of abelian schemes over an affine base -/
 
@@ -153,10 +153,10 @@ def unitSchemeIso :
     have hb := restriction_universalUnit_bijective A V
     constructor
     · intro x y hxy
-      exact ULift.ext _ _ (hb.1 (congrArg ULift.down hxy))
+      exact ULift.ext (hb.1 (congrArg ULift.down hxy))
     · intro t
       obtain ⟨j, hj⟩ := hb.2 t.down
-      exact ⟨⟨j⟩, ULift.ext _ _ hj⟩
+      exact ⟨⟨j⟩, ULift.ext hj⟩
 
 /-- Every abelian scheme over an affine base has smooth relative automorphism
 schemes for all its line bundles on all test schemes. -/

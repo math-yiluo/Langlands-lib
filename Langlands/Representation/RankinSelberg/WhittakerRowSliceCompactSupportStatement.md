@@ -1,10 +1,9 @@
 # Compact support of Whittaker row data on a determinant slice
 
-Worker 724 states
+This module states
 `Langlands.RankinSelberg.WhittakerRowSliceCompactSupportStatement.{uF,uV}`
 in `Langlands.Representation.RankinSelberg.WhittakerRowSliceCompactSupportStatement`.
-Worker 484 proposed this focused interface and the proof route sketched below.
-This module defines a proposition and does not prove it.
+It defines a proposition and does not prove it.
 
 ## Complete statement
 
@@ -141,7 +140,7 @@ source's gauge domination. A unipotent-equivariant function that is not an
 actual coefficient need not be smooth, so this statement quantifies actual
 coefficient images rather than all of `WhittakerFunctions ψ n`.
 
-A prospective proof can combine that bound with
+A proof can combine that bound with
 `Langlands.RankinSelberg.exists_schwartzBruhat_row_bound` and the method of
 `Langlands.RankinSelberg.normalizedAbs_determinant_le_of_simpleRoot`
 from `Langlands.Representation.RankinSelberg.EqualRankSliceSupportProof`.
@@ -153,10 +152,12 @@ nonzero. The ratio bounds then bound every `|t_i|` above. Fixing
 then lie in compact annuli, and up to integral diagonal units they range over
 a finite set. The support is therefore contained in the image of a compact
 subset of the group. That image is compact, and closed because the quotient by
-the closed subgroup is Hausdorff. These steps are proof obligations of a
-separate successor and are not established here.
+the closed subgroup is Hausdorff. These steps are not established here; the
+proposition is proved along this route as
+`Langlands.RankinSelberg.whittakerRowSliceCompactSupport` in
+`Langlands.Representation.RankinSelberg.WhittakerRowSliceCompactSupportProof`.
 
-## Boundary of this unit
+## Boundary of this module
 
 The proposition adds no compactness, support bound, integrability, quotient
 measure, gauge estimate, asymptotic expansion, factor existence or

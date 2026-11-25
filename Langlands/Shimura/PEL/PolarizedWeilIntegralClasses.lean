@@ -42,7 +42,7 @@ local notation "PObj" => PolarizedAction preservation composition unitCoherence
 with its existing rational action on every order element. -/
 structure IntegralActionRestriction (O : Subalgebra ℤ D) (X : PObj) where
   action : O →+* CategoryTheory.End X.actionObj.abelianScheme
-  agrees : ∀ x : O, homToHom0 (action x) = X.actionObj.action (x : D)
+  agrees : ∀ x : O, homToHom0 (action x).asHom = (X.actionObj.action (x : D)).asHom
 
 local notation "Restriction" => IntegralActionRestriction preservation composition
   unitCoherence associativity comparison symmetry stability square universality
@@ -58,10 +58,10 @@ def integralRestrictionIsoData (X Y : PObj) (a : Restriction O X) (a' : Restrict
     (RationalAlgebraAction.underlyingIso e) (by
       intro x
       change comp0 X.actionObj.abelianScheme X.actionObj.abelianScheme
-          Y.actionObj.abelianScheme (homToHom0 (a.action x))
+          Y.actionObj.abelianScheme (homToHom0 (a.action x).asHom)
           (RationalAlgebraAction.hom0 e.hom) =
         comp0 X.actionObj.abelianScheme Y.actionObj.abelianScheme Y.actionObj.abelianScheme
-          (RationalAlgebraAction.hom0 e.hom) (homToHom0 (a'.action x))
+          (RationalAlgebraAction.hom0 e.hom) (homToHom0 (a'.action x).asHom)
       rw [a.agrees, a'.agrees]
       exact RationalAlgebraAction.intertwines e.hom (x : D))
 

@@ -1,7 +1,5 @@
 # All-degree Tate transfer naturality, index and scalar-split boundary laws
 
-Author: Worker 45.
-
 `Langlands.Tate.TransferLaws` quantifies over a commutative ring `R`, a finite
 group `G`, a subgroup `H`, and representations over `R`, all in a common
 arbitrary universe. It asserts three groups of identities in every integer

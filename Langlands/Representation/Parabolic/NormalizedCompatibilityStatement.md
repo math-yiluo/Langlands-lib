@@ -1,6 +1,6 @@
 # Normalized scalar twists and central characters
 
-Author: Worker 8. This pair imports the independently published
+This pair imports the independently published
 `Parabolic.LeviBridges` construction.
 
 `Langlands.Parabolic.NormalizedCompatibilityStatement` is a conjunction
@@ -95,7 +95,7 @@ zero, so `2` is a unit, even when the residue characteristic is two.
 Thus every generating transvection is a commutator. Every homomorphism
 to the abelian group of complex units kills those commutators.
 This is an elementary derived prerequisite, not a literal additional
-theorem quoted from BZ77, and its Lean proof remains an obligation.
+theorem quoted from BZ77, and its Lean proof is not part of this pair.
 
 The normalized twist formulas are then direct specializations of 1.9(f):
 the induction map multiplies functions by `chi(g)`, and the quotient map
@@ -110,7 +110,7 @@ The positive block product is one on an ambient scalar because, for each
 pair of blocks, its numerator and denominator both equal
 `|a|_F^(n_i n_j)`. That cancellation is already proved as
 `leviModulus_scalar` in the published construction. Formal identification
-of the block product with Haar scaling is still a separate theorem
+of the block product with Haar scaling is a separate theorem
 obligation; it is not assumed in these elementary compatibilities.
 
 Registered original:
@@ -119,7 +119,10 @@ Registered original:
 Sections 1.8-1.9(f), pp.444-445, and 2.1-2.3, p.446.
 
 The field scope is finite extensions of `Q_p`, not all local fields or
-arbitrary reductive groups. All five theorem proofs remain separate.
+arbitrary reductive groups. All five theorem proofs are separate; the
+induction central clause is proved as
+`Langlands.Parabolic.normalizedInductionCentralClause` in
+`Parabolic.NormalizedInductionCentralProof`.
 The construction dependencies are published `Group.GL.BlockModulus`,
 `Induction.Definitions`, and `Parabolic.LeviBridges`.
 Normalized transitivity, the canonical opposite pairing and duality,

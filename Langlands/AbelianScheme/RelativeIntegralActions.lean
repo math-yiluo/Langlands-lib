@@ -50,26 +50,47 @@ private theorem restrict_composition {T T' : Over S} (a : T' ⟶ T)
 def relativeEndRestrict {T T' : Over S} (a : T' ⟶ T) :
     CategoryTheory.End ((baseChange T.hom).obj B) →+*
       CategoryTheory.End ((baseChange T'.hom).obj B) where
-  __ := restrict B.toCommGroupScheme B.toCommGroupScheme a
-  map_one' := restrict_identity B a
-  map_mul' f g := restrict_composition B a g f
+  toFun f := CategoryTheory.End.of
+    (restrict B.toCommGroupScheme B.toCommGroupScheme a f.asHom)
+  map_zero' := congrArg CategoryTheory.End.of
+    (map_zero (restrict B.toCommGroupScheme B.toCommGroupScheme a))
+  map_add' f g := congrArg CategoryTheory.End.of
+    (map_add (restrict B.toCommGroupScheme B.toCommGroupScheme a) f.asHom g.asHom)
+  map_one' := congrArg CategoryTheory.End.of (restrict_identity B a)
+  map_mul' f g := congrArg CategoryTheory.End.of (restrict_composition B a g.asHom f.asHom)
 
 /-- The canonical relative integral endomorphism presheaf, retaining its ring structure. -/
 def relativeEndRingFunctor : (Over S)ᵒᵖ ⥤ RingCat.{u} where
   obj T := RingCat.of (CategoryTheory.End ((baseChange T.unop.hom).obj B))
   map a := RingCat.ofHom (relativeEndRestrict B a.unop)
   map_id T := by
-    ext f
-    exact restrict_id B.toCommGroupScheme B.toCommGroupScheme T.unop f
+    ext f : 2
+    exact congrArg CategoryTheory.End.of
+      (restrict_id B.toCommGroupScheme B.toCommGroupScheme T.unop f.asHom)
   map_comp a b := by
-    ext f
-    exact restrict_comp B.toCommGroupScheme B.toCommGroupScheme b.unop a.unop f
+    ext f : 2
+    exact congrArg CategoryTheory.End.of
+      (restrict_comp B.toCommGroupScheme B.toCommGroupScheme b.unop a.unop f.asHom)
 
-/-- Forgetting the ring gives exactly the published relative-Hom presheaf. -/
-theorem relativeEndRingFunctor_forget :
-    relativeEndRingFunctor B ⋙ forget RingCat =
-      relativeHomFunctor B.toCommGroupScheme B.toCommGroupScheme ⋙
-        forget AddCommGrpCat := rfl
+/-- Forgetting the ring gives the published relative-Hom presheaf, up to the natural
+isomorphism sending an endomorphism to its underlying morphism. -/
+def relativeEndRingFunctorForgetIso :
+    relativeEndRingFunctor B ⋙ forget RingCat ≅
+      relativeHomFunctor B.toCommGroupScheme B.toCommGroupScheme ⋙ forget AddCommGrpCat :=
+  NatIso.ofComponents
+    (fun T => (CategoryTheory.End.homEquiv (X := (baseChange T.unop.hom).obj B)).toIso)
+    (fun _ => rfl)
+
+/-- The forward component sends an endomorphism to its underlying morphism. -/
+@[simp] theorem relativeEndRingFunctorForgetIso_hom_app (T : (Over S)ᵒᵖ)
+    (f : (relativeEndRingFunctor B).obj T) :
+    (relativeEndRingFunctorForgetIso B).hom.app T f = f.asHom := rfl
+
+/-- The inverse component regards a relative homomorphism as an endomorphism. -/
+@[simp] theorem relativeEndRingFunctorForgetIso_inv_app (T : (Over S)ᵒᵖ)
+    (g : (relativeHomFunctor B.toCommGroupScheme B.toCommGroupScheme).obj T) :
+    (relativeEndRingFunctorForgetIso B).inv.app T g =
+      CategoryTheory.End.of (X := (baseChange T.unop.hom).obj B) g := rfl
 
 variable {I : Type uI} [Fintype I] {O : Type uO} [Ring O] (b : Basis I ℤ O)
 

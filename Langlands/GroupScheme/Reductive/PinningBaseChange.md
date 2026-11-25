@@ -1,7 +1,7 @@
 # Scalar extension of actual split pinnings
 
-Worker 1317. This is internal support for arbitrary-field descent in the split
-Steinberg quotient task. It is derived from the published actual weight-space
+This is internal support for arbitrary-field descent in the construction of the
+split Steinberg quotient. It is derived from the published actual weight-space
 base-change comparison, Lie scalar extension, root-datum lattice transport,
 maximal-torus base change and connected-reductive ascent. It makes no external
 source claim.
@@ -65,7 +65,9 @@ extension is retained for the assembled `SplitPinning.baseChange`, including its
 final root-vector formula, because that assembly uses algebraic-extension ascent.
 The module does not construct base-changed normalized root parametrizations or
 reflection representatives, prove their ordered-product comparison, or establish
-the canonical quotient isomorphism. Those are subsequent consumer obligations.
+the canonical quotient isomorphism. Those are left to the modules that use this
+one.
 
-Integration gives the local instances used here module-specific names to permit
-joint imports. Their types, values, and local scopes are unchanged.
+The local instances used here have module-specific names to permit joint
+imports; the second one, for the affine structure morphism of the base change,
+is private to the module instead.

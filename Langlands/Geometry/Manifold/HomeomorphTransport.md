@@ -1,6 +1,6 @@
 # Explicit pullback of a specified manifold structure
 
-This internal construction by Worker 94 uses Mathlib's chart, structure
+This internal construction uses Mathlib's chart, structure
 groupoid and manifold definitions. Given a homeomorphism `e : M ≃ₜ N`
 and a specified charted space on `N`, `pullbackChartedSpace e` retains the
 given topology on `M`. Its atlas is the image of the target atlas under

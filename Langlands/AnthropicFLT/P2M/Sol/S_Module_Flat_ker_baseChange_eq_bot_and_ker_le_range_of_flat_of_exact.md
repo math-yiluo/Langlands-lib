@@ -17,8 +17,10 @@ commit `6e837e75355538c7f80bab5b956861e86c4eacc2`, file
 Only the FLT import prefix, removal of `P2M.Util`, replacement of its wrapper
 commands by ordinary Lean commands, finite heartbeat limits and the port
 transparency option have changed. Declaration names, types and mathematical
-proof steps are preserved. This supporting module is part of the focused
-bounded-flat algebra proof unit; it asserts no geometric comparison.
+proof steps are preserved. This supporting module is one of the ported
+bounded-flat algebra files, used by the module
+`Langlands.Cohomology.ModuleComplex.BoundedFlatQuasiIsoBaseChangeProof`; it
+asserts no geometric comparison.
 
 Copyright 2026 Anthropic. Apache License 2.0; see
 `licenses/Anthropic-FLT/LICENSE` and `licenses/Anthropic-FLT/NOTICE`.

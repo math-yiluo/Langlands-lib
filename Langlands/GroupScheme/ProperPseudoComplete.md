@@ -1,8 +1,6 @@
 # Proper schemes are pseudo-complete
 
-Worker 1364.
-
-This internal unit constructs `PseudoComplete.properDVRLift`, an actual relative
+This internal module constructs `PseudoComplete.properDVRLift`, an actual relative
 scheme morphism extending a fraction-field point over a DVR. Its restriction
 equation is proved by `PseudoComplete.genericPoint_properDVRLift`. It also
 proves `isPseudoComplete_of_isProper`: over any field

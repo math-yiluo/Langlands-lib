@@ -1,8 +1,7 @@
 # Group-scheme ledger, family 3: unipotent structure and geometric reductivity
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 3 of that program's contract. Family 3 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 3 of the algebraic and reductive group-scheme program. Family 3 covers:
 
 - unipotent groups, the `k`-unipotent radical and the split unipotent radical;
 - the distinction between a trivial `k`-unipotent radical (pseudo-reductivity) and a trivial
@@ -14,8 +13,7 @@ ledger for family 3 of that program's contract. Family 3 covers:
 
 A full classification of pseudo-reductive groups is not part of the family.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. All Lean names are in `Langlands.GroupScheme` unless
+It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. All Lean names are in `Langlands.GroupScheme` unless
 a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that commit.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`.
 
@@ -28,29 +26,26 @@ families are repeated here only where this family needs them.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published theorem
   that is not a proposition declaration, with the hypotheses listed in the row. The evidence
-  is its module path. No owner task is needed.
+  is its module path. 
 - **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, and `#print axioms` reported only `propext`,
-  `Classical.choice` and `Quot.sound`; it is not public evidence. No further proof work or
-  owner task is needed.
+  exactly the statement. The evidence is that theorem and its module path. Every P row was
+  also type-checked as `example : S := proof`, with no errors or warnings, and
+  `#print axioms` reported only `propext`, `Classical.choice` and `Quot.sound`. No further
+  proof work is needed.
 - **C (checked composite).** A Lean term built from published theorems proves the
-  statement. The row gives the ingredients of that term and the owner of
-  the named theorem if one exists.
+  statement. The row gives the ingredients of that term.
 - **O (open).** A Lean statement exists, but no published proof and no composite from
   published results is known.
 - **M (missing statement).** A source assertion of this family has no Lean statement in the
-  Library. It is an obligation of the program, recorded with its owner task if one exists.
+  Library. It is an obligation of the program.
   An assertion that published theorems already prove, although no proposition declaration
   states it, is not M: its row lists those theorems as D and names the missing statement.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 
@@ -64,7 +59,7 @@ Source locators use these registered sources, cited by source id:
 - `mumford-fogarty-kirwan-1994-git-3rd`: D. Mumford, J. Fogarty and F. Kirwan, *Geometric
   Invariant Theory*, 3rd enlarged edition (1994). PDF page = printed page + 12.
 
-The author re-read every locator below in the original source for this note, on 10 November
+Every locator below was re-read in the original source for this note, on 10 November
 2026, and checked that the cited item is on the cited page.
 
 ## A. Definitions and conventions
@@ -150,7 +145,7 @@ Conrad–Gabber–Prasad, the paragraph after Definition 1.1.1, printed p.4 (PDF
 **B5. A pseudo-reductive group that is not reductive.** Source: Conrad–Gabber–Prasad,
 Example 1.1.3, printed pp.4–5 (PDF 30–31): for an imperfect field `k` and a nontrivial
 finite purely inseparable `k'/k`, `R_{k'/k}(GL_1)` is pseudo-reductive and not reductive.
-- Status M: the Library has no statement of this example. Owner task: none.
+- Status M: the Library has no statement of this example.
 
 **B6. Pseudo-reductivity and separable extensions.** Source: Conrad–Gabber–Prasad,
 Proposition 1.1.9(1), printed p.8 (PDF 34), proof p.9 (PDF 35): for any separable
@@ -162,7 +157,7 @@ only if `G_K` is.
 - Status P: `pseudoReductiveSeparableExtension` (`Reductive/PseudoReductiveSeparableExtensionProof`).
 - Scope: only the ascent direction, only algebraic extensions, and not the equality of
   radicals. Ascent along separable transcendental extensions and the equality of radicals
-  have status M. Owner task: none.
+  have status M.
 - Reflection direction, for **every** field extension `K/k`: `HasTrivialUnipotentRadical.of_fieldExtension`
   (`Reductive/SemisimpleFieldReflectionProof`). Hypotheses: `k`, `K : Type u`,
   `[Algebra k K]`, `G` with affine structure map, and `G_K` with trivial `K`-unipotent
@@ -173,10 +168,10 @@ only if `G_K` is.
   `Langlands.AlgebraicGeometry.fieldExtensionAffineDescent`
   (`Langlands/AlgebraicGeometry/FieldExtensionAffineDescentProof`, outside
   `Langlands/GroupScheme/`). These D results prove that `G` is pseudo-reductive whenever
-  `G_K` is: the author type-checked that short proof privately, with axioms `propext`,
+  `G_K` is: that short proof was type-checked, with axioms `propext`,
   `Classical.choice` and `Quot.sound`. The same descent steps begin the published proof
   of `IsConnectedReductive.of_fieldExtension` (C1). No proposition declaration states this
-  reflection; only a named statement and its wrapper theorem are missing. Owner task: none.
+  reflection; only a named statement and its wrapper theorem are missing.
 
 **B7. Rational unipotent points of pseudo-reductive groups.** Source: derived from the proof
 of Conrad–Gabber–Prasad, Proposition C.1.6, printed pp.586–587 (PDF 612–613).
@@ -215,8 +210,7 @@ p.400 (PDF 416): `G` is reductive if and only if `G_{k'}` is, for any field `k' 
   connected reductive implies `G` connected reductive. Status P:
   `connectedReductiveAlgebraicExtensionReflection` (`Reductive/AlgebraicExtensionReflectionProof`).
 - `ConnectedReductiveAlgebraicExtensionAscentStatement` (`Reductive/AlgebraicExtensionAscentStatement`):
-  the algebraic case of the first item. Status C: `algebraicExtensionAscent.1`. Owner task:
-  none.
+  the algebraic case of the first item. Status C: `algebraicExtensionAscent.1`.
 - `IsConnectedReductive.of_fieldExtension` (`Reductive/SemisimpleFieldReflectionProof`):
   for **any** field extension `K/k` (with `k`, `K : Type u` and `[Algebra k K]`) and any
   group scheme `G` over `k`, with no hypothesis on `G`, if `G_K` is connected reductive
@@ -225,7 +219,7 @@ p.400 (PDF 416): `G` is reductive if and only if `G_{k'}` is, for any field `k' 
 - Together with the first item, this gives the full equivalence of Milne 19.13 for every
   field extension. No proposition declaration states the reflection for arbitrary
   extensions; what is missing is only such a named statement and its wrapper theorem, not
-  mathematics. Owner task: none.
+  mathematics.
 
 **C2. Semisimplicity under field extension.** Source: Milne 2017, Proposition 19.5, printed
 pp.398–399 (PDF 414–415): `G` is semisimple if and only if `G_{k'}` is; and Proposition
@@ -243,8 +237,7 @@ pp.398–399 (PDF 414–415): `G` is semisimple if and only if `G_{k'}` is; and 
   (`Reductive/AlgebraicExtensionReflectionProof`).
 - `SemisimpleAlgebraicExtensionAscentStatement` (`Reductive/AlgebraicExtensionAscentStatement`):
   for **algebraic** `K/k`, `G` semisimple implies `G_K` semisimple; a special case of
-  `IsSemisimpleFieldExtensionStatement`. Status C: `algebraicExtensionAscent.2`. Owner task:
-  none.
+  `IsSemisimpleFieldExtensionStatement`. Status C: `algebraicExtensionAscent.2`.
 - The conjunctions `AlgebraicExtensionAscentStatement` and
   `AlgebraicExtensionReflectionStatement`: status P, `algebraicExtensionAscent`
   (`Reductive/AlgebraicExtensionAscent`) and `algebraicExtensionReflection`
@@ -393,18 +386,11 @@ at `1704ae21875deeabd17a51ced41447cc741572dd`.
   (PDF p. 21), for conjugacy. The source for the maximality clause is
   Milne's argument in 16.27(b), printed p. 333 (PDF p. 349). Part ii) a) of the
   same SGA 3 theorem also gives conjugacy for a smooth quotient with a
-  possibly nonsmooth unipotent kernel. Statement candidate
-  `8e4cbe1e-d18a-4421-b8e8-cc57bd08c0e7` was approved in review
-  `90d70076-80d7-48ff-8938-f307d37364b1` and published at
-  `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status P.
-  Task 7806 (`ad802cf7-9b28-4355-8243-88707d9cc1e4`) published
-  `trigonalizableSectionConjugacySmooth`, which uses the coboundary
+  possibly nonsmooth unipotent kernel. The statement first appeared in the Library at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status P.
+  The Library has `trigonalizableSectionConjugacySmooth`, which uses the coboundary
   theorem for diagonalizable actions on smooth unipotent groups and
   the algebraically closed splitting case of Milne 16.26(a).
-  Candidate `6ceedaa6-71e3-4522-81cf-b464488d2c1c` passed independent
-  review `2c702577-c32c-4f78-8c7d-b02cba1f1ea5` and exact-target
-  validation `841809ab-5bfe-4978-9368-6411ff4187cf` and was published
-  at `032961776f43ccd672c6266d265a9c644faeba13`.
+  The proof passed exact-target validation and first appeared in the Library at `032961776f43ccd672c6266d265a9c644faeba13`.
   [Corrected statement](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothStatement.md),
   [published proof](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacySmoothProof.md)
 
@@ -418,26 +404,17 @@ at `1704ae21875deeabd17a51ced41447cc741572dd`.
   [Historical declaration warning](../../Langlands/GroupScheme/Trigonalizable/SectionConjugacyStatement.md),
   [erratum and computations](../errata/milne-2017-trigonalizable-section-conjugacy.md)
 
-- **Splitting with a finite étale diagonalizable quotient.** Task 7805
-  (`2d5e38c2-6552-435c-b69c-d727ddb78b3a`) published
-  `EtaleDiagonalizableExtensionSplitStatement`, from SGA 3 XVII
+- **Splitting with a finite étale diagonalizable quotient.** The Library has `EtaleDiagonalizableExtensionSplitStatement`, from SGA 3 XVII
   5.2.3 i) c), Gille–Polo pp. 346–348 (PDF pp. 22–24). It asserts the
   existence of a homomorphic section of an fppf quotient of an affine algebraic group
   over a perfect field by a smooth connected unipotent normal closed
   subgroup, when the quotient is `D(Λ)` for finite `Λ` of order prime
-  to the field's characteristic exponent. Statement candidate
-  `739ac18e-93ed-49e2-93b4-f9126d29e86e`
-  was approved in review `bd492737-b880-4db6-a7c1-fea2284f2c13` and
-  published at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status P.
-  Task 7944 (`f5b5803b-6be8-43b6-8625-c8f85818273a`) published
-  `etaleDiagonalizableExtensionSplit`. In characteristic zero the proof
+  to the field's characteristic exponent. The statement first appeared in the Library at `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. Status P.
+  The Library has `etaleDiagonalizableExtensionSplit`. In characteristic zero the proof
   splits a character-linear kernel tower. In positive characteristic
   it reduces to vector kernels, where torsor triviality, averaging over
   the finite geometric point group and descent give a section.
-  Candidate `874cb923-45d4-4697-a72e-c87436a77d52` passed independent
-  review `ce70e976-9b02-4106-a97d-b5f037b5acb8` and exact-target
-  validation `18ee1995-b562-423c-811b-113780988d73` and was published
-  at `032961776f43ccd672c6266d265a9c644faeba13`.
+  The proof passed exact-target validation and first appeared in the Library at `032961776f43ccd672c6266d265a9c644faeba13`.
   [Étale splitting statement](../../Langlands/GroupScheme/Trigonalizable/EtaleExtensionSplitStatement.md),
   [published proof](../../Langlands/GroupScheme/Trigonalizable/EtaleExtensionSplitProof.md)
 
@@ -450,9 +427,8 @@ at `1704ae21875deeabd17a51ced41447cc741572dd`.
   Status C at the checked commit. The exact term
   `trigonalizableExtensionSplit_of_etale etaleDiagonalizableExtensionSplit`
   supplies the finite étale splitting theorem to the reduction in
-  case (b). The named theorem `trigonalizableExtensionSplit` remains
-  with Task 7805 (`2d5e38c2-6552-435c-b69c-d727ddb78b3a`), which has
-  staged candidate `460e41f9-6bc8-4f69-ab8b-aa460a4b260c`.
+  case (b). The named theorem `trigonalizableExtensionSplit`
+  (`Trigonalizable/ExtensionSplitProof.lean`) is now in the Library as well.
   [Full splitting statement](../../Langlands/GroupScheme/Trigonalizable/ExtensionSplitStatement.md),
   [splitting reduction](../../Langlands/GroupScheme/Trigonalizable/ExtensionSplitPerfectSmooth.md)
 
@@ -565,7 +541,7 @@ A.1.13, printed p.471 (PDF 497).
 - Direct products: the contract lists products in this family. The Library has no
   statement that a direct product of connected reductive, semisimple or pseudo-reductive
   groups has the same property; status M. This ledger cites no numbered source item for
-  it. Owner task: none.
+  it.
 
 **F8. Characteristic zero.**
 - `ReductiveCharZeroSemisimplicityStatement` (`Reductive/CharZeroSemisimplicityStatement`):
@@ -646,7 +622,7 @@ proof, printed pp.592–593 (PDF 618–619).
 - Lean: `PseudoParabolicQuotientLocalSectionsStatement` (`PseudoParabolicQuotientLocalSectionsStatement`).
   Hypotheses: `[Infinite k]`; a pseudo-parabolic `i`; a supplied quotient `q` as in G2.
   Conclusion: every point of `Q` has an open neighbourhood over which `q` has a section.
-- Status O. Owner task: none. The rational-point consequence of Lemma C.2.1 is
+- Status O. The rational-point consequence of Lemma C.2.1 is
   `PseudoParabolicQuotientRationalLiftingStatement`, which is proved
   (`pseudoParabolicQuotientRationalLifting`, `PseudoParabolicQuotientRationalLiftingProof`).
 
@@ -664,11 +640,9 @@ theorems (C). The sole open statement (O) was
 The dated E3 updates add two exact published proofs (P) for
 `TrigonalizableSectionConjugacySmoothStatement` and
 `EtaleDiagonalizableExtensionSplitStatement`. The latter completes the checked
-composite (C) for `TrigonalizableExtensionSplitStatement`, with its named
-theorem staged by Task 7805.
+composite (C) for `TrigonalizableExtensionSplitStatement`, and its named theorem `trigonalizableExtensionSplit` is now in the Library.
 
-The original snapshot recorded three assertions with missing Lean statements (M)
-and no assigned proof owners.
+The original snapshot recorded three assertions with missing Lean statements (M).
 
 1. Conrad–Gabber–Prasad, Example 1.1.3: a pseudo-reductive group that is not reductive over
    an imperfect field (B5).
@@ -684,5 +658,4 @@ for reflection of pseudo-reductivity along arbitrary extensions (B6), which foll
 the published D results listed there.
 
 The wrapper theorems for the two C rows, and named statements with wrappers for the two
-reflections above, need no new mathematics; the program will collect them, with those of
-the other families, in one task. Items 1–3 need focused statement tasks.
+reflections above, need no new mathematics. Items 1–3 need statements.

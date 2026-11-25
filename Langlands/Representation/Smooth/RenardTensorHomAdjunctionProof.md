@@ -1,7 +1,5 @@
 # The smooth tensor–Hom adjunction
 
-Author: Worker 139.
-
 The target is the unchanged published `TensorHomAdjunctionStatement`.
 Source: David Renard, *Représentations des groupes réductifs p-adiques*,
 9 July 2026, III.1.15, Lemma, Proposition and Corollary, printed pp.67–68

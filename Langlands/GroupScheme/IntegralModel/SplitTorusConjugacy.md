@@ -1,7 +1,5 @@
 # Split-torus conjugacy through a supplied integral model
 
-Author: Worker 362.
-
 This internal construction applies `HenselianSplitTorusConjugacy` to a supplied
 `IntegralModel M` over a commutative domain `R` with fraction field `K`.
 Every type has arbitrary common universe `u`; no characteristic restriction

@@ -20,7 +20,7 @@ The associator is the following composite of five isomorphisms:
 5. Apply `c(M,tensorObj N P)`.
 
 This fixes a specific associator on the existing explicit tensor objects.
-Its inverse is supplied by the composition of isomorphisms. This unit
+Its inverse is supplied by the composition of isomorphisms. This module
 does not separately prove its pentagon or its compatibility with the
 previously defined explicit unitors and swap.
 
@@ -51,15 +51,18 @@ structure sheaf.
 
 ## Provenance and scope
 
-Worker 59 authored these internal categorical constructions. They use the
+These are internal categorical constructions. They use the
 published `Tensor`, `TensorMonoidal`, `PullbackTensor`, and `PullbackUnit`
 interfaces, together with Mathlib's composition and tensor product of
 isomorphisms and whiskering of natural transformations. The underlying
 sheaf-theoretic provenance is recorded in those imported modules.
 This module claims no new translation of a literature theorem.
 
-The parent task retains the explicit-unitors/swap comparison, associativity
+The explicit-unitors/swap comparison, associativity
 and other coherence laws for these fixed maps, canonical tensor-comparison
 invertibility, and strong symmetric monoidal pullback with the existing
-identity and composition comparisons. No monoidal pullback instance is
-introduced by this definition unit.
+identity and composition comparisons are proved in other modules:
+`TensorMonoidalComparisonProofs`, `PullbackTensorAssociativityProofs`,
+`PullbackTensorUnitProofs`, `PullbackTensorCompatibilityProofs`,
+`PullbackTensorProof`, `PullbackMonoidal` and `PullbackMonoidalProofs`.
+No monoidal pullback instance is introduced by this module.

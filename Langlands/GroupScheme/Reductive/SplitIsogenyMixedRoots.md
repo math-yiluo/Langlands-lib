@@ -26,4 +26,7 @@ of the graph projections proves `commute_positive_negative` on every test.
 actual character-map equation.
 
 The construction retains arbitrary fields and the actual root factors.
-This supporting unit does not prove the host realization theorem.
+This supporting module does not prove the realization theorem it serves,
+`SplitIsogenyExistenceStatement` (every isogeny of root data is realized),
+which is proved by `splitIsogenyExistence` in
+`Langlands.GroupScheme.Reductive.SplitIsogenyProof`.

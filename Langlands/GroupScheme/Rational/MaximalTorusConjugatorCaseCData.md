@@ -1,7 +1,5 @@
 # Generic conjugation data for Case C
 
-Author: Worker 1420.
-
 This internal, derived module proves `semisimpleCentralizerConjugationData`. The theorem
 derives the proposition `SemisimpleCentralizerConjugationDataStatement` of module
 `Rational/MaximalTorusConjugatorCaseC` from three published statements:

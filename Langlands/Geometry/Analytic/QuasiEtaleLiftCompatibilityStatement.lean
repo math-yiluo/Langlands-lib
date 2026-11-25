@@ -24,6 +24,6 @@ def QuasiEtaleLiftCompatibilityStatement (K : Type u) [NormedField K] [IsUltrame
             ∃ N : Subgroup G, IsOpen (N : Set G) ∧
               ∃ (ha : N ≤ a.subgroup) (hb : N ≤ b.subgroup),
                 ∀ (g : G) (hg : g ∈ N),
-                  (b.action ⟨g, hb hg⟩).hom ≫ f = f ≫ (a.action ⟨g, ha hg⟩).hom
+                  (b.action ⟨g, hb hg⟩).asIso.hom ≫ f = f ≫ (a.action ⟨g, ha hg⟩).asIso.hom
 
 end Langlands.Analytic.SaturatedAtlasPresentation

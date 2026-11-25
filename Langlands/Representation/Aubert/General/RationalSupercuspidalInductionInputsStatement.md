@@ -1,7 +1,5 @@
 # Jacquet-length input for actual supercuspidal induction
 
-Author: Worker 4238.
-
 This module states two propositions in
 `Langlands.Aubert.General.RationalPointFamily`. Neither is proved here. They
 split the published target `RationalSupercuspidalInductionFiniteLengthStatement`
@@ -78,8 +76,8 @@ conjugates `wρ`, `w ∈ W(L, M)/W_L`. For irreducible `ρ` each such quotient
 is irreducible, so `r_Q^G i_P^G ρ` has finite length bounded by the number of
 cosets. The proof of Théorème VI.5.4, printed p.174 / PDF p.180, uses exactly
 this length count. This statement keeps only finite length: no Weyl-coset
-count, filtration or supercuspidality of the Jacquet module is asserted. I
-read these pages for this unit.
+count, filtration or supercuspidality of the Jacquet module is asserted.
+These pages were read for this file.
 
 Two conventions differ from the source and are deliberately kept as in the
 published target. Association is the actual `rootAssociation` on simple-root
@@ -120,13 +118,14 @@ Jacquet functors along associated standard indices, combines them. Exactness
 of each `r_J` is not an input: it follows from the published
 `jacquetFunctor_map_isShortExact` and
 `standardUnipotent_isLimitOfCompactSubgroups_of_standardCocharacterStatement`.
-The detection statement has its own proof task,
-`b7887025-20b3-4c11-9fad-0e70bdf59da6`.
+The Library does not prove the detection statement.
 
 ## What remains open
 
-This module proves nothing. The implication is to be proved in a separate
-proof unit. Both inputs remain open representation-theoretic obligations. The
+This module proves nothing. The implication is proved in
+`RationalSupercuspidalInductionInputsProof`
+(`rationalSupercuspidalInductionFiniteLengthFromInputs`). Both inputs are
+representation-theoretic obligations, and the Library proves neither. The
 new input needs the geometric lemma for the actual standard families and the
-analysis of its pieces for cuspidal `σ`. These obligations are not moved into
-the external structural boundary of the target's parent programs.
+analysis of its pieces for cuspidal `σ`. These obligations are not part of
+the external structural boundary.

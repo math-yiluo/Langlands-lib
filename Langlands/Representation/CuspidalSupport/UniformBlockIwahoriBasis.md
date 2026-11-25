@@ -1,7 +1,5 @@
 # One compact open subgroup with block Iwahori factorizations for every shape
 
-Author: Worker 246.
-
 This module proves two neighbourhood-basis theorems. No definition or statement
 is introduced.
 

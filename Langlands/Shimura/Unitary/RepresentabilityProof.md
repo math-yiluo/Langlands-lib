@@ -1,7 +1,5 @@
 # Affine representability of the rational similitude functor
 
-Author: Worker 254.
-
 `Langlands.Shimura.similitudeRepresentability` proves the complete published
 proposition `Langlands.Shimura.SimilitudeRepresentabilityStatement.{u}`, with
 the same carrier universe `u`. For every ring `A : Type u` with a rational

@@ -3,7 +3,7 @@
 This file states ten identity and composition laws for the existing canonical
 base-change comparisons of the multiplicative group scheme. Its declarations
 are proposition-valued definitions; this file supplies no proofs of these laws.
-The entry declaration is
+The main declaration is
 `Langlands.GroupScheme.Gm.TateComparison.MultiplicativeBaseChangeCoherence`,
 the conjunction of all ten laws in the order described below.
 
@@ -104,7 +104,8 @@ already proved or attributing them to an external literature theorem.
 There is no assumption of finite étaleness, characteristic zero, invertibility
 of the torsion order, or finite rank: only the actual section objects and their
 canonical comparisons occur. No roots, basis, or Tate-twist trivialization are
-chosen. This statement unit does not assert monodromy pullback, pairing
+chosen. This module does not assert monodromy pullback, pairing
 compatibility, a rational topology, a restricted-product comparison, or
-completion of the PEL level-structure task. A proof of the exact published
-conjunction is a separate contribution.
+invariant-orbit PEL level structures. The conjunction is proved as
+`Langlands.GroupScheme.Gm.TateComparison.multiplicativeBaseChangeCoherence` in
+`Langlands.AbelianScheme.Tate.MultiplicativeBaseChangeCoherence`.

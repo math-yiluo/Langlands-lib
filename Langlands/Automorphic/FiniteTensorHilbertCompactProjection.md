@@ -1,7 +1,5 @@
 # Finite-rank compact projections from genuine admissible smooth models
 
-Author: Worker 2.
-
 This internal derivation uses the existing full-domain joint projections,
 their composition formula and the genuine fixed-space equivalence with a
 supplied smooth model. It asserts no new identification with original literature.

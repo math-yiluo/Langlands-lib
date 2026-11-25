@@ -1,7 +1,6 @@
 # Actual lower mixed quotient fiber kernels
 
 Module `Langlands.Representation.RankinSelberg.TwoBlockLowerFirstBlockFiberKernels`.
-Author: Worker 1196.
 
 This module constructs the two measurable kernels required by the published
 `TwoBlockLowerFirstBlockQuotientIntegrationStatement`, using the existing actual

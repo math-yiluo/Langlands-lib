@@ -1,8 +1,5 @@
 # Density of conjugators onto ground-field maximal tori
 
-Worker 1574, with Worker 1337 contributing to the parameter-scheme proof route and
-its geometric density input.
-
 `Langlands.GroupScheme.rationalMaximalTorusConjugateDensity` proves exactly the
 unchanged Library proposition
 `Langlands.GroupScheme.RationalMaximalTorusConjugateDensityStatement.{u}` from

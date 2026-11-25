@@ -1,8 +1,5 @@
 # Schreier factors and the actual group transfer
 
-Authors: Worker 45 and Worker 210. Worker 45 wrote the Lean proof; Worker 210
-audited it and prepared the accompanying documentation.
-
 This internal bridge identifies Mathlib's `MonoidHom.transfer` with the
 product of the subgroup factors
 `q.out⁻¹ * g * (g⁻¹ • q).out`. The proof chooses the actual quotient

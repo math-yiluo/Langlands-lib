@@ -1,7 +1,5 @@
 # Multiplication of commuting subgroup schemes
 
-Worker 1466.
-
 This is an internal adapter for the published `subgroupMultiplication` scheme
 morphism. For arbitrary group maps `j : H ⟶ G` and `i : K ⟶ G` over any base,
 assume their images commute on every test scheme. The theorem

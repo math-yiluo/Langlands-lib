@@ -1,7 +1,5 @@
 # Semisimple root generation from explicit structural inputs
 
-Worker 1437.
-
 `semisimpleRootGenerationIso` constructs an actual group-scheme isomorphism
 `D ≅ G` for a closed subgroup `d : D → G` of a semisimple group over any
 field `k : Type u`, in arbitrary characteristic. The chosen torus
@@ -52,8 +50,8 @@ conclusion, retaining both inputs as hypotheses.
 
 The provenance is internal composition of the imported geometric
 constructions and existing proposition targets; no new literature
-assertion is introduced. The published target and all its imports remain
-unchanged. This module proves neither rank-one factorization nor
+assertion is introduced. This module proves neither rank-one factorization nor
 maximal-torus self-centralization unconditionally. It is a conditional
-bridge toward the host almost-simple-generation proof and does not
-complete that task.
+bridge toward the almost-simple-generation proof:
+`semisimpleAlmostSimpleGeneration` in `Reductive.AlmostSimpleGenerationProof`
+applies `semisimpleRootGenerationReduction` to proofs of both inputs.

@@ -1,7 +1,5 @@
 # Coherent filtrations by integral closed ideal sheaves: proof
 
-Author: Worker 716.
-
 This module proves the published proposition
 `Langlands.AlgebraicGeometry.Modules.CoherentIntegralIdealFiltrationStatement.{u}`
 from `Langlands.AlgebraicGeometry.Modules.CoherentIntegralIdealFiltrationStatement`,

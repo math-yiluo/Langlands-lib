@@ -1,15 +1,8 @@
 # The geometry of the intersection of two rational parabolics
 
-Authors: Worker 59, Worker 49 and Worker 3976. The integrated module keeps
-Worker 59's more general Borel-pair helpers and one proof of the common exact
-geometry target. Worker 49's common-torus helper and Worker 3976's
-`IsParabolicSubgroup.isCommonTorusParabolicPair_baseChange_toAlgebraicClosure`
-have the same conclusion as `isCommonTorusParabolicPair_baseChange hG j j' hj hj'`
-here; their duplicate declarations are consolidated into that helper.
-
 Module `Langlands.GroupScheme.Absolute.ParabolicIntersectionGeometryProof` proves
 the published proposition
-`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement.{u}` (Worker 1349)
+`Langlands.GroupScheme.ParabolicIntersectionGeometryStatement.{u}`
 without any remaining hypothesis. It is a helper module for the proof of
 `Langlands.GroupScheme.ParabolicIntersectionTorusStatement.{u}` in
 `Langlands.GroupScheme.Absolute.ParabolicIntersectionTorusProof`. Every step is
@@ -26,7 +19,7 @@ with `j : T.toGrp ⟶ G`, a smooth closed subgroup `i : P ⟶ G`, and an actual 
 `SubgroupFunctor.range i = Dynamic.parabolic (CommGroupScheme.groupHom ζ ≫ j)`,
 
 an equality of subgroup functors on every test scheme. The published
-`absoluteBorelOvergroupCocharacter` (Workers 146, 1272 and 1240) states only the
+`absoluteBorelOvergroupCocharacter` states only the
 field-point consequence. Its proof, however, goes through this functor-level
 equality, and this lemma repeats that proof without the final evaluation at
 field points. It applies
@@ -42,7 +35,7 @@ the stated equality.
 `K`. It takes a connected reductive `G`, smooth closed subgroups `j : P ⟶ G` and
 `j' : P' ⟶ G`, and maps `f : B ⟶ P`, `f' : B' ⟶ P'` such that `f ≫ j` and
 `f' ≫ j'` are Borel subgroups. It proves `IsCommonTorusParabolicPair j j'`
-(the predicate of Worker 1240's module `ParabolicIntersectionCommonTorus`).
+(the predicate of the module `ParabolicIntersectionCommonTorus`).
 `twoBorelCommonMaximalTorus` supplies one maximal torus `t : T.toGrp ⟶ G` with
 factorizations `g ≫ (f ≫ j) = t` and `g' ≫ (f' ≫ j') = t`. Since `K` is
 algebraically closed, `T` is split by
@@ -65,7 +58,7 @@ likewise for `j'`. The previous lemma then applies.
 
 `parabolicIntersectionGeometry : ParabolicIntersectionGeometryStatement.{u}`
 applies the published conditional reduction
-`parabolicIntersectionGeometry_of_commonTorus` (Worker 1240). It supplies the
+`parabolicIntersectionGeometry_of_commonTorus`. It supplies the
 two hypotheses that reduction needs: the Library proof `dynamicConnected` of
 `DynamicConnectedStatement`, and the previous lemma as the common-torus input.
 The conclusion is the published statement. The actual pullback
@@ -78,7 +71,7 @@ group factoring through it.
 There are no restrictions on the field: it may have any characteristic and need
 not be perfect. The universe `u` is the universe of the statement. No splitness,
 minimality or nonemptiness assumption is added. The route differs from
-Worker 1240's sketch of `hTorus`, which goes through
+the sketch of `hTorus` in `ParabolicIntersectionCommonTorus`, which goes through
 `SplitParabolicCocharacterStatement`. Instead it uses the Borel overgroup
 recognition above. This needs only a Borel pair inside each parabolic, which is
 exactly the data from `twoBorelCommonMaximalTorus`. The proof uses neither

@@ -1,6 +1,6 @@
 # Incident-ray realization of parabolics containing the fixed residue torus
 
-This internal supporting unit proves maximality of the chosen residue apartment
+This module proves maximality of the chosen residue apartment
 torus and realizes every supplied parabolic containing its image in the
 reductive quotient. Realization remains conditional on
 `UnramifiedRootPositiveReductionStatement`. All declarations have arbitrary
@@ -34,7 +34,7 @@ quantification over supplied models and comparisons are retained.
 The result supplies neither those source models nor their comparisons. It
 requires the specified parabolic to contain the fixed residue torus; passing
 to arbitrary parabolics by conjugation or changing apartments remains separate.
-The host descended facet–parabolic order bijection is not asserted. The
+The descended facet–parabolic order bijection `UnramifiedFacetParabolicOrderStatement` is not asserted. The
 provenance is the imported specialization, unipotent quotient, fixed-torus
 classification, and prescribed-ray interfaces; no new original-literature
 assertion is made.

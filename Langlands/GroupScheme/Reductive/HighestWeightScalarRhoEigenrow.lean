@@ -79,7 +79,7 @@ theorem exists_highestWeight_dual_extremalRepresentation
     exact neg_lt_neg h
   · intro V t
     rw [hdual, Matrix.diagonal_apply_eq]
-    simp only [χ, ha, ← map_neg]
+    simp only [χ, ha, ← AddEquiv.map_neg]
 
   · exact (MatrixRepresentation.dual_rationalRepresentation_isIrreducible_iff σ₀).trans
       (MatrixRepresentation.conjugate_rationalRepresentation_isIrreducible_iff ρ _)
@@ -139,8 +139,12 @@ theorem exists_scalarRho_eigenrow
     apply Units.ext
     rw [characterEval_characterRestrict, MatrixRepresentation.minimumWeightCharacter_eval,
       Category.assoc, ← Grp.comp_hom_hom, Dynamic.centralizerToParabolic_comp, hw]
-    simp only [Dynamic.negativeRhoCharacter, map_nsmul,
-      Dynamic.restrict_extendCentralizerCharacter, map_neg, neg_nsmul]
+    have hns : ∀ (j : ℕ) (x : characterLattice p.torus),
+        (rationalCharacters.equivCharacterLattice p.torus).symm (j • x) =
+          j • (rationalCharacters.equivCharacterLattice p.torus).symm x := fun j x =>
+      (rationalCharacters.equivCharacterLattice p.torus).symm.toAddMonoidHom.map_nsmul j x
+    simp only [Dynamic.negativeRhoCharacter, hns,
+      Dynamic.restrict_extendCentralizerCharacter, AddEquiv.map_neg, neg_nsmul]
   refine ⟨σ, a, hirr.mpr hrat, ?_, ?_⟩
   · intro hz
     have he := congrFun hz a

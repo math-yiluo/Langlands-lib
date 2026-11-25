@@ -89,6 +89,6 @@ theorems
 and
 `AlgebraicGeometry.Scheme.Modules.exists_nonempty_iso_pullback_of_nonempty_iso_pullback_of_isDirectLimit`
 (statements in `Theorems/Thm_*.lean` files of the same names). They use FLT's own invertibility
-predicate `Scheme.Modules.IsInvertible` and an arbitrary directed system with `IsDirectLimit`.
+predicate `Scheme.Modules.IsInvertibleFLT` and an arbitrary directed system with `IsDirectLimit`.
 The propositions here specialise them to the system of finitely generated subalgebras and use
 the Library's `IsLocallyFreeRankOne`.

@@ -1,6 +1,6 @@
 # Gamma preservation for the two Hecke families
 
-Supporting module of Task 5003 (module
+Supporting module for the proof of `AssociatedGammaStatement` (module
 `Langlands.Automorphic.AssociatedGammaPreservation`). It discharges the two preservation
 inputs of the published two-twist engine (`InfinityGammaPreservation`,
 `FiniteGammaPreservation`) for the automorphic and arithmetic Hecke families used in the proof

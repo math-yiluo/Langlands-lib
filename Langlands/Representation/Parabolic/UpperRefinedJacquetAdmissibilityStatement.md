@@ -1,10 +1,10 @@
 # Admissibility of actual normalized upper refined Jacquet modules
 
-Author: Worker 828.
-
 This module states the closed proposition
 `Langlands.Parabolic.UpperRefinedJacquetAdmissibilityStatement.{uF,uV}`.
-It supplies no proof. It is the upper counterpart of the published clause
+It supplies no proof; the proof is
+`Langlands.Parabolic.upperRefinedJacquetAdmissibility`, in
+`Parabolic.UpperRefinedJacquetAdmissibilityProof`. It is the upper counterpart of the published clause
 `Langlands.Parabolic.RefinedOppositeJacquetAdmissibilityStatement`.
 
 ## Parameters
@@ -56,10 +56,11 @@ group `B.Levi F.Carrier`, a product of general linear groups, and to its
 parabolic subgroup that is the product of the upper block parabolics of the
 inner shapes `S i`. The block indices, bundled modulus characters and universe
 parameters are internal formalization choices, and match those of the
-published opposite clause. The statement was extracted from task
-5c9a0e18-0039-4f00-81bc-e103757b5a3a (weak upper Jacquet bounds under
-induction), where it is used in the spectral step, and is also needed by
-other geometric-lemma consumers.
+published opposite clause. The statement is used in the spectral step of the
+weak upper Jacquet bounds under induction
+(`Classification.InductionWeakJacquetBoundsAssembly`), and is also needed by
+other geometric-lemma consumers (for instance
+`Geometric.GeometricPieceUntwistedProjection`).
 
 No irreducibility, finite length, finite-dimensional carrier, tensor
 factorization or chosen canonical lift is a hypothesis. The statement makes no

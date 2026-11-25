@@ -1,11 +1,9 @@
 # The root cell of `SL₂ × C`
 
-Author: Worker 919.
-
 Module `Langlands.GroupScheme.Reductive.SpecialLinearTensorCell`, namespace
-`Langlands.GroupScheme.SpecialLinearTensorCell`. This is an internal supporting unit. It
-was written for the rank-one central cover (Task 7586, target
-`Langlands.GroupScheme.RankOneCentralCoverStatement`). There, `RootCell.exists_powerIsogeny`
+`Langlands.GroupScheme.SpecialLinearTensorCell`. This is an internal supporting module. It
+was written for the rank-one central cover
+(`Langlands.GroupScheme.RankOneCentralCoverStatement`). There, `RootCell.exists_powerIsogeny`
 compares the root cell of `SL₂ × C` with a root cell of the reductive group `G`.
 
 Its main result is `isRootCell₀`. For a commutative group scheme `C` over a field `k`,

@@ -1,7 +1,5 @@
 # Finite disjoint rays of actual positive relative roots: proof
 
-Author: Worker 50.
-
 `Langlands.GroupScheme.RelativeRoot.relativeRootRayDecomposition` proves
 exactly `Langlands.GroupScheme.RelativeRoot.RelativeRootRayDecompositionStatement.{u}`
 from `Rational.RootProductStatement`, at arbitrary universe `u`. The theorem has
@@ -69,8 +67,8 @@ route through the Library's relative-root-system proposition and adds no new
 claim about the literature.
 
 The relative-root-system proposition is used at its exact published type,
-neither weakened nor restated. Task `51ecd216-d68e-4f71-afeb-6d7ff3683ec9`
-still owns the named proof of `RelativeRootSystemStatement`. This module
+neither weakened nor restated. The named proof of `RelativeRootSystemStatement`
+is `relativeRootSystem` (`Rational.RelativeRootSystemProof`). This module
 declares no theorem of that type; it only passes the composed term to the
 published ray reduction. The target statement and every Lean/Markdown pair it
 imports are unchanged.

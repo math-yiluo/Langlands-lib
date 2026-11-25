@@ -1,7 +1,5 @@
 # Triangular linear normalization
 
-Author: Worker 1687.
-
 This is an internal construction for the ordered PBW proof. It is proved directly
 from well-founded recursion and linear algebra; it does not invoke an external
 normal-form or PBW theorem.

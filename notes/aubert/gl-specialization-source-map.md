@@ -1,11 +1,10 @@
 # GL Aubert specialization: actual models, full comparison targets and dependencies
 
-Workers 585 and 34 constructed the GL adapters and graded targets described
-below. This note maps original source assertions to those exact declarations,
+This note maps original source assertions to the GL adapters and graded
+targets described below,
 records the body/type dependency inventory including private helper constants,
 and preserves the remaining general-specialization and proof obligations.
-It supplies no proof of the full Aubert or Zelevinsky theorem. A staged target
-is not public mathematics until independent acceptance and integration.
+It supplies no proof of the full Aubert or Zelevinsky theorem.
 
 The scope and target inventory was checked against Library
 `0ebc0efd383ff160084af3b33ab2b7806f7a1dde` and the explicitly identified staged
@@ -41,15 +40,13 @@ shape at rank zero. All abbreviated Lean names in this section are under
 | Actual support sign | `Aubert.supportSign` is the unique sign making the actual unadjusted irreducible Aubert image effective. Existence uses the actual quasicuspidal embedding and signed effectivity; uniqueness uses actual involutivity/nonzeroness and integer positivity. `supportSign_of_support` gives `(-1)^(n-B.length)` for every actual quasicuspidal support presentation, matching Aubert Definition 2.1. |
 | Rankwise exact adjustment | `Aubert.adjustedOperator` extends those actual values through the proved Jordan–Holder factor-count/realization maps. `adjustedOperator_irreducible` is its exact-class formula; `adjustedOperator_rankZero` is identity on the whole actual degree-zero K0. The graded extension below preserves its actual unit. |
 
-SupportSign, ParabolicQuotient and RootSubsetExpansion were verified public at
-the snapshot. LeviModelTransport had machine validation and independent approval
-but awaited integration (`3ffc4cf3-9252-40f6-816b-93b2d24d31ac`). The quotient
-Jacquet (`d55f4230-35bb-45dd-b63e-196fe462fafe`) and induction/composite
-(`82b8e447-9f67-4b22-945f-58106eb3ada3`) pairs were staged. Their normal module
-paths are `Langlands/Representation/Parabolic/QuotientJacquetComparison` and
-`QuotientInductionComparison`, with paired Lean and Markdown. The latter imports
-the former, which imports LeviModelTransport. These focused units must integrate
-in that order before their names are public downstream proof targets.
+SupportSign, ParabolicQuotient and RootSubsetExpansion were in the Library at
+the snapshot; LeviModelTransport and the quotient Jacquet and
+induction/composite pairs entered it later. Their module paths are
+`Langlands/Representation/Parabolic/LeviModelTransport`,
+`QuotientJacquetComparison` and `QuotientInductionComparison`, with paired
+Lean and Markdown. The latter imports the former, which imports
+LeviModelTransport.
 
 The group-model construction works over commutative topological rings, with a
 Hausdorff condition only where actual subgroup closedness requires it. The
@@ -62,25 +59,25 @@ identity follows from using the explicit block character.
 
 ## General-specialization bridges still required
 
-The shared general adapter task `593ef603-6672-4424-976c-14e11e920d9c` had no
-public artifact or shared draft at this snapshot. Its exact accepted general
-datum, normalized induction/Jacquet and operator declarations must be specialized
-when available. The current GL model comparisons above supply concrete target
+The shared general adapters were not in the Library at this snapshot; they are
+now (see the [general-to-GL addendum](gl-general-specialization.md)). Their
+general datum, normalized induction/Jacquet and operator declarations must be
+specialized. The current GL model comparisons above supply concrete target
 sides; they do not instantiate a hypothetical general datum or construct a
 competing general operator.
 
 | Bridge | Exact available starting point and retained obligation |
 | --- | --- |
-| Algebraic GL, parabolic, Levi and radical | Use the existing `GroupScheme.GeneralLinear.groupScheme`, its algebraic point equivalences and the actual `Group.GL.Blocks` models. The algebraic-owner route is Worker 1107; actual scheme-subgroup/block identification is a separate construction/proof requirement. |
-| Rational-point topology | `GroupScheme.GeneralLinear.pointsEquiv`, `affinePointsEquiv` and `homEquiv` are algebraic maps. The scheme-point/matrix multiplicative homeomorphism with commuting subgroup embeddings/projections, transported closedness, local compactness and nonarchimedeanness was not verified public. Worker 118 routed this to Conrad task `886bf565-95e9-4dc6-8a9d-73284a523668` (Workers 105/208). The ring/test-algebra scheme API currently shares one universe; independent-universe and rank-zero comparison must be checked explicitly. |
+| Algebraic GL, parabolic, Levi and radical | Use the existing `GroupScheme.GeneralLinear.groupScheme`, its algebraic point equivalences and the actual `Group.GL.Blocks` models. The algebraic route is `GroupScheme.Dynamic.GeneralLinearRationalPoints`; actual scheme-subgroup/block identification is a separate construction/proof requirement. |
+| Rational-point topology | `GroupScheme.GeneralLinear.pointsEquiv`, `affinePointsEquiv` and `homEquiv` are algebraic maps. The scheme-point/matrix multiplicative homeomorphism with commuting subgroup embeddings/projections, transported closedness, local compactness and nonarchimedeanness was not in the Library at the snapshot; `Langlands.Group.GL.AlgebraicPointTopology` supplies it now (see the [topology supplement](gl-algebraic-point-specialization.md)), with the Conrad point-topology work. The ring/test-algebra scheme API currently shares one universe; independent-universe and rank-zero comparison must be checked explicitly. |
 | Matrix topology | Existing `PadicField.TopologicalData.generalLinearTopology`, `generalLinearTopologicalGroup`, `generalLinearLocallyCompactSpace` and the PadicBlocks parabolic/radical/Levi topology, compactness, embeddings, projection and `blockDecomposition` are actual matrix-side tools. Their names do not supply a scheme-point comparison. |
-| Actual roots/Weyl/standard subsets | `GroupScheme.GeneralLinear.diagonalTorus`, `characterCoordEquiv`, `cocharacterCoordEquiv`, `rootDatum`, `permutationAction` and reflection formulas give the full central lattice coordinates and a standard split datum. Identifying it with actual adjoint roots, maximality and rational-point Weyl image remains the `GeneralLinearRootDatumStatement` proof obligation. Relative-root owners 1220/176 and algebraic owner 1107 coordinate the actual standard-block and empty-root-set bridge. |
-| Published relative-root scope | `GroupScheme.Rational.RelativeRoots` constructs `relativeRoots`, `relativeWeylGroup`, `relativeRootSpan`, `relativeWeylAction` and `IsGenericCocharacter`. `Rational.Statement` gives `RelativeRootSystemStatement`, `RationalBruhatStatement` and `GenericCentralizerStatement` as propositions, not proofs. A larger shared draft is not additional public coverage. |
-| Block characters/weights | Actual block-Levi determinant scheme characters, compatibility with `Group.GL.BlockModulus`, and block-radical root-weight multiplicities remain bridges beyond the published standard split root datum. Worker 339 routed these through owners 1107/207 and 1220/176. The weight-decomposition candidate had machine validation and independent approval at the snapshot, with integration pending. |
-| Generic induction design | The unreviewed closed-semidirect task `82bfcc29-81a6-4092-9b9c-f089d2abfb76`, revision 2, records actual closed M/U/P, normalizer containment, disjointness and product, then actual covariance and full smooth right translation. A private GL test proves its projection equals the actual diagonal projection, its trivial-radical covariance equals the existing GL inducing action, and its induced-function comparison is natural and pointwise identity. This is development evidence against an unreviewed interface, not an accepted shared adapter. The paused owner's hold is retained. |
+| Actual roots/Weyl/standard subsets | `GroupScheme.GeneralLinear.diagonalTorus`, `characterCoordEquiv`, `cocharacterCoordEquiv`, `rootDatum`, `permutationAction` and reflection formulas give the full central lattice coordinates and a standard split datum. Identifying it with actual adjoint roots, maximality and rational-point Weyl image remains the `GeneralLinearRootDatumStatement` proof obligation. The bridge for the actual standard blocks and the empty root set joins the relative-root work to the algebraic-group work. |
+| Published relative-root scope | `GroupScheme.Rational.RelativeRoots` constructs `relativeRoots`, `relativeWeylGroup`, `relativeRootSpan`, `relativeWeylAction` and `IsGenericCocharacter`. `Rational.Statement` gives `RelativeRootSystemStatement`, `RationalBruhatStatement` and `GenericCentralizerStatement` as propositions; at the snapshot they were not proved, and the Library now proves all three (`relativeRootSystem`, `rationalBruhat`, `genericCentralizer`). |
+| Block characters/weights | Actual block-Levi determinant scheme characters, compatibility with `Group.GL.BlockModulus`, and block-radical root-weight multiplicities remain bridges beyond the published standard split root datum. They belong to the algebraic-group and relative-root work. A weight-decomposition construction was then outside the Library. |
+| Generic induction design | A closed-semidirect induction design, then outside the Library, records actual closed M/U/P, normalizer containment, disjointness and product, then actual covariance and full smooth right translation. A private GL test proves its projection equals the actual diagonal projection, its trivial-radical covariance equals the existing GL inducing action, and its induced-function comparison is natural and pointwise identity. This is development evidence against a design outside the Library, not a shared adapter of the Library. |
 | Actual Haar normalization | `HaarModulus.restrictCharacter` and closed-subgroup wrappers construct actual normalizer moduli and positive/inverse halves. Identifying them with the explicit GL block character and root-product formula is retained Chapter V obligation D07, including orientation. It is not an additional external structural input. |
 
-The finite external boundary is the separately reviewed
+The finite external boundary is the
 [Renard Chapter V ledger](../renard/chapter-v-structural-inputs.md), rows S01–S23.
 Its D01–D08 deductions, intrinsic construction laws and all representation-theoretic
 premises remain obligations. The rational Weyl quotients have centralizer
@@ -127,31 +124,30 @@ is written as a parameter of a construction.
 ## Exact final targets and proof succession
 
 All names in this section are in `Langlands.Aubert`. The main final module is
-`Langlands/Representation/Aubert/ZelevinskyComparison.lean`. Its frozen
-candidate is `a666a2cb-65ab-4b7a-960d-02f523fb0a93`. Its helper candidates are
-`924a6b4b-ff72-4b80-919a-8f2e6b5412d7` (`ZelevinskyPolynomial`) and
-`0af82854-592c-40de-bc4d-80dfef858c6a` (`GradedOperatorComparison`).
-These three candidates were still unpublished when the final-target extraction was
-made; the final candidate has accepted machine validation and is undergoing
-semantic review, and the helpers have approving semantic reports. The final
-bundle includes byte-identical copies of the two helper pairs. Integrate
-`ZelevinskyPolynomial`, then `GradedOperatorComparison`, then
-`ZelevinskyComparison`, retaining one copy of each shared path. Fresh seven-module
-restoration check `fb70a667-8349-4166-8870-eb9f218339ab` has no errors or warnings.
+`Langlands/Representation/Aubert/ZelevinskyComparison.lean`. Its helper
+modules are `ZelevinskyPolynomial` and `GradedOperatorComparison`, which it
+imports. The three were outside the Library when the final targets were
+extracted and are in the Library now. A seven-module restoration check had
+no errors or warnings.
 
-The final eight Prop-valued targets were individually inspected in the approved
-environment. These are targets for subsequent proofs, not eight proved theorems.
+The final eight Prop-valued targets were individually inspected as Prop-valued
+in the Library's Lean environment. They were targets for subsequent proofs. Of
+these, the Library now proves `AdjustedHomogeneousMultiplicativityStatement`
+(`adjustedHomogeneousMultiplicativity`, for every `hx`), `AdjustedSegmentExchangeStatement`,
+`AdjustedInvolutivityStatement` and `AubertTheorem23Statement`, and through the last its
+components `AdjustedMultiplicativityStatement` and `AubertZelevinskyComparisonStatement`, which
+have no theorem of their own; this note records no proof of the other two.
 
-| Exact target | Scope and explicit parameters | Successful Prop inspection |
-| --- | --- | --- |
-| `AdjustedHomogeneousMultiplicativityStatement` | The actual adjusted rankwise operator preserves the actual binary induction product on arbitrary two homogeneous exact-K0 classes; parameter `hx`. | `506007ab-94dd-4c27-a6bc-2f55539c0126` |
-| `AdjustedMultiplicativityStatement` | Multiplicativity on every pair of graded classes; parameter `hx`. | `a8e6a97b-b849-4da8-8b2f-ea49025304b3` |
-| `AdjustedSegmentExchangeStatement` | Unsigned equality on the identified actual segment-socle and special-quotient classes; no `hx`, `hl` or `hp` parameter. | `dcfaf529-2dcb-4e5a-9009-43beafea3b49` |
-| `AdjustedInvolutivityStatement` | Applying the actual graded adjusted additive operator twice is the identity on every graded class; no `hx`, `hl` or `hp` parameter. | `b575aa2a-8046-4729-873a-7f0e77e126ff` |
-| `AubertZelevinskyComparisonStatement` | Equality of integer-linear maps on the entire graded exact K0; parameters `hx`, `hl`, `hp`. | `cdba7951-16c9-4aa0-80de-67c901c34a6b` |
-| `AubertZelevinskyRingComparisonStatement` | Equality of ring endomorphisms with the actual adjusted additive map as the first underlying function; parameters `hx`, `hl`, `hp`, `hm`. | `183b19bc-bf7d-4fea-8784-bdc95e0186b6` |
-| `AubertZelevinskyInvolutionComparisonStatement` | Equality of the actual adjusted integer-linear map with the additive map underlying the constructed Zelevinsky ring involution; parameters `hx`, `hl`, `hp`, `hi`. | `09378f47-e5b7-497f-b7f9-555042545933` |
-| `AubertTheorem23Statement` | Conjunction of actual adjusted multiplicativity, constructed Zelevinsky involutivity and whole additive comparison; parameters `hx`, `hl`, `hp`. | `cb1a2883-a81f-451d-afc9-6946ba82a305` |
+| Exact target | Scope and explicit parameters |
+| --- | --- |
+| `AdjustedHomogeneousMultiplicativityStatement` | The actual adjusted rankwise operator preserves the actual binary induction product on arbitrary two homogeneous exact-K0 classes; parameter `hx`. |
+| `AdjustedMultiplicativityStatement` | Multiplicativity on every pair of graded classes; parameter `hx`. |
+| `AdjustedSegmentExchangeStatement` | Unsigned equality on the identified actual segment-socle and special-quotient classes; no `hx`, `hl` or `hp` parameter. |
+| `AdjustedInvolutivityStatement` | Applying the actual graded adjusted additive operator twice is the identity on every graded class; no `hx`, `hl` or `hp` parameter. |
+| `AubertZelevinskyComparisonStatement` | Equality of integer-linear maps on the entire graded exact K0; parameters `hx`, `hl`, `hp`. |
+| `AubertZelevinskyRingComparisonStatement` | Equality of ring endomorphisms with the actual adjusted additive map as the first underlying function; parameters `hx`, `hl`, `hp`, `hm`. |
+| `AubertZelevinskyInvolutionComparisonStatement` | Equality of the actual adjusted integer-linear map with the additive map underlying the constructed Zelevinsky ring involution; parameters `hx`, `hl`, `hp`, `hi`. |
+| `AubertTheorem23Statement` | Conjunction of actual adjusted multiplicativity, constructed Zelevinsky involutivity and whole additive comparison; parameters `hx`, `hl`, `hp`. |
 
 Here `hx` proves `BinaryProductExactnessStatement`, `hl` proves
 `GradedInductionRingLawsStatement F T hx`, `hp` proves
@@ -162,13 +158,21 @@ for representations and integral for exact K0; every comparison retains the
 existing `PadicField` model, supplied topology, independent field and carrier
 universes and the actual degree-zero group.
 
-The parent can create focused proof successors from these exact names once
-each defining pair is published, in the following dependency order. This is a map of remaining mathematical
-obligations, not a declaration that these proofs already exist.
+The proofs of these exact names follow the dependency order below. This is a
+map of mathematical obligations. The Library now proves binary exactness, the
+ring laws, the product-Levi tensor prerequisites and bijectivity, the
+polynomial comparison, adjusted homogeneous multiplicativity, the adjusted
+segment identity, adjusted involutivity and `AubertTheorem23Statement`. The three components of that conjunction,
+`AdjustedMultiplicativityStatement`, `ZelevinskyInvolutivityStatement` and the whole additive
+comparison `AubertZelevinskyComparisonStatement`, have no theorem of their own, but
+`aubertTheorem23` proves them for every `hx`, `hl` and `hp` (and the Library proves `hl` and `hp`,
+as `gradedInductionRingLaws` and `segmentPolynomialComparison`). This note records no proof of
+`SegmentMonomialSpanningStatement`, `SegmentMonomialBasisStatement` or the other two whole
+comparisons.
 
 | Stage | Exact target or existing construction | Needed mathematical content and consumer |
 | --- | --- | --- |
-| Binary exactness | `BinaryProductExactnessStatement` in `GradedGrothendieck` | Preserve every actual mapped finite-length short exact sequence in both inputs of the all-ranks binary product. Finite-length preservation is already proved by `binaryProduct_preservesFiniteLength`. Worker 76 has published focused proof task `9e926f35-f515-46d5-bf8c-80ea29b66f4b` r1 for this public target; publication of a task does not supply its proof. |
+| Binary exactness | `BinaryProductExactnessStatement` in `GradedGrothendieck` | Preserve every actual mapped finite-length short exact sequence in both inputs of the all-ranks binary product. Finite-length preservation is already proved by `binaryProduct_preservesFiniteLength`. The Library proves it (`binaryProductExactness`). |
 | Ring laws | `GradedInductionRingLawsStatement` after `hx` | Associativity, commutativity and both unit laws for the constructed actual induction multiplication. Bilinearity already supplies the additive/distributive laws. Its proof supplies `hl` for the conditional `gradedInductionRing`. |
 | Product-Levi tensor | `ProductLeviTensorPrerequisitesStatement`, then `ProductLeviTensorBijectiveStatement` in `ProductLeviGrothendieck` | Actual finite length and two-variable exactness for the product-Levi tensor functor, then bijectivity of its exact-K0 tensor map. The tensor target is the product Levi. The existing `productLeviInductionTensorMap_eq` only identifies the composite after induction into the larger GL group. |
 | Polynomial comparison | `SegmentPolynomialComparisonStatement` after `hx`, `hl`; related `SegmentMonomialSpanningStatement` and `SegmentMonomialBasisStatement` | Actual polynomial evaluation must be bijective. The full family of induction monomials, including the empty one, supplies the additive basis. The implemented `segmentPolynomialEquiv`, `segmentMonomialBasis` and `segmentMonomialBasis_apply` consume `hp`; defining them does not prove `hp`. |
@@ -177,7 +181,7 @@ obligations, not a declaration that these proofs already exist.
 | Actual adjusted segment identity | `AdjustedSegmentExchangeStatement` | Combine the existing signed unadjusted exchange on identified actual constituents with the actual support-sign formula. The unsigned target is separate from both a representation isomorphism and the unadjusted `(-1)^(degree-length)` identity. |
 | Whole comparison and assembly | `AubertZelevinskyComparisonStatement`, `AubertZelevinskyRingComparisonStatement`, `AubertZelevinskyInvolutionComparisonStatement`, `AdjustedInvolutivityStatement`, `AubertTheorem23Statement` | `gradedOperatorRingHom_eq_zelevinsky` implements the algebraic implication from `hp`, product, unit and segment conditions; `gradedLinearMap_ext_monomials` supplies the additive route using all monomials. Actual involutivity and the involution comparison additionally use `hi`. Assemble the full primary target only after the named lower obligations are proved. |
 
-None of these representation-theoretic premises is discharged by the parent's allowed external Renard Chapter V structural boundary.
+None of these representation-theoretic premises is discharged by the general program's allowed external Renard Chapter V structural boundary.
 
 ## Exact transitive declaration inventory
 
@@ -192,11 +196,9 @@ inventory, not a semantic certificate that a theorem is independent of
 classification. Classification modules also contain basic definitions and
 algebraic transport proofs. Proof-route descriptions retain their actual meaning.
 
-The original six graded roots were extracted in diagnostic
-`a6b45808-de31-4db0-a8a5-a07a8d24514c`, the eight final roots in
-`7652f402-cfed-4e39-89b2-b685ff421289`, and the thirteen specialization roots in
-`5756ea3a-a5b1-4531-8be6-66389fcd5cad`, in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. They touch 842 distinct
+The original six graded roots, the eight final roots and the thirteen
+specialization roots were extracted by three diagnostics in the Library's
+Lean environment. They touch 842 distinct
 project modules, each with nonempty same-stem Markdown. Every publicly present
 source pair byte-matched Library `0ebc0efd383ff160084af3b33ab2b7806f7a1dde`.
 The only additional pairs were the staged modules listed below. The normalized
@@ -966,7 +968,7 @@ and segment-subdivision obligations even though their targets are conditional.
 ### Classification-origin source fingerprints
 
 Each row gives SHA-256 for the actual defining module and its paired Markdown
-at the audit snapshot; hashes are not publication or proof receipts.
+at the audit snapshot; hashes identify files and are not evidence of proofs.
 
 | Module | Lean SHA-256 | Markdown SHA-256 |
 | --- | --- | --- |

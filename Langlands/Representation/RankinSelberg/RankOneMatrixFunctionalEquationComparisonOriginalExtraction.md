@@ -1,6 +1,6 @@
 # Original matrix-to-block extraction with the actual averaged coefficient
 
-Worker 396. This is an internal derived interface for the matrix functional
+This is an internal derived interface for the matrix functional
 equation comparison. It composes the published box calculation and the literal
 original block-zero identification. It asserts no new source transcription.
 The field and representation-carrier universes remain independent.
@@ -41,5 +41,6 @@ No self-duality, irreducibility, finite length, nonzero-functional premise,
 extra rank-one convergence, rational continuation or functional equation is
 assumed. The supplied additive Haar measure is retained without normalization.
 This result proves only the original scalar comparison. A simultaneous genuine
-dual comparison with the same coefficient, test and scalar remains a separate
-obligation, as does the host task's closed all-rank theorem.
+dual comparison with the same coefficient, test and scalar is not proved here,
+nor is the closed all-rank theorem `rankOneMatrixFunctionalEquationComparison`
+(in `RankOneMatrixFunctionalEquationComparisonProof`).

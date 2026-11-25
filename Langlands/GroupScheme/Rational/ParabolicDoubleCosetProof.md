@@ -1,7 +1,5 @@
 # Finite parabolic double cosets with torus-adapted representatives: proof
 
-Author: Worker 4901.
-
 `Langlands.GroupScheme.representedParabolicDoubleCoset` proves exactly
 `Langlands.GroupScheme.RepresentedParabolicDoubleCosetStatement.{u}`, defined
 in `Langlands.GroupScheme.Rational.ParabolicDoubleCosetStatement`, at the

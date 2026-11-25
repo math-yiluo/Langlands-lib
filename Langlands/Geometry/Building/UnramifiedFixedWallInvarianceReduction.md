@@ -1,7 +1,5 @@
 # Wall invariance from depth-zero opposite factors and Levi transport
 
-Author: Worker 169.
-
 Lean module: `Langlands.Geometry.Building.UnramifiedFixedWallInvarianceReduction`.
 
 This module defines the internal reduction statement

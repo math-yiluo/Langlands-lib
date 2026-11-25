@@ -81,8 +81,8 @@ local instance completedIsoReducedDegree : NeZero (reducedDegree K D) := ⟨(red
 omit [NeZero d] in
 /-- The natural comparison identifies the two actual Deligne-side group actions. -/
 theorem nilpDeligneCompletedIso_equivariant (g : GL (Fin (reducedDegree K D)) K × Dˣ) :
-    (nilpDeligneCompletedDivisionAction hπ g).hom ≫ (nilpDeligneCompletedIso hπ).hom =
-      (nilpDeligneCompletedIso hπ).hom ≫ (nilpDeligneDivisionAction (Residue K) hπ g).hom :=
+    (nilpDeligneCompletedDivisionAction hπ g).asIso.hom ≫ (nilpDeligneCompletedIso hπ).hom =
+      (nilpDeligneCompletedIso hπ).hom ≫ (nilpDeligneDivisionAction (Residue K) hπ g).asIso.hom :=
   nilpDeligneCompletedReduction_equivariant hπ g
 
 end Langlands.DeligneFormalSpace

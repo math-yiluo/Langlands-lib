@@ -1,9 +1,5 @@
 # From represented-parabolic vanishing to standard cuspidality
 
-Author: Worker 1276.
-Worker 1742 specified the consumer interface. Worker 1270 supplied the published
-recognition theorem and identified its application here.
-
 This internal adapter constructs the canonical linear equivalence
 `standardUnipotentCoinvariantsEquiv` between the coinvariants of a represented
 standard radical and those of the exact standard point subgroup. It preserves

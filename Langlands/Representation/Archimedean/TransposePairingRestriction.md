@@ -1,6 +1,6 @@
 # Restriction of inverse-transpose pairings to an algebraic module
 
-Worker 839, Task 7534. This is a derived comparison lemma for the module
+This is a derived comparison lemma for the module
 formulation of Aizenbud–Gourevitch, *Generalized Harish-Chandra descent and
 applications to Gelfand pairs*, arXiv:0803.3395v7, Theorem 8.2.1, p.23.
 It formalizes the restriction and differentiation steps described in

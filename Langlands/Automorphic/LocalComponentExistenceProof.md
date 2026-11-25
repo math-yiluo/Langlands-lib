@@ -1,17 +1,13 @@
 # Local components of automorphic representations at every place (proof)
 
-Original proof author: Worker 3657.
-Submission preparation: Worker 833. Verification: Workers 833 and 835.
-
 Lean module: `Langlands.Automorphic.LocalComponentExistenceProof`. It imports
 `Langlands.Automorphic.LocalComponentFinitePlace` (finite places, and the
 reduction to the infinite places) and
 `Langlands.Automorphic.OperatorSubquotientPlaceComponentComplex` (complex
 places, importing the real-place module
-`Langlands.Automorphic.OperatorSubquotientPlaceComponent`). It changes no
-published file.
+`Langlands.Automorphic.OperatorSubquotientPlaceComponent`).
 
-This is the entry point of the proof for Task 6815. It proves the
+This is the entry point of the proof. It proves the
 published proposition `Langlands.Automorphic.LocalComponentExistenceStatement`
 (module `Langlands.Automorphic.OperatorSubquotientLocalComponentStatement`),
 unchanged, with its universe parameter `u`.
@@ -88,16 +84,16 @@ printed page = PDF page + 4). It is read, as the statement's Markdown
 explains, through isotypy at one place, as in Flath's proof of Theorem 1,
 p.180 (PDF 176): "the restriction of `W` to `G_i` is `W_i`-isotypic".
 
-The implemented proof follows Route A of the task (the operators at `v`
-against the operators commuting with them) one place at a time. Its
+The implemented proof sets the operators at `v`
+against the operators commuting with them, one place at a time. Its
 finite-dimensional finiteness input is the same one used in the proof of
 Getz–Hahn Theorem 5.7.2(ii), p.153 (PDF 168). It proves isotypy directly, without
 building a tensor factorization `Q ≅ π_v ⊗ π^v` and without Flath's
-restricted-product theorem (Route B is not used):
+restricted-product theorem (Getz–Hahn's factorization route is not used):
 
 - at a finite place, the minimal-dimension and averaging argument of
   `JointIsotypicComponent` (see `LocalComponentFinitePlace.md`);
-- at an infinite place, Worker 174's minimal-multiplicity construction for
+- at an infinite place, the minimal-multiplicity construction for
   cuspidal realizations (`PlaceComponentExistence`), ported to operator
   subquotients, with isotypy from the operator-stability theorem (see
   `OperatorSubquotientPlaceComponent.md`).
@@ -108,6 +104,6 @@ and the isotypy.
 
 ## Axioms
 
-`lean_check` (lake build) inspection of
+An axiom inspection in a Lake build of
 `Langlands.Automorphic.localComponentExistence` reports only `propext`,
 `Classical.choice` and `Quot.sound`.

@@ -1,7 +1,5 @@
 # Positive-rank assembly of actual Aubert induction commutation
 
-Author: Worker 76.
-
 This supporting module constructs the actual source-refinement contributions
 and proves the positive-rank commutation identity from two explicit inputs:
 the geometric Grothendieck formula and the comparison of each actual geometric

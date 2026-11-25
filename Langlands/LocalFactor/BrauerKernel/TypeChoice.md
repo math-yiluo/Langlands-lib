@@ -1,7 +1,6 @@
 # Admissible unramified exponents for actual Brauer relations
 
-Author: Worker 1838. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. It supplies
 the exponent choices required by `typeComponent_eq_zero`
 (`BrauerKernel.TypeSplit`). Combining the two gives the unconditional type

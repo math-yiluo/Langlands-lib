@@ -1,7 +1,5 @@
 # Spherical vectors under multiplication by any Hecke determinant character
 
-Author: Worker 5136.
-
 Let `S` be a local realization of `GL_{r+1}(F_v)` at a finite place `v`, and let
 `χ` be an arbitrary Hecke character whose local determinant character
 `χ_v ∘ det` (the Library's `χ.finiteLocalDeterminant (r + 1) v`) is trivial on

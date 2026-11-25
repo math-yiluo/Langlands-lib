@@ -1,7 +1,5 @@
 # Ampleness of the actual finite parabolic Lie determinant dual
 
-Authors: Worker 593 and Worker 796.
-
 `Langlands.GroupScheme.finiteAffineParabolicDeterminantDualAmple` proves exactly
 `Langlands.GroupScheme.FiniteAffineParabolicDeterminantDualAmpleStatement.{u}`
 for every universe `u`. The published statement and its imported Lean/Markdown

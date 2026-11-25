@@ -72,14 +72,15 @@ def horizontalCyclesMap (A : S.Intertwiner T) (q : ℕ) :
     S.horizontalDifferential_finite T.horizontalDifferential_finite
     A.horizontalMap (horizontalMap_chain A) q
 
+set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
 /-- Descend the actual full operator map to the existing cohomology quotient. -/
 def horizontalCohomologyMap (A : S.Intertwiner T) (q : ℕ) :
     (S.horizontalCohomologyFiniteRepresentation q).IntertwiningMap
       (T.horizontalCohomologyFiniteRepresentation q) :=
-  Horizontal.mapCohomologyIntertwiner H σ ρ τ hσ hρ hτ hι hκ
+  (Horizontal.mapCohomologyIntertwiner H σ ρ τ hσ hρ hτ hι hκ
     S.horizontalFiniteRepresentation T.horizontalFiniteRepresentation
     S.horizontalDifferential_finite T.horizontalDifferential_finite
-    A.horizontalMap (horizontalMap_chain A) q
+    A.horizontalMap (horizontalMap_chain A) q : _)
 
 end Intertwiner
 end OperatorRealization

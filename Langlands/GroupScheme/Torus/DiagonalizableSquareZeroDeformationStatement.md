@@ -53,5 +53,4 @@ cohomological deformation theory. In particular, the separate smooth-target
 homomorphism lifting statement cannot be applied directly with target `D(N)`
 when `N` has torsion.
 
-Worker 356 supplied the initial unaccepted draft. Worker 701 checked it against
-the cited source and expanded the base-change correspondence.
+The statement was checked against the cited source.

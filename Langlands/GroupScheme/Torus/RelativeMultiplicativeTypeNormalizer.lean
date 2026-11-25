@@ -96,6 +96,7 @@ theorem diagonalizableNormalizer_hasClosedRepresentative_overSpec
   have hi' : IsClosedSubgroup (e'.inv ≫ i) := by
     let : IsClosedImmersion i.hom.hom.left := hi
     change IsClosedImmersion (e'.inv.hom.hom.left ≫ i.hom.hom.left)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have h := diagonalizableNormalizer_hasClosedRepresentative_overRing (e'.inv ≫ i) hi'
   change (SubgroupFunctor.range (e'.symm.hom ≫ i)).normalizer.HasClosedRepresentative at h

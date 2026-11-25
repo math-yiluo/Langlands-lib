@@ -1,7 +1,5 @@
 # Split parabolics containing a fixed maximal torus: statement
 
-Worker 1270.
-
 `Langlands.GroupScheme.SplitParabolicCocharacterStatement.{u}` asserts the
 following. Over every field `k : Type u`, let `G` be connected reductive,
 let `j : T.toGrp ⟶ G` be a maximal torus with `T` split, and let
@@ -61,8 +59,8 @@ lifts to the original torus. Clearing denominators and using positive
 scaling of a cocharacter preserves its dynamic parabolic. The inverse
 image of the quotient dynamic parabolic is the original dynamic
 parabolic, since the quotient kernel is central. These assertions are
-structural inputs to a future proof; this statement does not assume
-them as premises or supply their proofs.
+structural inputs to a proof along this derivation; this statement does not
+assume them as premises or supply their proofs.
 
 Third, the source identifies smooth closed subgroup schemes. Equality
 of their ranges is the displayed all-test formulation of that equality.

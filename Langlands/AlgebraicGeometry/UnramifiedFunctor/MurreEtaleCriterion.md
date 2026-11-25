@@ -1,7 +1,5 @@
 # Murre's separated étale representability criterion
 
-Author: Worker 668.
-
 Over a locally noetherian base, a small-valued presheaf with the Zariski
 and singleton fpqc sheaf conditions, filtered-colimit preservation,
 adic-limit bijectivity, valuative injectivity and bijective restriction on local

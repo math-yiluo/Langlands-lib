@@ -1,7 +1,5 @@
 # Unipotence of smooth groups through geometric points: proof
 
-Author: Worker 950.
-
 `Langlands.GroupScheme.smoothUnipotentGeometricPoints` proves
 `Langlands.GroupScheme.SmoothUnipotentGeometricPointsStatement.{u}` for every
 universe `u`. The theorem's type is exactly that proposition, with no extra

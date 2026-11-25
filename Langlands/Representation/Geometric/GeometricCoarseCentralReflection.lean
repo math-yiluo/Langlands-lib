@@ -112,16 +112,27 @@ theorem geometricPiece_coarse_character_reflects :
     IsGeneralizedEigencharacter
       ((T.normalizedRefinedJacquet B S A.representation).comp
         (inverseCoarseScalarIntersectionHom F.Carrier B C w S R hS hR)) χ := by
-  let := T.topology
-  let := T.valuativeRel
-  let := T.localField
+  -- `letI`, not `let`: a `let` here makes `letToHave` repeat the costly check of `e0`.
+  letI := T.topology
+  letI := T.valuativeRel
+  letI := T.localField
   intro A χ hχ
-  let J := (T.normalizedRefinedJacquetFunctor B S).obj A
-  let J' := (subgroupEqualityFunctor _ _ hS.symm).obj J
-  let Q := (intersectionTransportFunctor F.Carrier B C w).obj J'
-  let Q' := (subgroupEqualityFunctor _ _ hR).obj Q
+  letI J := (T.normalizedRefinedJacquetFunctor B S).obj A
+  letI J' := (subgroupEqualityFunctor _ _ hS.symm).obj J
+  letI Q := (intersectionTransportFunctor F.Carrier B C w).obj J'
+  letI Q' := (subgroupEqualityFunctor _ _ hR).obj Q
+  have e0 : Representation.Equiv ((geometricPieceFunctor T B C w S R hS hR).obj A).ρ
+      (T.normalizedRefinedInduced C R Q'.representation) :=
+    (Representation.Equiv.refl ((geometricPieceFunctor T B C w S R hS hR).obj A).ρ : _)
+  have e0c : Representation.Equiv
+      ((((geometricPieceFunctor T B C w S R hS hR).obj A).ρ).comp
+        (C.blockScalarLevi F.Carrier))
+      ((T.normalizedRefinedInduced C R Q'.representation).comp
+        (C.blockScalarLevi F.Carrier)) :=
+    Representation.Equiv.mk e0.toLinearEquiv
+      (fun a => e0.isIntertwining' (C.blockScalarLevi F.Carrier a))
   have href := T.normalizedRefinedInduced_coarse_character_reflects C R
-    Q'.representation χ hχ
+    Q'.representation χ ((isGeneralizedEigencharacter_iff_of_equiv e0c χ).mp hχ)
   let e := geometricPieceCoefficientEquiv T B C w S R hS hR A
   let ec : Representation.Equiv
       (Q'.representation.comp (coarseScalarRefinedLevi C R F.Carrier))

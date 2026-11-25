@@ -1,8 +1,7 @@
 # Reduction of local quaternionic spin groups to two geometric statements
 
-Author: Worker 97.
-
-This derived module proves a conditional assembly result for Task 5397. At any
+This derived module proves a conditional assembly result for
+`LocalSpinRankOneStatement`. At any
 universe `u`, `LocalSpinRankOneReductionStatement` is the implication from the
 published `OrdinaryOrthogonalGeometryStatement` and
 `QuaternionicMoritaIsometryStatement` to the exact, unchanged
@@ -48,5 +47,8 @@ All objects and predicates are imported unchanged. Both geometric assumptions
 range over arbitrary characteristic, including two, and the proof introduces
 no characteristic restriction. Provenance is entirely derived: this module
 composes the named published statements and theorems and makes no additional
-claim about the original literature. Actual proofs of the two geometric
-propositions remain separate prerequisites for the unconditional host theorem.
+claim about the original literature. The two geometric propositions are proved
+in separate modules (`ordinaryOrthogonalGeometry` in
+`OrdinaryOrthogonalGeometryProof`, `quaternionicMoritaIsometry` in
+`QuaternionicMoritaIsometryProof`), and `LocalSpinRankOneProof` combines them
+with this implication into `localSpinRankOne : LocalSpinRankOneStatement`.

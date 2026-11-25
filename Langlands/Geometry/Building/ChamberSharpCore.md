@@ -29,8 +29,9 @@ The core premise is the set inclusion
 The sets on the right are the subgroup carriers, and their product is
 left associated. The first equivalence and range lemmas require the inclusion
 for one cocharacter. The final theorem takes it for every generic `mu`, and
-uses it at `ν` and `-ν`. Proving this premise from the apartment axioms remains
-a separate part of the host proof.
+uses it at `ν` and `-ν`. Proving this premise is not part of this module;
+`chamberSharpExchange` (module `ChamberExchange`) proves it under its own
+hypotheses.
 
 The general theorem also assumes
 `D.OrderedChamberBlockInjectivity x`, the affine-root-system law for the
@@ -79,9 +80,10 @@ The registered *Corrections and Additions* (version of 1 November 2024),
 `kaletha-prasad-2024-corrections`, SHA256
 `23293f51e58d5ceecb91f834743f68058b98431797d2531142415d013fdf61ed`,
 PDF33–34, adds AS5 to Chapter 7 and requires positive central depth in the
-additional arbitrary mixed-root ordering assertion. The unchanged host target
-retains AS5. This conditional helper uses only the listed local hypotheses and
-does not discharge the host's apartment assumptions. Its root orders stay
+additional arbitrary mixed-root ordering assertion. The unchanged chamber
+decomposition target `ChamberIwahoriDecompositionStatement` retains AS5. This
+conditional helper uses only the listed local hypotheses and does not discharge
+that target's apartment assumptions. Its root orders stay
 separate within the positive and negative systems; it asserts no arbitrary
 mixed-sign ordering at central depth zero.
 
@@ -153,10 +155,9 @@ ordered negative/central/positive map. This derives the needed triple
 injectivity from local block injectivity, rather than requiring a global
 ordered-product statement for that step.
 
-This local generalization is implemented by Worker 1672 from the published
-sharp-core argument by Workers 1267 and 1536, following Worker 1315's
-observation that the chamber consumer can retain only its local coordinate
-injectivity requirement. All group elements, block maps, central factors,
+This local generalization is derived from the published sharp-core
+argument, using the observation that the chamber consumer can retain only
+its local coordinate injectivity requirement. All group elements, block maps, central factors,
 range arguments and geometric hypotheses remain those of the original
 Library. The specialization to the previous global Dynamic interface is a
 proved wrapper.
@@ -164,4 +165,5 @@ proved wrapper.
 The result retains `D.sharpCentralizer {x}` throughout. It does not identify
 that group with the full central factor `Z(k)^0`. The facet transport, proof
 of the core premise, full central comparison, and final proof of
-`ChamberIwahoriDecompositionStatement` remain host obligations.
+`ChamberIwahoriDecompositionStatement` are not part of this module; the last
+is `chamberIwahoriDecomposition` in `ChamberIwahoriProof`.

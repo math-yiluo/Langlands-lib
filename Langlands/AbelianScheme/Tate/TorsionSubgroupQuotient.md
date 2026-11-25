@@ -2,7 +2,7 @@
 
 This is an internally derived adapter for commensurable lattice realization.
 It uses the published actual group-scheme kernel and finite étale quotient
-interfaces, Worker 1575's reverse-map construction, and the full Tate
+interfaces, the reverse-map construction (`FiniteEtaleQuotientReverseMap`), and the full Tate
 reverse-image calculation. No external literature theorem is asserted here.
 
 Let `A` be an actual abelian scheme over an arbitrary scheme `S`, let `N` be
@@ -38,4 +38,5 @@ the quotient-kernel comparison above. The full index predicate is exactly
 This adapter assumes the subgroup, and the image lemmas assume quotient
 data. It neither constructs a subgroup from invariant geometric points nor
 claims the prescribed-lattice realization theorem. Those geometric and
-lattice-comparison obligations remain in the parent proof.
+lattice-comparison steps belong to the realization proof
+(`CommensurableInvariantLatticeRealizationProof`).

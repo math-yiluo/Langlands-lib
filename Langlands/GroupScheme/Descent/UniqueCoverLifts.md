@@ -1,6 +1,6 @@
 # Descent coherence from unique pullback lifts
 
-Worker 416. This internal construction transfers actual group-scheme Čech
+This internal construction transfers actual group-scheme Čech
 descent data along a supplied map that admits unique lifts of isomorphisms
 between all pullbacks of its target. It constructs the source overlap
 isomorphism and proves its cocycle. It does not establish existence of
@@ -22,7 +22,7 @@ of a supplied simply connected cover. The latter alone is not used as if
 it applied on arbitrary overlaps. The module assumes neither that an
 arbitrary central cover has canonical descent nor that an arbitrary group
 over an extension field descends. Establishing this hypothesis for the
-universal cover is a separate structural obligation.
+universal cover is not part of this module.
 
 The implemented `HasUniquePullbackIsoLifts.lift` chooses the unique
 homomorphism. `lift_fac`, `lift_unique` and `hom_ext` express its defining

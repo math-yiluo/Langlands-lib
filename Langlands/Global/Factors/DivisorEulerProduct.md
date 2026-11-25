@@ -1,6 +1,6 @@
 # Divisor Euler products with finite exceptional factors
 
-Worker 1692 derives this internal analytic support from Mathlib's absolute
+This module derives internal analytic support from Mathlib's absolute
 convergence of finite-subset product expansions and dominated convergence for
 series. The index type is arbitrary, in universe `u`. A divisor is an
 integer-valued finitely supported function `d : ι →₀ ℤ`. This module does not
@@ -61,5 +61,5 @@ This is general series support for the global Hecke proof. It does not prove
 that actual local Mellin weights satisfy its norm hypothesis, identify the
 series with an adelic integral, or prove the global functional equation.
 
-Integration uses module-specific names for local instances. Their types, values,
-and local instance scopes are unchanged.
+The local instances have module-specific names. The renaming did not change
+their types, values, or local instance scopes.

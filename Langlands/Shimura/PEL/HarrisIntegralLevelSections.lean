@@ -80,7 +80,7 @@ def harrisIntegralGlobalTorsionEquiv (X : PObj) (m : Index (fun _ => True)) :
     obtain ⟨w, rfl⟩ := kS.surjective v
     let f : Y ⟶ Z := ObjectProperty.homMk w.toMul
     intro gamma
-    have hv : gamma.hom.app Z (a ≫ f.hom) = a ≫ f.hom :=
+    have hv : gamma.asIso.hom.app Z (a ≫ f.hom) = a ≫ f.hom :=
       (smul_naturality s hs f gamma a).trans (congrArg (fun y : Fiber s Y => y ≫ f.hom)
         (ha (gamma • a)))
     change Tate.levelMonodromy s hs htor B m.val m.property.1 (hu m) gamma
@@ -113,7 +113,7 @@ def harrisIntegralGlobalTorsionEquiv (X : PObj) (m : Index (fun _ => True)) :
     have hz (gamma : FundamentalGroup s hs) : gamma • z = z := by
       have ht : Tate.levelMonodromy s hs htor B m.val m.property.1 (hu m) gamma t.val = t.val :=
         t.property gamma
-      change gamma.hom.app Z z = z
+      change gamma.asIso.hom.app Z z = z
       exact (Tate.kernelPoint_levelMonodromy s hs htor B m.val m.property.1 (hu m) gamma
         t.val).symm.trans (congrArg (fun v => (ks.symm v).toMul) ht)
     let k : F.obj Y ⟶ F.obj Z := ObjectProperty.homMk

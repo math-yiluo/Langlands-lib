@@ -1,7 +1,5 @@
 # Involutivity of the actual unadjusted Aubert operator
 
-Author: Worker 320.
-
 `Langlands.Aubert.InvolutivityStatement.{uF,uV} F T` is the proposition
 that, for every natural rank `n`,
 
@@ -63,7 +61,8 @@ In particular, `∀ n : ℕ` includes zero. At rank zero the unique shape is
 empty and has sign `(-1)^0 = 1`; both `GL_0` and the empty Levi are trivial.
 The asserted identity in that case is the natural empty-root-system case
 of the formula. Establishing it for the actual imported functors is part
-of the future proof, rather than a theorem of this statement module.
+of the proof, `involutivity` in `InvolutivityProof`, rather than a theorem
+of this statement module.
 
 ## Proof obligations and independence
 
@@ -85,10 +84,10 @@ no irreducible-image or segment-classification result.
 
 The sole direct import is
 `Langlands.Representation.Aubert.AlternatingOperator`; no existing Lean or
-Markdown pair is edited. A future proof must remain independent of the
+Markdown pair is edited. A proof must remain independent of the
 analytic segment classification, multisegment exhaustion, ordered
 strong-head existence, quotient exhaustion, tempered block uniqueness,
 square-integrable Langlands classification or exhaustion, and regular
-Langlands exhaustion, including their proof successors and transitive
-proof dependencies. These are proof-route obligations, not hypotheses
+Langlands exhaustion, including the modules that prove them and their
+transitive proof dependencies. These are proof-route obligations, not hypotheses
 added to `InvolutivityStatement`.

@@ -1,6 +1,6 @@
 # Second-block corank coefficient specialization
 
-Worker 486. This internal composition applies the second-block deformation
+This internal composition applies the second-block deformation
 interface at induced rank `r + 2`, then applies the corank entire-slice theorem
 to the actual resulting coefficients for the supplied quotient measure.
 

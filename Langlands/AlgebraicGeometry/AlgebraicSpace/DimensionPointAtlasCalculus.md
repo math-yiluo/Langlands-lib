@@ -1,7 +1,5 @@
 # Local calculus for varying-dimension point atlases
 
-Author: Worker 269.
-
 This internal development supports uniqueness of admissible varying-dimension
 analytic structures. It derives local calculus directly from the published
 `DimensionPointAtlas.AnalyticOn` definition; it introduces no geometric

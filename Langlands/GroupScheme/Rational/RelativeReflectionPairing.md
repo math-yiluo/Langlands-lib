@@ -20,7 +20,7 @@ Evaluation on `toRat χ`, followed by injectivity of the integer embedding in
 the rationals, gives pairing invariance for every actual integral character.
 No integral coroot or full-character reflection formula is assumed.
 
-This internal derivation uses the joint-spanning construction by Worker 165 and
+This internal derivation uses the joint-spanning construction and
 the existing actual full and restricted Weyl actions. It establishes a property
 of every `IsRelativeReflection`; identifying any supplied Coxeter generators
 with those reflections remains a separate obligation. It proves no

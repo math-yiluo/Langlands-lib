@@ -1,7 +1,5 @@
 # Block-character absorption for normalized upper parabolic induction
 
-Author: Worker 346.
-
 This module constructs explicit equivalences on the Library's actual induced
 function spaces. For an actual p-adic field `F`, compatible topological data `T`,
 and ordered block shape `B`, put `χ = T.leviHalfModulus B`. If `e_i(g)` has `g`

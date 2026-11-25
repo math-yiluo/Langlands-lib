@@ -87,9 +87,8 @@ Picard group.
 
 ## Intended use
 
-The separating-section construction for parent task
-`eda1f6ff-d036-4f23-aabb-7663e7606b42` (target
-`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement`; Milne, proof of
+The separating-section construction for
+`Langlands.GroupScheme.AlgebraicallyClosedSeparatingLineBundleStatement` (Milne, proof of
 Theorem 7.1, p.11) needs the three-translate consequence for the points `a`, `b`,
 `(a * b)⁻¹`, i.e. `a`, `b`, `−a−b`: `Q a ⊗ Q b ⊗ Q ((a * b)⁻¹) ≅ L ⊗ L ⊗ L`. It would
 follow by applying this statement to `a, b` and to `a * b, (a * b)⁻¹`, together with

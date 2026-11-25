@@ -1,7 +1,5 @@
 # The level-one space `Ω × Δ` for the matrix factor `GL_{d+1}(F)`
 
-Author: Worker 21.
-
 This module constructs the analogue of Harris's level-one space
 `ℳ_1 = Ω × Δ` for the matrix group `GL_{d+1}(F)`. It is one copy of
 Drinfeld's upper half space `Ω` for each element of an index set `Δ`, and

@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.Picard.FiniteTypePicardStackAtlasAssembly`.
 
-Author: Worker 1420, for task `3fa23029-256e-47ed-ad64-e5ea33971b1a`.
-
 The main theorem is `PicardGroupoid.finiteTypePicardStackAtlas_of_pointSmoothCharts`.
 It proves the published `FiniteTypePicardStackAtlasStatement.{u}` from the
 published `FiniteTypePointSmoothChartStatement.{u}`, which is a hypothesis

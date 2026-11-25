@@ -1,6 +1,6 @@
 import Langlands.Automorphic.DeterminantMultipleSpectrum
 import Langlands.Automorphic.Unramified.IsobaricWeilAssociation
-import Langlands.ClassField.Global.RelativeWeilUnramifiedTwist
+import Langlands.ClassFieldTheory.Global.RelativeWeilUnramifiedTwist
 
 /-! # Weak association passes to twists by every Hecke character
 
@@ -14,7 +14,7 @@ noncomputable section
 
 universe u uV uP uQ
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 /-- Henniart (2000), §2.2: weak association passes to twists by every Hecke character,
 read through any presentation of the twisted realization. -/
@@ -26,4 +26,4 @@ theorem presentedDeterminantMultipleAssociation :
     (Automorphic.CuspidalOperatorRealization.sameEulerPolynomials_scale_of_isDeterminantMultiple
       T T' P P' hTT')
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

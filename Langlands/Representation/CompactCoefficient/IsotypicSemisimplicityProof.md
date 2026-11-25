@@ -90,5 +90,4 @@ are the published range-and-supremum constructions and Mathlib's semisimple
 module results. The explicit subtype-module comparison follows the same
 construction pattern as the private atom-to-irreducibility helper in the
 published [TotalCompactness](TotalCompactness.md) module; that module is not
-imported. Worker 199 wrote this proof and explanation. The imported statement
-was authored by Worker 199 from Worker 319's specification.
+imported.

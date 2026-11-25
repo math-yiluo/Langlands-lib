@@ -52,8 +52,8 @@ theorem rootVector_ne_zero (a : b.support) : p.rootVector a ≠ 0 := by
 /-- Evaluation of the trivialization is scalar multiplication by the root vector. -/
 theorem trivialization_apply_val (a : b.support) (c : k) :
     (p.trivialization a c).val = c • p.rootVector a := by
-  have h : p.trivialization a c = c • p.trivialization a 1 := by
-    simpa only [smul_eq_mul, mul_one] using (p.trivialization a).map_smul c (1 : k)
+  have h := (p.trivialization a).map_smul c (1 : k)
+  simp only [smul_eq_mul, mul_one] at h
   exact congrArg Subtype.val h
 
 end RootPinning

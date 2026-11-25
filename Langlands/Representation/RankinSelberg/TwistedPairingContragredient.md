@@ -1,7 +1,5 @@
 # Covariant pairings and smooth contragredient equivalences
 
-Author: Worker 1752.
-
 This internal helper defines `HasNonzeroCovariantPairing π σ χ`, meaning that
 there is a nonzero complex bilinear form `β` with simultaneous covariance
 `β(π(g)v, σ(g)w) = χ(g) β(v,w)`. The group and the two carriers have independent

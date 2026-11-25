@@ -1,7 +1,5 @@
 # Actual closed subgroup chains and simultaneous adelic height minima
 
-Author: Worker 83.
-
 This derived module constructs actual representations adapted to a descending
 chain of closed subgroup schemes and proves that every finite prefix has
 simultaneous adelic height minima at a rational right translate. It also

@@ -96,7 +96,7 @@ theorem integralTransport_symm (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
 
 /-- Loop transport is the existing geometric monodromy. -/
 theorem integralTransport_aut (g : FundamentalGroup s hs) :
-    integralTransport htor A P hu g = integralMonodromy s hs htor A P hu g := rfl
+    integralTransport htor A P hu g.asIso = integralMonodromy s hs htor A P hu g := rfl
 
 /-- Coordinatewise continuity for the existing product-subspace topologies. -/
 theorem continuous_integralTransport (p : fiberFunctor s hs ≅ fiberFunctor t ht) :
@@ -143,7 +143,7 @@ theorem integralTransport_monodromy (p : fiberFunctor s hs ≅ fiberFunctor t ht
 theorem integralTransport_change_path (p q : fiberFunctor s hs ≅ fiberFunctor t ht)
     (x : Integral A (Over.mk s) P) :
     integralTransport htor A P hu q x =
-      integralMonodromy t ht htor A P hu (p.symm ≪≫ q)
+      integralMonodromy t ht htor A P hu (Aut.of (p.symm ≪≫ q))
         (integralTransport htor A P hu p x) := by
   apply Subtype.ext
   funext n

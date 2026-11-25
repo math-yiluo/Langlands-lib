@@ -8,7 +8,8 @@ Approach* (2023), Lemma C.5.3, in the form of the Library target
 maximal unramified building data such that no multiple `n • a` with `n ≥ 2` is a
 relative root. This covers every relative root that is not multipliable,
 including divisible roots. The multipliable case (`2 • a` a root) is not covered
-here. The main Task 6392 target is unchanged and remains open.
+here. The full target is proved by `unramifiedRootDepthKernel` (module
+`RootDepthKernel`), which combines this case with the multipliable one.
 
 The proof is assembled from published Library results:
 

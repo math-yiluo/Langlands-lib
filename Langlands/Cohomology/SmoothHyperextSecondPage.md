@@ -1,12 +1,12 @@
 # The second page of the hyperext spectral sequence for smooth representations
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextSpectralSequence` (`hyperextSpectralSequence`,
 `secondPageIso`), `Langlands.Cohomology.HyperextSecondPage`
 (`secondPageExtAddEquiv`), `Langlands.Cohomology.ExtRightDerived`
 (`hasExt_smoothRep`, `smoothExtAddEquiv`) and
 `Langlands.Cohomology.SmoothExt` (`SmoothExt.ext`, `bifunctor`,
-`extZeroIso`, `isZero_ext_succ_of_injective`, by Worker 13), and on
+`extZeroIso`, `isZero_ext_succ_of_injective`), and on
 Mathlib's derived categories.
 
 The module combines these results for the abelian category of smooth
@@ -90,7 +90,7 @@ in the column `p = 0`, where it is `Hom(H^{-q}(K), W)`.
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), 299-318 (source
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`). The passages
-below were read by Worker 61 in the rendered page scans.
+below were read in the rendered page scans.
 
 - Proposition 4.4, printed p.309 (one-based PDF page 11), with `𝓛` a free
   `O/ℓ^m O`-module, `𝓛̃` the corresponding constant étale sheaf and

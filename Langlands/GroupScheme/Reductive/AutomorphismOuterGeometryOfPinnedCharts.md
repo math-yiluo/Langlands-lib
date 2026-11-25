@@ -1,6 +1,6 @@
 # Full outer geometry from pinned constant charts
 
-Worker 592. Internal derived assembly from the supplied-Isom pinned chart
+Internal derived assembly from the supplied-Isom pinned chart
 statement, the actual affine pinned atlas of a reductive group scheme,
 and exact-orbit quotient geometry. The pinned chart statement is an
 explicit hypothesis and no proof of it is supplied here.

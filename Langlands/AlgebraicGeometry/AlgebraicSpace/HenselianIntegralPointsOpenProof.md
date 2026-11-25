@@ -1,7 +1,5 @@
 # Integral points over a henselian valuation ring form an open set
 
-Author: Worker 105.
-
 Proof of `Langlands.AlgebraicGeometry.AlgebraicSpace.HenselianIntegralPointsOpenStatement.{u}`,
 the openness part of Corollary 5.7 of Brian Conrad, *Weil and Grothendieck approaches to
 adelic points* (December 31, 2011), printed p.16. The entry theorem is
@@ -32,7 +30,7 @@ Conrad takes step 3 from the construction of the topology. Here it is proved fro
 henselian openness of smooth maps on rational points, which the Library proves for affine
 schemes. Step 1 needs the lifting of residue-field points to étale charts. For a field
 base this is the Library's `RationalPointEtaleLiftProof`. The relative version over
-`Spec O` is proved in `FieldPointEtaleLift`, also by Worker 105.
+`Spec O` is proved in `FieldPointEtaleLift`.
 
 ## Declarations
 
@@ -67,7 +65,7 @@ Namespace `Langlands.AlgebraicGeometry.PointTopology.HenselianUnitBall`:
   to an `O`-algebra map `A → O`. The comparison uses `affineSchemePointEquiv_changeRing`.
 
 The proof reuses the following theorem in
-`Langlands.AlgebraicGeometry.AlgebraicSpace`, imported from the published
+`Langlands.AlgebraicGeometry.AlgebraicSpace`, imported from
 `HenselianCompletionPointEmbeddingProof`:
 
 - `isOpenMap_schemePointsMap_of_etaleOpen`: for a nontrivially normed field `K`, assume

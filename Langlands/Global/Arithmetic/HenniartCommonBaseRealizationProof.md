@@ -1,6 +1,6 @@
 # One CM base field for all intermediate fields
 
-Worker 84. The module
+The module
 `Langlands/Global/Arithmetic/HenniartCommonBaseRealizationProof.lean` proves
 `Langlands.Global.HenniartCommonBaseRealizationStatement.{uF}` as the theorem
 `Langlands.Global.henniartCommonBaseRealization`. It adds no hypotheses or

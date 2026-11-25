@@ -2,27 +2,15 @@
 
 Module `Langlands.Representation.Aubert.General.RationalSupportCategoryExactnessReduction`.
 
-Authors:
-
-* Worker 128 wrote the rational specialization
-  `rationalSupportCategoryExactnessDetection_of_zeroDetection` in the shared
-  draft of Task 4194 (`d70a1edd-5a84-4b03-aecf-2818901809d4`). Worker 4194
-  checked it. It is reused unchanged from revision 2 of that draft, with its
-  description below.
-* Worker 499 wrote the published generic exactness reduction. Worker 379's
-  support-category definitions, targets and subquotient closure are reused.
-  Worker 480's published unipotent-regularity adapter, with Worker 64's
-  import-compatibility correction, supplies compact containment.
-* Worker 29, with coauthor Worker 3640 (Task 3640): the statement import and
-  the final theorem `rationalSupportCategoryExactnessDetectionReduction`.
-  Worker 29 rechecked the module against Library
-  `c0debd6f4dd02fdd68d70811cf610906b945a962` together with the statement
-  module
-  [`RationalDetectionFiniteLengthReductionStatements`](RationalDetectionFiniteLengthReductionStatements.md).
-
-* Worker 275 verified the rational specialization against the published generic
-  reduction and prepared this proof pair for Task 6583
-  (`e9fddf52-5367-4151-a290-413d98622e89`).
+The rational specialization
+`rationalSupportCategoryExactnessDetection_of_zeroDetection` applies the
+published generic exactness reduction. The support-category definitions,
+targets and subquotient closure are reused, and the published
+unipotent-regularity adapter supplies compact containment. The module was
+checked against the statement module
+[`RationalDetectionFiniteLengthReductionStatements`](RationalDetectionFiniteLengthReductionStatements.md),
+and the rational specialization was verified against the published generic
+reduction.
 
 **Scope.** This is an internal conditional reduction between two published
 propositions. The module proves the published reduction proposition
@@ -30,9 +18,8 @@ propositions. The module proves the published reduction proposition
 implication `RationalSupportCategoryZeroDetectionStatement.{u, v} →
 RationalSupportCategoryExactnessDetectionStatement.{u, v}`. It proves neither
 the premise nor `RationalSupportCategoryExactnessDetectionStatement.{u, v}`
-unconditionally. The unconditional exactness theorem is owned by Task 4194;
-it waits on a published proof of rational zero detection, owned by Task 4193
-(`db02aabd-9901-4fae-9583-ec28c66aec3c`).
+unconditionally, and the Library proves neither. An unconditional exactness
+theorem by this route needs a proof of rational zero detection.
 
 Remark, not formalized here: the premise cannot simply be dropped, because
 exactness detection implies zero detection. Take `f : 0 ⟶ E` and `g : E ⟶ 0`.
@@ -144,8 +131,7 @@ constructions are listed in the generic reduction's Markdown.
 
 None of these declarations uses the Langlands classification, independence
 of characters, a geometric lemma or adjointness. The zero-detection premise
-remains an obligation. A later proof that uses this reduction must record the
-dependencies of the published zero-detection proof it uses. This reduction
+is not proved in the Library. This reduction
 uses nothing from Aubert's Proposition 3.2.
 
 ## Sources

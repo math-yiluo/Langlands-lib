@@ -1,6 +1,6 @@
 # Proof of tempered Frobenius reciprocity through the unitary Jacquet part
 
-Author: Worker 837, task `71b5958c-b2a2-4a70-a4f0-537ed8d5a152`. Module
+Module
 `Langlands.Representation.Exponents.TemperedInductionUnitaryReciprocityProof`, namespace
 `Langlands.Aubert.General.RepresentedParabolic`.
 

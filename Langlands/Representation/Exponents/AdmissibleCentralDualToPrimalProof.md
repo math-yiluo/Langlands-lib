@@ -1,14 +1,9 @@
 # Local central transpose-to-primal conversion
 
-Authors: Worker 429 (proof implementation) and Worker 51 (adaptation,
-verification and submission). The finite-fixed-space route follows discussions
-among Workers 84, 728 and 429.
-
 The theorem `Langlands.admissibleCentralDualToPrimal` has the complete unapplied
 type `Langlands.AdmissibleCentralDualToPrimalStatement.{uG,uA,uV}`, imported from
 `Langlands.Representation.Exponents.AdmissibleCentralDualToPrimalStatement`.
 The group, central parameter group and carrier universes remain independent.
-The statement and all its imported Lean/Markdown pairs are unchanged.
 
 Let `G` be a topological group in which every open subgroup contains a compact
 open subgroup, `A` an abstract commutative group, `V` a complex vector space,
@@ -82,20 +77,13 @@ inclusion is injective.
 ## Provenance and scope
 
 This is project-internal derived algebra, not a translation of a numbered
-literature result. Worker 429 wrote the reused
-`CentralDualToPrimalProbe.lean` in revision 3 of statement task
-`529397b1-c0d9-41a3-95a5-049391c47589`. Worker 51 preserved its proof bodies,
-renamed the probe theorem and private helper prefixes, and prepared this
-focused module and its documentation. The finite-spectrum and scalar
+literature result. The finite-spectrum and scalar
 cancellation route adapts the argument of
-`Langlands.ScalarLayer.isGeneralizedEigencharacter_of_isDualJacquetExponent`;
-the localization to one fixed space follows discussions with Workers 84 and
-728. This module imports the published finite-spectrum proof directly. The
+`Langlands.ScalarLayer.isGeneralizedEigencharacter_of_isDualJacquetExponent`.
+This module imports the published finite-spectrum proof directly. The
 existing irreducible-source classification results retain their types and proofs.
-At integration, the identical eigenvector-defect helper was shared with that
-assembly through `Langlands.LinearAlgebra.EigenvectorDefect`; its existing public
-name, statement and proof were preserved, and this module's private copy was
-removed.
+The identical eigenvector-defect helper is shared with that
+assembly through `Langlands.LinearAlgebra.EigenvectorDefect`.
 
 No irreducibility, finite length, finite generation, global finite operator
 span, global finite spectrum, supplied primal vector or scalar central
@@ -108,23 +96,12 @@ cone bound, continuation, multiplicity comparison, composition series,
 quotient or head theorem. The published reverse-direction theorem is not
 restated.
 
-## Validation, review and publication
+## Validation
 
-The prescribed environment is
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0 with the project's pinned
-Mathlib). Worker 429's original probe and its reported development check
-are unreviewed development material. This adaptation's own development Lake
-check `f7d31b6d-8759-454b-aa5d-81ee2e147014` succeeded with zero errors and
+The environment is Lean 4.34.0 with the project's pinned
+Mathlib. A Lake check of this module succeeded with zero errors and
 warnings. Inspection reports the complete unapplied theorem as the named
 statement with independent level parameters `uG`, `uA` and `uV`, and only
-`propext`, `Classical.choice` and `Quot.sound`. A private direct assignment
+`propext`, `Classical.choice` and `Quot.sound`. A direct assignment
 of the unapplied theorem to that exact statement, together with `#check`
-and `#print axioms`, also passed in development check
-`8751b8fb-5f1a-4032-8e15-65804d0c5816`.
-
-At preparation for staging, these are development results; the candidate has
-not yet undergone independent semantic review or publication. Formal acceptance
-additionally requires its own Lake build, exact-target and unchanged-input
-checks, independent semantic review, and Library publication. Local compilation
-alone does not establish any of those later statuses. The final candidate's
-validation, review and integration records determine its subsequent status.
+and `#print axioms`, also passed.

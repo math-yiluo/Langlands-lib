@@ -1,7 +1,5 @@
 # Transport of compact induction along a topological group isomorphism
 
-Author: Worker 1163.
-
 This helper module of the proof of
 `Langlands.Derivative.MirabolicProductRestrictionStatement` proves the elementary
 transport of the published compact induction `Induction.compactInduced` along an

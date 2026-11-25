@@ -1,7 +1,5 @@
 # Invariant integrals over a compact quotient and induction duality
 
-Author: Worker 805.
-
 This module supplies the analytic inputs of Casselman's pairing argument for
 the smooth dual of a normalized induction from a closed subgroup `P` with
 compact quotient `P \ G`. It does not use a decomposition `G = P K`. It has
@@ -16,10 +14,9 @@ two parts.
    `δ = ` Mathlib's modular character of `P`, whenever `G` is unimodular.
 
 With `K := ⊤`, the measure of part 2 can be fed into part 1. The module states
-no new proposition. It is partial progress towards the proof task
-`2137e0ce-8d32-43f5-b4ed-79824b68585f`, whose target is
+no new proposition. It is a step towards a proof of
 `Langlands.Aubert.General.RationalPointFamily.RationalNaturalInductionDualityStatement`.
-The module does not prove that target. Applying it there needs compactness of
+The module does not prove that statement. Applying it there needs compactness of
 `P \ G` and the identity between the modular character of `P` and the square
 of the half character used by normalized induction. These are separate
 statements in the Library.
@@ -33,7 +30,7 @@ Bruhat-function argument for invariant functionals on a quotient `P \ G`,
 specialized to compact quotients and written out below. The duality part
 follows Casselman, *Introduction to admissible representations of p-adic
 groups*, Chapter III, section 1 (registered as `casselman-2019-jacquet-module`),
-as already formalized by Worker 715 in `CompactPairingDuality`. There `K` is a
+as already formalized in `CompactPairingDuality`. There `K` is a
 good compact subgroup with `G = P K`, which is not available here.
 
 ## Conventions
@@ -50,7 +47,7 @@ good compact subgroup with `G = P K`, which is not available here.
 ## Part 1: duality for measures positive near `1`
 
 Sections `Scalar` and `Nondegeneracy` copy the corresponding results of
-`CompactPairingDuality` (Worker 715). The only change is that the hypothesis
+`CompactPairingDuality`. The only change is that the hypothesis
 `[μ.IsOpenPosMeasure]` becomes `hpos`, in the same argument position. The
 proofs are otherwise unchanged, except that they call the `_of_pos` variants. Positivity is used in exactly one place: the
 open set `{k : K | x₀⁻¹ k x₀ ∈ L}` contains `1`, so it has positive measure.
@@ -147,7 +144,7 @@ and `CompactSpace (LeftQuotient P)`.
 - `bruhatMeasure β`: the measure on `⊤ : Subgroup G` that is the image under
   `topMeasurableEquiv` of `haar` with density `x ↦ max (β x) 0`, written
   `Real.toNNReal (β x)` in Lean. This is the entry declaration of the
-  contribution. It is a measure on a subgroup because the scalar hypothesis of
+  module. It is a measure on a subgroup because the scalar hypothesis of
   part 1 is stated for a measure on a subgroup `K`.
 - `integrable_bruhatMeasure_iff` and `integral_bruhatMeasure`: for measurable
   `β ≥ 0`, integrability and integrals of `k ↦ ψ k` against `bruhatMeasure β`

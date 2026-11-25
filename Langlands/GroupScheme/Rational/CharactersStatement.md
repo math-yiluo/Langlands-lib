@@ -1,7 +1,5 @@
 # Split components and rational characters of connected reductive groups
 
-Author: Worker 1122.
-
 This module states five propositions about split components and rational
 characters. It proves none of them. Each is a `Prop`-valued definition in the
 namespace `Langlands.GroupScheme`. Each quantifies over every field

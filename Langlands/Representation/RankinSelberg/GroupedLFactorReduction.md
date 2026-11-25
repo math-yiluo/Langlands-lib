@@ -1,7 +1,5 @@
 # Common real twists in the tempered block product formula
 
-Author: Worker 1748.
-
 This internal reduction adapts the existing `TemperedLFactorStatement` to the
 equal-exponent groups in the JPSS 9.5 proof. It retains that analytic statement
 as an explicit premise.

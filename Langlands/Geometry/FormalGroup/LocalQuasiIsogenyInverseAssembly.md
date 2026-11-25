@@ -1,6 +1,6 @@
 # Local inverse assembly from integral scalar-power duals
 
-This internal unit connects integral scalar-power dual isogenies to the
+This module connects integral scalar-power dual isogenies to the
 published `LocalQuasiIsogenyInverseStatement`. It retains the statement's
 arbitrary commutative coefficient ring O, commutative O-algebra R,
 O-algebra field F, independent universe for O, and finite coordinate
@@ -45,9 +45,10 @@ property. The actual inverse-section gluing theorem gives the unique
 global inverse with the same forward section. Every choice of
 neighbourhood and denominator may depend on the point.
 
-This unit does not prove the eventual integral scalar-power dual
+This module does not prove the eventual integral scalar-power dual
 premise. In particular it does not claim an unconditional proof of
-`LocalQuasiIsogenyInverseStatement` or invoke the unproved general
-finite-kernel composition theorem. The provenance is the internal
-algebraic and sheaf assembly of the published target, rather than a
-quotation from external literature.
+`LocalQuasiIsogenyInverseStatement` or invoke the general finite-kernel
+composition theorem (proved in the Library as
+`Hom.finiteKernelCompositionStatement` in `FiniteKernelComposition`).
+The provenance is the internal algebraic and sheaf assembly of the
+published target, rather than a quotation from external literature.

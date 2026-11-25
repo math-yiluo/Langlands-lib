@@ -34,7 +34,7 @@ theorem isSmoothFiniteTorusFunction_coord (j : J) :
   unfold IsSmoothFiniteTorusFunction
   rw [hcomp]
   exact (Complex.contDiff_exp (𝕜 := ℝ)).comp
-    ((Complex.ofRealCLM.contDiff.comp (contDiff_apply ℝ ℝ j)).mul contDiff_const)
+    ((Complex.ofRealCLM.contDiff.comp (contDiff_apply ℝ (fun _ ↦ ℝ) j)).mul contDiff_const)
 
 /-- Lagrange interpolation on the finite torus: for a finite set `Z` and a point `z₀` there
 is a smooth torus function equal to `1` at `z₀` and to `0` at the other points of `Z`. It

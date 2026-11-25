@@ -1,7 +1,7 @@
 # Renard C.I: transport of the nilpotent dimension maximum
 
-Worker 16 proves
-`Langlands.Renard.nilpotentDimensionTransport` with exactly the published type
+This module proves
+`Langlands.Renard.nilpotentDimensionTransport` with exactly the type
 `Langlands.Renard.NilpotentDimensionTransportStatement.{u, v}`.
 The carrier universes `u` and `v` are independent. The proof uses the unchanged
 actual definitions in `Langlands.Algebra.RenardNilpotentDimensionMaximum`.
@@ -10,7 +10,7 @@ For a complex linear equivalence `e : V ≃ₗ[ℂ] W`, its algebra equivalence
 `e.conjAlgEquiv ℂ` sends an endomorphism `a` to `e ∘ a ∘ e⁻¹`. The private
 one-direction lemma sends an admissible tuple to the tuple of its conjugates.
 Mathlib's `Commute.map` and `IsNilpotent.map` preserve the two admissibility
-conditions. The published theorem
+conditions. The theorem
 `Langlands.CommutingDimension.finrank_adjoin_map`, imported from
 `Langlands.Algebra.CommutingDimensionRecurrence`, applies to this injective
 algebra map and preserves the dimension of the actual unital adjoin. Thus
@@ -48,8 +48,8 @@ The supplementary 2010-edition corrections, registered as
 `renard-2010-corrections-complements`, were read on PDF18–19; their C.I
 inequality corrections do not enter this conjugation argument.
 
-The reused dimension-preservation theorem is part of Worker 307's published
+The reused dimension-preservation theorem is part of the Library's
 general-field infrastructure. The proof here imports that theorem; it does
 not reimplement its proof. Monotonicity, the source ideal-power filtration,
 numerical base cases, the floor recurrence and the final dimension estimate
-remain separate obligations.
+are separate results.

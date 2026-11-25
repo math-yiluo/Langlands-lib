@@ -1,7 +1,5 @@
 # Actual integral Jacquet words of cuspidal-product constituents
 
-Author: Worker 320.
-
 `Langlands.Classification.IntegralCuspidalConstituentWord F T` states that
 every irreducible actual smooth constituent of a normalized product of
 supercuspidal representations on a fixed integral twist line has an actual

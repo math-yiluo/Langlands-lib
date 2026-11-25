@@ -1,12 +1,11 @@
 # The epsilon product at the distinguished place and the generator values
 
-Author: Worker 5093. This is a supporting unit for task
-`92a3d086-a5ad-476f-9fd9-aa9d4eaa3778`, which must prove
+This is a supporting module for the proof of
 `Langlands.LocalFactor.NonabelianBrauer.KernelCompatibilityStatement`. In Deligne's global
 argument (1973, proof of Lemma 4.12) the given p-adic field `F` and its Galois extension `K` are
 realized as completions `k_v` and `K'_w` of a Galois extension of number fields. The local
 epsilon product at `v` is then the product of the abelian epsilon ratios of the presentation.
-This unit makes that identification.
+This module makes that identification.
 
 Everything is in `Langlands.LocalFactor.NonabelianBrauer`.
 
@@ -35,10 +34,10 @@ Everything is in `Langlands.LocalFactor.NonabelianBrauer`.
   Proof: by the previous item it suffices to show the product of generator values is `1`. Split
   the place product over the generators (`Fintype.prod_sigma`). Each fibre has the single place
   `u` under `w` (`eq_under_of_unique`). At `u`:
-  1. `hM` and `hN3` give a local map `ι` (unit `LocalMapTransport`), with a normalized family at
+  1. `hM` and `hN3` give a local map `ι` (module `LocalMapTransport`), with a normalized family at
      `u` from `hCC`.
-  2. `fieldCharacter_eq_realizationTransport` (unit `RealizationCharacter`) identifies the two
+  2. `fieldCharacter_eq_realizationTransport` (module `RealizationCharacter`) identifies the two
      characters of the generator with the transports of the components at `u`. Its Galois
-     hypothesis comes from `globalCharacter_apply` (unit `GlobalCharacters`).
-  3. `generatorValue_eq_realizationEpsilon` (unit `RealizationEpsilon`) identifies the generator
+     hypothesis comes from `globalCharacter_apply` (module `GlobalCharacters`).
+  3. `generatorValue_eq_realizationEpsilon` (module `RealizationEpsilon`) identifies the generator
      value with the epsilon ratio at `u`.

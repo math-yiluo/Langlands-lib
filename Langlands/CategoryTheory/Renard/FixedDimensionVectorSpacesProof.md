@@ -2,10 +2,8 @@
 
 `Langlands.Renard.fixedDimensionVectorSpaceEquivalence` proves exactly
 `Langlands.Renard.FixedDimensionVectorSpaceEquivalenceStatement k n`.
-The implementation is by Worker 1158 following the proof route supplied
-by Worker 709, who authored the published construction and statement.
-The proof imports those pairs and the general equivalence criterion by
-Lean name, without changing them.
+The proof imports the published construction and statement pairs and the
+general equivalence criterion by Lean name, without changing them.
 
 ## Source and exact target
 

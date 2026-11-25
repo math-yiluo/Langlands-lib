@@ -52,8 +52,8 @@ theorem extendScalarsActionFunctor_obj_V :
   rfl
 
 @[simp] theorem extendScalarsActionFunctor_obj_ρ_tmul (γ : Γ) (m : M) (x : X.V) :
-    SmoothRep.hom (((extendScalarsActionFunctor M Γ).obj X).ρ γ) (m ⊗ₜ[K] x) =
-      m ⊗ₜ[K] SmoothRep.hom (X.ρ γ) x :=
+    SmoothRep.hom (((extendScalarsActionFunctor M Γ).obj X).ρ γ).asHom (m ⊗ₜ[K] x) =
+      m ⊗ₜ[K] SmoothRep.hom (X.ρ γ).asHom x :=
   rfl
 
 /-! ## Fixed vectors -/
@@ -137,8 +137,8 @@ def fixedVectorsBaseChangeEquiv :
 /-- The map `M ⊗[K] X^H → (M ⊗[K] X)^H` commutes with the actions of `Γ`. -/
 theorem fixedVectorsBaseChange_comm (γ : Γ) (t : M ⊗[K] fixedVectors X.V.representation H) :
     fixedVectorsBaseChange M Γ X H
-        ((fixedVectorsMap (SmoothRep.hom (X.ρ γ)) H).baseChange M t) =
-      fixedVectorsMap (SmoothRep.hom (((extendScalarsActionFunctor M Γ).obj X).ρ γ)) H
+        ((fixedVectorsMap (SmoothRep.hom (X.ρ γ).asHom) H).baseChange M t) =
+      fixedVectorsMap (SmoothRep.hom (((extendScalarsActionFunctor M Γ).obj X).ρ γ).asHom) H
         (fixedVectorsBaseChange M Γ X H t) := by
   induction t using TensorProduct.inductionOn with
   | tmul m x => rfl

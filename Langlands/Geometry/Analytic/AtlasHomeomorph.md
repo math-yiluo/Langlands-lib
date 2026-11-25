@@ -1,7 +1,5 @@
 # Transport of arbitrary supplied affinoid atlases
 
-Author: Worker 36.
-
 This module constructs an indexed affinoid atlas on a space homeomorphic
 to a space with a supplied actual atlas. It retains the original chart
 indices, presented positive-polyradius affinoid algebras and bounded
@@ -18,7 +16,7 @@ and Remark 1.2.4(i), printed page 16 / PDF page 13, gives affinoid
 atlases and their bounded restrictions. Registered source:
 `berkovich-1993-etale-cohomology`, PDF SHA256
 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.
-The original pages were read; pages 10–11 were reread for this unit.
+The original pages were read; pages 10–11 were reread for this module.
 No source-specific errata note was found in the available project and
 Library notes.
 
@@ -117,4 +115,4 @@ retains algebraic information beyond spectral points. It does not prove
 that an arbitrary homeomorphism between two independently supplied
 atlases is analytic, or construct atlas extension, general strong
 morphisms, analytic gluing, localization, a structure sheaf, analytic
-etale sites or Harris tower spaces. Those remain separate obligations.
+etale sites or Harris tower spaces. Those lie outside this module.

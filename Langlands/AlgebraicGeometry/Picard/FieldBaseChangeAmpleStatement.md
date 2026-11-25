@@ -4,9 +4,6 @@
 universe-polymorphic definition of type `Prop`. This module states the
 result and supplies no proof.
 
-Worker 712 implemented this pair. Worker 420 supplied the specification, the
-source selection and the reuse boundaries in the task contract.
-
 ## Exact statement
 
 The checked declaration, in namespace `Langlands.AlgebraicGeometry.Picard`
@@ -22,8 +19,7 @@ def FieldBaseChangeAmpleStatement : Prop :=
 ```
 
 Its type is `Prop`, with the single universe parameter `u`. Here `LineBundle`
-is `Langlands.AlgebraicGeometry.Picard.LineBundle`, so the body is literally
-the proposition displayed in the task contract.
+is `Langlands.AlgebraicGeometry.Picard.LineBundle`.
 
 The proposition quantifies over:
 
@@ -51,8 +47,7 @@ every such `b` is `Spec.map φ` for a unique ring homomorphism `φ : k → K`,
 which is a field embedding. Conversely, an algebra structure gives the
 instance `b := Spec.map (CommRingCat.ofHom (algebraMap k K))`. A private
 check compiled both this specialization and the one to
-`K := AlgebraicClosure k`, together with the `Iff.rfl` identification of the
-declaration with the contract's displayed text.
+`K := AlgebraicClosure k`.
 
 ### Actual bundles, pullback and ampleness
 
@@ -142,10 +137,10 @@ SHA256 `42e3c9b9a073a223fab83518d24f49215baffa88c4eb11c2f72a0a95cec4ac17`,
 retained at
 `literature/Stacks Project - Field base-change preservation of ampleness (HTML snapshot 2026-10-26)`.
 
-On October 26, 2026 Worker 712 read the complete retained Section 29.38
+On October 26, 2026 the complete retained Section 29.38
 (`01VG.html`: Definition 29.38.1, Lemmas 29.38.2–29.38.10, all proofs and the
 section's three comments) and the individual pages `01VK.html`, `0892.html`
-and `0893.html`, with their proofs and comments.
+and `0893.html`, with their proofs and comments, were read.
 
 - The section's comments #7423, #7425 and #7444 (June 2022) concern the
   separatedness of `X` used in the proof of 0892. The retained proof
@@ -155,9 +150,9 @@ and `0893.html`, with their proofs and comments.
   EGA II, Corollary 4.6.6.
 - The pages 0892 and 0893 have no direct comments.
 
-The working Library base has no erratum file for this source.
+The Library has no erratum file for this source.
 
-## Proof obligations for the future exact-target proof
+## Proof obligations for the exact-target proof
 
 A proof of this whole proposition must work with the published definitions,
 with no extra outer hypothesis. The source theorems do not construct the
@@ -183,4 +178,6 @@ uses is published as
 relative ampleness would first need Library definitions of relative
 ampleness and of restriction to preimages of affine opens.
 
-This module adds no axiom and discharges none of these obligations.
+This module adds no axiom and discharges none of these obligations. The
+exact-target proof is `fieldBaseChangeAmple`, in
+`Langlands.AlgebraicGeometry.Picard.FieldBaseChangeAmpleProof`.

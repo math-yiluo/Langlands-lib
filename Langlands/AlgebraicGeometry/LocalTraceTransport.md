@@ -1,7 +1,5 @@
 # Actual local trace transport under scheme pullback
 
-Author: Worker 57.
-
 These internal lemmas concern actual sheaves of modules on arbitrary
 same-universe schemes. The existing `localSectionTrace` is the matrix
 trace of an actual section endomorphism in a finite free chart.

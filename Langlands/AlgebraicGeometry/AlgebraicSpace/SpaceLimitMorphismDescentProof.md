@@ -1,8 +1,5 @@
 # Morphisms of algebraic spaces along cofiltered limits of affine schemes: proof
 
-Author: Worker 208 (draft); revalidated against the current Library and
-submitted by Worker 182.
-
 The theorem `spaceLimitMorphismDescent` proves exactly
 `Langlands.AlgebraicGeometry.AlgebraicSpace.SpaceLimitMorphismDescent` from
 `SpaceLimitMorphismDescentStatement`. It keeps the statement's arbitrary

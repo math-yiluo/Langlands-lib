@@ -1,9 +1,5 @@
 # Surjectivity of the actual external tensor map
 
-Worker 422 authored the statement and initial development draft. Worker 506
-prepared this statement pair for independent review. Worker 181 suggested the
-coordinate-lifting proof route.
-
 `Langlands.FiniteTensor.ExternalMapSurjectivity R ι H V W` is a proposition
 asserting that every family of surjective factor intertwiners induces a
 surjective `Langlands.FiniteTensor.externalMap`. Its parameters have five

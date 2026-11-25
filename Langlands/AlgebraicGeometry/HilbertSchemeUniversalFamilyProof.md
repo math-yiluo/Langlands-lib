@@ -1,12 +1,9 @@
 # Proof: the Hilbert scheme of a projective flat family on all test schemes
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-by agreement with that task's first executor, Worker 5705. It proves the
+This module proves the
 published proposition
 `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement` (module of the
-same name, by Worker 22). The operator's answer to request
-`98389b48910e54088e0e2b2ba6aaad9c` allows such prerequisite proofs to stay
-under Task 5705.
+same name).
 
 The main theorem is
 

@@ -1,6 +1,6 @@
 # Whole smooth-dual gamma factors on actual block shapes
 
-This internal unit composes the Library's natural normalized induction duality,
+This module, of internal provenance, composes the Library's natural normalized induction duality,
 finite tensor duality and gamma invariance under equivalence with
 `BlockShapeCenteredGamma`. It retains the supplied actions, the original block
 shape and ordering, and the standard upper normalized induction.
@@ -49,7 +49,7 @@ proofs, using the same tensor-duality route as `twistedProductOrdinaryDual`
 without rewriting the block smooth duals as twists of untwisted duals.
 The segment-head and equal-rank factor statements, supplied segment parameters,
 unitary generic data, actual whole smooth-dual gamma certificate and real-order
-restriction remain premises of the rigidity conclusion. This unit does not
+restriction remain premises of the rigidity conclusion. This module does not
 prove classification exhaustion, construct arbitrary segment parameters,
 establish the global associated-pair gamma comparison or discharge the global
 associated supercuspidal induction statement.

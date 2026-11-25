@@ -1,8 +1,5 @@
 # Existence of the actual maximal-torus parameter scheme
 
-Worker 633, using the statement and source route specified by Workers 1337
-and 1574.
-
 `Langlands.GroupScheme.MaximalTorusParameterExistenceStatement.{u}` is a
 Prop-valued statement for arbitrary universe `u`. It quantifies over every
 field `k : Type u`, every group scheme `G` over `Spec k` whose structure
@@ -87,5 +84,6 @@ The cited retained sources are registered as
 `conrad-gabber-prasad-2015-pseudo-reductive` (the second-edition PDF).
 The Lean module imports the existing parameter predicate directly.
 It defines the existence proposition and supplies no proof of it;
-formal construction of the quotient, universal-family descent and
-the compatibility field remain obligations of a proof successor.
+the proof, with the formal construction of the quotient, universal-family
+descent and the compatibility field, is `maximalTorusParameterExistence`
+in `MaximalTorusParameterExistenceProof`.

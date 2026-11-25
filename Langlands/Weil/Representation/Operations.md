@@ -1,6 +1,6 @@
 # Operations and invariants of complex Weil representations
 
-Worker 25 states a coherent family of properties of actual finite-dimensional
+This is a coherent family of properties of actual finite-dimensional
 complex representations. `Langlands.Weil.RepresentationOperations` is the
 conjunction of the five proposition definitions listed below. This module
 states these propositions and proves none of them; it adds no axiom. The
@@ -108,25 +108,21 @@ in the order of the conjunction.
   pour GL(n)* (2002), sections 2.1–2.2, printed page 593/PDF7. Literature ID
   `henniart-2002-characterization`; source SHA-256
   `40c0ed7c7bfb05f1415fd66642d0b1984052f0af7cb5f3061b328216e2d24306`.
-- Accepted twist definition artifact
-  `c83db975-8b79-4fbb-9901-2db836910a0a`, version 1; published commit
+- The twist definition module
+  `Langlands.Representation.Twist.Definitions`; published commit
   `3d5d019e3d023c64c9a71be49c55e1d2e47b5f41`; Lean SHA-256
   `9e193a22784cba92e727402aac5117056433e796e37e1c76f8710e2ddd11d8cf`.
   Previously published twist composition, intertwiner and dual-twist
   identities are reused as infrastructure and are not restated here.
-- Environment `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1,
-  Lean 4.34.0, Mathlib commit
-  `5ed2965256430c3649e86755f9576b54eca72435`, where the family was first
-  stated. The current check environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`
-  uses the same Lean version and Mathlib commit.
+- The pinned environment, Lean 4.34.0, Mathlib commit
+  `5ed2965256430c3649e86755f9576b54eca72435`.
   The mathematical interfaces are `Representation.prod`, `tprod`, `dual`,
   `Equiv`, `IntertwiningMap`, `Module.finrank`, `LinearMap.det`,
   `Representation.IsIrreducible` and `IsSemisimpleRepresentation`.
 
 No project definition is copied from the companion `Basic` and `Predicates`
-modules, which were an unpublished draft when this family was stated and are
-now published. Their Mathlib carrier/action interface determines the
+modules. Their Mathlib carrier/action interface determines the
 compatibility described above.
 This family does not construct an actual local Weil group or supply WD
 monodromy, Frobenius semisimplification, block classification, or arithmetic
-L/epsilon/gamma identities. Those remain distinct assigned families.
+L/epsilon/gamma identities. Those are distinct families.

@@ -1,11 +1,12 @@
 # The unequal-rank JPSS functional equation over every nonarchimedean local field
 
-Author: Worker 5550. This module defines one proposition,
+This module defines one proposition,
 `Langlands.RankinSelberg.LocalFieldUnequalRankFunctionalEquationStatement`
 (universes `uF`, `uV`, `uW`). It is a statement only: nothing here proves it.
-The separately planned reduction `Conductor.TrivialCharacterEpsilonReduction`
-is intended to use it as an explicit premise. That reduction is not included in
-this contribution.
+The separate reduction `Conductor.TrivialCharacterEpsilonReduction` uses it as
+an explicit premise. The statement is proved by
+`localFieldUnequalRankFunctionalEquation` in the all-field module
+`Langlands.AllField.Representation.RankinSelberg.LocalFieldUnequalRankFunctionalEquationProof`.
 
 ## Statement
 
@@ -107,7 +108,7 @@ Only the field and its normalizations differ.
   each measurable structure to be the Borel one, as the p-adic `letI` do.
   `T2Space F` and `TotallyDisconnectedSpace F` hold for every nonarchimedean local
   field, so these two binders do not narrow the scope; they keep the binder list
-  of the host statements.
+  of those two `Conductor` statements.
 - **`q` and `abv`.** The p-adic statement uses `T.residueCardinality` and
   `normalizedAbsoluteValue T`. Here `q` is any natural number equal to the residue
   cardinality, and `abv` is any absolute value with `abv ϖ = q⁻¹` for a uniformizer
@@ -132,7 +133,7 @@ spaces and the measures) and `Langlands.Representation.Whittaker.Iwasawa` (for
 
 ## Lean checks
 
-`lean_check` in environment `5c94c648-e8dc-4002-a50a-071ebf3f6096` compiles the
+`lean_check` in the pinned environment compiles the
 module with no errors or warnings. Inspection of the declaration reports a
 definition returning `Prop`, universe parameters `uF uV uW`, and only the axioms
 `propext`, `Classical.choice` and `Quot.sound`.

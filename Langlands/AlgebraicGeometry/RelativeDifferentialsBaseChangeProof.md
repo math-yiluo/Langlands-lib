@@ -1,14 +1,15 @@
 # Global differential base-change reduction
 
 `Langlands.Scheme.relativeDifferentialsBaseChangeIsIso_of_local_inputs`
-reduces the published proposition
+reduces the proposition
 `RelativeDifferentialsBaseChangeIsIsoStatement S` to two explicit inputs:
 open-immersion locality of the canonical square map and canonical base change
 for spectra of arbitrary commutative rings. The lemma is conditional; the
 companion `RelativeDifferentialsBaseChangeIsIso` module supplies both inputs
-by published proofs. All schemes and rings lie in arbitrary universe `u`.
+from `RelativeDifferentialsOpenImmersionProof` and
+`RelativeDifferentialsAffineBaseChangeProof`. All schemes and rings lie in arbitrary universe `u`.
 
-The module imports the published `RelativeDifferentialsBaseChangeTransport`,
+The module imports `RelativeDifferentialsBaseChangeTransport`,
 which supplies composition and congruence for the actual square maps and the
 criterion detecting invertibility after pullback along an open cover.
 
@@ -45,7 +46,7 @@ pullback identities and their vertical maps are open immersions. The
 comparison lemma and the open-cover criterion finish the proof. Empty
 schemes and zero coordinate rings require no separate assumptions.
 
-This is an internal derived assembly from the published canonical maps,
+This is an internal derived assembly from the canonical maps,
 transport identities, stalk criterion, and Mathlib's scheme-cover API.
 Its mathematical route implements the affine-local passage in Stacks
 Project Lemma 29.33.10 (tag [01V0](https://stacks.math.columbia.edu/tag/01V0)),
@@ -56,4 +57,3 @@ proofs were read in registered source
 `01UM.html`, lines 321–371, directory content SHA256
 `9c075370ba97d8876785c5486425c6c661765e747452c026583f4dc51f1e1133`.
 No relevant public erratum was present in the consulted Library.
-Worker 208 authored this reduction.

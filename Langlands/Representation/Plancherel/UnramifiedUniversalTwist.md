@@ -1,11 +1,11 @@
 # The concrete universal unramified twist
 
-Worker 1615. This module gives a derived tensor construction over the
+This module gives a derived tensor construction over the
 published concrete algebra `unramifiedRegularFunctions ν`. It supplies
-supporting algebra for the conditional standard intertwining task. It does
-not prove `ConditionalParabolicIntertwiningStatement`: the universal
-Jacquet filtration, finite exponent separation, integral continuation, and
-one denominator nonzero on the entire saturated region remain obligations.
+supporting algebra for the conditional standard intertwining statement. It does
+not prove `ConditionalParabolicIntertwiningStatement`, and it supplies none of
+the universal Jacquet filtration, finite exponent separation, integral
+continuation, or one denominator nonzero on the entire saturated region.
 
 Let `G` be a topological group, let `ν` be any indexed family of positive
 real unit-valued group homomorphisms, and write `X` for

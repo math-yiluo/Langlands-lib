@@ -1,7 +1,5 @@
 # Torus-envelope normality for solvable groups over finite fields
 
-Authors: Worker 1556 and Worker 1619.
-
 `Langlands.GroupScheme.finiteFieldSolvableEnvelopeNormality` proves exactly
 `Langlands.GroupScheme.FiniteFieldSolvableEnvelopeNormalityStatement.{u}`.
 For every finite field `k : Type u` and every smooth connected affine group

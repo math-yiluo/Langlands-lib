@@ -1,8 +1,8 @@
 # Actual central maximal split-torus quotients and norm-kernel compactness
 
-This internal derived unit constructs the actual algebraic quotient needed by the
+This internal derived module constructs the actual algebraic quotient needed by the
 compactness route and proves the rational-point adapter, retaining the two
-unproved structural obligations explicitly. It imports only named Library
+structural inputs explicitly as hypotheses. It imports only named Library
 interfaces and the norm-kernel open-central-quotient reduction; no external
 source assertion is used independently here.
 
@@ -38,8 +38,12 @@ and the local-field topology supply the topological-group and Hausdorff
 instances. Applying the norm-kernel reduction proves compactness.
 
 No rational-point surjectivity is assumed or inferred from scheme surjectivity.
-Neither characteristic nor split rank is restricted. Applying this unit to the
-actual centralizer-zero target still requires unconditional connected
-reductivity of its actual quotient, a published proof of anisotropic compactness,
-the source centralizer structure, and the supplied zero subgroup's openness
-and containment. This unit does not prove that final target.
+Neither characteristic nor split rank is restricted. Applying this module to the
+actual centralizer-zero statement `CentralizerZeroCompactOpenStatement` also
+requires unconditional connected reductivity of its actual quotient, a proof of
+anisotropic compactness (`anisotropicCompactness_proof` in
+`Langlands.GroupScheme.Rational.AnisotropicCompactnessProof`), the source
+centralizer structure, and the supplied zero subgroup's openness and
+containment. This module does not prove that statement;
+`centralizerZeroCompactOpen` (module
+`Langlands.Geometry.Building.KPCentralizerZeroCompactOpenProof`) proves it.

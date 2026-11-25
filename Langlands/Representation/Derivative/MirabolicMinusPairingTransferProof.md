@@ -1,7 +1,5 @@
 # Proof that unnormalized `Φ⁻` transfers covariant pairings
 
-Author: Worker 806.
-
 This module proves `Langlands.Derivative.Mirabolic.phiMinusPairingTransfer`, of type
 `PhiMinusPairingTransferStatement.{uF, uV, uW} F T m`, for every p-adic field `F`,
 topological data `T` and `m : ℕ`.

@@ -28,7 +28,7 @@ diffs):
 Declaration names and namespaces are unchanged. Apart from the universe generalization, the
 mathematical hypotheses and conclusions of the source are retained.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.P2M.Sol.S_NumberField_InfinitePlace_sign_norm_eq_prod_sign_embedding_of_isReal
 
 set_option maxHeartbeats 4000000

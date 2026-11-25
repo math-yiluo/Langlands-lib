@@ -42,5 +42,5 @@ theorems. They have no separate literature assertion.
 The existence of total-unit lifts after suitable choices of generic frames is
 still a hypothesis. Local generic trivializations alone do not provide it:
 a generic transition unit need not extend as a total unit. This module does
-not prove global extension of all generic line bundles or the host proposition
-`Langlands.AbelianScheme.ValuationRingTwoAxisExtensionStatement`.
+not prove global extension of all generic line bundles or the proposition
+`Langlands.AbelianScheme.ValuationRingTwoAxisExtensionStatement` that it serves.

@@ -53,7 +53,7 @@ when the finrank is one.
 The provenance is internal: the proof is the elementary short exact sequence
 argument above, using the Library's actual subquotient algebra and finite-length
 constituent existence. Its direct project imports are `ExactSmoothSubquotients`,
-`SubquotientAlgebraProof` and `Smooth.ConstituentSupport`. Before integration consolidation, the recursive
+`SubquotientAlgebraProof` and `Smooth.ConstituentSupport`. When this module was written, the recursive
 closure contained 116 existing project modules, with classification imports
 limited to `ConstituentRelations`, `Segments`, `Supercuspidal`,
 `SupercuspidalSupport` and `SupercuspidalTwist`. These provide definitions,
@@ -62,10 +62,11 @@ or classification theorem. The actual helper proofs used here preserve
 intertwiners, pass finite group-algebra length to subquotients, or extract
 a factor from an actual finite composition series. None uses global support
 decomposition, ordered quotient coverage, multisegment classification, or the
-conclusions excluded by the repeated cuspidal triple task.
+conclusions excluded for the repeated cuspidal triple transfers
+(`RepeatedCuspidalTripleJacquetTransfer`).
 
 The functor's exactness, nonvanishing, source finite length and image
-irreducibility or dimension are explicit hypotheses. This unit establishes
+irreducibility or dimension are explicit hypotheses. This module establishes
 none of them for a particular derivative or induced representation. In
 particular it does not prove a local rank-three structure calculation or
 either ambient repeated cuspidal Jacquet transfer.

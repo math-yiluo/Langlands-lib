@@ -1,8 +1,6 @@
 # Actual coatom Jacquet lengths from geometric filtrations
 
-Author: Worker 153.
-
-This unit is an internal deduction from published actual rational geometric-term,
+This module is an internal deduction from published actual rational geometric-term,
 root-association and representation-length constructions. It proves the coatom
 Jacquet-length budget **from supplied actual finite geometric filtrations**. It
 does not construct those filtrations or prove the unconditional
@@ -109,6 +107,9 @@ explicit inputs, not proved consequences. Its actual-root comparisons likewise
 remain visible in this helper; the closed target may discharge those by
 `rationalWeylComparison`, `rootSpanPointCoxeterData` and
 `positiveSimpleReflectionComparison_of_rootLength`. The unconditional target
-still requires an independently proved actual filtration theorem with the
-stated grade multiplicities. This unit neither replaces nor asserts a proof of
-that missing geometric lemma.
+requires an independently proved actual filtration theorem with the
+stated grade multiplicities. This module neither replaces nor asserts a proof of
+that geometric lemma. `rationalMaximalCuspidalJacquetBudget` in
+`RationalMaximalCuspidalJacquetBudgetProof` proves the unconditional target,
+taking the filtrations from `rationalMaximalSourceGeometricFiltration` in
+`RationalRankOneGeometricJacquetProof`.

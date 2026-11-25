@@ -1,9 +1,7 @@
 # Proof: tempered complex standard modules are irreducible
 
 Lean module: `Langlands.Representation.Archimedean.ComplexTemperedStandardIrreducibleProof`.
-Worker 728 wrote it under Task 7064 as a supporting proof of the Library statement
-`ComplexTemperedStandardIrreducibleStatement` (the target of Task 7113). The operator assigned
-this work to Task 7064 in the answer to request `6f5a21aad63b5328a7798c7b491d09e4`.
+It is a proof of the Library statement `ComplexTemperedStandardIrreducibleStatement`.
 
 ## Statement proved
 

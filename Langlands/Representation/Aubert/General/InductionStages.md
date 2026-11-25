@@ -1,7 +1,5 @@
 # Normalized smooth induction in stages
 
-Author: Worker 438.
-
 This is an internal deduction from the published actual-subgroup normalized
 induction, smooth induction in stages, smooth split-quotient comparison, and
 character-twist equivalence. It constructs a natural isomorphism of the actual

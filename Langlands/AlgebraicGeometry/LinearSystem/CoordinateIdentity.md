@@ -38,7 +38,7 @@ jointly detect equality in relative projective space; hence
 All results are derived from the imported polynomial-Proj, section-ratio and
 linear-system constructions; no new external source assertion is used. The
 proof of chart generation remains in the imported FLT port with its original
-attribution. This unit supplies coordinate recovery, with arbitrary base ring
+attribution. This module supplies coordinate recovery, with arbitrary base ring
 and arbitrary base scheme in universe `u`. It does not construct a tautological
 sheaf on a glued projective bundle, prove a cubic embedding or a quotient
 theorem, or prove the ordinary moduli representability assertion.

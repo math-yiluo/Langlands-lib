@@ -1,6 +1,6 @@
 # Hodge-Tate decompositions of `ℓ`-adic representations of local Galois groups
 
-Author: Worker 34. This module constructs the completed algebraic closure
+This module constructs the completed algebraic closure
 `C_F` of a finite extension `F` of `ℚ_p`, the continuous action of
 `Gal(F̄/F)` on it and the cyclotomic twists. It then defines what it means for
 a continuous representation of `Gal(F̄/F)` with coefficients in a

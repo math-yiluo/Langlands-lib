@@ -3,7 +3,7 @@
 The Lean module `Langlands.Correspondence.HenniartCyclicStepHerbrandStatement` contains
 one proposition definition,
 `Langlands.Henniart.CyclicPrimeStepHerbrandPsiStatement.{u}`. It is a statement and is
-not proved here; its proof is a separate task. The module imports
+not proved here. The module imports
 `Langlands.Correspondence.HenniartCyclicBaseChange` and
 `Langlands.LocalFactor.Ramification.Herbrand.SubextensionProof`. It defines nothing else.
 
@@ -30,7 +30,7 @@ relative function `ψ_{E/L} = φ_{N/E} ∘ ψ_{N/L}`, computed in the Galois clo
 
 ## The parts of the statement
 
-- `Numerical.CyclicPrimeStep`, `S.algebra` and `S.herbrandPsi` come from Task 7375's module
+- `Numerical.CyclicPrimeStep`, `S.algebra` and `S.herbrandPsi` come from the module
   `Langlands/Correspondence/HenniartCyclicBaseChange.lean`. A step consists of p-adic fields
   `base` and `top`, an embedding `embedding : base.Carrier →ₐ[Padic p] top.Carrier`, a proof
   that `top` is Galois over `base`, and a proof that the Galois group has prime order.
@@ -87,11 +87,12 @@ abstract field `S.top.Carrier`, and `relativeHerbrandPsi E` works in a subfield 
 Lemma `lem:tower` of the operator's route note
 (`operator-numerical-llc-route-2026-11-16`, `numerical-LLC-route.tex`, lines 1196-1213)
 builds a tower of cyclic extensions of prime degree and computes the Herbrand function of each
-step. Task 7378 states that lemma along `CyclicPrimeStep`s and their `herbrandPsi`, and
-Task 7387 is to prove it. The Kummer steps of that proof are fields `L(ϖ^{1/p})` with `ϖ` a
-uniformizer of `L`.
+step. `Langlands.Henniart.CyclicTowerStatement` (module `HenniartCyclicTower`) states that lemma along
+`CyclicPrimeStep`s and their `herbrandPsi`, and `cyclicTower` (module
+`HenniartCyclicTowerProof`) proves it. The Kummer steps of that proof are fields `L(ϖ^{1/p})`
+with `ϖ` a uniformizer of `L`.
 
-The published Kummer-step formula of Task 7450,
+The published Kummer-step formula
 `Langlands.Ramification.Kummer.KummerStepHerbrandPsiStatement`, proved as
 `Langlands.Ramification.Kummer.kummerStepHerbrandPsi`, is stated for
 `relativeHerbrandPsi (adjoinFiniteIntermediate L α)` of an intermediate field `L(α)` with

@@ -1,8 +1,5 @@
 # Decreasing blocks in a least concatenated word
 
-Authors: Worker 320 (shared Lean proof and initial explanation), Worker 438
-(verification and expanded explanation).
-
 These internal combinatorial lemmas support the proposed extraction of special
 segment constituents from a least actual cuspidal Jacquet word. They are derived
 from elementary list permutation and order properties, with no representation

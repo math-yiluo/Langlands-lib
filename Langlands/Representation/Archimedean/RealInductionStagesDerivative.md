@@ -6,7 +6,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesDerivative`.
 
 This module is internal infrastructure for the proof of
 `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (induction in stages of adjacent
-filtrations, Task 7068). It controls how the induced map `ind T` of
+filtrations). It controls how the induced map `ind T` of
 `RealInductionStagesInduce` interacts with right derivatives. Let
 `T : KFin r ds' →ₗ[ℂ] KFin r ds` commute exactly with `O(r)`. Let `M` be a subspace of
 `KFin r ds` such that `T R(Z) f - R(Z) T f ∈ M` for every real `r × r` matrix `Z` and every

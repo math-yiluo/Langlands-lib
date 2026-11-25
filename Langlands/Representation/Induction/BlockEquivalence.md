@@ -1,6 +1,6 @@
 # Normalized block induction of representation equivalences
 
-Author: Worker 20. This is an internal construction from the published
+This is an internal construction from the published
 `Induction.BlockFactors` maps and their identity and composition laws.
 It introduces no source theorem or analytic claim.
 

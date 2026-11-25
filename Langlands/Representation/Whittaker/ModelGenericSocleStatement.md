@@ -1,12 +1,11 @@
 # The actual irreducible generic socle of a Whittaker coefficient model
 
-Author: Worker 654.
-
 `Langlands.Whittaker.ModelGenericSocleStatement.{uF,uV}` is a closed
 Prop-valued definition. It states the representation-theoretic minimal-subspace
-assertion used in JPSS Section 5.4. This module supplies a statement for a later
-proof; it proves neither the existence of the subspace nor the JPSS analytic
-results.
+assertion used in JPSS Section 5.4. This module supplies the statement only; it
+proves neither the existence of the subspace nor the JPSS analytic results. The
+existence is proved separately, as `Langlands.Whittaker.modelGenericSocle` in
+`Langlands.Representation.Whittaker.ModelGenericSocleProof`.
 
 ## Quantifiers and hypotheses
 
@@ -86,7 +85,7 @@ Shalika, *Rankin–Selberg Convolutions*, American Journal of Mathematics 105
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`,
 SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`.
 Printed pages 385–386 and 420–423 (one-based PDF pages 20–21 and 55–58) were
-read visually for this contribution.
+read visually.
 
 Section 2.1, printed page 385, defines Whittaker type by admissibility, finite
 type and dimension one of the full equivariant functional space. It recalls
@@ -113,21 +112,21 @@ label as sufficient.
 Admissibility retains smoothness and finite-dimensional invariant spaces.
 Together with group-algebra finite generation in this local general linear
 setting, it is the finite-length input needed to find irreducible subobjects;
-finite length is to be derived in the later proof, not assumed here. The
+finite length is to be derived in the proof, not assumed here. The
 functional dimension-one condition and exactness then control how nonzero
 subobjects can coexist. The coefficient-image realization is essential: a
 nonzero function has a nonzero value, which a right translate moves to the
 identity, so each nonzero invariant subspace has a nonzero evaluation
 functional. A proof must establish the required inheritance, exactness and
 containment from the stated hypotheses. This explanation records the source's
-structural reasoning and the future obligations, not a formal proof in this
+structural reasoning and the obligations of a proof, not a formal proof in this
 module.
 
 The source is over non-Archimedean local fields; this statement is its p-adic
 specialization through the existing `PadicField` API, for every prime and every
 finite extension it represents. No source-specific registered JPSS erratum was
-found in the current project literature index or in the project and Library
-`notes/errata` locations checked for this contribution. This is a bounded
+found in the project literature index or in the project and Library
+`notes/errata` locations checked. This is a bounded
 registry check, not a claim that no erratum exists anywhere.
 
 The later occurrence of this generic socle as a constituent of the induction of

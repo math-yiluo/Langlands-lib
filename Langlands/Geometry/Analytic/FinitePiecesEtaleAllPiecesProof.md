@@ -1,7 +1,5 @@
 # Pointwise étaleness from finite to arbitrary recognized pieces
 
-Author: Worker 310.
-
 `Langlands.Analytic.AffinoidAtlasPresentation.StrongHom.finitePiecesEtaleAllPieces`
 proves the existing Library proposition
 `FinitePiecesEtaleAllPiecesStatement.{u, v, w} K`. For an actual strong map

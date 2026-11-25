@@ -44,7 +44,7 @@ theorem placeCompletionExtension_algebraMap (w : Place B) (x : A) :
     change NumberField.LiesOver.completionMap (v := v) (w := w)
         ((WithAbs.toAbs v.1 x : WithAbs v.1) : v.Completion) =
       ((WithAbs.toAbs w.1 (algebraMap A B x) : WithAbs w.1) : w.Completion)
-    exact NumberField.LiesOver.completionMap_coe (WithAbs.toAbs v.1 x)
+    exact NumberField.LiesOver.completionMap_coe v w (WithAbs.toAbs v.1 x)
   · let v := w.under (𝓞 A)
     let : w.asIdeal.LiesOver v.asIdeal := inferInstanceAs (w.asIdeal.LiesOver (w.asIdeal.under (𝓞 A)))
     exact AdelicFunctoriality.FiniteExtension.completionMap_coe v w x

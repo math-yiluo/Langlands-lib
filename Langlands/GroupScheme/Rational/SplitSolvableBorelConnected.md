@@ -1,6 +1,6 @@
 # Split-solvable containment in a split Borel of a connected group
 
-Worker 882. This internal theorem is the connected ambient-group case of Milne, *Algebraic Groups* (2017), Theorem 17.105(a), pp.384–385.
+This internal theorem is the connected ambient-group case of Milne, *Algebraic Groups* (2017), Theorem 17.105(a), pp.384–385.
 
 The theorem assumes a connected smooth affine group over an arbitrary field, a geometric Borel subgroup that is split solvable, and a closed split-solvable subgroup. It produces a rational conjugate of the Borel containing the subgroup on every relative test scheme.
 

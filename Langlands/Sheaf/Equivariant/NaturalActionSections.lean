@@ -34,7 +34,7 @@ structure NaturalAction (K : Type uK) [Monoid K] (Φ : E ⥤ T) where
   act : ∀ V : E, K →* (End (Φ.obj V))ᵐᵒᵖ
   /-- The images of the morphisms of `E` commute with the actions. -/
   comm : ∀ {V W : E} (f : V ⟶ W) (k : K),
-    (act V k).unop ≫ Φ.map f = Φ.map f ≫ (act W k).unop
+    (act V k).unop.asHom ≫ Φ.map f = Φ.map f ≫ (act W k).unop.asHom
 
 namespace NaturalAction
 
@@ -63,8 +63,8 @@ def sectionsIntertwiningMap (F : Tᵒᵖ ⥤ ModuleCat.{w} R) {V W : E} (f : V �
   LinearMap.intertwiningMap_of_isIntertwiningMap (actionRepresentation F (a.act W))
     (actionRepresentation F (a.act V)) (F.map (Φ.map f).op).hom fun k s => by
       rw [actionRepresentation_apply, actionRepresentation_apply]
-      change (F.map (a.act W k).unop.op ≫ F.map (Φ.map f).op).hom s =
-        (F.map (Φ.map f).op ≫ F.map (a.act V k).unop.op).hom s
+      change (F.map (a.act W k).unop.asHom.op ≫ F.map (Φ.map f).op).hom s =
+        (F.map (Φ.map f).op ≫ F.map (a.act V k).unop.asHom.op).hom s
       rw [← F.map_comp, ← F.map_comp, ← op_comp, ← op_comp, a.comm]
 
 @[simp]
@@ -155,7 +155,7 @@ def invariantPresheaf (F : Tᵒᵖ ⥤ ModuleCat.{w} R) : Eᵒᵖ ⥤ ModuleCat.
 theorem mem_invariantPresheaf_obj_iff (F : Tᵒᵖ ⥤ ModuleCat.{w} R) (V : E)
     (s : F.obj (op (Φ.obj V))) :
     s ∈ (actionRepresentation F (a.act V)).invariants ↔
-      ∀ k : K, (F.map (a.act V k).unop.op).hom s = s :=
+      ∀ k : K, (F.map (a.act V k).unop.asHom.op).hom s = s :=
   Iff.rfl
 
 @[simp]

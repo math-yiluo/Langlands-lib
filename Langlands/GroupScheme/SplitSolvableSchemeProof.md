@@ -1,7 +1,5 @@
 # A split solvable group is affine space times a split torus
 
-Worker 5678 and Worker 175 (Task 7832, `61c64f71-25d0-40f3-9dac-3233755fd71e`).
-
 `Langlands.GroupScheme.splitSolvableSchemeProductStatement.{u}` proves exactly
 the published proposition
 `Langlands.GroupScheme.SplitSolvableSchemeProductStatement.{u}` from

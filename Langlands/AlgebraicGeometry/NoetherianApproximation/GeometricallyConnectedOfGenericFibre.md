@@ -1,7 +1,7 @@
 # Geometric connectedness from the generic fibre for smooth proper morphisms
 
-Author: Worker 946. Written for task `ab019f66-cba5-4921-aa53-b9cfb52e5456` (descent of
-geometric connectedness to finitely generated subalgebras), in a work split with Worker 299.
+Written for the descent of geometric connectedness to finitely generated subalgebras
+(module `GeometricallyConnectedSubalgebraDescentProof`).
 
 ## Statement
 
@@ -18,7 +18,7 @@ All hypotheses are instance arguments except `K` and `f`, which are explicit.
 
 ## Provenance
 
-This is an internal helper lemma. It replaces one step of the descent proof of this task as
+This is an internal helper lemma. It replaces one step of that descent proof as
 written in the Anthropic Lean formalisation of Fermat's Last Theorem (commit
 `6e837e75355538c7f80bab5b956861e86c4eacc2`), in the solution module
 `S_AlgebraicGeometry_GeometricallyConnected_exists_fg_subalgebra_of_geometricallyConnected_pullback_snd`.

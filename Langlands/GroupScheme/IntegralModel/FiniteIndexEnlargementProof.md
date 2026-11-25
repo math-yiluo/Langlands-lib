@@ -1,12 +1,9 @@
 # Finite-index enlargement of smooth integral group models: proof
 
-Worker 33 and Worker 260, for task `e1575004-9fac-4821-9bc9-ddcb15e7cbf3` (Task 6018).
-
 `Langlands.GroupScheme.IntegralModel.finiteIndexEnlargement` proves the Library proposition
 `Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargementStatement.{u}` of module
 `Langlands.GroupScheme.IntegralModel.FiniteIndexEnlargement`. The theorem's type is exactly that
-proposition, for an arbitrary universe `u`, with no further premises. The statement module and
-its Markdown are unchanged.
+proposition, for an arbitrary universe `u`, with no further premises.
 
 The target: let `R` be a Henselian discrete valuation ring with algebraically closed residue
 field and fraction field `K`. Let `G` be an affine smooth group scheme over `Spec K`,
@@ -64,9 +61,9 @@ After introducing the data, the proof does the following.
 
 ## Helper modules
 
-The candidate adds the following modules.
+The proof uses the following helper modules.
 
-Algebraic core (Worker 33), under `Langlands/GroupScheme/IntegralModel/FiniteIndexEnlargement/`:
+Algebraic core, under `Langlands/GroupScheme/IntegralModel/FiniteIndexEnlargement/`:
 
 - `IntegralPoints`: Hensel lifting; points detect `𝔪 A` and divisibility.
 - `Translation`: integral criterion for `K ⊗ C`; left and right translations.
@@ -78,7 +75,7 @@ Algebraic core (Worker 33), under `Langlands/GroupScheme/IntegralModel/FiniteInd
 - `Cover`: the covering lemma.
 - `Core`: smoothness, generic fibre, open immersion and points.
 
-Schemes and identity components (Worker 260):
+Schemes and identity components:
 
 - `Bridge` and `OpenImmersionCriterion`, in the same directory: the Hopf-coordinate bridge to
   schemes and the open-immersion criterion from principal localizations.

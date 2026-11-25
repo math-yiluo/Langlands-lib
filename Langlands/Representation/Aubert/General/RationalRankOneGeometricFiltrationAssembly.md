@@ -1,7 +1,5 @@
 # Rank-one Jacquet computation from ordered actual geometric filtrations
 
-Author: Worker 124.
-
 This module implements the implication
 
 ```text
@@ -11,8 +9,10 @@ RationalMaximalSourceGeometricFiltrationStatement.{u,v} →
 
 The entry is the proof-valued definition
 `rationalRankOneGeometricJacquetOfMaximalSourceFiltration`. Its filtration
-premise is still unproved. This contribution does not prove the whole host
-target or complete Task 5271. All target binders and their universes are
+premise is proved separately, as `rationalMaximalSourceGeometricFiltration` in
+`RationalRankOneGeometricJacquetProof`, which combines the two into
+`rationalRankOneGeometricJacquet`. This module alone does not prove the whole
+target `RationalRankOneGeometricJacquetStatement`. All target binders and their universes are
 retained, and the target Lean/Markdown pair and its imported pairs are unchanged.
 
 ## Actual vanishing away from the self Levi
@@ -32,7 +32,7 @@ No finite-length or irreducibility premise enters this step.
 
 `pointRankOneMiddleSequence_of_filtration` takes the analogous self filtration,
 the exact longest-class lift `n`, `hn` and normalization witness `hself` from
-the host target. It constructs the actual short exact sequence in the required
+the target. It constructs the actual short exact sequence in the required
 direction, without splitting or assuming nonzero endpoints.
 
 First, the inverse-longest class differs from `1`. Otherwise
@@ -66,7 +66,7 @@ order, not an unordered list of isomorphism classes.
 
 The entry introduces exactly the field, group scheme, torus and topology
 instances, actual simple-root enumeration, structural statements, closed
-families and Coxeter premises of the host target. It derives
+families and Coxeter premises of the target. It derives
 `associatedSubset actual J = J` from the supplied `hself` using
 `pointAssociatedSubset_eq_of_normalizing_longestLift`. The filtration premise
 is applied at the same data and `σ`, first to `J` and then to each other proper
@@ -80,7 +80,7 @@ no nonempty-root premise; maximality has no witness when the roots are empty.
 ## Provenance and dependency boundary
 
 This is an internal algebraic assembly of the published target and the
-explicit new ordered-filtration proposition. The finite-filtration sequence
+explicit ordered-filtration proposition. The finite-filtration sequence
 lemma is documented in
 [LastAndSinglePrefixSequence](../../Filtration/LastAndSinglePrefixSequence.md).
 The term calculations and their structural and normalization dependencies are
@@ -92,18 +92,17 @@ Other directly invoked declarations are `IsMaximalStandard.ne_univ`,
 `objectRepFiltrationSubsingleton`, and
 `SmoothRep.isZero_iff_subsingleton_carrier`.
 
-The proof uses the geometric lemma only as the explicit, unproved
+The proof uses the geometric lemma only as the explicit
 `RationalMaximalSourceGeometricFiltrationStatement` premise. It does not invoke
 a proved instance of the represented or rational geometric lemma. No
 adjointness, cuspidal-support theorem, character independence or classification
 result is used in the proof bodies or in the documented term dependencies.
-The host target's imported closure includes separate statements and
+The target's imported closure includes separate statements and
 conditional rank-one constituent assemblies; importing them does not
 instantiate their representation-theoretic hypotheses. No Grothendieck-class
 identity is used to infer a representation isomorphism or zero object.
 
-To obtain the task's required theorem with no extra parameters, the
-ordered-filtration proposition must have an exact published proof under its
-visible premises (or a different route must establish the target directly).
-Its publication as a statement or acceptance of this implication does not
-satisfy that obligation.
+To obtain `RationalRankOneGeometricJacquetStatement` with no extra parameters,
+the ordered-filtration proposition must be proved under its visible premises
+(or a different route must establish the target directly);
+`RationalRankOneGeometricJacquetProof` does the former.

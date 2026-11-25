@@ -2,7 +2,7 @@ import Langlands.Global.Arithmetic.HarrisProposition48MackeyStepStatement
 import Langlands.Global.Arithmetic.HarrisMackeyReciprocity
 import Langlands.Global.Arithmetic.HarrisProposition48MackeyChildProblem
 import Langlands.Global.Arithmetic.HarrisProposition48MackeyFiniteProof
-import Langlands.ClassField.Global.CohomologyMaps
+import Langlands.ClassFieldTheory.Global.CohomologyMaps
 import Langlands.ClassFieldTheory.Local.CommonClosureExistenceProof
 
 /-! # The arithmetic Mackey step in Harris's Proposition 4.8 -/
@@ -14,7 +14,7 @@ universe uF
 namespace Langlands.Global.Harris
 
 open NumberField AdelicFunctoriality LocalClassField LocalFactor.CommonClosure
-open GeneralPosition Weil.Local Langlands.ClassField.Global
+open GeneralPosition Weil.Local Langlands.ClassFieldTheory.Global
 open scoped FiniteExtension Pointwise
 
 private theorem doubleCosetCard {G : Type*} [Group G] (H K : Subgroup G) [hH : H.Normal] :

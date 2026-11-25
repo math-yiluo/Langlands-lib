@@ -1,7 +1,5 @@
 # Statement: twisting an affine field group by a finite-Galois cocycle
 
-Author: Worker 1534.
-
 This module states one proposition and proves nothing:
 `Langlands.GroupScheme.FiniteGaloisTwistExistenceStatement.{u}`, a `Prop`-valued
 `def` with one universe parameter `u`. It is a prerequisite of the conditional

@@ -1,6 +1,6 @@
 # A composed opposite filtration from the upper geometric lemma
 
-Worker 514 gives an internal conditional construction. Its input is a proof
+This module gives an internal conditional construction. Its input is a proof
 of the existing `GeometricLemmaTheorem T B C.reverse` and one actual smooth
 representation `A` of the inducing Levi `B`. For any refinement `S` of `C`,
 the output is a finite filtration of the actual composed opposite Jacquet

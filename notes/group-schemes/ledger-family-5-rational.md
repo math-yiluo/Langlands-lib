@@ -1,8 +1,7 @@
 # Group-scheme ledger, family 5: rational structure over fields
 
-Author: Worker 3483, 10 November 2026, for the algebraic and reductive group-scheme program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` (Task 3483). This note is the source-to-declaration
-ledger for family 5 of that program's contract. Family 5 covers:
+This note, dated 10 November 2026, is the source-to-declaration
+ledger for family 5 of the algebraic and reductive group-scheme program. Family 5 covers:
 
 - maximal split tori over the ground field and their rational conjugacy;
 - relative roots, the relative root system and the relative Weyl group `N(k)/Z(k)`;
@@ -16,8 +15,7 @@ ledger for family 5 of that program's contract. Family 5 covers:
 - relative root subgroups;
 - how non-split, non-quasi-split and anisotropic groups are retained.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5` and environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6`. All Lean names are in `Langlands.GroupScheme` unless
+It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. All Lean names are in `Langlands.GroupScheme` unless
 a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that commit.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`. "Connected
 reductive" means `IsConnectedReductive` (`Reductive/Basic`): smooth, affine structure map,
@@ -35,31 +33,28 @@ with absolute ones is part of this family; it is section I.
 ## Status codes and evidence
 
 Each row gives the source assertion with its locator, the exact Lean statement and its
-hypotheses, a status, the evidence, and the owner task.
+hypotheses, a status and the evidence.
 
 - **D (definition or internal result).** A published construction, or a published theorem
   that is not a proposition declaration, with the hypotheses listed in the row. The evidence
-  is its module path. No owner task is needed.
+  is its module path. 
 - **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. The author also
-  type-checked `example : S := proof` for every P row in a private module. That check
-  passed with no errors or warnings, and `#print axioms` reported only `propext`,
-  `Classical.choice` and `Quot.sound` for every proof theorem; it is not public evidence.
-  No further proof work or owner task is needed.
+  exactly the statement. The evidence is that theorem and its module path. Every P row was
+  also type-checked as `example : S := proof`, with no errors or warnings, and
+  `#print axioms` reported only `propext`, `Classical.choice` and `Quot.sound` for every proof
+  theorem. No further proof work is needed.
 - **C (composite, not published).** No published theorem has the statement as its type.
-  However, a term built only from published theorems has that type: the author type-checked
-  it in the same private module, and its axioms are `propext`, `Classical.choice` and
-  `Quot.sound`. The composite is not an accepted artifact. The row names the owner task, or
-  says that there is none. A conjunction of published components, or a projection out of a
+  However, a term built only from published theorems has that type: it was type-checked
+  in the same way, and its axioms are `propext`, `Classical.choice` and
+  `Quot.sound`. The composite is not itself in the Library. A conjunction of published components, or a projection out of a
   published conjunction, is also listed as C: what is missing is then a named wrapper
   theorem, not mathematics.
 - **O (open).** A Lean statement exists, but no published proof and no composite from
   published results is known.
 - **M (missing statement).** A source assertion of this family has no Lean statement in the
-  Library. It is an obligation of the program, recorded with its owner task if one exists.
+  Library. It is an obligation of the program.
 
-The labels "accepted" and "published" are used only for artifacts that passed independent
-review. A "staged" candidate has passed machine validation only.
+The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 
@@ -270,8 +265,7 @@ Borel–Tits 4.18, printed p.92 (PDF 39).
 - Status P: `parabolicIntersectionCentralizer` (`Rational/ParabolicIntersectionCentralizerProof`).
 - Weakening: `ParabolicIntersectionSplitTorusStatement` (`Rational/ParabolicIntersectionAssembly`):
   the same with "`i` factors through both parabolics". Status C:
-  `parabolicIntersectionSplitTorusStatement_of_centralizer parabolicIntersectionCentralizer`.
-  Owner task: none. It is a wrapper only.
+  `parabolicIntersectionSplitTorusStatement_of_centralizer parabolicIntersectionCentralizer`. It is a wrapper only.
 
 **B10. Split part of a maximal torus in a minimal parabolic.** Source: derived from the
 proof of Borel–Tits 4.18, printed p.92 (PDF 39), with 2.15 d), printed p.70 (PDF 17), 4.2–4.3,
@@ -390,7 +384,7 @@ Renard V.2.5–V.2.6, printed pp.107–108 (PDF 113–114), and V.3.6–V.3.7, p
   restriction `ℚ ⊗ X^*(G)_k → ℚ ⊗ X^*(A)` is bijective and `dim T = relative root rank + dim A`.
   Status P: `relativeRankIdentity` (`Rational/RelativeRankIdentityProof`).
 - The conjunction `RelativeRankStatement` (same module). Status C:
-  `⟨relativeSimpleRootBasis, relativeRankIdentity⟩`. Owner task: none.
+  `⟨relativeSimpleRootBasis, relativeRankIdentity⟩`.
 
 **C6. Normalizer and centralizer of a split torus.** Sources: Milne 2017, Proposition 1.83,
 printed p.31 (PDF 47), Proposition 1.92, printed p.33 (PDF 49), and Corollary 13.10, printed
@@ -511,8 +505,8 @@ printed p.101 (PDF 48), and 5.20, printed p.102 (PDF 49); Renard V.4.5, printed 
   `B = P_∅(k)`.
 - Status C: `titsStandardParabolicStatement_of_statements standardParabolicEndpoints
   standardParabolicPointsStatement_proof standardRelativeWeylGeneration`.
-- Owner task: Task 3857 (`604afc86-19c2-42df-bc5b-bf27328630a2`). Its proof candidate
-  `7eecbc87-c14a-467b-ab5c-709bf27c3039` is staged and not yet reviewed.
+- Its named proof was not in the Library at the commit above; the
+  [rational structure coverage note](rational-structure-coverage-2026-11-13.md) records it.
 
 **D8. Finite parabolic double cosets with torus-adapted representatives.** Sources:
 Borel–Tits, Corollaire 5.20, printed p.102 (PDF 49); Renard V.4.5, Corollaire, printed p.120
@@ -525,7 +519,8 @@ Borel–Tits 4.18.
 - Status C: `representedParabolicDoubleCosetStatement_of_dynamic_structural_inputs rationalBruhat
   genericMinimalParabolic minimalParabolicConjugacy parabolicIntersectionCentralizer
   parabolicDynamic smoothMaximalSplitTorusConjugacy` (`Rational/ParabolicDoubleCosetAssembly`).
-- Owner task: Task 4901 (`f78f48cb-43dd-4e38-a665-b8e068407586`), which has no candidate yet.
+- Its named proof was not in the Library at the commit above; the
+  [rational structure coverage note](rational-structure-coverage-2026-11-13.md) records it.
 
 **D9. Standard cocharacters and standard Levi subgroups.** Sources: Borel–Tits 3.13,
 printed pp.78–80 (PDF 25–27), 4.2, printed pp.85–86 (PDF 32–33), and 5.12, printed p.99
@@ -565,7 +560,6 @@ and V.3.14, printed p.113 (PDF 119). The formulation over every field is derived
   Status P for existence: `parabolicRootPresentationExistence` (same module).
 - `ParabolicRootPresentationIndependenceStatement` and `ParabolicRootPresentationIsoStatement`:
   status C, the projections `parabolicRootPresentation.2.1` and `parabolicRootPresentation.2.2`.
-  Owner task: none.
 
 ## E. Split components, rational characters and the centre
 
@@ -605,7 +599,7 @@ Lean formulation is derived.
   cocharacter image the central directions and character kernel the root span. Status P:
   `relativeSplitCentralDirections` (`Rational/RelativeSplitCentralDirectionsProof`).
 - The conjunction `RelativeCentralDirectionsStatement` (same module). Status C:
-  `⟨relativeCharacterRootComplement, relativeSplitCentralDirections⟩`. Owner task: none.
+  `⟨relativeCharacterRootComplement, relativeSplitCentralDirections⟩`.
 
 **E5. General linear groups.** Sources: Milne 2017, Example 21.6, printed p.426 (PDF 442),
 Example 21.36, printed p.435 (PDF 451), Example 21.40, printed p.436 (PDF 452), 25.13,
@@ -725,7 +719,7 @@ reductive and a maximal split torus `i` unless stated otherwise:
   `U_{2a} ⊆ U_a` is central in `U_a` and the fppf quotient is a vector group. Status P:
   `rootSubgroupVector` (`Rational/RootSubgroupVectorProof`).
 - The conjunction `RootSubgroupStructureStatement`. Status C: the six proofs above as a
-  tuple. Owner task: none.
+  tuple.
 
 **G2. Ordered products** (`Rational/RootProductStatement`):
 - `SemigroupOrderedProductStatement`: let `G` be smooth, with affine structure map,
@@ -742,8 +736,7 @@ reductive and a maximal split torus `i` unless stated otherwise:
   `U(ν ≫ i)` is represented by a smooth connected split unipotent closed subgroup that is
   the ordered product of the root subgroups. Status P: `dynamicRootOrderedProduct`
   (`Rational/DynamicRootOrderedProductProof`).
-- The conjunction `RootProductStatement`. Status C: the three proofs above as a tuple. Owner
-  task: none.
+- The conjunction `RootProductStatement`. Status C: the three proofs above as a tuple.
 
 ## H. Quasi-split, anisotropic and non-split groups
 
@@ -771,8 +764,8 @@ Proposition 17.99 and the sentence after its proof, printed p.384 (PDF 400).
   Hypotheses: `Langlands.FieldTheory.HasDimensionLEOne K` (for every finite separable `E/K`
   and finite Galois `L/E` the norm `L^× → E^×` is surjective); `H` connected reductive.
   Conclusion: `IsQuasiSplit H`.
-- Status O. Owner task: Task 4733 (`0367ba06-f71f-44ff-83b2-e9de61795702`), waiting, with no
-  proof candidate.
+- Status O at the commit above. The Library now proves it, as `dimensionLEOneQuasiSplit`
+  (`Rational/DimensionLEOneQuasiSplitProof.lean`).
 
 **H4. Maximally split maximal tori of quasi-split groups.** Source: derived from
 Kaletha–Prasad, Fact 2.6.22 and its proof, printed p.104 (PDF 135), and Remark 2.6.25(2),
@@ -845,14 +838,13 @@ Borel–Tits, Corollaire 5.5, printed p.97 (PDF 44): for a maximal torus `T` spl
 extension `K` and containing `S`, `N(S) = N(S, T) · Z(S)` with `N(S, T) = N(S) ∩ N(T)`, so
 the relative Weyl group is the restriction to `S` of `N(S, T)/Z(T)`.
 - Status M: the Library has no statement comparing `relativeWeylGroup` with the Weyl
-  group of a maximal torus after a field extension. Owner task: none.
+  group of a maximal torus after a field extension.
 
 **I3. Relative root groups from absolute root groups.** Source: Milne 2017, 25.19, printed
 p.549 (PDF 565): the subgroup of `G_{k^s}` generated by the root groups `U_β` with
 `β|_S = α` is defined over `k`; it is the root group `U_α`.
 - The relative root groups themselves are constructed and characterized over `k` (G1). A
   statement comparing them with absolute root groups after a field extension has status M.
-  Owner task: none.
 
 ## Summary and remaining obligations
 
@@ -867,19 +859,19 @@ composite from published results and no published wrapper theorem (C): the conju
 projections `ParabolicRootPresentationIndependenceStatement` and
 `ParabolicRootPresentationIsoStatement`; the weakening
 `ParabolicIntersectionSplitTorusStatement`; and the source theorems
-`TitsStandardParabolicStatement` (D7, Task 3857) and
-`RepresentedParabolicDoubleCosetStatement` (D8, Task 4901). One row is open (O):
-Steinberg's theorem `DimensionLEOneQuasiSplitStatement` (H3, Task 4733). Two source
+`TitsStandardParabolicStatement` (D7) and
+`RepresentedParabolicDoubleCosetStatement` (D8). One row is open (O):
+Steinberg's theorem `DimensionLEOneQuasiSplitStatement` (H3). Two source
 assertions have no Lean statement (M): the relative/absolute Weyl comparison (I2) and the
-relative/absolute root group comparison (I3); neither has an owner task. The root
+relative/absolute root group comparison (I3). The root
 comparison I1 is available as a published theorem with hypotheses (D).
 
 Remaining obligations of this family:
 
-1. Accepted proofs for D7 and D8 from their owner tasks.
-2. A proof of Steinberg's theorem (H3).
-3. Named wrapper theorems for the C rows without an owner task. These need no new
-   mathematics; the program will collect them in one proof task.
+1. Proofs for D7 and D8 (now in the Library; see the rational structure coverage note).
+2. A proof of Steinberg's theorem (H3) (now in the Library, as `dimensionLEOneQuasiSplit`).
+3. Named wrapper theorems for the C rows. These need no new
+   mathematics.
 4. Statements for I2 and I3, and a closed proposition for I1.
 5. The centre comparison of E6 is stated and proved only over nonarchimedean local fields.
    The Library has no statement of it over other fields; this ledger records that scope and

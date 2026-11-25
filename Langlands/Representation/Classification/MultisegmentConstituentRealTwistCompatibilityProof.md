@@ -1,6 +1,6 @@
 # Real determinant twists of multisegment constituents
 
-Author: Worker 1792. Module
+Module
 `Langlands.Representation.Classification.MultisegmentConstituentRealTwistCompatibilityProof`.
 
 `Langlands.Classification.multisegmentConstituentRealTwistCompatibility` proves

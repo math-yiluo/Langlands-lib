@@ -1,7 +1,5 @@
 # Specialized rank-one lower-to-upper transport
 
-Author: Worker 469.
-
 This module supplies the concrete two-block specialization of the published
 `Langlands.glOppositeProductReversal`. Its principal definition is
 `Langlands.RankinSelberg.rankOneExtensionLowerInduced`; the comparison theorem is

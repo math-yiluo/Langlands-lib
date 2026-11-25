@@ -1,7 +1,5 @@
 # Tail L-polynomial divisibility for upper two-block induction
 
-Author: Worker 53.
-
 `Langlands.RankinSelberg.inducedTailLFactor` proves exactly the published
 [`InducedTailLFactorStatement`](InducedTailLFactorStatement.md) at the four
 independent universes `uF`, `uV₁`, `uV₂`, and `uW`. For arbitrary positive

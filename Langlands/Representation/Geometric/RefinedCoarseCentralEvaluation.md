@@ -37,8 +37,3 @@ length, finite spectrum, positive rank or character extension is assumed.
 The restriction need not be extended to the full fine centre. This does not
 prove a conjugation formula for an arbitrary geometric grade or an exponent
 projection, whole-induction isolation, or the parent Hom comparison. Its provenance is internal, with no new literature input.
-
-Worker 526 implemented this construction. Workers 359 and 430 supplied
-coordinate, normalization and same-power transport guidance during the
-parent Hom-comparison investigation. This attribution supplies no analytic
-comparison result.

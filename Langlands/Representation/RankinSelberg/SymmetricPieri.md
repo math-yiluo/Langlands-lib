@@ -1,7 +1,5 @@
 # Elementary Pieri identity
 
-Author: Worker 1767.
-
 This internal algebraic helper adds one to the coordinates in a chosen subset.
 For every coordinatewise nonnegative integral weight in rank `n + 1`, the
 Jacobi–Trudi polynomial times the elementary symmetric polynomial of degree `k`

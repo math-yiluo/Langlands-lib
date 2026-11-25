@@ -1,7 +1,5 @@
 # Local central-kernel representations from jet representations
 
-Worker 946, Task 7782.
-
 This internal module proves
 `Langlands.GroupScheme.LocalCentralKernelRepresentationStatement`
 conditionally on two statements taken as hypotheses:
@@ -76,4 +74,7 @@ connected residue fibres, and let `s : S`.
    `g` commutes with every point of `G_i` on `U`.
 
 The representation `ρ` of step 2 is therefore the one required. The theorem
-does not prove either hypothesis. They are proved separately in Task 7782.
+does not prove either hypothesis. They are proved separately, by
+`jetCentralizerStabilization_of_centerDetection` (`IdentityJetCentralizerComparison`)
+and by `jetConjugationRepresentation_of identityJetLocallyFree`
+(`IdentityJetRepresentation`).

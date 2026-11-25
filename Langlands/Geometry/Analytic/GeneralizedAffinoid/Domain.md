@@ -1,7 +1,5 @@
 # Domain representations tested on all presented affinoids
 
-Author: Worker 56.
-
 This module defines affinoid-domain representations over the actual finite
 positive-polyradius quotient algebras and constructs their restriction
 category. The universal property tests every such presented affinoid algebra,

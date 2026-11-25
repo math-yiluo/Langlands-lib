@@ -1,7 +1,7 @@
 # Coprime one-cocycles with values in nilpotent groups are coboundaries
 
-Worker 386. This is an internal lemma about abstract groups. It is a helper for the
-characteristic-p case of the conjugacy of sections in trigonalizable groups (Task 7806),
+This is an internal lemma about abstract groups. It is a helper for the
+characteristic-p case of the conjugacy of sections in trigonalizable groups,
 where a finite constant diagonalizable group of order prime to p acts on the rational
 points of a unipotent group.
 

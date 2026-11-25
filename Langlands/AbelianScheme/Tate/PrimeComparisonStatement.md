@@ -2,8 +2,8 @@
 
 This file states, without proving, that the published canonical prime-coordinate
 maps of actual torsion-section limits are topological additive equivalences.
-The three declarations in each namespace return `Prop`. Their truth remains a
-separate proof obligation.
+The three declarations in each namespace return `Prop`. They are proved in
+the separate module `PrimeComparisonProof`.
 
 ## Carriers and hypotheses
 
@@ -50,8 +50,8 @@ unrelated equivalence would not satisfy this statement.
 `toAwayPrimeProduct G T m`.
 
 `PrimeProductComparisons G T` is the conjunction of the full statement and
-the away statement for every `m : ℕ`. This is the single combined target
-for a subsequent proof task. Its parameters `S`, `G`, the commutativity
+the away statement for every `m : ℕ`. This is the single combined target,
+proved as `primeProductComparisons` in `PrimeComparisonProof`. Its parameters `S`, `G`, the commutativity
 instance, and `T` remain arbitrary.
 
 The forward maps already have proved continuity, homomorphism naturality,
@@ -86,9 +86,9 @@ Chinese remainder decomposition of torsion at each positive order, compatible
 with the multiplication transition maps. Each inverse coordinate should
 depend on finitely many prime-power coordinates, which is the required route
 to continuity even without compactness. This justification describes the
-intended obligation; it is not an implemented proof.
+intended proof; it is not an implemented proof (that is `PrimeComparisonProof`).
 
-The proposition format adapts Worker 92's published
+The proposition format adapts the published
 `TwistPrimeComparisonStatement` to the actual group-scheme limits. It does
 not identify these carriers with roots-of-unity limits. There is no rational
 restricted-product comparison, scalar-ring comparison, monodromy theorem,

@@ -1,11 +1,10 @@
 # Reduction of the unequal-rank partial Euler factorization
 
-Module `Langlands.Global.RankinSelberg.UnequalEulerFactorizationReduction`. Author:
-Worker 95.
+Module `Langlands.Global.RankinSelberg.UnequalEulerFactorizationReduction`.
 
 ## 1. Content
 
-The module proves that the published statement
+The module proves that the Library statement
 `Langlands.Global.RankinSelbergGlobal.UnequalEulerFactorizationStatement.{u, uQ}`
 ([`UnequalEulerFactorizationStatement`](UnequalEulerFactorizationStatement.md)) follows from
 three Prop-valued statements:
@@ -23,7 +22,7 @@ three Prop-valued statements:
   `N_m(𝔸) \ GL_m(𝔸)`, a finite set `S`, a finite place `v ∉ S` and a uniformizer `ϖ`,
   `∑_λ N(v)^(∑_(i<j)(λ_i - λ_j)) ∫_(U_S) f(ι_v(ϖ^λ) q) = ∫_(U_(S∪{v})) f`, where `U_S` is
   `unipotentIntegralClasses F m S`.
-* `UnequalUnfoldingStatement.{u}` (published): its first part gives, for `Re s > C` with
+* `UnequalUnfoldingStatement.{u}` (a Library statement): its first part gives, for `Re s > C` with
   `C` depending only on `T` and `T'`, the integrability of the integrand of `Ψ(s; W, W')`.
 
 The module contains, in the namespace
@@ -39,12 +38,13 @@ namespace `Langlands.Global.RankinSelbergGlobal` it contains:
 This module is a reduction: by itself it does not prove `UnequalEulerFactorizationStatement`.
 The module `Langlands.Global.RankinSelberg.UnequalEulerFactorizationProof`
 ([`UnequalEulerFactorizationProof`](UnequalEulerFactorizationProof.md)) applies
-`unequalEulerFactorizationReduction` to the published proofs of (A), (B_v) and
-`UnequalUnfoldingStatement`. It is an intermediate result of Task 7022.
+`unequalEulerFactorizationReduction` to the Library proofs of (A), (B_v) and
+`UnequalUnfoldingStatement`. It is an intermediate result of the proof of
+`UnequalEulerFactorizationStatement`.
 
 ## 2. Other inputs
 
-The proof also uses the following published results:
+The proof also uses the following Library results:
 
 * `exists_partialEulerFactor_convergence` (module `PartialEulerProductConvergence`): there
   is `σ₁` with `∑_(v ∉ S) ‖L_v(s) - 1‖ < ∞` and
@@ -63,9 +63,9 @@ The proof also uses the following published results:
   `A ⊇ S` multiplies `∫_(U_A) f` by `c_v`, then `∫ f = p · ∫_(U_S) f`.
 * `Unfolding.ordinaryKernel_whittaker_unipotent_mul` (module `UnfoldingOrdinary`): the
   kernel `W(diag(g, 1)) W'(g) |det g|^(s-(r-t)/2)` is left `N_(t+1)(𝔸)`-invariant.
-* `ordinaryKernel_localPoint_mul` (module `UnequalKernelLocalPoint`, by the same author):
+* `ordinaryKernel_localPoint_mul` (module `UnequalKernelLocalPoint`):
   the pointwise factorization of the kernel under left translation by `ι_v(d)`.
-* From `LocalPointFactorization` (Worker 5130): the uniformizer
+* From `LocalPointFactorization`: the uniformizer
   `placeUniformizer v`, which is a uniformizer both for `Valued.v`
   (`isUniformizingElement_valued`, as (B_v) needs) and for the canonical valuation of
   `F_v` (`isUniformizingElement_canonical`, as (A) needs); `valued_isEquiv_canonical` with
@@ -165,8 +165,8 @@ the global integral: the cell decomposition (B_v) plays the role of the Iwasawa 
 formula on `N_m(F_v) \ GL_m(F_v)`, and the local Cauchy sum `exists_hasSum_localTerm` plays
 the role of the Shintani–Casselman–Shalika evaluation of the local integral. The places are
 added one at a time by `integral_eq_hasProd_mul_setIntegral`. The splitting into the three
-premises and the helper lemmas is internal. The premises are the inputs the Library lacked
-when the reduction was written (each now has a separate published proof):
+premises and the helper lemmas is internal. The premises are separate inputs, each with its
+own Library proof:
 the factorization of global Whittaker functions at unramified places (Cogdell p.206,
 "`W_φ(g) = ∏_v W_(φ_v)(g_v)`" with the normalized spherical vector), the local integration
 formula, and the absolute convergence of `Ψ(s; W, W')` (Cogdell p.206, gauge estimates).

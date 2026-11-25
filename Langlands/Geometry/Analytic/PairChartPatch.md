@@ -7,8 +7,8 @@ ultrametric normed field `K`.
 
 ## Purpose and provenance
 
-This is an internal prerequisite for Task 7765
-(`CompactPullbackActionContinuityStatement`). No literature statement is
+This is an internal prerequisite for
+`CompactPullbackActionContinuityStatement`. No literature statement is
 transcribed. The mathematical content is the classical fact that, over
 affinoid charts, a fibre product of analytic spaces is the affinoid space of
 the completed tensor product of the chart algebras, so the part of a fibre

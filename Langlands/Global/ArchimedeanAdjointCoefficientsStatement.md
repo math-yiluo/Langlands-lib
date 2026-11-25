@@ -1,7 +1,5 @@
 # Finite continuous coefficients for actual enveloping conjugation
 
-Author: Worker 88.
-
 `Langlands.Global.ArchimedeanGL.EnvelopingConjugationCoefficientsStatement`
 defines a proposition for every `K : Type u` with `[Field K] [NumberField K]`
 and every `n : ℕ`, including zero. This module states the proposition; it

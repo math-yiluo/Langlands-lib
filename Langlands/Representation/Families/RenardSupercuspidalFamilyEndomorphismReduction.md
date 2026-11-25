@@ -3,7 +3,7 @@
 This module reduces the published closed statement
 `Langlands.Renard.AlgebraicFamily.SupercuspidalFamilyEndomorphismStatement`
 ([RenardSupercuspidalFamilyEndomorphismStatement](RenardSupercuspidalFamilyEndomorphismStatement.md))
-to three inputs that are not yet proved. It contains:
+to three inputs. It contains:
 
 - one **statement**, the `Prop`-valued definition `SupercuspidalFamilyFiberStatement`
   (universes `u, v`), the fiber step of Renard's argument;
@@ -15,14 +15,14 @@ to three inputs that are not yet proved. It contains:
   `RationalPointsIrreducibleAdmissibleStatement.{u, v}` and
   `SupercuspidalFamilyFiberStatement.{u, v}`.
 
-It does **not** prove the closed target, because the three inputs are open.
+It does **not** prove the closed target, because it does not prove the three inputs.
 
 ## Original source
 
 David Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026. Literature ID `renard-2026-representations-groupes-reductifs-padiques`,
 file
-`/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
+`Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`,
 SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 
 - VI.8.6, the Example after the Proposition, first paragraph, printed p. 195 / PDF
@@ -68,7 +68,9 @@ while `LeviInduced` uses Renard's Levi normalization (see
 [RenardFamilyParabolicFunctors](RenardFamilyParabolicFunctors.md)); and the universal
 family acts by `m · (b ⊗ w) = χ_un(m) b ⊗ σ(m) w`, whose specialization at `ψ` is
 `ψ(m) σ(m)`, the published twist by `ψ`. A proof of the statement has to compare
-the two normalizations at `B = ℂ`, as noted in the task context of the target.
+the two normalizations at `B = ℂ`; `leviInducedComplexEquiv` in
+[SupercuspidalFamilyFiberIrreducibility](SupercuspidalFamilyFiberIrreducibility.md)
+makes this comparison.
 
 ## Proof of `endomorphismScalar_leviInduced`
 
@@ -129,24 +131,26 @@ After introducing the binders of the target:
 
 ## Relation to published work
 
-The three inputs are open:
+The three inputs:
 
 - `GenericInducedIrreducibilityStatement`
   ([RenardGenericIrreducibilityStatements](RenardGenericIrreducibilityStatements.md)),
-  Theorem VI.8.5, proof task `822bbd74-8853-4535-87b2-aede25e9a259`; the published
-  `RenardGenericIrreducibilityRemainingInputs` reduces it to three open inputs;
+  Theorem VI.8.5; the published `RenardGenericIrreducibilityRemainingInputs` reduces it
+  to three inputs that the Library does not prove unconditionally;
 - `RationalPointsIrreducibleAdmissibleStatement`
   ([IrreducibleAdmissibleStatement](../Aubert/General/IrreducibleAdmissibleStatement.md)),
-  Jacquet's theorem, a stronger form of Renard VI.2.2;
-- `SupercuspidalFamilyFiberStatement`, stated here; Worker 79 is proving it within
-  Task 5205.
+  Jacquet's theorem, a stronger form of Renard VI.2.2; the Library proves it only from
+  further hypotheses;
+- `SupercuspidalFamilyFiberStatement`, stated here; its body is the conclusion of
+  `isIrreducible_supercuspidalFamilyFiber` in
+  [SupercuspidalFamilyFiberIrreducibility](SupercuspidalFamilyFiberIrreducibility.md).
 
-The module asserts none of them. The final proof of the target applies
+The module asserts none of them. A proof of the target applies
 `supercuspidalFamilyEndomorphism_of_statements` to their proofs.
 
 ## Environment
 
-Environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`: Lean 4.34.0 at
+Lean 4.34.0 at
 `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`, Mathlib at
 `5ed2965256430c3649e86755f9576b54eca72435`. No axiom is introduced.
 `supercuspidalFamilyEndomorphism_of_statements` uses `set_option maxHeartbeats 400000`;

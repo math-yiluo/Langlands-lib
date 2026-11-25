@@ -7,8 +7,6 @@ the proposition only, with no proof of its recurrence or analytic conclusions.
 Its sole new public declaration is the proposition; all auxiliary functions,
 sets, measures and witnesses remain local.
 
-Worker 351 authored this pair using Worker 656's supplied formulation.
-
 ## Quantifiers and actual objects
 
 The proposition quantifies over every prime `p` with `Fact p.Prime`, every
@@ -141,7 +139,7 @@ Those are separate steps in the parent argument.
   SHA-256 `6446822f267f9f95156ce7a193409209e56ce7858ed6d3d350480e73f35b1aa5`.
 
 These relevant pages were read directly and inspected visually. No
-`notes/errata` directory was present in the workspace, project notes or
+`notes/errata` directory was present in the project notes or
 supplied Library when checked on 2026-10-29.
 
 JPS defines a finite function on a locally compact abelian group through
@@ -171,5 +169,4 @@ implemented in this module. The parent still retains the complex-power
 bridge, spectral substitution and denominator assembly.
 
 Compilation and proposition inspection establish only that the closed
-statement is well formed in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+statement is well formed.

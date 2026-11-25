@@ -1,7 +1,5 @@
 # Etale restriction and actual associated coefficient sheaves
 
-Author: Worker 13.
-
 ## Scope and conventions
 
 Let `X` and `Z` be schemes in universe `u`, `f : Z ⟶ X` an etale morphism,

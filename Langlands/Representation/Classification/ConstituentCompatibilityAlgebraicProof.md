@@ -1,7 +1,5 @@
 # Algebraic compatibility of irreducible constituents
 
-Author: Worker 34.
-
 The closing theorem
 `Langlands.Classification.allPadicGLAlgebraicConstituentCompatibility`
 proves exactly the published proposition
@@ -61,7 +59,8 @@ irreducible representation in the specified carrier universe.
 argument with injective intertwiners and equality of their image subspaces.
 These four equivalences are packaged by `twistConstituentCompatibilityFor`.
 
-For uniqueness, the proof reuses Worker 23's published canonical constituents.
+For uniqueness, the proof reuses the published canonical constituents of
+`CanonicalConstituents`.
 Given two irreducible heads, `nonempty_headEquiv` supplies equivalences
 from `head ρ` to each; the inverse of the first followed by the second is the
 desired equivalence. For socles, `nonempty_socleEquiv` supplies equivalences
@@ -97,7 +96,5 @@ Besides the target module, the direct project imports are
 `Twist.AlgebraProof`. They supply the canonical equivalences, irreducibility
 invariance, and inverse-twist cancellation used above.
 
-Development uses the prepared Lean 4.34.0 environment with Mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. Compilation and declaration
-inspection are development checks. Independent semantic review, machine
-exact-target validation, and Library publication are separate requirements.
+Compilation and declaration inspection use Lean 4.34.0 with Mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`.

@@ -1,6 +1,6 @@
 # The surjectivity step from Henniart's numerical theorem
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartSurjectivityStepProof`,
+Module `Langlands.Correspondence.HenniartSurjectivityStepProof`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW` (Weil
 carriers, also the local-constant systems), `uV` (supercuspidal carriers), independent.
 
@@ -25,9 +25,9 @@ irreducible Weil class of dimension `n` factoring through a finite Galois quotie
 a stable image (`StableExistsAt K n`), then every unitary supercuspidal class of
 `GL_n(K)` with central character of finite order is the stable image of such a class
 of dimension `n` (`StableSurjectiveAt K n`). It is one of the inputs of the published
-entry `SupercuspidalCorrespondenceHenniartInductionStatement`. The entry of this
-contribution, `SupercuspidalCorrespondenceHenniartFinalStatement` (module
-`HenniartCorrespondenceFinal`), uses `surjectivityStepReduction` to discharge that input.
+entry `SupercuspidalCorrespondenceHenniartInductionStatement`. The entry
+`SupercuspidalCorrespondenceHenniartFinalStatement` (module
+`HenniartCorrespondenceFinal`) uses `surjectivityStepReduction` to discharge that input.
 
 The hypotheses are published Library statements, and the statement asserts none of them:
 
@@ -76,5 +76,3 @@ unramified twists (§4.4) and proves its three properties from the inputs above.
 `HenniartRankExtension`, `HenniartFiniteTwist`, `HenniartSurjectivityTransfer`,
 `HenniartRankConductor`; each has its own Markdown. `HenniartRankConductor` also uses
 `exists_newvectorConductor_of_pairEpsilon` from `HenniartConductorFinitenessProof`.
-That module is a supporting module of the same contribution and is not yet in the
-Library.

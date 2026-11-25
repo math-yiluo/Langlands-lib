@@ -1,6 +1,7 @@
 # Original quotient recovery on actual cover components
 
-This internal Task 7200 adapter records the actual disjoint free presentation
+This internal adapter for the proof of `RelativeUnipotentRadicalFiltrationStatement`
+(finite vector-bundle filtrations of supplied relative unipotent radicals) records the actual disjoint free presentation
 of the constructed layer module with its unchanged component ranks. It also
 constructs the isomorphism from the actual global quotient restricted to one
 original chart to that chart's original vector quotient. The actual module

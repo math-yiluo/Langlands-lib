@@ -1,6 +1,6 @@
 # Aligning a geometric isomorphism with two based root data
 
-Worker 838. This is an internal prerequisite for the forward implication of
+This is an internal prerequisite for the forward implication of
 `InnerFormStarActionStatement`, derived from the published rational conjugacy of
 maximal split tori, the root-datum comparison for torus-compatible isomorphisms,
 and the Weyl correction of a root-datum equivalence. The geometric motivation is

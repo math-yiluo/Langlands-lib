@@ -94,9 +94,10 @@ continuity assertions. The entire underlying equivalence remains
 unchanged, so `adelicPointHomeomorphOfSpreads_apply` is proved by
 reflexivity.
 
-This unit completes the stated generic-fiber and spread-topology
+This module completes the stated generic-fiber and spread-topology
 assembly for function fields. Identification with evaluation of the
 original field Weil counit along the literal full-adele inclusion
-remains a separate host obligation. The stage law records the precise
+is separate; `CurvePlaceProjectiveWeilAdeleEvaluation` proves it
+(`adelicPointHomeomorph_eq_evaluation`). The stage law records the precise
 original arithmetic maps needed for that identification. Other
 assertions of Conrad's five-section paper remain separate obligations.

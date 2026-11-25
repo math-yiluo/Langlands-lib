@@ -5,7 +5,7 @@ Module `Langlands.GroupScheme.Cartier.DiagonalizableGlue`, namespace
 
 ## Purpose and provenance
 
-This is an internal step of Task 7697, the canonical natural isomorphism between
+This is an internal step toward the canonical natural isomorphism between
 the Cartier character presheaf of the diagonalizable group `D_S(M)` and the
 constant presheaf with coefficients `M`. It builds one direction, `Φ`: a locally
 constant function `f : T → M` on an `S`-scheme `T` gives a character of `D_S(M)`
@@ -16,14 +16,14 @@ near each point `x` of `V`.
 This is the classical description of characters of a diagonalizable group over a
 non-connected base. Over a connected base, characters of `D_S(M)` are the
 evaluations `t ↦ t(m)`. In general they are locally constant families of such
-evaluations. The Lean development is internal to this task. It combines two
+evaluations. The Lean development is internal. It combines two
 helper modules:
 
-- `Langlands.GroupScheme.Cartier.DiagonalizablePoints` (Worker 934): the model
+- `Langlands.GroupScheme.Cartier.DiagonalizablePoints`: the model
   `model S M` of `D_S(M)`, the action `act χ V` of a character on
   character-valued points, `act_ext`, `act_add`, `act_zero`, `act_restrict`,
   `evalChar`, `eq_evalChar_iff`, `IsNaturalAct`, `ofAct` and `act_ofAct`.
-- `Langlands.AlgebraicGeometry.LocallyConstantUnitPower` (Worker 158): the glued
+- `Langlands.AlgebraicGeometry.LocallyConstantUnitPower`: the glued
   unit `lcPow t f` and its API.
 
 Throughout, `S : Scheme.{u}`, `M : Type u` is an additive commutative group,
@@ -70,4 +70,7 @@ which need not be finitely generated, and `T : Over S`.
   `Classical.choice` and `Quot.sound`.
 - The inverse direction (characters to locally constant functions, using local
   rigidity), the two composite identities, the natural isomorphism, and the
-  evaluation-character formulas are in Worker 934's modules for the same task.
+  evaluation-character formulas are in the modules
+  `Langlands.GroupScheme.Cartier.DiagonalizableRigidity` and
+  `Langlands.GroupScheme.Cartier.DiagonalizableConstant` (which constructs
+  `charactersIso`).

@@ -1,7 +1,5 @@
 # L-factors of pairs through essentially square-integrable Langlands data
 
-Author: Worker 4891.
-
 `Langlands.RankinSelberg.squareIntegrableDataLFactor.{uF, uV, uW}` proves the
 unchanged proposition
 `Langlands.RankinSelberg.SquareIntegrableDataLFactorStatement.{uF, uV, uW}` for
@@ -16,7 +14,7 @@ pair of blocks `(d.blocks i, e.blocks j)`, and `P = ∏ i, ∏ j, Q i j`.
 JPSS say (9.5) follows at once from Proposition (8.4) and Proposition (9.4).
 The Lean statement asks for more, because `IsLanglandsPairLPolynomial`
 quantifies over every tempered presentation of `π` and of `σ`. The published
-module `SquareIntegrableDataLFactorReduction.lean` (Workers 1748 and 1753)
+module `SquareIntegrableDataLFactorReduction.lean`
 already reduces the statement to explicit premises, in
 `squareIntegrableDataLFactor_of_prerequisites`. The proof here is the single
 application of that reduction to the following closed Library theorems:

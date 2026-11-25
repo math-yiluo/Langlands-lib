@@ -1,6 +1,6 @@
 # Bounded coefficient transport through relative equation quotients
 
-Author: Worker 56. This module constructs transport directly from the published
+This module constructs transport directly from the published
 `RelativeRelations`, `GeneralizedTateAlgebra.RelativeAlgebra` and
 `BoundedEquivalence.Definitions` APIs. Its namespace is
 `Langlands.Analytic.PresentedAffinoidAlgebra.RelativeRelations`.
@@ -116,7 +116,7 @@ They start with a supplied bounded base map or bounded base equivalence and
 explicit relation compatibility. The module does not construct equivalences
 between arbitrary presentations or compare the scalar `Adjoin.algebra` with
 the relative quotient. It does not construct analytic domains, sheaves or
-etale sites, and does not complete the broader analytic geometry task.
+etale sites.
 
 ## Original convention and derived provenance
 

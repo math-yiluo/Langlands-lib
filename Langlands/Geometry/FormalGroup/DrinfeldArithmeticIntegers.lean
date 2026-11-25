@@ -92,7 +92,7 @@ theorem subfieldArithmeticFrobenius_sub_lt_one (hE : ArithmeticUnramified K E)
   let z : C := integerAut K E s b - b ^ Nat.card 𝓀[K]
   have hz : residue C z = 0 := by
     change residue C (integerAut K E s b - b ^ Nat.card 𝓀[K]) = 0
-    rw [map_sub, map_pow, h, sub_self]
+    rw [RingHom.map_sub, RingHom.map_pow, h, sub_self]
   have hv : spectralValuation K E (z : E) < 1 :=
     (Valuation.mem_maximalIdeal_iff _ (spectralValuation K E)).mp ((residue_eq_zero_iff z).mp hz)
   let v := localDivisionSubfieldValuation K D ι

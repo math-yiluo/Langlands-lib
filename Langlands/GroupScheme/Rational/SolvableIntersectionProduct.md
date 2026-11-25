@@ -3,8 +3,9 @@
 This internal construction narrows central-vector induction to inverse images
 whose source is solvable. It assumes the independent
 `Torus.SolvableFixedContainmentConnectedStatement` and
-`CentralStableVectorSubgroupStatement`. Neither premise is proved here, and the
-full arbitrary-field ordered product statement remains open.
+`CentralStableVectorSubgroupStatement`. Neither premise is proved here, and this
+module does not prove the full arbitrary-field ordered product statement;
+`semigroupOrderedProduct` (module `Rational.SemigroupOrderedProductProof`) does.
 
 `semigroup_comap_eq_of_solvable` works over any field in universe `u`. Its
 ambient group is smooth affine, and its closed subgroup is smooth, connected,
@@ -53,5 +54,5 @@ every other block's generated semigroup. No disjointness of generated
 semigroups is used. Arbitrary orders and the empty family are retained.
 
 The proof is derived from the imported constructions and explicit premises.
-It adapts the existing central-vector induction authored by Worker 1313 and
-Worker 362, preserving Worker 362's central-vector existence scope.
+It adapts the existing central-vector induction, preserving the scope of its
+central-vector existence premise.

@@ -95,7 +95,7 @@ theorem polynomial_iInf_span_X_pow_sub_one (A : Type u) [CommRing A] :
 ring over any commutative ring. -/
 theorem iInf_span_X_pow_sub_one (A : Type u) [CommRing A] :
     (⨅ n : ℕ, Ideal.span {algebraMap A[X] (Localization.Away (X : A[X]))
-      (X ^ (n + 1) - 1)}) = ⊥ := by
+                            (X ^ (n + 1) - 1)}) = ⊥ := by
   let L := Localization.Away (X : A[X])
   apply le_antisymm ?_ bot_le
   intro z hz

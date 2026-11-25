@@ -1,7 +1,7 @@
 # Additive self-duality of a p-adic field
 
-Author: Worker 784. This module is an internal prerequisite of the exact proof task
-`62de5903-b616-4b5c-88eb-a066b77c5467` (all-character supercuspidal coinvariant finiteness).
+This module was written as an internal prerequisite for all-character supercuspidal
+coinvariant finiteness.
 It supplies the additive duality that turns an arbitrary nondegenerate upper-unipotent
 character into a diagonal conjugate of the standard character.
 
@@ -46,7 +46,7 @@ is the largest level with `ψ` trivial on `L_n`.
   `L_(j - ord c)`. This rests on the published `mul_mem_additiveLattice_iff`.
 - `isCompact_additiveLattice` and `isOpen_additiveLattice`, reused from
   [PadicLatticeTopology](PadicLatticeTopology.md): every lattice is compact and
-  open for `T.topology`. These are Worker 252's original declarations, moved from
+  open for `T.topology`. These declarations were moved from
   the Rankin–Selberg cutoff module with unchanged statements and proofs.
 - `complex_eq_one_of_mem_conductor`: `ψ.complex` is `1` on `L_n`.
 - `mem_additiveLattice_of_forall_complex_mul_eq_one`: if `ψ(a x) = 1` for all `x ∈ L_m`,
@@ -94,5 +94,5 @@ finite quotient groups:
 
 The module imports the published `PadicAdditiveConductorProof` and
 `PadicScalarHaarScalingProof`, and the shared `PadicLatticeTopology`, together with Mathlib's finite Pontryagin duality and open
-subgroups. It does not depend on representation theory, Whittaker models, derivatives,
-segments or any statement excluded by the parent task.
+subgroups. It does not depend on representation theory, Whittaker models, derivatives
+or segments.

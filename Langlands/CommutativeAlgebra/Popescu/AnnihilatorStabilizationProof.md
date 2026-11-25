@@ -57,5 +57,6 @@ the conclusion only for `t = sⁿ⁻¹`.
 
 ## Provenance
 
-Worker 134 wrote this proof and its Markdown in Task 6525
-(`3e8945af-2fbf-4708-9366-8d01bcb7effd`). The statement was published from Task 5698.
+The statement is in the module
+`Langlands.CommutativeAlgebra.Popescu.AnnihilatorStabilizationStatement`, part of the
+formalization of finite-type smooth factorization for regular Noetherian maps.

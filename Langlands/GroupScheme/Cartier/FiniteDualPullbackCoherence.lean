@@ -72,7 +72,8 @@ private theorem baseChangePointsEquiv_compAlong_hom {X Y Z : Scheme.{u}}
   let m := e.hom.toMul.hom.hom
   let n := e.inv.toMul.hom.hom
   have he : m ≫ n = 𝟙 _ :=
-    congrArg (fun f : End ((CommGroupScheme.baseChange k).obj G) => f.toMul.hom.hom) e.hom_inv_id
+    congrArg (fun f : (CommGroupScheme.baseChange k).obj G ⟶ (CommGroupScheme.baseChange k).obj G =>
+      f.toMul.hom.hom) e.hom_inv_id
   have hz : (z ≫ m) ≫ n = z := by rw [Category.assoc, he, Category.comp_id]
   exact (baseChangePointsEquiv_compAlong f g k h G U (z ≫ m)).trans
     (congrArg (fun y => a ≫ baseChangePointsEquiv k G.toGrp U y) hz)

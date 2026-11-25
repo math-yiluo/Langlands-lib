@@ -1,6 +1,6 @@
 # Polynomial and rational families on actual unramified characters
 
-Worker 200. This is a derived construction supporting Waldspurger IV.1, not a
+This is a derived construction supporting Waldspurger IV.1, not a
 proof of IV.1.1.
 
 The original source is J.-L. Waldspurger, *La formule de Plancherel pour les
@@ -78,7 +78,7 @@ act on carriers in independent universes.
 
 There is no assertion of convergence, existence of a continued operator,
 holomorphic dependence, equality of algebraic and analytic notions, or a
-composition scalar. In particular the finite-length convergence cone and
-rationality theorem IV.1.1 remain open. Actual reductive realization, the exact
+composition scalar. In particular this module does not prove the finite-length
+convergence cone or the rationality theorem IV.1.1. Actual reductive realization, the exact
 torus-coordinate comparison, and representative-independent compact-picture
 application must be supplied by their respective constructions and proofs.

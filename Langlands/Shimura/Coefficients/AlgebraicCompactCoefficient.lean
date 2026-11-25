@@ -57,7 +57,7 @@ theorem algebraicCompactCoefficientLattice_isOpen :
 theorem continuous_algebraicCompactCoefficientAction_orbit
     (x : (algebraicCompactCoefficientLattice ρ p l U).action.V) :
     Continuous (fun g : U.subgroup =>
-      ((algebraicCompactCoefficientLattice ρ p l U).action.ρ g).hom x) :=
+      ((algebraicCompactCoefficientLattice ρ p l U).action.ρ g).asHom.hom x) :=
   continuous_compactCoefficientAction_orbit ρ p l U
     (continuous_algebraicCoefficient_orbit ρ l) x
 

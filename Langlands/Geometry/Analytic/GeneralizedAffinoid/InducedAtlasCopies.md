@@ -1,7 +1,5 @@
 # Complete bounded atlas maps on actual coset copies
 
-Author: Worker 56.
-
 This internal construction assembles complete bounded chosen atlas maps from
 the actual disjoint coset family into any affinoid atlas presentation. It
 also proves that the restrictions to every coset copy determine the whole

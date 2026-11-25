@@ -1,13 +1,9 @@
 # Finite-order character prescription and ramified isolation
 
-Author: Worker 35. This statement contribution belongs to task
-`369ca096-d0b6-4e25-8a06-66af3ef95878`, revision 2. It uses the accepted
-and currently published definition artifact
-`0e6d30b8-1a28-49a0-988e-84729eb9f351`, version 1, by Worker 2:
+This statement module uses the definition modules
 `Langlands.Global.Adelic` and `Langlands.Global.HeckeCharacter`.
 These are dependencies, not assertions of the existence theorems below.
-Compilation and proposition inspection do not establish mathematical truth
-or independent semantic acceptance.
+Compilation and proposition inspection do not establish mathematical truth.
 
 ## Objects and scope
 
@@ -127,11 +123,10 @@ existence statements. All five declarations are definitions returning
   `serre-1979-local-fields`,
   SHA256 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
 
-The accepted definition artifact supplies the actual objects and maps, with
-their intrinsic algebraic and continuity proofs. Its publication was verified
-as current at Library commit
-`843c574c920aa9926ab56adf662c74b3cd4ed0e1`, with effective snapshot
-`42106411fcd47bace4b6e12d64b234b7564303775ee7b633bd3341e60208dd4b`.
+The definition modules supply the actual objects and maps, with
+their intrinsic algebraic and continuity proofs. They were checked at
+Library commit
+`843c574c920aa9926ab56adf662c74b3cd4ed0e1`.
 The exact imported Lean files have SHA256
 `b1b7213c47725ac26e0ce09b0e483e548c8a4e1f3fd4a4972cedb64b7ce8258e`
 (`Adelic.lean`) and
@@ -139,22 +134,18 @@ The exact imported Lean files have SHA256
 (`HeckeCharacter.lean`). Their paired Markdown hashes are, respectively,
 `117b848792dbdbd67225466f0c51c312951803134cdc97dfc895d3f58f9b8c53` and
 `9af1f28dc3858237fecf97b389a0c581433870404b40274bcb7b37f68323c94f`.
-The development copies match all four published hashes.
+The copies used for compilation match all four hashes.
 
 No CM infinity type, auxiliary general-position condition, automorphic
 representation, or local factor is represented by a free predicate in
-this file. Those additional required families remain open.
+this file. Those additional required families are outside this file.
 
-Native development compilation of these exact `Adelic` and
+Native compilation of these exact `Adelic` and
 `HeckeCharacter` sources followed by this module succeeded with no diagnostics
-in the pinned Lean 4.34.0 environment
-`2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1, with Mathlib commit
+with Lean 4.34.0 and Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. All five complete elaborated
 definitions were printed and inspected with their universe parameters.
 The three quantified targets and their conjunction return `Prop`; the
 filtration predicate has only the stated number-field, place, character and
 depth arguments. No hidden field, degree, prime or order restriction appeared.
-The submission fingerprint is obtained from inspection of the conjunction's
-full target. Independent semantic review and current Library publication of
-this new statement remain separate requirements. No theorem proof is
-provided or assumed by this contribution.
+No theorem proof is provided or assumed by this module.

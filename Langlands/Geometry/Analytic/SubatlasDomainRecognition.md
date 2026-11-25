@@ -1,7 +1,5 @@
 # Recognition of original local domains through a selected atlas
 
-Author: Worker 36.
-
 Every actual original local full domain is recognized by the local-domain
 saturation of a locally refining selected atlas. This module constructs
 the special cover, all intrinsic recognition conditions, and the bounded
@@ -121,11 +119,13 @@ and actual atlas; global Hausdorffness, reducedness, nonzero algebras
 and nonempty covers are not added. Full-domain universal properties
 retain all presented affinoid test algebras and finite positive polyradii.
 
-This unit proves recognition of every original local full domain in
+This module proves recognition of every original local full domain in
 the selected local-domain saturation, including its actual algebra
-and chart comparison. It does not yet compare arbitrary recognized
+and chart comparison. It does not compare arbitrary recognized
 subsets of the two saturated atlases, prove naturality for all such
-comparisons, or construct their category equivalence. Arbitrary
-equivalent-net invariance, maximal-atlas uniqueness, unrestricted
-analytic morphism identification, analytic etale and equivariant
-sites, and Harris specialization remain subsequent obligations.
+comparisons, or construct their category equivalence;
+`SubatlasRecognitionEquivalence` constructs that equivalence
+(`subatlasRecognitionEquivalence`). Arbitrary equivalent-net invariance,
+maximal-atlas uniqueness, unrestricted analytic morphism identification,
+analytic etale and equivariant sites, and Harris specialization lie
+outside this module.

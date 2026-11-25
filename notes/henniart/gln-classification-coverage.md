@@ -1,20 +1,13 @@
 # GL_n classification: statement coverage and dependencies
 
-Author: Worker 47, using the published cuspidal-induction pair of Worker 14
-and tempered-block pair of Worker 15, whose grouping interface was coordinated
-with Worker 19; the generic-product and general-factor finite-length pairs
-of Worker 118; the unitary-generic pair of Workers 62 and 69;
-the core multisegment pair of Workers 34 and 126;
-the multisegment-compatibility pair of Workers 67, 126 and 111; and the
-unitary-compatibility pair of Workers 17, 192 and 69.
-
-This note maps twelve independently accepted and published statement pairs in
+This note maps twelve statement pairs in
 Library commit `dd9f9be571b3d712bb77031f3e6347bebd97a214`. Their Lean and
-Markdown bytes were checked against their accepted version-1 bundles at this
-commit. Every aggregate below is a proposition definition. Publication accepts
-the formulation and its source correspondence; it does not prove the proposition.
-The statement installments cover the assigned classification scope;
-the substantive theorem proofs and source obligations remain as listed below.
+Markdown bytes were checked at this commit against the versions that first
+entered the Library. Every aggregate below is a proposition definition. A
+statement in the Library fixes the formulation and its source correspondence;
+it does not prove the proposition. The statements cover the classification
+scope described under "Statement scope" below; the substantive theorem proofs
+and source obligations are listed below.
 
 Use the current Library by Lean module and declaration name. The commit pins
 the versions described here, including the imported definitions. The linked
@@ -87,7 +80,8 @@ The module prefix in the table is `Langlands.Representation`.
 | [Classification.MultisegmentConstituentCompatibilityStatement](../../Langlands/Representation/Classification/MultisegmentConstituentCompatibilityStatement.md) | `PadicMultisegmentConstituentCompatibilityTheorems` | `e3c2fa98be720f63c6981efbbdf15cd223329e76` |
 | [Classification.UnitaryGenericCompatibilityStatement](../../Langlands/Representation/Classification/UnitaryGenericCompatibilityStatement.md) | `AllPadicUnitaryGenericCompatibilityStatement` | `e3c2fa98be720f63c6981efbbdf15cd223329e76` |
 
-All twelve pairs are present with their accepted bytes at the snapshot above.
+All twelve pairs are present, in the versions that first entered the Library,
+at the snapshot above.
 The following tables list the component proposition definitions, rather than
 only the final aggregates. Grouped rows still identify every component name.
 
@@ -333,7 +327,7 @@ quotient classification.
 
 The following are exact direct imports of the twelve entry modules at
 `dd9f9be571b3d712bb77031f3e6347bebd97a214`. That commit also pins their
-transitive imports and paired explanations. No draft import is used.
+transitive imports and paired explanations.
 `R` below abbreviates `Langlands.Representation`; `G` abbreviates
 `Langlands.Group.GL`.
 
@@ -378,28 +372,28 @@ induction transitivity, duality, classification or Haar-measure independence
 does not make those results hypotheses, proofs, or constructor fields in
 the twelve statement pairs.
 
-## Statement scope and adjacent assignments
+## Statement scope and adjacent topics
 
-The twelve published pairs cover the classification statement installments
-required by task `992634be-7c14-4c9f-aba0-be59fc810b85`, including both the
-cuspidal bound and general-factor induction finite length. The latter was
-published through focused task `4e7abbfd-8651-473e-b8f7-78f9228e3b3e`,
-revision 1. These task references identify coordination scope; the module
-names and Library pin above identify the mathematical content. This coverage
-claim concerns statements and their source/dependency correspondence.
+The twelve published pairs cover the statements of the GL_n classification,
+including both the cuspidal bound and general-factor induction finite length.
+The module names and Library pin above identify the mathematical content. This
+coverage claim concerns statements and their source/dependency correspondence.
 
 The regular-chamber quotient theorem and Jacquet exponent criteria belong to
 the companion branch described in the [Jacquet source map](../jacquet/source-map.md).
 The grouping clause above supplies its passage from weakly ordered
 square-integrable data to strictly ordered tempered data. Whittaker uniqueness,
-local factors and local converse are separate assignments.
+local factors and local converse are treated separately.
 
 ## Remaining proof and source obligations
 
 None of the substantive component propositions listed here has a proof in
 these twelve statement files. Their paired Markdown records the proof routes
-and limitations. The following boundaries are especially relevant when
-selecting future proof tasks.
+and limitations. A search by name in the present Library finds no proof of the
+twelve aggregates; some components are proved elsewhere (for example
+`SegmentHeadProductIrreducibility`, as `segmentHeadProductIrreducibility` in
+`Representation/Classification/SegmentHeadProductIrreducibilityProof.lean`).
+The following boundaries are especially relevant to the proofs.
 
 - **Cuspidal structure and finite length.** BZ77 refers elsewhere for
   Theorem 2.5; its proofs of 2.8–2.9 use the geometric lemma, quasicuspidal
@@ -432,7 +426,7 @@ selecting future proof tasks.
   socle-to-socle duality statement; dualizing an embedding alone only gives
   a quotient. Ta86 §5.6 cites Ze80 §9.5 for a formula actually in §9.4 and
   uses Jacquet's *Principal L-functions* equation (3.3.13) in its head-duality
-  argument; that upstream original remains unread for this contribution.
+  argument; that upstream original remains unread for this note.
   Supercuspidal-dual preservation, induction/dual and induction/twist
   compatibility, and scalar covariance remain proof obligations.
 - **Hermitian and admissible dual comparisons.** The evaluation-prescribed

@@ -1,7 +1,5 @@
 # Basic geometry of an abelian scheme over a discrete valuation ring
 
-Author: Worker 171.
-
 Module `Langlands.AlgebraicGeometry.Picard.DvrAbelianGeometry`, namespace
 `Langlands.AlgebraicGeometry.Picard.DvrAbelianGeometry`. `R` is a discrete valuation
 domain in universe `u` and `A : Langlands.AbelianScheme (Spec (CommRingCat.of R))`.

@@ -1,7 +1,5 @@
 # The factor hypotheses of the merged-slot Jacquet filtration
 
-Author: Worker 890.
-
 The published statement
 `Langlands.Classification.SegmentEdgeJacquetFiltration.{uF,uV,uW} F T`
 (module `SegmentEdgeJacquetStatement`) has two hypotheses on the factors `Y j`

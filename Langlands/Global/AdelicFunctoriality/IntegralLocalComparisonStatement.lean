@@ -3,7 +3,7 @@ Copyright (c) 2025 Kevin Buzzard. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kevin Buzzard, Andrew Yang, Matthew Jasper
 
-Modified by Worker 382 (2026): restate, as proposition definitions, the conclusions of
+Modified in Langlands-lib (2026): restate, as proposition definitions, the conclusions of
 Imperial FLT, commit 923d45174c500aa1d994ba973bac38ea39eacbf7,
 FLT/DedekindDomain/Completion/BaseChange.lean:533-547, :810-821 and :854-870, and of
 FLT/DedekindDomain/IntegralClosure.lean:256-297, for number fields in independent universes.

@@ -1,7 +1,5 @@
 # Single-lattice coset expansions of p-adic Schwartz–Bruhat functions: proof
 
-Author: Worker 739 (sole author).
-
 The closing theorem
 `Langlands.HarmonicAnalysis.padicLatticeSchwartzExpansion.{u}` proves exactly
 the published
@@ -97,15 +95,15 @@ or `exists_compactCosetExpansion`.
 ## Provenance and original source
 
 The target is a derived internal statement, explained in
-[its provenance](PadicLatticeSchwartzExpansionStatement.md). Proof review does
-not require the implemented route to follow the literature. The comparison
+[its provenance](PadicLatticeSchwartzExpansionStatement.md). The implemented
+route need not follow the literature. The comparison
 below records where it differs.
 
 - André Weil, *Basic Number Theory*, second edition (1973), registered
   `weil-1973-basic-number-theory`, SHA-256
   `32fff78f8ccc5d6378907941e26746c34e20fc3adf5096508844cfe8a301e33b`:
   Chapter VII §2, Proposition 2 and its proof, printed p.107 (PDF p.124).
-  Worker 739 re-read this page on 2026-10-28.
+  This page was re-read on 2026-10-28.
 
 Weil's proof bounds the support by a norm, giving a lattice `L` that contains
 it. Open fibers and compactness of `L` show that the function takes finitely
@@ -127,11 +125,9 @@ The project literature index lists no errata for Weil's book (checked on
 
 ## Verification
 
-The pinned environment is `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`). The module compiles
+The pinned environment is Lean 4.34.0,
+Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`. The module compiles
 without errors or warnings. To check the complete unapplied telescope,
 `@Langlands.HarmonicAnalysis.padicLatticeSchwartzExpansion` is assigned to the
 dependent function type with implicit prime, primality instance, explicit `F`
-and explicit `T`. Declaration inspection checks its assumptions. Formal
-exact-target validation and independent semantic review are separate
-publication checks.
+and explicit `T`. Declaration inspection checks its assumptions.

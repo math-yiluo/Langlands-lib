@@ -1,7 +1,6 @@
 # Normalized induction from actual conjugate block parabolics
 
-Author: Worker 264. Worker 19 specified the downstream use and the required
-interface. The p-adic wrapper follows the published upper parabolic wrapper in
+The p-adic wrapper follows the published upper parabolic wrapper in
 `Induction/Parabolic` and its opposite-parabolic adaptation.
 
 A concrete pair `P : Exponents.ConjugateBlockPair n R` consists of a block shape
@@ -175,7 +174,7 @@ from `T`'s valuation and local-field structure.
 ## Derived provenance and source correspondence
 
 This is a derived construction, not a new representation-theoretic theorem.
-It composes the accepted `Exponents/ParabolicPair`, `Group/GL/Blocks` with its
+It composes the published `Exponents/ParabolicPair`, `Group/GL/Blocks` with its
 block topology, `Group/GL/BlockModulus`, `Twist/Definitions`,
 `Induction/Definitions`, `Induction/Parabolic` and `Category/Basic`. The
 conjugate inducing data are defined by transport along conjugation by `c`. The
@@ -198,7 +197,7 @@ conjugate-induction step for block parabolics of general linear groups, as an
 explicit left-translation equivalence. It asserts neither the uniqueness
 conclusion of Corollary 6.2, nor Proposition 6.1, nor the existence of a Weyl
 representative `y` normalizing a semistandard pair to a standard one. Those
-remain separate obligations. The cited page was read directly.
+are not part of this module. The cited page was read directly.
 
 Registered source:
 

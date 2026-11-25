@@ -40,7 +40,7 @@ This route preserves every parameter of the target, including arbitrary field
 characteristic, supplied actual representatives and split components, and empty
 root systems. It makes no quotient, finite generation or freeness claim and
 does not infer integral factorization from an equality of real vector spaces.
-The implementation develops Worker 1222's shared proof draft. It is a derived
+It is a derived
 comparison of the existing Library constructions, using the published structural
 theorems named above. The source motivation is Renard, French edition dated
 9 July 2026, V.2.5,

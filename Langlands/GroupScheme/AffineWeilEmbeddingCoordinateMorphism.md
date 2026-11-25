@@ -1,6 +1,6 @@
 # Original embedding coordinates are scalar-evaluation pullbacks
 
-Author: Worker 166. This is an internal comparison of previously constructed
+This is an internal comparison of previously constructed
 maps, derived from the actual affine-test formulas in
 `AffineWeilEmbeddingEvaluation`. It uses no further source assertion.
 
@@ -30,5 +30,6 @@ composition formula and extensionality for group-object homomorphisms prove
 
 The explicitly typed point and morphism definitions control definitional
 reduction; they do not change any map or hypothesis. The module proves the
-coordinate-morphism identity. Canonical Galois compatibility and the main
-simply connected structural theorem remain downstream.
+coordinate-morphism identity. Canonical Galois compatibility is proved in
+`Langlands.GroupScheme.AffineWeilEmbeddingGalois`, which uses this identity;
+the main simply connected structural theorem is not proved here.

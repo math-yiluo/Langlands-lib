@@ -42,6 +42,6 @@ No local-field structure on the inertia fixed field is assumed.
 The provenance is internal. The quotient transport proof adapts the
 published local-field `ApartmentFixedPointReduction` to generic apartment
 data by using the same quotient relation directly. The other lemma unpacks
-normality and the one-stabilizer definition. This unit supplies neither
+normality and the one-stabilizer definition. This module supplies neither
 the common-apartment witness nor a singleton vertex fixed locus,
 algebraic boundedness, bounded-subgroup fixed points, or maximality.

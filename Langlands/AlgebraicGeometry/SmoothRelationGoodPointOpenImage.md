@@ -33,11 +33,12 @@ membership in `O`, the base contraction equality and the coordinate equations.
 `simpleIntegerRootOpenImage` constructs this data by classical choice from the
 proved existence theorem.
 
-Worker 303 designed the surrounding good-point route using an open spectral
-image of etale coordinates. Worker 101 implemented this generic algebraic
-lifting step by composing the existing polynomial prime-choice construction
-with the basic open basis and image membership. This is an internally derived
+The surrounding good-point route uses an open spectral image of etale
+coordinates. This generic algebraic lifting step composes the existing
+polynomial prime-choice construction with the basic open basis and image
+membership. This is an internally derived
 prerequisite, with no external source theorem assumed. Establishing the open
-image for the chosen coordinates and transporting the resulting prime to a
-scheme orbit remain separate geometric obligations; this module does not
-assert existence of a good point or the global slicing theorem.
+image for the chosen coordinates (`SmoothRelationGoodPointEtaleImage`) and
+transporting the resulting prime to a scheme orbit
+(`SmoothRelationGoodPointExistence`) are separate geometric steps; this module
+does not assert existence of a good point or the global slicing theorem.

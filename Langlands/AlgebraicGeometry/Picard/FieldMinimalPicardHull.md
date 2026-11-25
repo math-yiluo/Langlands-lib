@@ -1,7 +1,5 @@
 # A minimal formally versal Picard hull over a field
 
-Author: Worker 372.
-
 This internal helper module builds, over a field `k`, a formally versal hull of the relative
 Picard deformation problem of a line bundle `M` on the residue fibre. The hull ring is a quotient
 of a complete local power-series source with exactly `Index f M` variables, one for each basis

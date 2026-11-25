@@ -1,6 +1,6 @@
 # Compatible quotient-measure existence for closed subgroups
 
-Worker 112 states `CompatibleMeasureExistsForClosedSubgroups`, the universal
+This module states `CompatibleMeasureExistsForClosedSubgroups`, the universal
 existence theorem for the unchanged `CompatibleMeasureExists` predicate.
 This file states a proposition and supplies no proof of it.
 

@@ -61,9 +61,10 @@ by this module.
 
 The provenance is internal composition of the named Lean results, with no
 new direct literature assertion. The identity inducing-action construction
-is adapted from Workers 831 and 15's independently reviewed second-block
-deformation draft (`TwoBlockSecondDeformation.zeroComparison`); that draft's
-analytic theorem is not imported or assumed to be published here.
+is adapted from the second-block deformation construction
+`TwoBlockSecondDeformation.zeroComparison` (module
+`TwoBlockSecondWhittakerDeformationProof`); that module's analytic theorem is
+not imported or assumed here.
 
 ## All-field port
 

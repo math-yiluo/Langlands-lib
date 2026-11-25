@@ -7,7 +7,7 @@ Module: `Langlands.Representation.Archimedean.RealInductionStagesFiltration`.
 This module proves `Langlands.Archimedean.RealAdjacentFiltrationInStagesStatement` (module
 `RealInducedPairFiltrationReduction`), as the theorem `realAdjacentFiltrationInStages`. That
 statement is one of the four inputs of `realInducedPairFiltration_of_base`, the reduction of
-`RealInducedPairFiltrationStatement` used by Task 7068.
+`RealInducedPairFiltrationStatement`.
 
 The statement says the following. Let `pre ++ x :: y :: post` have rank `n`, and let
 `r = realRank [x, y]`. A filtration as in `RealAdjacentFiltration` of the standard module of

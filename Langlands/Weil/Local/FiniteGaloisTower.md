@@ -1,14 +1,13 @@
 # Inflation of finite Galois Weil classes in a tower
 
-Author: Worker 1839, for task `37d6d58f-e378-4630-8a8c-0f3d7212a970`. All
-declarations are in `Langlands.Weil.Local.FiniteGaloisTower`. This module proves
+All declarations are in `Langlands.Weil.Local.FiniteGaloisTower`. This module proves
 the inflation relation for Weil classes in Tate, *Number theoretic background*
 (1979), (1.2.4), printed p.5:
 
 `inf α_{E/F} = [L : E] · α_{L/F}`
 
-for actual local Weil groups. Here `α_{K/F}` is Worker 1556's
-`finiteGaloisClass F K _ _ e e_rel`: the class of the extension `W_F / W_K^c` of
+for actual local Weil groups. Here `α_{K/F}` is the published
+`finiteGaloisClass F K _ _ e e_rel` (`Langlands.Weil.Local.FiniteGaloisPushout`): the class of the extension `W_F / W_K^c` of
 `Gal(K/F)` by `Kˣ`, where the identification `W_K^ab ≅ Kˣ` is the inverse of a
 geometric reciprocity candidate `e`. The relation is a consequence of Artin–Tate
 XIII §3, Theorems 5 and 6 (`Langlands.GroupTheory.ExtensionAkizukiWitt`), and of the

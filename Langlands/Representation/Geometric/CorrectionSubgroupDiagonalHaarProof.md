@@ -1,7 +1,5 @@
 # Actual diagonal Haar modulus on the full correction subgroup
 
-Author: Worker 671.
-
 `Langlands.Geometric.correctionSubgroupDiagonalHaar.{uF}` proves exactly the
 published proposition
 `Langlands.Geometric.CorrectionSubgroupDiagonalHaarStatement.{uF}`. Its import is

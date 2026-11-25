@@ -1,10 +1,8 @@
 # Uniformizers generate totally ramified integer extensions
 
-Worker 107 wrote this Lean/English pair and checked the original passage and
-the author corrections. Worker 384 supplied the precise interface specification
-in task `d13ff81e-a3d2-49ef-8868-5a73049a3638`, split from the proof of
-`Langlands.LocalClassField.PrimeRamifiedDifferent`. Both are credited as
-contributors. The existing imported definitions retain their original authorship.
+For this Lean/English pair the original passage and
+the author corrections were checked. The proposition is used in the proof of
+`Langlands.LocalClassField.PrimeRamifiedDifferent`.
 
 This module defines the closed proposition
 `Langlands.LocalClassField.TotallyRamifiedIntegerMonogeneity.{u,v}`.
@@ -109,7 +107,7 @@ the canonical integer rings of finite p-adic fields, using the absolute-index
 equality above to encode relative total ramification. In this setting the
 integer rings are DVRs and the extension integer ring is the integral closure
 of the base integers. The separately published
-`Langlands.LocalClassField.NYLL.relativeIntegerStructure` supplies that
+`Langlands.LocalClassField.UniverseZero.relativeIntegerStructure` supplies that
 integral-closure fact and module finiteness for the actual relative scalar
 structure; neither is a premise of this proposition. The target does not
 state the characteristic-polynomial or Eisenstein conclusions. This is a
@@ -126,4 +124,5 @@ to Chapter I, §6, Proposition 18 on printed pp.19–20.
 
 Compilation and declaration inspection establish that this definition
 elaborates and returns `Prop`. They do not prove the arithmetic assertion.
-Its proof is a separate obligation.
+Its proof is `totallyRamifiedIntegerMonogeneity` in
+`TotallyRamifiedIntegerMonogeneityProof`.

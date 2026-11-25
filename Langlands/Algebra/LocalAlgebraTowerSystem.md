@@ -128,7 +128,7 @@ The last two clauses concern the canonical maps `Tᵢ ⊗[Sᵢ] Sⱼ → Tⱼ` a
 `IsPrimeLocalization`, so localization uses the algebra induced by the exact
 canonical map. The source describes the composite localization condition as a
 consequence of the adjacent ones. It is retained explicitly as a logically
-redundant requirement for later direct use; this unit does not prove that
+redundant requirement for later direct use; this module does not prove that
 implication. The specification does not separately require `Sᵢ/ℤ` or `Tᵢ/Rᵢ`
 to be essentially finite type: those are transitive consequences of the stated
 adjacent conditions.

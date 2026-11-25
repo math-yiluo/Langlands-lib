@@ -24,4 +24,3 @@ not establish chart existence, smoothness, reductivity, canonical
 models or Shimura-level representability. The provenance is internal:
 pullback composition, the original scalar-extension square and the
 actual unitary/similitude point equivalences supply every ingredient.
-All new code is by Worker 57.

@@ -1,7 +1,5 @@
 # Strong inverses on nonempty directed affinoid atlases
 
-Author: Worker 36.
-
 This module constructs an actual isomorphism in
 `DirectedAtlasPresentation` from a full strong quasi-isomorphism whose
 source atlas has a nonempty original chart index. It derives the

@@ -33,7 +33,7 @@ namespace IntegralTorusData
 variable (T : IntegralTorusData D S i) (hT : IsSplitTorus T.torus.toGrp)
     (Q : SpecialFibreQuotientData D) (hQ : Q.IsReductiveQuotient)
 
-local instance : Smooth D.neutral.group.X.hom := D.neutral_smooth
+private local instance : Smooth D.neutral.group.X.hom := D.neutral_smooth
 
 local instance : IsAffineHom D.neutral.specialFibre.X.hom := by
   change IsAffineHom (CategoryTheory.Limits.pullback.snd D.neutral.group.X.hom
@@ -83,7 +83,7 @@ theorem exists_integral_root_quotient_lift (a : characterLattice S) (ha : a ≠ 
     apply ha
     have he := (T.genericCharacterEquiv hT).apply_symm_apply a
     change T.genericCharacterEquiv hT χ = a at he
-    rw [h, map_zero] at he
+    rw [h, AddEquiv.map_zero] at he
     exact he.symm
   have hχa : T.genericCharacter χ = a :=
     (T.genericCharacterEquiv hT).apply_symm_apply a

@@ -1,6 +1,6 @@
 # Split-component points in the actual standard Levi subgroup
 
-Author: Worker 1507. Module `Langlands.GroupScheme.Rational.SplitComponentLeviPoints`,
+Module `Langlands.GroupScheme.Rational.SplitComponentLeviPoints`,
 namespace `Langlands.GroupScheme`.
 
 This is an internal adapter between published actual group-scheme objects. It
@@ -60,7 +60,10 @@ Everything stays in the single universe `u` of the published group-scheme API.
 ## Topology comparison not used
 
 The continuity proof never uses `StandardLeviPointTopologyComparison`, which the
-Library declares separately as an unproved target. Nor does it use the published
+Library declares separately as a target; for closed represented Levis of
+connected reductive groups it is proved by
+`standardLeviPointTopologyComparisonStatement_proof` in
+`Rational.StandardLeviPointComparisonProof`. Nor does it use the published
 `standardLeviRationalPointsHomeomorph`, which needs `j` to be a closed immersion.
 The proof needs no closed-immersion, local-compactness, separation or reductivity
 premise. Continuity into the canonical topology of `M(F)` is

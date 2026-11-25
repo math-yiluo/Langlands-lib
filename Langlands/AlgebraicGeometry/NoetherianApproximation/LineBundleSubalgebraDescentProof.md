@@ -14,7 +14,7 @@ That theorem works for an arbitrary directed system of rings `G` with direct lim
 (FLT's predicate `IsDirectLimit`), a stage `i`, and a quasi-compact, quasi-separated
 `fX : X ⟶ Spec (G i)`. Let `𝓛` be a module on the chosen base change
 `pullback fX (Spec.map (g i))` of `X` to `Spec R` that satisfies FLT's
-`Scheme.Modules.IsInvertible`. The theorem gives `j ≥ i` and an FLT-invertible module `𝓛j` on the
+`Scheme.Modules.IsInvertibleFLT`. The theorem gives `j ≥ i` and an FLT-invertible module `𝓛j` on the
 chosen base change `pullback fX (Spec.map (φ i j hij))` of `X` to `Spec (G j)`. For every
 `cX` between these two base changes that is compatible with both projections, it gives
 `(pullback cX).obj 𝓛j ≅ 𝓛`.
@@ -83,7 +83,7 @@ to `Spec A`.
    with `f` both give `f`. Both morphisms are kept as existential witnesses with their defining
    equations, so later rewriting does not unfold them.
 2. **Descent to a stage `j`.** The module `(pullback e).obj M` on `P` is FLT-invertible, by
-   `Picard.isInvertible_of_isLocallyFreeRankOne` and `Scheme.Modules.IsInvertible.pullback`. Applying
+   `Picard.isInvertible_of_isLocallyFreeRankOne` and `Scheme.Modules.IsInvertible.pullbackFLT`. Applying
    `exists_fg_isInvertible_nonempty_pullback_iso` at `i` to `pullback.snd f₀ ι₀` gives `j ≥ i`,
    an FLT-invertible module `Lj` on `Q := pullback (pullback.snd f₀ ι₀) (Spec.map (fgTransition i j hij))`,
    and `hj`: for every compatible `cX : P ⟶ Q`, `(pullback cX).obj Lj ≅ (pullback e).obj M`.
@@ -96,7 +96,7 @@ to `Spec A`.
 4. **Choice of `T` and `M₀`.** Take `T := j.1`. It is finitely generated, and it contains `s`
    because `s ⊆ Algebra.adjoin A₀ s = i ≤ j` (`Algebra.subset_adjoin`). Take
    `M₀ := (pullback u).obj Lj` on `Z`. It is locally free of rank one by
-   `Scheme.Modules.IsInvertible.pullback` and `isLocallyFreeRankOne_of_isInvertible`.
+   `Scheme.Modules.IsInvertible.pullbackFLT` and `isLocallyFreeRankOne_of_isInvertible`.
 5. **The comparison along every `c`.** Let `c : X ⟶ Z` with `c ≫ Z.fst = a` and
    `c ≫ Z.snd = f ≫ Spec.map (algebraMap T A)`. Apply `hj` to `cX := e ≫ c ≫ u`.
    - `cX ≫ Q.fst = P.fst` by `pullback.hom_ext` on `Y`. Composed with `Y.fst`, the left side is

@@ -6,7 +6,7 @@ one proposition definition and no proof:
 - `Langlands.TraceFormula.GroupSchemeCuspidalIsotypicTraceFactorizationStatement.{u}`.
 
 It strengthens the Library's
-`Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement` (Task 7701, module
+`Langlands.TraceFormula.GroupSchemeCuspidalLocalTraceFactorizationStatement` (module
 of the same name). That statement gives, for an irreducible closed invariant subspace `P` of the
 group-scheme cuspidal `L²` space and a finite place `v`, an irreducible admissible
 representation `ρ_v` of `G(F_v)` whose distribution character splits off the traces on `P`, in
@@ -80,12 +80,14 @@ subspace `Q ≤ P` invariant under every `πc a` is `⊥` or `P`. Then there are
    and every linear map `j : V' →ₗ[ℂ] S` with `j ≠ 0`, `LinearMap.range j ≤ P` and
    `j (ρ' y x) = πc (ofPlace F G (.inr v) y) (j x)` for all `y`, `x`, there is a linear
    equivalence `E : V' ≃ₗ[ℂ] V` with `E (ρ' y x) = ρ y (E x)` for all `y`, `x`.
-1. **Ordinary trace factorization**, exactly part 1 of Task 7701: there is
+1. **Ordinary trace factorization**, exactly part 1 of
+   `GroupSchemeCuspidalLocalTraceFactorizationStatement`: there is
    `C : (G(𝔸_F) → ℂ) → ℂ` such that for every `fv : SchwartzBruhat G(F_v)` and every
    `fw : G(𝔸_F) → ℂ` with `fw (g * ofPlace x) = fw g`, if `f g = fv (g_v) * fw g` is
    `ν`-integrable (`hf`) and the compression of `R_S(f)` to `P` is trace class, then its trace
    is `Character.distribution μv ρ hρ fv * C fw`.
-2. **Twisted trace factorization**, exactly part 2 of Task 7701: for every `Θ`, `hΘ`, `hΘμ` and
+2. **Twisted trace factorization**, exactly part 2 of
+   `GroupSchemeCuspidalLocalTraceFactorizationStatement`: for every `Θ`, `hΘ`, `hΘμ` and
    every topological automorphism `θv` of `G(F_v)` with `(Θ g)_v = θv (g_v)` and
    `Θ (ofPlace x) = ofPlace (θv x)`, if `I_Θ` maps `P` into `P`, then there are a bijective
    linear `Av : V → V` with `Av (ρ y w) = ρ (θv y) (Av w)` and `C : (G(𝔸_F) → ℂ) → ℂ` such that,
@@ -115,7 +117,8 @@ The argument is the one written in the Markdown of
    open subgroup) carry an irreducible admissible representation `ρ` (Getz–Hahn,
    Proposition 5.3.8 and Theorem 5.3.9). Since every open subgroup of `G(F_v)` contains a
    compact open subgroup, these are also the vectors fixed by some open subgroup, as in
-   `Langlands.IsSmooth`. Parts 1 and 2 hold for this `ρ` by the argument of Task 7701.
+   `Langlands.IsSmooth`. Parts 1 and 2 hold for this `ρ` by the argument for
+   `GroupSchemeCuspidalLocalTraceFactorizationStatement`.
 2. **Realization.** Fix a unit vector `ξ ∈ H^v` and put `j₀ x = U⁻¹ (x ⊗ ξ)`, viewed in `S`.
    This is linear, nonzero, has range in `P`, and intertwines `ρ(y)` with `πc (ofPlace y)`
    because `π_v(y) ⊗ 1` sends `x ⊗ ξ` to `π_v(y)x ⊗ ξ`.
@@ -136,7 +139,8 @@ Theorem 1, printed p. 180).
 ## Use and provenance
 
 This is derived content, formulated for this project. It packages the local part of the
-factorization of a cuspidal automorphic representation with the trace identities of Task 7701:
+factorization of a cuspidal automorphic representation with the trace identities of
+`GroupSchemeCuspidalLocalTraceFactorizationStatement`:
 
 - J. R. Getz and H. Hahn, *An introduction to automorphic representations*, GTM 300 (2024),
   registered `getz-hahn-2024-automorphic-representations`: Theorem 3.10.2 (printed p. 97,
@@ -161,23 +165,26 @@ factorization of a cuspidal automorphic representation with the trace identities
   if `G_1` or `G_2` is of type I, every irreducible unitary representation of `G_1 × G_2` is
   equivalent to an outer tensor product `π_1 ⊗ π_2`.
 - Henniart–Lemaire 2011, Proposition of II.6.5 (printed pp. 121–122), uses this factorization
-  for the global intertwining operator in cyclic base change (as cited by Task 7701).
+  for the global intertwining operator in cyclic base change (as cited in the Markdown of
+  `GroupSchemeCuspidalLocalTraceFactorizationStatement`).
 
 Differences from the sources, all of which keep the content: one place `v` is split off; the
 local factor is realized on algebraic (smooth) vectors and maps into `P` are only linear; the
 irreducibility in clause 0' is Mathlib's algebraic irreducibility; trace class is a hypothesis
-in parts 1 and 2, as in Task 7701.
+in parts 1 and 2, as in `GroupSchemeCuspidalLocalTraceFactorizationStatement`.
 
 ## Intended use
 
-Task 7340 uses clause 0' to identify the local factor `ρ` with the Library's local component of
+In the global argument of local cyclic base change of prime degree for `GL_n`, clause 0' serves
+to identify the local factor `ρ` with the Library's local component of
 a cuspidal operator realization of `GL_{r+1}`. This identification is the content of
-`Langlands.TraceFormula.GeneralLinearCuspidalLocalComponentTraceStatement` (Task 7819). The
+`Langlands.TraceFormula.GeneralLinearCuspidalLocalComponentTraceStatement`. The
 local component embeds into `P` through the form-to-`L²` map `Φ`, clause 0' gives an
 equivariant linear equivalence with `ρ`, and the Library lemma
 `Langlands.Character.distribution_eq_of_equivariant` (module
 `Langlands.Representation.Character.Basic`) transports the character. The twisted part with
-the identified local factor (the twisted local statement of Task 7851) uses clause 0' in the
+the identified local factor (the twisted local statement
+`WeilGeneralLinearCuspidalLocalTwistedTraceStatement`) uses clause 0' in the
 same way, transporting `Av` along `E`. The statement is generic over group schemes and
 automorphisms, so the Jacquet–Langlands and automorphic induction comparisons can use it the
 same way.

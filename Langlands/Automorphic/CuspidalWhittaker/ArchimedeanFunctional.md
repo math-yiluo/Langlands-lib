@@ -1,9 +1,8 @@
 # Whittaker functionals at the archimedean places of a cuspidal realization
 
 Module `Langlands.Automorphic.CuspidalWhittaker.ArchimedeanFunctional`, namespace
-`Langlands.Automorphic.CuspidalWhittaker`. Worker 174 wrote it for the proof of
-`Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement` (Task 5996,
-`e3f48d66-76bc-4321-a8ea-e25681c89d3f`, published under Task 5720).
+`Langlands.Automorphic.CuspidalWhittaker`. It is part of the proof of
+`Langlands.Automorphic.CuspidalArchimedeanWhittakerFunctionalStatement`.
 
 Let `F` be a number field and `S` an operator realization of `GL_{r+1}` over `F`. For
 `x ∈ S` and `h ∈ GL_{r+1}(𝔸_F)`, `W_x(h)` is the Library's iterated Whittaker coefficient
@@ -77,7 +76,7 @@ Proof. Write `τ = mixedTrace(∑ᵢ N_{i,i+1})`.
   (`realizationFunctional_apply`). A definition for this proof (internal), following the
   Library's finite-place `LocalFunctional.whittakerFunctional`. Additivity is the Library's
   `descend_add`, and homogeneity is `descend_const_mul`.
-- `realizationFunctional_lieOperator` (Lemma C): for `M * M = 0` and `N = A M A⁻¹` strictly
+- `realizationFunctional_lieOperator`: for `M * M = 0` and `N = A M A⁻¹` strictly
   upper triangular, `ℓ_h(Y · x) = 2π i · mixedTrace(∑ᵢ N_{i,i+1}) · ℓ_h(x)`, where `Y · x`
   is the Library's `S.lieOperator Y x`. It is `descend_eq_of_hasCurveDeriv` with
   `Φ = W_x` and `Ψ = W_{Y·x}`. The curve hypothesis is the Library's

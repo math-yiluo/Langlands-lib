@@ -81,7 +81,7 @@ theorem exists_eval_eq_neg_order (hT : IsSplitTorus T.toGrp) (ω : kˣ → ℝ)
   exact Langlands.BruhatTits.Cartan.exists_eval_eq hT
     { toFun := fun a => -ω (rationalCharacterEval
         ((rationalCharacters.equivCharacterLattice T).symm a) τ)
-      map_zero' := by rw [map_zero, rationalCharacterEval_zero, hone, neg_zero]
+      map_zero' := by rw [AddEquiv.map_zero, rationalCharacterEval_zero, hone, neg_zero]
       map_add' := by
         intro a c
         rw [map_add, rationalCharacterEval_add, hadd, neg_add] }

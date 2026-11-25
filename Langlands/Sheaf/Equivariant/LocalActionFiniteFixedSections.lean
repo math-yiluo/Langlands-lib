@@ -26,7 +26,7 @@ structure CommonFixedSections (F : Tᵒᵖ ⥤ A) {I : Type uI} (U : I → T)
   le_bound : subgroup ≤ Q
   le_action : ∀ i, subgroup ≤ H i
   fixes : ∀ i (h : (H i : Subgroup G)), (h : G) ∈ subgroup →
-    F.map (a i h).unop.op (s i) = s i
+    F.map (a i h).unop.asHom.op (s i) = s i
 
 /-- Finitely many discrete sections can be fixed simultaneously, below any
 prescribed open subgroup. -/
@@ -67,18 +67,18 @@ theorem fixed_restrict_of_intertwines (F : Tᵒᵖ ⥤ A)
     {b : (H' : Subgroup G) →* (End V)ᵐᵒᵖ}
     {p : V ⟶ U} (hNH : N ≤ H) (hNH' : N ≤ H')
     (hp : ∀ (g : G) (hg : g ∈ N),
-      (b ⟨g, hNH' hg⟩).unop ≫ p = p ≫ (a ⟨g, hNH hg⟩).unop)
+      (b ⟨g, hNH' hg⟩).unop.asHom ≫ p = p ≫ (a ⟨g, hNH hg⟩).unop.asHom)
     {s : ToType (F.obj (op U))}
-    (hs : ∀ h : (H : Subgroup G), (h : G) ∈ N → F.map (a h).unop.op s = s) :
+    (hs : ∀ h : (H : Subgroup G), (h : G) ∈ N → F.map (a h).unop.asHom.op s = s) :
     ∀ h : (H' : Subgroup G), (h : G) ∈ N →
-      F.map (b h).unop.op (F.map p.op s) = F.map p.op s := by
+      F.map (b h).unop.asHom.op (F.map p.op s) = F.map p.op s := by
   intro h hh
   calc
-    F.map (b h).unop.op (F.map p.op s) =
-        F.map ((b h).unop ≫ p).op s := by
+    F.map (b h).unop.asHom.op (F.map p.op s) =
+        F.map ((b h).unop.asHom ≫ p).op s := by
       rw [op_comp, F.map_comp, CategoryTheory.comp_apply]
-    _ = F.map (p ≫ (a ⟨h, hNH hh⟩).unop).op s := by rw [hp h hh]
-    _ = F.map p.op (F.map (a ⟨h, hNH hh⟩).unop.op s) := by
+    _ = F.map (p ≫ (a ⟨h, hNH hh⟩).unop.asHom).op s := by rw [hp h hh]
+    _ = F.map p.op (F.map (a ⟨h, hNH hh⟩).unop.asHom.op s) := by
       rw [op_comp, F.map_comp, CategoryTheory.comp_apply]
     _ = F.map p.op s := congrArg (F.map p.op) (hs _ hh)
 
@@ -96,22 +96,22 @@ For a common acting subgroup these are the simultaneous fixed families. -/
 def fixedFamilySubmodule (N : OpenSubgroup G) :
     Submodule R (∀ i, F.obj (op (U i))) where
   carrier s := ∀ i (h : (H i : Subgroup G)), (h : G) ∈ N →
-    F.map (a i h).unop.op (s i) = s i
+    F.map (a i h).unop.asHom.op (s i) = s i
   zero_mem' := fun _ _ _ => map_zero _
   add_mem' := by
     intro s t hs ht i h hh
-    change F.map (a i h).unop.op (s i + t i) = s i + t i
+    change F.map (a i h).unop.asHom.op (s i + t i) = s i + t i
     rw [map_add, hs i h hh, ht i h hh]
   smul_mem' := by
     intro r s hs i h hh
-    change F.map (a i h).unop.op (r • s i) = r • s i
+    change F.map (a i h).unop.asHom.op (r • s i) = r • s i
     rw [map_smul, hs i h hh]
 
 @[simp]
 theorem mem_fixedFamilySubmodule (N : OpenSubgroup G) (s : ∀ i, F.obj (op (U i))) :
     s ∈ fixedFamilySubmodule F a N ↔
       ∀ i (h : (H i : Subgroup G)), (h : G) ∈ N →
-        F.map (a i h).unop.op (s i) = s i := Iff.rfl
+        F.map (a i h).unop.asHom.op (s i) = s i := Iff.rfl
 
 /-- Shrinking the fixing subgroup enlarges the fixed-family submodule. -/
 theorem fixedFamilySubmodule_antitone {M N : OpenSubgroup G} (hMN : M ≤ N) :

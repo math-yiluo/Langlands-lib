@@ -1,7 +1,5 @@
 # Relative indices from compatible Iwahori factorizations
 
-Author: Worker 103.
-
 `IwahoriRelativeIndexStatement` is an internal counting statement for arbitrary
 groups. It uses the actual multiplication and literal intersections of
 `HasIwahoriIntersectionDecomposition`: every element of each of `K`, `J`, and

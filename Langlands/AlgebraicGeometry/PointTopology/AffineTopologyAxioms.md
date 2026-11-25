@@ -1,7 +1,5 @@
 # Coordinate-algebra axioms for affine point topologies
 
-Author: Worker 105.
-
 This is a derived intermediate formulation of the uniqueness argument in
 Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), Proposition 2.1 and its proof, printed pages 2–3.

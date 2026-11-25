@@ -18,7 +18,7 @@ open scoped Classical
 
 universe u uQ uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -101,4 +101,4 @@ theorem commonTwistEulerInputs_families
   · exact dualLFactor_eq_of_unramified D A hEps arch χ₂ S₂ hU₂ z hzS₂ hzPd hzd₂ hzPd'
       (hR₂ z hzR₂) (hW₃ z hzPd hzW₃) (hW₄ z hzPd' hzW₄) s
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

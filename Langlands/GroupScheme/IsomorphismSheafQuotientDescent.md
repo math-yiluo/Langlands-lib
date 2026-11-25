@@ -1,6 +1,6 @@
 # Scheme representations of the Isom action quotient from local models
 
-Worker 812. This internal construction uses the action quotient of the full
+This internal construction uses the action quotient of the full
 Isom sheaf, the published common-kernel representation theorem, and the
 published effective fppf descent theorem for separated locally quasi-finite
 schemes. It does not assume a global Isom scheme or cite a new literature
@@ -38,4 +38,4 @@ every full Isom family to this actual quotient scheme.
 This constructor still requires actual local quotient models with all the
 stated laws. It does not produce them from reductivity, identify a general
 action as the adjoint action, or represent the full Isom sheaf by a scheme.
-Those are additional steps toward the host target.
+Those are additional steps toward `GenericIsomorphismSchemeExistenceStatement`.

@@ -5,9 +5,10 @@ Library module `EtaleEquivalenceRelationInvariantOpen` and the published Anthrop
 `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_exists_quotient_of_forall_exists_quotient_restrict`.
 The FLT port imports all of Mathlib, and so does this module.
 
-This module is the scheme-gluing piece ("piece Q") of the first-level step of absolute Noetherian
-approximation (FL task 8d02331e, Worker 706). It was written for that task and, in the end, for
-this task (Tag 07VS). Its result is used where the Stacks Project concludes that an algebraic
+This module is the scheme-gluing piece of the first-level step of absolute Noetherian
+approximation (`EtaleEquivalenceRelationNoetherianFirstLevelStatement`, proved in
+`EtaleEquivalenceRelationNoetherianFirstLevelProof`) and, through it, of the proof of Stacks
+Lemma 70.15.1 (Tag 07VS). Its result is used where the Stacks Project concludes that an algebraic
 space covered by open subspaces that are affine schemes is a scheme.
 
 ## Statements
@@ -96,14 +97,14 @@ Provenance: derived. Stacks, Limits of Algebraic Spaces, Lemma 70.5.11 (Tag 07SR
 means that `X_i` is a scheme (see for example Properties of Spaces, Section 66.13)": an
 algebraic space covered by open subspaces that are affine schemes is a scheme. In the absolute
 Noetherian approximation of Proposition 70.8.1 (Tag 07SU) this is how the levels `W_i` become
-schemes. The FL task works with étale presentations instead of algebraic spaces. In that
+schemes. The first-level step works with étale presentations instead of algebraic spaces. In that
 setting, "the open subspace given by an invariant open `V k` is an affine scheme" becomes
 `HasAffineQuotient` for the chart relation, and "the space is a scheme" becomes a scheme
 quotient of the presentation. This module proves that translation by gluing the affine
 quotients along the images of the overlaps. This is the gluing of schemes of Stacks, Schemes,
 Section 26.14, used in the form of Mathlib's `Scheme.GlueData`. The structure `SchemeQuotient`
-and the open-cover form of the hypotheses are internal and follow the interface agreed with the
-FL task.
+and the open-cover form of the hypotheses are internal and follow the interface used by the
+first-level proof.
 
 ### Code adapted from the Anthropic FLT formalization
 

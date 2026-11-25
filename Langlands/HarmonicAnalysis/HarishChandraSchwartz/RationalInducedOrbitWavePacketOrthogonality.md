@@ -1,21 +1,18 @@
 # Wave packets detect `ψ_f[O, P]` on actual points (Waldspurger VII.2, proof of Corollary VII.2.3)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module:
 `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitWavePacketOrthogonality`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness` (this
-  author's Unit 24, candidate `773beb73-c028-4523-a526-95f1451fef23`, review-accepted). It
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalFourierOrbitSmoothness`. It
   provides `rationalFourierOrbitSmoothSectionLinear` (Proposition VII.1.3 on actual points) and
   `rationalFourierOrbitSmoothSectionLinear_val`. Through its imports come:
-  - Unit 23 (candidate `77e5e21c-3be4-47f0-ad86-6f41ee8ee935`, review-accepted):
+  - `RationalInducedOrbitFourierPairing`:
     `rationalFourierOrbitSection` (`ψ_f[O, P]`) and `rationalFourierOrbitSection_apply`;
-  - Unit 20: `rationalInducedOrbitWavePacket` (`f_ψ`), `rationalInducedSmoothOrbitSections`
+  - `RationalInducedOrbitWavePacket`: `rationalInducedOrbitWavePacket` (`f_ψ`), `rationalInducedSmoothOrbitSections`
     (`C^∞(O, P)`), `leviRationalUnitaryCoordinates` with `_hasLaurent`;
-  - Unit 22: `rationalInducedFourierTransform` (`f̂(ω, P)`) and `compactOpenCofinal_standardLevi`;
-  - the published units: `RationalSchwartzSpace`, `rationalXi`, `rationalL2Weights`,
+  - `RationalInducedFourierTransform`: `rationalInducedFourierTransform` (`f̂(ω, P)`) and `compactOpenCofinal_standardLevi`;
+  - earlier modules of the Library: `RationalSchwartzSpace`, `rationalXi`, `rationalL2Weights`,
     `rationalXi_inv`, `rationalHeight_inv`, `rationalHasTemperedCoefficients_normalizedInduction`,
     `IsRationalLeviTempered`, `rationalLeviXi`, `rationalLeviData`,
     `rationalMinimalModulus_eq_one`, `isUnimodularModulus_standardUnipotentPoints`,
@@ -32,8 +29,8 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on
-the rendered image of PDF page 85. The three displays quoted carry no overline in the printed
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the
+rendered image of PDF page 85. The three displays quoted carry no overline in the printed
 text.
 
 - Corollary VII.2.3, printed p. 319: "Soient `P = MU`, `P' = M'U'` deux sous-groupes
@@ -53,13 +50,13 @@ text.
 
 `InducedOrbitWavePacketOrthogonality.md` explains how the Library's abstract results relate to
 these statements. This module adds no new analysis: it supplies the actual data of `P_I(F)` and
-the smoothness of `ψ_f[O, P]` from Unit 24.
+the smoothness of `ψ_f[O, P]` from `RationalFourierOrbitSmoothness`.
 
 Correspondence:
 
 - The source's last step is implicit. The Lean proof (in the Library) takes `ψ'` to be the
   section `ψ_f[O, P]` itself. That section lies in `C^∞(O, P)` by Proposition VII.1.3, here
-  Unit 24's `rationalFourierOrbitSmoothSectionLinear`. Formula (1) then gives
+  `rationalFourierOrbitSmoothSectionLinear` (`RationalFourierOrbitSmoothness`). Formula (1) then gives
   `∫_O u(ω) (ψ_f[O, P]_ω, ψ_f[O, P]_ω) dω = 0`, and the definiteness of the weighted product
   gives `ψ_f[O, P] = 0`.
 - Roles: the source's orbit `O'`, parabolic `P'`, test section `ψ'` and function `f_ψ` are here:
@@ -87,7 +84,7 @@ Correspondence:
 
 ## Setting
 
-The setting of Unit 24, `RationalFourierOrbitSmoothness.md`:
+The setting of `RationalFourierOrbitSmoothness.md`:
 
 - `G`, `i`, `ν`, `I`, `P = P_I(F)`; `K` with `hKc` and `hPK`; `ρ` with `hρ` and `hKρ`, so that
   `C(G) = RationalSchwartzSpace hKc hPK ρ`; `hM`, which defines `Ξ^{M_I}`;
@@ -115,17 +112,18 @@ The core and the two theorems also take `[IsFiniteMeasure ρX]`, `[ρX.IsOpenPos
 `hu : Continuous u`, `hupos : ∀ ω, 0 < u ω`, a real `b` and `hub : ∀ ω, u ω ≤ b`. The two
 theorems also take:
 - `hcoeff : ∀ v ℓ, ∃ c > 0, ∀ m, ‖ℓ(π(m) v)‖ ≤ c Ξ^{M_I}(m)` (the conclusion of Corollary III.1.2
-  for `π`, the same hypothesis as in Units 20, 23 and 24);
+  for `π`, the same hypothesis as in `RationalInducedOrbitWavePacket`,
+  `RationalInducedOrbitFourierPairing` and `RationalFourierOrbitSmoothness`);
 - `f : RationalSchwartzSpace hKc hPK ρ`.
 
 The core uses only `hG`, `hi`, `hν`, `I`, `hKc`, `hPK`, `π`, `C`, `hC`, `μM`, `hsq`, `ρX`, `u`
 and the two finiteness instances; the theorems use, through `include`, all the hypotheses of
-Unit 24's `rationalFourierOrbitSmoothSectionLinear`.
+`rationalFourierOrbitSmoothSectionLinear`.
 
 ## Contents
 
 Write `f_ψ = rationalInducedOrbitWavePacket … ρX (fun ω => (u ω : ℂ)) q` for the actual wave
-packet of weight `u` of `q ∈ C^∞(O, P)` (Unit 20), `(φ₁, φ₂)_G = pairing μG φ₁ φ₂ = ∫ conj(φ₁) φ₂ dμG`,
+packet of weight `u` of `q ∈ C^∞(O, P)` (`RationalInducedOrbitWavePacket`), `(φ₁, φ₂)_G = pairing μG φ₁ φ₂ = ∫ conj(φ₁) φ₂ dμG`,
 and `(q_ω, r_ω) = unitaryOrbitProductPairing … q r ω`, the product of V.2 on the fibre at `ω`.
 
 - **`rationalUnitaryOrbitWeightedProductCore … ρX u hu hupos hub`** (definition, the recorded
@@ -148,7 +146,7 @@ and `(q_ω, r_ω) = unitaryOrbitProductPairing … q r ω`, the product of V.2 o
 
 ## Proofs
 
-- The core is `unitaryOrbitWeightedProductCore` applied to the data of Unit 20 (the semidirect
+- The core is `unitaryOrbitWeightedProductCore` applied to the data of `RationalInducedOrbitWavePacket` (the semidirect
   decomposition of `P_I(F)`, closedness, `K`, the factorization `G = P K`, unimodularity, the
   modulus of `P_I(F)`, the norm characters and their continuity, the projection, the circle
   coordinates and their continuity, `compactOpenCofinal_standardLevi`), with the local compactness
@@ -156,9 +154,9 @@ and `(q_ω, r_ω) = unitaryOrbitProductPairing … q r ω`, the product of V.2 o
 - The equivalence:
   1. `hsm : ψ_f[O, P] ∈ C^∞(O, P)` is the `property` of
      `rationalFourierOrbitSmoothSectionLinear … f`, rewritten with
-     `rationalFourierOrbitSmoothSectionLinear_val` (Unit 24).
+     `rationalFourierOrbitSmoothSectionLinear_val` (`RationalFourierOrbitSmoothness`).
   2. The Library's `fourierOrbitSection_eq_zero_iff_forall_pairing_inducedOrbitWavePacket_eq_zero`
-     is applied with the actual data, as for formula (1) in Unit 23: `rationalL2Weights`,
+     is applied with the actual data, as for formula (1) in `RationalInducedOrbitFourierPairing`: `rationalL2Weights`,
      temperedness from `rationalHasTemperedCoefficients_normalizedInduction` and `hTA`,
      `rationalXi_inv`, `rationalHeight_inv`, the Laurent property and continuity of the
      coordinates, `isUnimodularModulus_standardUnipotentPoints`, `rationalLeviData`, `hM`,
@@ -179,8 +177,8 @@ and `(q_ω, r_ω) = unitaryOrbitProductPairing … q r ω`, the product of V.2 o
 - The Plancherel density `µ` (V.2) is not formalized; `u` stands in for it.
 - The hermitian product on `C^∞(Θ)^inv` (the sum over `Θ` with its constants) and its `G × G`
   invariance are not formalized.
-- Hypotheses inherited from Unit 24: analytic inputs whose actual statements are published but
-  unproved (`hsw` and `hswM`, Lemma II.1.5 for `G` and `M_I`; `hE`, Proposition II.4.5; `hTA`
+- Hypotheses inherited from `RationalFourierOrbitSmoothness`: analytic inputs whose actual
+  statements are published (`hsw` and `hswM`, Lemma II.1.5 for `G` and `M_I`; `hE`, Proposition II.4.5, not proved in the Library; `hTA`
   and `hTπ`, Corollary III.1.2), the structural fact `hPKiw` (ledger row S5), the measure
   normalizations `hμK`, `hMK`, `hUK`, the height bound `hnσ` and the integrability `hint`.
 - `hcoeff` (Corollary III.1.2 for `π`) and the finiteness instances are hypotheses.

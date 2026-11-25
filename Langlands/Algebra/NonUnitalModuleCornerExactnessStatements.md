@@ -1,9 +1,6 @@
 # Exactness statements for the actual corner functor
 
-Worker 695 implements the proposition interfaces; Worker 6 supplied the
-mathematical specification and source/dependency guidance.
-
-This is a statement unit for the unnumbered exactness proposition of David
+This is a statement module for the unnumbered exactness proposition of David
 Renard, *Représentations des groupes réductifs p-adiques*, French version
 dated 9 July 2026, I.3.1, printed page 19 / PDF page 25. It states two
 closed propositions and proves neither of them. All declarations use the
@@ -17,7 +14,7 @@ The governing original is registered as
 at `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
 The Chapter I conventions, printed pages 5–7 / PDF pages 11–13; I.3.1,
 printed page 19 / PDF page 25; and A.VIII.1, printed pages 265–266 /
-PDF pages 271–272, were read directly for this unit.
+PDF pages 271–272, were read directly for this module.
 
 Renard allows nonunital rings and actions without a unit law, including when
 the ambient ring has a unit. His general idempotent decomposition is additive.
@@ -28,7 +25,7 @@ uses only the original associative additive action and the idempotent.
 The nondegenerate assertion is the underlying original-module specialization
 of the source's functor. It does not construct the additional complex scalar
 action or compare with a separately bundled complex-linear category. Those
-comparisons remain obligations of the parent whole-book task.
+comparisons are not part of this module.
 
 The registered supplement `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
@@ -150,11 +147,14 @@ Idempotence makes this preimage fixed, and intertwining together with
 `e • x = x` gives the required image equation. Injectivity restricts to
 fixed subgroups, while surjectivity uses the same projection of a chosen
 preimage. This describes the source argument and the provenance of the
-ambient generalization; it is a route for later proofs, not proof evidence
-for either proposition in this unit. The existing additive splitting is
+ambient generalization; it is a proof route, not proof evidence
+for either proposition in this module. The existing additive splitting is
 available infrastructure and is not an extra hypothesis.
 
-The main exact-target proofs, complex coefficient-category comparisons,
-I.3.2 constructions and results, the remainder of I.3.1, and completion of
-the whole book remain separate obligations. Statement coverage here claims
+The main exact-target proofs are `nonUnitalModuleCornerExactness` and
+`nondegenerateModuleCornerExactness` in
+`Langlands.Algebra.NonUnitalModuleCornerExactnessProof`. Complex
+coefficient-category comparisons, I.3.2 constructions and results, the
+remainder of I.3.1, and a formalization of the whole book are not part of
+this module. Statement coverage here claims
 only these two proposition interfaces.

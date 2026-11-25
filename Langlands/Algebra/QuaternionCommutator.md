@@ -53,7 +53,8 @@ Several results assume `d = 2`, which is the case for quaternion division algebr
 Internal; standard algebra of quaternion algebras. The main result is a commutator lemma of
 Wang type (cf. S. Wang, *On the commutator group of a simple algebra*, Amer. J. Math. 72
 (1950)), here proved only for reduced degree `2`, directly from the Library's
-reduced characteristic polynomial and Skolem–Noether theorem. It is used for Task 5398: it
+reduced characteristic polynomial and Skolem–Noether theorem. It is used for the Kneser–Tits
+property of the quaternionic spin groups of Witt index one over nonarchimedean local fields: it
 shows that every Levi element of reduced norm `1` is a product of Eichler transformations.
 
 The constant-coefficient identity is reused as

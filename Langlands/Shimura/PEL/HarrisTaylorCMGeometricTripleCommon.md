@@ -1,7 +1,5 @@
 # Three original coefficient systems descended on actual common CM covers
 
-Author: Worker 57.
-
 For three actual small CM levels `T ≤ V ≤ U`, this internal construction
 associates the three original canonical coefficient systems on their actual
 simultaneous-kernel covers over the geometric level at `T`. It constructs
@@ -86,9 +84,9 @@ uses the original signature, tensor, Picard-zero, Weil, adelic and torsion
 parameters as written in Lean. It has no additional `q`,
 `dualityNaturality` or `polarizationStability` argument. No rigidity at `V`
 or `U` is required here. The generic dominant-unramified-etale premise of
-the existing normal-torsor construction is discharged by the published
+the existing normal-torsor construction is discharged by
 `DominantUnramifiedEtaleProof.dominantUnramifiedEtale`. The other named
-premises remain explicit; this unit does not prove representability or
+premises remain explicit; this module does not prove representability or
 replace those premises.
 
 ## Actual geometric common-kernel covers
@@ -130,7 +128,7 @@ normal-projection invariance to each actual residual action.
 `cmHarrisGeometricTripleCommonTorsor k` applies
 `cmGeometricNormalGeometricTorsor_of_dominantCriterion` to exactly
 `L_k ≤ T`, using the explicit dual existence, dual geometry and rigidity
-premises and the published dominant criterion proof. Its value is an
+premises and the dominant criterion proof. Its value is an
 action on the original source `Sbar(L_k)` in `X_T.Etale`, with its original
 projection and deck maps, together with `IsFiniteGeometricTorsor`.
 That property asserts finiteness of the residual group, finiteness and
@@ -233,7 +231,7 @@ coefficient vertex:
  =e^a_i\,;\,\operatorname{prod}_{Z_i}(\operatorname{const}(r^a_f)).
 \]
 
-Here `cp` is the published `coverPullback`. For every chain arrow
+Here `cp` is `coverPullback`. For every chain arrow
 `g : a → b`, its `inclusion` theorem applies
 `etaleAssociatedInclusion_natural` and gives
 
@@ -251,7 +249,7 @@ the actual inclusion `Λ_T ≤ Λ_U`. Every original exponent map and each
 actual coefficient comparison therefore remain visible in the descended
 systems and their section formulas.
 
-## Provenance and remaining scope
+## Provenance and scope
 
 This is an internal deduction from the direct imports
 `HarrisTaylorCMCoefficientTripleCommon`,
@@ -266,11 +264,12 @@ functor to the actual original chain proves the composition law, while
 its existing invariant-section identities prove the section and exponent
 normalizations. No new external-source assertion is introduced.
 
-This unit establishes the geometric composition on one actual simultaneous
+This module establishes the geometric composition on one actual simultaneous
 kernel cover diagram. Comparison with the independently constructed own,
-coarse and inverse-image systems on their separate covers remains further
-work. It asserts no injectivity or invertibility of reduced lattice maps,
-arbitrary-lattice or rational adic independence, or Hecke compatibility.
-The containing task's representability, named moduli prerequisites,
-arithmetic existence, source comparison and canonical-model obligations
-remain explicit or unfinished. This unit does not complete that task.
+coarse and inverse-image systems on their separate covers is not made here;
+it is made in `HarrisTaylorCMGeometricTripleSeparate` (own and coarse systems)
+and `HarrisTaylorCMGeometricUpperPair` (inverse image). It asserts no
+injectivity or invertibility of reduced lattice maps, arbitrary-lattice or
+rational adic independence, or Hecke compatibility. Representability, the
+named moduli prerequisites, arithmetic existence, source comparison and
+canonical models are explicit premises or are not treated in this module.

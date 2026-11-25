@@ -1,10 +1,9 @@
 # The quaternionic Morita isometry statement
 
-Authors: Worker 5198.
-
 Module `Langlands.GroupScheme.Quaternionic.QuaternionicMoritaIsometryStatement`, namespace
 `Langlands.GroupScheme.Quaternionic`. It contains one Prop-valued definition,
-`QuaternionicMoritaIsometryStatement`, and proves nothing. Its proof is a separate task.
+`QuaternionicMoritaIsometryStatement`, and proves nothing. It is proved in
+`QuaternionicMoritaIsometryProof` (`quaternionicMoritaIsometry`).
 
 ## The statement
 
@@ -122,8 +121,8 @@ The Lean statement is the `U(q)` part of Proposition 6 for `E = M_m(D)`, `n = 2m
   some nondegenerate ordinary quadratic form `Q` on `L^{2m}`. Since Tits's `O_n` does not
   depend on the chosen `Q`, the existential formulation loses nothing.
 
-Tits states Proposition 6 with "Il est clair que". The proof successor must establish the
-comparison of actual group schemes. An informal route, which is not formalized here, follows.
+Tits states Proposition 6 with "Il est clair que". The comparison of actual group schemes is
+proved in `QuaternionicMoritaIsometryProof` (`quaternionicMoritaIsometry`). An informal route, which is not formalized here, follows.
 The algebra `L ⊗[K] D` is split, `L ⊗[K] D ≅ M_2(L)`. By Skolem–Noether, `σ_L(x) = u ᵗx u⁻¹`
 with `ᵗu = ±u`. The hypothesis `dim D^σ = 3` forces `ᵗu = u` when `2 ≠ 0`, and `ᵗu = −u = u`
 holds automatically in characteristic 2. Put `U = diag(u, …, u) ∈ M_{2m}(L)`. Right
@@ -160,7 +159,7 @@ These two sources motivate the statement but do not print the isomorphism above.
 
 ## Lean details
 
-- The binders appear in the order of the task specification. The instances
+- The instances
   `[Algebra.IsCentral K D]` and `[FiniteDimensional K D]` and the equation
   `Module.finrank K D = 4` make `D` a central division algebra of degree 2.
 - `AlgebraicClosure K : Type u`, so both sides are group schemes over

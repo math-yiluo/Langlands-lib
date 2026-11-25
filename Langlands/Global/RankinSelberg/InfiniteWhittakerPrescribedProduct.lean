@@ -18,7 +18,7 @@ namespace Langlands.Global.RankinSelbergGlobal.InfiniteWhittakerSlice
 
 open Langlands.Automorphic InfinitePlaceFamily
 open CompletionPadic FiniteWhittakerTensor FiniteWhittakerSemilocal FiniteWhittakerDual
-open Langlands.ClassField.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
+open Langlands.ClassFieldTheory.Global.RelativeWeilGroup (IsCanonicalFiniteAdditiveComponent)
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
 
 variable {F : Type u} [Field F] [NumberField F]

@@ -1,7 +1,5 @@
 # Pointwise reflection through actual affinoid pushouts
 
-Author: Worker 310.
-
 For actual bounded affinoid maps `f : A → B` and `g : A → C`,
 `rightMap_finiteType_of_tensorComparison` proves finite type of the
 actual second affinoid pushout leg when `f` is of finite type and the

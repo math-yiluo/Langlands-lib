@@ -18,8 +18,7 @@ the plus-sign kernel specified there.
 
 This is the first conjunct of the conclusion of the published
 [`Langlands.HarmonicAnalysis.ScalarFourierClosureStatement`](ScalarFourierClosureStatement.md),
-extracted as a separate internal prerequisite for its proof. Worker 492
-made this extraction from Worker 86's statement. Its provenance is that
+extracted as a separate internal prerequisite for its proof. Its provenance is that
 existing internal statement and the constructions documented in `Basic.md`;
 it is not a new transcription from the literature.
 

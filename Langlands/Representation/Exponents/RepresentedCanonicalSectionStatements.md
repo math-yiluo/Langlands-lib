@@ -19,8 +19,7 @@ The module contains four `Prop`-valued definitions and nothing else:
 
 None of them is proved here. There are no new objects.
 
-Worker 4 wrote this unit under the whole-book task `f5d1f399-a1f8-4ab5-a981-90b92abd4857`,
-with the agreement of Worker 1222. It completes the framework comparison **F2** of the
+This module completes the framework comparison **F2** of the
 Chapter VI item ledger (`notes/renard/item-ledger-vi.md`) for the rows "VI.6.1 Proposition"
 and "VI.9.1 Proposition" and for the bound and Remarks 1–2 of VI.9.1. The published module
 `RepresentedIwahoriDecompositionStatements` already states the VI.6.1 and VI.9.1 Theorems
@@ -30,7 +29,7 @@ The Proposition of VI.6.1 was published only for standard parabolics
 VI.9.1 were published only for dynamic parabolics and for those `K` that are given together
 with an `M`-central contracting element
 (`RationalPointFamily.UniformCompressionStabilizationStatement`,
-`RationalPointFamily.GeneralizedJacquetRemarksStatement`). This unit states them for actual
+`RationalPointFamily.GeneralizedJacquetRemarksStatement`). This module states them for actual
 rational parabolics `P = MN` in the setting of the published
 `GeneralizedJacquetContractingRangeStatement` (VI.9.1, Remark 3), which is the setting of the
 source.
@@ -40,8 +39,8 @@ source.
 David Renard, *Représentations des groupes réductifs p-adiques*, French version dated
 9 July 2026, registered as `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. PDF page numbers are
-one-based and equal printed page numbers plus six. The PDF text layer loses overbars, so the
-author checked every formula with `N̄` or `C̄` on the rendered pages (PDF pp.129, 182, 183,
+one-based and equal printed page numbers plus six. The PDF text layer loses overbars, so
+every formula with `N̄` or `C̄` was checked on the rendered pages (PDF pp.129, 182, 183,
 201, 203).
 
 **Iwahori decomposition (V.5.2 (ii), printed p.123 / PDF p.129).**
@@ -357,13 +356,16 @@ from the "plus généralement" clauses of V.5.2 (iii)–(iv) (see Proof obligati
 - `Langlands.Jacquet.StandardCanonicalSectionStatement` (proved) is the VI.6.1 Proposition for
   standard parabolics and `K` with the V.5.2 basis-member conditions; the companion
   `StandardIwahoriCanonicalSectionStatement` (module
-  `Langlands.Representation.Jacquet.StandardIwahoriDecompositionStatements`, accepted
-  candidate `3c7e8531`) is the same with only the Iwahori decomposition on `K`. Neither is
+  `Langlands.Representation.Jacquet.StandardIwahoriDecompositionStatements`) is the same with only the Iwahori decomposition on `K`. Neither is
   imported here, and no implication between them and the present statement is claimed.
 
 ## Proof obligations
 
-Nothing is proved here. The intended routes:
+Nothing is proved here. The Library proves `RepresentedChamberIwahoriContractionStatement`
+(`representedChamberIwahoriContraction`, module `RepresentedChamberIwahoriContractionProof`)
+and `RepresentedCanonicalSectionStatement` (`representedCanonicalSection`, module
+`RepresentedCanonicalSectionProof`); the other two statements are not proved. The intended
+routes:
 
 - `RepresentedChamberIwahoriContractionStatement`. `K` is compact and `N(F)`, `N̄(F)` are
   closed (`isClosed_pointImage_comp`), so `K_N` and `K_N̄` are compact. Apply the published

@@ -1,7 +1,5 @@
 # Division by a uniformizer in smooth algebras over a DVR
 
-Author: Worker 171.
-
 Module `Langlands.CommutativeAlgebra.SmoothDVRUniformizerDivision`.
 
 `dvd_of_forall_mem_prime` states: let `R` be a discrete valuation domain, `B` a smooth

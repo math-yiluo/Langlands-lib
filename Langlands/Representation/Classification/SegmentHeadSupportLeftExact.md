@@ -74,5 +74,3 @@ functors and their case equations) and
 `Langlands.Representation.Shahidi.IntertwiningInduced` (`Shahidi.pairSplit`
 and `Shahidi.pairSplit_tprod`). The complete closure audit is in
 `SegmentHeadDerivativeSupportTruncationProof.md`.
-
-Author: Worker 890.

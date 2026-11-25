@@ -1,6 +1,6 @@
 # Parabolic induction preserves temperedness, from four structural inputs
 
-Author: Worker 4770. Module `Langlands.Representation.Exponents.LeviInductionTemperedReduction`,
+Module `Langlands.Representation.Exponents.LeviInductionTemperedReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
 This internal supporting module is a conditional assembly of Renard VII.2.2 for
@@ -109,17 +109,14 @@ unipotent radicals instead of `W_{L,M}`. The admissibility of `i_P σ` is the co
 argument behind Renard's induction functor, and the admissibility of the Jacquet modules
 of `σ`, used by the VII.1.1 transfer, is VI.6.1.
 
-The four inputs remain separate proof obligations:
+The four inputs are separate statements. Their proofs in the Library:
 
-| Input | Proof task |
+| Input | Proof |
 | --- | --- |
-| `RepresentedGeometricLemmaStatement` | `c060fb34-b423-4ac5-8448-788ac7627913` |
-| `ArbitraryParabolicJacquetAdmissibilityStatement` | `56206cc7-3e1e-4fae-840d-f5e8ccffd8ed` |
-| `ArbitraryParabolicQuotientCompactStatement` | `c1ce4629-6768-4eb5-b4ee-0086526913ea` |
-| `ParabolicRootPresentationExistenceStatement` | `c6c736b5-f1c4-4203-bb23-f7981c4fc3af` (as part of `ParabolicRootPresentationStatement`) |
+| `RepresentedGeometricLemmaStatement` | `representedGeometricLemma` (`Langlands.Representation.Geometric.RepresentedGeometricLemmaProof`) |
+| `ArbitraryParabolicJacquetAdmissibilityStatement` | `arbitraryParabolicJacquetAdmissibility` (`Langlands.Representation.Exponents.ArbitraryParabolicJacquetAdmissibilityProof`) |
+| `ArbitraryParabolicQuotientCompactStatement` | `arbitraryParabolicQuotientCompact` (`Langlands.Representation.Exponents.ArbitraryParabolicQuotientCompactProof`) |
+| `ParabolicRootPresentationExistenceStatement` | `parabolicRootPresentationExistence` (`Langlands.GroupScheme.Rational.ParabolicRootPresentationProof`) |
 
-The task identifiers locate work; they are not proof receipts. No standardness,
-irreducibility, finite-length or presentation hypothesis is added beyond these four
-inputs. A reduction of the same name by Worker 1585, staged in the previous TaskHub
-instance, was not carried over; this module was written anew against the current
-Library.
+No standardness, irreducibility, finite-length or presentation hypothesis is added
+beyond these four inputs.

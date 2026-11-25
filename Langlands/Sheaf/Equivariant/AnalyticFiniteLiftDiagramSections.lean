@@ -32,7 +32,7 @@ sections for the original analytic lift actions. -/
 structure CommonEquivariantFixedLiftDiagram where
   diagram : CommonEquivariantLiftDiagram U l source target arrow Q
   fixes : ∀ i (g : G) (hg : g ∈ diagram.subgroup),
-    F.map (liftAction (l i) ⟨g, diagram.le_lift i hg⟩).unop.op (s i) = s i
+    F.map (liftAction (l i) ⟨g, diagram.le_lift i hg⟩).unop.asHom.op (s i) = s i
 
 namespace CommonEquivariantLiftDiagram
 
@@ -73,8 +73,8 @@ recovers the supplied analytic lift action on that subgroup element. -/
 theorem subgroupInclusion_map_globalLift_action (i : I)
     (g : (d.diagram.subgroup : Subgroup G)) :
     (subgroupInclusion ρ (d.diagram.subgroup : Subgroup G)).map
-        ((d.diagram.globalLift i).action g).unop =
-      (liftAction (l i) ⟨(g : G), d.diagram.le_lift i g.property⟩).unop :=
+        ((d.diagram.globalLift i).action g).unop.asHom =
+      (liftAction (l i) ⟨(g : G), d.diagram.le_lift i g.property⟩).unop.asHom :=
   hom_ext rfl rfl
 
 /-- The supplied section is an actual fixed section for the normalized lift
@@ -84,7 +84,7 @@ def globalFixedSection (i : I) :
       (((subgroupInclusion ρ (d.diagram.subgroup : Subgroup G)).op ⋙ F) ⋙ forget A) := by
   refine ⟨s i, fun g => ?_⟩
   change F.map ((subgroupInclusion ρ (d.diagram.subgroup : Subgroup G)).map
-    ((d.diagram.globalLift i).action g).unop).op (s i) = s i
+    ((d.diagram.globalLift i).action g).unop.asHom).op (s i) = s i
   rw [d.subgroupInclusion_map_globalLift_action]
   exact d.fixes i g g.property
 

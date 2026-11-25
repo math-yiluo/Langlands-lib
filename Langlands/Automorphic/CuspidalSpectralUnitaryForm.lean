@@ -24,7 +24,7 @@ local instance cuspidalSpectralUnitaryFormAddCommGroup2 (n : ℕ) : AddCommGroup
 local instance cuspidalSpectralUnitaryFormAddCommGroup3 (n : ℕ) : AddCommGroup (FiniteSmoothRationalFunctions F n) := Submodule.addCommGroup _
 local instance cuspidalSpectralUnitaryFormAddCommGroup4 (n : ℕ) : AddCommGroup (AutomorphicForms F n) := Submodule.addCommGroup _
 local instance cuspidalSpectralUnitaryFormAddCommGroup5 (n : ℕ) : AddCommGroup (StableAutomorphicFunctions F n) := Submodule.addCommGroup _
-local instance {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.Space :=
+private local instance {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.Space :=
   Submodule.addCommGroup _
 local instance {n : ℕ} (S : FiniteRealization F n) : AddCommGroup S.Space :=
   Submodule.addCommGroup _

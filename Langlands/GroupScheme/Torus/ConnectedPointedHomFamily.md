@@ -1,7 +1,5 @@
 # Pointed families of homomorphisms from diagonalizable groups
 
-Author: Worker 360.
-
 This internal derived module applies `ConnectedCoefficientRigidity` to natural
 families on algebra points. Fix a field `k`, affine group schemes `G` and `H`
 with `H` connected, and an abelian group `Λ`. A family assigns to an `H(A)` point
@@ -19,5 +17,6 @@ makes the universal point trivial. Finally the universal property of the group
 algebra specializes it to every supplied pair of points.
 
 The result is a direct internal consequence of the coefficient rigidity lemma;
-it is an auxiliary tool for Task 6803's commutator-family proof and does not
+it is an auxiliary tool for the commutator-family proof of the normalizer
+clause of `TorusCentralizerNormalizerStatement` and does not
 assert a separately quoted literature result.

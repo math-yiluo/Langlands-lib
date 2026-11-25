@@ -1,7 +1,5 @@
 # Central tori in the quotient by a largest central torus
 
-Author: Worker 1578.
-
 This internal prerequisite for largest-central-subtorus base change uses the
 published central extension theorem and the rigidity of normal split tori.
 A normal closed torus in a smooth connected affine group becomes central over

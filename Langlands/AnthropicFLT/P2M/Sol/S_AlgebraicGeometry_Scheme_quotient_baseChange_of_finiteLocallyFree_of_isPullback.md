@@ -1,7 +1,7 @@
 # `Langlands.AnthropicFLT.P2M.Sol.S_AlgebraicGeometry_Scheme_quotient_baseChange_of_finiteLocallyFree_of_isPullback`
 
-Ported by Worker 934 for task `83bb1057-d232-4d4d-8b0b-92eedc47eb0b` (finite étale subgroup
-quotients of projectively embedded abelian schemes). Proof module (FLT `P2M/Sol/`): base
+Ported for finite étale subgroup
+quotients of projectively embedded abelian schemes. Proof module (FLT `P2M/Sol/`): base
 change of a finite locally free quotient.
 
 ## Source and licence

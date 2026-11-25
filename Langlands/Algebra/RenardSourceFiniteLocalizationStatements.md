@@ -1,6 +1,6 @@
 # Renard C.II: the final proposition under each candidate finiteness reading
 
-Worker 709 prepared this statement-only unit. It states the final
+This is a statement-only module. It states the final
 proposition of Appendix C.II three times, once for each of the three
 candidate meanings of Renard's finiteness phrases for a possibly nonunital
 algebra that the project's source audit lists. It proves nothing, and it
@@ -12,10 +12,10 @@ The governing original is David Renard, *Représentations des groupes
 réductifs p-adiques*, French version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 reread the proposition on printed p.279 / one-based PDF285, the
+The proposition on printed p.279 / one-based PDF285, the
 conventions on printed p.6 / PDF12, and the A.I.3 definitions of
 Noetherian objects and objects of finite type on printed pp.248–249 /
-PDF254–255:
+PDF254–255 were reread:
 
 > Proposition. Soit B une ℂ-algèbre commutative noethérienne, et L un
 > B-module de type fini. Soit a ∈ End_B(L) et supposons que le localisé
@@ -27,11 +27,11 @@ PDF254–255:
 PDF12 says that rings are not assumed unital and that modules over a
 unital ring are not assumed unital. Neither that page nor C.II says which
 subobjects or generation operations "noethérienne" and "de type fini"
-refer to for such an algebra. The published audit
+refer to for such an algebra. The audit
 `notes/renard/nonunital-finiteness-sources.md` records this gap. It names
 three candidate models: all stable additive subgroups, compatible
 complex-linear stable subspaces, or an explicitly compared unitization
-model. This unit states the proposition for each of them.
+model. This module states the proposition for each of them.
 
 ## Common data and conclusion
 
@@ -51,8 +51,8 @@ reading statements quantify over the same data, at independent universes
 the localization of A.III.1, example 5, which is built from a complex
 vector space and an endomorphism. Accordingly, `L` carries its complex
 structure, the action is complex-linear, and `a` is complex-linear and
-`B`-linear. The actual localization is the published
-`Localized f.toLinearMap`, with the published localized action
+`B`-linear. The actual localization is
+`Localized f.toLinearMap`, with the localized action
 `localizedAction f.toLinearMap ρ (fun b v => f.map_action' b v)`.
 No unit, unit-action law, nondegeneracy, countability or finite complex
 dimension is assumed.
@@ -61,7 +61,7 @@ dimension is assumed.
 
 1. `EventuallyStable f.toLinearMap`: some positive power of `a` is
    stable, that is, has the same kernel and range as its square;
-2. for every `n > 0` with `Stable (f.toLinearMap ^ n)`, the published
+2. for every `n > 0` with `Stable (f.toLinearMap ^ n)`,
    `CompatibleStablePowerImageAt ρ f n`: the compatible kernel `K` and
    image `I` of the `n`-th power are complementary, and there is a unique
    complex-linear equivalence from the localization to `I` that
@@ -69,11 +69,11 @@ dimension is assumed.
    inverse is the restriction of the canonical map `L → L_a`.
 
 The second clause applies to every positive stable exponent, as in the
-source. It uses the published predicates unchanged.
+source. It uses the imported predicates unchanged.
 
 ## The three readings
 
-`IsNoetherianObject` and `IsFiniteTypeObject` are the published
+`IsNoetherianObject` and `IsFiniteTypeObject` are the Library's
 `Langlands.Renard` formalizations of A.I.3. An object is Noetherian when
 every nonempty set of its categorical subobjects has a maximal element. It
 is of finite type when its subobjects have all unions and no nonempty chain
@@ -83,16 +83,16 @@ two readings applies them to actual objects of an actual category of
 itself by left multiplication. Since `B` is commutative, its subobjects are
 the ideals of that category's kind.
 
-1. `AdditiveReadingStatement`. The modules are those of the published
+1. `AdditiveReadingStatement`. The modules are those of
    `NonUnitalModuleCat B`: abelian groups with a possibly nonunital action
-   and additive intertwiners. The published
+   and additive intertwiners. The order isomorphism
    `NonUnitalModuleCat.subobjectOrderIso` identifies its subobjects with
    stable additive subgroups. The objects are `NonUnitalModuleCat.of` applied to `B`, `V`
    and the localization, each with the ambient action
    `NonUnitalModule.ofLinearEndHom` of `NonUnitalAlgHom.lmul ℂ B`, `ρ` or
    the localized action. The hypotheses are: the regular object is
    Noetherian, and the other two objects are of finite type.
-2. `CompatibleReadingStatement`. The modules are those of the published
+2. `CompatibleReadingStatement`. The modules are those of
    `ActionModuleCat ℂ B`: complex vector spaces with a compatible action,
    and complex-linear intertwiners. The hypotheses use its actual
    categorical subobjects. The objects are `ActionModuleCat.of` applied to the
@@ -100,7 +100,7 @@ the ideals of that category's kind.
 3. `UnitizationReadingStatement`. `B` is Noetherian when the actual ring
    `Unitization ℂ B` is Noetherian (`IsNoetherianRing`). A module is of
    finite type when it is finitely generated (`Module.Finite`) over that
-   ring, acting by `(c, b) • v = c • v + ρ b v` through the published
+   ring, acting by `(c, b) • v = c • v + ρ b v` through
    `CompatibleUnitization.module`. The same condition is imposed on the
    localization with its localized action.
 
@@ -117,25 +117,28 @@ separate statement for each candidate model. Proving all three would make
 the proposition hold whichever of these models the author intended; it
 would not identify the intended model.
 
-The models are related by published results. The
+The models are related by results in the Library. The
 `Langlands.Algebra.AdditiveScalarStableGeneration` comparisons show that
 finite stable additive generation implies finite stable complex-linear
 generation. `CompatibleUnitization.submoduleOrderIso` identifies the
 stable complex subspaces with the submodules over the unitization. These
 relations motivate the formulation; they are not part of these statements.
 
-The published internal theorems
+The internal theorems
 `Langlands.Renard.AlgebraActionLocalization.stableIdealFiniteLocalization`
 and `additiveIdealFiniteLocalization` state the same conclusions from
-explicit stable-generation hypotheses. The published
+explicit stable-generation hypotheses. The
 `Langlands.Algebra.NonUnitalModuleFiniteness` comparisons identify
 Renard's categorical predicates with stable additive generation in
 `NonUnitalModuleCat`. No corresponding categorical comparison for
-`ActionModuleCat` is published; a proof of the compatible reading must
-supply one. Renard's own route through the finiteness of `End_B(L_a)` and
+`ActionModuleCat` is imported here; a proof of the compatible reading must
+supply one, and `RenardSourceFiniteLocalizationProof` does
+(`subobjectOrderIso`, `finiteType_iff_finite`,
+`noetherianObject_iff_isNoetherian`). Renard's own route through the finiteness of `End_B(L_a)` and
 an integral equation for `ã⁻¹` is not prescribed.
 
 This file supplies proposition definitions only, including the Prop-valued
-helper `SourceConclusion`. After independent acceptance and publication, a
-separate exact-proof task can target `SourceFiniteLocalizationStatements`
-in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+helper `SourceConclusion`. The separate exact proof is
+`sourceFiniteLocalizationStatements` in
+`RenardSourceFiniteLocalizationProof`, which proves
+`SourceFiniteLocalizationStatements`.

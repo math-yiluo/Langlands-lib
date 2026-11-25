@@ -1,6 +1,6 @@
 # Normal-quotient and induction adjunctions
 
-Worker 150. Source: Renard, *Représentations des groupes réductifs p-adiques*,
+Source: Renard, *Représentations des groupes réductifs p-adiques*,
 9 July 2026, III.2.10 Proposition and Corollary, printed pp.81–82 / PDF pp.87–88.
 
 The proof restricts the published algebraic coinvariants/inflation adjunction

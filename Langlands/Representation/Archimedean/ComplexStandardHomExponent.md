@@ -1,7 +1,7 @@
 # Exponent shape of intertwinings between complex principal series
 
-Worker 729 wrote this module for Task 7055 (`fbfc1fa1-a863-4424-800e-92f30996a1be`), whose
-target is the Library's `Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement`. The
+This module was written for the proof of the Library's
+`Langlands.Archimedean.ComplexLanglandsQuotientUniqueStatement`. The
 module states one definition and one statement (E). It proves nothing. All declarations are in
 the namespace `Langlands.Archimedean`. It imports only
 `Langlands.Representation.Archimedean.PrincipalSeriesGKModule`.
@@ -67,8 +67,8 @@ simple roots and an independent shift of the antiholomorphic coordinates `q` by 
 combination `v`. The permutation is the same for both coordinates. The statement gives a
 necessary condition only; it does not say which such `c` occur.
 
-**Provenance.** Derived. E is an intermediate statement of the uniqueness proof for Task 7055
-and no single cited source states it in this form. It is the complex-group form of the classical
+**Provenance.** Derived. E is an intermediate statement of the uniqueness proof for
+`ComplexLanglandsQuotientUniqueStatement` and no single cited source states it in this form. It is the complex-group form of the classical
 description of the exponents of a principal series. The standard argument runs as follows.
 
 1. *Frobenius reciprocity.* A `(𝔤, K)`-map `T : V → X(c)` is determined by the functional
@@ -121,9 +121,9 @@ holomorphic coordinate. This is a positive root, which matches the sign in E.
 
 ## Use
 
-The follow-up module `ComplexStandardOppositeOrderHomReduction` (Worker 729) proves that E
+The follow-up module `ComplexStandardOppositeOrderHomReduction` proves that E
 together with `ComplexStandardHomTransposeStatement` (module `ComplexStandardHomTranspose`)
-implies `ComplexStandardOppositeOrderHomStatement`. That statement is from Worker 727's
+implies `ComplexStandardOppositeOrderHomStatement`. That statement is from the module
 `ComplexLanglandsQuotientUniqueReduction`. The proof applies E to `T` and to its transpose. It
 then shows that all prefix sums of `u + v` vanish. The key step is that reversing the order of
 a sorted list reverses the dominance order on prefix sums. Hence `u = v = 0` and `c = d ∘ σ`.

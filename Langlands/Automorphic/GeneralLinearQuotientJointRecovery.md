@@ -9,9 +9,7 @@ quotient and the central split torus data: `T`, `i`, injective character
 restriction `hi` with finite-index image, finite `I`, the splitting `e` and
 centrality `hc`. It also quantifies over right invariance of norm-one Haar
 measure. The proof uses these hypotheses for the canonical bounded right action
-and for full support of the quotient Haar measure. This corrects the rejected
-candidate `825af1d6-cb0f-4a35-82c6-b82d1709040a`. That proposition omitted the
-finite-index and Haar-invariance hypotheses its proof used (operator ruling 8).
+and for full support of the quotient Haar measure.
 
 Let `R₁` and `R₂` be operator realizations of rank `r + 1`, with `R₁` jointly
 admissible for its finite adelic and standard archimedean compact actions.

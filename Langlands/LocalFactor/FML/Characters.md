@@ -61,7 +61,7 @@ character's hypotheses and uses no choice of conductor.
 
 ## Source and modifications
 
-The phase and character constructors are adapted by Worker 20 from Fukuhiro
+The phase and character constructors are adapted in Langlands-lib (2026) from Fukuhiro
 Ueda, *epsilon_FML*, commit
 `0b4159be50e1bd45ddff1de4280399576a3e2024`, Apache-2.0.
 The unchanged license is [LICENSE](LICENSE). The registered source
@@ -80,7 +80,7 @@ Locations relative to
 Modifications are the project namespace, explicit universe, targeted Library
 import and selection of the constructor API. The transparent quasicharacter
 identification and unitary additive-character bridge are internal integration
-definitions and proofs by Worker 20, derived from the existing Library
+definitions and proofs, derived from the existing Library
 `UnitaryAdditiveCharacter` and `Quasicharacter` definitions and the cited
 Mathlib operations. They are not attributed as upstream results. The module
 does not import or reproduce `CharacterConductorExistence` or

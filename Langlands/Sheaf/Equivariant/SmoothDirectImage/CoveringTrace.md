@@ -10,7 +10,7 @@ smooth equivariant sheaf category.
 
 The commutative ring `R`, topological group `G`, spaces `X`, `Y` (and `Z` for
 composition), and coefficient carriers lie in one arbitrary universe `u`, as
-required by the existing `SmoothDirectImage.functor` API. This unit does not
+required by the existing `SmoothDirectImage.functor` API. This module does not
 remove that universe restriction. Each space has its original `G`-action,
 continuous constant group actions, and `HasStableNeighbourhoods`. The group is
 an `IsTopologicalGroup`.
@@ -128,9 +128,8 @@ smooth inclusion and full-subcategory construction supply the new morphism.
 The intrinsic equalities above are proved, rather than supplied as fields or
 comparison assumptions. No external literature theorem is asserted.
 
-This unit concerns ordinary-open coefficient sheaves and their degree-zero
+This module concerns ordinary-open coefficient sheaves and their degree-zero
 smooth direct images. Instantiation of an original rational or Shimura map as
-an actual finite covering is still required. It does not construct an etale or
+an actual finite covering is not made here. It does not construct an etale or
 Godement trace, a higher derived map, a compact-support comparison, arithmetic
-Hecke identification or Harris compatibility. The broader Harris framework
-remains incomplete.
+Hecke identification or Harris compatibility.

@@ -70,14 +70,20 @@ scoped instance upperLocalRing (i) (q : Above K L S i) :
 scoped instance upperOpenUnits (i) (q : Above K L S i) :
     IsOpenUnits (upperFactor K L S i q) := by
   cases i with
-  | inl p => dsimp [upperFactor]; infer_instance
-  | inr z => cases z <;> dsimp [upperFactor] <;> infer_instance
+  | inl p =>
+    dsimp [upperFactor]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
+  | inr z => cases z <;> dsimp [upperFactor] <;>
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 scoped instance lowerOpenUnits (i : NumberFieldLevelFactorIndex K S) :
     IsOpenUnits (NumberFieldLevelFactor K S i) := by
   cases i with
-  | inl p => dsimp [NumberFieldLevelFactor]; infer_instance
-  | inr z => cases z <;> dsimp [NumberFieldLevelFactor] <;> infer_instance
+  | inl p =>
+    dsimp [NumberFieldLevelFactor]
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
+  | inr z => cases z <;> dsimp [NumberFieldLevelFactor] <;>
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in infer_instance
 
 scoped instance upperCoefficientAlgebra (i) (q : Above K L S i) :
     Algebra (((numberFieldExceptionalPreimage (L := L) S : Finset (FinitePlace L)) :

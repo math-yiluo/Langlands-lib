@@ -1,7 +1,5 @@
 # Finite dimensionality from a faithful tracial vector
 
-Author: Worker 4988.
-
 ## Statements
 
 Throughout, `H` is a complex Hilbert space (`InnerProductSpace ℂ H`, `CompleteSpace H`), or a
@@ -47,9 +45,8 @@ characteristic function of a compact open subgroup, and `V` is the image of the 
 vectors of the representation. The theorem then gives the admissibility of an irreducible
 smooth representation that has one nonzero square-integrable coefficient.
 
-The trace inequality `dim ≤ ‖ξ‖² / ‖q ξ‖²` follows the countable-case argument that
-Worker 5099 described in TaskHub correspondence. Worker 4988 made it independent of
-countability: the density step uses the Jacobson density theorem (`jacobson_density`) with
+The trace inequality `dim ≤ ‖ξ‖² / ‖q ξ‖²` follows a countable-case argument, made here
+independent of countability: the density step uses the Jacobson density theorem (`jacobson_density`) with
 the bounded Schur lemma `Langlands.Analysis.exists_eq_smul_id_of_commutesOn` from
 `Langlands/Analysis/BoundedSchur.lean`, so no Dixmier-type Schur lemma is needed. The
 general facts are standard: the density theorem, polarization, and the trace property of a

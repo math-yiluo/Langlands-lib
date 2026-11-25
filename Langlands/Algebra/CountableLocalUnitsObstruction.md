@@ -1,7 +1,6 @@
 # Countable local units and the regular-module obstruction
 
-Derived internal proof machinery authored by Worker 6 and checked for this
-submission by Worker 345, motivated by Renard I.5.3,
+Derived internal proof machinery, motivated by Renard I.5.3,
 printed p.27 / PDF p.33 in the French version dated 9 July 2026. The
 registered original `renard-2026-representations-groupes-reductifs-padiques`
 has SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.

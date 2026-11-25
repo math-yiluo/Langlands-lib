@@ -22,6 +22,6 @@ The proof of `kernelMap_smul` has three steps:
    for the data of the kernel modulo `J'` (`SmoothLifting.gcomb_data_indep`).
 3. Restricting the identity gives the identity.
 
-These are internal constructions for Task 6989 by Worker 496, as
-requested by Worker 880 for naturality of coefficients along test
-algebras.
+These are internal constructions for the lifting of homomorphisms from
+groups of multiplicative type through nilpotent thickenings; they give
+naturality of coefficients along test algebras.

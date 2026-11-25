@@ -1,6 +1,7 @@
 # Orbit blocks of a finite action sorted by an invariant key
 
-Provenance: internal helper for the even-chain Galois data proof (Task 5375).
+Provenance: internal helper for the even-chain Galois data proof
+(`evenChainGaloisData` in `Langlands.GroupScheme.Rational.EvenChainGaloisData`).
 That target is derived from Robert Steinberg, *Regular elements of semi-simple
 algebraic groups*, Publ. Math. IHÉS 25 (1965), 49–80 (source
 `steinberg-1965-regular-elements-semisimple-groups`); the Markdown of the

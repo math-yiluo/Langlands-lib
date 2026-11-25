@@ -1,7 +1,5 @@
 # Unitary lattice support from actual normalized induction factors
 
-Author: Worker 24.
-
 This internal derived construction connects supplied actual normalized induction
 factors to the published unitary supercuspidal lattice. It uses the existing
 actual supercuspidal classes, normalized product induction, multiset support
@@ -50,8 +48,8 @@ theorem.
 
 Henniart 2000, sections 2.4–2.5, printed pp.445–446 (PDF pages 7–8), motivates
 this adapter: the genuine unitary supercuspidal factors in Theorem 2.4 supply
-the integral automorphic sum in section 2.5. The original passage was read in
-the parent task, including the displayed sum. Registered source
+the integral automorphic sum in section 2.5. The original passage was read,
+including the displayed sum. Registered source
 `henniart-2000-simple-proof`, SHA256
 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.
 The generic packaging here is internally derived, rather than a separately
@@ -62,4 +60,4 @@ supplies unitary factors.
 
 The sole direct import is the unchanged published
 `Langlands.VirtualRepresentation.Supercuspidal.UnitarySupport`. Development
-uses prepared environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`.
+uses Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

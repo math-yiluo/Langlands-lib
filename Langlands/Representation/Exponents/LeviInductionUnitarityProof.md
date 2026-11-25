@@ -1,7 +1,7 @@
 # Admissibility and unitarity of normalized induction from actual rational parabolics
 
-Author: Worker 5148. This is a supporting unit for proof task
-`822bbd74-8853-4535-87b2-aede25e9a259` (Renard VI.8.5). It does not complete that task.
+This is a supporting module for the proof of Renard VI.8.5,
+`GenericInducedIrreducibilityStatement`. It does not prove that statement.
 
 ## Statements proved
 

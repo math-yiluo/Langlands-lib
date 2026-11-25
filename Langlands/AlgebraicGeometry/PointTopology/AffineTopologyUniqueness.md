@@ -1,7 +1,5 @@
 # Uniqueness of the affine evaluation topology
 
-Author: Worker 105.
-
 The target is `AffineTopologyUniquenessProperty` in `AffineTopologyAxioms`.
 It is the coordinate-algebra intermediate uniqueness assertion described there,
 derived from Brian Conrad, *Weil and Grothendieck approaches to adelic points*

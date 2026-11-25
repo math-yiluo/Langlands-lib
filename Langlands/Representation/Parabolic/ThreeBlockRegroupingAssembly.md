@@ -1,7 +1,5 @@
 # Three-block associativity from ordered product regrouping
 
-Author: Worker 832.
-
 This internal module shows that the general ordered regrouping proposition
 `Parabolic.OrderedProductRegrouping` implies associativity of normalized
 parabolic induction for three consecutive blocks. It is conditional: the

@@ -17,7 +17,7 @@ variable {G : Type z} [Group G] {ρ : G →* Aut X}
 variable (L : GlobalLift (P := P) (ρ := ρ))
 
 theorem action_comp (g h : G) :
-    (L.action g).unop ≫ (L.action h).unop = (L.action (g * h)).unop := by
+    (L.action g).unop.asHom ≫ (L.action h).unop.asHom = (L.action (g * h)).unop.asHom := by
   rw [map_mul]
   rfl
 
@@ -26,14 +26,14 @@ two lifted actions. -/
 theorem precomp_eq_iff {V : TwistedOver P ρ} (f : V ⟶ V) (g : G)
     (hf : Hom.twist f = g⁻¹) (k : V.obj ⟶ L.obj) :
     L.precomp f k = k ↔
-      f ≫ (ι P ρ).map k = (ι P ρ).map k ≫ (L.action g).unop := by
+      f ≫ (ι P ρ).map k = (ι P ρ).map k ≫ (L.action g).unop.asHom := by
   constructor
   · intro h
-    have h' := congrArg (fun t => (ι P ρ).map t ≫ (L.action g).unop) h
+    have h' := congrArg (fun t => (ι P ρ).map t ≫ (L.action g).unop.asHom) h
     rw [L.ι_precomp, hf, Category.assoc, Category.assoc, L.action_comp,
       inv_mul_cancel, map_one] at h'
     change f ≫ (ι P ρ).map k ≫ 𝟙 _ =
-      (ι P ρ).map k ≫ (L.action g).unop at h'
+      (ι P ρ).map k ≫ (L.action g).unop.asHom at h'
     simpa only [Category.comp_id] using h'
   · intro h
     apply (ι P ρ).map_injective
@@ -51,8 +51,8 @@ def EventuallyEquivariant : Prop :=
     (a : (H : Subgroup G) →* (End V)ᵐᵒᵖ), S.IsAdmissible V H a →
     ∀ k : V.obj ⟶ L.obj, ∃ N : OpenSubgroup G, N ≤ H ∧
       ∀ h : (H : Subgroup G), (h : G) ∈ N →
-        (a h).unop ≫ (ι P ρ).map k =
-          (ι P ρ).map k ≫ (L.action (h : G)).unop
+        (a h).unop.asHom ≫ (ι P ρ).map k =
+          (ι P ρ).map k ≫ (L.action (h : G)).unop.asHom
 
 variable [LocallySmall.{w} (P.Over ⊤ X)]
 
@@ -63,7 +63,7 @@ theorem isDiscrete_presheaf (hS : S.IsLiftSystem) (hL : L.EventuallyEquivariant 
   change Shrink.{w} (V.obj ⟶ L.obj) at s
   obtain ⟨N, hNH, hN⟩ := hL V H a ha ((equivShrink _).symm s)
   refine ⟨N, hNH, fun h hh => ?_⟩
-  change equivShrink _ (L.precomp (a h).unop ((equivShrink _).symm s)) = s
+  change equivShrink _ (L.precomp (a h).unop.asHom ((equivShrink _).symm s)) = s
   rw [(L.precomp_eq_iff _ (h : G) (hS V H a ha h) _).2 (hN h hh),
     Equiv.apply_symm_apply]
 
@@ -77,7 +77,7 @@ theorem eventuallyEquivariant_iff (hS : S.IsLiftSystem) :
   refine ⟨N, hNH, fun h hh => ?_⟩
   apply (L.precomp_eq_iff _ (h : G) (hS V H a ha h) _).1
   have hfix := hN h hh
-  change equivShrink _ (L.precomp (a h).unop
+  change equivShrink _ (L.precomp (a h).unop.asHom
     ((equivShrink _).symm (equivShrink _ k))) = equivShrink _ k at hfix
   rw [Equiv.symm_apply_apply] at hfix
   exact (equivShrink _).injective hfix

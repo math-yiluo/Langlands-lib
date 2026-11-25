@@ -1,7 +1,5 @@
 # Actions on split kernels with wound scalar-extension quotient
 
-Author: Worker 1608.
-
 This internal auxiliary construction induces an actual automorphic action
 on a supplied smooth affine split closed kernel. It assumes an actual fppf
 quotient and an extension field over which that quotient has only constant

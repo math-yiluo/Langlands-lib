@@ -1,6 +1,6 @@
 # Reducing quasi-split splitting to actual relative-root irreducibility
 
-This internal derived unit constructs the source root-system input needed by
+This internal derived module constructs the source root-system input needed by
 the preceding rational-restriction splitting argument. It proves the
 implication
 `RelativeRootSystemIrreducibleStatement.{u} →
@@ -70,7 +70,7 @@ published `QuasiSplitSimplyLacedSplittingStatement.{u}`.
 
 The provenance is the composition of the named Library constructions,
 the algebraic-closure transport argument, and the preceding internal
-rational-restriction units. No external source is newly transcribed here.
+rational-restriction modules. No external source is newly transcribed here.
 The module does not prove
 `RelativeRootSystemIrreducibleStatement`, construct a stable chamber, or
-prove the host `LocalAnisotropicAffineDiagramStatement`.
+prove `LocalAnisotropicAffineDiagramStatement`, which this module serves.

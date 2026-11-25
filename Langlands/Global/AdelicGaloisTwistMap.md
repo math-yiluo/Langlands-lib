@@ -1,6 +1,6 @@
 # The Galois twist of upper adelic points
 
-Helper module for the proof of `GaloisBorelTwistingStatement` (Task 5268).
+Helper module for the proof of `GaloisBorelTwistingStatement`.
 
 Let `G` be an affine group over a number field `F`, `L/F` finite, `W = R_{L/F}(G_L)` the Weil
 restriction of the base change. The upper adelic points `G_L(𝔸_L)` are identified with

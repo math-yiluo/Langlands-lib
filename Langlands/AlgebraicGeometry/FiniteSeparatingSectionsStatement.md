@@ -126,7 +126,7 @@ states that criterion for the complete linear system of an actual line bundle;
 its Markdown explains how C₀–C₂ correspond to Milne's items (a) and (b). The
 present statement isolates one step of its proof.
 
-The task contract places this step in Hartshorne's proof of the criterion
+This step lies in Hartshorne's proof of the criterion
 (II.7.3 with Remark II.7.8.2, behind Milne's citation), where the finite family
 is a basis of `Γ(X, L)`. This works because, for a proper `X` over a field,
 `Γ(X, L)` is a finite-dimensional `K`-vector space. A basis then gives a family
@@ -138,9 +138,8 @@ Nullstellensatz), and C₀ excludes it. When `X` is nonempty, C₀ also forces
 `Γ(X, L) ≠ 0`, so the basis is nonempty.
 
 The statement asserts only that some finite family exists. Its proof can
-therefore avoid the finite dimensionality of `Γ(X, L)`. That coherence theorem
-for proper morphisms is not available in the pinned Mathlib or in the Library
-at the time of writing.
+therefore avoid the finite dimensionality of `Γ(X, L)`, which is a coherence
+theorem for proper morphisms.
 
 ## Why the statement holds without finite dimensionality
 
@@ -190,8 +189,8 @@ very-ampleness criterion on pp.10–11 but does not state this finite-family
 step. The step was isolated as an intermediate result of the proof of that
 criterion, so that the proof of the published
 `SeparatingLineBundleHProjectivityStatement` can avoid the finite
-dimensionality of `Γ(X, L)`. The exact Lean form was fixed by the task
-contract for the parent proof task of that statement. It is phrased through an
+dimensionality of `Γ(X, L)`. The exact Lean form was chosen for the proof
+of that statement. It is phrased through an
 actual scheme proper over `K`, an actual line bundle, `K`-points and
 `K[ε]`-points, pullbacks of sections, residue-field nonvanishing loci and the
 `K`-action through `scalarsFromBase p`. It agrees with Milne's sentences only

@@ -1,6 +1,6 @@
 # Three lemmas of Tadić's exhaustion argument
 
-Author: Worker 1792. This pair states three results from Tadić's 1986 paper as
+This pair states three results from Tadić's 1986 paper as
 Prop-valued definitions: Lemma 4.8(ii) (existence of the factorization only),
 Lemma 6.3, and Corollary A.6(ii) extended from two factors to finitely many.
 It also states their conjunction. **None of these assertions is proved here.** The
@@ -13,8 +13,8 @@ module imports `Classification.TadicMultisegments`, which supplies Tadić's
 `a(n,d)^ρ` (`tadicMultisegment`), his set `X_k` (`IsTadicXBlock`) and his
 statement `(U^m)` (`TadicSocleUnitarity`).
 
-These three results are the ones of Tadić's appendix argument (A.10) for the
-exhaustion `TadicUnitaryDualExhaustion` that no published statement covers yet.
+These three results are used by Tadić's appendix argument (A.10) for the
+exhaustion `TadicUnitaryDualExhaustion`.
 
 ## Source
 

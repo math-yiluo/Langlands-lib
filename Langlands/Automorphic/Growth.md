@@ -70,7 +70,7 @@ on every infinite slice at a fixed finite argument. The quantifier order
 above follows that slice-dependent requirement. Section 1.2, printed
 pp.189–190 (PDF pp.184–185), supplies the source notion of slow increase.
 
-This contribution is derived infrastructure with an explicitly specified
+This module is derived infrastructure with an explicitly specified
 matrix/inverse height. As explained in `Global/ArchimedeanGrowth.md`, comparison
 with the source's Hilbert–Schmidt group norms has not been proved here.
 Consequently this module does not claim an identification with source slow

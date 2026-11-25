@@ -12,9 +12,9 @@ comparison isomorphism `sectionsComplexIso` of `CechResolution.Comparison`, the
 FLT presheaf cochains `OModulePresheaf.cochain` and differentials
 `OModulePresheaf.d`, and the published naturality of comparison maps
 `AcyclicResolution.resolutionComparison_naturality`. It assumes no cohomological
-result beyond these imports. Worker 1665 wrote it for the proof of Stacks
+result beyond these imports. It was written for the proof of Stacks
 Project Lemma 30.20.4(3) (tag 02OB), where it is used in a degree-wise kernel
-argument.
+argument (module `ProperAdicCechKernelReduction`).
 
 ## Maps of sheafified Čech complexes
 

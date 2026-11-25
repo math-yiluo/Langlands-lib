@@ -21,7 +21,7 @@ variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
 
 /-- The source action restricted to its original nonempty charts. -/
 abbrev localAction (h : H) : X.V.nonemptyPresentation ⟶ X.V.nonemptyPresentation :=
-  (X.ρ h).nonemptyMap
+  (X.ρ h).asHom.nonemptyMap
 
 @[simp]
 theorem localAction_one : localAction H X 1 = 𝟙 X.V.nonemptyPresentation := by
@@ -84,9 +84,9 @@ theorem copiesActionMap_mul (g k : G) :
 def copiesAction : Action (AffinoidAtlasPresentation.{u, max z v, max z w} K) G where
   V := copies H X
   ρ :=
-    { toFun := copiesActionMap H X
-      map_one' := copiesActionMap_one H X
-      map_mul' := copiesActionMap_mul H X }
+    { toFun := fun g => End.of (copiesActionMap H X g)
+      map_one' := congrArg End.of (copiesActionMap_one H X)
+      map_mul' := fun g k => congrArg End.of (copiesActionMap_mul H X g k) }
 
 /-- Inverses come from the proved group action, including its full chart data. -/
 def copiesAutomorphisms : G →* Aut (copies H X) := (copiesAction H X).ρAut
@@ -94,7 +94,7 @@ def copiesAutomorphisms : G →* Aut (copies H X) := (copiesAction H X).ρAut
 @[simp]
 theorem copiesActionMap_baseMap (g : G) (c : G ⧸ H) (x : X.V.space) :
     (copiesActionMap H X g).baseMap ⟨c, x⟩ =
-      ⟨g • c, (X.ρ (correction H g c)).baseMap x⟩ := rfl
+      ⟨g • c, (X.ρ (correction H g c)).asHom.baseMap x⟩ := rfl
 
 @[simp]
 theorem copiesActionMap_indexMap (g : G) (c : G ⧸ H)
@@ -107,7 +107,7 @@ theorem copiesActionMap_indexMap (g : G) (c : G ⧸ H)
 theorem copiesActionMap_pullback (g : G) (c : G ⧸ H)
     (i : X.V.nonemptyPresentation.atlas.Index) :
     (copiesActionMap H X g).pullback ⟨c, i⟩ =
-      (X.ρ (correction H g c)).pullback i.val :=
+      (X.ρ (correction H g c)).asHom.pullback i.val :=
   AtlasDisjointUnion.map_pullback (component H X) (component_hasNonemptyCharts H X)
     (component H X) (component_hasNonemptyCharts H X)
     (fun c => g • c) (fun c => localAction H X (correction H g c)) c i
@@ -119,21 +119,21 @@ instance : TopologicalSpace (LocalSpace H X) :=
   inferInstanceAs (TopologicalSpace X.V.space)
 
 instance : MulAction H (LocalSpace H X) where
-  smul h x := (X.ρ h).baseMap x
+  smul h x := (X.ρ h).asHom.baseMap x
   one_smul x := by
-    change (X.ρ 1).baseMap x = x
-    have he : X.ρ 1 = 𝟙 X.V := X.ρ.map_one
+    change (X.ρ 1).asHom.baseMap x = x
+    have he : X.ρ 1 = End.of (𝟙 X.V) := X.ρ.map_one
     rw [he]
     rfl
   mul_smul h k x := by
-    change (X.ρ (h * k)).baseMap x = (X.ρ h).baseMap ((X.ρ k).baseMap x)
-    have he : X.ρ (h * k) = X.ρ k ≫ X.ρ h := X.ρ.map_mul h k
+    change (X.ρ (h * k)).asHom.baseMap x = (X.ρ h).asHom.baseMap ((X.ρ k).asHom.baseMap x)
+    have he : X.ρ (h * k) = End.of ((X.ρ k).asHom ≫ (X.ρ h).asHom) := X.ρ.map_mul h k
     rw [he]
     rfl
 
 @[simp]
 theorem local_smul (h : H) (x : LocalSpace H X) :
-    h • x = (X.ρ h).baseMap x := rfl
+    h • x = (X.ρ h).asHom.baseMap x := rfl
 
 section Quotient
 
@@ -175,9 +175,9 @@ theorem actionMap_mul (g k : G) :
 def action : Action (AffinoidAtlasPresentation.{u, max z v, max z w} K) G where
   V := presentation H X hH
   ρ :=
-    { toFun := actionMap H X hH
-      map_one' := actionMap_one H X hH
-      map_mul' := actionMap_mul H X hH }
+    { toFun := fun g => End.of (actionMap H X hH g)
+      map_one' := congrArg End.of (actionMap_one H X hH)
+      map_mul' := fun g k => congrArg End.of (actionMap_mul H X hH g k) }
 
 /-- The transport isomorphism intertwines the complete action arrows. -/
 theorem copiesIso_equivariant (g : G) :
@@ -247,7 +247,7 @@ theorem actionMap_indexMap (g : G) (c : G ⧸ H)
 theorem actionMap_pullback (g : G) (c : G ⧸ H)
     (i : X.V.nonemptyPresentation.atlas.Index) :
     (actionMap H X hH g).pullback ⟨c, i⟩ =
-      (X.ρ (correction H g c)).pullback i.val := by
+      (X.ρ (correction H g c)).asHom.pullback i.val := by
   change (BoundedAlgHom.id K _).comp
     ((copiesActionMap H X g).pullback ⟨c, i⟩ |>.comp (BoundedAlgHom.id K _)) = _
   rw [BoundedAlgHom.id_comp, BoundedAlgHom.comp_id, copiesActionMap_pullback]

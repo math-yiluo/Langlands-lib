@@ -1,7 +1,5 @@
 # Field extension on rational identity-component quotients
 
-Author: Worker 1107.
-
 Let `H` be an actual smooth affine group scheme over a field `k`, and let
 `φ : k →+* L` be a homomorphism to another field in the same arbitrary universe
 `u`. Write `H_L` for its actual pullback along `Spec L → Spec k`.

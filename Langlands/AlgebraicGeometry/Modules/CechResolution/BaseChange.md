@@ -12,8 +12,8 @@ pullback map and its augmentation square.
 The module is an internal construction from the sheafified Čech definitions
 in `CechResolution.Basic` and `CechResolution.Complex`, the ordered-cover
 definitions, Mathlib's affine-morphism API, and the published
-`AcyclicResolution.mapResolutionAugmentation`. Worker 606 authored this
-extension; Worker 958's Čech constructions supply its imported interface.
+`AcyclicResolution.mapResolutionAugmentation`. The Čech constructions of
+`CechResolution.Basic` and `CechResolution.Complex` supply its imported interface.
 The construction below assumes no cohomological base-change theorem.
 
 ## Maps on open factors

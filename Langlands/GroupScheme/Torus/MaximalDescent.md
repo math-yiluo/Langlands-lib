@@ -1,7 +1,5 @@
 # Descent of overlap-invariant tori and maximal tori
 
-Author: Worker 1442.
-
 This internal helper applies the published effective descent of affine closed
 subgroups to tori. It works over any extension `K/k` of fields in arbitrary
 universe `u`; neither field must be finite, perfect, or algebraically closed.

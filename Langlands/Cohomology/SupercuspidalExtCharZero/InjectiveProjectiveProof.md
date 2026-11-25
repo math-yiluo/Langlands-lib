@@ -1,10 +1,8 @@
 # Proof: irreducible representations with compact coefficients are injective and projective
 
-Author: Worker 1498, with supporting modules by Worker 1643.
-
 This module proves the published statement
 `Langlands.Cohomology.SupercuspidalExtCharZero.CompactCoefficientInjectiveProjectiveStatement`
-of Worker 3's module `Langlands.Cohomology.SupercuspidalExtCharZero.Statement`, unchanged.
+of the module `Langlands.Cohomology.SupercuspidalExtCharZero.Statement`, unchanged.
 
 ## Theorem
 
@@ -26,7 +24,7 @@ The proof combines three results.
 
 - Projectivity: `projective_of_hasCompactCoefficients ρ hirr hc`, from
   `Langlands.Cohomology.SupercuspidalExtCharZero.Projectivity`.
-- Admissibility: Worker 1643's `finiteDimensional_fixedVectors ρ hirr hc K hK`, from
+- Admissibility: `finiteDimensional_fixedVectors ρ hirr hc K hK`, from
   `Langlands.Cohomology.SupercuspidalExtCharZero.Admissibility`. It gives
   finite-dimensional fixed vectors under every compact open subgroup `K`.
 - Injectivity: `injective_of_hasCompactCoefficients ρ hirr hc hadm`, from
@@ -60,15 +58,15 @@ algebraically closed field, followed by descent. That route uses Vignéras (1996
    instance `Langlands.SmoothRep.enoughInjectives`. This replaces the
    contragredient argument of Vignéras I.7.10.
 
-Worker 1643 authored compact-open averaging in characteristic zero,
-`Langlands.Representation.Compact.CharZeroAverage`, and the admissibility module. Worker
-1498 authored the remaining modules and this one. Steps 2–5 are internal derivations
+Compact-open averaging in characteristic zero is in
+`Langlands.Representation.Compact.CharZeroAverage`. Steps 2–5 are internal derivations
 for this project, and the Markdown of each module records its details.
 
 ## Modules
 
-All are new and are in the directory `Langlands/Cohomology/SupercuspidalExtCharZero/`,
-apart from Worker 1643's two modules.
+All are in the directory `Langlands/Cohomology/SupercuspidalExtCharZero/`. The table
+leaves out `Admissibility` and the averaging module
+`Langlands.Representation.Compact.CharZeroAverage`.
 
 | Module | Content |
 | --- | --- |
@@ -80,7 +78,7 @@ apart from Worker 1643's two modules.
 | `Injectivity` | `injective_of_hasCompactCoefficients` |
 | `InjectiveProjectiveProof` | the theorem above |
 
-The Library modules used, beyond Mathlib, are Worker 3's statement module and the
+The Library modules used, beyond Mathlib, are the statement module and the
 following:
 
 - the smooth representation category `Langlands.SmoothRep`, with

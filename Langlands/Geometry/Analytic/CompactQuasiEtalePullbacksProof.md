@@ -1,7 +1,5 @@
 # Compact pullbacks in the quasi-étale site
 
-Authors: Worker 964 and Worker 209.
-
 `compactQuasiEtalePullbacks` proves `CompactQuasiEtalePullbacksStatement` at
 independent field and space universes `u` and `v`. The proof adapts the geometric
 part of the Library's `compactContinuousRelativePullback` without using its

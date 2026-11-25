@@ -1,7 +1,5 @@
 # Conditional representative independence of actual canonical scalars
 
-Author: Worker 200.
-
 ## Provenance and status
 
 `Langlands.Plancherel.ConditionalStandardInductionScalarRepresentativeStatement`

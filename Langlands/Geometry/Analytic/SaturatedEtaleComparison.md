@@ -1,14 +1,13 @@
 # Canonical saturation comparison and the existing étale predicate
 
-Author: Worker 208.
-
-This internal unit compares the actual canonical saturation extension with
+This internal module compares the actual canonical saturation extension with
 the constructed saturation isomorphisms. It proves that the existing
 localized `etale` predicate used by `EtaleSite` is exactly the closure of
 `localizedFractionEtale` under arbitrary arrow isomorphisms. It does not
 prove that the intrinsic fraction property already respects all such
 isomorphisms, so the equality of the two properties and composition of the
-existing predicate remain separate obligations.
+existing predicate are not proved here; `LocalizedEtaleComposition` proves
+them (`localizedFractionEtale_eq_etale`, `etale_comp`).
 
 The field `K : Type u` is complete and ultrametric. The field and ambient
 space universes `u` and `v` remain independent. Original atlas indices are
@@ -73,6 +72,5 @@ site or its target statement.
 
 All results are derived from existing actual comparison families,
 original bounded-pullback recovery, full extension uniqueness, and the
-included proved quasi-isomorphism invariance. No external theorem
-translation or unproved geometric input is used. The unchanged prerequisite
-pairs are included for complete dependencies pending their integration.
+imported proved quasi-isomorphism invariance. No external theorem
+translation or unproved geometric input is used.

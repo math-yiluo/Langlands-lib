@@ -1,9 +1,8 @@
 # Rational irreducible Jacquet detection from factor extraction
 
-Authors: Worker 658, with the common-factor assembly route of Workers 55
-and 78. This internal application remains conditional on the exact
+This internal application remains conditional on the exact
 `RationalCuspidalJacquetFactorExtractionStatement.{u, v}`. It does not
-prove that statement or complete the detection task.
+prove that statement or the detection target unconditionally.
 
 `rationalAssociatedJacquetWitnessOfCuspidalFactors` supplies the certified
 standard index and actual point of the irreducible Jacquet detection
@@ -28,14 +27,14 @@ simple-root sets and relative rank zero are retained.
 The application discharges three of the generic reduction's four inputs:
 
 1. For each irreducible `A`, simplicity of its monoid-algebra module
-   supplies `Nontrivial A`. Worker 78's
+   supplies `Nontrivial A`.
    `exists_irreducible_cuspidal_jacquet_subquotient` then supplies a
    nonzero standard Jacquet module and an irreducible cuspidal actual
    subquotient of that same module.
-2. Worker 12's public `isLeviCuspidal_conjugation` transports the
+2. The public `isLeviCuspidal_conjugation` transports the
    proper-standard inside-Levi vanishing predicate for each supplied
    root association and Levi membership equivalence.
-3. Worker 78's public `rootAssociation_mul` composes the actual
+3. The public `rootAssociation_mul` composes the actual
    representatives in the order `m * n`.
 
 The remaining input is exactly the displayed
@@ -53,7 +52,7 @@ the certified witness.
 The argument is internal application of Library declarations. The
 generic witness manipulation is explained in
 [IrreducibleJacquetFactorDetectionReduction](IrreducibleJacquetFactorDetectionReduction.md).
-The substantial factor construction is Worker 78's
+The substantial factor construction is
 [RationalCuspidalJacquetSubquotient](RationalCuspidalJacquetSubquotient.md),
 which uses the published minimal nonzero Jacquet construction, unrestricted
 irreducible subquotient existence, and actual Jacquet exactness. Its inner
@@ -64,7 +63,7 @@ and `isLimitOfCompactSubgroups_subgroupOf`; no compact-limit premise is
 added here. This application invokes no cuspidal induction embedding or
 parabolic quotient compactness theorem.
 
-The cuspidality transport dependency is Worker 12's
+The cuspidality transport dependency is
 [RationalSupportAssociationInvariance](RationalSupportAssociationInvariance.md).
 Its implementation compares the actual inner normalized Jacquet functors
 under the supplied continuous conjugation, using proper nested-root,

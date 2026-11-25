@@ -1,16 +1,15 @@
 # Harris's isomorphism (3.8) for definite similitude groups
 
-Author: Worker 61. Built on the published
-`Langlands.Shimura.DefiniteFormsDoubleCoset` (Worker 61: `localLevel`,
+Built on the published
+`Langlands.Shimura.DefiniteFormsDoubleCoset` (`localLevel`,
 `localLevelMap`, `ellModuleForms`, `LocalLevelFree`, `ellModuleFormsEquiv`,
 `congruenceLevel` with its normality instance, `congruenceLevel_le`,
 `congruenceLevel_subgroupOf`, `congruenceQuotientEquiv`,
 `congruenceQuotientEquiv_mk`), `Langlands.Shimura.EquivariantFormsTensor`
-(Worker 61: `tensorForms`, `tensorQuotientAction`,
+(`tensorForms`, `tensorQuotientAction`,
 `tensorQuotientAction_invariants`, `tensorQuotientInvariantsEquiv`),
-`Langlands.Shimura.EquivariantForms` (Worker 61: `forms`, `levelAction`)
-and `Langlands.Shimura.EquivariantFormsDoubleCoset` (Worker 61:
-`DoubleCosets`), and on Worker 57's similitude groups
+`Langlands.Shimura.EquivariantForms` (`forms`, `levelAction`)
+and `Langlands.Shimura.EquivariantFormsDoubleCoset` (`DoubleCosets`), and on the published similitude groups
 (`AlgebraInvolution.FiniteAdelicPoints`, `finiteAdelicDiagonal`,
 `finiteLocalMap`). From Mathlib it uses quotient groups
 (`QuotientGroup.mk'`), representations (`Representation.comp`,
@@ -103,7 +102,7 @@ Mathlib's chosen representative of a class `x`.
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
 J. Math. Kyoto Univ. 39-2 (1999), §3 "The totally definite case", printed
-p.308 (one-based PDF page 10). Worker 61 read the rendered scanned page:
+p.308 (one-based PDF page 10). The rendered scanned page was read:
 "More generally, we can let `𝓛` be any continuous `K_ℓ`-module; then
 `𝒜_ℓ(GJ, 𝓛, K)`, defined by analogy with (3.7), still makes sense. [...]
 Fix a lattice of normal congruence subgroups `K_ℓ(n) ⊂ K_ℓ`,

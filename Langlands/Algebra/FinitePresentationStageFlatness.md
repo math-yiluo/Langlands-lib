@@ -1,7 +1,5 @@
 # Flatness at a prime descends to a finite stage
 
-Author: Worker 866.
-
 This helper module proves the pointwise step in the proof of Stacks Project,
 Algebra, Lemma 10.168.1, part (1) (Tag 02JO), in the case `M = S`. Let `B`
 be an `A`-algebra with a presentation `P` with finitely many variables and

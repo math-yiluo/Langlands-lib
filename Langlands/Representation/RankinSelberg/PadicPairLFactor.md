@@ -1,7 +1,5 @@
 # Constructed p-adic pair L-polynomials and L-factors
 
-Author: Worker 31.
-
 `Langlands.RankinSelberg.padicPairLPolynomial` and `padicPairLFactor`
 construct the normalized polynomial and an actual unit in `RatFunc ℂ`
 for full Whittaker-type pairs on `GL_(r+1)` and `GL_(n+1)` with `n ≤ r`.
@@ -39,7 +37,7 @@ uniquely. Fourier self-duality is not required for this L-factor construction.
 
 All positive equal ranks and larger-first unequal ranks are covered,
 including `GL_1` by `n=0`. Reversing the order of the two ranks is outside
-this contribution.
+this module.
 
 ## Implemented existence and selection
 
@@ -123,15 +121,15 @@ not a new proof of those analytic arguments. Its substantive inputs are
 [GenericModel](GenericModel.md), and [PadicPairFactors](PadicPairFactors.md).
 Existence at the canonical measure, transport to every compatible measure,
 and the uniqueness and reciprocal lemmas are internal consequences of
-those definitions and proved properties. No unpublished proof draft is
+those definitions and proved properties. No proof from outside the Library is
 reused. The earlier [PadicEqualRankLFactor](PadicEqualRankLFactor.md)
 remains a separately reusable equal-rank construction; uniqueness of the
 shared polynomial relation determines the same normalized polynomial.
 
-This contribution does not assert independence from the supplied additive
+This module does not assert independence from the supplied additive
 Haar measure, a reversed-rank construction, functional equations, or
 epsilon/gamma and nongeneric classification-based factor constructions.
-Those remain separate obligations of the broader task.
+Those are outside this module.
 
 Local instances have explicit names prefixed by `padicPairLFactor` to
 avoid generated-name collisions in combined imports. Their types and defining

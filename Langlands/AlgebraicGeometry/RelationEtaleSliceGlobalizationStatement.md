@@ -9,15 +9,15 @@ Then there exist a scheme `V` in the same universe and a locally finite type
 morphism `g : V ⟶ U` such that `pullback.snd g t ≫ s` is both etale and
 surjective.
 
-This is an internal globalization interface for the etale slicing task,
-suggested by Worker 303's finite-type-point reduction. It makes no smoothness
+This is an internal globalization interface for the etale slicing proof,
+based on a reduction to finite-type points. It makes no smoothness
 or equivalence-relation assumption and asserts no local slice construction.
 The finite type point condition means precisely
 `LocallyOfFiniteType (U.fromSpecResidueField x)`, not a condition on the
 absolute residue-field extension. All morphism properties and pullbacks are
 the existing Mathlib ones.
 
-The expected proof takes the coproduct of one local slice for each point
+The proof in `RelationEtaleSliceGlobalizationProof` takes the coproduct of one local slice for each point
 satisfying this condition. The index is a subtype of the underlying points of
 `U`, so the coproduct stays in `Scheme.{u}`. Source locality preserves local
 finiteness of type and etaleness. The resulting image is open. An open subset

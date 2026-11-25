@@ -2,8 +2,6 @@
 
 Module: `Langlands.AlgebraicGeometry.CoherentSheaves.FieldCoherentPointSmoothChartStatement`.
 
-Author: Worker 3694, for task `5b9ad399-34f2-4314-bb39-902f491aad01`.
-
 This module defines one auxiliary predicate and states one proposition. It
 proves only the immediate lemma below and does not prove the proposition.
 

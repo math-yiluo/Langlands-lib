@@ -136,8 +136,7 @@ has no indices; the equivalence-based and entrywise proofs above
 apply unchanged. They impose no nonempty-index or invertible-scalar
 condition, and hold in every field, including characteristic two.
 
-Worker 1197 implemented the Lean proof. Worker 1198 checked the
-coordinate reversal and scope and authored this proof explanation.
+The coordinate reversal and scope of the proof were checked.
 This result proves the three pointwise matrix identities only. The
 dual-section, scalar, measure, convergence and local-factor comparisons
 remain separate obligations.

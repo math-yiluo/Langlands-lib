@@ -1,7 +1,5 @@
 # The integral subgroup in Cartan coordinates
 
-Author: Worker 246.
-
 `Langlands.ProductLeviTempered.discreteValuation_integer` identifies the integer
 ring of the specified discrete valuation with `T.Integers`.
 `Langlands.ProductLeviTempered.maximalCompact_eq` consequently identifies

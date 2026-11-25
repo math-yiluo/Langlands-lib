@@ -27,5 +27,5 @@ The quotient construction transports through that coordinate equivalence and app
 `TypeDParityLattice.quotientEquiv`; cardinality follows by transport to `ZMod 2`.
 
 The compatible split maximal torus and commuting restriction are explicit hypotheses.
-This unit does not construct them for a quaternionic spin cover and does not identify
+This module does not construct them for a quaternionic spin cover and does not identify
 its binary Levi diagonal with its kernel.

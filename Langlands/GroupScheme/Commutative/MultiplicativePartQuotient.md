@@ -1,7 +1,5 @@
 # The multiplicative part: quotient and base-change steps
 
-Author: Worker 894.
-
 Helper module for the proof of
 `Langlands.GroupScheme.CommutativeMultiplicativePartCharacterizationStatement`
 (Milne, *Algebraic Groups* (2017), Note 16.17); see

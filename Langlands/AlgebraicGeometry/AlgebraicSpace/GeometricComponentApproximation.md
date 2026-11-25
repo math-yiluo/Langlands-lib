@@ -3,7 +3,8 @@
 This is an internal construction of the approximation bridge for the
 geometric fibre component constructibility problem. The final reduction
 retains the explicit premise `SpaceLimitModelExistenceQuasiSeparated`.
-This unit proves neither that premise nor the unconditional host statement.
+This module proves neither that premise nor the unconditional statement
+`GeometricFibreComponentsConstructibleStatement`.
 Its inputs other than this premise are the actual component-transport and
 Noetherian constructibility results already constructed in this development,
 and the existing limit of spectra of an exhaustive subalgebra system.
@@ -67,9 +68,11 @@ existential conclusion. It introduces no new assumption beyond the stated
 `GeometricFibreComponentsConstructibleStatement`, conditional on `hlim`.
 For each original ring and space it constructs the model and applies the
 preceding constructibility theorem. The original target's count expression
-agrees definitionally with the actual count used here. The host statement
-and its import closure are unchanged. The separate model-existence premise
-must be proved and published before this reduction can produce the
-unconditional proof requested by the host task. No connected-fibre descent
+agrees definitionally with the actual count used here. The statement
+and its import closure are unchanged. The model-existence premise is proved
+separately, as `spaceLimitModelExistenceQuasiSeparated` in
+`SpaceLimitModelExistenceQuasiSeparatedProof`; with it,
+`GeometricFibreComponentsProof` applies this reduction to obtain the
+unconditional theorem `geometricFibreComponentsConstructible`. No connected-fibre descent
 or conditional version of the desired component constructibility is used
 to establish a model.

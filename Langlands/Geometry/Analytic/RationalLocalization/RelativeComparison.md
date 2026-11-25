@@ -1,7 +1,5 @@
 # Strict rational quotients as unit-radius relative rational quotients
 
-Author: Worker 966.
-
 This module constructs an actual bounded algebra equivalence between the
 strict rational quotient `RationalLocalization.algebra K P m g n` of a
 presented strict affinoid algebra and the intrinsic relative rational

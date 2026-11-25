@@ -26,7 +26,9 @@ pairs under its projection-pair map. The cut is a closed subspace of
 this compact Hausdorff inverse image. The construction retains the
 literal analytic domain and both projections.
 
-The categorical diagonal argument is adapted from Worker 611's
-compact quasi-étale diagonal construction. The compact-preimage
+The categorical diagonal argument is adapted from the
+compact quasi-étale diagonal construction
+(`exists_compactQuasiEtalePullback_of_diagonal` in
+`CompactQuasiEtaleDiagonalPullbacks`). The compact-preimage
 argument uses Hausdorffness of the three compact spaces and local
 Hausdorff patches in the ambient space.

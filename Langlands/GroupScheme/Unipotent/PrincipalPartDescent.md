@@ -1,7 +1,5 @@
 # Galois descent of additive principal forms
 
-Author: Worker 864.
-
 This module implements the Galois-descent argument of Conrad–Gabber–Prasad,
 *Pseudo-reductive groups*, second edition (2015), Lemma B.1.8, printed
 p.564, one-based PDF p.590, and the polynomial input to B.1.9, printed

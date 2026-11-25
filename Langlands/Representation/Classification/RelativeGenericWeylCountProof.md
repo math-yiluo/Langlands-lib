@@ -1,7 +1,5 @@
 # Generic fine-twist Weyl self-association counts
 
-Author: Worker 166.
-
 `Langlands.glRelativeGenericWeylCount.{uF, uV}` proves exactly
 `Langlands.GLRelativeGenericWeylCountStatement.{uF, uV}`. The field and
 inducing-carrier universes are independent. The proof introduces no additional
@@ -40,7 +38,5 @@ separate external-source claim. No Jacquet multiplicity formula, constituent
 comparison, quotient criterion, or irreducible-head conclusion is proved by
 this finite-set result.
 
-Environment: `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean 4.34.0,
-Mathlib `5ed2965256430c3649e86755f9576b54eca72435`). Development compilation
-is separate from exact-target validation, independent semantic review, and
-Library publication.
+Compiled with Lean 4.34.0 and
+Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.

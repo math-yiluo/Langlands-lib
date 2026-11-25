@@ -1,13 +1,12 @@
 # Renard A.VII: semisimplicity and subobjects
 
-Worker 709 checked this passage and the two proof publications on 1 November
+This passage and the two published proofs were checked on 1 November
 2026, against Library commit `dac2bb9e83346876770fced17af26f0cba7f4c98`.
-This is a bounded source and publication audit for the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857` revision 2. On 6 November 2026,
-under revision 3 and against Library
-`d2fd0b68e11e9844d5da3650e7579d62588fd3fd`, Worker 709 added the
-published canonical subobject-complement comparison, a derived internal
-comparison used by both proofs, with its statement and proof receipts.
+This is a bounded source and Library audit for the whole-book coverage
+([coverage.md](coverage.md)). On 6 November 2026, against Library
+`d2fd0b68e11e9844d5da3650e7579d62588fd3fd`, the published canonical
+subobject-complement comparison was added, a derived internal comparison used
+by both proofs, with its statement and proof.
 
 ## Source and assertions
 
@@ -17,9 +16,9 @@ p-adiques*, French edition dated 9 July 2026, registered as
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
 A.VII starts on printed264/PDF270; its lemma and proof, followed by the
 subobject corollary and its proof, are on printed265/PDF271.
-On 1 November, Worker 709 read PDF270–272 in full and compared the five
+On 1 November, PDF270–272 were read in full and compared with the five
 Lean/Markdown pairs of the predicate, lemma and corollary rows below. On
-6 November, Worker 709 reread PDF269 and PDF271 and compared the two pairs
+6 November, PDF269 and PDF271 were reread and compared with the two pairs
 of the comparison row. The standing hypotheses come from A.VI.3,
 printed263/PDF269: the category is source Grothendieck and locally of
 finite type.
@@ -87,25 +86,20 @@ back at the subobject, by the same `everySubobjectComplementedLattice`.
 The equivalence is then applied at the ambient object and at its
 subobject. No new gap was found in this bounded comparison.
 
-Worker 1069 wrote the equivalence proof, reusing Worker 6's size-comparison
-probe. Worker 1073 wrote the corollary proof. This audit reuses their
-published mathematics and does not supply another proof.
+The equivalence proof reuses a size-comparison probe. This audit reuses the
+published proofs and does not supply another proof.
 
-## Independent acceptance and publication
+## In the Library
 
-Direct TaskHub fetches reported `accepted=true`, `public=true` and
-integration state `published` for both candidates. Each machine receipt
-records a Lake build, exact-target validation, unchanged statements and
-frozen inputs. Independent semantic reviews approved both without
-qualifications.
+Each proof was checked by a Lake build against its exact target, with the
+statement and its inputs unchanged.
 
-| Proof | Task and candidate | Machine evidence | Independent review | Publication |
-| --- | --- | --- | --- | --- |
-| Equivalence | Task `dc8906fc-997e-47d1-a37d-33676b441dca`; candidate `c97ca88f-f289-4511-9036-5d89a2045085` | `2c3dc62b-67e3-4a05-b801-3b5d3e9b79b7` | Reviewer 4780, review `eaf1f10a-245d-41ba-b7a5-4d80c7c22233` | Integration `8b970460c8b048e8b6ed25c11357fded`, commit `f6b64ec108eed89ad46dff1d99192f40c4f29015` |
-| Subobject corollary | Task `13b953c4-b5a9-46ec-8ab2-4307634441fe`; candidate `a27d0113-37b1-4d3f-903f-9a68e0321998` | `473f0a38-f5ee-4041-aea2-f49f01a0771c` | Reviewer 4810, review `acab5475-3908-406e-8f65-27fcf3cc6b6d` | Integration `8d5033ca1d194d6c87fb5d19ce49a6ef`, commit `f5e9b4259cccc86006fbed5ed946afb499668dda` |
+| Proof | First appeared at Library commit |
+| --- | --- |
+| Equivalence | `f6b64ec108eed89ad46dff1d99192f40c4f29015` |
+| Subobject corollary | `f5e9b4259cccc86006fbed5ed946afb499668dda` |
 
-All four current Library files and local files match the hashes in their
-accepted frozen bundles:
+The SHA-256 hashes of the four files, unchanged in the present Library:
 
 | Path under `Langlands/CategoryTheory/Renard/` | SHA256 |
 | --- | --- |
@@ -116,12 +110,12 @@ accepted frozen bundles:
 
 On 6 November 2026 the same four hashes held at Libraries
 `d2fd0b68e11e9844d5da3650e7579d62588fd3fd` and
-`87e695f5180726de47820341b89accb81c4e1033` and in the workspace.
+`87e695f5180726de47820341b89accb81c4e1033`.
 
-These two proof publications discharge the lemma and corollary recorded
+These two proofs discharge the lemma and corollary recorded
 here. This note makes no completion declaration for the appendix or the
-whole-book task. A.VI.3, A.VIII and later sections retain their own
-coverage and publication obligations.
+whole book. A.VI.3, A.VIII and later sections retain their own
+coverage obligations.
 
 ## Canonical subobject-complement comparison
 
@@ -163,16 +157,16 @@ A.VI.2(9), printed263/PDF269, ends: if `A ∩ B = 0` and `A + B = C`, then
 have a complement giving such a decomposition. The book states neither the
 converse nor a comparison with lattice complements. The statement Markdown
 classifies both full equivalences as derived internal specifications.
-Worker 709 reread PDF269 and PDF271 and rechecked the source SHA256 on
-6 November 2026, and found this reading accurate.
+PDF269 and PDF271 were reread and the source SHA256 rechecked on
+6 November 2026; this reading is accurate.
 
 Curried, the right-to-left direction of the pointwise statement is the
 earlier `ComplementarySubobjectsSumStatement C` of
 `Langlands.CategoryTheory.RenardNoetherIsomorphismStatements`. Its proof
 `complementarySubobjectsSum` is the third clause of the published
-`noetherIsomorphisms`, recorded in the A.VI.2(9) row and receipts of
+`noetherIsomorphisms`, recorded in the A.VI.2(9) row and the section "In the Library" of
 [abelian-categories-progress](abelian-categories-progress.md). The
-statement unit does not import that module.
+statement module does not import that module.
 
 The module
 [SubobjectComplementComparison](../../Langlands/CategoryTheory/Renard/SubobjectComplementComparison.md)
@@ -198,35 +192,23 @@ As recorded in the proof section above, both A.VII proofs use the second
 clause. The comparison itself proves neither the three-way lemma nor the
 corollary, and contains no arbitrary-sum, AB5 or AB6 argument.
 
-| Unit and authors | Candidate; machine receipt | Independent review task / reviewer | Integration; published commit |
-| --- | --- | --- | --- |
-| `SubobjectComplementComparisonStatement` and its two clauses — Workers 849 and 6 | `f2114093-fa92-4f0d-aaae-171821f97eb1`; `c4bfdb59-96f9-4daf-94d1-2a01bbf5777c` | `8e7c0a1b-49f0-476d-8431-7efe6bb1b576` / Reviewer 3613 | `9ccddd1cbc994f6ba12cadbfd481a55a`; `06ce3701c57321e39772a06c6c0202f3644c6cb7` |
-| `subobjectComplementComparison` — Workers 882 and 6 | `d9f93a1b-1f97-4403-91d5-ad5dee536eb2`; `780a5bfc-e8c4-4d1c-beba-b0514e2518ad` | `a18e6354-aaef-43dd-829b-86c0fb61c1c4` / Reviewer 4009 | `4815d9aabfa1412cbb3033a77a50f599`; `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
+| Module | First appeared at Library commit |
+| --- | --- |
+| `SubobjectComplementComparisonStatement` and its two clauses | `06ce3701c57321e39772a06c6c0202f3644c6cb7` |
+| `subobjectComplementComparison` | `cb6a47b2390bdcd0be78fac0552b7fd5c46cd51b` |
 
-The statement was produced under statement task
-`b8c328aa-9fed-4b42-895b-43c43b42550f`. Its `lean.statement@1` receipt
-passed the schema, immutable-content, reference-integrity,
-exact-reference-policy, Lake-build and declaration-kind checks; this is
-not proof acceptance. Its frozen record has two author qualifications,
-both scope notes. One restates the meaning. The other says that the unit
-supplies statements only and that the lattice-to-canonical-map direction
-belongs to the Noether proof task `d0241956-6d80-41a2-8ca8-88db6bad7b32`.
-On 6 November that task was done, with accepted proof
-`c2dc09d5-e172-44a1-b1bb-98de55f92df5`. Reviewer 3613 judged both notes
-accurate and approved without review qualifications.
+The statement module was checked by a Lake build and for declaration kinds;
+this is not a proof. It supplies statements only; its two scope notes restate
+the meaning and say that the lattice-to-canonical-map direction belongs to the
+Noether proof, which was complete on 6 November 2026.
 
-The proof was produced under proof task
-`8307c004-2fb8-4b34-8014-3c75d3ff38fb`. Its `lean.proof@1` receipt passed
-`lake-build`, `exact-target`, `unchanged-statement` and `frozen-inputs`,
-with `proof_accepted: true`. Its frozen record has no author
-qualifications, and Reviewer 4009 approved without qualifications.
-Worker 709 authored neither unit; this note documents them and is not a
-review.
+The proof was checked by a Lake build against the exact target, with the
+statement and its inputs unchanged.
 
-On 6 November 2026 the frozen bundles, Libraries
+On 6 November 2026 the Libraries
 `d2fd0b68e11e9844d5da3650e7579d62588fd3fd` and
-`87e695f5180726de47820341b89accb81c4e1033`, and the workspace had
-the same SHA256 for each file:
+`87e695f5180726de47820341b89accb81c4e1033` had the same SHA256 for each
+file, unchanged in the present Library:
 
 | Path under `Langlands/CategoryTheory/Renard/` | SHA256 |
 | --- | --- |

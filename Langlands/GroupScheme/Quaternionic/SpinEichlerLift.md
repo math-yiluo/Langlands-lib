@@ -94,9 +94,10 @@ in `Langlands.GroupScheme.Quaternionic.FirstKindInvolution.Eichler`.
 
 ## Provenance
 
-Internal. This is a reduction step for Task 5398 (Kneser–Tits for quaternionic spin groups of
-Witt index one over nonarchimedean local fields). The Lean proof combines the Library's dynamic subgroup, power-lift, central-isogeny lifting and
+Internal. This is a reduction step for `LocalSpinKneserTitsStatement` (Kneser–Tits for
+quaternionic spin groups of Witt index one over nonarchimedean local fields). The Lean proof combines the Library's dynamic subgroup, power-lift, central-isogeny lifting and
 local-field centralizer results with the explicit computations in `HyperbolicLevi` and
 `EichlerDynamic`. The two hypotheses `hlevi` and `hker` concern the spin cover itself and are
-left as hypotheses here. In Task 5398, `hlevi` is to follow from a reduced-norm condition via
+left as hypotheses here. In `localSpinKneserTits_of_spinInputs` (module
+`LocalSpinKneserTitsReduction`), `hlevi` follows from a reduced-norm condition via
 `EichlerReducedNorm`, and `hker` from a description of the kernel of the spin cover.

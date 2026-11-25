@@ -1,6 +1,6 @@
 # Unipotence of affine group-scheme extensions
 
-This internal derived unit proves closure under extensions using the Library's
+This internal derived module proves closure under extensions using the Library's
 finite coefficient-representation definition of `IsUnipotent`. The source
 group scheme and its full scheme-theoretic kernel are affine over the field.
 The quotient homomorphism is flat, scheme-surjective and quasi-compact. If

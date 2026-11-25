@@ -60,11 +60,12 @@ or the zero module-sheaf morphism.
 This is derived internal provenance, not a translation of a named
 literature theorem: the assertions express the expected functorial
 behavior of the Library's `GlobalSections`, `sectionHom` and
-`pullbackSection`. The statement was split from the separating-line-bundle
-proof task, where it is needed to transport `Picard.VanishesAlong`, which
+`pullbackSection`. The statement was formulated for the argument with
+separating line bundles, where it is needed to transport `Picard.VanishesAlong`, which
 is defined as zero of the actual pulled-back section. That predicate does
 not occur in this statement. No literature result is imported or assumed,
-and this statement module proves none of the six clauses. In particular it
+and this statement module proves none of the six clauses; they are proved
+in `SectionVanishingTransportProof`. In particular it
 makes no claim that pullback along an arbitrary scheme morphism reflects
 zero: clause 4 needs `f` to be an isomorphism of schemes, and clause 2
 compares one zero condition after pullback with another.

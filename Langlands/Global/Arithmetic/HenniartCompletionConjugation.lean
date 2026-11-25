@@ -1,6 +1,6 @@
 import Langlands.Weil.Local.ExtensionWeilRangeConjugation
 import Langlands.Global.CompletionWeilTransport
-import Langlands.ClassField.Global.LocalRelativeWeilMap
+import Langlands.ClassFieldTheory.Global.LocalRelativeWeilMap
 import Langlands.LocalFactor.CommonClosure
 
 /-!
@@ -22,7 +22,7 @@ universe u uK
 namespace Langlands.Global
 
 open NumberField Langlands.Weil.Local Langlands.Global.CompletionPadic
-open Langlands.ClassField.Global Langlands.ClassField.Global.RelativeWeilGroup
+open Langlands.ClassFieldTheory.Global Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 open Langlands.LocalFactor.CommonClosure
 open scoped Langlands.Global.AdelicFunctoriality.FiniteExtension
 

@@ -1,7 +1,5 @@
 # Actual special linear contragredient automorphism
 
-Author: Worker 195.
-
 This module constructs the inverse-transpose automorphism `g ↦ (g⁻¹)ᵀ` of
 the actual special linear group scheme `SpecialLinear.groupScheme n R` over
 `Spec R`. It proves its formula on points over every test scheme, its

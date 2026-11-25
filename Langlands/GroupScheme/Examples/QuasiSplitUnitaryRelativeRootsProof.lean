@@ -73,7 +73,7 @@ theorem mem_roots_diagonalCocharacter_iff
   · intro hψ
     have hψ0 : ψ ≠ 0 := by
       rintro rfl
-      rw [map_zero] at hψ
+      rw [AddEquiv.map_zero] at hψ
       omega
     refine ⟨hψ0, ?_⟩
     rcases hψ with h | h

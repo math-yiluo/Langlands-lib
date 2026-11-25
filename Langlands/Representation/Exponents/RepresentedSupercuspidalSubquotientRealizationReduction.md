@@ -1,6 +1,6 @@
 # Reduction of Renard VI.3.6 to compact restriction and finite index
 
-Author: Worker 1498. Module
+Module
 `Langlands.Representation.Exponents.RepresentedSupercuspidalSubquotientRealizationReduction`,
 namespace `Langlands.Aubert.General.RepresentedParabolic`.
 
@@ -8,7 +8,7 @@ Source: Renard, *Représentations des groupes réductifs p-adiques* (French
 version dated 9 July 2026), VI.3.6, Lemma, printed pp.147–148 / PDF
 pp.153–154 (`renard-2026-representations-groupes-reductifs-padiques`).
 
-This is a supporting reduction for the host target
+This is a supporting reduction for the target
 `RepresentedSupercuspidalSubquotientRealizationStatement.{u, v}`. It is not a
 proof of that target. The module defines the proposition
 `RepresentedSupercuspidalSubquotientRealizationReductionStatement.{u, v}` and
@@ -50,11 +50,13 @@ one. The two maps are not claimed to split each other.
 Neither premise is proved here.
 
 - Premise 2 follows from the target's Jacquet vanishing by Renard VI.2.1
-  (a) ⇒ (c). Worker 1595's conditional supporting candidate
-  `RepresentedSupercuspidalCompactRestrictionReductionStatement` derives it
+  (a) ⇒ (c). The conditional supporting reduction
+  `RepresentedSupercuspidalCompactRestrictionReductionStatement` (module
+  `RepresentedSupercuspidalCompactRestrictionReduction`) derives it
   from four structural statements.
 - Premise 1 is a structural property of connected reductive groups. Its proof
-  belongs to the split-component lattice owners.
+  goes through the split component; the Library has it as
+  `Langlands.CuspidalSupport.rationalCommonNormKernel_sup_center_finiteIndex`.
 
 Once both are available, the target follows by instantiating this reduction.
 
@@ -75,7 +77,7 @@ The proof installs four things:
 It then applies the generic theorem
 `Langlands.CuspidalSupport.constituent_of_compactRestriction` from the
 ancillary module `Langlands.Representation.CuspidalSupport.CompactRestrictionRealization`,
-submitted with this pair, with `H = ⁰G`. That module's Markdown describes the
+written together with this module, with `H = ⁰G`. That module's Markdown describes the
 generic argument and how it relates to Renard's proof.
 
 ## Provenance

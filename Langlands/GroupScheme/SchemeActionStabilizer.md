@@ -1,7 +1,5 @@
 # The stabilizer group scheme of an action
 
-Author: Worker 4246.
-
 Let `G` be a group scheme over a scheme `S` acting by `b : SchemeAction G Z` on a scheme `Z`
 over `S` (`Langlands/GroupScheme/SchemeAction.lean`). This module makes the stabilizer scheme
 of `b` into a group scheme over `Z` and shows that its fibre over any point of `Z` with values

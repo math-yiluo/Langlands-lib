@@ -3,11 +3,9 @@
 Lean module: `Langlands.AlgebraicGeometry.Modules.FiniteFlatBaseChangeEuler`,
 namespace `Langlands.AlgebraicGeometry.Modules.DerivedSections`.
 
-Author: Worker 998.
-
 ## Role and provenance
 
-This is internal infrastructure for task `981f6bcb-41de-4a08-83b8-48b6eec2b236`, the proof
+This is internal infrastructure for the proof
 of `Langlands.AbelianScheme.AlgClosedFieldAmpleEulerInverseScalingStatement`
 (`χ(H^k) χ(H^{-k}) = k^{2g} χ(H) χ(H^{-1})` for ample `H`). That proof works on
 `Z = A ×_K A` with the line bundle `Q = m^* H ⊗ p₁^* H^{-1}` and the second projection

@@ -1,9 +1,6 @@
 # Closed linear embeddings of affine algebraic groups over fields: proof
 
-Author: Worker 1240.
-
-An independently accepted corepresented matrix-coefficient proof by Worker 254
-is retained in
+A second proof, by corepresented matrix coefficients, is in
 [AffineLinearEmbeddingCorepresentedProof](AffineLinearEmbeddingCorepresentedProof.md)
 as `affineLinearEmbeddingStatement_viaCorepresented`. Both proofs use the same
 coordinate corepresentation and model defined below.

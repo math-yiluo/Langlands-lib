@@ -1,10 +1,7 @@
 # The per-polynomial Hilbert schemes are H-projective
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-as part of the proof of
-`Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement`. The
-operator's answer to request `98389b48910e54088e0e2b2ba6aaad9c` allows such
-prerequisite proofs to stay under Task 5705.
+This module is part of the proof of
+`Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement`.
 
 ## Source and licence
 
@@ -28,7 +25,7 @@ modified. The modifications are listed below.
 theorem Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamily.exists_isHProjective_hilbertPolynomial_piece
     (S : Type uz) [CommRing S] {X : Scheme.{uz}} (f : X ⟶ Spec (CommRingCat.of S))
     [Flat f] [LocallyOfFinitePresentation f]
-    (𝓛X : X.Modules) (hX₁ : Scheme.Modules.IsInvertible 𝓛X)
+    (𝓛X : X.Modules) (hX₁ : Scheme.Modules.IsInvertibleFLT 𝓛X)
     (hX₂ : Scheme.Modules.ClosedImmersionBySections 𝓛X f) (P : Polynomial ℚ) :
     ∃ (C : Scheme.{uz}) (πC : C ⟶ Spec (CommRingCat.of S)) (pt : …),
       (naturality of pt) ∧ (surjectivity of pt) ∧ (injectivity of pt up to isomorphism) ∧

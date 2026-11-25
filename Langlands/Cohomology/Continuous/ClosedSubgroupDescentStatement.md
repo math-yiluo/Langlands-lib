@@ -1,7 +1,5 @@
 # Zero detection for restriction to a closed normal subgroup
 
-Author: Worker 229.
-
 `Langlands.Continuous.ClosedNormalRestrictionZeroDetection` is a
 proposition (a `Prop`-valued definition). This module states it and does
 not prove it.
@@ -57,7 +55,7 @@ Fields*, Greenberg translation (1979), registered as
 `serre-1979-local-fields` at
 `/home/taskhub/central-library/Serre--Local Fields--1979.pdf`, SHA256
 `109b461d42915da70771c70c4b551a363fc1f33412331ae2671c5c85be433112`.
-Worker 229 read PDF pages 160–161 and 186–187. The project has no errata
+PDF pages 160–161 and 186–187 were read. The project has no errata
 note for this source.
 
 - In X §3 (printed p.154 / PDF p.160), Serre takes a compact totally
@@ -91,10 +89,12 @@ open normal subgroup `N'` of `G`.
 
 ## Relation to other work
 
-- The proof is a separate task. It will be published after this statement
-  is accepted. The topological tuple-extension and neighborhood-agreement
-  prerequisites are stated separately in task `1c8ea7cb`. This module does
-  not import them.
+- The proof is `closedNormalRestrictionZeroDetection` in
+  `Langlands.Cohomology.Continuous.ClosedSubgroupDescentProof`. The
+  topological tuple-extension and neighborhood-agreement prerequisites are
+  stated separately in
+  `Langlands.Cohomology.Continuous.ClosedSubgroupTopologyStatement`. This
+  module does not import them.
 - `FiniteStageExactnessLimit` in `FiniteStageExactnessLimitStatement` is
   distinct. It concerns an *open* normal subgroup and passes finite-stage
   inflation–restriction exactness to the continuous maps. The statement
@@ -104,7 +104,6 @@ open normal subgroup `N'` of `G`.
   subgroups and finite-stage cofinality, which is the opposite direction
   of approximation.
 - The intended consumer is the proof of
-  `Langlands.ClassFieldTheory.Local.UnramifiedH2Exhaustion` (task
-  `3263cf33`). There `G` is the absolute Galois group, `H` is the actual
+  `Langlands.ClassFieldTheory.Local.UnramifiedH2Exhaustion`. There `G` is the absolute Galois group, `H` is the actual
   absolute inertia subgroup and `A` is the discrete algebraic-closure
   units. That application is not part of this statement.

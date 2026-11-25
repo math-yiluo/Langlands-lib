@@ -42,7 +42,7 @@ theorem lieBaseChangeEndomorphismNaturality_of_naturality
     (h : LieBaseChangeNaturalityStatement S) :
     LieBaseChangeEndomorphismNaturalityStatement S := by
   intro T b A f ell hiso hell
-  exact h T b A A f ell ell hiso hiso hell hell
+  exact h T b A A f.asHom ell ell hiso hiso hell hell
 
 /-- Both Lie squares follow from the actual abelian cotangent square. -/
 theorem lieBaseChangeNaturalityStatements_of_cotangent

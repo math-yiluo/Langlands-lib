@@ -1,6 +1,6 @@
 # Coherence of actual Weil-compatible fixed-level isogenies
 
-Worker 142. This derived unit constructs direct composite and inverse
+This derived module constructs direct composite and inverse
 rational-isogeny transport on `WeilAdelicLevel` and
 `WeilPrimeToAdelicLevel`, and proves their identity, composition and inverse
 laws. These are the existing sets of geometrically fixed right-orbit
@@ -51,7 +51,7 @@ field-valued point. The full version selects all positive integers; the away
 version selects those coprime to an arbitrary natural modulus. Each version
 uses the same scalar comparison for its modules and actual twist, with the
 away comparison coupled to the full one. No roots of unity or trivialization
-of twist monodromy are chosen. This unit does not assert that the dual-valued
+of twist monodromy are chosen. This module does not assert that the dual-valued
 maps are polarizations, that frames exist, that the forms are nondegenerate,
 or that a compact-open topology or pointed-base-change functor has been
 constructed.

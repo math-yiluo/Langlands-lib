@@ -241,6 +241,7 @@ def actionQuotientHom : (GL (Fin (reducedDegree K D)) K × Dˣ) ⧸
   apply Subgroup.normalClosure_le_normal
   intro g hg
   change actionHom (R := R) p hcard c g = 1
+  apply Aut.ext
   apply CategoryTheory.Iso.ext
   apply NatTrans.ext
   funext A

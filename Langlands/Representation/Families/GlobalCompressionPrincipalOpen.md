@@ -1,8 +1,9 @@
 # Principal irreducibility neighborhoods from a global coefficient basis
 
-Worker 452. This module specializes the principal-open assembly in
-`CompactCompressionPrincipalOpen` to the case with no localization. Worker
-1444's planned actual universal induced family is meant to use this case.
+This module specializes the principal-open assembly in
+`CompactCompressionPrincipalOpen` to the case with no localization. The
+actual universal induced family `ActualLevi.universalFamily` uses this case
+(`InducedIrreducibilityOpenAssembly`).
 It is an internal step
 of the proof of Renard, *Représentations des groupes réductifs p-adiques*
 (9 July 2026), VI.8.4 Proposition, printed pp. 192–193, PDF pp. 198–199.

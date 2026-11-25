@@ -1,7 +1,7 @@
 # Actual first adjointness on standard rational points
 
-Worker 1216 constructs this internal adapter from the actual general
-first-adjointness equivalence and Worker 480's standard-unipotent regularity
+This internal adapter is constructed from the actual general
+first-adjointness equivalence and the standard-unipotent regularity
 adapter. The ambient group is literally `RationalPoint k G.X`, with its
 canonical evaluation topology `pointTopology`. The subgroup families are
 `parabolic i ν I`, `levi i ν I` and `unipotent i ν I` for finite subsets of the

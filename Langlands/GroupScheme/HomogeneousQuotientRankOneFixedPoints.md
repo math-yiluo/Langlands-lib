@@ -1,7 +1,5 @@
 # Fixed points of a prescribed homogeneous quotient in rank at most one
 
-Author: Worker 1547.
-
 This internal module bounds the all-test torus-fixed rational points of a
 supplied homogeneous quotient by a prescribed subgroup. It also records the
 elementary implication from a geometric fixed-point lower bound to quotient

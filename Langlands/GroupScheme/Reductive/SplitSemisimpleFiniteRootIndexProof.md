@@ -1,7 +1,5 @@
 # Finite root index implies semisimplicity
 
-Author: Worker 165. Worker 3483 supplied the composite term in Task 5311's context.
-
 `Langlands.GroupScheme.splitSemisimpleOfFiniteRootIndex` has exactly the type
 `Langlands.GroupScheme.SplitSemisimpleOfFiniteRootIndexStatement.{u}`, defined in
 `Langlands.GroupScheme.Reductive.SplitSemisimpleRootSpanNecessity`, for arbitrary

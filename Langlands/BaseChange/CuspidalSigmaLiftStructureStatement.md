@@ -29,9 +29,9 @@ field of characteristic zero. The statement is **not** proved here.
 ## Notation
 
 `GL_m(R)` is the Library's `Langlands.GeneralLinear m R`. From
-`Langlands.BaseChange.Norm` (Task 7405): `entrywiseAut σ m`, the entrywise action
+`Langlands.BaseChange.Norm`: `entrywiseAut σ m`, the entrywise action
 `g ↦ g^σ` on `GL_m(E)`, and `IsCyclicAlgebra σ l`. From
-`Langlands.BaseChange.TwistedCharacter` (Task 7432): `SigmaIntertwiner σ m Π`, the
+`Langlands.BaseChange.TwistedCharacter`: `SigmaIntertwiner σ m Π`, the
 isomorphisms `A` of `Π` onto `Π^σ`, and `IsSigmaLift σ l π hπ Π hΠ A c`, HL's σ-lift
 (II.2.7): `c ≠ 0` and `trace(Π(φ) ∘ A) = c · trace π(f)` for all Haar measures and all
 concordant pairs `(φ, f)`. From `Langlands.BaseChange.CuspidalSigmaLift`:
@@ -97,7 +97,7 @@ engendre le stabilisateur de la classe d'isomorphisme de `Π₁` dans `Σ`".
 
 ## Convention for `Π^σ`
 
-`Π₁^{σ^i}` is `g ↦ Π₁(g^{σ^i})`, as in HL II.1.3 and Task 7432. The factors
+`Π₁^{σ^i}` is `g ↦ Π₁(g^{σ^i})`, as in HL II.1.3 and `Langlands.BaseChange.TwistedCharacter`. The factors
 `{Π₁^{σ^i} : 0 ≤ i < s}` form the `Gal(E/F)`-orbit of the class of `Π₁`, so the other
 convention (`σ⁻¹`) gives the same factors in another order; for pairwise unlinked cuspidal
 factors (as here, see `CuspidalSigmaLiftExistenceStatement.md`) the product does not depend
@@ -131,8 +131,9 @@ field has countable dimension, so it has a model in every universe.
 HL II.4.12 is stated for a cyclic extension field `E` of `F`. The statement requires `E` to be
 a nonarchimedean local field (with its own `ValuativeRel`) because the Library's product
 induction (`LocalFieldData.ofInstances E`) needs it. `[IsModuleTopology F E]` makes the
-topology of `E` the one induced from `F`, as in Task 7432. `CharZero F` is assumed as in
-Tasks 7416, 7432, 7442 and 7449: the concordance of test functions inside `IsSigmaLift` uses
+topology of `E` the one induced from `F`, as in `Langlands.BaseChange.TwistedCharacter`.
+`CharZero F` is assumed as in the statements on orbital integrals, twisted characters,
+pseudo-coefficients and discrete-series σ-lifts: the concordance of test functions inside `IsSigmaLift` uses
 the Library's `IsRegularSemisimple` (separable characteristic polynomial), which agrees with
 HL's regularity (squarefree characteristic polynomial) in characteristic zero; Arthur–Clozel
 also work in characteristic zero.
@@ -140,14 +141,14 @@ also work in characteristic zero.
 ## Proof routes
 
 HL prove the Proposition as follows. `π` is essentially discrete, so `Π` is essentially
-σ-discrete (II.4.6, Théorème (1), and II.4.7: Task 7449). By the classification of σ-discrete
+σ-discrete (II.4.6, Théorème (1), and II.4.7: `DiscreteSeriesSigmaLiftStatement`). By the classification of σ-discrete
 series (II.4.6, citing Arthur–Clozel, Chapter 1, Lemma 2.8),
 `Π ≅ Π₁ × Π₁^σ × ⋯ × Π₁^{σ^{t-1}}` with `Π₁` essentially discrete and `σ^t` generating the
 stabilizer of its class. The identity of Rankin–Selberg factors
 `L(Π, Π̌) = ∏_{κ ∈ K(E/F)} L(π, κπ̌)` (II.4.6, Théorème (4)) and the properties of
 `L`-functions of pairs (II.3.5 (i) and (iii)) then give `t = s` and that `Π₁` is cuspidal.
 In prime degree Arthur–Clozel instead prove the cuspidality of the factor with Jacquet
-modules and the twisted Casselman theorem (Chapter 1, Proposition 2.3). A later proof task
+modules and the twisted Casselman theorem (Chapter 1, Proposition 2.3). A later proof
 must not derive this statement from a result that depends on it, in particular not from
 `CuspidalSigmaLiftExistenceStatement` if that is proved from this statement (as HL's
 Remarque is proved from the Proposition and its Corollaire).

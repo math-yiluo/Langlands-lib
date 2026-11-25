@@ -1,4 +1,4 @@
-import Langlands.ClassField.Global.TensorNormOnePrimitive
+import Langlands.ClassFieldTheory.Global.TensorNormOnePrimitive
 import Langlands.GroupScheme.Rational.CentralTensorDefectShapiro
 import Langlands.GroupScheme.Rational.NormOneTorsionAffinePoints
 
@@ -16,7 +16,7 @@ namespace Langlands.GroupScheme
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 
-open Langlands.Algebra Langlands.ClassField.Global.TensorUnitShapiro
+open Langlands.Algebra Langlands.ClassFieldTheory.Global.TensorUnitShapiro
 
 variable {F B L : Type u} [Field F] [Field B] [Field L]
   [Algebra F B] [FiniteDimensional F B] [Algebra F L]

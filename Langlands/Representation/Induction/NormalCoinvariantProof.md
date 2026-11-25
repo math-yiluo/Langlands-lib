@@ -1,9 +1,8 @@
 # Compact induction commutes with normal coinvariants
 
-Worker 182 proves the published proposition
+This file proves the published proposition
 `Langlands.Induction.CompactInductionNormalCoinvariants.{uG,uV}` as
-`Langlands.Induction.compactInductionNormalCoinvariants`. The statement and
-every imported Lean/Markdown pair are preserved.
+`Langlands.Induction.compactInductionNormalCoinvariants`.
 
 ## Exact scope and maps
 
@@ -107,7 +106,7 @@ retained original is
 SHA-256
 `8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092`.
 That section, including its reduction diagram and continuation, was read in
-full during this task; no source-specific project errata was found.
+full; no source-specific project errata was found.
 
 In the source, `V ⊆ M = P` corresponds to `N ≤ H`, with trivial `U`,
 `Q = G`, and trivial character. Normality makes `N` act trivially on

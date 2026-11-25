@@ -39,9 +39,9 @@ The three supporting modules contain the following implemented arguments.
 
 The final theorem combines the centre equivalence and the derived-group
 identification, then discharges the quotient helper's determinant-one premise
-with that identification. All new supporting Lean/Markdown pairs are included
-in this contribution's repository paths, so the complete proof is reviewable
-without relying on a separate unpublished result.
+with that identification. All supporting Lean files and their pages are in the
+Library, so the complete proof can be checked without relying on a result
+outside the Library.
 
 The inherited mathematical provenance is Milne, *Algebraic Groups* (2017),
 Examples 6.22 and 12.47; the unchanged statement Markdown records the precise

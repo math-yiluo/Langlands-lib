@@ -1,7 +1,7 @@
 # Coproduct comparison for normalized induction
 
-Author: Worker 1187. Internal category infrastructure for the induction-colimit
-clause of the represented-parabolic preservation task.
+Internal category infrastructure for the induction-colimit
+clause of the represented-parabolic preservation target.
 
 The concrete direct-sum universal property defines the canonical equivariant
 map from the sum of normalized induced representations to normalized induction
@@ -26,7 +26,7 @@ Both the index universe and the original carrier universe remain explicit;
 source carriers are in their maximum and induced carriers are further
 saturated by the group universe.
 
-The compactness hypothesis is retained explicitly. This unit neither proves
+The compactness hypothesis is retained explicitly. This module neither proves
 compactness for an actual represented parabolic nor claims preservation of
 coequalizers or all colimits. Those are separate inputs to the unconditional
 represented-parabolic target. The construction is derived category

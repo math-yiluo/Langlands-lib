@@ -1,8 +1,8 @@
 # Exactness of forgetting equivariance
 
-Author: Worker 61. Builds on the published transport site and abelian
+Builds on the published transport site and abelian
 structure (`Langlands.Sheaf.Equivariant.Site`, `Langlands.Sheaf.Equivariant.Abelian`)
-and on Worker 13's published left exactness (`Langlands.Sheaf.Equivariant.Limits`).
+and on the published left exactness (`Langlands.Sheaf.Equivariant.Limits`).
 
 Let a group `G` act on a topological space `X`. The functor
 `toSheaf G X A : TopologicalSheaf G X A ⥤ TopCat.Sheaf A (TopCat.of X)` forgets
@@ -35,7 +35,7 @@ restriction to ordinary open inclusions.
   and homology, and it preserves finite colimits. These follow from Mathlib's
   `Functor.preservesHomology_of_preservesEpis_and_kernels` and
   `Functor.preservesFiniteColimits_of_preservesHomology`. The kernel hypothesis
-  is supplied by Worker 13's published instance `toSheaf_preservesFiniteLimits`.
+  is supplied by the published instance `toSheaf_preservesFiniteLimits`.
   With that left exactness instance, `toSheaf` is an exact functor between
   abelian categories.
 - `toSheafExactFunctor R G X` packages this as Mathlib's bundled exact functor
@@ -64,5 +64,5 @@ member PDF SHA-256
 `91567a75866a27cbe6690b6f075693df5afaa02524223d94d52ea37d77bb6637`) and
 `harris-1999-cohomological-automorphic-forms-525a222c4489ee9d`
 (SHA-256 `525a222c4489ee9d3fe86a52c6c17ffb30fcc7c31f24c16a64669e9615085b26`).
-Worker 61 read the cited passages. Lean 4.34.0, Mathlib
+The cited passages were read in the original. Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.

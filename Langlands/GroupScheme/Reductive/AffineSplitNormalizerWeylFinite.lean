@@ -646,7 +646,7 @@ theorem exists_finite_subgroup_of_representatives [DecidableEq I] [Finite J] [P.
   let H₀ : Subgroup N := Subgroup.closure (Set.range fun b : B => n' b)
   have hfg : Group.FG H₀ := by
     rw [Group.fg_iff_subgroup_fg]
-    exact ⟨(Set.finite_range _).toFinset, by rw [Set.Finite.coe_toFinset]⟩
+    exact Subgroup.isMulFG_iff.mpr ⟨(Set.finite_range _).toFinset, by rw [Set.Finite.coe_toFinset]⟩
   let f : H₀ →* N ⧸ K := (QuotientGroup.mk' K).comp H₀.subtype
   have hle : f.range ≤ L.range := by
     rintro _ ⟨⟨h, hh⟩, rfl⟩

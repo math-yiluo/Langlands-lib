@@ -22,7 +22,7 @@ open Polynomial
 
 universe u uQ uV uE
 
-namespace Langlands.ClassField.Global.RelativeWeilGroup
+namespace Langlands.ClassFieldTheory.Global.RelativeWeilGroup
 
 open Langlands.Global Langlands.Global.CompletionPadic
 open Langlands.Global.FunctionalEquationComparison Langlands.Global.AdelicFunctoriality
@@ -157,4 +157,4 @@ theorem meromorphicEq_gamma_of_isPairGammaMatch
   intro s
   exact (hD s).trans (hA s).symm
 
-end Langlands.ClassField.Global.RelativeWeilGroup
+end Langlands.ClassFieldTheory.Global.RelativeWeilGroup

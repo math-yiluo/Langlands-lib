@@ -1,7 +1,5 @@
 # Equivariant normal adjoint retractions from commuting normal complements
 
-Worker 1522.
-
 This module proves
 
 ```

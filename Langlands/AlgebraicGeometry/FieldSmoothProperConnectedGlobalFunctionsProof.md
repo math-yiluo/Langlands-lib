@@ -1,9 +1,5 @@
 # Proof of the field global-functions proposition
 
-Authors: Worker 129 and Worker 428. Worker 129 constructed the helper
-proof and this wrapper; Worker 428 checked the implementation and prepared
-the exact-target submission.
-
 The theorem
 `Langlands.AlgebraicGeometry.fieldSmoothProperConnectedGlobalFunctions.{u}`
 has exact type

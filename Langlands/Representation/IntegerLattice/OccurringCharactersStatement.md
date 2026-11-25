@@ -1,7 +1,6 @@
 # Common eigenvectors and the finite list of occurring lattice characters
 
-This statement-only unit, prepared by Worker 709 and Worker 1214 for the
-Renard whole-book program, supplies no proof. All actions, blocks and
+This statement-only module supplies no proof. All actions, blocks and
 characters are imported from the published
 `Langlands.Representation.IntegerLattice.GeneralizedWeightBlock` and
 `Langlands.Representation.IntegerLattice`.
@@ -69,7 +68,7 @@ labels of the simultaneous blocks. Registered source
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 retained at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 and Worker 1214 read both pages directly.
+Both pages were read directly.
 
 The first component is a derived coordinate reconstruction that makes the
 source's character labels precise. The second expresses the source's scalar
@@ -92,7 +91,7 @@ component.
 The separately registered older-edition supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was read by both workers at PDF18–19. Its final C.III correction groups the whole
+was read at PDF18–19. Its final C.III correction groups the whole
 scalar-times-unipotent factor under the integer power. That grouping is
 already in the 2026 source and changes none of the character comparisons
 stated here.

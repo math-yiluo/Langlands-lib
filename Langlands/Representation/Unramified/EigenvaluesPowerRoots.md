@@ -1,6 +1,6 @@
 # Powers of a spectrum with an induced Euler polynomial
 
-Worker 5130 wrote this module for Task 7784. Weak induction (Harris 1998, Definition 1.3(b))
+Weak induction (Harris 1998, Definition 1.3(b))
 prescribes the Euler polynomial at an unramified place `v` as a product
 `∏_w (1 - c_w X^{f_w})` over the places `w` above `v`. Weak base change prescribes `N`-th
 powers of spectra (`Eigenvalues.power`). Comparing the two needs the spectrum of `N`-th

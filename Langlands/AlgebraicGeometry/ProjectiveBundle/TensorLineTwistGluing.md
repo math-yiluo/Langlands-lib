@@ -1,6 +1,6 @@
 # The global degree-one comparison for tensoring by a line bundle
 
-This internal derived unit works over any `S : Scheme.{u}`, with actual
+This internal derived module works over any `S : Scheme.{u}`, with actual
 module sheaves `M`, `N`, a natural number `n`, local freeness of `M` of rank
 `n + 1`, and rank-one local freeness of `N`. Both projective schemes are
 the genuine joint frame atlases already constructed from these hypotheses.
@@ -46,11 +46,12 @@ compatibility assumptions.
 The tensor factor in this global formula is on the pulled-back source
 degree-one module. The older local definitions `tensorTwistChartIso`
 and `twistChartIso` in `TensorLineTwistCharts` are not used as the
-gluing family, and this unit makes no compatibility assertion for them.
+gluing family, and this module makes no compatibility assertion for them.
 
 The constructions and proofs derive from the published actual frame
 atlases, the source and base-line restriction equations, the tensor
 transition scalar formula, tensor contraction, and module gluing on an
 intersection-closed frame atlas. No new literature assertion is used.
-Transport to the fixed `FrameBundle`, the relative cubic embedding,
-and the ordinary-moduli representability theorem remain further work.
+Transport to the fixed `FrameBundle` is constructed in `TensorLineFrameTwist`;
+the relative cubic embedding is not part of this module, and the
+ordinary-moduli representability theorem remains unproved.

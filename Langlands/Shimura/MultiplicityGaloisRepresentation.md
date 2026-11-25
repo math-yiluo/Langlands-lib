@@ -39,21 +39,18 @@ Harris is formalized.
 - `Langlands.IsSmooth ρ` (`Langlands/Representation/Smooth/Definitions.lean`):
   every vector lies in `Langlands.fixedVectors ρ V` for some open subgroup
   `V`.
-- From `Langlands.Shimura.IsotypicGaloisAction` (candidate
-  `06482d9c-709f-449e-bd42-538102e24d51`, accepted and awaiting
-  publication): `galoisRepresentation X`, the representation of `Γ` on the
+- From the published `Langlands.Shimura.IsotypicGaloisAction`:
+  `galoisRepresentation X`, the representation of `Γ` on the
   space of `X : Action (SmoothRep R G) Γ`, with `galoisRepresentation_apply`
   and `galoisRepresentation_commutes`; `isotypicGaloisRepresentation τ Γ X`
   on the `τ`-isotypic part; `multiplicityActionFunctor τ Γ` and
   `multiplicityRepresentation τ Γ X` on `τ.IntertwiningMap X.V.representation`.
-- From `Langlands.Shimura.IsotypicDecompositionAction` (candidate
-  `65e8e325-c197-47a1-ab0b-91df2848f8b4`, accepted and awaiting
-  publication): `IsUnramifiedAlong.multiplicity`.
-- From `Langlands.Shimura.ContinuousGaloisAction` (candidate
-  `5c2f38db-a736-4706-aa12-6de9f8bf0b33`, accepted and awaiting
-  publication): `toObjects`, `hasEulerPolynomialAt_toObjects_iff` and
-  `hasEulerPolynomialAt_toObjects_iff_along`. From
-  `Langlands.Shimura.FrobeniusPolynomial` (same candidate):
+- From the published `Langlands.Shimura.IsotypicDecompositionAction`:
+  `IsUnramifiedAlong.multiplicity`.
+- From the published `Langlands.Shimura.ContinuousGaloisAction`:
+  `toObjects`, `hasEulerPolynomialAt_toObjects_iff` and
+  `hasEulerPolynomialAt_toObjects_iff_along`. From the published
+  `Langlands.Shimura.FrobeniusPolynomial`:
   `frobeniusEulerPolynomial`.
 - From the published `Langlands.Shimura.DecompositionGroupAction`:
   `IsUnramifiedAt`, `IsUnramifiedAlong` and `geometricFrobenius`.

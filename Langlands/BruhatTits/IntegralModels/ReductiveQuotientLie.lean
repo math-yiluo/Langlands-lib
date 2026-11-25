@@ -133,7 +133,8 @@ theorem mem_radicalLie_iff (X : GenericLie R D.neutral.specialFibre) :
   constructor
   · rintro ⟨Z, hZ⟩
     refine ⟨(GenericLie.equiv R Q.radical).symm Z, ?_⟩
-    rw [GenericLie.map_apply, LinearEquiv.apply_symm_apply, hZ, LinearEquiv.symm_apply_apply]
+    rw [GenericLie.map_apply, LinearEquiv.apply_symm_apply, hZ]
+    simp only [LinearEquiv.symm_apply_apply]
   · rintro ⟨Z, rfl⟩
     exact ⟨GenericLie.equiv R Q.radical Z, rfl⟩
 
@@ -245,7 +246,7 @@ theorem positiveLieLattice_eq_sup (hN : N.IsSmooth) (hsm : Smooth s.hom.hom.left
   obtain ⟨Y, hY⟩ := Q.exists_lieReduction_eq hQ φ s hs hN hsm X hX
   have hker : X - Lie.targetMapLinear φ.hom (CommRingCat.of R) Y ∈
       LinearMap.ker D.neutral.lieReduction := by
-    rw [LinearMap.mem_ker, map_sub, hY, sub_self]
+    rw [LinearMap.mem_ker, LinearMap.map_sub, hY, sub_self]
   rw [IntegralModel.ker_lieReduction D.neutral_smooth] at hker
   rw [lieMap_eq_add φ X Y]
   refine Submodule.add_mem_sup ⟨Y, rfl⟩ ?_

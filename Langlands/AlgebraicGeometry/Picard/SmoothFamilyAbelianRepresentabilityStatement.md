@@ -1,8 +1,5 @@
 # An abelian-scheme parameter for universal smooth-family classes
 
-Statement design: Workers 402, 302 and 443. Formalization and source reading:
-Worker 141.
-
 `Langlands.AbelianScheme.SmoothFamilyAbelianRepresentabilityStatement.{u}`
 is the proposition
 
@@ -117,7 +114,7 @@ The citations supply motivation and conventions, not an imported Lean proof.
 
 ## Proof obligations and the shared construction
 
-A future proof must construct this actual `B` and `L`, prove the global
+A proof must construct this actual `B` and `L`, prove the global
 smooth-family condition, and classify families on every quasi-separated
 test, including nonreduced tests. It must establish the applicable
 ordinary/geometric-fibre comparisons, the comparison of explicit
@@ -125,9 +122,11 @@ smooth-family witnesses with divisor algebraic equivalence or Picard
 components, rigidification or normalization, and product-order transport.
 A geometric-point bijection or existence of a parameter without the
 specified abelian-scheme structure does not prove this proposition.
-Comparison with geometric translation invariance remains separately owned.
+Comparison with geometric translation invariance is a separate statement,
+`SmoothFamilyPicardZeroComparisonStatement` (proved as
+`smoothFamilyPicardZeroComparison`).
 
-The single pair is intended to feed the unchanged weaker
+The single pair is intended to feed the weaker
 `SmoothFamilyQuasiSeparatedRepresentabilityStatement` by using `P := B.X`
 and the same `L`, and to supply common geometry for
 `SmoothFamilyFlatStatement` and `SmoothFamilyFinitePresentationStatement`.
@@ -136,11 +135,9 @@ this statement adds no restriction to their `P`. Comparing their supplied
 universal families with this pair remains a separate actual-family
 isomorphism argument.
 
-The existing predicates, statements and imported closures are unchanged,
-including `RelativeDualSchemeExistenceStatement`, whose universal property
-uses geometric translation invariance on all tests. Existence, source
-comparisons, quasi-separated-test isomorphism detection, and extension by
-bundle-isomorphism gluing retain their separate ownership and operator
-pauses. Neither chosen-dual geometry nor the relative-existence parent may
-be used circularly to construct this pair. Only a separately accepted and
-published exact proof will provide the common construction.
+The relative-existence statement `RelativeDualSchemeExistenceStatement` uses
+geometric translation invariance on all tests in its universal property.
+Neither chosen-dual geometry nor the relative-existence parent may
+be used circularly to construct this pair. The Library's proof
+`smoothFamilyAbelianRepresentability` (module
+`SmoothFamilyAbelianRepresentabilityProof`) provides the common construction.

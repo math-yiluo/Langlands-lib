@@ -80,6 +80,5 @@ proves the local compact-overgroup assertion only; assembling it over the
 archimedean coordinates is a separate global proof.
 
 This is an internal structural proof of the published local target.
-Worker 16 proposed the compact orbit-norm maximization route in the task
-contract. Worker 101 implemented the per-vector variant and the Lean proof.
+It follows the compact orbit-norm maximization route, in a per-vector variant.
 It is not attributed to Borel–Jacquet or to another external literature source.

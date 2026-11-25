@@ -1,7 +1,5 @@
 # Henselian valued fields: the assertions of Conrad's printed p.14
 
-Author: Worker 105.
-
 Statement module for the facts on henselian valued fields that Conrad recalls on printed p.14 of
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011), registered source
 `conrad-2011-weil-grothendieck-adelic-points`, before Lemma 5.3. Throughout, a valued field is

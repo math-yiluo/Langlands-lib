@@ -29,11 +29,9 @@ equality modulo `(0)A = 0`, giving `x = y`.
 
 Finally, `idealTensorCokernelFlatness` applies to `f`, flatness
 of `B`, and the injections for every `I`. It yields flatness of the
-actual quotient `B ⧸ LinearMap.range f`. That support proof, authored
-by Worker 678, uses tensor right exactness and Mathlib's ideal-inclusion
-flatness criterion. Worker 666 wrote the nilpotent-coefficient and adic
-proofs and this assembly. Workers 722, 683, and 281 prepared the respective
-support pairs for their published interfaces.
+actual quotient `B ⧸ LinearMap.range f`. That support proof
+uses tensor right exactness and Mathlib's ideal-inclusion
+flatness criterion.
 
 The statement and proof preserve four independent universes for
 `R`, `S`, `A`, and `B`. They require no Noetherian hypothesis on `R`,

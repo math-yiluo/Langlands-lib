@@ -1,7 +1,5 @@
 # Actual coefficient embeddings into central L2
 
-Author: Worker 386.
-
 This internal construction restricts the published actual central coefficient
 map to the published central L2 subrepresentation, proves that it is injective
 for an irreducible source and a nonzero functional, and pulls back the actual

@@ -9,7 +9,7 @@ Copyright (c) 2025 Madison Crim; authors: Madison Crim; Apache License, Version 
 Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lakefile options
 are set after the imports. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 400000
 set_option backward.isDefEq.respectTransparency.types false

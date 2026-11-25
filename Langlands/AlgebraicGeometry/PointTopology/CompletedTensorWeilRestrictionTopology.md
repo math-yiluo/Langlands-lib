@@ -1,7 +1,5 @@
 # Completed-tensor decomposition of actual Weil point topologies
 
-Author: Worker 208.
-
 This construction implements the local product comparison used in Brian Conrad,
 *Weil and Grothendieck approaches to adelic points* (December 31, 2011),
 Example 4.2, printed page 10. The registered source is

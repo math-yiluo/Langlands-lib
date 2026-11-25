@@ -1,6 +1,6 @@
 # Actual complementary-block continuations from transformed matrix data
 
-Worker 396. Internal derived prerequisite for the actual rank-one matrix
+Internal derived prerequisite for the actual rank-one matrix
 functional-equation comparison. Field and representation-carrier universes
 remain independent; the original representation may be reducible.
 
@@ -60,8 +60,8 @@ variable all retained.
 
 The derivation uses published compact support and row integration rather
 than a multiplicativity assertion or a conditional I1/I2/I3 comparison.
-It imports the separately submitted OriginalBlockZero and DualConvergence
-pairs unchanged. It asserts no new original-source transcription. These
+It imports the OriginalBlockZero and DualConvergence modules
+unchanged. It asserts no new original-source transcription. These
 results establish continuations of the actual scalar integrals; they do
 not prove complementary-block absolute convergence, the paired normalized
 functional equation, or the final all-rank gamma comparison.

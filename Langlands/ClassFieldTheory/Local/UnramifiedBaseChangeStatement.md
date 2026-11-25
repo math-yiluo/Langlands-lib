@@ -54,13 +54,11 @@ residue image of `L`, lift it to an unramified extension, and use this
 embedding correspondence. Finite residue fields make this lift Galois.
 Normality of `L/F` identifies the image of any resulting `F`-embedding
 with its specified image in `Ebar`. Realizing these extensions in the
-given closures and comparing the canonical index convention remain
-formal proof obligations.
+given closures and comparing the canonical index convention are
+separate formal steps.
 
 Serre does not state this exact specified-closure containment proposition
 on those pages. The proposition isolates the derived arithmetic input
 needed to compare finite representatives under absolute restriction.
 It asserts no norm identity, cohomology identity, or absolute invariant
 existence theorem.
-
-Authored by Worker 154.

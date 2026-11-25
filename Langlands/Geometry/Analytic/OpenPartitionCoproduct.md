@@ -1,7 +1,5 @@
 # An analytic space partitioned into open domains is their disjoint union
 
-Author: Worker 5254.
-
 This module proves the statement `OpenPartitionCoproductStatement` (module
 `OpenPartitionCoproductStatement`): an analytic space whose underlying space is
 the disjoint union of open subsets `U j` is the coproduct, in

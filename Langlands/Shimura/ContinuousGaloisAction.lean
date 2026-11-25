@@ -90,7 +90,7 @@ def finiteRepresentation : FiniteRepresentation.{uL, uK, uV} L (Field.absoluteGa
   ⟨(Rep.ActionToRep L _).obj M, inferInstanceAs (Module.Finite L M.V)⟩
 
 @[simp] theorem finiteRepresentation_representation_apply (g : Field.absoluteGaloisGroup K) :
-    (finiteRepresentation M).representation g = (M.ρ g).hom :=
+    (finiteRepresentation M).representation g = (M.ρ g).asHom.hom :=
   rfl
 
 theorem finiteRepresentation_rank : (finiteRepresentation M).rank = Module.finrank L M.V :=
@@ -119,11 +119,11 @@ variable (hM : IsSmooth ((Rep.ActionToRep L (Field.absoluteGaloisGroup K)).obj M
   rfl
 
 theorem characteristicPolynomial_toObjects (g : Field.absoluteGaloisGroup K) :
-    GaloisRepresentation.characteristicPolynomial (toObjects M hM) g = (M.ρ g).hom.charpoly :=
+    GaloisRepresentation.characteristicPolynomial (toObjects M hM) g = (M.ρ g).asHom.hom.charpoly :=
   rfl
 
 theorem eulerPolynomial_toObjects (g : Field.absoluteGaloisGroup K) :
-    GaloisRepresentation.eulerPolynomial (toObjects M hM) g = (M.ρ g).hom.charpoly.reverse :=
+    GaloisRepresentation.eulerPolynomial (toObjects M hM) g = (M.ρ g).asHom.hom.charpoly.reverse :=
   rfl
 
 /-- The isomorphism class of a smooth Galois action as a continuous Galois representation. -/
@@ -150,7 +150,7 @@ theorem toClass_eq_of_iso {N : Action (ModuleCat.{uV} L) (Field.absoluteGaloisGr
 variable (M)
 
 theorem classEulerPolynomial_toClass (g : Field.absoluteGaloisGroup K) :
-    GaloisRepresentation.classEulerPolynomial g (toClass M hM) = (M.ρ g).hom.charpoly.reverse :=
+    GaloisRepresentation.classEulerPolynomial g (toClass M hM) = (M.ρ g).asHom.hom.charpoly.reverse :=
   rfl
 
 /-! ## Unramifiedness and Frobenius at finite places -/
@@ -160,14 +160,15 @@ variable [NumberField K] (v : Global.FinitePlace K)
 theorem atFinitePlace_toObjects_representation_apply (g : LocalGroup v) :
     (GaloisRepresentation.atFinitePlace v (toObjects M hM)).val.representation g =
       (M.ρ (localRestriction v
-        (chosenClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)) g)).hom :=
+        (chosenClosureEmbedding (NumberField.FinitePlace.embedding (K := K) v)) g)).asHom.hom :=
   rfl
 
 /-- Unramifiedness of the continuous Galois representation is unramifiedness of the action. -/
 theorem isUnramifiedAt_toObjects_iff :
     GaloisRepresentation.IsUnramifiedAt (toObjects M hM) v ↔
       DecompositionGroupAction.IsUnramifiedAt (ModuleCat.{uV} L) v M :=
-  forall_congr' fun _ => ⟨fun h => ModuleCat.hom_ext h, fun h => congrArg ModuleCat.Hom.hom h⟩
+  forall_congr' fun _ => ⟨fun h => End.ext (ModuleCat.hom_ext h),
+    fun h => congrArg ModuleCat.Hom.hom (congrArg End.asHom h)⟩
 
 /-- The Euler polynomial at the chosen geometric Frobenius lift is the Frobenius Euler polynomial
 of the action. -/

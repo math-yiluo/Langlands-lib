@@ -1,7 +1,5 @@
 # Coefficient growth on the Levi scheme and the actual Levi subgroup
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927`, revision 1.
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalLeviTempered`.
 All declarations below are in `Langlands.HarishChandraSchwartz`.
 

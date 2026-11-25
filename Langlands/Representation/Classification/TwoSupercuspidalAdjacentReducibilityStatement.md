@@ -1,8 +1,5 @@
 # Reducibility of an adjacent two-supercuspidal product
 
-Author: Worker 480. The exact proposition body was supplied in Worker 892's
-task specification and is retained unchanged.
-
 `Langlands.Classification.TwoSupercuspidalAdjacentProductReducible.{uF,uV} F T`
 states the reducibility step of Zelevinsky 1980, Proposition 1.11(b), for
 actual upper normalized induced representations over p-adic fields.
@@ -125,10 +122,11 @@ universes is imposed. The induced function-space carrier lies in
 The source has no universe parameters; these are the Library's explicit size
 parameters. The entry declaration retains both in the order `.{uF,uV}`.
 
-## Boundary for the proof successor
+## Boundary for a proof
 
 A proof must establish this proposition for the actual Library objects without
-additional theorem-valued assumptions. Ze80's sketch uses a common compact
+additional theorem-valued assumptions; `twoSupercuspidalAdjacentProductReducible`
+in `TwoSupercuspidalAdjacentReducibilityProof` does so. Ze80's sketch uses a common compact
 realization of `π_s = ν^(-s)ρ₀ × ν^sρ₀`. Its reduction to unitary `ρ₀`
 (reference [9], Proposition 5.1), the invariant Hermitian forms and their
 uniqueness and analytic dependence (reference [13], §4), their nondegeneracy
@@ -137,9 +135,9 @@ large `|s|` all require proofs if this route is used. Replacing `s` by `-s`
 gives the equally parametrized family with the two exponents reversed.
 
 The nonadjacent irreducibility used away from `s = ±1/2` and the needed
-consequence of Ze80 Theorem 1.9 also require independent accepted proofs.
-Statements, pending drafts, and citations cannot supply these inputs.
-The proof successor must preserve the full task's independence exclusions:
+consequence of Ze80 Theorem 1.9 also require independent proofs.
+Statements, drafts, and citations cannot supply these inputs.
+A proof must keep this result independent of the later classification:
 in particular it cannot use segment or multisegment classification,
 exhaustion, segment Jacquet or derivative formulas, segment product
 irreducibility criteria, or the downstream analytic or square-integrability
@@ -166,7 +164,7 @@ none of its asserted propositions is being used as a proved premise.
   The positive half-module sign on PDF p.5 was checked in the rendered
   original.
 
-No source-specific errata note for either ID was present in the current
+No source-specific errata note for either ID was present in the
 Library or project notes, and no applicable errata entry was found in the
 retained literature index when checked on 2026-10-29. This records the bounded
 local check, not an assertion that no errata exist elsewhere.

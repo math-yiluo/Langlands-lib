@@ -1,18 +1,19 @@
 # FAG import closures, assumption scan and focused compile
 
 Evidence for [`../etale-premises-sheaf-libraries-audit.md`](../etale-premises-sheaf-libraries-audit.md),
-Section 5.6 (Task 7360, item 5 for FAG). Worker 19 prepared it on 17 November 2026 and
-regenerated every closure and scan on 18 November 2026 with a corrected import parser (see
-"Correction" below). After the fifth review Worker 19 recomputed every line count as a count of
-newline characters and added the closures of nine further modules (last two sections before
-the compile). The first closure and scan data were given to Task 7342 (Laumon's
-theorem). This is an unreviewed
-development record. It is not a Library statement and does not accept any FAG declaration.
+Section 5.6 (item 5 for FAG). It was prepared on 17 November 2026, and every closure and
+scan was regenerated on 18 November 2026 with a corrected import parser (see "Correction"
+below). Later every line count was recomputed as a count of newline characters, and the
+closures of nine further modules were added (last two sections before the compile). The first
+closure and scan data served the study of Laumon's theorem; the five modules used there are
+called the Laumon roots below, and their import closures the Laumon closures. This is a
+development record. It is not a Library statement and does not make any FAG declaration part
+of the Library.
 
 ## Source
 
 formal-arithmetic-geometry/weil-conjectures at commit `a25955cde4f85f67bef3149a6efc3efe20c22132`,
-registered literature `formal-arithmetic-geometry-weil-conjectures-a25955c`. Worker 19 read a
+registered literature `formal-arithmetic-geometry-weil-conjectures-a25955c`. The scan read a
 depth-1 git checkout of that commit. Module names below are relative to the root namespace
 `WeilConjectures` unless written in full. File paths are relative to the repository root.
 
@@ -52,19 +53,19 @@ A text scan cannot tell whether a root theorem depends on a `sorry` in its closu
 **Correction.** The first version of this report read the header line by line and ended it
 at the first line that was not a complete import command. A wrapped `public import` (the
 module name on the next line) ended the header, so that import and every later one in the
-file were missed. The reviewer of the fourth version found this (review `548326da`); for
+file were missed. A later check found this; for
 example `SixFunctors/Etale/Derived/DirectImageVanishingTorsion.lean:11-12` and
 `SixFunctors/Etale/SmoothBaseChange/HigherDirectImage/CohomPresheaf.lean:12-13` wrap their
 imports. With the corrected parser the premise closure grew from 7,255 to 7,275 modules and the
-union of the Task 7342 closures from 16,814 to 16,839. The 19 premise modules outside that
+union of the Laumon closures from 16,814 to 16,839. The 19 premise modules outside that
 union are the same 19 modules, and the 17 `sorry` sites are the same 17 sites. The tables
 below are from the corrected run; the earlier figures are given in brackets where they
 changed. The focused compile at the end of this report used a fixed list of 467 modules,
 which the corrected parser reproduces, so it is unaffected.
 
-**Line counts.** Up to the fifth version, the "Lines" column counted one more line per file
-than the number of newline characters. The reviewer of the
-fifth version found this (review `4ab78da8`): for example 103,409 was reported for the
+**Line counts.** In earlier versions of this report, the "Lines" column counted one more line per file
+than the number of newline characters. A later check
+found this: for example 103,409 was reported for the
 467-module closure of `CohomologyLimit`, which has 102,942 newline characters. Every "Lines"
 figure below is now a count of newline characters, so the FAG and Stacks tables use the same
 convention. The module counts and the scans did not change.
@@ -79,12 +80,12 @@ convention. The module counts and the scans did not change.
 | `SixFunctors.Etale.Derived.Finiteness.Proper` | 7,050 [7,030] | 1,204,390 | 1,569 | 0 |
 | `AlgebraicGeometry.Sites.CohomologyLimit` | 467 | 102,942 | 603 | 0 |
 | **union of these five (the premise closure)** | **7,275 [7,255]** | **1,252,455** | **1,578** | **0** |
-| `TraceFormula.Specialization.NearbyFiniteness` (Task 7342) | 14,545 [14,525] | 3,074,777 | 1,887 | 11 |
-| `SixFunctors.NearbyCycles.GaloisAction` (Task 7342) | 13,484 [13,464] | 2,867,634 | 1,849 | 11 |
-| `FourierTransform.Inversion` (Task 7342) | 8,460 [8,440] | 1,505,236 | 1,664 | 1 |
-| `WeilSheaf.FourierInversion` (Task 7342) | 16,818 [16,793] | 3,490,737 | 1,935 | 14 |
-| `WeilSheaf.WeilFourierInversion` (Task 7342) | 13,533 [13,513] | 2,879,580 | 1,862 | 13 |
-| union of the five Task 7342 roots | 16,839 [16,814] | 3,494,755 | 1,935 | 17 |
+| `TraceFormula.Specialization.NearbyFiniteness` (Laumon root) | 14,545 [14,525] | 3,074,777 | 1,887 | 11 |
+| `SixFunctors.NearbyCycles.GaloisAction` (Laumon root) | 13,484 [13,464] | 2,867,634 | 1,849 | 11 |
+| `FourierTransform.Inversion` (Laumon root) | 8,460 [8,440] | 1,505,236 | 1,664 | 1 |
+| `WeilSheaf.FourierInversion` (Laumon root) | 16,818 [16,793] | 3,490,737 | 1,935 | 14 |
+| `WeilSheaf.WeilFourierInversion` (Laumon root) | 13,533 [13,513] | 2,879,580 | 1,862 | 13 |
+| union of the five Laumon roots | 16,839 [16,814] | 3,494,755 | 1,935 | 17 |
 | `Statement` (the headline Weil conjectures) | 17,339 [17,314] | 3,610,380 | 1,991 | 14 |
 | whole repository (roots `WeilConjectures` and `WeilConjectures.Statement`) | 26,796 | 5,482,914 | 2,186 | 209 |
 
@@ -113,7 +114,7 @@ count did not change because its root module imports every module.
 - 4,469 lines `set_option backward.…` (elaboration options such as
   `backward.isDefEq.respectTransparency`, which change elaboration, not the kernel).
 
-**Larger closures.** The Task 7342 closures, the headline closure and the whole repository also
+**Larger closures.** The Laumon closures, the headline closure and the whole repository also
 contain `WeilConjectures/Tactic/FirstOrderApply.lean`. Its tactic adds theorem declarations with
 `addDecl (.thmDecl …)` (line 470), which the kernel checks, and it keeps an `IO.Ref` declared
 with `initialize` (line 45). The whole repository has a second `addDecl` hit outside these
@@ -122,7 +123,7 @@ not read one by one.
 
 ## `sorry` sites
 
-Seventeen distinct sites occur in the union of the Task 7342 closures. The letters say which
+Seventeen distinct sites occur in the union of the Laumon closures. The letters say which
 roots' closures contain each site: N = `TraceFormula.Specialization.NearbyFiniteness`, G =
 `SixFunctors.NearbyCycles.GaloisAction`, I = `FourierTransform.Inversion`, F =
 `WeilSheaf.FourierInversion`, W = `WeilSheaf.WeilFourierInversion`.
@@ -156,9 +157,9 @@ sites of the whole repository lie in 155 files: 113 under `WeilConjectures/Algeb
 `PoincareDuality`, 8 under `WeilSheaf`, 6 under `Algebra`, 4 under `DeligneLaumon`, 2 under
 `EtaleCohomology`, and one each under `ProperBaseChange`, `RingTheory` and `Topology`.
 
-## Premise modules outside the Task 7342 closures
+## Premise modules outside the Laumon closures
 
-All but 19 of the 7,275 premise modules lie in the union of the five Task 7342 closures. The 19
+All but 19 of the 7,275 premise modules lie in the union of the five Laumon closures. The 19
 are the same with both parsers:
 
 - `AlgebraicGeometry.Sites.CohomologyLimit` (Stacks tag 09YQ) and fifteen modules that it
@@ -174,19 +175,19 @@ are the same with both parsers:
   `SixFunctors.Etale.BaseChangeTheorems.SmoothProperLocallyConstant` and
   `SixFunctors.Etale.BaseChangeTheorems.SmoothProperSpecialization`.
 
-## Modules cited after the third and fourth reviews
+## Modules cited for statements C.5–C.9
 
-Worker 19 ran the corrected script on 18 November 2026 for the modules that the revised audit
+The corrected script was run on 18 November 2026 for the modules that the audit
 cites for generic base change over a field (statements C.5), for Galois actions over a field
 (C.6), for inertia (C.7) and for the stalk formula (C.9). The smooth-source theorem (C.8)
 `Etale.smoothGenericDirectImage` lies in the `Deligne` module itself, so it adds no root. The
 prime-field form from which it is derived, in `AlgebraicGeometry.SmoothGenericDirectImage`
 (also C.8), has a closure of 8,210 modules, all inside the `Deligne` closure and inside the
-Task 7342 closures.
+Laumon closures.
 Topological invariance (03SI, `SixFunctors.Etale.UpperLowerStar.TopologicalInvariance`, also in
 C.9) is already in the premise closure, through `AlgebraicGeometry.Sites.CohomologyLimit`.
 "Outside P" counts the modules not in the premise closure above (7,275 modules). "Outside
-P ∪ T" counts those not in the union of the premise closure and the five Task 7342 closures
+P ∪ T" counts those not in the union of the premise closure and the five Laumon closures
 (16,858 modules). The first nine rows were first computed with the line-by-line parser; the
 earlier figures are given in brackets where they changed.
 
@@ -239,9 +240,9 @@ twelve modules `AlgebraicGeometry.FundamentalGroup.*` (`DenseOpen`, `DenseOpenNo
 of `LowerStarSpecialization` are `ConstructibleSheaf.LowerStarOpenStalk` and
 `ConstructibleSheaf.LowerStarSpecialization`.
 
-## Modules cited after the fifth review
+## Nine further cited modules
 
-Worker 19 ran the same script for the nine modules that the audit cites after the fifth review:
+The same script was run for nine further modules that the audit cites:
 the limit cones over finite subextensions and 09YQ for `Sheaf.H` (statements C.10, route (i)
 of bridge F3), the factorization of a geometric point through its strict localization and its
 use over a field (C.10), and the comparisons of cohomology groups and the cospecialization map
@@ -266,19 +267,19 @@ T" are as in the previous section.
 
 The module outside P ∪ T in the `CondensedModelFiniteLevelColimit` closure is the root
 itself, and so is the one in the `ConstantCohomologyExt` closure. `IntermediateFieldLimit`
-lies in the Task 7342 closures but not in the premise closure. The scan finds in these closures
+lies in the Laumon closures but not in the premise closure. The scan finds in these closures
 no `sorry`, `sorryAx`, `admit`, axiom declaration, `opaque`, `implemented_by`, `extern`,
 `unsafe`, `native_decide`, `decide +native`, `skipKernelTC`, `ofReduceBool`, `addDecl`,
 `#eval`, `initialize`, `maxHeartbeats 0` or `set_option debug.`. The `ConstantCohomologyExt`
 closure has the six `run_tac` blocks and the two `lia` macros of the premise closure; the
 other eight have no hits other than `set_option backward.…` lines. The union of all 26 roots has the 33
-`run_tac` blocks and the two macros of the `Deligne` closure. Worker 22 recounted, with
-separate tools, the nine module counts, the counts outside P ∪ T and both unions with their
-lines, and found the same values.
+`run_tac` blocks and the two macros of the `Deligne` closure. A separate recount, with
+other tools, of the nine module counts, the counts outside P ∪ T and both unions with their
+lines found the same values.
 
-## Modules cited after the sixth review
+## Two modules cited for bridge F5
 
-Worker 19 ran the same script for the two modules that bridge F5 cites after the sixth review
+The same script was run for the two modules that bridge F5 cites
 (statements C.12): the universal property of the strict localization and the strict
 henselianity of `B_Q`. The germ formulas cited with them are in `Cospecialization`,
 `LowerStarSpecialization` and `BoundaryStalk`, which are already counted.
@@ -291,7 +292,7 @@ henselianity of `B_Q`. The germ formulas cited with them are in `Cospecializatio
 
 The three modules of the `StrictLocalizationUniversal` closure outside P are the root,
 `AlgebraicGeometry.Sites.StrictLocalizationMap` and
-`AlgebraicGeometry.FundamentalGroup.Representable`, all three in the Task 7342 closures. The
+`AlgebraicGeometry.FundamentalGroup.Representable`, all three in the Laumon closures. The
 two closures have no hits other than `set_option backward.…` lines.
 
 ## Focused compile on the Library's Lean pin
@@ -303,11 +304,11 @@ draft. All 467 files are byte-identical to the files at the pin. Their aggregate
 of `sha256sum` run on the 467 relative paths in byte order. The Lean service reported the tree
 hash as beginning `40aa7a8f`.
 
-**Environment.** `5c94c648-e8dc-4002-a50a-071ebf3f6096`: Lean 4.34.0, Mathlib
+**Environment.** Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. FAG itself is on Lean 4.35.0 and Mathlib
 `56a005855ea17e0b0958f73ec801ae140b0a1679`.
 
-**Result.** Diagnostic `ff82cdad-732c-4940-8edb-8f8a1383d0a7`: the build fails. Lake built 190
+**Result.** The build fails. Lake built 190
 modules and 70 failed with 346 errors. The remaining 207 were not built, so 346 is a lower bound
 for the closure. By origin, the failed modules are 50
 under `WeilConjectures/Mathlib` (200 errors), 10 under `WeilConjectures/FromJoel` (80 errors) and
@@ -339,7 +340,7 @@ Errors by kind:
 These are the errors of a newer Mathlib's API meeting an older one: renamed or removed lemmas,
 changed definitions that make proofs by `rfl`, `simp`, `rw` and `aesop` fail, and kernel
 errors, mostly in `FromJoel` files. No edit was attempted. At this count, bringing the
-closure to the Library's pin is a port, which this task does not start.
+closure to the Library's pin is a port, which this report does not start.
 
 Failed modules, with the number of errors and the first error (names without the prefix
 `WeilConjectures.`):

@@ -27,17 +27,16 @@ datum of `x` is linked to one of `y`), `IsRealMoeglinUnlinked ds`, `IsRealLangla
 * such that `ℓ(π(1 ⊗ E_{p+1,p})^k v) = 0` for every `v`, where `E_{p+1,p}` is
   `Matrix.single ⟨p + 1, hp⟩ ⟨p, _⟩ 1`.
 
-This is exactly the conclusion of the statement `RealLinkedJacquetFunctionalStatement` (S2) of
-Task 7070 (module `RealLinkedJacquetFunctional`, accepted candidate 1cd3f2d0, not yet in the
-Library), whose `lowerRootMatrix n p hp` is by definition
-`Matrix.single ⟨p + 1, hp⟩ ⟨p, Nat.lt_of_succ_lt hp⟩ 1`. The predicate is restated here so that this
-module depends only on the Library.
+This is exactly the conclusion of the statement `RealLinkedJacquetFunctionalStatement` (S2,
+module `RealLinkedJacquetFunctional`), whose `lowerRootMatrix n p hp` is by definition
+`Matrix.single ⟨p + 1, hp⟩ ⟨p, Nat.lt_of_succ_lt hp⟩ 1`. The predicate is restated here, so this
+module does not import `RealLinkedJacquetFunctional`.
 
 ## Twisting blocks
 
 * `realBlockTwist c x`: the block `x` twisted by `|det|^c`, `c : ℝ`. The exponent `t` becomes
   `t + c`. The parity of a character and the weight of an induction block do not change. It agrees
-  with `RealLeviSlices.twistBlock` of the staged candidates of another task.
+  with `RealLeviSlices.twistBlock` (module `RealLeviSlices`).
 * `MoeglinDatum.twist c`: the Mœglin datum with exponent `s + c`.
 * Proved lemmas: twisting preserves the rank (`realBlockTwist_rank`, `realRank_map_realBlockTwist`)
   and nondegeneracy. It adds `c` to the real exponent (`realBlockExponent_twist`). It commutes with
@@ -155,13 +154,14 @@ The module compiles with no errors or warnings and uses only the axioms `propext
 * **Pair and its four kinds.** Each kind is the case `ds = [x, z]` of S2, by the definitional
   equality above. The justification of S2, with its sources (Mœglin 1997; Knapp 1986, Theorem
   7.24; Bernstein–Gelfand 1980, Theorem 4.1), is in `RealLinkedJacquetFunctional.md`. CC follows
-  from the character case `RealCharacterLinkedJacquetFunctionalStatement` (candidate e874e0ce),
-  for which Worker 5731 has a draft proof. IC, CI and II are the cases on `GL_3(ℝ)` and `GL_4(ℝ)`.
+  from the character case `RealCharacterLinkedJacquetFunctionalStatement` (module
+  `RealLinkedJacquetFunctionalCases`), which the Library proves as
+  `realCharacterLinkedJacquetFunctional` (module `RealCharacterCrossing`). IC, CI and II are the cases on `GL_3(ℝ)` and `GL_4(ℝ)`.
   These are the groups to which Mœglin (1997, p. 165) reduces Speh's criterion.
 
 ## Provenance
 
-The reduction is internal to Task 7070. It follows the pattern of Mœglin's reduction of
+The reduction is internal to the proof of `RealLinkedLanglandsQuotientNotLargeStatement`. It follows the pattern of Mœglin's reduction of
 Theorem 10b to `GL(a)`, `a = 2, 3, 4` (Mœglin 1997, p. 165), and the Library's
 `RealUnlinkedSwapReduction`. First, choose a linked pair with no block in between linked to the
 second block. Then move the second block next to the first by unlinked swaps. Finally, restrict to

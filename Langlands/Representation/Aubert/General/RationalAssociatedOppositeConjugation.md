@@ -53,8 +53,10 @@ It establishes no induction-class identity, natural duality or closed
 rational contragredient commutation theorem.
 
 The provenance is composition of the named published constructions and
-conditional structural interfaces. The point evaluation adapter is due to
-Worker 1107; this module specializes it to the actual opposite subgroups and
+conditional structural interfaces. The point evaluation adapter is
+`IsStandardAssociatedOppositeTransport.mem_rationalPoints`
+(`GroupScheme/Rational/StandardAssociatedOppositeTransportStatement`); this
+module specializes it to the actual opposite subgroups and
 adds the independently supplied Levi transport. No literature theorem is
 newly asserted. The proof bodies invoke no Langlands classification,
 character independence, geometric lemma, adjointness or cuspidal-support

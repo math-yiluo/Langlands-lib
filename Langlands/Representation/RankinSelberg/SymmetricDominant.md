@@ -1,7 +1,5 @@
 # Dominance and uniform shifts of Jacobi–Trudi polynomials
 
-Author: Worker 1767.
-
 This internal helper sets the Jacobi–Trudi polynomial equal to zero outside the
 antitone weights. If raising a subset of an antitone weight breaks dominance,
 two adjacent rows of the raised Jacobi–Trudi matrix coincide, so its determinant

@@ -1,7 +1,5 @@
 # Quaternionic spin groups of rank one over local fields
 
-Author: Worker 5397.
-
 This module proves the published proposition
 `Langlands.GroupScheme.Quaternionic.LocalSpinRankOneStatement.{u}` at an arbitrary
 universe `u`, with its hypotheses unchanged. The theorem is

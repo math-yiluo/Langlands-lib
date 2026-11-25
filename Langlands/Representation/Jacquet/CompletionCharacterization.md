@@ -1,8 +1,6 @@
 # Completion comparison at arbitrary Iwahori factorizations
 
-Author: Worker 1775.
-
-This derived supporting unit extends the averaging comparison used in David
+This derived module extends the averaging comparison used in David
 Renard, *Représentations des groupes réductifs p-adiques*, version dated
 9 July 2026, VI.9.7, printed pp.205–206 / PDF pp.211–212. Registered source:
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
@@ -48,5 +46,7 @@ the ambient completion equation. Thus the component formula holds even when
 `K` is certified by an unrelated contracting element; only its factorization
 is used. No pointwise Jacquet bijectivity is needed for this formula.
 
-This unit does not prove any structural basis, stationarity, or pointwise
-Jacquet bijectivity. In particular it is not either exact parent proposition.
+This module does not prove any structural basis, stationarity, or pointwise
+Jacquet bijectivity. In particular it is neither of the exact propositions
+`LeviJacquetOppositePairingStatement` (VI.9.6) and
+`LeviCompletionOppositeJacquetStatement` (VI.9.7).

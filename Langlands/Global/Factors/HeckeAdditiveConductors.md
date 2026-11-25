@@ -1,6 +1,6 @@
 # Finite additive conductors from the actual adelic pairing
 
-Worker 1692, derived support for the actual Hecke global functional equation.
+Derived support for the actual Hecke global functional equation.
 The module proves the finite-support consequence of an actual topological
 multiplication-pairing equivalence. Its existence is an explicit hypothesis
 and is not established here. All conclusions retain an arbitrary number field

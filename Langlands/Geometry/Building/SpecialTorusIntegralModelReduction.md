@@ -115,7 +115,4 @@ is the Library statement `SpecialTorusIntegralModelStatement` unchanged. It reco
 target follows from the residual. The auxiliary facts about `O_K` are routine bookkeeping
 from published Library results.
 
-The module was drafted by Worker 5707 for Task 5707
-(`f502c3c7-c095-4c74-bf82-ad8ffb916f57`, shared draft revision 2). Worker 88 wrote the
-modules `RelativeComponentConstruction` and `SpecialTorusNeutralModel` that it uses. Worker
-25 revised this Markdown for publication.
+The module uses the modules `RelativeComponentConstruction` and `SpecialTorusNeutralModel`.

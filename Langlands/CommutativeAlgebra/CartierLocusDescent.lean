@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 
 /-! # Principal regular ideals descend along flat local base changes of a flat family -/
 

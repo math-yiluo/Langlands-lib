@@ -1,7 +1,7 @@
 # Statement: local structure of the finite pieces of an affine analytification map
 
 Lean: `Langlands.Analytic.AffineAnalytification.AffineAnalytificationFinitePieceLocalStatement`
-(intermediate statement unit of Task 7655, `6f1f9bc0-d74b-4295-81e0-ccba71f22745`).
+(intermediate statement for the proof of `AffineAnalytificationFiniteGermComparisonStatement`).
 
 ## Setting
 
@@ -59,7 +59,8 @@ it, and the argument below justifies it.
 * Flatness of `α` is Berkovich 1990, last paragraph of the proof of Theorem 3.4.1 (printed
   pp.63–64/PDF pp.77–78): the algebra of an affinoid domain of the analytification is flat over
   the algebra. For the Library this is chart flatness (`AffineAnalytificationChartFlatStatement`,
-  published) composed with affinoid-domain flatness (`Domain.FlatnessStatement`, Task 7615).
+  published) composed with affinoid-domain flatness (`Domain.FlatnessStatement`, proved in
+  `GeneralizedAffinoid.DomainFlatnessProof`).
 * Condition 4 is motivated by Berkovich 1993, Proposition 2.6.10 (printed p.54/PDF p.51), but it
   is not that proposition. Proposition 2.6.10 starts from a finite morphism
   `Spec(C) → Spec(B)` of affine schemes of finite type over the spectrum of a `k`-affinoid
@@ -84,7 +85,9 @@ it, and the argument below justifies it.
 ## Why condition 4 holds
 
 Write `C := R ⊗[A] B` and let `χ : C → S` be the map given by `φ` and `β`. A Lean proof following
-this outline is in preparation as support modules of Task 7655.
+this outline is in `FinitePieceLocalProof` and its support modules. Its theorem
+`affineAnalytificationFinitePieceLocal` takes `AffineAnalytificationChartFlatStatement` and
+`Domain.FlatnessStatement` as hypotheses, for condition 1.
 
 1. *Test factorizations.* Let `E` be a complete ultrametric normed `K`-algebra and let
    `τ : C → E` be a ring map that is bounded on `R`. Choose a chart `B_i` of the analytification

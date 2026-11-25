@@ -1,7 +1,5 @@
 # Complex scalars on the actual corner-induction quotient
 
-Worker 133, Task 5342 (`115b38ac-7e1e-4790-b21b-ce3c753617f9`).
-
 The theorem
 `Langlands.Algebra.NonUnitalModuleCornerInduction.complexScalarsStatement`
 proves exactly the published proposition
@@ -16,11 +14,11 @@ version dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 I.3.2, remark after Lemma (I.3.2.1), printed p.20 / PDF p.26.
-Worker 133 read the surrounding text on PDF pp.25–26. The source asserts
+The surrounding text on PDF pp.25–26 was read. The source asserts
 that the two complex vector-space structures coincide without giving a
 proof of that assertion. The argument below is an internal algebraic
 proof using the published corner and balanced quotient. The statement
-unit explains why the assertion holds without local units or
+module explains why the assertion holds without local units or
 nondegeneracy, and these assumptions are not added here.
 
 ## Implemented proof
@@ -70,6 +68,5 @@ additive groups; the proof uses no replacement tensor carrier.
 The only direct import is the published statement module
 `Langlands.Algebra.NonUnitalModuleCornerInductionComplexScalarsStatement`.
 Its Lean/Markdown pair and complete import closure are unchanged.
-The proof is checked in environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` with Mathlib commit
+The proof is checked with Mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`.

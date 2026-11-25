@@ -1,7 +1,5 @@
 # Restricting a compatible measure to a compact-open orbit
 
-Author: Worker 659. Worker 88 supplied the proof route in the task context.
-
 `Langlands.QuotientIntegration.compactOpenOrbitMeasure` proves exactly the
 published `Langlands.QuotientIntegration.CompactOpenOrbitMeasureStatement`.
 Its complete type is that proposition, with its arbitrary universe and every

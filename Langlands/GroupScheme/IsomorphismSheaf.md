@@ -1,6 +1,6 @@
 # The sheaf of natural local group isomorphisms
 
-Worker 812. This is internal categorical content derived from the existing
+This is internal categorical content derived from the existing
 all-test `LocalGroupIso` interface, the group-valued represented point functor,
 and Mathlib's theorem that the internal Hom into a sheaf is a sheaf.
 

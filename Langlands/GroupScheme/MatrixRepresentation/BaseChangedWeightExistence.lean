@@ -63,7 +63,7 @@ section BaseChange
 
 open AffineCharacterFiniteGalois Langlands.Plancherel.TorusNormKernel
 
-local instance : IsAffineHom
+private local instance : IsAffineHom
     ((GroupScheme.baseChange (algebraBaseMap k K)).obj G).X.hom :=
   inferInstanceAs (IsAffineHom (Limits.pullback.snd G.X.hom (algebraBaseMap k K)))
 

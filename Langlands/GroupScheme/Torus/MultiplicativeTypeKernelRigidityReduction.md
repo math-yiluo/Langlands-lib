@@ -1,11 +1,11 @@
 # Relative multiplicative-type kernels from rigidity and monomorphism spreading
 
-Worker 879, using the unchanged same-task explicit quotient constructions
-of Worker 886. Internal derived reduction of the full relative kernel
-criterion.
+Internal derived reduction of the full relative kernel criterion, using
+the explicit quotient constructions of
+`RelativeDiagonalizableExactQuotient`.
 
 `isMultiplicativeType_kernel` proves the following conditional result,
-in every universe. Supply proofs of the **exact** published statements
+in every universe. Supply proofs of the **exact** statements
 `MultiplicativeTypeCentralRigidityStatement` and
 `MultiplicativeTypeMonomorphismSpreadingStatement`. For any scheme `S`,
 group schemes `H`, `G`, and homomorphism `f : H → G`, assume:
@@ -17,7 +17,8 @@ group schemes `H`, `G`, and homomorphism `f : H → G`, assume:
 
 Then the actual scheme-theoretic kernel of `f` is of relative
 multiplicative type. These are precisely the hypotheses and kernel
-conclusion in the published canonical-factorization target. The two
+conclusion in the canonical-factorization statement
+`MultiplicativeTypeKernelFactorizationStatement`. The two
 rigidity and spreading statements remain explicit premises; this
 module does not assert either of them unconditionally.
 
@@ -54,7 +55,7 @@ source isomorphism, apply the split-source result, and descend the
 kernel property by fppf locality.
 
 The auxiliary `kernelBaseChangeCompIso` and range-transport lemmas
-use the published `kernelSquareIso` and
+use `kernelSquareIso` and
 `KernelRepresentative.iso`. All declarations are derived content
 assembled from the cited Library constructions. The final canonical
 quotient/factorization step is outside this module.

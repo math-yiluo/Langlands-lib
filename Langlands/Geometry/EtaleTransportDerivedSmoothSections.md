@@ -82,9 +82,10 @@ and naturality laws apply the established generic constructions to
 these source and target categories. No new theorem is attributed to
 Harris or Berkovich.
 
-This unit does not identify its cohomology with the smooth part of
+This module does not identify its cohomology with the smooth part of
 ordinary or algebraic cohomology, assert that smoothing preserves
 quasi-isomorphisms, or construct the full category of smooth equivariant
-etale sheaves. A derived comparison with algebraic sections, supports,
-analytic uniformization, arithmetic coefficients, level towers and
-Harris specialization remain successor obligations.
+etale sheaves. A derived comparison with algebraic sections is constructed
+in the module `EtaleTransportDerivedSmoothComparison`, which builds on this
+one; supports, analytic uniformization, arithmetic coefficients, level towers
+and Harris specialization are not treated here.

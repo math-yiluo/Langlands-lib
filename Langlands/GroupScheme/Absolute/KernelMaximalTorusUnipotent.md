@@ -13,8 +13,8 @@ torus and is unipotent.
 
 This module proves that step for an abstract homomorphism of group schemes. It
 does not mention integral models, open cells or buildings. The statements and
-their arrangement are internal design by Worker 4783 for Task 6203, which
-Worker 282 and Worker 4783 share. Two published results do the work:
+their arrangement are internal design, made for the proof of KP Proposition
+8.4.15. Two published results do the work:
 
 * `Langlands.GroupScheme.algClosedNoCocharacterUnipotent`: a smooth, connected,
   affine group over an algebraically closed field is unipotent if all of its
@@ -27,7 +27,7 @@ Applying this module to KP 8.4.15 requires two inputs that are not proved here.
 First, a maximal torus of the special fibre (or, more generally, a subgroup into
 which every cocharacter can be conjugated). Second, injectivity of `ρ` on that
 subgroup. This module proves neither smoothness nor connectedness of any kernel,
-nor the host theorem of Task 6203.
+nor KP Proposition 8.4.15 itself.
 
 A *cocharacter* of a group scheme `G` over `S` is a homomorphism
 `(Gm S).toGrp ⟶ G`. The trivial homomorphism is `0`.

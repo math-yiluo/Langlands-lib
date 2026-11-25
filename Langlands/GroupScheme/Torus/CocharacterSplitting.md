@@ -103,7 +103,7 @@ Internal. These are the standard facts that a split torus has points
 `(Sˣ)^I` and characters `t ↦ ∏ tᵢ^{mᵢ}`, transported to a torus split over
 `K`; here they are derived from the Library's `splitTorus` and base-change
 API. The Frobenius-on-points
-lemma is an auxiliary step designed by Worker 1001 for torus cocharacter
-detection in task 6d0882ee; it supplies the hypothesis of
+lemma is an auxiliary step for torus cocharacter
+detection in `Langlands.GroupScheme.Torus.CocharacterDetection`; it supplies the hypothesis of
 `IsDatum.exists_of_pow_mem_range`
 (`Langlands.GroupScheme.Torus.CocharacterInseparableDescent`).

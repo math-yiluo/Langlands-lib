@@ -7,7 +7,7 @@ namespace `Langlands.Plancherel`.
 
 Provenance: internal. This module applies the abstract conic bound
 `Langlands.LinearAlgebra.RootFaceCone.exists_pos_rootCone_decay` to the relative roots of the
-split component `A` of a parabolic presentation. The result is one host theorem,
+split component `A` of a parabolic presentation. The result is one theorem,
 `exists_parabolicRootCone_decay`, for the convergence step of the standard intertwining
 integrals (Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'après
 Harish-Chandra* (2003), IV.1.1, printed pp. 278–280). Waldspurger proves convergence by a
@@ -16,7 +16,7 @@ step that turns lower bounds of a functional `H` at the positive-weight characte
 admissible cocharacters into decay in the root values of `ν`.
 
 The interface (cocharacters `λ, λ'`, the admissibility and region conditions, and the root
-sum) was agreed with the consumer of the theorem, which assembles
+sum) is the one used by `ParabolicCharacterDecayProof`, which applies the theorem to assemble
 `ParabolicCharacterDecayInput`. The three inputs of the abstract lemma are proved here for
 the actual groups:
 
@@ -42,8 +42,9 @@ the actual groups:
 - `latticePairing A α μ ∈ ℤ` is the pairing of a character with a cocharacter of `A`.
 - `positiveWeightCharacter (a ≫ l ≫ p) μ = ∑_{⟨α, μ⟩ > 0} (dim 𝔤_α) • α` is defined in
   `Langlands.GroupScheme.Dynamic.LeviAdjointDeterminantReciprocityReduction`.
-- `RelativeRootSystemStatement` is the open relative-root-system statement. It is a premise
-  wherever it is used; this module does not prove it.
+- `RelativeRootSystemStatement` is the relative-root-system statement. It is a premise
+  wherever it is used; this module does not prove it (`relativeRootSystem` in
+  `GroupScheme.Rational.RelativeRootSystemProof` does).
 
 ## Declarations
 
@@ -117,7 +118,7 @@ Realization:
 - `one_tmul_positiveWeightCharacter`: for a finset `R` of exactly the relative roots,
   `1 ⊗ positiveWeightCharacter i μ = ∑_{α ∈ R, ⟨α, μ⟩ > 0} (dim 𝔤_α) • (1 ⊗ α)`.
 
-Host:
+Section `Host`:
 
 - `parabolic_neg_mem_relativeRoots_of_statement` (`RelativeRootSystemStatement`,
   `IsConnectedReductive G`): the relative roots of `a ≫ l ≫ p` are closed under negation.
@@ -179,7 +180,7 @@ cocharacter, and `exists_int_sign_realization` gives an integral `μ` with the s
 roots. `one_tmul_positiveWeightCharacter` rewrites the defining `finsum` as a finset sum over
 `R`.
 
-**Host theorem.** Put `RA` for the finset of relative roots of `A`, `Φ = RA.image (1 ⊗ ·)`,
+**Main theorem.** Put `RA` for the finset of relative roots of `A`, `Φ = RA.image (1 ⊗ ·)`,
 `m` the multiplicities, and `S` the image of the roots with `⟨α, λ⟩ > 0 > ⟨α, λ'⟩`. The
 hypotheses of `exists_pos_rootCone_decay` are positivity of `B`, `Φ = -Φ` (from
 `RelativeRootSystemStatement`), positive multiplicities and Levi orthogonality, which

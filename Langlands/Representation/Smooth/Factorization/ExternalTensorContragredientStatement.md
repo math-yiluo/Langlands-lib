@@ -6,13 +6,13 @@ representation spaces).
 The module contains one **statement**, the `Prop`-valued definition
 `AdmissibleExternalTensorContragredientStatement`. It proves nothing.
 
-Worker 1222 wrote this statement unit under the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`. The published `FlathTwoFactorStatement`
-([TwoFactorStatement](TwoFactorStatement.md), proof Task 5771) states the other assertions of
+The published `FlathTwoFactorStatement`
+([TwoFactorStatement](TwoFactorStatement.md), proved by `flathTwoFactor` in
+`TwoFactorProof`) states the other assertions of
 the III.1.14 Proposition for two factors: the fixed vectors of `V₁ ⊗ V₂`, admissibility and
 irreducibility of `π₁ ⊠ π₂`, and existence and uniqueness of the factorization of an
 irreducible admissible representation of `G₁ × G₂`. It does not state the second assertion,
-`(⊠_i π_i)^∼ = ⊠_i π̃_i`, which this unit states.
+`(⊠_i π_i)^∼ = ⊠_i π̃_i`, which this module states.
 
 ## Source and provenance
 
@@ -20,7 +20,7 @@ The source is David Renard, *Représentations des groupes réductifs p-adiques*,
 French edition dated 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 1222 read III.1.14, printed pp.66–67 / PDF pp.72–73:
+The passage read is III.1.14, printed pp.66–67 / PDF pp.72–73:
 
 > Proposition. Avec les notations ci-dessus, supposons que toutes les représentations
 > `(π_i, V_i)` soient admissibles. Alors `⊠_i(π_i, V_i)` est admissible. D'autre part,
@@ -78,9 +78,10 @@ dimensional. Hence `((V₁ ⊗ V₂)^∼)^K = ((V₁ ⊗ V₂)^K)^*` is
 `(V₁^{K₁})^* ⊗ (V₂^{K₂})^* = Ṽ₁^{K₁} ⊗ Ṽ₂^{K₂}`, and the map restricts to this isomorphism
 on `K`-fixed vectors. Taking the union over `K` shows that the map is bijective.
 
-## Remaining obligations
+## Proof
 
-The proof is a separate obligation.
+The proof is `Langlands.admissibleExternalTensorContragredient` in
+[ExternalTensorContragredientProof](ExternalTensorContragredientProof.md).
 
 ## Imports
 

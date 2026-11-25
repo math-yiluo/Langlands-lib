@@ -37,11 +37,11 @@ Everything is in the namespace `Langlands.BrauerCorestriction`. Let `e = #(L →
 - `cor_mk` computes the class: `cor K L ⟦A⟧ = ⟦corCSA K L A⟧`. It holds by definition.
 - `cor_mk_eq_of_closure` gives independence of the closure. For every finite Galois `N/K` with exactly `[L : K]` embeddings of `L`, `cor K L ⟦A⟧ = ⟦corCSAOf K L N A⟧`.
 - `corCSAOf_matrix_split`: if `A ≃ₐ[L] M_n(L)` with `n ≠ 0`, then `corCSAOf K L N A` is isomorphic to `M_{n^e}(K)`.
-- `cor_groundField`: the class of the ground field `L` goes to the class of the ground field `K`. The representatives are Task 7532's `Langlands.Brauer.groundField`. So the split class goes to the split class.
+- `cor_groundField`: the class of the ground field `L` goes to the class of the ground field `K`. The representatives are `Langlands.Brauer.groundField` (`Langlands.Algebra.CentralSimpleTensor`). So the split class goes to the split class.
 
 ## Implemented proof
 
-**Bijectivity of `corMul`.** The source is a tensor product of two finite-dimensional central simple `K`-algebras (`CentralSimple`). It is simple by the published `Langlands.CentralSimple.isSimpleRing_tensor` from Task 7532. The target is nontrivial because its dimension `(dim_L (A ⊗ B))^e` is positive. So the ring homomorphism is injective (`IsSimpleRing.injective_ringHom_or_subsingleton_codomain`).
+**Bijectivity of `corMul`.** The source is a tensor product of two finite-dimensional central simple `K`-algebras (`CentralSimple`). It is simple by the published `Langlands.CentralSimple.isSimpleRing_tensor` from `Langlands.Algebra.CentralSimpleTensor`. The target is nontrivial because its dimension `(dim_L (A ⊗ B))^e` is positive. So the ring homomorphism is injective (`IsSimpleRing.injective_ringHom_or_subsingleton_codomain`).
 
 By `Module.finrank_tensorProduct` and `finrank_corAlg_eq_pow`, both sides have dimension `(dim_L A)^e (dim_L B)^e = (dim_L A · dim_L B)^e`. Injectivity then gives surjectivity (`LinearMap.injective_iff_surjective_of_finrank_eq_finrank`).
 
@@ -68,4 +68,4 @@ using `corAlgMatrixStab` twice and `corEquiv` of the given isomorphism, and `n^e
 
 J. Tits, *Représentations linéaires irréductibles d'un groupe réductif sur un corps quelconque* (1971), §5.3, printed p. 208 / PDF p. 13, defines the corestriction class of a central division algebra by formula (1), `[D] = Cor [D₁]`, where `D` is the fixed algebra of the tensor product of conjugates. The Remarque on printed p. 209 / PDF p. 14 says this formula can be taken as the definition of corestriction. This module takes it as the definition on actual central simple representatives. It proves that the definition is compatible with matrix stabilization, which Tits does not discuss because he works with division algebras.
 
-Tits assumes `k` infinite in §5.3. That hypothesis is not needed by the construction here, so it is not imposed. The group structure on `BrauerGroup` belongs to Task 7532. Only its published tensor-closure theorem and the `groundField` representative are used here. The homomorphism property and the restriction–corestriction formula are separate later units.
+Tits assumes `k` infinite in §5.3. That hypothesis is not needed by the construction here, so it is not imposed. The group structure on `BrauerGroup` is in `Langlands.Algebra.BrauerGroup`. Only the published tensor-closure theorem and the `groundField` representative are used here. The homomorphism property and the restriction–corestriction formula are proved in the separate modules `Hom` (`corHom`) and `CorResClass` (`corHom_comp_scalarExtension`).

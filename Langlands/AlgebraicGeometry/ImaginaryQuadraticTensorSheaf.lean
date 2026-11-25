@@ -47,18 +47,18 @@ local instance (U : S.Opens) : IsScalarTower ℚ Γ(S, U) Γ(M, U) :=
 
 /-- Evaluate the actual sheaf action on sections of an open. -/
 def sectionFieldAction (U : S.Opens) : L →+* Module.End Γ(S, U) Γ(M, U) where
-  toFun t := (ρ t).val.app (op U) |>.hom
-  map_one' := by ext x; exact congrArg (fun a : End M => a.app U x) ρ.map_one
-  map_mul' a b := by ext x; exact congrArg (fun c : End M => c.app U x) (ρ.map_mul a b)
-  map_zero' := by ext x; exact congrArg (fun a : End M => a.app U x) ρ.map_zero
-  map_add' a b := by ext x; exact congrArg (fun c : End M => c.app U x) (ρ.map_add a b)
+  toFun t := (ρ t).asHom.val.app (op U) |>.hom
+  map_one' := by ext x; exact congrArg (fun a : End M => a.asHom.app U x) ρ.map_one
+  map_mul' a b := by ext x; exact congrArg (fun c : End M => c.asHom.app U x) (ρ.map_mul a b)
+  map_zero' := by ext x; exact congrArg (fun a : End M => a.asHom.app U x) ρ.map_zero
+  map_add' a b := by ext x; exact congrArg (fun c : End M => c.asHom.app U x) (ρ.map_add a b)
 
 omit [NumberField L] [IsCMField L]
   [IsQuadraticExtension ℚ L] [CharZero K] [Algebra ℚ Γ(S, ⊤)]
   [IsScalarTower ℚ K Γ(S, ⊤)] in
 @[simp]
 theorem sectionFieldAction_apply (U : S.Opens) (t : L) (x : Γ(M, U)) :
-    sectionFieldAction L M ρ U t x = (ρ t).app U x := rfl
+    sectionFieldAction L M ρ U t x = (ρ t).asHom.app U x := rfl
 
 /-- The genuine coordinate scalar-extension module of sections on an open. -/
 def sectionTensorFactor (conjugate : Bool) (U : S.Opens) : ModuleCat Γ(S, U) := by
@@ -127,7 +127,7 @@ def sectionTensorRestriction (conjugate : Bool) {U V : S.Opens} (j : U ⟶ V) :
   exact tensorFactorMap L K Γ(S, V) Γ(S, U) Γ(M, V) Γ(M, U)
     (sectionFieldAction L M ρ V) (sectionFieldAction L M ρ U)
     (sectionRestrictionAlgebra K j) (M.val.restrictₛₗ j.op)
-    (fun t x => (PresheafOfModules.naturality_apply (ρ t).val j.op x).symm) conjugate
+    (fun t x => (PresheafOfModules.naturality_apply (ρ t).asHom.val j.op x).symm) conjugate
 
 /-- The sectionwise comparison commutes with the genuine restriction maps. -/
 theorem sectionTensorEquiv_restriction (conjugate : Bool) {U V : S.Opens}
@@ -140,7 +140,7 @@ theorem sectionTensorEquiv_restriction (conjugate : Bool) {U V : S.Opens}
     (tensorFactorEquiv_naturality L K Γ(S, V) Γ(S, U) Γ(M, V) Γ(M, U)
       (sectionFieldAction L M ρ V) (sectionFieldAction L M ρ U)
       (sectionRestrictionAlgebra K j) (M.val.restrictₛₗ j.op)
-      (fun t x => (PresheafOfModules.naturality_apply (ρ t).val j.op x).symm) conjugate x)
+      (fun t x => (PresheafOfModules.naturality_apply (ρ t).asHom.val j.op x).symm) conjugate x)
   exact congrArg (fun z :
     eigenmodule L K Γ(S, U) Γ(M, U) (sectionFieldAction L M ρ U) conjugate => z.val) h
 
@@ -170,7 +170,7 @@ theorem sectionTensorRestriction_tmul (conjugate : Bool) {U V : S.Opens}
   exact tensorFactorMap_tmul L K Γ(S, V) Γ(S, U) Γ(M, V) Γ(M, U)
     (sectionFieldAction L M ρ V) (sectionFieldAction L M ρ U)
     (sectionRestrictionAlgebra K j) (M.val.restrictₛₗ j.op)
-    (fun t x => (PresheafOfModules.naturality_apply (ρ t).val j.op x).symm)
+    (fun t x => (PresheafOfModules.naturality_apply (ρ t).asHom.val j.op x).symm)
     conjugate r m
 
 /-- The actual coordinate tensor factors, with their canonical restriction maps. -/

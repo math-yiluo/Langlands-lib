@@ -1,6 +1,6 @@
 # JPSS convergence and rationality on actual coefficient models
 
-Author: Worker 11. This file defines four proposition targets in namespace
+This file defines four proposition targets in namespace
 `Langlands.RankinSelberg`:
 
 - `QuotientHaarExistenceStatement`,
@@ -10,7 +10,10 @@ Author: Worker 11. This file defines four proposition targets in namespace
 
 This module defines the targets. The companion
 [QuotientHaarExistence](QuotientHaarExistence.md) proves the first one as
-`quotientHaarExistence`. The three analytic targets remain open; downstream
+`quotientHaarExistence`. The three analytic targets are proved by
+`equalRankAnalytic` (`EqualRankAnalyticProof`), `unequalRankAnalytic`
+(`UnequalRankAnalyticProof`) and `unequalRankCommonGenerator`
+(`UnequalRankCommonGeneratorProof`); downstream
 conditional constructions may take them as explicit hypotheses. They restate
 parts (i) and (ii) of Theorem 2.7 of Jacquet--Piatetski-Shapiro--Shalika (JPSS),
 *Rankin--Selberg convolutions*, Amer. J. Math. 105 (1983), printed pages
@@ -209,7 +212,7 @@ equation (iii) is the separate module `FunctionalEquationStatement`.
 
 ## Lean checks
 
-The module compiles with `lean_check` in environment `3b864ddf` with no errors
+The module compiles with no errors
 or warnings. `EqualRankAnalyticStatement` was inspected: it returns `Prop`,
 has universe parameters `uF uV uW`, and uses only the axioms `propext`,
 `Classical.choice` and `Quot.sound`. The two other analytic targets have the

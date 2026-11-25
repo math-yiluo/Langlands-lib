@@ -1,7 +1,5 @@
 # Groups without nontrivial connected unipotent subgroups are tori
 
-Worker 247, Task 6800.
-
 The theorem `Langlands.GroupScheme.noUnipotentSubgroupTorus.{u}` has exactly
 `Langlands.GroupScheme.NoUnipotentSubgroupTorusStatement.{u}` as its type.
 It retains every universe, algebraically closed field, and smooth connected

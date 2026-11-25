@@ -50,7 +50,8 @@ The kernel of `ψ` is the annihilator of the quotient `I(ds) / W`: `ψ(u) = 0` e
 
 ## Provenance
 
-This is an internal statement, introduced in Task 7070. Mathematically it holds with `W = R`,
+This is an internal statement, introduced for the proof of
+`RealLinkedLanglandsQuotientNotLargeStatement`. Mathematically it holds with `W = R`,
 the largest proper `(𝔤, K)`-submodule, and the exponent `n (n - 1) - 2`, by the following
 facts.
 

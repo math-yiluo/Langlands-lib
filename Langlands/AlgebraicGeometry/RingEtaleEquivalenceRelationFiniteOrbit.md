@@ -1,8 +1,9 @@
 # Radical ideals of finite closed orbits of affine étale relations
 
-This internal helper combines the ring-to-scheme adapter with the finite
-closed orbit and ideal constructions of Workers 101 and 239. Worker 122
-implemented this ring-level assembly. It starts from an explicitly supplied
+This internal helper combines the ring-to-scheme adapter
+(`RingEtaleEquivalenceRelationScheme`) with the finite closed orbit and ideal
+constructions (`EtaleEquivalenceRelationPointTopology`,
+`EtaleEquivalenceRelationClosedIdeal`). It starts from an explicitly supplied
 nonempty closed invariant subset; it does not prove support invariance,
 construct a quotient coaction, or prove the nonzero-invariant statement.
 All deductions use the imported Library helpers and pinned Mathlib.

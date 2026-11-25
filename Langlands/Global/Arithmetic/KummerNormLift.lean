@@ -1,9 +1,9 @@
 import Langlands.Global.Arithmetic.KummerRadical
 import Langlands.Global.AdelicFunctoriality.IdeleNormLift
 import Langlands.Global.AdelicFunctoriality.IdeleClassNormIndexReduction
-import Langlands.ClassField.Global.LocalPowerIndex
-import Langlands.ClassField.Global.IdeleCohomology
-import Langlands.ClassField.Global.IdeleArchimedean
+import Langlands.ClassFieldTheory.Global.LocalPowerIndex
+import Langlands.ClassFieldTheory.Global.IdeleCohomology
+import Langlands.ClassFieldTheory.Global.IdeleArchimedean
 
 /-! # Ideles that are norms from a Kummer extension of prime degree
 
@@ -20,7 +20,7 @@ namespace Langlands.Global.Arithmetic.KummerNormLift
 
 open NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum Filter
 open scoped NumberField
-open Langlands.Global.AdelicFunctoriality Langlands.ClassField.Global
+open Langlands.Global.AdelicFunctoriality Langlands.ClassFieldTheory.Global
 open Langlands.Global.Arithmetic.KummerRadical
 
 section Conditions

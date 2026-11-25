@@ -1,6 +1,6 @@
 # The actual quotient-L² form on projected left-level functions
 
-This derived unit supplies the invariant positive form in the reverse
+This derived module supplies the invariant positive form in the reverse
 inclusion proof of Waldspurger (2003), Theorem VIII.4.2, printed pp.330–331
 (PDF pp.96–97). It uses the Library's actual quotient-integrand machinery
 and smooth evaluation on the actual projected left-level representation.
@@ -29,4 +29,5 @@ All measures remain as specified; no normalization or scalar adjustment
 occurs. The absolute convergence input for projected norms and
 inversion-invariance of the quotient measure remain explicit here.
 Square integrability of this form's coefficients, the actual norm
-estimates, and both closed Task 7440 targets are still separate obligations.
+estimates, and both closed VIII.4.2 targets (`RationalCuspidalDiscreteCoefficientStatement`,
+`RationalCuspidalFixedCoefficientLiftingStatement`) are not proved here.

@@ -1,7 +1,5 @@
 # The diagonal torus of `GL_n` is a maximal torus
 
-Worker 274.
-
 This is a helper module for the proof of `GeneralLinearRootDatumStatement`. It proves
 `isMaximalTorus_diagonalTorus k`: over a field `k`, the diagonal torus is a
 maximal torus in the sense of `IsMaximalTorus` (Milne, Example 17.88, printed

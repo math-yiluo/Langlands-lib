@@ -58,7 +58,7 @@ the required equality of classes.
 
 ## Provenance and scope
 
-Worker 2506 wrote this derived composition of published Library proofs.
+This module is a derived composition of published Library proofs.
 The target's companion explains the derived formulation and its geometric
 Picard-zero convention. The reduction and the four proof companions
 describe their constructions and sources; this module adds only their

@@ -165,4 +165,4 @@ establish any property of a chosen index functor such as cofinality.
 The acting group has no topology here; neither smoothness nor a change
 of acting group is part of the construction. Analytic sites, compactly
 supported cohomology, traces and a Harris specialization remain outside
-this unit.
+this module.

@@ -1,7 +1,5 @@
 # Transport of an actual Jordan–Hölder series along an equivalence: proof
 
-Author: Worker 244.
-
 `Langlands.jordanHolderSeriesTransport` proves exactly the published
 `JordanHolderSeriesTransportStatement.{uK, uG, uA, uB}` from
 `Langlands.Representation.Filtration.JordanHolderStatement`. The field `k`, the

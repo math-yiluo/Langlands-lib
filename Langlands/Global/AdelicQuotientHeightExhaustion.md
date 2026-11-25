@@ -1,7 +1,5 @@
 # Compact exhaustions of actual adelic quotients by height images
 
-Author: Worker 94.
-
 For any topological group `H` and any subgroup `Γ`, the existing
 `LeftCosetSpace Γ` carries its original quotient topology on `Γ \ H`.
 `LeftCosetSpace.compactExhaustionImage Γ K` sends a compact exhaustion `K`
@@ -61,13 +59,12 @@ closed-subgroup, or measure assumptions beyond the displayed hypotheses
 of their underlying quotient definitions and the ambient height
 compactness hypotheses.
 
-The provenance is internal: this unit consumes
+The provenance is internal: this module consumes
 `AdelicRepresentationHeightExhaustion`, the original left quotient's
 continuous open surjective projection, the actual quotient definitions,
 and Mathlib's compact-exhaustion interface. No external literature
 assertion is introduced. The levels are images of ambient height
 sublevels; no function on the quotient or continuous choice of
-representatives is constructed. This unit supplies no split-component
+representatives is constructed. This module supplies no split-component
 existence, Hausdorff property, quotient measure, reduction, Siegel-set,
-finite-volume, integrability, or cuspidal-density assertion. Those
-obligations of the host task retain their existing owners.
+finite-volume, integrability, or cuspidal-density assertion.

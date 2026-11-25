@@ -1,7 +1,5 @@
 # Reduced normalized residue fibres at vertical points
 
-Worker 594.
-
 `genericNormalizationCongr` carries normalization in the generic
 fibre through an algebra isomorphism over the base. Extending the
 isomorphism to the generic tensors gives a commuting square, so monic

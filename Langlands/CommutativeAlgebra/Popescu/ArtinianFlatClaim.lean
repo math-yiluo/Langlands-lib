@@ -1,4 +1,4 @@
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatLift
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatTools
 import Langlands.CommutativeAlgebra.Popescu.ArtinianFlatDerivation

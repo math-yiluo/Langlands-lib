@@ -1,7 +1,5 @@
 # Comparing base changes of line bundles and their global sections
 
-Author: Worker 766.
-
 This module is `Langlands.AlgebraicGeometry.Picard.TrivialLocusComparison`. It
 imports the Library modules
 `Langlands.AlgebraicGeometry.Picard.ClassEqualizerReduction` (and through it

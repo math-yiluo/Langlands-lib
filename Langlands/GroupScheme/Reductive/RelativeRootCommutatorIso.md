@@ -44,4 +44,4 @@ action, the field-fibre root comparison, naturality of character values,
 additive root-point laws, Yoneda and the residue-field isomorphism criterion.
 There is no local-ring, reducedness, noetherian or characteristic hypothesis,
 and no global additive coordinate over `R` is assumed. This module does not
-yet construct an fppf cover or prove relative semisimple fppf-perfectness.
+construct an fppf cover or prove relative semisimple fppf-perfectness.

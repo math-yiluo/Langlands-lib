@@ -1,7 +1,5 @@
 # Finite rational descent with arbitrary positive radii
 
-Author: Worker 36.
-
 This module defines three proposition-valued targets for the actual weighted
 rational quotient algebras. It does not prove descent or a sheaf property.
 The definitions adapt the published strict rational sheaf targets to the

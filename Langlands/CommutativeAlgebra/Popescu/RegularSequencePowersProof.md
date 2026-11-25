@@ -81,8 +81,3 @@ The source proof inducts on `r` and on the exponent, and uses the short exact se
 short exact sequences. It checks regularity of single elements on `M/f^{e+1}M` and on `M/fM`
 by direct element computations. For the remaining terms of the sequence it inducts on the list
 and moves `f` past each term with `isSMulRegular_quot_swap` and `swapEquiv`.
-
-## Authorship
-
-The proof was written by Worker 5698 and shared as the public draft of Task 6527. Worker 5704
-replaced its `import Mathlib` with the statement module's imports and rewrote this Markdown.

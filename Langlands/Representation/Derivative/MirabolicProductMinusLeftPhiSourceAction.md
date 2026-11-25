@@ -1,7 +1,5 @@
 # Actual normalized source-Phi tensor quotient
 
-Author: Worker 499.
-
 This module constructs `leftPhiSourceQuotient` in
 `Langlands.Derivative.MirabolicProductMinus`. It is the actual identity
 on the GL factor tensored with the source Phi-minus quotient, regarded
@@ -11,8 +9,8 @@ is exactly the actual identity-orbit radical relation span, and it is
 natural in both inputs, including independent carrier universes.
 This is a lower coefficient construction for BZ77 §4.13(b). The
 compact-induction comparison, identification with the actual localized
-section representation, and six-part host theorem remain separate
-obligations.
+section representation, and six-part statement
+`MirabolicProductMinusCompatibilityStatement` are proved in other modules.
 
 ## Source and provenance
 
@@ -32,7 +30,7 @@ character and minus functors. Section 4.12(II), printed pp.456–457
 §4.13(b), printed p.458 (PDF page 19), states its functorial comparison.
 Section 7.2, printed p.471 (PDF page 32), gives the identity and cycle
 representatives. These passages and relevant page images were read
-during this task. The bounded supplied-source and public-note errata
+for this construction. The bounded supplied-source and public-note errata
 search found no applicable BZ77 entry; no global absence is asserted.
 
 The present coefficient representations, tensor quotient and naturality
@@ -41,8 +39,7 @@ actual coefficient localization, explicit determinant-character identity,
 normalized source Phi-minus action, quotient maps and external tensor
 maps. The proof does not assume the source's representation comparison.
 The module imports neither the section-action comparison nor a Haar
-calculation or generic character-stages comparison. Worker 499 wrote
-this construction; no peer draft supplies a proof body.
+calculation or generic character-stages comparison.
 
 ## Parameters and ranks
 
@@ -233,7 +230,7 @@ Their complete project import closure contains 79 modules, listed below.
 All 158 imported Lean/Markdown files are byte-for-byte identical to the
 published Library at commit `b222ad9033fe539984cca2d240ff2c1ba76dee21`,
 with hashes checked against its manifest. Every imported module has a
-nonempty Markdown companion. The new module is excluded from that count.
+nonempty Markdown companion. The present module is excluded from that count.
 
 The actual mathematical inputs are the published identity-orbit tensor
 equivalence and quotient representative formulas, canonical localization
@@ -241,19 +238,18 @@ surjectivity and kernel relation span, actual normalized source
 Phi-minus action, the full determinant-character identity, and elementary
 external tensor, pullback and twist intertwiners. Naturality uses the
 relation-induced linear map and descent along a proved surjection.
-Transitively, the coefficient and scalar units use actual matrix
+Transitively, the coefficient and scalar modules use actual matrix
 radicals, coefficient maps, positive character relations, block
 determinants and real-power arithmetic. The imported induction and
 smoothness definitions supply no comparison or exactness conclusion.
 Whittaker modules in the closure provide elementary group and character
 infrastructure, with no finiteness result used.
 
-The following audit covers every inherited exclusion directly and
-transitively.
+The following audit covers direct and transitive inputs.
 
 | Condition | Actual dependency finding |
 | --- | --- |
-| Six host conclusions | The host statement and proof modules are absent from the closure. No mixed-minus comparison or boundary conclusion is used or proved by this coefficient unit. |
+| Six conclusions of the statement | The statement module `MirabolicProductMinusCompatibilityStatement` and the proofs of its clauses are absent from the closure. No mixed-minus comparison or boundary conclusion is used or proved by this coefficient module. |
 | Plus functors, adjunction and §4.13(d) | None supplies an input. The successor and actual radical subgroup are elementary matrix constructions. |
 | General Leibniz and derivative formulas | No Leibniz theorem, unproved BZ77 comparison, Ze80 §3.5 or §9.6 formula, or segment derivative formula is used. The actual minus functor's definition and action formula are published. |
 | Individual head and socle existence | Neither individual special-head/reverse-socle nor segment-socle/reverse-head existence supplies an input. |
@@ -263,26 +259,25 @@ transitively.
 | Special-head criterion and generic uniqueness | Neither special-head product irreducibility nor generic segment-product uniqueness is used. |
 | Ordered existence, coverage and exhaustion | No ordered multisegment-socle or strong-head existence, socle or special-head exhaustion, quotient coverage or ordered conversion is used. |
 | Analytic, tempered and square-integrable classification | No analytic segment classification, forward special essential square-integrability, tempered uniqueness, square-integrable Langlands classification, square-integrable or regular exhaustion, or Ze80 9.3 conclusion is used. |
-| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. No parent six-statement conclusion (b),(d),(e),(f) is used. |
+| Two-supercuspidal consumers | Neither nonadjacent-product irreducibility, two-supercuspidal product structure nor its full-product assembly is used. |
 | Supercuspidal and all-character finiteness | No supercuspidal, all-character single-block or arbitrary-character coinvariant-finiteness theorem or downstream consequence is used. |
 | Other Whittaker finiteness | No irreducible or Levi-cuspidal coinvariant-finiteness conclusion or prohibited mirabolic finite-length route supplies an input. |
 | Generality and normalization | All `k,r`, arbitrary supplied `T`, positive GL input rank and entire tensor factors are retained. There is no finite dimension, admissibility, irreducibility, finite length, genericity, chosen vector, universe saturation, canonical topology or theorem-valued premise. The inverse-half source scalar is included exactly. |
-| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions, source formulas, drafts, pending generic proofs and consumer tasks provide no unproved comparison premise. |
-| Separate owners and controls | The unit constructs a source coefficient quotient; it does not duplicate restriction-sequence or exactness work. Worker 127's operator pause, Worker 8's suspension, Worker 114's hold and current suspensions remain binding. |
+| Published-input requirement | Every imported pair is published and unchanged. Prop-valued statement definitions and source formulas provide no unproved comparison premise. |
+| Separate results | The module constructs a source coefficient quotient; it does not duplicate restriction-sequence or exactness results. |
 
 A code scan of this module and its complete project closure finds no
-occurrence of any of the host's 38 excluded task identifiers or 24 named
-consumer declarations, and no proof holes, new axioms or unsafe evaluation
-commands. Names in explanatory Markdown are audit prose. Declaration
-inspection of `leftPhiSourceCoefficientMap` reports independent universe
-parameters `uF,uV,uW,uV',uW'` and only `propext`, `Classical.choice` and
-`Quot.sound` as axioms. Compilation and inspection are development
-evidence; independent review and publication remain necessary.
+occurrence of any of 24 excluded consumer declarations, and no proof
+holes, new axioms or unsafe evaluation commands. Names in explanatory
+Markdown are audit prose. Declaration inspection of
+`leftPhiSourceCoefficientMap` reports independent universe parameters
+`uF,uV,uW,uV',uW'` and only `propext`, `Classical.choice` and
+`Quot.sound` as axioms.
 
 ## Complete project import closure
 
 The following list contains every direct and transitive project import;
-it excludes this new entry module. Mathlib imports resolve through the
+it excludes this entry module. Mathlib imports resolve through the
 supplied pinned environment.
 
 ```text

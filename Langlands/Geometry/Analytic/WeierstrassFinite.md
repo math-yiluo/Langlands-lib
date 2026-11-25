@@ -1,7 +1,5 @@
 # Finiteness from distinguished-series division
 
-Author: Worker 56.
-
 Let `A` be a complete ultrametric normed commutative ring with nonzero unit,
 unit norm one, and multiplicative norm. If a surjective `A`-algebra map out of
 the actual restricted-series algebra kills a distinguished series of degree

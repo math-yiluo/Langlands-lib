@@ -126,7 +126,7 @@ dimension. It is not countability of the set `A`. The quotient step has no
 dimension or nilpotence premise; those conditions are needed only for
 obtaining the shift.
 
-## Mathematical route and retained proof obligations
+## Mathematical route
 
 This is an explanation of the targets, not an implemented proof.
 
@@ -141,8 +141,8 @@ left ideal containing the shift, a simple actual quotient, and the
 separating class of `1`. To obtain original additive simplicity one must
 justify restriction for this particular nonzero original action. The
 separately published simplicity targets include
-`CompatibleUnitization.SimpleUnitizationRestrictionStatement`; their
-proof owner retains that obligation.
+`CompatibleUnitization.SimpleUnitizationRestrictionStatement`; they are
+proved in `NonUnitalSimplicityProof`.
 
 Concretely, the nonzero separating action excludes a nonzero original
 annihilator in the simple unitized module. For any nonzero original stable
@@ -151,11 +151,11 @@ complex-linear `U`-submodule contained in `S`: scalar closure follows
 from `c • (ρ a s) = ρ (c • a) s`. Simplicity forces that submodule, and
 hence `S`, to be the whole quotient. This explains why the original
 additive conclusion is reasonable and why a simple unitized module with
-zero original action would be insufficient. These arguments remain
-proof obligations; the declarations assume none of their conclusions.
+zero original action would be insufficient. These arguments are not
+carried out in this module; the declarations assume none of their conclusions.
 The final target combines the shift and quotient targets.
 
-## Universes, zero cases and authorship
+## Universes and zero cases
 
 The field ℂ is in `Type`; `A` has arbitrary universe `uA`.
 `U = Unitization ℂ A` and its actual quotient `Q` are in `Type uA`.
@@ -173,20 +173,14 @@ making the no-left-inverse premise impossible. The condition `z ≠ 0`
 is essential: at `z = 0` the required ideal would contain `ι a`, which
 would make the displayed separating action vanish.
 
-Worker 709 formulated this original-action statement unit and checked its
-actual quotient action. Worker 6 contributed the source-convention and
-additive-restriction clarification, including the nonzero-action route.
-Existing unital statement and proof authors and the separate simplicity
-proof owner retain their work; this unit asserts none of their pending
-proofs.
+## Checks
 
-## Author checks
-
-In Lean environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` the module
+The module
 compiles without errors or warnings. The three component declarations and
 the aggregate were inspected as proposition-valued definitions. Complete
 unapplied signature and expanded-body probes preserve all five algebra
 binders and the arbitrary algebra universe. The quotient-action examples
 check the canonical scalar instances and the actual class-of-`1` formula.
 These checks establish declaration typing and action formulas; the three
-substantive targets remain unproved.
+substantive targets are proved in `NonUnitalNonnilpotentLeftResolventProof`,
+`NonUnitalLeftShiftSimpleQuotientProof` and `NonUnitalSeparationProof`.

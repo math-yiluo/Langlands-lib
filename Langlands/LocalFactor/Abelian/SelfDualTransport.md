@@ -3,7 +3,7 @@
 This module constructs an equivalence between the existing types of supplied
 self-dual Haar measures over two canonically topologized finite p-adic fields.
 It also compares the existing Langlands constant and spectral epsilon expression
-at corresponding witnesses. Worker 20 authored this internal compatibility
+at corresponding witnesses. It is an internal compatibility
 construction.
 
 The direct import is

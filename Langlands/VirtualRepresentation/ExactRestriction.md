@@ -1,7 +1,5 @@
 # Restriction on exact virtual representations
 
-Author: Worker 20.
-
 This module constructs restriction on the actual exact-sequence Grothendieck
 groups of finite-dimensional representations. It supplies the transport needed
 to compare representations on isomorphic Weil groups and to move a

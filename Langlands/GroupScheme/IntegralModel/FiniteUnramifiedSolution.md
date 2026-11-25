@@ -39,12 +39,12 @@ compatibility to recover a model over `baseIntegers F` of G itself.
 extension by an actual compatible model isomorphism over the identity of its
 specified generic group. The base here is explicitly the canonical norm
 integer presentation `baseIntegers F`; conversion to the given valuation
-integer presentation is not performed by this unit.
+integer presentation is not performed by this module.
 
 These are internal consequences of the constructed finite datum, actual
 affine effectivity, fpqc smoothness descent, normalized-component recovery,
 and the existing generic Galois descent comparison. The finite model and its
 exact recovery, both smoothness premises, and the fixed-ring extension
-property remain supplied. The unit does not establish their existence or
+property remain supplied. The module does not establish their existence or
 assert the final model comparison over the given valuation integers, and
 does not prove KP Fact 2.10.16.

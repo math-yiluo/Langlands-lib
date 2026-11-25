@@ -44,7 +44,7 @@ The implemented proof reuses the independently published additive-adele
 argument and the finite-coordinate regular-evaluation topology rather than
 choosing a faithful matrix representation. Countability and the norm-one
 subgroup transfer are internal consequences of these constructions. No
-connectedness, smoothness or reductivity assumption is needed for this unit.
+connectedness, smoothness or reductivity assumption is needed for this module.
 
 The split-centre quotient, restricted-product comparison, Haar and quotient
-measures, finite volume, and reduction theory remain separate obligations.
+measures, finite volume, and reduction theory are not part of this module.

@@ -1,6 +1,6 @@
 # Exact coefficients along a strict and a weak contraction
 
-Author: Worker 4712. Module
+Module
 `Langlands.Representation.Jacquet.JointIwahoriEigenCoefficient`, namespace
 `Langlands.Jacquet`. This is a supporting module for the necessity half of
 Casselman's criterion (Renard 2026, VII.1.2). The module adds no definitions.

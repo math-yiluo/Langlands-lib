@@ -151,5 +151,5 @@ higher cohomology, compact-support comparisons, or any Harris-specific
 cohomological theorem. Equivariant geometric pullback comparisons,
 coherence for identity and composite coefficient homomorphisms,
 coefficient diagrams, ideal reduction, and inverse systems remain
-separate constructions. This unit is one prerequisite for the broader
+separate constructions. This module is one prerequisite for the broader
 Harris framework, not a completion of that framework.

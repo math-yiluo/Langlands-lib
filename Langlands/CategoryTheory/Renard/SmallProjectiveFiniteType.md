@@ -19,7 +19,7 @@ The statement pair and the pairs it imports are used unchanged. The other Librar
 
 ## Source and route
 
-The governing original is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, A.VIII.2, printed page 267 / PDF page 273. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The source states "Dans une catégorie de Grothendieck, un objet est un petit projectif si et seulement s'il est projectif de type fini". It gives no proof and cites [37], Pareigis, 4.11, Lemma 1. Pareigis was not read for this unit, and the proof here does not rely on it. The implemented route follows the unchecked outline that Worker 937 gave in the task context; this unit checked and completed that outline. Both directions keep the projectivity conjunct unchanged. Each direction compares coproduct preservation by the integer-module Hom functor `preadditiveCoyonedaInt P : C ⥤ ModuleCat.{v} ℤ` with finite type.
+The governing original is David Renard, *Représentations des groupes réductifs p-adiques*, French edition dated 9 July 2026, A.VIII.2, printed page 267 / PDF page 273. Registered source: `renard-2026-representations-groupes-reductifs-padiques`, SHA256 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`. The source states "Dans une catégorie de Grothendieck, un objet est un petit projectif si et seulement s'il est projectif de type fini". It gives no proof and cites [37], Pareigis, 4.11, Lemma 1. Pareigis was not read for this module, and the proof here does not rely on it. The implemented route follows an unchecked outline, which was checked and completed for this module. Both directions keep the projectivity conjunct unchanged. Each direction compares coproduct preservation by the integer-module Hom functor `preadditiveCoyonedaInt P : C ⥤ ModuleCat.{v} ℤ` with finite type.
 
 Recall the definitions. `HomSmallProjective.{w} P` is `HomProjective P ∧ HomPreservesCoproducts.{w} P`. The second conjunct says that `preadditiveCoyonedaInt P` preserves colimits of shape `Discrete I` for every `I : Type w`. `IsSourceGrothendieck.{w} C` is `HasCoproducts.{w} C` together with `DirectedSubobjectSumsDistribute.{w} C`, the source AB5 law. `IsFiniteTypeObject P` is `HasSubobjectUnions P` together with the chain condition: no nonempty chain of subobjects different from `⊤` has least upper bound `⊤`.
 
@@ -61,7 +61,7 @@ By `Submodule.iSup_induction`, every `x ∈ N` satisfies `x ≫ subobjectSumDesc
 
 ## Relation to the finite-support assertion
 
-The Library statement `Langlands.Renard.SmallProjectiveFiniteSupportStatement` (DAG node `proof.renard-small-projective-finite-support`) is a separate source assertion with its own owner. This unit neither proves nor claims it. The public lemma `preservesCoproduct_of_finiteFactor` proves only that finite-subcoproduct factorization implies coproduct preservation. Its full signature is
+The Library statement `Langlands.Renard.SmallProjectiveFiniteSupportStatement` is a separate source assertion. This module neither proves nor claims it. The public lemma `preservesCoproduct_of_finiteFactor` proves only that finite-subcoproduct factorization implies coproduct preservation. Its full signature is
 
 ```lean
 theorem Langlands.Renard.preservesCoproduct_of_finiteFactor {C : Type u} [Category.{v} C]
@@ -75,8 +75,8 @@ The separate proof module `Langlands.CategoryTheory.Renard.SmallProjectiveFinite
 
 ## Provenance and checks
 
-Worker 840 wrote the Lean proof and this Markdown. Development check `4076a43e-3dd9-4043-9fb8-f68fdc634278` in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` compiled the module with no errors or warnings. It inspected `Langlands.Renard.smallProjectiveFiniteType` as a theorem with level parameters `w, v, u`. Its only axioms are `propext`, `Classical.choice` and `Quot.sound`. Development checks do not establish exact-target validation, independent acceptance or publication.
+A development check compiled the module with no errors or warnings. It inspected `Langlands.Renard.smallProjectiveFiniteType` as a theorem with level parameters `w, v, u`. Its only axioms are `propext`, `Classical.choice` and `Quot.sound`.
 
-Worker 937 later made `preservesCoproduct_of_finiteFactor` public. The change removed its `private` modifier and added a sentence to its docstring and to the module docstring. No statement or proof changed. Development checks `75be94f5-bfeb-441c-b587-ac229b08fd4f` and `1a0cc451-e0ae-486d-8ada-5a1b7a1e89d4`, in the same environment over Library commit `f60a6c408d4d2ab4d0217f8be1dd8745e54a207c`, recompiled the module with no errors or warnings. The second check confirmed by `rfl` that the type of `smallProjectiveFiniteType` is still exactly the statement. It also confirmed that `smallProjectiveFiniteType` and `preservesCoproduct_of_finiteFactor` use only the same three axioms.
+`preservesCoproduct_of_finiteFactor` was later made public. The change removed its `private` modifier and added a sentence to its docstring and to the module docstring. No statement or proof changed. Two development checks over Library commit `f60a6c408d4d2ab4d0217f8be1dd8745e54a207c` recompiled the module with no errors or warnings. The second check confirmed by `rfl` that the type of `smallProjectiveFiniteType` is still exactly the statement. It also confirmed that `smallProjectiveFiniteType` and `preservesCoproduct_of_finiteFactor` use only the same three axioms.
 
-This unit proves the A.VIII.2 comparison sentence only. The finite-support characterization, presentations, the regular-module converse and Morita equivalence remain separate obligations.
+This module proves the A.VIII.2 comparison sentence only. The finite-support characterization, presentations, the regular-module converse and Morita equivalence are separate results.

@@ -111,7 +111,7 @@ The provenance is internal: the new content combines the constructed
 pushout domain, its bounded structural square, the existing local-domain
 restriction category and the coherent local-domain pullback equations.
 No inverse-image object, comparison, representation or naturality output
-is assumed. This unit establishes local restriction comparisons; constructing
+is assumed. This module establishes local restriction comparisons; constructing
 global atlas refinements and Ore squares, identifying the intended analytic
 category, and constructing the analytic and equivariant sites and Harris
-specializations remain further obligations.
+specializations lie outside it.

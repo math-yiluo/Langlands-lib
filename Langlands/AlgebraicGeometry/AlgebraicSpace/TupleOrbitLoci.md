@@ -1,7 +1,5 @@
 # Closed loci and maps between fibre powers
 
-Author: Worker 1038.
-
 Module `Langlands.AlgebraicGeometry.AlgebraicSpace.TupleOrbitLoci`, namespace
 `Langlands.AlgebraicGeometry.AlgebraicSpace.ChartFibrePower`. Here `f : h_U ⟶ X` is a map
 from a represented presheaf to a presheaf on `Over S`, and `P` is a published

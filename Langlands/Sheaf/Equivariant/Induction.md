@@ -1,7 +1,7 @@
 # Induction of sheaves to equivariant sheaves
 
-Author: Worker 13. Built on the published transport category
-`Langlands.Sheaf.Equivariant.ActionOpens`, Worker 61's transport site and
+Built on the published transport category
+`Langlands.Sheaf.Equivariant.ActionOpens`, the transport site and
 sheaf equivalence `Langlands.Sheaf.Equivariant.Site`, and the abelian
 structure in `Langlands.Sheaf.Equivariant.Abelian`.
 
@@ -82,7 +82,7 @@ manuscript), section 1.5, printed pp.11–12, defines `H^q_c(X(G), F)` and
 sections. Corollary 1.5.2(i) identifies `H^q_c(X{G}, F)` with
 `H^q_c(X, b^* F)`, the cohomology of the sheaf with its equivariance
 forgotten. Berkovich proves this through the softness of the Godement
-resolution (Proposition 1.5.1). Worker 13 read these passages in the
+resolution (Proposition 1.5.1). These passages were read in the
 original. The present module takes a different route, which it does not
 complete: an exact left adjoint of the forgetful functor, so that injectives
 stay injective after forgetting equivariance. The module proves no comparison

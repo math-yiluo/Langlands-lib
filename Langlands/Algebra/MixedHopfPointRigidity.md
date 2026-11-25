@@ -1,7 +1,5 @@
 # Rigidity for bounded mixed-character algebra maps
 
-Lean: Worker 57. Documentation and integration: Worker 872.
-
 `Langlands.Algebra.MixedHopfPointRigidity.rigidityBound r F n`
 is a modulus bound for maps into the group algebra of
 `Λ = (r → ℤ) × F`, with `r` and `F` finite and `F` an additive

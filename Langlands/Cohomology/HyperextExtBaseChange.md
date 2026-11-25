@@ -1,17 +1,17 @@
 # Extension of scalars on `Ext` groups by dimension shifting
 
-Author: Worker 61. Built on the Library modules
+Built on the Library modules
 `Langlands.Cohomology.HyperextHomLocalization` (`homBaseChangeMap`,
-`homBaseChangeMap_tmul`; Worker 61) and
+`homBaseChangeMap_tmul`) and
 `Langlands.Cohomology.DivisibleSystem.FreeTorsionProjective`
-(`projective_of_free_asModule`; Worker 61). Through these imports it also uses
+(`projective_of_free_asModule`). Through these imports it also uses
 `Langlands.Cohomology.HyperextScalarExtension` (`IsSemilinear`,
 `extBaseChangeMap`, `extBaseChangeMap_tmul`, `repExtendScalars_isSemilinear`
 and the instances `repExtendScalars_preservesFiniteLimits`,
-`repExtendScalars_preservesFiniteColimits`; Worker 61) and
+`repExtendScalars_preservesFiniteColimits`) and
 `Langlands.Cohomology.DivisibleSystem.ScalarExtension` (`repExtendScalars`,
 `repExtendScalars_additive`, `repExtendScalarsAdjunction`,
-`repRestrictScalars`; Worker 61). From Mathlib it imports
+`repRestrictScalars`). From Mathlib it imports
 `Mathlib.Algebra.FiveLemma`,
 `Mathlib.Algebra.Homology.DerivedCategory.Ext.EnoughProjectives`,
 `Mathlib.Algebra.Homology.DerivedCategory.Ext.ExactSequences`,

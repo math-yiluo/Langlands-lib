@@ -148,32 +148,35 @@ coherent action induced by the original chosen bounded atlas action. -/
 def action (D : Type z) : Action (Type (max v z)) G where
   V := OriginalDomainSection X.V D
   ρ :=
-    { toFun g := TypeCat.ofHom (OriginalDomainSection.transport (X.ρAut g))
+    { toFun g := End.of (TypeCat.ofHom (OriginalDomainSection.transport (X.ρAut g).asIso))
       map_one' := by
+        apply End.ext
         apply ConcreteCategory.hom_ext
         intro s
-        change OriginalDomainSection.transport (X.ρAut 1) s = s
+        change OriginalDomainSection.transport (X.ρAut 1).asIso s = s
         rw [map_one]
         exact OriginalDomainSection.transport_refl s
       map_mul' g h := by
+        apply End.ext
         apply ConcreteCategory.hom_ext
         intro s
-        change OriginalDomainSection.transport (X.ρAut (g * h)) s =
-          OriginalDomainSection.transport (X.ρAut g)
-            (OriginalDomainSection.transport (X.ρAut h) s)
+        change OriginalDomainSection.transport (X.ρAut (g * h)).asIso s =
+          OriginalDomainSection.transport (X.ρAut g).asIso
+            (OriginalDomainSection.transport (X.ρAut h).asIso s)
         rw [map_mul]
-        exact OriginalDomainSection.transport_trans (X.ρAut h) (X.ρAut g) s }
+        exact OriginalDomainSection.transport_trans (X.ρAut h).asIso (X.ρAut g).asIso s }
 
 @[simp]
 theorem action_domain (D : Type z) (g : G) (s : OriginalDomainSection X.V D) :
-    (((action X D).ρ g).hom s).domain = isoOriginalDomain (X.ρAut g) s.domain := rfl
+    (((action X D).ρ g).asHom.hom s).domain =
+      isoOriginalDomain (X.ρAut g).asIso s.domain := rfl
 
 /-- The section operator is inverse precomposition by the original group action. -/
 @[simp]
 theorem action_section_apply (D : Type z) (g : G) (s : OriginalDomainSection X.V D)
-    (x : isoOriginalDomain (X.ρAut g) s.domain) :
-    (((action X D).ρ g).hom s).value x =
-      s.value ((isoOriginalDomainHomeomorph (X.ρAut g) s.domain).symm x) := rfl
+    (x : isoOriginalDomain (X.ρAut g).asIso s.domain) :
+    (((action X D).ρ g).asHom.hom s).value x =
+      s.value ((isoOriginalDomainHomeomorph (X.ρAut g).asIso s.domain).symm x) := rfl
 
 /-- Actual coefficient postcomposition is equivariant on all varying domains. -/
 def coefficientMap (φ : D → E) : action X D ⟶ action X E where
@@ -181,7 +184,7 @@ def coefficientMap (φ : D → E) : action X D ⟶ action X E where
   comm g := by
     apply ConcreteCategory.hom_ext
     intro s
-    exact OriginalDomainSection.transport_map (X.ρAut g) φ s
+    exact OriginalDomainSection.transport_map (X.ρAut g).asIso φ s
 
 end ChosenAtlasSectionAction
 

@@ -109,7 +109,7 @@ instance : SetLike (CompatibleSubmodule ρ) M where
     exact SetLike.coe_injective h
 
 /-- The inherited inclusion order. -/
-instance : PartialOrder (CompatibleSubmodule ρ) := .ofSetLike (CompatibleSubmodule ρ) M
+instance : PartialOrder (CompatibleSubmodule ρ) := .ofSetLike (CompatibleSubmodule ρ)
 
 instance : AddSubgroupClass (CompatibleSubmodule ρ) M where
   add_mem {S} _ _ := S.add_mem'

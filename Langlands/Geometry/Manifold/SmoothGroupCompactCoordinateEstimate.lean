@@ -112,9 +112,13 @@ theorem smoothGroupCompactCoordinateEstimate (ψ : E → G) :
     have hp₁ : p z = 1 := by simp [p]
     have heq : F = a ∘ p := by funext y; dsimp [F, a, p]; group
     have hD' : fderiv ℝ F z = A.comp (L (k, z)) := by
-      rw [heq, ← mvfderiv_eq_fderiv,
+      refine ContinuousLinearMap.ext fun v => ?_
+      rw [heq]
+      change (fderiv ℝ (a ∘ p) z ∘L
+        (NormedSpace.fromTangentSpace (𝕜 := ℝ) z : TangentSpace 𝓘(ℝ, E) z →L[ℝ] E)) v = _
+      rw [← mvfderiv_eq_fderiv,
         mvfderiv_comp z (ha.mdifferentiableAt (by simp)) (hp.mdifferentiableAt (by simp))]
-      change (mvfderiv IG a (p z) : W →L[ℝ] ℂ).comp (L (k, z)) = _
+      change (mvfderiv IG a (p z) : W →L[ℝ] ℂ).comp (L (k, z)) v = _
       rw [hp₁]
     have haB : ‖A‖ ≤ V * M :=
       opNorm_le_of_basisValues_le _ hM (hbound z hz)

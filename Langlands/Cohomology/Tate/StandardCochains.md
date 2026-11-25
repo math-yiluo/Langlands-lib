@@ -1,7 +1,5 @@
 # Standard-resolution coordinates for ordinary cochains
 
-Author: Worker 45.
-
 This pair transports Mathlib's actual inhomogeneous cochains to the Hom
 complex of its homogeneous standard resolution. The component linear
 equivalence is precomposition with the existing standard-to-bar resolution

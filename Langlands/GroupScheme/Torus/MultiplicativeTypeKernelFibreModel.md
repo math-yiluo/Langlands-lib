@@ -1,7 +1,8 @@
 # Extending a split multiplicative-type fibre kernel to the base
 
-Worker 879, using Worker 886's explicit character-restriction construction.
-Internal derived interface in the kernel-factorization proof.
+Internal derived interface in the kernel-factorization proof, using the
+explicit character-restriction construction of
+`RelativeDiagonalizableExactQuotient`.
 
 Let `S` be any scheme, `M` a finitely generated abelian group,
 `f : D_S(M) → G` a homomorphism with separated target, and
@@ -23,13 +24,13 @@ The implementation first compares base change of the integral
 diagonalizable model with the actual group algebra over an affine
 base. The comparison is natural for full-character restriction maps.
 It then composes the compatible closed-subgroup model with the
-published kernel-coordinate isomorphism. The inclusion equation
+kernel-coordinate isomorphism. The inclusion equation
 follows from naturality and the model's inclusion compatibility.
 Point-functor ranges and triviality on the fibre follow from this
 actual isomorphism, on every test scheme.
 
-The character-restriction map and exact quotient construction are
-unchanged same-task helper sources by Worker 886. All conclusions
-are derived from these constructions and the published field
+The character-restriction map and exact quotient construction come
+from the module `RelativeDiagonalizableExactQuotient`. All conclusions
+are derived from these constructions and the Library's field
 classification, full faithfulness and kernel base-change interfaces.
-This module does not yet prove the relative kernel criterion.
+This module does not prove the relative kernel criterion.

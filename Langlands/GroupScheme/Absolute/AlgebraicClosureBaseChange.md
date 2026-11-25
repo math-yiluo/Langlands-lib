@@ -1,8 +1,7 @@
 # Base change along an isomorphism of fields
 
 Module `Langlands.GroupScheme.Absolute.AlgebraicClosureBaseChange`. It is derived
-infrastructure for `Langlands.GroupScheme.ParabolicIntersectionGeometryStatement` (task
-`7c372114-27b9-49eb-8f69-5b1df15fbbca`).
+infrastructure for `Langlands.GroupScheme.ParabolicIntersectionGeometryStatement`.
 
 The proof of that statement works over `k̄ = AlgebraicClosure k`. It needs `G_{k̄}` to be
 connected reductive and the base changes of the two parabolics to be parabolic. The Library
@@ -77,7 +76,7 @@ Let `φ : K →+* K'` be a bijective map of fields, `e = Spec.map (ofHom φ)` an
   `range_eq_bot_of_range_baseChange_eq_bot` (with `e ≫ c = 𝟙`) gives `range i = ⊥`.
 - `IsBorelSubgroup.baseChange_of_bijective φ hφ hj`: base change along `e` preserves
   `IsBorelSubgroup`. Closedness, smoothness and connectedness are as above. Solvability is
-  `IsSolvableGroupScheme.baseChange_of_bijective` (Worker 1240's module
+  `IsSolvableGroupScheme.baseChange_of_bijective` (module
   `Absolute.SolvableBijectiveBaseChange`). For maximality, let `f ≫ i' = (bc e).map j` with
   `i' : B' ⟶ (bc e).obj G` closed, smooth, connected and solvable. Then `j ≫ η_G.inv` is
   Borel (`IsBorelSubgroup.comp_iso`), and it factors through `(bc c).map i'` by

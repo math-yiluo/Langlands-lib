@@ -1,6 +1,6 @@
 # Connected nonempty geometric fibres descend along affine limits
 
-This internally derived supporting unit proves the connected-fibre clause of
+This internally derived supporting module proves the connected-fibre clause of
 `SpaceLimitPropertyDescentStatement`: the exact predicate
 `SpaceLimitPropertyDescends (fun f => HasGeometricallyConnectedFibres f)`.
 It retains arbitrary cofiltered index categories in the declared universe,
@@ -48,4 +48,4 @@ The proof route is an internal composition of the actual target-family fibre
 comparisons, geometric-component constructibility, scheme pullback limit
 construction, constructible-set detection, and isomorphism transport already
 in the Library. The theorem proves the eighth clause; the other seven clauses
-and the assembled full theorem are not asserted by this unit.
+and the assembled full theorem are not asserted by this module.

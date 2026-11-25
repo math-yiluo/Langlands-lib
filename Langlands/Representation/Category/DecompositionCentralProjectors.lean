@@ -123,8 +123,8 @@ theorem comp_centralProjectorApp {X W : SmoothRep.{0, uG, uV} ℂ G}
 
 /-- The central projector attached to one component of a smooth category decomposition. -/
 def centralProjector (i : I) : CatCenter (SmoothRep.{0, uG, uV} ℂ G) where
-  app X := centralProjectorApp hP i X
-  naturality X Y f := by
+  asHom.app X := centralProjectorApp hP i X
+  asHom.naturality X Y f := by
     obtain ⟨A, ι, hA, hc⟩ := hP.1 X
     apply Cofan.IsColimit.hom_ext hc.some
     intro j

@@ -1,8 +1,6 @@
 # Renard 2026, Chapter I: item-by-item coverage ledger
 
-Worker 1222, executor of the whole-book task
-`f5d1f399-a1f8-4ab5-a981-90b92abd4857`, revision 1. This note is the Chapter I part of the
-item ledger that the task contract requires, in the format of the
+This note is the Chapter I part of the item ledger of the whole book, in the format of the
 [Chapter IV](item-ledger-iv.md), [Chapter V](item-ledger-v.md),
 [Chapter VI](item-ledger-vi.md) and [Chapter VII](item-ledger-vii.md) ledgers. It lists
 the headed items of Chapter I and the unheaded assertions found in its paragraphs, with
@@ -22,8 +20,8 @@ to the first bare-additive I.4.2 comparison is also published at
 `7f43c3c930ff92f76dae6589da1678ad729017e5`. The focused rows and evidence
 below distinguish those scopes. A further focused update on
 14 November 2026 records the separate second-comparison construction,
-published at Library `e5365902d74534dbf1622c06e695dffdc128d723`. Worker 1222
-reread printed pp.6, 14 and 23–24 / PDF pp.12, 20 and 29–30 for that
+published at Library `e5365902d74534dbf1622c06e695dffdc128d723`. Printed
+pp.6, 14 and 23–24 / PDF pp.12, 20 and 29–30 were reread for that
 update. Other rows retain their earlier audit dates.
 
 The source is David Renard, *Représentations des groupes réductifs p-adiques*,
@@ -34,39 +32,37 @@ pp.5–28 / PDF pp.11–34.
 
 ## Proof-status update, 14 November 2026
 
-Worker 4 made this update at Worker 1222's request. It checks every row with status S
+This update checks every row with status S
 against Library `4f4af6baed8c8e029e87c8303ea44c8f1d9f2f86`. A statement is marked proved
 (P) only when a Library theorem has exactly that statement as its type, or a conjunction
 with that statement as a component, with no further hypotheses. For a statement with parameters, such as `PseudoForgetfulRemark`, the theorem
-quantifies over all of them. Worker 4 read each theorem line and found no `sorry` or
-`admit` in its file. The table gives the published `lean.proof@1` record of each proof. Its
-Lean and Markdown files at the checked commit have the SHA256 recorded in the record;
-integration IDs and commits come from the publication receipts. No proof record was found
-for the I.2.2 and I.2.3 proof modules. Proof modules are under `Langlands/Algebra/`. After
+quantifies over all of them. Each theorem line was read and no `sorry` or
+`admit` was found in its file. The table gives the Library commit at which each proof first
+appeared; for the I.2.2 and I.2.3 proof modules no first commit was found among the Library
+snapshots available locally. Proof modules are under `Langlands/Algebra/`. After
 this update no Chapter I statement lacks an exact proof (see Pending). This update does
 not change the I.4.2 rows, source issues S2–S3 or the coefficient conventions.
 
-| Row | Theorem | Proof module | Proof record | Integration ID | First Library commit |
-| --- | --- | --- | --- | --- | --- |
-| I.1.2 `A = lim_e eAe`; I.1.2 Remark 2 | `idempotentedRingDirectLimitStatement` | [IdempotentedRingDirectLimitProof](../../Langlands/Algebra/IdempotentedRingDirectLimitProof.md) | `6e181de3-0740-4eca-8c64-5bd95b0d54c2` | `a9a57bc83fb548c0b814b231c86b335c` | `73b1430a` |
-| I.1.2 Definition; I.1.2 Remark 2 | `nondegenerateModuleDirectLimitStatement` | [NondegenerateModuleDirectLimitProof](../../Langlands/Algebra/NondegenerateModuleDirectLimitProof.md) | `c7c50317-16cb-4bf5-9b32-758ce6c4b748` | `f83eb280514a450ab2768621945c36cd` | `73b1430a` |
-| I.1.4, `M̂` not nondegenerate | `leftLimitNotNondegenerateStatement` | [LeftLimitNotNondegenerateProof](../../Langlands/Algebra/LeftLimitNotNondegenerateProof.md) | `c2030a14-04ac-4eb6-8dd0-9f4492aa9202` | `623061ae3ad54a3fa641897c1da148f0` | `73b1430a` |
-| I.1.7 Theorem | `NondegenerateModuleCenterProof.nondegenerateModuleCenterTheorem` | [NondegenerateModuleCenterProof](../../Langlands/Algebra/NondegenerateModuleCenterProof.md) | `4eb39569-e8bc-47c3-bbde-da4f5496cfaa` | `d0ad2ceca6004cfb82e58418f0a1ade8` | `730bd1f2` |
-| I.1.7 Remark | `UnitalNondegenerateModuleCenterProof.unitalNondegenerateModuleCenter` | [UnitalNondegenerateModuleCenterProof](../../Langlands/Algebra/UnitalNondegenerateModuleCenterProof.md) | `8d3e49ea-f128-4340-8550-232649e98bd1` | `0790d27840b34c01bcda898ab2915c89` | `730bd1f2` |
-| I.1.8 | `CenterScalarFunctionProof.centerScalarFunction` | [CenterScalarFunctionProof](../../Langlands/Algebra/CenterScalarFunctionProof.md) | `c00a0f74-7af0-4adb-8760-65fe70334321` | `04d812f3972d4d09ba382456d092b283` | `730bd1f2` |
-| I.2.2 Proposition, the two Hom lines | `NondegenerateTensorHomExactness.statements`, whose type is the conjunction `Statements` of the tensor line and the two Hom statements; its second and third components are `ContravariantHomLeftExactStatement` and `CovariantHomLeftExactStatement` | [NondegenerateTensorHomExactnessProof](../../Langlands/Algebra/NondegenerateTensorHomExactnessProof.md) (Worker 134, Task 5281, not in the current task list) | none found | none found | present in all 36 Library snapshots available locally |
-| I.2.3 unital right adjoint, Remark, final Remark | `RenardForgetfulFunctor.unitalCoextensionAdjunction`, `pseudoForgetfulRemark`, `forgetfulFunctorRemark`, `renardForgetfulFunctorStatements` | [RenardForgetfulFunctorProof](../../Langlands/Algebra/RenardForgetfulFunctorProof.md) | none found | none found | present in all 36 Library snapshots available locally |
-| I.4.3 | `NonUnitalModuleDualCompletion.dualCompletionStatement` | [NonUnitalModuleDualCompletionProof](../../Langlands/Algebra/NonUnitalModuleDualCompletionProof.md) | `ebfd1508-b047-4371-af06-0460abd092bf` | `9e8ed03edd504b3c8652bd40bcd9136c` | `51e4d897` |
+| Row | Theorem | Proof module | First Library commit |
+| --- | --- | --- | --- |
+| I.1.2 `A = lim_e eAe`; I.1.2 Remark 2 | `idempotentedRingDirectLimitStatement` | [IdempotentedRingDirectLimitProof](../../Langlands/Algebra/IdempotentedRingDirectLimitProof.md) | `73b1430a` |
+| I.1.2 Definition; I.1.2 Remark 2 | `nondegenerateModuleDirectLimitStatement` | [NondegenerateModuleDirectLimitProof](../../Langlands/Algebra/NondegenerateModuleDirectLimitProof.md) | `73b1430a` |
+| I.1.4, `M̂` not nondegenerate | `leftLimitNotNondegenerateStatement` | [LeftLimitNotNondegenerateProof](../../Langlands/Algebra/LeftLimitNotNondegenerateProof.md) | `73b1430a` |
+| I.1.7 Theorem | `NondegenerateModuleCenterProof.nondegenerateModuleCenterTheorem` | [NondegenerateModuleCenterProof](../../Langlands/Algebra/NondegenerateModuleCenterProof.md) | `730bd1f2` |
+| I.1.7 Remark | `UnitalNondegenerateModuleCenterProof.unitalNondegenerateModuleCenter` | [UnitalNondegenerateModuleCenterProof](../../Langlands/Algebra/UnitalNondegenerateModuleCenterProof.md) | `730bd1f2` |
+| I.1.8 | `CenterScalarFunctionProof.centerScalarFunction` | [CenterScalarFunctionProof](../../Langlands/Algebra/CenterScalarFunctionProof.md) | `730bd1f2` |
+| I.2.2 Proposition, the two Hom lines | `NondegenerateTensorHomExactness.statements`, whose type is the conjunction `Statements` of the tensor line and the two Hom statements; its second and third components are `ContravariantHomLeftExactStatement` and `CovariantHomLeftExactStatement` | [NondegenerateTensorHomExactnessProof](../../Langlands/Algebra/NondegenerateTensorHomExactnessProof.md) | present in all 36 Library snapshots available locally |
+| I.2.3 unital right adjoint, Remark, final Remark | `RenardForgetfulFunctor.unitalCoextensionAdjunction`, `pseudoForgetfulRemark`, `forgetfulFunctorRemark`, `renardForgetfulFunctorStatements` | [RenardForgetfulFunctorProof](../../Langlands/Algebra/RenardForgetfulFunctorProof.md) | present in all 36 Library snapshots available locally |
+| I.4.3 | `NonUnitalModuleDualCompletion.dualCompletionStatement` | [NonUnitalModuleDualCompletionProof](../../Langlands/Algebra/NonUnitalModuleDualCompletionProof.md) | `51e4d897` |
 
 ## How the rows were checked
 
-Worker 1222 read Chapter I in the text extraction, paragraph by paragraph, and listed the
-Library Markdown files that cite each section. For each row the declarations named were read
+Chapter I was read in the text extraction, paragraph by paragraph, and the
+Library Markdown files that cite each section were listed. For each row the declarations named were read
 in their Lean file and Markdown. Proof status comes from a scan of the Library for theorems
 whose type is exactly the statement (`proved by`). Where a module states several clauses and
-proves them through one aggregate theorem, the row names the aggregate. A `task` entry is a
-`lean.proof@1` task whose contract names the statement. Detailed source maps by other
-workers are cited where they exist: the [initial passage audit](initial-passages.md) for
+proves them through one aggregate theorem, the row names the aggregate. Detailed source maps
+are cited where they exist: the [initial passage audit](initial-passages.md) for
 I.1, the [I.2.1 assertion map](unitization-tensor-progress.md) and the dated coverage updates
 ([9 November](coverage-update-2026-11-09.md), [10 November](coverage-update-2026-11-10.md),
 [11 November](coverage-update-2026-11-11.md)). The coefficient question of I.4.2 is
@@ -78,15 +74,13 @@ names are under `Langlands/Algebra/`.
 Status codes, as in the other ledgers:
 
 - **P**: proved; the named theorem has exactly the statement's type.
-- **S**: statement published; a proof task is open.
+- **S**: statement published; its proof is open.
 - **D**: definition or construction (with the laws proved in its module, where stated).
 - **C**: covered by published statements that are stronger or equivalent, or derived from
   them; the row says which.
 - **St**: a step of the proof of a stated result.
 - **X**: expository, convention or attribution.
 - **Rec**: an assertion recalled from the literature.
-- **A**: candidate accepted by review, waiting for integration.
-- **R**: candidate staged, under review.
 - **G**: genuine gap.
 
 ## Opening and conventions (5–6 / 11–12)
@@ -107,10 +101,10 @@ Status codes, as in the other ledgers:
 | I.1.2 Definition: ring with idempotents | 7 / 13 | `IsIdempotented` | D |
 | I.1.2 Lemma: `Idem(A)` is filtering | 7 / 13 | `IsIdempotented.finite_upper_bound` | P |
 | I.1.2 `A = ⋃_e eAe` | 7 / 13 | `IsIdempotented.iUnion_corners` | P |
-| I.1.2 `A = lim_e eAe` (direct limit along the inclusions, A.IV.2) | 7 / 13 | `IdempotentedRingDirectLimitStatement` (universal property of the inclusions, in abelian groups and in nonunital rings, for every filtering system) | P (`idempotentedRingDirectLimitStatement`, Task 5772; proof-status update below) |
-| I.1.2 Definition: nondegenerate module; equivalently `M = lim_e e·M` | 7 / 13 | `IsNondegenerate`; `NondegenerateModuleDirectLimitStatement` (the direct-limit formulation, in abelian groups) | D; P (`nondegenerateModuleDirectLimitStatement`, Task 5772) |
+| I.1.2 `A = lim_e eAe` (direct limit along the inclusions, A.IV.2) | 7 / 13 | `IdempotentedRingDirectLimitStatement` (universal property of the inclusions, in abelian groups and in nonunital rings, for every filtering system) | P (`idempotentedRingDirectLimitStatement`; proof-status update below) |
+| I.1.2 Definition: nondegenerate module; equivalently `M = lim_e e·M` | 7 / 13 | `IsNondegenerate`; `NondegenerateModuleDirectLimitStatement` (the direct-limit formulation, in abelian groups) | D; P (`nondegenerateModuleDirectLimitStatement`) |
 | I.1.2 Remark 1: a unital ring has idempotents; its unital modules are the nondegenerate ones | 7 / 13 | `IsIdempotented.of_ring`, `isNondegenerate_iff_isUnitalModule` | P |
-| I.1.2 Remark 2: for a filtering system `𝒥` of idempotents, fixation by elements of `𝒥` suffices for nondegeneracy, and `A = lim_𝒥 eAe`, `M = lim_𝒥 e·M` | 7 / 13 | the same two statements, with a general filtering system `J` | P (the same two proofs, Task 5772) |
+| I.1.2 Remark 2: for a filtering system `𝒥` of idempotents, fixation by elements of `𝒥` suffices for nondegeneracy, and `A = lim_𝒥 eAe`, `M = lim_𝒥 e·M` | 7 / 13 | the same two statements, with a general filtering system `J` | P (the same two proofs) |
 | I.1.2 Remark 3: nondegeneracy relative to a system `𝒥` closed under pairwise upper bounds | 7 / 13 | none | X: the remark says that the notion can be generalized and makes no further assertion |
 | I.1.2 `M_A`, the largest nondegenerate submodule, `= ⋃_e e·M` | 7 / 13 | `nondegeneratePart`, `mem_nondegeneratePart_iff_exists_smul`, `nondegeneratePart_isNondegenerate`, `le_nondegeneratePart_iff` ([NonUnitalModule](../../Langlands/Algebra/NonUnitalModule.md)) | D; P |
 | I.1.2 `M(A)` is a full subcategory stable under submodules and quotients, hence abelian; right modules `M(A)_d` | 7 / 13 | `NondegenerateModuleCat`; `NondegenerateModuleClosureStatement`, `NondegenerateModuleAbelianStatement`; right modules as modules over `Aᵐᵒᵖ` | D; P (`nondegenerateModuleClosureStatement`, `nondegenerateModuleAbelianStatement`) |
@@ -124,7 +118,7 @@ Status codes, as in the other ledgers:
 | I.1.4 the completion `M̂ = lim e·M`, compatible families and the embedding `m ↦ (e·m)_e`; completeness and density | 9 / 15 | `NonUnitalModuleLeftLimit`, [NonUnitalModuleLeftLimitUniformity](../../Langlands/Algebra/NonUnitalModuleLeftLimitUniformity.md); `NonUnitalModuleLeftLimitDensityCompletenessTheorem` | D; P (`nonUnitalModuleLeftLimitDensityCompletenessTheorem_proof`) |
 | I.1.4 Proposition: `Hom_A(A, M) ≅ M̂`, `φ ↦ (φ(e))_e` | 10 / 16 | `RegularModuleHomLeftLimitComparisonTheorem` | P (`regularModuleHomLeftLimitComparisonTheorem_proof`) |
 | I.1.4 the `A`-module structure `(a·φ)(b) = φ(ba)` on `M̂`, extending that of `M` | 10 / 16 | [NonUnitalModuleLeftLimitAction](../../Langlands/Algebra/NonUnitalModuleLeftLimitAction.md) | D |
-| I.1.4 "`M̂` n'est plus nécessairement non dégénéré" | 10 / 16 | `LeftLimitNotNondegenerateStatement` (an example exists: `A = ⊕_ℕ ℂ`, `M = A`, where `M̂` is the space of all sequences and the constant sequence `1` is fixed by no idempotent) | P (`leftLimitNotNondegenerateStatement`, Task 5772) |
+| I.1.4 "`M̂` n'est plus nécessairement non dégénéré" | 10 / 16 | `LeftLimitNotNondegenerateStatement` (an example exists: `A = ⊕_ℕ ℂ`, `M = A`, where `M̂` is the space of all sequences and the constant sequence `1` is fixed by no idempotent) | P (`leftLimitNotNondegenerateStatement`) |
 | I.1.4 Remark: `Â ≅ End_{A°}(A)` | 10 / 16 | `IdempotentedRingEndomorphismComparisonTheorem` (its `InverseIdentities` and `RingEquivalence` clauses) | P (`idempotentedRingEndomorphismComparisonTheorem_proof`) |
 | I.1.5 the completion functor `M(A) → A-mod` on morphisms | 10 / 16 | [NonUnitalModuleCompletionFunctor](../../Langlands/Algebra/NonUnitalModuleCompletionFunctor.md) | D |
 | I.1.5 Proposition: `(M̂)_A = M`; completion is faithful and right adjoint to smoothing; (I.1.5.1)–(I.1.5.2) | 10–11 / 16–17 | `NonUnitalModuleCompletionRecoveryFaithfulnessTheorem`, `NonUnitalModuleSmoothingCompletionAdjunctionTheorem` | P (`nonUnitalModuleCompletionRecoveryFaithfulnessTheorem_proof`, `nonUnitalModuleSmoothingCompletionAdjunctionTheorem_proof`) |
@@ -133,9 +127,9 @@ Status codes, as in the other ledgers:
 | I.1.6 Lemma: `Â` is the closure of the left multiplications | 11 / 17 | `IdempotentedRingEndomorphismClosureLemma` | P (`idempotentedRingEndomorphismClosureLemma_proof`) |
 | I.1.6 Proposition: `Â ≅ Hom(ϖ, ϖ)`, the endomorphisms of the forgetful functor `ϖ : M(A) → ℤ-mod` | 12 / 18 | `NondegenerateModuleNaturalEndClassificationStatement.Classification` | P (`classification`). The source proof speaks of functors `M(A) → M(A)` while the display has target `ℤ-mod`; the statement follows the display (its [Markdown](../../Langlands/Algebra/NondegenerateModuleNaturalEndClassificationStatement.md)) |
 | I.1.7 Lemma: `φ ∈ Â` commuting with left multiplications acts on every nondegenerate `M` by `φ̃_M(a·m) = φ(a)·m`, naturally in `M` | 12 / 18 | `NondegenerateModuleCenter.fromCommutantRingHom` and the component lemmas of [NondegenerateModuleCenter](../../Langlands/Algebra/NondegenerateModuleCenter.md) | D (the construction, its formula and naturality are proved there) |
-| I.1.7 the two constructions are inverse; Theorem: `ℨ(A)` = commutant of `A` in `Â` = centre of `Â` = `lim_e Z(eAe)` | 12–13 / 18–19 | `NondegenerateModuleCenterTheoremStatement` | P (`NondegenerateModuleCenterProof.nondegenerateModuleCenterTheorem`, Task 5709) |
-| I.1.7 Remark: for unital `A`, `ℨ(A) ≅ Z(A)` | 13 / 19 | `UnitalNondegenerateModuleCenterStatement` | P (`UnitalNondegenerateModuleCenterProof.unitalNondegenerateModuleCenter`, Task 5709) |
-| I.1.8 `z_M` scalars, constant on classes; (I.1.8.1); (Sep); the extension of (I.1.8.2) to `Â` is injective; elements of `ℨ(A)` are determined by their functions | 13–14 / 19–20 | `CenterScalarFunctionStatement` | P (`CenterScalarFunctionProof.centerScalarFunction`, Task 5710). That (I.1.8.1) is an algebra morphism follows from the uniqueness clause and is not stated separately (its [Markdown](../../Langlands/Algebra/CenterScalarFunctionStatement.md)) |
+| I.1.7 the two constructions are inverse; Theorem: `ℨ(A)` = commutant of `A` in `Â` = centre of `Â` = `lim_e Z(eAe)` | 12–13 / 18–19 | `NondegenerateModuleCenterTheoremStatement` | P (`NondegenerateModuleCenterProof.nondegenerateModuleCenterTheorem`) |
+| I.1.7 Remark: for unital `A`, `ℨ(A) ≅ Z(A)` | 13 / 19 | `UnitalNondegenerateModuleCenterStatement` | P (`UnitalNondegenerateModuleCenterProof.unitalNondegenerateModuleCenter`) |
+| I.1.8 `z_M` scalars, constant on classes; (I.1.8.1); (Sep); the extension of (I.1.8.2) to `Â` is injective; elements of `ℨ(A)` are determined by their functions | 13–14 / 19–20 | `CenterScalarFunctionStatement` | P (`CenterScalarFunctionProof.centerScalarFunction`). That (I.1.8.1) is an algebra morphism follows from the uniqueness clause and is not stated separately (its [Markdown](../../Langlands/Algebra/CenterScalarFunctionStatement.md)) |
 
 ## I.2 Forgetful functors and their adjoints (14–19 / 20–25)
 
@@ -150,9 +144,9 @@ The I.2.1 rows follow the labels (a)–(k) of the [I.2.1 assertion map](unitizat
 | I.2.1 (i): `X ⊗_Ã Y = X ⊗_A Y / Vect(…)` | 14 / 20 | `UnitizationTensorComparison.ScalarQuotientComparisonStatement` | P (`scalarQuotientComparison`) |
 | I.2.1 (j)–(k): (I.2.1.2), Hom half and tensor half, and its unital case | 14 / 20 | `NondegenerateModuleHomScalars.unitizedHomEquiv` (Hom half); `NondegenerateUnitizedTensorStatement`, `UnitalUnitizedTensorStatement` (tensor half) | D; P (`nondegenerateUnitizedTensor`, `unitalUnitizedTensor`) |
 | I.2.2 functors `• ⊗_A X`, `Hom_A(•, X)`, `Hom_A(X, •)` | 15 / 21 | the published balanced tensor `NonUnitalModuleTensor` and original Hom groups | D |
-| I.2.2 Proposition: `• ⊗_A X` right exact, `Hom_A(•, X)` and `Hom_A(X, •)` left exact | 15 / 21 | `NondegenerateTensorHomExactness.TensorRightExactStatement`, `ContravariantHomLeftExactStatement`, `CovariantHomLeftExactStatement` | P (`tensorRightExact`); P (the two Hom statements, as the second and third components of the aggregate `statements`; proof-status update above). Its proof instantiates the proved general `Langlands.Renard.contravariantHomLeftExact` and `Langlands.Renard.covariantHomLeftExact` (A.VIII.2, [HomExactnessComparison](../../Langlands/CategoryTheory/Renard/HomExactnessComparison.md)) at the abelian category `M(A)`. Task `aa66676c` is not a task of the current instance |
-| I.2.2 Theorem (I.2.2.1)–(I.2.2.4) over the unitizations `R̃`, `S̃` | 15 / 21 | Additive forms: `NonUnitalTensorHomAdjunctionTheorem` and `NonUnitalTensorAssociativityTheorem`. Coefficient-linear forms: `UnitizedTensorHomLinearTheorem` in [TensorHomLinearStatements](../../Langlands/Algebra/TensorHomLinearStatements.md), with given coefficients compatible with both actions | C/P: additive forms proved (`nonUnitalTensorHomAdjunction`, `nonUnitalTensorAssociativity`); P: coefficient-linear forms by `unitizedTensorHomLinear`, and as part of exact aggregate `tensorHomLinear` (Task 5935; evidence below) |
-| I.2.2 Corollary (I.2.2.5)–(I.2.2.7) for nondegenerate modules over idempotented algebras | 15 / 21 | Additive refined clauses of the same theorems; `NondegenerateTensorHomLinearTheorem` for the recovered coefficients, with added `RightSourceCompatible` or `SourceCompatible` on the bimodule `Y` | C/P: additive isomorphisms proved; P: corrected common-coefficient forms by `nondegenerateTensorHomLinear`, and as part of exact aggregate `tensorHomLinear` (Task 5935). The unrestricted coefficient-linearity reading is false (source issue S1) |
+| I.2.2 Proposition: `• ⊗_A X` right exact, `Hom_A(•, X)` and `Hom_A(X, •)` left exact | 15 / 21 | `NondegenerateTensorHomExactness.TensorRightExactStatement`, `ContravariantHomLeftExactStatement`, `CovariantHomLeftExactStatement` | P (`tensorRightExact`); P (the two Hom statements, as the second and third components of the aggregate `statements`; proof-status update above). Its proof instantiates the proved general `Langlands.Renard.contravariantHomLeftExact` and `Langlands.Renard.covariantHomLeftExact` (A.VIII.2, [HomExactnessComparison](../../Langlands/CategoryTheory/Renard/HomExactnessComparison.md)) at the abelian category `M(A)`. |
+| I.2.2 Theorem (I.2.2.1)–(I.2.2.4) over the unitizations `R̃`, `S̃` | 15 / 21 | Additive forms: `NonUnitalTensorHomAdjunctionTheorem` and `NonUnitalTensorAssociativityTheorem`. Coefficient-linear forms: `UnitizedTensorHomLinearTheorem` in [TensorHomLinearStatements](../../Langlands/Algebra/TensorHomLinearStatements.md), with given coefficients compatible with both actions | C/P: additive forms proved (`nonUnitalTensorHomAdjunction`, `nonUnitalTensorAssociativity`); P: coefficient-linear forms by `unitizedTensorHomLinear`, and as part of exact aggregate `tensorHomLinear` (evidence below) |
+| I.2.2 Corollary (I.2.2.5)–(I.2.2.7) for nondegenerate modules over idempotented algebras | 15 / 21 | Additive refined clauses of the same theorems; `NondegenerateTensorHomLinearTheorem` for the recovered coefficients, with added `RightSourceCompatible` or `SourceCompatible` on the bimodule `Y` | C/P: additive isomorphisms proved; P: corrected common-coefficient forms by `nondegenerateTensorHomLinear`, and as part of exact aggregate `tensorHomLinear`. The unrestricted coefficient-linearity reading is false (source issue S1) |
 | I.2.2 Remark: naturality in `X`, `Y`, `Z` | 16 / 22 | the naturality clauses of the same theorems | P |
 | I.2.3 unital case: `ϕ_*`, its left adjoint `B ⊗_A •` | 16 / 22 | `UnitalScalarExtensionAdjunction.ScalarExtensionAdjunctionStatements` (A.V.2) | P (`scalarExtensionAdjunctionStatements`) |
 | I.2.3 unital case: the right adjoint `Hom_A(B, •)`; `N ≅ Hom_B(B, N) ≅ B ⊗_B N` | 16 / 22 | `RenardForgetfulFunctor.UnitalCoextensionAdjunctionStatement`; the isomorphisms are the unital case of (I.2.3.3)–(I.2.3.4) below | P (`RenardForgetfulFunctor.unitalCoextensionAdjunction`); C |
@@ -189,10 +183,10 @@ The I.2.1 rows follow the labels (a)–(k) of the [I.2.1 assertion map](unitizat
 | I.4.1 an anti-involution identifies right and left modules | 22 / 28 | — | X ("dans la pratique"; used for groups in III.1.6) |
 | I.4.1 Lemma: `M̃·e ≅ (e·M)^*`; duality is exact | 23 / 29 | `NonUnitalModuleDualFixedPart.FixedPartDuality`; `NonUnitalModuleDualCategoricalExactnessStatement`, `NonUnitalModuleDualMapExactnessStatement` | P (`fixedPartDuality`, `nonUnitalModuleDualCategoricalExactnessStatement`, `nonUnitalModuleDualMapExactnessStatement`) |
 | I.4.1 Corollary: `M ↪ M̃̃` | 23 / 29 | `NonUnitalModuleBidualInjectionStatements.BidualInjection` | P (`bidualInjection`) |
-| I.4.2 Theorem, first comparison: `ˇF_AB(Ñ) ≅ F_AB(N)~` | 23–24 / 29–30 | `DualityForgetfulStatement`, assuming the supplied nondegenerate left A-action on B commutes with regular right multiplication and satisfies `IsScalarTower ℂ A B` | P (`dualityForgetful`, Task 5778; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S2) |
-| I.4.2 Theorem, second comparison: `I_AB(M̃) ≅ P_AB(M)~` | 24 / 30 | `DualityInductionStatement`, assuming the supplied nondegenerate right A-action on B commutes with regular left multiplication and satisfies `IsScalarTower ℂ Aᵐᵒᵖ B` | P (`dualityInduction`, Task 5778; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardInductionDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S3) |
+| I.4.2 Theorem, first comparison: `ˇF_AB(Ñ) ≅ F_AB(N)~` | 23–24 / 29–30 | `DualityForgetfulStatement`, assuming the supplied nondegenerate left A-action on B commutes with regular right multiplication and satisfies `IsScalarTower ℂ A B` | P (`dualityForgetful`; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S2) |
+| I.4.2 Theorem, second comparison: `I_AB(M̃) ≅ P_AB(M)~` | 24 / 30 | `DualityInductionStatement`, assuming the supplied nondegenerate right A-action on B commutes with regular left multiplication and satisfies `IsScalarTower ℂ Aᵐᵒᵖ B` | P (`dualityInduction`; exact proof evidence below). Under the bare additive interpretation the comparison is false: `RenardInductionDualitySourceObstruction.exists_counterexample` instantiates the actual functors (source issue S3) |
 | I.4.2 Lemma (I.4.2.1): `Hom_A(V, W̃) ≅ Hom_A(W, Ṽ)`, natural in `V`, `W` | 24 / 30 | `NonUnitalModuleDualHomTransposeStatements.DualHomTranspose` | P (`dualHomTranspose`) |
-| I.4.3 the completion of `M̃` is `M^*` | 25 / 31 | `NonUnitalModuleDualCompletion.DualCompletionStatement` | P (`NonUnitalModuleDualCompletion.dualCompletionStatement`, Task 5759) |
+| I.4.3 the completion of `M̃` is `M^*` | 25 / 31 | `NonUnitalModuleDualCompletion.DualCompletionStatement` | P (`NonUnitalModuleDualCompletion.dualCompletionStatement`) |
 | I.4.3 the step `ι : N_A ⊗_A M ≅ N ⊗_A M` | 25 / 31 | `NonUnitalTensorSmoothingStatements.TensorSmoothing` | P (`tensorSmoothing`) |
 
 ## I.5 Some classes of modules (26–27 / 32–33)
@@ -237,8 +231,7 @@ not consequences of commuting actions. The unitized Theorem uses one given
 coefficient structure compatible with both actions. The conjunction
 `TensorHomLinearTheorem`, with six independent universe levels and arbitrary
 commutative coefficient ring, is proved by `tensorHomLinear` in
-[TensorHomLinearProof](../../Langlands/Algebra/TensorHomLinearProof.md),
-Task 5935 (`02c5f194-6ebe-408e-a01a-b599de938b32`). This proves the corrected
+[TensorHomLinearProof](../../Langlands/Algebra/TensorHomLinearProof.md). This proves the corrected
 coefficient-linearity assertions; it does not remove their compatibility
 hypotheses.
 
@@ -292,27 +285,24 @@ It leaves the exact common-coefficient theorem and the separately proved
 transposition Lemma (I.4.2.1) intact. It does not decide Renard's intended
 algebra-bimodule convention or establish completion of Chapter I.
 
-## Verified publications for the focused update
+## Results of the focused update in the Library
 
-Worker 1222 checked the following accepted records, their independent
-semantic reports and exact entry-pair hashes against the workspace and
-published files. All listed reviews have no qualifications.
+The following results were checked against the Library files.
 
-| Result | Accepted artifact, reviewer and publication |
+| Result | First appeared at Library commit |
 | --- | --- |
-| Exact `Langlands.Algebra.tensorHomLinear : TensorHomLinearTheorem.{uK,uR,uS,uX,uY,uZ}`; all six unitized and corrected nondegenerate clauses | `b261ea98-3628-4e06-a2f9-b4a5d99b1f6c`, Reviewer 1167; Library `7f43c3c930ff92f76dae6589da1678ad729017e5` |
-| Exact `Langlands.Algebra.dualityForgetful : DualityForgetfulStatement.{uA,uB,v}` | `13e8e448-d99e-4965-8821-ddc63b7f1753`, Reviewer 1015; Library `73b1430a339b037d27e9096762b0400adb4fbd19` |
-| Exact `Langlands.Algebra.dualityInduction : DualityInductionStatement.{uA,uB,v}` | `55e353e4-2c8c-4cf2-8f3d-3673de01a50b`, Reviewer 1023; Library `73b1430a339b037d27e9096762b0400adb4fbd19` |
-| Actual-functor construction and intrinsic obstruction laws in [RenardDualitySourceObstruction](../../Langlands/Algebra/RenardDualitySourceObstruction.md) | `1022b930-eab9-4e5e-b0b6-67ee276389e7`, Reviewer 1178; Library `7f43c3c930ff92f76dae6589da1678ad729017e5` |
-| Actual second-comparison functors and intrinsic obstruction laws in [RenardInductionDualitySourceObstruction](../../Langlands/Algebra/RenardInductionDualitySourceObstruction.md) | `770d2f30-aa5c-4dc2-83d2-77b3f215217a`, Reviewer 2258; Library `e5365902d74534dbf1622c06e695dffdc128d723` |
+| Exact `Langlands.Algebra.tensorHomLinear : TensorHomLinearTheorem.{uK,uR,uS,uX,uY,uZ}`; all six unitized and corrected nondegenerate clauses | `7f43c3c930ff92f76dae6589da1678ad729017e5` |
+| Exact `Langlands.Algebra.dualityForgetful : DualityForgetfulStatement.{uA,uB,v}` | `73b1430a339b037d27e9096762b0400adb4fbd19` |
+| Exact `Langlands.Algebra.dualityInduction : DualityInductionStatement.{uA,uB,v}` | `73b1430a339b037d27e9096762b0400adb4fbd19` |
+| Actual-functor construction and intrinsic obstruction laws in [RenardDualitySourceObstruction](../../Langlands/Algebra/RenardDualitySourceObstruction.md) | `7f43c3c930ff92f76dae6589da1678ad729017e5` |
+| Actual second-comparison functors and intrinsic obstruction laws in [RenardInductionDualitySourceObstruction](../../Langlands/Algebra/RenardInductionDualitySourceObstruction.md) | `e5365902d74534dbf1622c06e695dffdc128d723` |
 
-Each of the three proof artifacts has accepted `lake-build`, `exact-target`,
-`unchanged-statement` and `frozen-inputs` checks. The two counterexamples
-are reviewed constructions with intrinsic laws, not exact-target proof records.
+Each of the three proofs was checked by a Lake build against its exact
+target, with the statement and its inputs unchanged. The two counterexamples
+are constructions with intrinsic laws, not proofs of separate statements.
 The two I.4.2 proofs implement the same evaluation construction through
 `NonUnitalTensorDuality.naturalIso`, specializing to the actual functors
 and deriving coefficient compatibility from the appropriate tower law.
-Task 5778 (`205cb4c3-e4f6-40c5-8f90-540e5a4bedf9`) is done.
 
 ## Genuine gaps of Chapter I
 
@@ -329,8 +319,8 @@ recovered-coefficient reading cannot be claimed. The corrected statements are
 now proved by the exact aggregate `tensorHomLinear`.
 
 The I.1.2 direct-limit reformulations, I.1.2 Remark 2 and the I.1.4 degenerate completion
-are stated by the published candidate `9158d4aa` (Library `24a49431`). Their proofs from
-Task 5772 are published (proof-status update of 14 November 2026).
+are stated in the Library since Library `24a49431`. Their proofs are in the Library
+(proof-status update of 14 November 2026).
 
 ## Pending
 
@@ -341,10 +331,10 @@ has an exact proof. The two I.2.2 Hom exactness statements
 proved by `NondegenerateTensorHomExactness.statements`. That proof instantiates the proved
 A.VIII.2 theorems `Langlands.Renard.contravariantHomLeftExact` and
 `Langlands.Renard.covariantHomLeftExact` at the abelian structure
-`NondegenerateModuleCat.abelian A hA`. Worker 4 compiled the two projections
-`statements.2.1` and `statements.2.2` against the target statements with `lean_check`
-(0 errors). Task `aa66676c` belongs to an earlier instance and is not a task here. The
+`NondegenerateModuleCat.abelian A hA`. The two projections
+`statements.2.1` and `statements.2.2` were compiled against the target statements
+(0 errors). The
 statements of I.1.2, I.1.4, I.1.7, I.1.8, I.2.2 (Hom lines), I.2.3 and I.4.3 that were
 pending in the earlier audit are now proved (section "Proof-status update,
-14 November 2026"). The I.4.2 common-coefficient Theorem (Task 5778) and the corrected I.2.2
-coefficient-linear forms (Task 5935) have published exact proofs.
+14 November 2026"). The I.4.2 common-coefficient Theorem and the corrected I.2.2
+coefficient-linear forms have published exact proofs.

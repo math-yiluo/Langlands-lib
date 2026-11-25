@@ -51,16 +51,16 @@ variable [MulAction G S]
 /-- The action of `g ∈ G`: it sends the copy indexed by `s` to the copy indexed by `g • s`, by
 the action of `g` on `X`. -/
 def actionMap (g : G) : (copies X S).pt ⟶ (copies X S).pt :=
-  Cofan.IsColimit.desc (isColimitCopies X S) fun s => X.ρ g ≫ copy X S (g • s)
+  Cofan.IsColimit.desc (isColimitCopies X S) fun s => (X.ρ g).asHom ≫ copy X S (g • s)
 
 @[reassoc (attr := simp)]
 theorem copy_actionMap (g : G) (s : S) :
-    copy X S s ≫ actionMap X S g = X.ρ g ≫ copy X S (g • s) :=
+    copy X S s ≫ actionMap X S g = (X.ρ g).asHom ≫ copy X S (g • s) :=
   Cofan.IsColimit.fac _ _ s
 
 theorem actionMap_one : actionMap X S 1 = 𝟙 _ :=
   copies_hom_ext fun s => by
-    rw [copy_actionMap, Action.ρ_one, one_smul, Category.id_comp, Category.comp_id]
+    rw [copy_actionMap, Action.ρ_one, End.one_asHom, one_smul, Category.id_comp, Category.comp_id]
 
 theorem actionMap_mul (g k : G) :
     actionMap X S (g * k) = actionMap X S k ≫ actionMap X S g :=
@@ -72,12 +72,12 @@ theorem actionMap_mul (g k : G) :
 abbrev setInduced : Action (LocalizedCategory.{u, max z v, max z v} (K := K)) G where
   V := (copies X S).pt
   ρ :=
-    { toFun := actionMap X S
-      map_one' := actionMap_one X S
-      map_mul' := actionMap_mul X S }
+    { toFun := fun g => End.of (actionMap X S g)
+      map_one' := congrArg End.of (actionMap_one X S)
+      map_mul' := fun g k => congrArg End.of (actionMap_mul X S g k) }
 
 @[simp]
-theorem setInduced_ρ (g : G) : (setInduced X S).ρ g = actionMap X S g := rfl
+theorem setInduced_ρ (g : G) : ((setInduced X S).ρ g).asHom = actionMap X S g := rfl
 
 /-! ## Functoriality in the `G`-set -/
 
@@ -122,7 +122,7 @@ theorem map_comp (f : S →[G] T) (f' : T →[G] U) :
 variable (S)
 
 theorem actionMap_projectionHom (g : G) :
-    actionMap X S g ≫ projectionHom X S = projectionHom X S ≫ X.ρ g :=
+    actionMap X S g ≫ projectionHom X S = projectionHom X S ≫ (X.ρ g).asHom :=
   copies_hom_ext fun s => by
     rw [copy_actionMap_assoc, copy_projectionHom, copy_projectionHom_assoc, Category.comp_id]
 
@@ -150,31 +150,31 @@ variable (N : Subgroup G)
 of `X` to `N` to the space of the `G`-set `G ⧸ N` (both have the same underlying disjoint union
 of copies): on the copy indexed by `c` it is the action of the representative `c.out`. -/
 def inducedIsoHom : (copies X (G ⧸ N)).pt ⟶ (copies X (G ⧸ N)).pt :=
-  Cofan.IsColimit.desc (isColimitCopies X (G ⧸ N)) fun c => X.ρ c.out ≫ copy X (G ⧸ N) c
+  Cofan.IsColimit.desc (isColimitCopies X (G ⧸ N)) fun c => (X.ρ c.out).asHom ≫ copy X (G ⧸ N) c
 
 /-- The inverse of `inducedIsoHom`. -/
 def inducedIsoInv : (copies X (G ⧸ N)).pt ⟶ (copies X (G ⧸ N)).pt :=
-  Cofan.IsColimit.desc (isColimitCopies X (G ⧸ N)) fun c => X.ρ c.out⁻¹ ≫ copy X (G ⧸ N) c
+  Cofan.IsColimit.desc (isColimitCopies X (G ⧸ N)) fun c => (X.ρ c.out⁻¹).asHom ≫ copy X (G ⧸ N) c
 
 @[reassoc (attr := simp)]
 theorem copy_inducedIsoHom (c : G ⧸ N) :
-    copy X (G ⧸ N) c ≫ inducedIsoHom X N = X.ρ c.out ≫ copy X (G ⧸ N) c :=
+    copy X (G ⧸ N) c ≫ inducedIsoHom X N = (X.ρ c.out).asHom ≫ copy X (G ⧸ N) c :=
   Cofan.IsColimit.fac _ _ c
 
 @[reassoc (attr := simp)]
 theorem copy_inducedIsoInv (c : G ⧸ N) :
-    copy X (G ⧸ N) c ≫ inducedIsoInv X N = X.ρ c.out⁻¹ ≫ copy X (G ⧸ N) c :=
+    copy X (G ⧸ N) c ≫ inducedIsoInv X N = (X.ρ c.out⁻¹).asHom ≫ copy X (G ⧸ N) c :=
   Cofan.IsColimit.fac _ _ c
 
 theorem inducedIsoHom_inv : inducedIsoHom X N ≫ inducedIsoInv X N = 𝟙 _ :=
   copies_hom_ext fun c => by
     rw [copy_inducedIsoHom_assoc, copy_inducedIsoInv, InducedSpace.ρ_comp_assoc, inv_mul_cancel,
-      Action.ρ_one, Category.id_comp, Category.comp_id]
+      Action.ρ_one, End.one_asHom, Category.id_comp, Category.comp_id]
 
 theorem inducedIsoInv_hom : inducedIsoInv X N ≫ inducedIsoHom X N = 𝟙 _ :=
   copies_hom_ext fun c => by
     rw [copy_inducedIsoInv_assoc, copy_inducedIsoHom, InducedSpace.ρ_comp_assoc, mul_inv_cancel,
-      Action.ρ_one, Category.id_comp, Category.comp_id]
+      Action.ρ_one, End.one_asHom, Category.id_comp, Category.comp_id]
 
 theorem inducedActionMap_inducedIsoHom (g : G) :
     InducedSpace.actionMap N ((Action.res _ N.subtype).obj X) g ≫ inducedIsoHom X N =
@@ -183,7 +183,7 @@ theorem inducedActionMap_inducedIsoHom (g : G) :
     have e := InducedSpace.copy_actionMap_assoc N ((Action.res _ N.subtype).obj X) g c
       (inducedIsoHom X N)
     refine e.trans ?_
-    change X.ρ (correction N g c : G) ≫ copy X (G ⧸ N) (g • c) ≫ inducedIsoHom X N = _
+    change (X.ρ (correction N g c : G)).asHom ≫ copy X (G ⧸ N) (g • c) ≫ inducedIsoHom X N = _
     rw [copy_inducedIsoHom, copy_inducedIsoHom_assoc, copy_actionMap, InducedSpace.ρ_comp_assoc,
       InducedSpace.ρ_comp_assoc, ← correction_spec]
 

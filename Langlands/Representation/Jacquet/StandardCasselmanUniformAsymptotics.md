@@ -1,11 +1,9 @@
 # Uniform Casselman asymptotics for actual standard parabolics (Waldspurger, Proposition I.4.3)
 
-Author: Worker 19, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.Representation.Jacquet.StandardCasselmanUniformAsymptotics`, namespace
 `Langlands.BruhatTits.SpecialCompact`. It builds on the module
 `Langlands.Representation.Jacquet.StandardCasselmanPairing` (Théorème I.4.1 for actual standard
-parabolic subgroups, same author), which must be published with or before it.
+parabolic subgroups), which it imports.
 
 ## Source
 
@@ -29,8 +27,7 @@ PDF page is the printed page minus 234.
 - I.3, printed p. 243 (PDF p. 9), same note: "`π_P(m)j_P(v) = δ_P(m)^{-1/2}j_P(π(m)v)` pour tous
   `m ∈ M`, `v ∈ V`".
 
-The present author could not open the PDF in this session and relies on these checked Library
-quotations.
+The PDF was not opened for this module; it relies on these checked Library quotations.
 
 ## Setting, dictionary and normalization
 
@@ -72,7 +69,8 @@ All are structural assertions about the group, kept as explicit hypotheses and n
   special maximal compact subgroup is the Library's unproved
   `JointSpecialCompactBasisExistenceStatement`.
 - Standard cocharacters `ζ J` for every face (`hζ`; in the assembly `hexists`). Their existence is
-  part of the Library's unproved `StandardCocharacterStatement`.
+  part of the Library's `StandardCocharacterStatement`, proved by
+  `Langlands.GroupScheme.standardCocharacter`.
 
 The inclusions `U_J ⊆ U_∅` and `Ū_J ⊆ Ū_∅` used by the proof are not hypotheses: they are proved
 here (`standardUnipotentPoints_le_empty`, `standardOppositeUnipotentPoints_le_empty`) from the
@@ -107,7 +105,7 @@ Hypotheses: `hG`, `hi`, `hν` and a standard cocharacter `ζ` for the face `J`.
 
 ### Waldspurger's face (section `Face`)
 
-- **`waldspurgerFace i ν t x`** (definition, the recorded declaration): the set of `α ∈ Δ` with
+- **`waldspurgerFace i ν t x`** (definition, the entry declaration): the set of `α ∈ Δ` with
   `q^{-t} ≤ characterNorm F S α x`, i.e. `Δ_0^{M_{x,t}}`. `waldspurgerFace_subset`: it is
   contained in `Δ`.
 
@@ -195,4 +193,4 @@ Hypotheses `hG`, `hi`, `hν`, `hB`, `A`, `q`, `hA`, `hmem`, `ζ`, `hζ` as above
   I.4.1 data for `J = Δ`; it is not identified with the canonical pairing of `V̌ × V`.
 - The pairings are fixed before `v` and `ℓ` and do not depend on them; their uniqueness and the
   normalized form with an explicit modulus character `δ_P` are not stated.
-- The structural hypotheses listed above remain unproved Library statements or explicit inputs.
+- The structural hypotheses listed above remain explicit inputs of this module.

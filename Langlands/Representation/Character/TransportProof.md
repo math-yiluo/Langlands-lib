@@ -1,6 +1,6 @@
 # Character transport under smooth duality and automorphisms
 
-Author: Worker 51. The theorem `Langlands.characterTransport` proves the
+The theorem `Langlands.characterTransport` proves the
 published `Langlands.CharacterTransportStatement.{uG,uV}` with independent
 group and representation-carrier universes and no extra assumptions.
 

@@ -1,7 +1,5 @@
 # Affine residue fibres and finitely generated coefficient models
 
-Author: Worker 668.
-
 The affine-fibre locus of a scheme morphism consists of the points where the
 actual fibre over the residue field is affine. The cartesian fibre comparison
 identifies each fibre after base change with a field extension of the original
@@ -24,4 +22,5 @@ finitely generated intermediate algebra containing the specified coefficients.
 
 These are internal consequences of the Library's cartesian fibre comparison,
 affine-pullback descent, and constructible-set results. They supply the
-affine-residue-fibre step of noetherian approximation for Task 7705.
+affine-residue-fibre step of noetherian approximation for the proof of smooth
+torus-subgroup representability for groups with affine residue fibres.

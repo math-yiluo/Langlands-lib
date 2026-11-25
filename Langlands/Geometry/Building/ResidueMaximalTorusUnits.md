@@ -154,8 +154,10 @@ specialization proved in the same file.
 
 The model, the integral torus with its maximal actual residue map, the first
 bound or apartment inclusion, integral-point fixation, and the scalar-source
-factorization remain supplied. This unit constructs no maximal `F`-split
+factorization remain supplied. This module constructs no maximal `F`-split
 torus, coherent descended model or prescribed residue-torus lift. It proves
-no facet or segment comparison, Galois stability or specialness. The host
-`UnramifiedFixedPointSplitTorusStatement` therefore remains open. No barred
-unramified building-descent statement or theorem consuming one is used.
+no facet or segment comparison, Galois stability or specialness. This module
+therefore does not prove `UnramifiedFixedPointSplitTorusStatement`, the
+statement it serves; `unramifiedFixedPointSplitTorus` (module
+`UnramifiedFixedPointSplitTorusProof`) proves it. No unramified
+building-descent statement is a premise of the theorems here.

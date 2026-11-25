@@ -6,7 +6,7 @@ the final adelic openness theorem.
 
 Let the coefficient ring be Noetherian, with the indicated locally finite-type
 spectrum map to the lifted integers. For a smooth map of separated finite-type
-algebraic spaces with nonempty geometrically connected fibres, the unit proves
+algebraic spaces with nonempty geometrically connected fibres, the module proves
 one positive constant giving surjectivity on points over every sufficiently
 large finite field with its original coefficient-ring action. No constant
 relative dimension hypothesis is imposed.
@@ -41,4 +41,5 @@ The provenance is the finite dimension decomposition and its actual affine
 charts, the original-base comparison of the exact estimate, finite sums of
 positive real constants, and the proved smooth Henselian lifting theorem.
 The estimate remains an explicit premise throughout; it must be supplied
-unconditionally before this reduction can close the host theorem.
+unconditionally before this reduction gives Conrad's Theorem 5.9. The Library
+proves it as `spaceUniformLangWeil` in `SpaceUniformLangWeilProof`.

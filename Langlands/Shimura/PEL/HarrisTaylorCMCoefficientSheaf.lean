@@ -108,11 +108,11 @@ local notation "torsor" => cmHarrisCoefficientTorsor D C preservation compositio
 /-- No replacement deck action is introduced by the coefficient specialization. -/
 @[simp] theorem cmHarrisCoefficientTorsor_ρ_left
     (g : SmallCMResidualGroup D U Vcoeff) :
-    ((torsor).val.ρ g).left =
-      (cmNormalQuotientAction D C preservation composition unitCoherence associativity
+    ((torsor).val.ρ g).asHom.left =
+      ((cmNormalQuotientAction D C preservation composition unitCoherence associativity
         comparison symmetry stability square universality dualityNaturality
         polarizationStability compatibility h htor U Vcoeff
-        (cmHarrisCoefficientLevel_le D ρ p U m hm k) q).ρ g := rfl
+        (cmHarrisCoefficientLevel_le D ρ p U m hm k) q).ρ g).asHom := rfl
 
 /-- The actual coefficient cover covers the final object of the small etale site. -/
 theorem cmHarrisCoefficientTorsor_coversTop :
@@ -146,7 +146,7 @@ local notation "coefficientInclusion" => cmHarrisCoefficientInclusion D C preser
 /-- Its sections satisfy the actual diagonal coefficient and inverse-deck invariance. -/
 @[reassoc] theorem cmHarrisCoefficientInclusion_invariant
     (g : SmallCMResidualGroup D U Vcoeff) :
-    coefficientInclusion ≫ (diagonal J (torsor).val constantAction).ρ g = coefficientInclusion :=
+    coefficientInclusion ≫ ((diagonal J (torsor).val constantAction).ρ g).asHom = coefficientInclusion :=
   inclusion_invariant J (torsor).val constantAction g
 
 /-- Restriction to the actual coefficient cover is canonically trivialized by

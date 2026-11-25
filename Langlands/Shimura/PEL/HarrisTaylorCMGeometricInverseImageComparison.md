@@ -1,7 +1,5 @@
 # Inverse-image comparison for exact geometric CM coefficients
 
-Author: Worker 57.
-
 This internal construction identifies the existing inverse image of the full
 original CM coefficient system with association on the exact geometric CM
 coefficient covers. The isomorphism respects every coefficient reduction and
@@ -43,7 +41,7 @@ e : Ybar ≅ Ypull = cmHarrisGeometricCoefficientEtaleDiagramPullbackIso ...
 
 All torsor properties are the existing proved properties of these exact
 covers. At each index e is the canonical cartesian comparison, and the
-published diagram isomorphism already respects all transitions and actions.
+diagram isomorphism already respects all transitions and actions.
 
 ## Whole-system comparison
 
@@ -59,7 +57,7 @@ on Xbar. The first side is the existing original associated coefficient system
 postcomposed with inverse image along π. The second is association on Ybar,
 with the same group and coefficient diagrams M.
 
-The definition first evaluates the published natural isomorphism
+The definition first evaluates the natural isomorphism
 `etaleAssociatedVaryingSystemInverseImage π R Y originalProperty` at M. This
 identifies inverse image of the entire original associated system with the
 system associated to Ypull. It then composes with the existing
@@ -93,22 +91,23 @@ forward comparison followed by ιbar_k is the composite of these four maps:
 4. `coverPullback` along the underlying map e.hom at k, with the constant
    coefficient sheaf on Xbar.
 
-The proof expands the two system comparisons, applies the published
+The proof expands the two system comparisons, applies the
 geometric cover-comparison inclusion identity, and then applies
 `inverseImageConstantAssociatedIso_hom_inclusion`. This recovers the actual
 invariant maps, including the original cartesian cover coordinate, rather
 than only an abstract objectwise existence assertion.
 
-## Provenance and remaining scope
+## Provenance and scope
 
-This is an internal composition and specialization of the published modules
+This is an internal composition and specialization of the modules
 [EtaleInverseImageVaryingSystem](../Coefficients/EtaleInverseImageVaryingSystem.md),
 [HarrisTaylorCMGeometricAssociatedSystem](HarrisTaylorCMGeometricAssociatedSystem.md)
 and their exact geometric cover inputs. No external-literature theorem is
 newly asserted here; source provenance for the arithmetic and moduli inputs
 remains in the paired imported modules.
 
-The exact moduli representability theorem, rigidity, canonical-model geometry
-and other named premises remain obligations. This unit supplies no new
-derived, cohomological, quotient-ring scalar, inverse-limit or lisse-adic
-assertion and does not complete the host task.
+The exact moduli representability theorem, canonical-model geometry and other
+named premises are not proved here; rigidity at small levels follows from
+`cmSmallLevelRigidity` (`HarrisTaylorCMSmallLevelRigidityProof`). This module
+supplies no new derived, cohomological, quotient-ring scalar, inverse-limit or
+lisse-adic assertion.

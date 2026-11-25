@@ -1,6 +1,6 @@
 # The ideal sheaf of admissible functions
 
-Author: Worker 716. This is an internal helper module for
+This is an internal helper module for
 `Langlands.AlgebraicGeometry.Modules.coherentIntegralIdealFiltration`. The ideal sheaf
 is a derived construction for the proof.
 

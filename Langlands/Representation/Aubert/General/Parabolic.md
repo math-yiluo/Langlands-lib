@@ -1,18 +1,14 @@
 # Normalized parabolic induction and Jacquet functors for actual subgroups
 
-Implementation and documentation: Worker 23 (task
-`593ef603-6672-4424-976c-14e11e920d9c`, the initial adapter unit of the general
-Aubert program `46df6a68-5db4-4428-8044-05151d6ce1f6`).
-
 This module defines normalized parabolic induction `i` and normalized Jacquet
 restriction `r` on the full categories of smooth complex representations, for an
 actual semidirect decomposition `P = M ⋉ U` of subgroups of a group `G`. It also
 gives their action on equivariant maps, the normalizing characters, Levi-in-Levi
-versions, conjugation transports, and an identification of `i ∘ r` with Worker
-194's unnormalized term `Aubert.SubgroupTransition.term` when `U` is
+versions, conjugation transports, and an identification of `i ∘ r` with the
+unnormalized term `Aubert.SubgroupTransition.term` when `U` is
 unimodular. It constructs no reductive structure. The subgroups, the
 decomposition, closedness of `U` and unimodularity are inputs. For a connected
-reductive group they are supposed to come from the owners of the shared Chapter V
+reductive group they are supposed to come from the shared Chapter V
 objects (see "Scope" below).
 
 ## Ambient group and universes
@@ -188,9 +184,9 @@ inside `M`. This is Renard VI.1.4 (printed p. 136): for standard `P ⊂ Q`,
 
 The transitivity isomorphisms `i^G_Q ∘ i^Q_P ≅ i^G_P` and the matching ones for
 `r` (Renard VI.1.4) are not proved here. They are representation-theoretic
-proof obligations of this task, to be stated as Prop targets in a separate
-submission and listed in the task's separate source-to-declaration and
-dependency note. Neither is part of this unit.
+proof obligations, treated in the separate modules
+`Aubert.General.NestedInductionStages` and `Aubert.General.JacquetStages`.
+Neither is part of this module.
 
 ## Conjugation transports
 
@@ -212,19 +208,20 @@ adapter is in `Aubert.General.AlternatingOperator`.
 
 This module implements the generic construction layer. It does not assert that
 the inputs come from a connected reductive group. For the actual group the
-inputs have three different statuses. The task's separate dependency note, not
-part of this unit, will itemize them:
+inputs have three different statuses:
 
 * Actual objects and their intrinsic laws. The standard parabolics
   `P_I = M_I N_I` (Renard V.3.8, V.4.2) and the Levi decompositions on rational
-  points (V.3.1) are to be supplied as actual subgroups and theorems by the
-  algebraic-groups program `2b5e4a00` (child `8ace819d`, not public at Library
-  `0ebc0efd`). They are not assumptions of this unit. For the published dynamic
+  points (V.3.1) are supplied as actual subgroups and theorems by the
+  algebraic-groups modules: the families `parabolic i ν I`, `levi i ν I` and
+  `unipotent i ν I` of `Aubert.General.RationalPointFamily`, with
+  `isSemidirectDecomposition_of_standardCocharacterStatement` and the proved
+  `GroupScheme.standardCocharacter`. They are not assumptions of this module. For the published dynamic
   parabolics, `Aubert.General.DynamicParabolic` proves the decomposition
   outright.
 * External structural inputs imported without proof in Renard Chapter V. These
-  are the topology of `G(F)` and its properties (V.2.1; Conrad task
-  `886bf565`), and the compact-subgroup facts of V.5.2 (citing [24], §2.1),
+  are the topology of `G(F)` and its properties (V.2.1; Conrad's point
+  topology `PointTopology.rationalPointTopology`), and the compact-subgroup facts of V.5.2 (citing [24], §2.1),
   including that unipotent radicals are limits of compact subgroups.
 * Retained in-book proof obligations. These are unimodularity of `N_I` and the
   modulus formulas (V.5.4), and the transitivity and Levi-in-Levi comparisons
@@ -233,9 +230,7 @@ part of this unit, will itemize them:
   here from `IsLimitOfCompactSubgroups` by
   `isUnimodularModulus_of_isLimitOfCompactSubgroups`.
 
-Their owners (tasks `2b5e4a00`, `6edfb074`, `425af515`, `f33d727f`, and Conrad
-`886bf565` for the topology) received requests from Workers 1180, 76, 194, 165,
-1186, 6 and 8. Nothing here discharges an external input.
+Nothing here discharges an external input.
 
 ## Sources
 

@@ -1,7 +1,5 @@
 # Finite coefficient families of finite-rank diagonal matrices
 
-Worker 891.
-
 This module constructs the finitely supported diagonal of a matrix that is a
 finite sum of outer products over a commutative noetherian ring. The index type
 is arbitrary and has an independent universe from the ring.
@@ -41,5 +39,6 @@ Only the last of these and the diagonal construction use noetherianity.
 No reducedness, domain, finite index set, adic completeness, finite generation
 of the index group or invertibility assumption is imposed.
 
-This is a construction and auxiliary proof for Task 7014. It does not prove
+This is a construction and auxiliary proof for the lifting of homomorphisms from
+isotrivial groups of multiplicative type over adically complete noetherian rings. It does not prove
 algebraization of formal group homomorphisms or the adic lifting statement.

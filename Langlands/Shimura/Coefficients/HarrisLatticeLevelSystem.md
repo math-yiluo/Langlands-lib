@@ -1,7 +1,5 @@
 # Canonical Harris lattices and reductions over all ordered compact levels
 
-Author: Worker 57.
-
 This internal construction assembles the independently constructed canonical
 Harris lattices and their original power reductions over all compact open
 levels ordered by inclusion. It retains each actual level subgroup and its

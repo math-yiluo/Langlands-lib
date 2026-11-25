@@ -1,7 +1,5 @@
 # Relation inversions on finite lists
 
-Author: Worker 494.
-
 This internal counting API isolates the numerical part of Zelevinsky (1980),
 Section 6.7, printed p.190 (PDF27). The registered source is
 `zelevinsky-1980-induced-ii`, PDF SHA256

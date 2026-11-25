@@ -1,7 +1,5 @@
 # Reduction of actual cuspidal multiplicity one to unitary central characters
 
-Author: Worker 779, Task 7293.
-
 This internal conditional reduction preserves the arbitrary universe `u` and the exact
 Library target `Langlands.Automorphic.CuspidalOperatorMultiplicityOneStatement.{u}`.
 It retains the unproved proposition
@@ -14,8 +12,12 @@ target.
 The module proves
 `cuspidalOperatorUnitaryMultiplicityOneReduction`, whose type is the Prop-valued
 `CuspidalOperatorUnitaryMultiplicityOneReductionStatement`: the retained unitary case
-implies the exact unrestricted target. The unitary case, and hence the unconditional
-multiplicity-one task, remain open.
+implies the exact unrestricted target. No Library theorem states the unitary case. The
+unrestricted target is proved as `cuspidalOperatorMultiplicityOne`
+(module `Langlands.Automorphic.CuspidalOperatorMultiplicityOneProof`) through this
+reduction: `cuspidalWhittakerBandReduction` (module
+`Langlands.Automorphic.CuspidalWhittakerBandReduction`) proves the unitary case from its
+band premises and applies `cuspidalOperatorUnitaryMultiplicityOneReduction`.
 
 ## Implemented proof
 
@@ -55,8 +57,7 @@ realizations.
 
 ## Provenance and scope
 
-This is an internal derived reduction authorized by the intermediate-results clause of
-Task 7293 revision 1. Its construction reuses the normalization already implemented in
+This is an internal derived reduction. Its construction reuses the normalization already implemented in
 `Langlands.Automorphic.CuspidalContragredientExistenceProof` and the actual twists of
 `Langlands.Automorphic.HeckeTwist.OperatorTwist`. It makes explicit why the fixed
 unitary-central-character setting in Shalika (1974), Theorem 5.5, can serve as a

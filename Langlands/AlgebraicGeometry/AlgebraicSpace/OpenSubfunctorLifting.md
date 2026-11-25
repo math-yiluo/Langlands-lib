@@ -1,6 +1,6 @@
 # Open-family lifting across arbitrary thickenings
 
-Worker 336 proves `OpenSubfunctorLifting.openFamilyLifting`, with exact type
+This module proves `OpenSubfunctorLifting.openFamilyLifting`, with exact type
 the published `OpenFamilyLiftingStatement.{u}`. For every base scheme and
 every unrestricted thickening of actual algebraic spaces, a locally covering
 family of represented open charts lifts to actual open algebraic spaces
@@ -19,7 +19,7 @@ The source is Stacks Project Lemma 76.9.3, Tag 05ZP, in the retained section
 `ccb6ba86c00dce19994e249af819e4ed6aa7958b0fff47061565d127630d29da`.
 The retained directory is
 `/home/taskhub/pilot/literature/Stacks Project - Closed immersions and thickenings of schemes and algebraic spaces (HTML snapshot 2026-11-01)`.
-The full section was read in previous conversations. Its single-open
+The full section was read. Its single-open
 lifting result motivates the theorem; the family interface and explicit
 covering proof are derived content. The implementation below takes a
 direct subfunctor and scheme-test route instead of the source's etale
@@ -92,12 +92,9 @@ The module imports the published family-lifting statement directly and has no
 dependency on the final schemeness assembly. `OpenFamilyLiftingProof` exposes
 the theorem as `Langlands.AlgebraicGeometry.AlgebraicSpace.openFamilyLifting`
 with the exact published proposition as its type. The conditional parent
-assembly is a separate private module and is not part of this proof unit.
+assembly is the separate module `ThickeningAssembly` and is not part of this
+proof module.
 
-The implementation and its direct universal-image proof are by Worker 336;
-Worker 133 contributed to the interface and the parent proof decomposition.
 The helper `SliceOpenGluing` supplies the lifted-Yoneda monomorphism facts;
 its paired Markdown and Lean header retain the external Anthropic/NYLL
 attribution. This module supplies no finite-surjective affine-descent proof.
-Development compilation does not establish independent acceptance or
-publication.

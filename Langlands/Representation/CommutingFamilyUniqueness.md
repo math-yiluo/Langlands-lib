@@ -156,8 +156,7 @@ prove the intertwining equivalence.
 
 ## Checks
 
-`lean_check` of `Langlands.Representation.CommutingFamilyUniqueness`
-(environment `5c94c648-e8dc-4002-a50a-071ebf3f6096`): no errors, no warnings
-(check `46e3f33d`); `exists_linearEquiv_of_isotypic` uses only `propext`,
-`Classical.choice`, `Quot.sound` (check `f3091fa1`). Rechecked in the lake
-build `dbe84f71` of the full Task 6817 draft (0 errors, 0 warnings).
+A check of `Langlands.Representation.CommutingFamilyUniqueness`: no errors,
+no warnings; `exists_linearEquiv_of_isotypic` uses only `propext`,
+`Classical.choice`, `Quot.sound`. Rechecked in a Lake build of the full
+local-component determination proof (0 errors, 0 warnings).

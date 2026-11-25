@@ -7,20 +7,22 @@ and scalar-subtracted generators used in David Renard,
 The construction covers the opening reduction to commuting nilpotent
 generators. It supplies short intrinsic compatibility laws; independence,
 finite support, spanning, dimension assembly and the reduction theorem
-remain separate statement and proof obligations.
+are separate statements, proved in
+`RenardCommutingGeneralizedEigenspaceDecompositionProof` and
+`RenardCommutativeDimensionNilpotentReductionProof`.
 
 The governing registered original is
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`,
 at
 `/home/taskhub/central-library/Renard--Representations des groupes reductifs p-adiques (2026 version)--2026.pdf`.
-Worker 709 read PDF281–282 and visually checked PDF281, including
+PDF281–282 were read and PDF281 visually checked, including
 the successive characteristic-space refinements and replacement
 of each restricted generator by its nilpotent part. The supplementary
 source `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
 was read on PDF18–19. The 2026 original governs this reduction.
-Worker 1044 reread the text of PDF281–282 before staging this pair.
+The text of PDF281–282 was reread by a second reader.
 
 ## Actual spaces and actions
 
@@ -53,7 +55,7 @@ finiteness, independence or spanning property.
 Assume `hcomm : ∀ i j, Commute (a i) (a j)` for the action
 constructions. The imported `NilpotentFiltration.generatedAlgebra a`
 is the actual unital algebra `R = Algebra.adjoin ℂ (Set.range a)`.
-Its definition is available for arbitrary tuples; using this published
+Its definition is available for arbitrary tuples; using this
 name introduces no nilpotence premise.
 
 `jointSpace_stable` proves stability under every original element
@@ -85,7 +87,7 @@ therefore commutes with each original generator. Mathlib's
 `mapsTo_maxGenEigenspace_of_comm` preserves each defining
 generalized eigenspace, hence their intersection.
 
-`blockRestriction` reuses the published
+`blockRestriction` reuses
 `Langlands.CommutingDimension.restrictionAlgHom`.
 The two evaluation laws are reflexive equalities after inclusion
 in `V`. `blockAlgebra_eq_range` reuses
@@ -95,7 +97,7 @@ the actual restricted adjoin with the restriction image.
 actual restriction homomorphism.
 
 `shiftedBlockTuple_commute` and `shiftedBlockTuple_adjoin_eq`
-reuse the published generic laws
+reuse the generic laws
 `Langlands.CommutingDimension.commute_shift` and
 `adjoin_shift_eq`. Thus the scalar subtraction preserves
 commutation and leaves the actual unital generated algebra
@@ -113,22 +115,20 @@ restricted original scalar subtraction is identified with
 Nilpotence of the original generators is not a hypothesis.
 
 The underlying construction route and the restriction/nilpotence
-argument follow the actual local block construction in the published
-proof `Langlands.CommutingDimension.commuting_dimension`,
-authored by Worker 307. Its exported algebraic helpers are imported
+argument follow the actual local block construction in the
+proof `Langlands.CommutingDimension.commuting_dimension`.
+Its exported algebraic helpers are imported
 by Lean name. This pair makes the actual block data reusable;
 it introduces no alternate decomposition or comparison function.
-Worker 709 authored the reusable API and source correspondence.
-The restriction and nilpotence arguments adapt Worker 307's
-published block-construction code, so both workers are credited
-for this pair.
+The restriction and nilpotence arguments adapt the
+block-construction code of `Langlands.Algebra.CommutingDimensionPrimary`.
 
 ## Remaining scope
 
 The source's decomposition into finitely many independent invariant
 blocks, its dimension sum, its finite-sum real-power comparison and
 the assembly reducing the full bound to the nilpotent case
-remain separate statements and proofs. The present unit does
+remain separate statements and proofs. The present module does
 not assert that every vector belongs to one block or that
 the supported index subtype is already finite.
 
@@ -138,4 +138,4 @@ nilpotent numerical induction. This construction does not
 replace that result. The actual maximum, ideal-power and
 complement arguments, head/tail comparisons, floor recurrence,
 normalized numerical contradiction and the rest of the
-whole-book program retain their owners and obligations.
+whole book are outside this construction.

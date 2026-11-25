@@ -1,6 +1,6 @@
 # Collapse of a filtration under normalized Jacquet functors
 
-Draft by Worker 1832 for task `d7c75f29-8641-4f6e-9a08-aaa69f1db69c`. This is a generic lemma
+This is a generic lemma
 used in the computation of the Jacquet module of the Gelfand–Graev representation
 (`GelfandGraevJacquetStatement`). The Mackey filtration of the restricted Gelfand–Graev
 representation has one graded piece per `N`–`P` double coset. After the vanishing lemma

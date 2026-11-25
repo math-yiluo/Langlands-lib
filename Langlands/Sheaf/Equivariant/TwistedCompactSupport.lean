@@ -47,12 +47,12 @@ section Germs
 
 omit [P.RespectsIso] in
 theorem eq_comp_rho_inv_of_comp_rho_eq {A : C} {a b : A ⟶ X} (g : G)
-    (h : a ≫ (ρ g).hom = b) : a = b ≫ (ρ g⁻¹).hom := by
+    (h : a ≫ (ρ g).asIso.hom = b) : a = b ≫ (ρ g⁻¹).asIso.hom := by
   rw [← h, Category.assoc, rho_hom_inv_hom, Category.comp_id]
 
 omit [P.RespectsIso] in
 theorem comp_rho_inv_comp_rho {A : C} (a : A ⟶ X) (g : G) :
-    (a ≫ (ρ g⁻¹).hom) ≫ (ρ g).hom = a := by
+    (a ≫ (ρ g⁻¹).asIso.hom) ≫ (ρ g).asIso.hom = a := by
   rw [Category.assoc, rho_inv_hom_hom, Category.comp_id]
 
 /-- The translate of `V` by `g⁻¹`, translated back by `g`, is `V`. -/
@@ -257,7 +257,7 @@ def compactIntertwiningMap (E : PointEquivariance ρ Φ)
     (compactRepresentation R E F).IntertwiningMap (compactRepresentation R E F') :=
   LinearMap.intertwiningMap_of_isIntertwiningMap _ _
     ((compactSections Φ R (base P ρ).obj).map (Functor.whiskerLeft (ι P ρ).op φ)).hom
-    fun g s => Subtype.ext (NatTrans.naturality_apply φ (baseAction P ρ g).unop.op s.1)
+    fun g s => Subtype.ext (NatTrans.naturality_apply φ (baseAction P ρ g).unop.asHom.op s.1)
 
 variable (R) in
 /-- Compactly supported global sections of presheaves on the twisted category, as

@@ -1,7 +1,5 @@
 # Proof of the vector filtration of a rational dynamic unipotent subgroup
 
-Author: Worker 1423.
-
 This module proves
 `Langlands.Aubert.General.RationalPointFamily.DynamicUnipotentVectorFiltrationStatement` as
 `Langlands.Aubert.General.RationalPointFamily.dynamicUnipotentVectorFiltration`, using the

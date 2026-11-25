@@ -1,7 +1,5 @@
 # Aubert 1995 Theorem 2.3 for the support-adjusted GL Aubert operator
 
-Author: Worker 186.
-
 `Langlands.Aubert.aubertTheorem23.{uF, uV} F T hx hl hp` proves exactly the
 published `Langlands.Aubert.AubertTheorem23Statement.{uF, uV} F T hx hl hp`
 from `Langlands.Representation.Aubert.ZelevinskyComparison`. Its only
@@ -14,8 +12,7 @@ proposition parameters
 - `hp : Langlands.Aubert.SegmentPolynomialComparisonStatement F T hx hl`.
 
 The universes `uF` and `uV` are independent. The theorem holds for every value
-of `hx`, `hl` and `hp`; it adds no hypothesis. The target pair and every pair
-it imports are unchanged.
+of `hx`, `hl` and `hp`; it adds no hypothesis.
 
 The proposition is the conjunction of three statements about the direct sum,
 over all natural ranks including zero, of the actual exact finite-length
@@ -106,10 +103,9 @@ The only non-project lemmas used directly are Mathlib's `RingHom.congr_fun`
 and `LinearMap.ext`. The module imports the three proof modules listed above;
 they import `ZelevinskyComparison`.
 
-Lean compilation and declaration inspection in the task's environment
-`bb168ec3-1031-46d9-816b-5c2ed7bbe1a6` succeeded with no errors and no
+Lean compilation and declaration inspection succeeded with no errors and no
 warnings. The theorem has level parameters `uF, uV`, and its axioms are
-exactly `propext`, `Classical.choice` and `Quot.sound`. A private check also
+exactly `propext`, `Classical.choice` and `Quot.sound`. A separate check also
 rebuilt the full dependent telescope of the statement's type,
 `∀ {p} [Fact p.Prime] F T hx hl hp, AubertTheorem23Statement F T hx hl hp`.
 It confirmed that this expression is structurally equal to the type of
@@ -142,23 +138,23 @@ Aubert computes the segment values directly, using Definition 1.5 and
 Zelevinsky's Propositions 3.4 and 9.13. The Lean input instead derives them
 from the published signed segment exchange and the effective support sign.
 Involutivity of Zelevinsky's endomorphism (§9.12) is obtained here from
-involutivity of the additive adjusted operator. This new module is internal
+involutivity of the additive adjusted operator. This module is internal
 assembly of published Lean results; it introduces no new definition and no
 new mathematical input.
 
 ## Transitive classification dependencies
 
-Classification is permitted by this task, and the proof reaches results
+The proof may use classification results, and it reaches results
 defined in classification modules through its published inputs. This
-contribution makes no claim of classification independence.
+module makes no claim of classification independence.
 
-A private development diagnostic recursively traversed the final theorem's
+A development diagnostic recursively traversed the final theorem's
 type and proof value, then the types and values of every reached project
 declaration, including opaque values, inductive constructors and recursors.
 It used Lean's `Expr.getUsedConstants`. Non-project constants were not
 expanded, since they cannot depend on project results. The diagnostic ran
-against the workspace Library base `c6e80146c42a1f62d41f90e444f503ccf17f4d20`
-plus this module. The traversal reached 10,344 project constants in 869
+against the Library as it was when this module was added, plus this module.
+The traversal reached 10,344 project constants in 869
 project modules. Of these, 437 constants (321 theorem constants) are defined
 in 58 modules under `Langlands.Representation.Classification`.
 

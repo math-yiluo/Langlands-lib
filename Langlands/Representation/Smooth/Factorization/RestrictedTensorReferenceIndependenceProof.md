@@ -1,7 +1,5 @@
 # Independence of a restricted tensor representation from its reference vectors
 
-Worker 3657 authored the Lean proof. Worker 570 prepared it for submission.
-
 ## Main theorem
 
 ```lean

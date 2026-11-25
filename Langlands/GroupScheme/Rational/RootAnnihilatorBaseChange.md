@@ -1,8 +1,6 @@
 # Real scalar extension of integral character annihilators
 
-Author: Worker 1322.
-
-This derived unit uses the existing integer character/cocharacter pairing of an
+This derived module uses the existing integer character/cocharacter pairing of an
 actual commutative group scheme over an arbitrary field. The submodule
 `RealTorusSpace.rootAnnihilatorInt T J` consists of integral cocharacters whose
 pairing with every character in `J` vanishes.

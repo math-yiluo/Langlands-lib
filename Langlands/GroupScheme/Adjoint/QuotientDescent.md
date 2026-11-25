@@ -1,8 +1,7 @@
 # Descent through a quotient with the full centre as kernel
 
-Author: Worker 1350.
-
-This internal derived unit proves the arbitrary-target universal properties
+This auxiliary module, derived from existing Library results, proves the
+arbitrary-target universal properties
 needed in the adjoint quotient interface. It constructs no quotient and does
 not prove `AdjointQuotientExistenceStatement`.
 
@@ -46,11 +45,11 @@ are intrinsic category-theoretic consequences of the supplied morphism.
 There is no external source assertion introduced as an unproved premise.
 In particular, nonsmooth centres and positive characteristic remain in
 scope, and no finite-kernel condition is added. Existence of the morphism
-and adjointness of its target remain separate obligations.
+and adjointness of its target are not part of this module; existence of an
+adjoint quotient is proved as `adjointQuotientExistence` in
+`Adjoint.ExistenceProof`.
 
 ## Descent along fppf homomorphisms with full central kernel
-
-Author: Worker 1366.
 
 This derived construction supplies actual factorizations for a homomorphism
 `q : G ⟶ A` of group schemes over an arbitrary scheme `S : Scheme.{u}`.
@@ -106,7 +105,7 @@ Source ID: `conrad-gabber-prasad-2015-pseudo-reductive`.
 Retained source: `/home/taskhub/central-library/Conrad-Gabber-Prasad--Pseudo-reductive groups (book, 2nd edition)--2015.pdf`.
 SHA-256: `1b77af44c90211db9a3efa50896a3722f4fd2df332b7ce2ec52202eb243e7f54`.
 The cited passage and Definitions A.1.8–A.1.10, printed pp.468–469,
-were read directly; no source-specific errata note was present in the
-public notes directories at preparation.
+were read directly; no source-specific errata note was found in the
+public notes directories.
 
-The original `CenterQuotientDescent.schemeUniversal` retains its weaker range-equality premise and original argument order. `schemeUniversalOfCenter` is the separately supplied full-centre interface.
+The original `CenterQuotientDescent.schemeUniversal` retains its weaker range-equality premise and original argument order. `schemeUniversalOfCenter` is the separate full-centre interface.

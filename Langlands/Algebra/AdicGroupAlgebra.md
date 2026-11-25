@@ -1,7 +1,5 @@
 # Algebraization of compatible maps into group algebras
 
-Worker 891.
-
 This module constructs algebra and bialgebra homomorphisms into group algebras
 from compatible maps over all adic quotients. It implements the algebraic part
 of SGA 3, Exposé IX, Theorem 7.1, recomposed pp.56–58 (original margins
@@ -55,5 +53,8 @@ families. Separatedness then proves the counit equation for `liftAlgHom`.
 No smoothness, finite presentation, flatness, or finite generation condition
 on `C` or `M` is imposed. This module does not provide the adapter from
 compatible group-scheme maps or from scalar-extended bialgebra maps to its
-input system, and does not perform finite étale descent. Those remain
-obligations toward the full group-scheme adic lifting theorem of Task 7014.
+input system, and does not perform finite étale descent. Those are further
+steps toward the full group-scheme adic lifting theorem
+`Langlands.GroupScheme.MultiplicativeTypeAdicLiftStatement`, which
+`multiplicativeTypeAdicLift` in
+`Langlands.GroupScheme.Torus.MultiplicativeTypeAdicLiftProof` proves.

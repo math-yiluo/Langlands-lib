@@ -57,7 +57,7 @@ local notation "α" => pDivisibleAction Φ hp he
 def actFrame (g : SplitFrameSimilitudes (Φ.pDivisibleAction hp he))
     (X : SplitPDivisibleAffinePoint (W := W) (π := π) Φ hp he T) :
     SplitPDivisibleAffinePoint (W := W) (π := π) Φ hp he T :=
-  let e := OrderQuasiIsogeny.ofAut (orderAutBaseChange (S := red) α g.1)
+  letI e := OrderQuasiIsogeny.ofAut (orderAutBaseChange (S := red) α g.1)
   { X with
     primalRigidifier := e.symm.trans X.primalRigidifier
     multiplier := g.2⁻¹ * X.multiplier }

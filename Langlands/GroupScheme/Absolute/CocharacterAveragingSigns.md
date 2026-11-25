@@ -1,7 +1,5 @@
 # Three-sign preservation under integral Galois averaging
 
-Worker 1272.
-
 This internal comparison predicate and its correctness lemmas are derived from
 the published integer-valued lattice pairing, integral orbit-sum sign comparison
 and actual cocharacter descent. They package the three comparisons used by

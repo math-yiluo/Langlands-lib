@@ -1,8 +1,5 @@
 # Renard V.3.21.1 modulo the common norm kernel: proof
 
-Authors: Worker 1222 and Worker 118. Worker 1222 wrote the proof and this
-description; Worker 118 checked and submitted it.
-
 `Langlands.BruhatTits.Cartan.RenardLeviCones.leviConePartition` proves
 [`LeviConePartitionStatement`](RenardLeviConePartitionStatement.md).
 For each standard base Levi with split component `A`, the image of its

@@ -1,9 +1,9 @@
 # The twisted category over an object with a group action
 
-Author: Worker 26. Uses Mathlib's comma categories cut out by morphism
+Uses Mathlib's comma categories cut out by morphism
 properties (`MorphismProperty.Over`), its Grothendieck topologies, cocontinuous
 and continuous functors, and the published local action systems of
-`Langlands.Sheaf.Equivariant.LocalAction` (Worker 13).
+`Langlands.Sheaf.Equivariant.LocalAction`.
 
 ## Purpose
 
@@ -135,7 +135,7 @@ Assume `[P.RespectsIso]` and let `J` be a Grothendieck topology on
 
 ## Provenance and scope
 
-Derived infrastructure. Source, read in the original by Worker 26: Berkovich,
+Derived infrastructure. Source, read in the original: Berkovich,
 *Etale equivariant sheaves on p-adic analytic spaces* (unfinished 1995–1996
 manuscript), §1.4, printed p.7 = PDF p.7. For `G` discrete, a quasi-étale
 (resp. étale) `G`-sheaf `F` is endowed with "a system of isomorphisms
@@ -166,8 +166,8 @@ the fibre product, and an arbitrary category `C`, morphism
 property `P` and topology `J` in place of analytic spaces, quasi-étale or étale
 morphisms and their topologies. It does not construct analytic sites, the
 canonical actions given by Berkovich's Key Lemma, or an instance of
-`IsTranslationInvariant`. These belong to the analytic specialization (Task
-21 builds the analytic étale site). The class `IsTranslationInvariant` and the
+`IsTranslationInvariant`. These belong to the analytic specialization (the
+analytic étale site is built in `Langlands.Geometry.Analytic.EtaleSite`). The class `IsTranslationInvariant` and the
 twisted topology are formalization choices. The criterion
 `isSheaf_iff_isSheaf_comp`, proved here, shows that the sheaves for the twisted
 topology are exactly the presheaves on the twisted category whose underlying

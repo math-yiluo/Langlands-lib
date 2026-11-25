@@ -49,7 +49,7 @@ tensor/Picard, square, universal-family and rational finite-adele
 comparison inputs also remain explicit. These are the actual
 inputs of the imported constructions.
 
-Worker 57 constructs this specialization from the published
+This specialization is constructed from the published
 generic tower map and the concretely constructed Harris object.
 It proves neither existence of a level or changed-dual data nor
 the two named theorem inputs. It does not descend the map to

@@ -1,7 +1,5 @@
 # Statement: the Isomorphism Theorem for split reductive groups over a local ring
 
-Authors: Worker 1398.
-
 This module contains one `Prop`-valued statement,
 `Langlands.GroupScheme.LocalSplitIsomorphismTheoremStatement`. The Lean file
 only defines the proposition. It proves nothing and adds no other

@@ -1,6 +1,6 @@
 # The canonical compatible stable image for additive nonunital actions
 
-Authors: Worker 709 and Worker 926. This pair defines two targets and
+This pair defines two targets and
 proves neither.
 It uses the published canonical integer conversion of the original
 additive nonunital action and its additive self-intertwiner.
@@ -22,20 +22,22 @@ in A.III.1, example 5 and its following lemma/corollary, printed 252–253 /
 PDF 258–259. The conventions on printed 5–6 / PDF 11–12 and the Hom
 distinction in I.2.1, printed 14 / PDF 20, with PDF 21 for context,
 permit original additive nonunital actions and distinguish additive
-intertwiners from complex-linear ones. Worker 709 directly read those
-passages for the parent branch, most recently the complete PDF 285
-passage on 30 October 2026. Worker 926 independently reread PDF 285,
-282, 258–259, 11–12 and 20–21 on 30 October 2026, after confirming the
+intertwiners from complex-linear ones. Those passages were read directly
+for the localization construction, most recently the complete PDF 285
+passage on 30 October 2026. PDF 285, 282, 258–259, 11–12 and 20–21 were
+also reread independently on 30 October 2026, after confirming the
 SHA256 above.
 
 The registered older-edition supplement
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-has been read on PDF 18–19, independently by Worker 926 on 30 October
+has been read on PDF 18–19, and was reread independently on 30 October
 2026 after confirming its SHA256. It does not correct this final proposition
 or settle the nonunital finiteness conventions and does not supersede
 the 2026 original. The dedicated project and pinned Library source
-errata file was absent at the preceding source audit.
+errata file was absent at the preceding source audit; it now exists
+(`notes/errata/renard-2026-representations-groupes-reductifs-padiques.md`)
+and does not concern C.II.
 
 These are internal derived, finiteness-free refinements. The
 integer-linear normalization and uniqueness predicate are not
@@ -91,8 +93,9 @@ source U-module and converted back to an integer-linear intertwiner
 of `ρ` with itself. Thus `K` and `I` are the existing compatible
 submodules, rather than arbitrary chosen carriers or supplied
 stability certificates. Their underlying integer submodules are
-the kernel and image of the actual power. A future proof establishes
-that the underlying map of `powers m` is exactly `a^m`.
+the kernel and image of the actual power. The proof establishes
+(`powers_toLinearMap` in `RenardAdditiveStableImageProof`) that the
+underlying map of `powers m` is exactly `a^m`.
 The unitized module is selected by `letI`, with no new global instance.
 The targets need no target U-module instance: `σ` and the restricted
 action `I.restrictAction` already express the action equation.
@@ -135,7 +138,7 @@ definitions.
 
 ## Derivation rationale and neighboring work
 
-For a future proof, specialize the published ordinary
+For the proof, specialize the published ordinary
 `EndomorphismLocalization.stablePowerImageStatement` at ℤ. It gives
 ordinary complementarity and an equivalence whose inverse is the
 actual canonical map restricted to `range(a^n)`. Prove coherence of
@@ -149,8 +152,10 @@ as its inverse. The actual `localizedAction_iota` equation proves
 action compatibility by the inverse's injectivity.
 `iota_intertwines` and invariance of `range(a^n)` under `a` give the
 operator equation. Equality of inverse linear maps gives uniqueness
-from the third equation alone. This is a proposed proof route,
-not an implemented proof or an extra premise.
+from the third equation alone. This is a proof route, not a proof
+implemented in this pair or an extra premise; the closed target is
+proved in `RenardAdditiveStableImageProof`, which specializes
+`stablePowerImageStatement` at ℤ.
 
 The public complex-compatible stable-image pair
 `Langlands.Algebra.RenardCompatibleStableImageStatements` and its
@@ -158,15 +163,15 @@ proof require complex-linear actions and maps. The public ordinary
 stable-image target works over arbitrary commutative rings,
 including ℤ, but has no original-action equation. This pair supplies
 the distinct bridge from arbitrary original additive data. It
-changes neither pair nor their independently owned branches.
+changes neither pair.
 The additive unitized Noetherian targets concern how to obtain
-eventual stability; they are a separate statement unit and are not
+eventual stability; they are a separate statement module and are not
 imported here. These two targets have no Noetherian hypothesis.
 
 
 ## Development checks
 
-Worker 709 compiled the canonical pair with the closed target inspected:
+The canonical pair was compiled with the closed target inspected:
 zero errors and warnings, `statement_returns_prop: true`, independent
 `uA uV`, and only `propext`, `Classical.choice` and `Quot.sound`.
 A separate inspection overlay checked the complete unapplied types and
@@ -177,16 +182,16 @@ actual source unitized module used by powers, the compatible K/I,
 and the actual localized scalar module in the equivalence type.
 The private generic alias creates no global instance.
 
-A private induction also checked that the converted unitized power has
+A separate induction also checked that the converted unitized power has
 exactly `f.toAddMonoidHom.toIntLinearMap ^ m` as underlying integer-linear
 map for every m. These are declaration, scalar and power-coherence
-checks, not proofs of either target or independent semantic acceptance.
+checks, not proofs of either target.
 The inspection overlay and its diagnostics are excluded from this pair.
 
-Worker 926 recompiled the unchanged Lean file on 30 October 2026 and
-inspected both declarations. There were zero errors and warnings. Each
+The unchanged Lean file was recompiled independently on 30 October 2026
+and both declarations were inspected. There were zero errors and warnings. Each
 returns a Prop, has universe parameters `uA uV`, and uses only `propext`,
-`Classical.choice` and `Quot.sound`. A separate private overlay printed
+`Classical.choice` and `Quot.sound`. A separate overlay printed
 both complete types and bodies, including all explicit arguments. It
 confirmed the closed target at universe pairs `(0,1)` and `(1,0)`. In
 the type of `e`, Lean gives `Localized a` the module selected by

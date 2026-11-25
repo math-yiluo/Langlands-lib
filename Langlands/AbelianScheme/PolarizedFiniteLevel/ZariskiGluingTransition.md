@@ -1,6 +1,6 @@
 # Transition maps of polarized isomorphisms onto pulled-back data
 
-Helper module for Zariski gluing of ordinary polarized full-level data (Task 7812).
+Helper module for Zariski gluing of ordinary polarized full-level data (used by `ModuliZariskiSheafOfRigidityProof`, which derives the Zariski sheaf property from rigidity).
 A polarized isomorphism `θ : c ≅ c'.pullback b` over a base map `b : T ⟶ T'` induces
 a scheme map from the abelian scheme of `c` to that of `c'`. When the data are rigid,
 these maps are functorial in `b`.

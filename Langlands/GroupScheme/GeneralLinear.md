@@ -1,7 +1,5 @@
 # The general linear group scheme from explicit matrix coordinates
 
-Author: Worker 223.
-
 This module constructs, for a finite index type `n` and a commutative ring `R`,
 the general linear group scheme over `Spec R`. It starts from an explicit
 coordinate algebra. It proves that this algebra corepresents the functor of

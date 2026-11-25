@@ -1,6 +1,6 @@
 # Irreducibility of the entire canonical space at a Steinberg height
 
-This derived unit combines the actual highest-vector Frobenius orbit with
+This derived module combines the actual highest-vector Frobenius orbit with
 the full canonical covariant-space upper bound and the eigen-row coefficient
 construction. It supplies the per-height input to the cofinal assembly.
 
@@ -57,13 +57,13 @@ also at the positive heights quantified in that interface.
 The field universe is arbitrary. The eigen-row, coefficient covariance and
 geometric constructions retain arbitrary relative scheme tests, including
 nonaffine and nonreduced tests. The final representation predicate is the
-original rational-point irreducibility used by the host statement.
+original rational-point irreducibility used by `SteinbergBigCellStatement`.
 The split pinning, full coroot span and highest-weight module remain supplied.
 Their universal existence and `SteinbergBigCellStatement` are not proved in
-this unit. Its provenance consists entirely of the named imported proofs and
+this module. Its provenance consists entirely of the named imported proofs and
 the finite-dimensional comparison described above.
 
-The accompanying integration change names the two local affine instances in
-`HighestWeightFrobeniusOrbit` explicitly. This prevents generated declaration
+The two local affine instances in `HighestWeightFrobeniusOrbit` are named
+explicitly. This prevents generated declaration
 names from colliding with `CanonicalRhoUnipotentRestriction` when both proof
-routes are imported here; it changes no mathematical declaration or proof.
+routes are imported here; the naming changes no mathematical declaration or proof.

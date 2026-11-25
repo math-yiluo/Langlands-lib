@@ -1,6 +1,8 @@
 # Two-axis classes over valuation rings and valuative existence of representers
 
-Worker 198 wrote this internal module for Task 5678. It works in namespace
+This is an internal module for the proof of
+`NormalFiniteTypeTwoAxisExtensionProperty` (module
+`NormalModelTwoAxisExtensionProof`). It works in namespace
 `Langlands.AlgebraicGeometry.Picard.TwoAxisRigidifiedLineBundle`, in every
 universe. Throughout, `A` is a Library abelian scheme over an arbitrary scheme
 `S`. `abelian A T`, `productMap A h` and `carrierMap A h` are the published

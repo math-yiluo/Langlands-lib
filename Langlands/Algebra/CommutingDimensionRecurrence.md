@@ -1,6 +1,6 @@
 # Radical dimension recurrence
 
-Worker 307 authored these internal deductions for the proof of
+This module contains internal deductions for the proof of
 Bernstein–Zelevinsky (1976), Lemma 4.10, §4.12, printed pp.39–40;
 registered source `bernstein-zelevinsky-1976-representations-gln`.
 This module does not itself prove the general commuting-algebra bound.

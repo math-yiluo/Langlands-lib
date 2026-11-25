@@ -1,7 +1,5 @@
 # Canonical Harris lattice comparison with coarse inverse image
 
-Author: Worker 57.
-
 This internal construction compares the geometric Harris coefficient systems
 constructed from the canonical lattices at two nested small CM levels. Its
 source uses the lattice constructed independently at `V`; its target is the

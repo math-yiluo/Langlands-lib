@@ -8,7 +8,7 @@ Tits obstruction `α`:
 for every finite separable extension `E/k` inside `K` and every weight `λ`
 fixed by the star action of `Gal(K/E)`, the subgroup of `Gal(K/k)` fixing `E`
 pointwise. The sum has one term for each `k`-embedding `σ : E → N`, and
-`ε σ ∈ Gal(K/k)` extends `σ`. `Cor` is Task 7575's corestriction homomorphism
+`ε σ ∈ Gal(K/k)` extends `σ`. `Cor` is the corestriction homomorphism
 `corHom k E : BrauerGroup E →+ BrauerGroup k`
 (`Algebra/BrauerCorestriction/Hom`). No hypothesis on the characteristic or
 on the size of `k` is used.
@@ -38,7 +38,7 @@ Tits's sum for the nontrivial central character `c₁` of `λ` is `c₁` itself.
 The proof is this development's own matrix argument:
 `Reductive/TitsTransferMatrix` over `k`, `Reductive/TitsTransferBaseChange`
 over `E`, and the published identification `cor_mk_eq_of_closure` of the
-tensor descent with the corestriction (Task 7575).
+tensor descent with the corestriction.
 
 Setting: `d` is Galois pinning data for `G` over `K`, `K/k` Galois, and the
 coroots span (`hspan`). `E/k` is finite separable, `K/E` Galois, and `N/k`

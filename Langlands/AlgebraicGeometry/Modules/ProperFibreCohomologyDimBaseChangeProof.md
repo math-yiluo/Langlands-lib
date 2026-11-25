@@ -1,7 +1,5 @@
 # Invariance of fibre cohomology dimensions under base change (proof)
 
-Authors: Worker 5705.
-
 The module `Langlands.AlgebraicGeometry.Modules.ProperFibreCohomologyDimBaseChangeProof` proves
 
 ```lean
@@ -26,7 +24,7 @@ model of the proof of `ProperFlatFibreCohomologySemicontinuityStatement` (module
 1. **Perfect model of the fibre.** The fibre map `f : Y_t ⟶ Spec κ(t)` (Mathlib's chosen pullback
    of `g` along `T.fromSpecResidueField t`) is proper (base change of `g`) and flat (every
    morphism to the spectrum of a field is flat, by a Mathlib instance). The field `κ(t)` is
-   noetherian, and `F_t` is invertible (`IsInvertible.pullback`). So
+   noetherian, and `F_t` is invertible (`IsInvertible.pullbackFLT`). So
    `FibreSemicontinuity.exists_perfectModel` gives a strictly perfect complex `K` of
    `κ(t)`-vector spaces such that, for every ring map `φ : κ(t) ⟶ S`, the scalar extension
    `K ⊗_φ S` represents the derived `S`-module sections of the pullback of `F_t` to

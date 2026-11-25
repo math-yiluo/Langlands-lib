@@ -175,4 +175,4 @@ The index is an external parameter and all component types, actions, maps,
 prime-localization witnesses, and equations are exposed. This permits later
 restriction to directed tails, synchronization of systems for a ring tower,
 and residue-fibre constructions. Those operations and their colimit and
-approximation-preservation proofs are outside this definition unit.
+approximation-preservation proofs are outside this module of definitions.

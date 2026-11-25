@@ -1,10 +1,7 @@
 # From a classifier on affine tests to a universal ideal sheaf on all test schemes
 
-Author: Worker 22, for task `07219dde-fd87-48cf-83be-db16cbb3707c` (Task 5705),
-as part of the proof of
-`Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement`. The
-operator's answer to request `98389b48910e54088e0e2b2ba6aaad9c` allows such
-prerequisite proofs to stay under Task 5705.
+This module is part of the proof of
+`Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamilyStatement`.
 
 All declarations are in the namespace
 `Langlands.AlgebraicGeometry.HilbertSchemeUniversalFamily`. The module proves

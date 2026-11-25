@@ -69,7 +69,7 @@ restatement of the book. The registered source is
 `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256
 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`.
 
-This unit does not identify an arbitrary supplied root-depth model or its
+This module does not identify an arbitrary supplied root-depth model or its
 special fibre with these restrictions. Those comparisons remain necessary
-for the full C.5.3 theorem. No host KP Proposition 8.4.15 kernel theorem is
-used.
+for the full C.5.3 theorem. No kernel theorem of KP Proposition 8.4.15, the
+result this module serves, is used.

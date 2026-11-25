@@ -1,7 +1,5 @@
 # Pure quaternion representation of the rank-three Gram norm
 
-Worker 863, Task 7498.
-
 `NumberFieldRankThreeGramPureNormStatement` concerns an invertible rank-three
 skew-hermitian Gram matrix over a central quaternion division algebra over a
 number field, with the standard conjugation. Assume that at each completion

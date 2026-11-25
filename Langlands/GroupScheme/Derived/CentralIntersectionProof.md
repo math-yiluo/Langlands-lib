@@ -1,7 +1,5 @@
 # Proof of finiteness of the full central intersection with an actual derived subgroup
 
-Authors: Worker 1408 and Worker 846.
-
 `Langlands.GroupScheme.derivedCentralIntersectionFiniteness` proves the Library
 proposition `Langlands.GroupScheme.DerivedCentralIntersectionFinitenessStatement.{u}`
 (module `Langlands.GroupScheme.Derived.CentralIntersectionStatement`). Fix a
@@ -17,7 +15,7 @@ The theorem is one application:
 `derivedCentralIntersectionFiniteness_of_algClosed CentralIntersection.finite_of_isAlgClosed`.
 The two halves live in helper modules.
 
-## Reduction to an algebraically closed field (Worker 846)
+## Reduction to an algebraically closed field
 
 Modules `Derived.CentralIntersectionPullback` and
 `Derived.CentralIntersectionReduction`; see their Markdown for details.
@@ -42,7 +40,7 @@ Modules `Derived.CentralIntersectionPullback` and
   points, is finite (`LocallyQuasiFinite.of_finite_preimage_singleton` and
   `IsFinite.of_locallyQuasiFinite`). Hence `IsFinite C.X.hom`.
 
-## The algebraically closed case (Worker 1408)
+## The algebraically closed case
 
 `CentralIntersection.finite_of_isAlgClosed` (module
 `Derived.CentralIntersection.AlgClosed`) supplies `hfin`. Over an algebraically

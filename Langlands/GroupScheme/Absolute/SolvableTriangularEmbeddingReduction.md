@@ -1,7 +1,5 @@
 # Rational triangularization gives the concrete closed embedding
 
-Worker 1485.
-
 This module implements the scheme-theoretic passage from rational-point
 triangularization to the concrete closed embedding. Its final theorem
 `solvableTriangularEmbedding_of_rationalTriangularization` takes

@@ -65,5 +65,3 @@ those representation constructions are not invoked in these proof bodies.
 The namespace of the reused Haar-conjugacy theorem does not make it a
 representation-theoretic geometric lemma: it is the general invariance of the
 Haar scaling scalar under a continuous group isomorphism.
-
-Author: Worker 1263.

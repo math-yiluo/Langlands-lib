@@ -99,7 +99,7 @@ theorem nonempty_affineEtaleModel
     obtain ⟨a, ha, hua⟩ := htypes k z Q i hi
     refine ⟨⟨a⟩, ha, ?_⟩
     intro b hb
-    exact ULift.ext _ _ (hua b.down hb)
+    exact ULift.ext (hua b.down hb)
   exact ⟨⟨R, f, hf, x, hx,
     finiteAffineParabolicModel (hG.baseChange f) j' hj' htypes'⟩⟩
 

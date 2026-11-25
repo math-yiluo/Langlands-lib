@@ -1,6 +1,6 @@
 # Exchange of opposite products for a family of root subgroups
 
-Module `Langlands.Geometry.Building.RootGroupFamilyExchange`. Internal unit.
+Module `Langlands.Geometry.Building.RootGroupFamilyExchange`.
 It repeats the argument of the published `ChamberExchange` module for an
 arbitrary family of subgroups `U : characterLattice S → Subgroup G(k)` in
 place of the zero-depth filtration groups `b ↦ U_{b,x,0}` at one point.

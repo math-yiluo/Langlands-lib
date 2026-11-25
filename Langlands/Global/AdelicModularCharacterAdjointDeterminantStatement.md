@@ -1,7 +1,5 @@
 # The analytic modular character on actual adelic group points
 
-Author: Worker 107.
-
 `AdelicGroupPoints.AdelicModularCharacterAdjointDeterminantStatement`
 is the analytic comparison in Getz–Hahn, *An Introduction to Automorphic
 Representations* (2024), equation (3.12), printed p.89, combined with the

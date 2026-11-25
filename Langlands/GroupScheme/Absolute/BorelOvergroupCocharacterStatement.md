@@ -1,8 +1,5 @@
 # Actual cocharacters for absolute smooth Borel overgroups: statement
 
-Worker 1358, with Workers 146, 1240 and 1270 identifying the local geometric
-input and the dependency cycles that motivate this formulation.
-
 `Langlands.GroupScheme.AbsoluteBorelOvergroupCocharacterStatement.{u}` is a
 proposition about every algebraically closed field `k : Type u`. Let `G` be
 connected reductive, let `T` be split, and let `j : T.toGrp ⟶ G` be the torus
@@ -55,5 +52,5 @@ arbitrary-field fixed-torus target.
 No abstract-subgroup classification, standard-root indexing, relative
 Tits system, rational Bruhat decomposition or general standard-cocharacter
 statement is assumed here. This file defines the proposition and supplies
-no proof of it. Acceptance of this statement or its conditional companion
-reduction does not discharge the fixed-torus classification task.
+no proof of it. This statement and its conditional companion reduction do
+not by themselves prove the fixed-torus classification.

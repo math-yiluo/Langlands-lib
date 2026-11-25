@@ -1,6 +1,6 @@
 # Renard A.V.2: proofs of the unit–counit statements
 
-Worker 1172 proves the published closed proposition
+This module proves the published closed proposition
 `Langlands.Renard.UnitCounit.UnitCounitStatements.{vA,uA,vB,uB}`,
 imported from `Langlands.CategoryTheory.Renard.UnitCounitStatements`.
 The final theorem is `Langlands.Renard.UnitCounit.unitCounitStatements`.
@@ -184,8 +184,9 @@ errors or warnings. The statement pair and its import are unchanged.
 
 This proves the native unit–counit aggregate only. The comparison from
 Renard's supplied natural isomorphism between the Hom bifunctors `R_F` and
-`L_G` to the native adjunction remains a separate obligation, over the
-published Hom foundation. The A.V.1 representability criterion and the
+`L_G` to the native adjunction is a separate result over the
+published Hom foundation, proved as `homAdjunctionComparisonStatements` in
+`Langlands.CategoryTheory.Renard.HomAdjunctionComparisonProofs`. The A.V.1 representability criterion and the
 uniqueness of adjoints, the A.V.2 preservation theorem and the
 scalar-extension example are also separate. This proof does not complete A.V,
 Appendix A or the whole book.

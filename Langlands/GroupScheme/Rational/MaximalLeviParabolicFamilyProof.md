@@ -30,8 +30,9 @@ It supplies no geometric filtration or representation-theoretic detection.
 The companion
 [represented length reduction](../../Representation/Exponents/MaximalLeviSupercuspidalGeometricReduction.md)
 uses this family with the separately proved actual-image survivor budget and
-Worker 4949's detection transport. Its final theorem reduces the original
+the detection transport of
+`Langlands.Representation.Exponents.LeviSupercuspidalInductionDetection`. Its final theorem reduces the original
 represented maximal-Levi length bound to the exact represented geometric lemma
 and the objectwise cuspidal/remainder splitting. A further theorem supplies the
 published geometric lemma, leaving splitting as its only premise. The helper pairs retain the original
-transport design of Worker 1281 and the VI.5.3(ii) reduction of Worker 1781.
+transport design and the VI.5.3(ii) reduction.

@@ -1,7 +1,5 @@
 # Weil restriction of fppf sheaves and algebraic spaces
 
-Author: Worker 105.
-
 This module defines the Weil restriction functor that Brian Conrad uses in Lemma 5.10 and
 Proposition 5.11(1) of *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed pp.17–18. The registered source is

@@ -1,6 +1,6 @@
 # Affine fibrewise closed opens in integral Dedekind models
 
-This internal supporting unit studies one actual affine flat model over a
+This module studies one actual affine flat model over a
 Dedekind domain and opens in its total space. It makes no reductivity claim.
 
 An integral generic group gives an integral total space: the generic
@@ -32,5 +32,5 @@ irreducible open neighbourhoods. The published
 This extends the internal affine-open argument used by
 `SmoothDvrAffineOpenGeometry` to a Dedekind base with integral total space
 and an open containing the generic fibre. All hypotheses are retained
-explicitly; the unit does not prove affineness for arbitrary opens or
+explicitly; the module does not prove affineness for arbitrary opens or
 for arbitrary relative identity components.

@@ -1,8 +1,5 @@
 # Actual dominant centralizer sections and finite positive covers
 
-Author: Worker 1292. The imported `SplitComponentLatticeBridge` is by
-Worker 1503.
-
 `renardDominantComparison` proves the exact published
 `RenardDominantComparisonStatement.{u}`. It retains every quantified datum
 and hypothesis, including arbitrary nonarchimedean local fields of either
@@ -39,7 +36,7 @@ into the reals. It therefore descends to an integral functional on `A`.
 The descended valuation map is injective because its values on restricted
 characters recover the original valuation. Uniformizer evaluation
 identifies its value on a uniformizer point with the restricted integral
-pairing. Worker 1503's
+pairing. The imported `SplitComponentLatticeBridge` theorem
 `exists_rationalCharacterValuation_map_eq` realizes the valuation of every
 split-torus point by such a uniformizer point. Thus the actual split
 valuation image is the inverse image of the finite-index pairing image.

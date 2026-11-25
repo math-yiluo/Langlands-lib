@@ -1,7 +1,5 @@
 # The preimage of a split-torus centralizer is a split-torus centralizer
 
-Author: Worker 1413.
-
 Module `Langlands.GroupScheme.SimplyConnected.CoverPreimageCentralizer`,
 namespace `Langlands.GroupScheme.CoverPreimage`, over a field `k`. Internal
 helpers for clauses 1–3 of the reduction

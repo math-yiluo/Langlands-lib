@@ -40,7 +40,9 @@ point of this same `Q`.
 The provenance is internal: these are categorical, topological and group-law
 consequences of the displayed inputs and the published point and translation
 constructions. No external theorem is used to discharge the density input.
-This unit constructs neither the quotient nor its identity-neighborhood
+This module constructs neither the quotient nor its identity-neighborhood
 section, and supplies no finite-field lifting theorem. The unconditional
 density proof and the full `DynamicFlagQuotientExistenceStatement` remain
-separate obligations.
+separate obligations, outside this module: the Library proves them as
+`reductiveRationalPointDensity` in `Reductive.RationalPointDensityProof` and
+`dynamicFlagQuotientExistence` in `Dynamic.FlagQuotientProof`.

@@ -1,7 +1,5 @@
 # Ordered segment constituent data for every multisegment
 
-Author: Worker 1732.
-
 The theorem `Langlands.Classification.multisegmentConstituentDataExistence`
 proves the unchanged published proposition
 `Langlands.Classification.MultisegmentConstituentDataExistence.{uF,uV} F T`.

@@ -1,6 +1,6 @@
 # Factorization through faithful full field-point test sources
 
-This internal unit works over a complete ultrametric normed field `K`
+This internal module works over a complete ultrametric normed field `K`
 and a normed extension field `L`. The algebra universe, the small
 space universe and the extension-field universe are independent.
 The original affinoid spectra must be small in the chosen space
@@ -30,7 +30,7 @@ naturality of small-spectrum maps and the exact factorization of
 `χ` through its kernel quotient. The conclusion retains all chart
 evaluations and their restriction compatibility.
 
-The provenance is internal: this unit combines the actual quotient
+The provenance is internal: this module combines the actual quotient
 and restriction maps with the small-spectrum functor and its full
 field-point naturality. It supplies factorizations for local
 representatives without asserting localized pullback preservation.

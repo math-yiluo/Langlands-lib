@@ -1,9 +1,9 @@
 # Full adelic homeomorphism for an original curve-place space Weil model
 
-This internal unit constructs the full adelic homeomorphism for a fixed original
+This module constructs the full adelic homeomorphism for a fixed original
 principal integral model and its Weil restriction. Representability and the
 separated finite-type geometry of the original Weil model remain explicit inputs.
-This unit does not compare arbitrary models or identify the generic-fibre Weil map.
+This module does not compare arbitrary models or identify the generic-fibre Weil map.
 
 Let `k` be finite, let `K` be a function field over `k`, and let `L/K` be finite.
 Fix `s`, a finite-dimensional extension of `k(s)` to `K`, and a nonzero chart

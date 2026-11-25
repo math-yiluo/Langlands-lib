@@ -1,9 +1,8 @@
 # Noetherian criteria for the original nonunital action
 
-Worker 709 prepared this proof of the published ordered aggregate
+This module proves the published ordered aggregate
 `Langlands.Algebra.IntegerOriginalSubmoduleNoetherian.IntegerOriginalSubmoduleNoetherianStatement`.
-Worker 1088 rechecked it against the published statement, removed two
-redundant local bindings, and submitted it.
+The proof was rechecked against the published statement.
 The aggregate and its three components are imported unchanged from
 `Langlands.Algebra.IntegerOriginalSubmoduleNoetherianStatements`.
 This proof file defines the component theorems `accCriterion`,
@@ -56,11 +55,11 @@ comparison in this form. The motivating original is David Renard,
 9 July 2026, registered as
 `renard-2026-representations-groupes-reductifs-padiques`, SHA256
 `7b539996793b7c3620e72e1e389588eb42d1a8e91d6f68b2eead5c2e2ffc182c`.
-Worker 709 read the conventions at printed pages 5–6 / PDF11–12 and
-I.2.1 at printed page 14 / PDF20–21 in the parent audit, and reread and
-visually checked A.I.2–A.I.3, printed pages 248–249 / PDF254–255.
-Worker 1088 independently reread the same three page ranges, after
-verifying the file's SHA256, while preparing the published statement pair.
+The conventions at printed pages 5–6 / PDF11–12 and I.2.1 at printed
+page 14 / PDF20–21 were read, and A.I.2–A.I.3, printed pages 248–249 /
+PDF254–255, were reread and visually checked. The same three page ranges
+were reread independently, after verifying the file's SHA256, for the
+published statement pair.
 The source uses complex unitization and categorical subobjects, which
 are separate from the concrete integer construction proved here.
 
@@ -68,16 +67,16 @@ The source wording repairs and finite-type boundaries in the published
 `Langlands/CategoryTheory/RenardFiniteType.md` are retained.
 The consulted `notes/renard/appendix-a-corrections.md` concerns other
 Appendix A passages. No dedicated project errata file for the 2026
-source was found in the earlier audit. The supplementary registered
+source was found. The supplementary registered
 `renard-2010-corrections-complements`, SHA256
 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`,
-was read only at PDF18–19 in that audit. It concerns an older edition
+was read only at PDF18–19. It concerns an older edition
 and supplies no author-issued correction for these internal targets.
 Renard's bibliography references [25] and [37] have not been read for
-this unit and provide no proof evidence.
+this module and provide no proof evidence.
 
 No comparison with categorical subobjects, source finite type or the
 source's possibly nonunital Noetherian-algebra convention follows here.
-Finite-generation adapters, full C.II and whole-book completion remain
-parent obligations. This unit supplies the exact aggregate proof without
+Finite-generation adapters, full C.II and a formalization of the whole
+book are not treated here. This module supplies the exact aggregate proof without
 changing the published statement pair or its imported constructions.

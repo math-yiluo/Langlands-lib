@@ -1,10 +1,10 @@
 # Highest-weight word coordinates from supplied full simple-root data
 
-This internal unit derives full opposite-unipotent word coordinates and a
+This internal module derives full opposite-unipotent word coordinates and a
 nonzero highest-weight endpoint from explicitly supplied linked simple-root
 data. It does not construct the split pinning, coroot-span proof, or linked
 simple-root family. These remain obligations of the independent Steinberg
-big-cell construction; this conditional unit is not the target theorem.
+big-cell construction; this conditional module is not the target theorem.
 
 `SimpleRootCoordinateFamily` consists of one `LinkedRootParametrization` for
 each simple root of a supplied pinning. Only that structure and its fields
@@ -31,8 +31,8 @@ word theorem chooses a word listing every positive root once, with the full
 chart and the coefficient property for this same supplied family.
 
 The combinatorial root enumeration, generic ordered-product argument and
-generic highest-weight endpoint calculation are reused from the current
+generic highest-weight endpoint calculation are reused from the
 Library. Fullness is transported from the supplied data; it is not inferred
-from monicity and a root-dimension theorem. No excluded root-map existence
-proof, canonical linked-root choice, or old canonical-rho Borel assembly
-is used. This unit adds no external source assertion.
+from monicity and a root-dimension theorem. No root-map existence
+proof, canonical linked-root choice, or canonical-rho Borel assembly
+is used. This module adds no external source assertion.

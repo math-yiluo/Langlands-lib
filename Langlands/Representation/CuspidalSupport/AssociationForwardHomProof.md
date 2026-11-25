@@ -1,6 +1,6 @@
 # Associated cuspidal inductions admit a nonzero intertwiner
 
-Authors: Worker 240 and Worker 285. This module proves the published
+This module proves the published
 proposition `Langlands.CuspidalSupport.AssociatedCuspidalInductionHomTheorem`
 from `Langlands.Representation.CuspidalSupport.AssociationForwardStatement`.
 The closing theorem is `associatedCuspidalInductionHomTheorem`. Its type is

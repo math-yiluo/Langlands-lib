@@ -1,7 +1,5 @@
 # Detecting isomorphisms on the two fibres of a discrete valuation ring
 
-Worker 685.
-
 This internal module defines `IsGenericSpecialFibreIsomorphism` for a specified
 morphism of schemes over a local ring with a chosen field algebra. It means
 that the pullback of the morphism to that field and its pullback to the canonical

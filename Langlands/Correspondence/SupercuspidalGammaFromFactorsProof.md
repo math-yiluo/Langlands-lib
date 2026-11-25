@@ -1,7 +1,5 @@
 # Supercuspidal gamma compatibility from L, epsilon and duality: proof
 
-Author: Worker 1697.
-
 The theorem `Langlands.Correspondence.supercuspidalGammaFromFactors` proves the
 unchanged Library proposition
 `Langlands.Correspondence.SupercuspidalGammaFromFactorsStatement.{uF, uP, uA} F`

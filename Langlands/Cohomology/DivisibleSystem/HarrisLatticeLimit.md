@@ -1,16 +1,16 @@
 # Harris's lattice as the inverse limit of its reductions
 
-Author: Worker 61. Built on the published modules
+Built on the published modules
 `Langlands.Cohomology.DivisibleSystem.HarrisLatticeHom`
 (`harrisLatticeBasis`, `harrisPermutationIhomSystem`, the instance
 `mono_powSMul_harrisLatticeTrivial`),
 `Langlands.Cohomology.DivisibleSystem.ReductionLimit` (`reductionCone`,
 `nonempty_isLimit_reductionCone_iff`, `isLimitReductionCone`,
 `reductionSystemLimitIso`, `ihomReductionSystemLimitIso`),
-`Langlands.ClassField.Global.LocalUnitPowers`
-(`Langlands.ClassField.Global.isAdicComplete_adicCompletionIntegers`: the
+`Langlands.ClassFieldTheory.Global.LocalUnitPowers`
+(`Langlands.ClassFieldTheory.Global.isAdicComplete_adicCompletionIntegers`: the
 completed valuation ring at a finite place is complete for its maximal ideal)
-and Worker 57's `Langlands.Shimura.Coefficients.HarrisReduction`
+and `Langlands.Shimura.Coefficients.HarrisReduction`
 (`mem_principalPower_smul_top`: `x ∈ (b) ^ k • ⊤` exactly when
 `x = b ^ k • y` for some `y`). Through their imports it uses
 `reductionTower`, `reductionπ`, `reductionSystem`
@@ -25,11 +25,11 @@ and `map_reductionπ_reductionCompIso_hom`
 `Langlands.Global.CompletionResidue.adicResidueEquiv_mk`
 (`Langlands.Global.CompletionResidueAdic`: the residue of the image of an
 integer `x` of `L` in the completion at `l` is the class of `x` modulo `l`),
-`NYLL.ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite`
+`ValuationTheory.DiscreteValuationField.isAdicComplete_of_moduleFinite`
 (a finite module over a Noetherian ring complete for an ideal `I` is
 `I`-adically complete), `FinitePlace`, `FiniteCompletion`
 (`Langlands.Global.Adelic`), `FinitePlacesAbove`
-(`Langlands.Global.AdelicFunctoriality.Norm`), Worker 57's
+(`Langlands.Global.AdelicFunctoriality.Norm`),
 `Langlands.Shimura.Coefficients.Lattice` (`CoefficientIntegers`,
 `StableCoefficientLattice` with `carrier` and its finiteness instance) and
 `Langlands.Shimura.Coefficients.HarrisLattice`
@@ -178,7 +178,7 @@ Below `M.V` is `ℓ`-adically complete (hypothesis `hM`).
 ## Harris's coefficient ring and lattice
 
 Here `ℓ` is nonzero (`[NeZero ℓ]`) and `p` divides `ℓ` (hypothesis `hℓ`).
-`HarrisCoefficientIntegers L p`, written `R`, is Worker 57's product
+`HarrisCoefficientIntegers L p`, written `R`, is the published product
 `∏_{l | p} 𝒪_l` over the places of `L` above `p`.
 
 - `isAdicComplete_harrisCoefficientIntegers ℓ L hℓ`: `R` is `ℓ`-adically
@@ -187,10 +187,10 @@ Here `ℓ` is nonzero (`[NeZero ℓ]`) and `p` divides `ℓ` (hypothesis `hℓ`)
   is the family of the elements `ℓ` of the factors.
 
 For the remaining sections, `A` is a finite-dimensional `ℚ`-algebra with
-Worker 13's involution `σ : AlgebraInvolution ℚ A`, `W : Type u` an
+an involution `σ : AlgebraInvolution ℚ A`, `W : Type u` an
 `L`-module and `ρ` an algebraic representation of `σ.baseChange L` on `W`, as
 in the published `HarrisLattice`. With `W` finite over `L` and a compact open
-level `U` of `σ.FiniteAdelicPoints`, Worker 57's `harrisLattice ρ p U`,
+level `U` of `σ.FiniteAdelicPoints`, the published `harrisLattice ρ p U`,
 written `𝓛`, is an `R`-lattice in `(L ⊗_ℚ ℚ_p) ⊗_L W`, and the published
 `harrisLatticeAction ρ p U` is the action of `U.subgroup` on it.
 
@@ -223,7 +223,7 @@ free `R`-module.
 ## One place of the coefficient field
 
 Here `l` is a finite place of `L` above `p`, `U` a subgroup of
-`σ.FiniteAdelicPoints`, and `Λ` is Worker 57's
+`σ.FiniteAdelicPoints`, and `Λ` is the published
 `StableCoefficientLattice ρ p l U`: a full lattice `Λ.carrier` over `𝒪_l` in
 `L_l ⊗_L W`, stable under `U`, with action `Λ.action`.
 
@@ -238,7 +238,7 @@ Here `l` is a finite place of `L` above `p`, `U` a subgroup of
 ## Provenance and interpretation
 
 Harris, *Galois properties of cohomological automorphic forms on GL(n)*,
-J. Math. Kyoto Univ. 39-2 (1999) (Worker 61 read the rendered scanned pages):
+J. Math. Kyoto Univ. 39-2 (1999) (read in the rendered scanned pages):
 
 - §3, printed p.306 (one-based PDF page 8): "`L_v = L ⊗_ℚ ℚ_v`" for a place
   `v` of `ℚ`, so `L_ℓ` is in general a finite product of finite extensions of

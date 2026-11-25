@@ -1,10 +1,8 @@
 # Actual lattice comparison from restriction evaluation
 
-Author: Worker 1292. The imported SplitComponentLatticeBridge is by Worker 1503.
-
 This module proves finite index of the actual split valuation image and
 bijectivity of the actual uniformizer section onto that image, using splitness
-of `S` and the host's existing bijectivity hypothesis for
+of `S` and the existing bijectivity hypothesis for
 `restrictionEvaluation s`. It is a derived integral comparison. It assumes
 neither connected reductivity of `Z` nor the split-component property of `s`.
 
@@ -22,7 +20,7 @@ integral linear algebra. The imported `RenardIntegralRestriction` gives descent
 of functionals and a finite-index criterion. The imported
 `RenardDominantValuation` gives positive uniformizer normalization and
 invariance under equality of integer character valuations. The imported
-`SplitComponentLatticeBridge`, by Worker 1503, supplies uniformizer evaluation
+`SplitComponentLatticeBridge` supplies uniformizer evaluation
 and realization of a split-torus point's valuation by a uniformizer point.
 Its additional conditional split-component theorems are not used here.
 
@@ -78,8 +76,8 @@ equal values on every rational character and hence equal actual valuations.
 
 The uniformizer identity
 `actualValuationOnRestriction_uniformizer` identifies the image of
-`H_Z(s(c(ϖ)))` with `P(c)`. On `r(χ)` this is exactly Worker 1503's
-`rationalCharacterValuation_map_uniformizerSection`.
+`H_Z(s(c(ϖ)))` with `P(c)`. On `r(χ)` this is exactly
+`rationalCharacterValuation_map_uniformizerSection` from `SplitComponentLatticeBridge`.
 
 ## Finite index and the section
 
@@ -104,7 +102,7 @@ centralizer valuations, whose positive normalizations are `1 ⊗ c` and
 actual points in `C0`. Surjectivity uses
 `exists_rationalCharacterValuation_map_eq` again.
 
-These conclusions use the host's already quantified comparison proof `h`.
+These conclusions use the already quantified comparison proof `h`.
 They do not establish existence or bijectivity of a real comparison for an
 arbitrary morphism. The module supplies the two remaining lattice inputs
 for the conditional dominant assembly, but contains no proof of the closed

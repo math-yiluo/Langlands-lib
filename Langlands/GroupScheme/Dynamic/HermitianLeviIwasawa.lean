@@ -86,6 +86,7 @@ theorem HasHermitianStarLeviRealization.hasDiagonalStarLeviRealization
   have hsc : IsClosedSubgroup σ := by
     let : IsClosedImmersion ρ.hom.hom.left := hc
     change IsClosedImmersion (ρ.hom.hom.left ≫ _)
+    set_option backward.isDefEq.respectTransparency.instanceSearchTypes false in
     infer_instance
   have hsd : χ ≫ σ = GeneralLinear.diagonalCocharacter (Fin d) (CommRingCat.of 𝕜) e := by
     simpa only [σ, MatrixRepresentation.conjugate, Category.assoc] using he

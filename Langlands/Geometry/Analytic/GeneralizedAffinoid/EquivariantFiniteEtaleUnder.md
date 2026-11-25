@@ -1,6 +1,6 @@
 # Algebraically finite étale positive-polyradius objects under a continuous action
 
-Authors: Worker 56 and Worker 36. This adapts Worker 36's published strict
+This adapts the strict
 `EquivariantFiniteEtaleUnder` construction to the actual arbitrary
 positive-polyradius quotient category. All declarations below are in
 `Langlands.Analytic.PresentedAffinoidAlgebra`.

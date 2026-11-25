@@ -101,7 +101,7 @@ standard infinite compact actions. -/
 theorem CuspidalOperatorRealization.exists_compactInvariantForm
     {F : Type uF} [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)] {r : ℕ}
     (T : CuspidalOperatorRealization F r)
-    (hT : Langlands.ClassField.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T) :
+    (hT : Langlands.ClassFieldTheory.Global.RelativeWeilGroup.HasUnitaryCentralCharacter T) :
     ∃ b : Langlands.InvariantPositiveForm T.realization.finiteRepresentation,
       ∀ (k : standardInfiniteCompact F (r + 1)) (f g : T.Space),
         b.inner (T.realization.compactRepresentation k f)

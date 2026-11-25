@@ -20,7 +20,7 @@ subgroups inside all identity neighborhoods; it does not assume that those
 subgroups are compact. `WeaklyLocallyCompactSpace` says that each point has a
 compact neighborhood. The target has no Hausdorff or other separation
 assumption. Mathlib derives `WeaklyLocallyCompactSpace` from
-`LocallyCompactSpace`, so a proof implies the assigned result with
+`LocallyCompactSpace`, so a proof implies the result with
 `LocallyCompactSpace` and `T2Space`.
 
 The motivating terminology is Bill Casselman, *Introduction to admissible
@@ -40,9 +40,9 @@ proves that bridge, and not a formalization of van Dantzig's theorem.
 
 ## Interface audit and intended proof obligations
 
-Worker 6 searched the pinned `Mathlib/Topology/Algebra/Nonarchimedean` sources
-and inspected `Basic.lean`, `OpenSubgroup.lean`, `Topology/Defs/Filter.lean`,
-and `Topology/Compactness/Compact.lean`. The following existing interfaces
+The pinned `Mathlib/Topology/Algebra/Nonarchimedean` sources were searched,
+and `Basic.lean`, `OpenSubgroup.lean`, `Topology/Defs/Filter.lean`,
+and `Topology/Compactness/Compact.lean` were inspected. The following existing interfaces
 suffice:
 
 - `exists_compact_mem_nhds` supplies a compact neighborhood of the identity.
@@ -53,15 +53,15 @@ suffice:
 - `IsCompact.of_isClosed_subset` makes that subgroup compact.
 
 The intersection construction explains why no separation hypothesis is needed.
-The Lean file here contains only the proposition definition; its proof will
-be submitted separately against this exact accepted target.
+The Lean file here contains only the proposition definition; its proof is
+`Langlands.compactOpenSubgroupBasis` in `Langlands.Topology.CompactOpen.NeighborhoodBasis`.
 
 ## Exact dependencies and validation boundary
 
 There are no project mathematical dependencies. The imports are
 `Mathlib.Topology.Algebra.Nonarchimedean.Basic` and
 `Mathlib.Topology.Compactness.LocallyCompact`.
-The prepared environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`:
+The environment is
 Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 and Mathlib commit `5ed2965256430c3649e86755f9576b54eca72435`.
-Compilation checks elaboration; it does not establish independent acceptance.
+Compilation checks elaboration.

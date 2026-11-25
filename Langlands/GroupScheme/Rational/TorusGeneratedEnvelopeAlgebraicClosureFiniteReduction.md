@@ -1,6 +1,6 @@
 # Reduction of the finite-field envelope compatibility
 
-Worker 1387, reusing the proof structure of Worker 1523's infinite-field reduction. This module proves a conditional theorem. It does not prove any of
+This module reuses the proof structure of the infinite-field reduction `Rational.TorusGeneratedEnvelopeAlgebraicClosureInfiniteReduction` and proves a conditional theorem. It does not prove any of
 the three propositions it assumes.
 
 ## Main theorem

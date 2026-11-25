@@ -1,9 +1,9 @@
 # Maps of polynomial-locus analytifications induced by algebra maps
 
-This unit takes a `K`-algebra map `f : A →ₐ[K] B` between presented affine
+This module takes a `K`-algebra map `f : A →ₐ[K] B` between presented affine
 `K`-algebras and constructs the induced map of their polynomial-locus
 analytifications. The map goes the other way, `Space K Q → Space K P`, as
-for the analytification of the scheme morphism `Spec B → Spec A`. The unit
+for the analytification of the scheme morphism `Spec B → Spec A`. The module
 constructs the bounded chart maps, the glued continuous map of spaces, the
 chosen-chart morphism of the constructed affinoid atlases and the strong
 atlas map defined for every admissible chart pair. Identity and composition
@@ -197,7 +197,7 @@ with `baseMap K P Q f`.
 
 ## Scope
 
-This unit gives definitions and their computation lemmas. It does not state or
+This module gives definitions and their computation lemmas. It does not state or
 prove the following:
 
 - that the construction sends identity maps and composites to identity and
@@ -210,4 +210,8 @@ prove the following:
   compatibility with extension of the ground field;
 - comparison with other analytification constructions in the Library.
 
-These are planned as separate statement units with proof successors.
+The first two are stated in `AffineAnalytificationFunctorialityStatement` and
+proved in `AffineAnalytificationFunctorialityProof`; compatibility with the
+rational-point maps is stated in
+`AffineAnalytificationRationalPointNaturalityStatement` and proved in
+`AffineAnalytificationRationalPointNaturalityProof`.

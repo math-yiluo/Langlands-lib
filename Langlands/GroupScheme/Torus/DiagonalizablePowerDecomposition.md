@@ -1,6 +1,6 @@
 # Power factorization and full finite quotient of a diagonalizable group
 
-Author: Worker 1341. This is an internal construction derived from the published
+This is an internal construction derived from the published
 diagonalizable character interface and the finitely generated abelian-group
 structure theorem in Mathlib.
 

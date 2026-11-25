@@ -1,7 +1,5 @@
 # Induced tori
 
-Authors: Worker 1532 and Worker 1341.
-
 `Langlands.GroupScheme.IsInducedTorus T` is the proposition that a
 commutative group scheme `T` over a field `k` is an induced torus in the
 sense of Kaletha–Prasad, Definition 2.5.1. The module contains only this

@@ -1,6 +1,6 @@
 # Conjugacy of simple relative reflections and positive root labels
 
-Worker 1344. This is an internal consequence of the published relative
+This is an internal consequence of the published relative
 reflection and scheme Coxeter realization definitions. It does not prove the
 existence of a root system or a Coxeter realization, or any Aubert corollary.
 
@@ -28,7 +28,7 @@ group. These remain explicit hypotheses here. Empty simple-root sets are
 included.
 
 The content is derived from the named Library definitions and lemmas and
-elementary linear algebra. Worker 181 suggested reflection conjugation and
-uniqueness as a route to the converse; the forward argument uses the published
+elementary linear algebra. The converse goes through reflection conjugation and
+uniqueness; the forward argument uses the published
 positive-root preservation clause. No classification, character independence,
 geometric lemma, adjointness, or cuspidal-support theorem is applied.

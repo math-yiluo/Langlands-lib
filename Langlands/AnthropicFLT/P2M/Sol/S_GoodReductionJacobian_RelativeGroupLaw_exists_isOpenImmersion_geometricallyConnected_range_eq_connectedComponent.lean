@@ -7,7 +7,7 @@ Modified: FLT module names are prefixed by `Langlands.AnthropicFLT`; the FLT lak
 are set after the imports; the import of `P2M.Util` is dropped and its commands are replaced
 by standard Lean commands. The paired Markdown file lists the changes.
 -/
-import Mathlib
+import Langlands.MathlibBase
 import Langlands.AnthropicFLT.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw
 import Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawKernel
 import Langlands.AnthropicFLT.Definitions.Def_GoodReductionJacobian_RelativeGroupLawBaseChange
@@ -510,7 +510,7 @@ scoped instance geometricallyIrreducible_f₀ : GeometricallyIrreducible (f₀ L
   geometricallyIrreducible_of_snd (f₀ L) (tb k (AlgebraicClosure k))
 
 scoped instance geometricallyConnected_f₀ : GeometricallyConnected (f₀ L) :=
-  AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnected (f₀ L)
+  AlgebraicGeometry.GeometricallyIrreducible.geometricallyConnectedFLT (f₀ L)
 
 scoped instance irreducibleSpace_G₀ : IrreducibleSpace (G₀ L) :=
   GeometricallyIrreducible.irreducibleSpace_of_subsingleton (f₀ L)

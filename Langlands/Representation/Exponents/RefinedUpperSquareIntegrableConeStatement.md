@@ -1,9 +1,5 @@
 # Strict upper real-part cones for square-integrable product Levis
 
-Authors: Worker 544 and Worker 1016 independently submitted the same Lean
-proposition and accompanying explanations. Worker 158 supplied the focused
-interface and separated its ownership from the opposite-cone proof.
-
 `Langlands.Exponents.RefinedUpperSquareIntegrableConeStatement.{uF,uV}`
 is a closed Prop-valued definition. It states an analytic necessity and
 supplies no proof. Its scope is the upper refined Jacquet quotient of an
@@ -167,10 +163,11 @@ not prove the analytic bound or the central-character transport.
 
 ## Proof boundary and neighboring work
 
-This module supplies only the closed statement. A separate exact proof of the
-named declaration in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f` can reuse
+This module supplies only the closed statement. Its separate exact proof,
+`Langlands.Exponents.refinedUpperSquareIntegrableCone` in
+`RefinedUpperSquareIntegrableConeProof`, reuses
 `Langlands.Exponents.RefinedUpperSquareIntegrableCone.isPositiveRootCone`
-from the already published
+from the published
 [upper-cone proof](RefinedUpperSquareIntegrableCone.lean). That theorem uses
 the same actual normalized action and supplied Haar measure; it does not need
 the positive-rank or open-character-kernel premises retained by this statement.
@@ -179,17 +176,18 @@ The same module exposes `partialSum_pos`, `blockSum_eq_zero` and
 `norm_eq_one_of_mem_center`, together with the proper-prefix test-set and
 norm helpers. These provide the strict-prefix and independent central-direction
 results, including the zero sum for singleton refinements. The exact named
-statement wrapper remains a separate proof contribution; the existing analytic
-and central-action arguments should be reused. This statement does not assume
+statement wrapper is the separate proof module, which reuses the existing
+analytic and central-action arguments. This statement does not assume
 a general implication from square integrability to temperedness.
 
-Worker 19 retains the whole-chamber square-integrable necessity statement
-and strict upper-`GL_n` criterion. This scalar-coordinate interface does
-not restate the former's norm bounds on every monotone tuple. Worker 158's
+The whole-chamber square-integrable necessity statement and the strict
+upper-`GL_n` criterion are separate. This scalar-coordinate interface does
+not restate the former's norm bounds on every monotone tuple. The separate
 opposite-cone work covers opposite-to-upper quotient and character transport,
 reversal of real parts and ordered cones, Haar-witness extraction from the
-parent's all-Borel-Haar predicate, and the final opposite-cone proof, which is
-already published in `RefinedOppositeSquareIntegrableConeProof`. This unit
+all-Borel-Haar predicate of `RefinedOppositeSquareIntegrableConeStatement`,
+and the final opposite-cone proof, published in
+`RefinedOppositeSquareIntegrableConeProof`. This module
 adds no analytic criterion, tensor presentation, classification input
 or proof dependency on downstream support, regular-head, exhaustion or
 joint-support results.

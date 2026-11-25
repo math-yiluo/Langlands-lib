@@ -1,7 +1,5 @@
 # The full maximal-torus preimage in a simply connected derived cover
 
-Author: Worker 1554.
-
 `DerivedCoverMaximalTorusPreimageStatement.{u}` is a proposition definition.
 It states a structural input for the existing
 `DerivedCoverTorusProductSmoothStatement.{u}` and contains no proof of that input.

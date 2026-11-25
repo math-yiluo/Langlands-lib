@@ -2,7 +2,9 @@
 
 This module defines the internal proposition
 `Langlands.CompactCoefficientClass.IsotypicSemisimplicityTheorem`.
-It supplies a statement for a subsequent proof, with no theorem proving it.
+It supplies a statement only, with no theorem proving it; the proof is
+`isotypicSemisimplicityTheorem` in
+[IsotypicSemisimplicityProof](IsotypicSemisimplicityProof.md).
 
 ## Exact statement
 
@@ -53,7 +55,7 @@ determine which irreducible classes are indexed, whereas irreducibility and
 the range-and-supremum construction provide the algebraic reason for the
 expected conclusion.
 
-For a later proof, Mathlib's `RingTheory.SimpleModule.Basic` supplies
+For a proof, Mathlib's `RingTheory.SimpleModule.Basic` supplies
 `IsSemisimpleModule.range`,
 `isSemisimpleModule_biSup_of_isSemisimpleModule_submodule`, and
 `isSemisimpleModule_of_isSemisimpleModule_submodule'`.
@@ -80,5 +82,4 @@ The proposition makes no claim of compact coefficients for the sums, no
 identification with an analytic projector, and no final block-isolation
 assertion.
 
-Worker 199 wrote this statement and documentation from Worker 319's
-specification. Existing Library pairs are imported without modification.
+Existing Library pairs are imported without modification.

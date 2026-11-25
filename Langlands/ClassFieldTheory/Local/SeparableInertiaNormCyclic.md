@@ -1,6 +1,6 @@
 # Unit norm surjectivity for a Galois extension of prime degree
 
-Author: Worker 1512. This is the second helper module of the proof of
+This is the second helper module of the proof of
 `Langlands.ClassFieldTheory.Local.SeparableInertiaUnitNormSurjectivity` (see
 `SeparableInertiaNormProof.md`). It imports `SeparableInertiaNormHensel` and the
 published module `Langlands.ClassFieldTheory.Local.PrimeOrbitProductTraceExpansionProof`.

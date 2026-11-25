@@ -1,7 +1,5 @@
 # Matrix coefficients of finite-dimensional subcomodules
 
-Author: Worker 254.
-
 This helper module contains the linear-algebra core of the closed linear embedding
 theorem `Langlands.GroupScheme.affineLinearEmbeddingStatement_viaCorepresented`. It is stated for an
 abstract comultiplication and counit on a module, without schemes, algebras or

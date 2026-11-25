@@ -1,8 +1,7 @@
 # The quasi-split unitary group `U(1,1)` is not commutative: statement
 
-Author: Worker 293. This is statement S3 of task
-`be70310c-1939-4a82-8293-c4d33f5883ae`. The module contains one `Prop`-valued
-definition and no proof. A proof is left to a separate `lean.proof` task.
+The module contains one `Prop`-valued definition and no proof. Its proof is
+`nonCommutative`, in the separate module `QuasiSplitUnitaryNonCommutativeProof`.
 
 ## The statement
 
@@ -15,8 +14,8 @@ the terminal object `Over.mk (𝟙 (Spec (CommRingCat.of F)))` with
 `g * h ≠ h * g`.
 
 Here `groupScheme b c` is the group scheme `U(1,1)` over
-`Spec (CommRingCat.of F)` of unit 1, `Langlands.GroupScheme.Examples.QuasiSplitUnitary`
-(Worker 399). It is the Library's `SchemeModel.unitaryGroupScheme` of `b` and
+`Spec (CommRingCat.of F)` of `Langlands.GroupScheme.Examples.QuasiSplitUnitary`.
+It is the Library's `SchemeModel.unitaryGroupScheme` of `b` and
 of the involution `X ↦ J (X.map c)ᵀ J` of `Matrix (Fin 2) (Fin 2) E`, where
 `J = !![0, 1; 1, 0]`. The product of two points is the product of morphisms
 into a group object of `Over (Spec (CommRingCat.of F))`, from the scoped
@@ -27,18 +26,17 @@ No assumption on the characteristic of `F` is made, so the statement covers
 characteristic `2`. The universe of `κ` is `u`, as required by
 `groupScheme`.
 
-## Provenance and intended proof
+## Provenance and proof
 
-The statement is derived for this task. It records that `U(1,1)` is a
-noncommutative example, as the parent program
-`2b5e4a00-9d44-49a4-9c89-979fb5b6233e` asks. It is not quoted from a source.
+The statement is derived. It records that `U(1,1)` is a
+noncommutative example. It is not quoted from a source.
 Milne, *Algebraic Groups* (2017), source `milne-2017-algebraic-groups`,
 discusses unitary groups in 24.40–24.44 (printed pp.523–525). The
-presentation by the antidiagonal Gram matrix `J` is the standard choice of unit 1
-for the hermitian form `h(v, w) = v₁ c(w₂) + v₂ c(w₁)`.
+presentation by the antidiagonal Gram matrix `J` is the standard choice made in
+`QuasiSplitUnitary` for the hermitian form `h(v, w) = v₁ c(w₂) + v₂ c(w₁)`.
 
-The task contract suggests the following witnesses; the Lean statement does not
-name them. Unit 1's `pointsEquiv` identifies points over the terminal object
+The proof `nonCommutative` uses the following witnesses; the Lean statement does not
+name them. The `pointsEquiv` of `QuasiSplitUnitary` identifies points over the terminal object
 with the invertible matrices `X` over `E ⊗[F] Γ(Spec F, ⊤)` with
 `X J (X.map c_R)ᵀ J = 1`, where `c_R` is `c ⊗ id`. Choose `t ∈ E` with
 `c t ≠ t` and put `x = t - c t`. Then `x ≠ 0`, and `x + c x = 0` because

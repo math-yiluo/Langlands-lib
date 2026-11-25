@@ -1,7 +1,5 @@
 # Cofinal compact open block Iwahori factorization
 
-Author: Worker 117.
-
 ## Exact statement
 
 `Langlands.GeneralLinear.BlockShape.BlockIwahoriBasisStatement` is a transparent

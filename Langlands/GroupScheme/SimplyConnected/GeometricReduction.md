@@ -1,6 +1,6 @@
 # Geometric reduction for simple connectedness under field extension
 
-Worker 416. This is an internal decomposition of the exact field-extension
+This is an internal decomposition of the exact field-extension
 statement, using the Library's actual group-scheme base change. It does not
 establish either geometric input or the unconditional field-extension theorem.
 No additional field hypothesis is imposed on that final theorem.

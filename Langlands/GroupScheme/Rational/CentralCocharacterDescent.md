@@ -1,7 +1,5 @@
 # Descent of central cocharacter orbit sums
 
-Author: Worker 1264.
-
 This is a derived prerequisite built from the published actual cocharacter
 descent, base-change, transport, and split-component interfaces. It adds no
 structural theorem as a hypothesis.

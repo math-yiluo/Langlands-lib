@@ -2,9 +2,8 @@
 
 Lean module: `Langlands.Representation.Archimedean.ComplexMaximalParabolicIntegration`.
 
-Worker 140 wrote this module for Task 7063 (`f2d2e257-dd4b-4820-96ab-faa9c832ffb8`), the proof of
-`ComplexStandardLanglandsQuotientStatement`. It is the complex counterpart of Worker 5220's module
-`MaximalParabolicIntegration` for `GL_n(ℝ)` (candidate `b853be2a`, Task 6749), and follows its proof
+This module was written for the proof of `ComplexStandardLanglandsQuotientStatement`. It is the
+complex counterpart of the module `MaximalParabolicIntegration` for `GL_n(ℝ)`, and follows its proof
 step by step.
 
 The module writes the integral over `U(m+1)` of a function in the principal series of the modulus

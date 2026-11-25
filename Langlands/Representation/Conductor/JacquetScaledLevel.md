@@ -1,6 +1,6 @@
 # Scaled Jacquet groups and the actual natural-number level
 
-This internal unit connects the scale in the negative-level argument with the
+This module connects the scale in the negative-level argument with the
 unchanged ideal-power level subgroups and their actual fixed spaces. The source
 convention is `q = ϖ^(-a)`. The two Jacquet invariances remain supplied hypotheses.
 
@@ -35,7 +35,7 @@ field, coefficient and carrier universes,
 `mem_levelFixedVectors_of_scaled_jacquet_invariant` proves that a vector fixed
 by both source groups belongs to the unchanged `levelFixedVectors π a`.
 It restricts the scaled opposite invariance along the proved inclusion and
-uses the preceding module's identification of the common Jacquet fixed space
+uses the identification in `JacquetLevelInvariance` of the common Jacquet fixed space
 with the actual level-fixed space. This step needs no topology, smoothness,
 admissibility, irreducibility or genericity.
 
@@ -62,7 +62,7 @@ the ordinary right-translation representation and the negative-level Whittaker
 obstruction. The imported Jacquet modules document the source motivation and
 the corrected determinant-one boundary of that obstruction.
 
-This unit leaves the analytic derivation of the two source invariances open.
+This module does not contain the analytic derivation of the two source invariances.
 It constructs no essential vector, epsilon-factor comparison, minimal fixed
 level or dimension-one fixed space, and does not prove
 `EssentialConductorStatement`.

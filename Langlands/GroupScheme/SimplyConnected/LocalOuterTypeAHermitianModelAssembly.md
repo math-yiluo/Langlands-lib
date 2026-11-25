@@ -1,9 +1,7 @@
 # Local outer type A Hermitian models from the unitary splitting statements
 
-Author: Worker 166.
-
 This module reduces the published `Langlands.GroupScheme.LocalOuterTypeAHermitianModelStatement`
-to two published but unproved statements:
+to two published statements:
 
 - `Langlands.GroupScheme.OuterTypeAUnitarySplitPresentationStatement`: over a field `K`
   with `UnitaryInvolutionSplitting K`, an affine, locally finite-type, simply connected,
@@ -14,10 +12,15 @@ to two published but unproved statements:
 - `Langlands.LocalUnitaryDivisionCommutativeStatement`: every nonarchimedean local field
   `K` satisfies `UnitaryDivisionCommutative K`.
 
-It is part of Task 5973. Together with Worker 150's published reduction from
-`LocalOuterTypeAHermitianModelStatement` to the task target
-`LocalAnisotropicTypeAInnerStatement`, the task target then follows from these two
-statements. This module proves neither of them.
+Together with the published reduction `localAnisotropicTypeAInner_of_hermitianModel`
+(module `LocalAnisotropicTypeAInnerReduction`) from
+`LocalOuterTypeAHermitianModelStatement` to
+`LocalAnisotropicTypeAInnerStatement`, the latter then follows from these two
+statements. This module proves neither of them; they are proved as
+`outerTypeAUnitarySplitPresentation` and `localUnitaryDivisionCommutative`, and
+`localAnisotropicTypeAInner` (module `LocalAnisotropicTypeAInnerProof`) composes these
+two proofs with `localOuterTypeAHermitianModel_of_unitarySplitting` of this module and
+that reduction.
 
 ## Statements
 

@@ -1,6 +1,6 @@
 # Reduction of common-closure spectral analyticity to rank one
 
-Worker 1237 derives this component from the published common-closure
+This component is derived from the published common-closure
 induction, spectral twist, system and degree-zero generation definitions. It
 introduces no reciprocity family, local-constant system or generation
 assumption of its own. Generation and rank-one analyticity enter only as

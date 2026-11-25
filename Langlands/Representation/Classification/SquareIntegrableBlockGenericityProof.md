@@ -1,7 +1,5 @@
 # Genericity of square-integrable block products
 
-Author: Worker 90.
-
 `Langlands.Classification.squareIntegrableBlockGenericity` proves exactly
 `Langlands.Classification.SquareIntegrableBlockGenericity.{uF,uV} F T`
 from `TemperedBlockStatement`. Its outer parameters are

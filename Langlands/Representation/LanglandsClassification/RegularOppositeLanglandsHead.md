@@ -1,6 +1,6 @@
 # Strong heads from regular opposite Jacquet modules
 
-Worker 148. This is an internal assembly of the quotient argument in Renard
+This is an internal assembly of the quotient argument in Renard
 VII.4.2 (i), printed p.243 / PDF p.249, on the published actual
 represented-parabolic functors. It constructs a strong irreducible head
 conditionally on the geometric, regularity, finite-length and second-adjunction
@@ -78,10 +78,12 @@ All of the following remain explicit inputs of that construction:
 
 The theorem does not assert that `Q` is opposite to `P`; the intended
 application supplies an actual opposite parabolic and discharges the
-adjunction and identity-support inputs for it. Opposite existence, the
-identity-support theorem, regularity for Langlands triplets, second
-adjointness and induction finite-length preservation are separate obligations.
-Parameter injectivity and exhaustion are also unproved here. The protected
+adjunction and identity-support inputs for it. Opposite existence
+(`oppositeLeviParabolic`), the identity-support theorem
+(`oppositeIdentitySupport`) and regularity for Langlands triplets
+(`langlandsTripletOppositeRegularity`) are proved in separate modules; second
+adjointness and induction finite-length preservation are not proved in the Library.
+Parameter injectivity and exhaustion are also unproved here. The
 classification statement and its imports are unchanged.
 
 The provenance is internal: the module composes published representation

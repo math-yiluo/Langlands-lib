@@ -1,6 +1,6 @@
 # Renard's right-module pseudo-forgetful and induction functors
 
-This internal additive construction specializes `Langlands.Algebra.NondegenerateRightHomFunctor` on the original carrier `B`. It uses the specified original actions and explicitly selects the published regular action needed by each specialization. The construction is valid for arbitrary associative nonunital rings under the stated hypotheses.
+This internal additive construction specializes `Langlands.Algebra.NondegenerateRightHomFunctor` on the original carrier `B`. It uses the specified original actions and explicitly selects the regular action needed by each specialization. The construction is valid for arbitrary associative nonunital rings under the stated hypotheses.
 
 ## Sources and provenance
 
@@ -12,13 +12,13 @@ The governing source is Renard, *Représentations des groupes réductifs p-adiqu
 
 The supplementary registered errata `renard-2010-corrections-complements`, SHA256 `fdf3c88716c294c451c1f6fad67f6b99c95dae670aae0b8ad191ab0a96e69863`, PDF1–2 and PDF18–19, were also read. Their corrections to adjunction orientation, the object in the I.4.2 statement, and the order of Hom-map composition do not provide a coefficient-compatibility hypothesis for the tensor-dual comparisons.
 
-The explicit original-action interfaces and arbitrary-ring additive generality are internal derived infrastructure. The implementation reuses `NonUnitalBimoduleHomActions.rightSourceAction`, the original `rightSourceHom` and `rightSourceMap` from `NonUnitalBimoduleHomNaturality`, and the actual part, restriction and inclusion construction packaged by `NondegenerateRightHomFunctor`. It also follows the published left-module `RenardHomFunctors` specialization pattern. Worker 633 wrote this specialization unit using Worker 1151's general right-Hom construction.
+The explicit original-action interfaces and arbitrary-ring additive generality are internal derived infrastructure. The implementation reuses `NonUnitalBimoduleHomActions.rightSourceAction`, the original `rightSourceHom` and `rightSourceMap` from `NonUnitalBimoduleHomNaturality`, and the actual part, restriction and inclusion construction packaged by `NondegenerateRightHomFunctor`. It also follows the left-module `RenardHomFunctors` specialization pattern. This specialization module uses the general right-Hom construction.
 
 ## Right-module pseudo-forgetful functor
 
 Let `A` and `B` be nonunital rings. Supply a left `A`-action on the original additive group of `B`. The local instance `pseudoSourceRight` selects exactly `NonUnitalModule.rightRegular B`, so the right `B`-action on this fixed source is multiplication `b · c = b * c`. The witness `hAB : ActionsCommute A B B` refers to precisely these two actions.
 
-For a right `B`-module `M`, the ambient Hom is exactly `NonUnitalModuleHom B.op B M`, with its published pointwise additive group. `rightPseudoAction hAB` is exactly the named `rightSourceAction hAB`. Its whole endomorphism at `op a` is `precomposeAddHom (hAB.leftActionHom a)`, and evaluation is
+For a right `B`-module `M`, the ambient Hom is exactly `NonUnitalModuleHom B.op B M`, with its pointwise additive group. `rightPseudoAction hAB` is exactly the named `rightSourceAction hAB`. Its whole endomorphism at `op a` is `precomposeAddHom (hAB.leftActionHom a)`, and evaluation is
 
 ```text
 (op a • φ)(b) = φ(a • b).
@@ -42,9 +42,9 @@ nondegenerateInclusion B.op ⋙
 
 Its type is `NondegenerateModuleCat B.op ⥤ NondegenerateModuleCat A.op`. Its bundled object uses `nondegeneratePart_isNondegenerate hA.op`. The object and carrier interfaces expose the actual part subtype. The group equality names the inherited additive subgroup group; the action equality names the inherited subtype module. Subtype scalar values and their evaluations retain the specified residual action above.
 
-For an original right-`B`-linear map `f : M → N`, `rightPseudoMap` is exactly `partMap hAB hA f`, namely `(ambientMap hAB f).restrictNondegeneratePart hA.op`. Here the ambient map is the published `rightSourceMap hAB hAB (NonUnitalBimoduleHom.id A B B) f`, with entire additive map `postcomposeAddHom f`. The specialization exposes the complete restriction and its underlying additive map. Its subtype value is `f.comp φ.val`, and its evaluation at `b` is `f(φ.val(b))`. The bundled functor maps expose the same whole restriction, subtype value and evaluation. Additivity is inherited from the actual restricted general functor.
+For an original right-`B`-linear map `f : M → N`, `rightPseudoMap` is exactly `partMap hAB hA f`, namely `(ambientMap hAB f).restrictNondegeneratePart hA.op`. Here the ambient map is `rightSourceMap hAB hAB (NonUnitalBimoduleHom.id A B B) f`, with entire additive map `postcomposeAddHom f`. The specialization exposes the complete restriction and its underlying additive map. Its subtype value is `f.comp φ.val`, and its evaluation at `b` is `f(φ.val(b))`. The bundled functor maps expose the same whole restriction, subtype value and evaluation. Additivity is inherited from the actual restricted general functor.
 
-`rightPseudoInclusion` is exactly the general `restrictedInclusion hAB hA`, obtained by whiskering the published part inclusion first by the ambient functor and then by the input inclusion. It has target `nondegenerateInclusion B.op ⋙ ambientFunctor hAB`. Its entire component is the actual submodule inclusion, its additive map is the subgroup inclusion, and its value is `φ.val`. Naturality is the equality of whole original right-`A`-linear maps
+`rightPseudoInclusion` is exactly the general `restrictedInclusion hAB hA`, obtained by whiskering the part inclusion first by the ambient functor and then by the input inclusion. It has target `nondegenerateInclusion B.op ⋙ ambientFunctor hAB`. Its entire component is the actual submodule inclusion, its additive map is the subgroup inclusion, and its value is `φ.val`. Naturality is the equality of whole original right-`A`-linear maps
 
 ```text
 ambientMap(f) ∘ subtype_M = subtype_N ∘ rightPseudoMap(f).
@@ -56,7 +56,7 @@ The direct construction requires only the supplied left action, its commutation 
 
 Supply a right `A`-action on the original additive group of `B`. The local instance `inductionSourceLeft` selects exactly `NonUnitalModule.regular B` on the left, so `b • b' = b * b'`. The witness `hBA : ActionsCommute B A B` refers to this selected left regular action and the supplied right `A`-action.
 
-For a right `A`-module `M`, the ambient carrier is exactly `NonUnitalModuleHom A.op B M`, with the published pointwise group. `rightInductionAction hBA` is exactly `rightSourceAction hBA`. The entire endomorphism at `op b` is `precomposeAddHom (hBA.leftActionHom b)`, and
+For a right `A`-module `M`, the ambient carrier is exactly `NonUnitalModuleHom A.op B M`, with the pointwise group. `rightInductionAction hBA` is exactly `rightSourceAction hBA`. The entire endomorphism at `op b` is `precomposeAddHom (hBA.leftActionHom b)`, and
 
 ```text
 (op b • φ)(b') = φ(b * b').
@@ -94,8 +94,8 @@ The competing-structure checks use coinciding ring, fixed-source and target carr
 
 Subsingleton checks cover both a subsingleton source `B` and a subsingleton target `M` for each actual part. The regular integer checks construct a nondegenerate right-regular integer object and the actual identity Hom as an element of the part, prove that element nonzero by evaluation at `1`, and verify both residual scalar formulas, bundled subtype scalar formulas, identity-map values, whole inclusion components and inclusion values.
 
-The separate `NondegenerateRightHomFunctorChecks` unit supplies the general meaningful degenerate case with nonzero integer carriers, zero original actions, a nonzero identity Hom, zero entire residual action and trivial actual part, together with its subtype and inclusion formulas.
+The separate `NondegenerateRightHomFunctorChecks` module supplies the general meaningful degenerate case with nonzero integer carriers, zero original actions, a nonzero identity Hom, zero entire residual action and trivial actual part, together with its subtype and inclusion formulas.
 
 ## Scope
 
-These are the additive Hom functors and their actual nondegenerate output parts. The source I.4.2 comparison theorem is formulated for complex algebras; this internal construction establishes no recovered coefficient equalities or coefficient linearity. The intended coefficient compatibility in that source remains a separate question. Tensor-dual comparison maps, inverse identities, natural isomorphisms, adjunctions and exactness also remain separate obligations. This unit preserves the existing residual coefficient adapter constructions and their ownership.
+These are the additive Hom functors and their actual nondegenerate output parts. The source I.4.2 comparison theorem is formulated for complex algebras; this internal construction establishes no recovered coefficient equalities or coefficient linearity. The intended coefficient compatibility in that source remains a separate question. Tensor-dual comparison maps, inverse identities, natural isomorphisms, adjunctions and exactness are also outside this module. This module leaves the existing residual coefficient adapter constructions unchanged.

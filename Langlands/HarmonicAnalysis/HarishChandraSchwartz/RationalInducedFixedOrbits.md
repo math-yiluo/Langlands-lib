@@ -1,14 +1,13 @@
 # `Θ^H` for one parabolic subgroup and the support of `ψ_f` (Waldspurger, Remark VIII.1.3)
 
-Author: Worker 3642, task `1ef6854b-f0e9-4d96-bbe5-cb8c4b52f927` (revision 1).
-
 Lean module: `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedFixedOrbits`,
 namespace `Langlands.HarishChandraSchwartz`. It imports:
 
-- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitFourierPairing` (Library,
-  this author's Unit 23). It provides `rationalFourierOrbitSection` (`ψ_f[O, P]`) and
-  `rationalFourierOrbitSection_apply`. Through its imports come this author's
-  `rationalInducedFourierTransform` (Unit 22, `f̂(ω, P)`), the actual-point facts of Unit 19
+- `Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalInducedOrbitFourierPairing` (Library).
+  It provides `rationalFourierOrbitSection` (`ψ_f[O, P]`) and
+  `rationalFourierOrbitSection_apply`. Through its imports come
+  `rationalInducedFourierTransform` (`RationalInducedFourierTransform`, `f̂(ω, P)`), the
+  actual-point facts of `RationalInducedCoefficients`
   (`exists_standardParabolicPoints_rootSet_mul`, `isClosed_standardParabolicPoints_rootSet`,
   `locallyCompactSpace_standardParabolicPoints_rootSet`,
   `compactSpace_leftQuotient_standardParabolicPoints_rootSet`) and the Library's
@@ -35,7 +34,7 @@ J.-L. Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d'aprè
 J. Inst. Math. Jussieu 2 (2003), 235–333, DOI 10.1017/S1474748003000082 (literature id
 `waldspurger-2003-plancherel`, SHA256
 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`). Page numbers are printed
-pages; the PDF page is the printed page minus 234. The author checked the quotations below on the
+pages; the PDF page is the printed page minus 234. The quotations below were checked on the
 rendered PDF page 87.
 
 - VIII.1, printed p. 321: "Soit `H` un sous-groupe ouvert compact de `G`. Pour `(O, P) ∈ Θ` et
@@ -60,7 +59,7 @@ section `ω ↦ f̂(ω, P)` over `O` (VII.1, printed p. 316); both are quoted in
 `RationalInducedFourierTransform` and `RationalInducedOrbitFourierPairing`.
 
 The source states "il est clair" for the vanishing and gives the reduction for (i) in two
-sentences. The proofs here are this author's (provenance: derived). The route for (i) differs
+sentences. The proofs here are the Library's own (provenance: derived). The route for (i) differs
 from the source: instead of reducing to `H` normal in `K` and the subgroup `M ∩ H`, it uses the
 Library's `finiteInductionFixedVectorVisibility`, which gives finitely many compact open subgroups
 `L_x` of `M`, independent of the inducing representation, such that `I_P^G E` has a nonzero
@@ -152,7 +151,8 @@ Section `Finiteness`: moreover `hM : IsClosed M` and `[CompactSpace (Induction.L
 
 ### Actual rational points
 
-Section `Rational`: the setting of Units 19–28. `F` is a nonarchimedean local field, `G` a group
+Section `Rational`: the setting of the other actual-point modules (`RationalInducedCoefficients`,
+`RationalInducedFourierTransform` and those built on them). `F` is a nonarchimedean local field, `G` a group
 scheme over `F` with `hG : IsConnectedReductive G`, `i` a maximal split torus (`hi`), `ν` a
 generic cocharacter (`hν`), `I` a finite set of simple roots, `P = P_I(F) = M_I(F) ⋉ U_I(F)` with
 `M_I(F)` the subtype `𝐌` of `G(F)`, `K` an open subgroup with `hKc : IsCompact K` and
@@ -231,7 +231,7 @@ Section `Support` (the same hypotheses without `π`):
 - `finite_inducedDiscreteSeriesFixedOrbits`: a finite union of finite sets (`Set.finite_iUnion`).
 - The actual statements instantiate the abstract ones with `G(F)`, `M_I(F)`, `P_I(F)`; the
   Fourier vanishing unfolds `rationalInducedFourierTransform` and closes with
-  `with_reducible_and_instances exact`, as in Units 19–27. The orbit statements apply the
+  `with_reducible_and_instances exact`, as in the other actual-point modules. The orbit statements apply the
   per-representative vanishing at every `A` (`rationalFourierOrbitSection_apply`). The support
   theorem takes `H = L` with `L` the compact open subgroup of `Space.exists_rightInvariant f` and
   `T = Θ^L` for `P_I(F)`.

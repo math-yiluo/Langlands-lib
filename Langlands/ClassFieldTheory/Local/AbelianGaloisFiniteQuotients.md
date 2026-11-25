@@ -1,6 +1,6 @@
 # Finite quotients of the actual abelianized absolute Galois group
 
-Worker 1651 develops this internal topological Galois adapter for profinite
+This module develops an internal topological Galois adapter for profinite
 reciprocity. It uses the existing actual Galois and closed-commutator quotient
 constructions. It asserts no reciprocity or norm-residue theorem.
 

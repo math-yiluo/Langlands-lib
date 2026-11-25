@@ -71,7 +71,7 @@ lift on `X`, restricted along `ι`. -/
 theorem coe_heckeFrobenius_apply (x : fixedVectors X.V.representation H) :
     (heckeFrobenius H X v ι x : X.V) =
       SmoothRep.hom (X.ρ (DecompositionGroupAction.localRestriction v ι
-        (GaloisRepresentation.geometricFrobeniusLift v))) x :=
+        (GaloisRepresentation.geometricFrobeniusLift v))).asHom x :=
   rfl
 
 /-- The Frobenius endomorphism commutes with the Hecke algebra of `H`. -/
@@ -108,7 +108,7 @@ variable (hX : IsSmooth (galoisRepresentation X))
 /-- A Galois element acts on the fixed vectors by the restriction of its action on `X`. -/
 theorem fixedVectorsObjects_representation_apply (g : Field.absoluteGaloisGroup K) :
     (fixedVectorsObjects H X hX).val.representation g =
-      fixedVectorsMap (SmoothRep.hom (X.ρ g)) H :=
+      fixedVectorsMap (SmoothRep.hom (X.ρ g).asHom) H :=
   rfl
 
 /-- The dimension of the Galois representation is that of the fixed vectors. -/
@@ -150,14 +150,15 @@ theorem isUnramifiedAlong_fixedVectors_isotypic {U : Type uU} [AddCommGroup U] [
       ((fixedVectorsActionFunctor L (Field.absoluteGaloisGroup K) H).obj
         ((isotypicActionFunctor τ (Field.absoluteGaloisGroup K)).obj X)) ι := by
   intro i
+  apply End.ext
   refine ModuleCat.hom_ext (LinearMap.ext fun x => ?_)
   have hx : (x.1.1 : X.V) ∈ fixedVectors X.V.representation H :=
     (Representation.mem_invariants _ _).2 fun g =>
       congrArg Subtype.val ((Representation.mem_invariants _ _).1 x.2 g)
-  have key : SmoothRep.hom (X.ρ (DecompositionGroupAction.localRestriction v ι i.val)) x.1.1 =
+  have key : SmoothRep.hom (X.ρ (DecompositionGroupAction.localRestriction v ι i.val)).asHom x.1.1 =
       x.1.1 :=
     congrArg Subtype.val
-      (congrArg (fun f => f.hom (⟨x.1.1, hx⟩ : fixedVectors X.V.representation H)) (hu i))
+      (congrArg (fun f => f.asHom.hom (⟨x.1.1, hx⟩ : fixedVectors X.V.representation H)) (hu i))
   exact Subtype.ext (Subtype.ext key)
 
 /-- If the fixed vectors are unramified at `v` along `ι`, the Galois representation on them has

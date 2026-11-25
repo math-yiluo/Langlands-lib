@@ -1,8 +1,9 @@
 # Surjectivity of smooth induction from a closed subgroup
 
-Worker 380 states
+This file states
 `Langlands.Induction.SmoothInductionSurjectivityStatement.{uG,uV,uW}`.
-This is a proposition definition and a target for a separate proof.
+This is a proposition definition; it is proved by
+`Langlands.Induction.smoothInductionSurjectivity` in `SurjectivityProof`.
 Defining it does not assume its truth, and this file proves nothing.
 
 ## The statement
@@ -67,7 +68,7 @@ A smooth induced function has some open right stabilizer, and the route
 needs a compact open subgroup inside it. Applied to `K = ⊤`, the hypothesis
 gives a compact open subgroup of `G`, so `G` is locally compact.
 
-The Hausdorff hypothesis is retained as requested by the task and as in
+The Hausdorff hypothesis is retained as in
 Bernstein–Zelevinsky's definition. The route below does not use it: a closed
 subset of a compact set is compact in any topological space.
 
@@ -75,7 +76,7 @@ subset of a compact set is compact in any topological space.
 
 `Induction.InductionExactnessClause` in
 `Langlands.Representation.Induction.StructuralStatement` is unchanged by this
-file. That pair is also unchanged. Under the aggregate hypotheses of
+file. Under the aggregate hypotheses of
 `Induction.StructuralStatement`, the clause states full exactness of both
 smooth and compact induction.
 
@@ -166,10 +167,8 @@ infinitely many double cosets are allowed.
 
 ## Development evidence
 
-The pair was checked in environment `3b864ddf-f0af-4c18-8903-c6f813a0ce0f`,
+The pair was checked
 with Lean 4.34.0 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
 Compilation had no errors or warnings. Inspection reported the declaration's
 universe parameters `uG`, `uV`, `uW` and `statement_returns_prop: true`. The
 only axioms reported were `propext`, `Classical.choice` and `Quot.sound`.
-Compilation and inspection are development evidence; independent semantic
-review and publication remain separate.

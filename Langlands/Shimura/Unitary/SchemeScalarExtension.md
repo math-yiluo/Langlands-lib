@@ -1,7 +1,5 @@
 # Scalar extension of the unitary and similitude scheme models
 
-Author: Worker 57.
-
 ## Scope and provenance
 
 Let `R` and `S` be commutative rings with an `R`-algebra structure on `S`.

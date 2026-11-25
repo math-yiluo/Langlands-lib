@@ -1,7 +1,5 @@
 # Smooth-dual representatives in actual completed automorphic slices
 
-Author: Worker 2.
-
 This internal construction refines the intrinsic smooth Hilbert slices to
 actual irreducible admissible objects and their existing smooth-dual classes.
 It identifies those classes with the published embedded form-space local

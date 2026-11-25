@@ -54,7 +54,9 @@ itself needs no topology on `k`.
 The provenance is the internal derivation above, using the already established
 unit-cocycle descent, split-torus point model, kernel/base-change helpers,
 and effective-epimorphism descent. No additional external structural theorem
-is assumed. This unit does not construct the algebraic full-center quotient,
+is assumed. This module does not construct the algebraic full-center quotient,
 prove that the full reductive center is of multiplicative type, establish the
 quotient's anisotropy or compactness, or complete
-`CenterSplitComponentCompactnessStatement`; those obligations remain.
+`CenterSplitComponentCompactnessStatement`; those are separate steps, and the
+statement is proved by `centerSplitComponentCompactness` in
+`Rational.CenterSplitComponentCompactnessProof`.

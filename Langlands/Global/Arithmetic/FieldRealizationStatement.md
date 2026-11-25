@@ -98,13 +98,12 @@ not a Lean proof.
 
 `FieldRealizationStatement.{u,v}` is the conjunction of these two existence
 statements. It is a coherent prerequisite of the later CM construction.
-It does not yet assert the chosen CM composita, Hecke-character realization,
-general-position characters, or Harris's automorphic output. Those remain
-explicit parts of the broad task.
+It does not assert the chosen CM composita, Hecke-character realization,
+general-position characters, or Harris's automorphic output.
 
 ## Original sources and correspondence
 
-Worker 35 read the originals at these locations:
+The originals were read at these locations:
 
 - Guy Henniart, *Une preuve simple des conjectures de Langlands pour GL(n)
   sur un corps p-adique*, Inventiones Mathematicae 139 (2000), 439-455,
@@ -139,28 +138,24 @@ fields are the concrete Lean expression of the source's choices.
 
 ## Exact dependencies and validation
 
-The sole project import is `Langlands.LocalField.Definitions`, artifact
-`ac4cb7d5-5dd1-44b6-9d56-f0ec6c70bce0` version 1. A fresh fetch verified it
-as accepted, published, and current at Library commit
-`9007729971e6e6ecea63b5567b6d1621769ccfb0`. The effective Lean hash is
+The sole project import is `Langlands.LocalField.Definitions`, checked at
+Library commit
+`9007729971e6e6ecea63b5567b6d1621769ccfb0`. Its Lean hash there is
 `8d9cc8aa128861b13b4f96d38bf95be46844d2eaad28aa3cbb654b070ee0e517`
-and Markdown hash
+and its Markdown hash
 `6cfb939cf42a71a81fa648b77bd4bab1076bffe0d62519181f7dc7db742124bf`.
 It supplies `PadicField` and `canonicalTopology`; all other objects come
-directly from the listed Mathlib imports. The owner draft's finite-place
-convention is followed through its underlying Mathlib type, without importing
-an unpublished alias or choosing a competing global definition.
+directly from the listed Mathlib imports. The finite-place convention
+(a `HeightOneSpectrum` of the ring of integers) is followed through its
+underlying Mathlib type, without importing an alias or choosing a competing
+global definition.
 
-The environment is `2ecc41bc-2901-4e34-96c5-6d98fbb3c74d`, version 1:
-Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
+The environment is Lean 4.34.0, commit `293d5d0c0c3f3dded4688b3ccd6a33939ac5102b`,
 and Mathlib `5ed2965256430c3649e86755f9576b54eca72435`.
-Development check `d67619a0-23f3-424e-8904-35262be0cfdf` built the complete
-group with incremental Lake and no errors or warnings, reusing the unchanged
-dependency. Exact target inspection confirmed `statement_returns_prop=true`
-with independent universe parameters `u,v`, and target fingerprint
-`65dd8e4d461b4d62ed87c1fa4687c0b924b92ccf47c3a0efe3326366e4546c3b`.
+An incremental Lake build of the complete group gave no errors or warnings,
+reusing the unchanged dependency. Exact target inspection confirmed
+`statement_returns_prop=true` with independent universe parameters `u,v`.
 All four elaborated declarations were also printed and inspected.
 
-Worker 35 authored this pair. It has no theorem proofs or project axioms.
-Compilation and target inspection establish elaboration; independent semantic
-review and final current-head publication remain required for acceptance.
+This pair has no theorem proofs or project axioms.
+Compilation and target inspection establish elaboration.

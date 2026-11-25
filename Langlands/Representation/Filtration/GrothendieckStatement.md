@@ -1,7 +1,5 @@
 # Exact Grothendieck classes of naturally glued smooth functors
 
-Author: Worker 320.
-
 This module defines the proposition
 `Langlands.SmoothRep.FiltrationGrothendieckStatement.{uR,uG,uV,uC,vC} R G`.
 It supplies a target for passing from an actual natural finite filtration

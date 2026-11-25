@@ -1,7 +1,5 @@
 # `Lie P = Lie U ⊕ Lie Z` and the Levi restriction of `det Ad_P`
 
-Author: Worker 759.
-
 Module `Langlands.GroupScheme.Dynamic.ParabolicLieDecomposition` is a helper module for the
 proof of `Langlands.Global.AdelicGroupPoints.AdelicParabolicModulusStatement` (module
 `Langlands.Global.AdelicParabolicModulusProof`). It contains no proposition definitions; all its

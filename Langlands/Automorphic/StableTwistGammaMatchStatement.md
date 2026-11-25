@@ -1,7 +1,7 @@
 # Stable pair gamma comparison under highly ramified twists
 
 Module `Langlands.Automorphic.StableTwistGammaMatchStatement` defines one proposition,
-`Langlands.ClassField.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement`
+`Langlands.ClassFieldTheory.Global.RelativeWeilGroup.StableTwistPairGammaMatchStatement`
 (universes `u`, `uV`, `uE`). It is a statement only; nothing is proved here.
 
 ## Statement

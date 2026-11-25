@@ -1,8 +1,8 @@
 # The algebraic core of the irreducibility of `GL_2(ℂ)` principal series
 
 Lean module: `Langlands.Representation.Archimedean.ComplexGLTwoIrreducibleCore` (namespace
-`Langlands.Archimedean.GLTwoCore`). Worker 728 wrote it for the proof of
-`ComplexGLTwoUnlinkedIrreducibleStatement` (the target of Task 7148; written under Task 7064).
+`Langlands.Archimedean.GLTwoCore`). It serves the proof of
+`ComplexGLTwoUnlinkedIrreducibleStatement` (module `ComplexGLTwoUnlinkedIrreducibleProof`).
 
 Provenance: internal, derived. It is the classical `U(2)`-type argument for `GL_2(ℂ)` (as in
 Gelfand–Naimark and Želobenko), formulated with the explicit operators of `ComplexGLTwoModel`.

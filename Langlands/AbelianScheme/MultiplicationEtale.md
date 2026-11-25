@@ -1,9 +1,8 @@
 # Etaleness of invertible multiplication on abelian schemes
 
-Author: Worker 334. The affine-chart and infinitesimal lifting argument is adapted
-from Worker 268's published `TorsionFiniteEtale` proof and imports that worker's
+The affine-chart and infinitesimal lifting argument is adapted
+from the `TorsionFiniteEtale` proof and imports the
 `AffineChartPoints` and `InfinitesimalKernel` infrastructure through that module.
-Worker 268 is credited as a coauthor for this adaptation.
 
 ## Exact result
 
@@ -25,8 +24,9 @@ The intermediate theorem `Langlands.AbelianScheme.multiplication_etale` does
 not require positivity. Neither proof uses properness or geometrically connected
 fibres, a fixed relative dimension, or any restriction on the base. Smoothness
 and the supplied commutative group structure suffice. The proof assumes no
-geometric property of multiplication. In particular, it does not use the
-unproved `MultiplicationIsogenyStatement` or any flatness hypothesis.
+geometric property of multiplication. In particular, it does not use
+`MultiplicationIsogenyStatement` (proved separately as `multiplicationIsogeny` in
+`MultiplicationIsogenyProof`) or any flatness hypothesis.
 
 ## Literature and provenance
 
@@ -42,7 +42,7 @@ scope and global-unit formulation.
 
 The implemented proof is an internal derivation using square-zero lifting on
 affine charts. It does not follow Milne's fibrewise argument or need the
-isogeny theorem. Its dependencies are accepted Library results imported by
+isogeny theorem. Its dependencies are Library results imported by
 Lean name: `GroupScheme.points_multiplication`, the chart-points and
 infinitesimal-kernel results, and
 `Langlands.AlgebraicGeometry.locallyOfFinitePresentation_of_comp` from

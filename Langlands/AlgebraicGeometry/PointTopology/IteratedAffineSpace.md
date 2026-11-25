@@ -1,7 +1,5 @@
 # Iterated affine spaces and their function fields
 
-Author: Worker 1630.
-
 This derived helper module depends only on Mathlib. It compares affine
 space on a disjoint sum of coordinates with iterated affine space, and
 compares their function fields. All schemes and coordinate types live in

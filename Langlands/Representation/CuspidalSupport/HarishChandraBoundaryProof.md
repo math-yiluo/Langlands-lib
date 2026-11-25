@@ -1,6 +1,6 @@
 # Proof of the elementary Harish-Chandra boundary targets
 
-Author: Worker 200. This proves the published
+This proves the published
 `Langlands.CuspidalSupport.HarishChandraBoundaryStatement`.
 
 `isSmoothVector_restrict_open_iff` proves the general open-subgroup comparison

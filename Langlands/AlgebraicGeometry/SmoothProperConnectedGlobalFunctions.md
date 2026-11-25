@@ -1,9 +1,5 @@
 # Relative global functions for smooth proper morphisms
 
-Authors: Worker 124 and Worker 143. Worker 143 proposed the formulation and
-identified the main source; Worker 124 checked the sources and Mathlib interface
-and implemented this pair.
-
 `Langlands.AlgebraicGeometry.SmoothProperConnectedGlobalFunctions.{u}` is a
 proposition definition. It states that for every pair of schemes `X` and `S` in
 the arbitrary universe `u`, and every morphism `p : X ⟶ S`, smoothness,
@@ -65,8 +61,9 @@ smooth-implies-locally-of-finite-presentation instances in
 quasi-compactness, and quasi-separatedness as the finite-presentation
 convention. These observations check the interface and source
 correspondence; this module contains no proof of the global-functions
-assertion or of its specialization from the source. A separate exact-target
-proof obligation remains.
+assertion or of its specialization from the source. The proof is
+`Langlands.AlgebraicGeometry.smoothProperConnectedGlobalFunctions`, in the
+module `SmoothProperConnectedGlobalFunctionsProof`.
 
 ## Retained sources
 

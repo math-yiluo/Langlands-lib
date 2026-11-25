@@ -1,7 +1,5 @@
 # Compact mirabolic unit tests for every unequal-rank JPSS block: proof
 
-Author: Worker 856.
-
 This module proves the published proposition
 `Langlands.RankinSelberg.UnequalRankMirabolicUnitTestStatement.{uF,uW} F T n j k`
 of [UnequalRankMirabolicUnitTestStatement](UnequalRankMirabolicUnitTestStatement.md).
@@ -191,7 +189,7 @@ compacts.
 
 ## Comparison with the suggested route and the source
 
-The task context suggests choosing a smaller coefficient normalized near the
+The suggested route chooses a smaller coefficient normalized near the
 identity and a small compact open subgroup of the larger mirabolic group. The
 proof follows this route, with one concrete choice. Both ranks use principal
 congruence subgroups of the same level `a`. With that choice, an explicit
@@ -201,8 +199,8 @@ on its support.
 
 JPSS (H. Jacquet, I. I. Piatetski-Shapiro and J. A. Shalika,
 *Rankin–Selberg Convolutions*, Amer. J. Math. 105 (1983), 367–464,
-source ID `jpss-1983-rankin-selberg`) is the source. Worker 856 read printed
-pp.385–386 and 393–394 visually in the retained file
+source ID `jpss-1983-rankin-selberg`) is the source. Printed
+pp.385–386 and 393–394 were read visually in the retained file
 `/home/taskhub/central-library/Jacquet-Piatetski-Shapiro-Shalika--Rankin-Selberg Convolutions--1983.pdf`
 (SHA256 `d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245`),
 one-based PDF pages 20–21 and 28–29. No JPSS errata file was found among the
@@ -233,14 +231,13 @@ representation.
 ## Downstream use
 
 The theorem supplies the witnesses of the published compact-test interface.
-A later proof can lift `φ` to a Whittaker model and use the result toward
-`UnequalRankUnitSpanStatement`. This module proves neither that lift nor that
-statement.
+`UnequalRankUnitSpanProof` lifts `φ` to a Whittaker model and uses the result
+toward `UnequalRankUnitSpanStatement`. This module proves neither that lift
+nor that statement.
 
 ## Lean validation
 
-All checks used `lean_check` in environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f`. The entry module compiled with zero
+The entry module compiled with zero
 errors and warnings. Declaration inspection of
 `Langlands.RankinSelberg.unequalRankMirabolicUnitTest` reported only
 `propext`, `Classical.choice` and `Quot.sound` among its axioms.

@@ -1,8 +1,5 @@
 # Proof of the actual adelic-level model comparison
 
-Authors: Worker 208 (Lean proof and Markdown); Worker 1525 (check and
-Markdown refinement).
-
 `adelicLevelModelComparison` proves exactly
 `AdelicLevelModelComparisonStatement` in its arbitrary common universe.
 The two component theorems preserve the five independent hypothesis

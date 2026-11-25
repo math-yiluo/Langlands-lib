@@ -1,7 +1,5 @@
 # Strict Tate algebras and restricted series over Banach rings
 
-Authors: Worker 36 (original construction), Worker 56 (coefficient generalization).
-
 The carrier is the actual subalgebra of Mathlib's multivariate formal power
 series for which the coefficients tend to zero along the cofinite filter.
 For a finite variable set over a complete nonarchimedean field this is the

@@ -38,7 +38,7 @@ All schemes lie in an arbitrary universe `u`. Let `A` be a
   `a : V ⟶ space` over `l : V ⟶ S`, the base change of `embedding` along `a`
   is `chartTriv i x l`, then `D_V(proj (Λ i))`, then `coord i x a` back. This
   is computed with `pullHom` calculus and the bookkeeping lemmas above. It
-  uses Worker 736's `baseChange_map_diagonalizableMap`.
+  uses `baseChange_map_diagonalizableMap` (module `RelativeDiagonalizableHomLocality`).
 - `embedding_compatible`:
   `Compatible (canonicalDatum P H) A.datum A.embedding`. By
   `hom_ext_on_charts` it suffices to check this on pairs of chart coordinates
@@ -64,7 +64,7 @@ All schemes lie in an arbitrary universe `u`. Let `A` be a
 
 - `group_isAffineHom`: `A.group` has affine structure map. Each model
   `D(F(Λ i))` is affine over its chart (`Diagonalizable.isAffineHom`, stable
-  under base change), and Worker 736's `DisjointGroupGluing` instance passes
+  under base change), and the `DisjointGroupGluing` instance passes
   affineness to the glued group.
 - From now on assume `P` is flat, locally of finite presentation and
   surjective. `torus` is the group `A.datum.fppfSolution.obj` of

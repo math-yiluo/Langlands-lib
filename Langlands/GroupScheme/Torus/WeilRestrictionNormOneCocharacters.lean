@@ -112,11 +112,11 @@ theorem comp_eq_zero_iff_pairing (ν : cocharacterLattice G) :
   rw [latticePairing_apply, ← Category.assoc]
   constructor
   · intro h
-    simp [h]
+    simp only [h, Limits.zero_comp, AddEquiv.map_zero]
   · intro h
     apply (cancel_mono e.hom).mp
     apply (gmEndEquiv k).injective
-    simpa using h
+    simpa only [Limits.zero_comp, AddEquiv.map_zero] using h
 
 /-- Cocharacters of the actual kernel form the kernel of the intrinsic integer pairing,
 allowing a canonical identification of the target with the multiplicative group. -/

@@ -35,20 +35,20 @@ private theorem tilde_scalar (a : R) :
   rfl
 
 variable {d : ℕ} (a : R) (P : End M)
-  (hP : P ^ d = ModuleCat.ofHom (a • (LinearMap.id : Module.End R M)))
+  (hP : P ^ d = End.of (ModuleCat.ofHom (a • (LinearMap.id : Module.End R M))))
 
 set_option backward.isDefEq.respectTransparency false in
 /-- Sheafification of an actual module operator preserves its power relation. -/
 def affinePiSheaf : PiSheaf d (Spec R).sheaf (schemeScalar (Spec R) ((Scheme.ΓSpecIso R).inv a)) where
   module := tilde M
-  pi := tilde.map P
+  pi := tilde.map P.asHom
   pi_pow U := by
-    have h : (End.of (tilde.map P)) ^ d =
+    have h : (End.of (tilde.map P.asHom)) ^ d =
         End.of (structuralScalarEnd (tilde M) ((Scheme.ΓSpecIso R).inv a)) := by
       calc
         _ = (tilde.functor R).mapEnd M (P ^ d) :=
           ((tilde.functor R).mapEnd M).map_pow P d |>.symm
-        _ = _ := by rw [hP]; exact tilde_scalar a
+        _ = _ := by rw [hP]; exact congrArg End.of (tilde_scalar a)
     have hU := congrArg (sectionEndHom (tilde M) U) h
     rw [map_pow] at hU
     exact hU
@@ -59,7 +59,7 @@ variable [NeZero d] {W : ZMod d → ModuleCat.{u} R}
   (hoff : ∀ {i k}, k ≠ i → j k ≫ p i = 0)
   (hsum : ∑ i : ZMod d, p i ≫ j i = 𝟙 M)
   (step : ∀ i, W i ⟶ W (i + 1))
-  (hstep : ∀ i, j i ≫ P = step i ≫ j (i + 1))
+  (hstep : ∀ i, j i ≫ P.asHom = step i ≫ j (i + 1))
 
 include hdiag in
 omit [NeZero d] in

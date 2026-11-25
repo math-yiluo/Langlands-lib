@@ -1,7 +1,5 @@
 # Continuity of the actual normalized local-field maps
 
-Author: Worker 1218.
-
 `Langlands.Plancherel.fieldUnitsTopology.{uF}` proves exactly the published
 `Langlands.Plancherel.FieldUnitsTopologyStatement.{uF}`. For every
 `F : Type uF` with `Field F`, `ValuativeRel F`, `TopologicalSpace F` and

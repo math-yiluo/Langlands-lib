@@ -5,16 +5,14 @@ intertwining operators and Plancherel measures for GL(n)*, American Journal of
 Mathematics 106 (1984), 67–111, printed page 103. The statement includes the
 measure normalization of pages 75–77. The main declaration is the Prop-valued
 definition `Langlands.Shahidi.LocalCoefficientGammaStatement`. The theorem is
-neither proved nor assumed; its proof remains a separate obligation. The module
+neither proved nor assumed; its proof is a separate obligation. The module
 also defines the representation-independent part of the pages 75–77 normalization,
 `IsEqualRankGeometricNormalized`, and proves how it relates to the published
 full normalization.
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`. The
-passages used are printed pages 68, 70–73, 75–80, 94–96 and 102–104. The author
-is Worker 11. This revision replaces candidate `f4aaa918`, which Reviewer 1599
-rejected because its measures were not linked to the pages 75–77 normalization.
+passages used are printed pages 68, 70–73, 75–80, 94–96 and 102–104.
 
 ## The source statement
 
@@ -221,8 +219,8 @@ normalization. So the intertwining measure is the matrix-coordinate measure `da`
 of item 5, coupled through items 2–5 to the central, coordinate, compact and
 Iwasawa measures. The two Jacquet measures are equal (item 6). The two
 pairing equations of item 1 are not imposed, because they need a positive
-invariant Hermitian form, i.e. a unitary `π₂`. The parent task forbids turning the
-unitary hypotheses of Proposition 3.1 into hypotheses of this target.
+invariant Hermitian form, i.e. a unitary `π₂`. The unitary hypotheses of
+Proposition 3.1 are deliberately not made hypotheses of this target.
 
 What the omission leaves free is one positive scale, for ranks at least two. Here
 is the reason, which is not proved in Lean. The geometric conditions are
@@ -274,7 +272,7 @@ gap. Two remarks show that this form loses nothing. Neither is proved here.
   `(b / (a c)) C`. Hence the all-rank statement also holds exactly when
   `C / (ω(−1)^{m+1} G)` is a positive real constant for some, equivalently any,
   admissible choice of measures. Tying the Jacquet measures together through
-  `ν_J` removes the freedom, pointed out in the review of `f4aaa918`, to scale
+  `ν_J` removes the freedom to scale
   `μ` and `μJ` together without changing `C`.
 
 Page 68 also says that "these normalized measures are in fact independent of the
@@ -284,7 +282,7 @@ here.
 
 ## Conventions
 
-- **The gamma factor.** The parent task fixes `ε'` as the page-68 factor
+- **The gamma factor.** This module takes `ε'` to be the page-68 factor
   `ε L(1 − s, π̃₁ × π̃₂) / L(s, π₁ × π₂)`. The Library's gamma relations are
   Henniart's definition (2.3.4) of this quotient through the JPSS functional
   equations (published `GammaFactor` module). The raw epsilon factor is not
@@ -330,7 +328,7 @@ of the normalized measures from `π₁` and `π₂`. It is stated for p-adic fie
 
 ## Lean checks
 
-`lean_check` of `Langlands.Representation.Shahidi.LocalCoefficientGammaStatement`
+The module `Langlands.Representation.Shahidi.LocalCoefficientGammaStatement`
 compiles with 0 errors and 0 warnings. The inspected declaration
 `Langlands.Shahidi.LocalCoefficientGammaStatement` is a definition with level
 parameters `uF` and `uV`. Its type is `Prop`, and it depends only on the axioms

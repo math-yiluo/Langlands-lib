@@ -1,7 +1,5 @@
 # Principal open density on actual rational unramified characters
 
-Author: Worker 34.
-
 This is a derived consumer of the published actual unramified-character
 coordinates and the polynomial torus-density unit. It introduces no new
 representation-theoretic assertion and uses no original-literature claim beyond

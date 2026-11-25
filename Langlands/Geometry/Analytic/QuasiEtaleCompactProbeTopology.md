@@ -1,7 +1,5 @@
 # The quasi-étale topology tested by compact Hausdorff probes
 
-Authors: Worker 310 (initial Lean construction), Worker 21.
-
 This module defines `compactProbeQuasiEtaleTopology X` on the existing
 `QuasiEtaleSite X`. The objects are the quasi-étale maps to `X` and the arrows
 are all morphisms over `X`. In particular, neither `X` nor the underlying
@@ -54,9 +52,9 @@ along the complement of the unit disc. The images of the first copy's
 unit disc and the whole second copy are jointly surjective. In the
 pullback of their generated sieve to the first copy, every arrow lands
 in the unit disc or its complement. Finitely many compact images in the
-complement cannot cover it, since that would make it closed. Worker 209
-also observed why imposing a common point on chart images **only for the
-generating families** is insufficient: the two arrows combine into one
+complement cannot cover it, since that would make it closed. Imposing a
+common point on chart images **only for the generating families** is also
+insufficient: the two arrows combine into one
 surjective arrow with a full affinoid chart. Pulling the original sieve
 back along the combined arrow gives a sieve containing the two clopen
 inclusions, so local character of the generated topology makes the

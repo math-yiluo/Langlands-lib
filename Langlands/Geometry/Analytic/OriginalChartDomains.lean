@@ -55,7 +55,7 @@ theorem ext {S T : OriginalChartDomain a} (h : ∀ x, x ∈ S ↔ x ∈ T) : S =
   SetLike.ext h
 
 instance : SemilatticeInf (OriginalChartDomain a) where
-  __ := PartialOrder.ofSetLike (OriginalChartDomain a) X
+  __ := PartialOrder.ofSetLike (OriginalChartDomain a)
   inf S T := ⟨S.carrier ∩ T.carrier, S.is_domain.inter a T.is_domain⟩
   inf_le_left _ _ _ h := h.1
   inf_le_right _ _ _ h := h.2

@@ -14,4 +14,4 @@ derivative-coordinate image is closed.
 
 For polynomial weights, the empty-word coordinate agrees with the polynomial average in the ambient Hilbert principal series. Compact recovery places that average in the algebraic Frobenius image. The empty-word coordinate determines the smooth vector, so all of its averaged coordinates come from the same algebraic image vector. The polynomial integral test for closed subspaces now puts every finite coordinate projection of the original smooth vector in the closure of the corresponding algebraic image. The topology induced by all word coordinates gives the claimed density.
 
-This is an internal result for the real Hilbert globalization in Task 7534, derived from the Library's closed derivative-coordinate theorem and finite-rank polynomial averages.
+This is an internal result for the real Hilbert globalization (module `RealHilbertGlobalizationProof`), derived from the Library's closed derivative-coordinate theorem and finite-rank polynomial averages.

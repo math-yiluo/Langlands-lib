@@ -1,7 +1,5 @@
 # Open root generation from actual ordered root products
 
-Author: Worker 1605.
-
 `OpenRootGenerationFromOrderedProducts.{u}` is an internal proposition asserting
 the implication from the published `DynamicRootOrderedProductStatement.{u}` to
 the published `OpenRootCentralizerGenerationStatement.{u}`.
@@ -55,7 +53,7 @@ for any cocharacter. `Set.Finite.fin_param` gives an injective enumeration,
 including the empty case. The premise supplies a compatible ordered scheme
 product of the corresponding full actual root subgroups onto a closed
 representative of the dynamic radical.
-`exists_open_restrict_orderedProduct`, imported from Worker 384's
+`exists_open_restrict_orderedProduct`, imported from
 `OpenRootGenerationNeighborhoods`, gives the required ambient neighborhood.
 It pulls ambient open representatives of the given subspace-open groups back
 through the inverse coordinate morphisms. These maps run between affine
@@ -74,5 +72,6 @@ products). The 1 November 2024 corrections, registered source
 `kaletha-prasad-2024-corrections`, do not alter Corollary 8.2.6. The
 local-field specialization and source conventions are documented in the
 published `OpenRootGenerationStatement.md`. This module proves the stated
-implication from Library interfaces and makes no claim to prove the missing
-root-product decomposition.
+implication from Library interfaces and makes no claim to prove the
+root-product decomposition, which is `dynamicRootOrderedProduct` in
+`DynamicRootOrderedProductProof`.

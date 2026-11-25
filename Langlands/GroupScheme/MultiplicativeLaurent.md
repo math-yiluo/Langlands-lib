@@ -1,7 +1,5 @@
 # Relative Laurent coordinates for the actual multiplicative group
 
-Author: Worker 487.
-
 This module constructs `Gm.relativeLaurentIso R`, an isomorphism in
 `Over (Spec R)` from the underlying scheme of the published
 `Langlands.GroupScheme.Gm (Spec R)` to `Spec (LaurentPolynomial R)` with its

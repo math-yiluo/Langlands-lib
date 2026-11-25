@@ -1,6 +1,6 @@
 # Twisted saturation of a contracting double coset
 
-Let \(I\) be a compact subgroup with a cofinal neighborhood filtration
+Let \(G\) be a Hausdorff topological group and \(I\) a compact subgroup with a cofinal neighborhood filtration
 by subgroups normal in \(I\). Each level factors into its intersections
 with the opposite radical, Levi, and upper radical. Conjugation by \(t\)
 contracts the upper factor one level. Conjugation by \(t^{-1}\) after
@@ -15,7 +15,7 @@ Iwahori factorization of the error then lets one twisted conjugation
 move both radical factors one level inward. Normality puts the resulting
 error in the next level. Cofinality places the original point in the
 closure of the saturation, and compactness of \(I\times(I\cap M)\) makes
-the saturation closed. The reverse inclusion follows from the defining
+the saturation closed, because \(G\) is Hausdorff. The reverse inclusion follows from the defining
 double-coset products.
 
 This is a derived group-theoretic step for comparing the regular

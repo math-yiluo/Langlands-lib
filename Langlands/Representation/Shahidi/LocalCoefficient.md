@@ -10,7 +10,7 @@ of Mathematics 106 (1984), 67–111, printed pages 72–73:
 
 The registered original is `shahidi-1984-fourier`, SHA256
 `a10d5c605d94d4e85d0e5f453d6a8c233d91e3cb60d538f430d8ad900cbb6b29`.
-The author is Worker 11. The module combines two Library units:
+The module combines two Library modules:
 
 - the intertwining integral (0.1), `HasIntertwiningIntegral` of
   `Langlands.Representation.Shahidi.IntertwiningIntegral`;
@@ -34,7 +34,7 @@ deduces from its reference [19] that there exists a complex number
 `C_χ(s,π)` depends on the measures defining `A(s,π,w_(m,n))`, `λ^s_π` and
 `λ^{-s}_{π'}`.
 
-This unit does not construct `I(s,π)`. Like its two imported units, it works
+This module does not construct `I(s,π)`. Like its two imported modules, it works
 with actual functions `f : GL_(m+1+n+1)(F) → V`. Here `V` is an arbitrary
 complex vector space carrying an arbitrary representation `ρ` of an
 arbitrary topological group `H`. The two block ranks are written `m+1` and
@@ -60,7 +60,7 @@ measurable structure.
 as `f` at this level. In the intended specialization to induced spaces, `A f` is read
 in `V₂ ⊗ V₁` through the tensor swap. Then `ℓ'` is `λ₂ ⊗ λ₁` composed with
 that swap. On pure tensors this is `v₁ ⊗ v₂ ↦ λ₂(v₂) λ₁(v₁)`, so it agrees
-with `ℓ = λ₁ ⊗ λ₂`. The unit allows any `ℓ'`.
+with `ℓ = λ₁ ⊗ λ₂`. The module allows any `ℓ'`.
 
 ## The relations
 
@@ -185,7 +185,7 @@ These results need no hypothesis on `H` or `ρ`.
 
 ## What is not claimed
 
-This unit does not claim the following:
+This module does not claim the following:
 
 - that a local coefficient exists, for any data;
 - that the intertwining or Jacquet integrals converge or stabilize on
@@ -196,5 +196,6 @@ This unit does not claim the following:
 - Theorem 5.1.
 
 The specialization to `I(s,π)`, with `ℓ` and `ℓ'` built from actual Whittaker
-functionals `λ₁` and `λ₂`, and the existence statement of the local
-coefficient, are later units of this formalization.
+functionals `λ₁` and `λ₂`, is made in `LocalCoefficientPadic` and
+`LocalCoefficientGeneral`; the existence statement of the local coefficient
+is `ShahidiLocalCoefficientExistenceStatement` in `JacquetStatements`.

@@ -35,6 +35,7 @@ The provenance is internal: the comparison combines actual finite-frame
 duality with the actual jet determinant-power construction and the
 section-generation-locus definition of ampleness. The fixed-index affine
 cotangent cover and actual jet determinant ampleness remain explicit
-inputs. This unit does not establish jet positivity, remove variable
-global rank, account for an ambient stabilizing complement or complete
-the parent finite-parabolic ampleness statement.
+inputs. This module does not establish jet positivity, remove variable
+global rank, account for an ambient stabilizing complement or prove
+the finite-parabolic ampleness statement it serves,
+`FiniteAffineParabolicDeterminantDualAmpleStatement`.

@@ -1,6 +1,6 @@
 # Local-flatness audit terminal report: primary-recheck-report
 
-This is the complete terminal development-check report `b5d6dfb1-a9b1-4f41-bfdf-65b810315a3a`, not an acceptance or publication receipt. Original UTF-8 JSON SHA256: `38d6d6c221c295ffc27287bfae345079872fdd0a5d02b5f258553d10dfee7ba7`. Paths in process arguments record the service environment and do not instruct running Lean outside that service.
+This is the complete terminal report of a development check; it does not record a proof entering the Library. Original UTF-8 JSON SHA256: `38d6d6c221c295ffc27287bfae345079872fdd0a5d02b5f258553d10dfee7ba7`. Paths in process arguments record the service environment and do not instruct running Lean outside that service.
 
 ```json
 {

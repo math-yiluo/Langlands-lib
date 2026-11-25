@@ -12,12 +12,12 @@ to obtain a regular analytic chart containing every specified actual point.
 same membership. The only algebraic premise is standard smoothness of relative
 dimension `d` of the actual coordinate algebra; no analytic input is assumed.
 
-This internal adaptation by Worker 115 follows Workers 362 and 1650's published
+This internal adaptation follows the
 `PointManifold.General.StandardSmoothRegularCharts` finite reindexing proof,
 with the analytic chart construction in place of its real smooth counterpart.
 
 Throughout this module, `k : Type u` is an arbitrary complete nontrivially
 normed field, the scheme is affine over `Spec k`, and its actual point carrier
-is `PointTopology.RingPoint k X k` with its published evaluation topology.
+is `PointTopology.RingPoint k X k` with its evaluation topology.
 The analytic order is `ω` over `k`. There is no characteristic, archimedean,
 positive-dimension or point-nonemptiness assumption.

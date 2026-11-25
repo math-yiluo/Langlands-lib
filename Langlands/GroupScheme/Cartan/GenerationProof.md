@@ -42,8 +42,8 @@ surjectivity and allows inseparable isogenies.
 ## Provenance
 
 The assembly is internal, adapting the published conditional isogeny induction
-and applying named actual-group theorems. Worker 1296 authored this final
-assembly; it uses the structural contributions of Worker 1377 and the
-infinite-field Cartan construction of Workers 1588 and 1487. Original literature
+and applying named actual-group theorems. It uses the imported structural
+results and the infinite-field Cartan construction of
+`Cartan.InfiniteFieldStructure`. Original literature
 provenance and proofs for imported results remain documented in their paired
 Library Markdown.

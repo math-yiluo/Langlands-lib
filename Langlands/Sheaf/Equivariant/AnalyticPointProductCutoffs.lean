@@ -58,15 +58,15 @@ theorem translated_fiber_spatial_coordinate
     (U : EtaleSite X) (g : G)
     (x : ULift.{max u (v + 1) uL} ((localizedFieldPointFunctor L).obj X))
     (p : (etaleGodementPoints.{u, v, uL} L h x).fiber.obj ((translate etale ρ g).obj U)) :
-    localizedSpaceFunctor.map (ρ g⁻¹).hom (pointProjection L X x.down) =
+    localizedSpaceFunctor.map (ρ g⁻¹).asIso.hom (pointProjection L X x.down) =
       localizedSpaceFunctor.map U.hom (pointProjection L U.left p.down.1) := by
   let := localizedSpaceAction ρ
   have hp := (pointProjection_map L ((translate etale ρ g).obj U).hom p.down.1).symm.trans
     (congrArg (pointProjection L X) p.down.2)
-  change localizedSpaceFunctor.map (U.hom ≫ (ρ g).hom)
+  change localizedSpaceFunctor.map (U.hom ≫ (ρ g).asIso.hom)
     (pointProjection L U.left p.down.1) = pointProjection L X x.down at hp
   rw [CategoryTheory.Functor.map_comp, TopCat.comp_app] at hp
-  change localizedSpaceFunctor.map (ρ g).hom
+  change localizedSpaceFunctor.map (ρ g).asIso.hom
     (localizedSpaceFunctor.map U.hom (pointProjection L U.left p.down.1)) = _ at hp
   let y : localizedSpaceFunctor.obj X :=
     localizedSpaceFunctor.map U.hom (pointProjection L U.left p.down.1)
@@ -81,7 +81,7 @@ theorem translated_open_fiber_mem
     (x : ULift.{max u (v + 1) uL} ((localizedFieldPointFunctor L).obj X))
     (p : (etaleGodementPoints.{u, v, uL} L h x).fiber.obj
       ((translate etale ρ g).obj (openEtaleObject X U))) :
-    localizedSpaceFunctor.map (ρ g⁻¹).hom (pointProjection L X x.down) ∈ U := by
+    localizedSpaceFunctor.map (ρ g⁻¹).asIso.hom (pointProjection L X x.down) ∈ U := by
   rw [translated_fiber_spatial_coordinate L h ρ (openEtaleObject X U) g x p]
   have he := domainι_apply
     ((presentationOf X).openDomain (U : Set (localizedSpaceFunctor.obj X)) U.isOpen)
@@ -123,7 +123,7 @@ theorem etaleSpatialCutoff_eq_zero
   apply (sectionCoordinates.{max u (v + 1) uL, max u (v + 1) uL}
     (etaleGodementPoints.{u, v, uL} L h) M _).injective
   funext x p
-  have hn : localizedSpaceFunctor.map (ρ g⁻¹).hom (pointProjection L X x.down) ∉ V :=
+  have hn : localizedSpaceFunctor.map (ρ g⁻¹).asIso.hom (pointProjection L X x.down) ∉ V :=
     fun hx => Set.disjoint_left.1 hUV (translated_open_fiber_mem L h ρ U g x p) hx
   rw [etaleSpatialCutoff, spatialCutoff_coordinates]
   split_ifs with hx
@@ -172,7 +172,7 @@ variable [(distinguishedLiftSystem ρ).HasAdmissibleRefinements (twistedEtaleTop
 /-- A stable actual spatial cutoff preserves the analytic locally discrete part. -/
 theorem etaleSpatialCutoff_mem_smoothSubmodule
     (V : Set (localizedSpaceFunctor.obj X)) (H : OpenSubgroup G)
-    (hV : ∀ g ∈ H, ∀ y ∈ V, localizedSpaceFunctor.map (ρ g).hom y ∈ V)
+    (hV : ∀ g ∈ H, ∀ y ∈ V, localizedSpaceFunctor.map (ρ g).asIso.hom y ∈ V)
     (U : TwistedOver (etale (K := K)) ρ)
     (s : (etaleRawInducedPointProduct L h ρ M).obj (op U))
     (hs : s ∈ LocalActionSystem.smoothSubmodule (distinguishedLiftSystem ρ) (twistedEtaleTopology ρ)

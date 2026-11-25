@@ -1,9 +1,9 @@
 # Local constancy and integrability of Laurent quotient coefficients
 
-This internal unit supplies analytic adapters for the actual Laurent-valued
+This module supplies analytic adapters for the actual Laurent-valued
 corank-one integrand. It proves local constancy and derives scalar
 integrability from compact support. Compact support for degree restrictions of
-actual model vectors remains a separate obligation, as do convergence of the
+actual model vectors is not part of this module, nor are convergence of the
 full integral, rational continuation, the essential identity and the conductor
 conclusions.
 
@@ -82,4 +82,4 @@ All assertions are internal deductions from the existing actual quotient,
 smooth coefficient model, integral invariance of the determinant weight,
 spherical Laurent formula, coefficient range span, and Mathlib's
 locally-constant and compact-support integration interfaces. No external
-representation-theoretic or support theorem is asserted in this unit.
+representation-theoretic or support theorem is asserted in this module.

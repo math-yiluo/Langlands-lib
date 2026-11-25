@@ -1,6 +1,6 @@
 # Unramified-twist independence of stable images
 
-Author: Worker 4803. Module `Langlands.Correspondence.HenniartTwistIndependenceProof`,
+Module `Langlands.Correspondence.HenniartTwistIndependenceProof`,
 namespace `Langlands.Henniart.Extension`. Universes: `uK` (p-adic fields), `uW`
 (Weil carriers), `uV` (supercuspidal carriers), `uE` (local-constant values in
 the candidate properties), all independent.

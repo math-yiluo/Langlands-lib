@@ -4,8 +4,8 @@ Lean module: `Langlands.Geometry.Building.KPLocalDoubleRootCommutatorStatement`.
 Declaration: `Langlands.Geometry.Building.KPLocalDoubleRootCommutatorStatement : Prop`
 (universe parameter `u`).
 
-This is a statement only. Nothing here proves it, and no other Library result is claimed to
-imply it.
+This is a statement only. Nothing here proves it; the Library proves it as
+`kpLocalDoubleRootCommutator` (module `KPLocalDoubleRootCommutatorProof`).
 
 ## Setting and binders
 
@@ -143,7 +143,7 @@ So `z = f(γ) ∈ Z(K)_{2r}`.
 
 ## Why this is a separate statement
 
-The parent proof of `LocalMoyPrasadGroupPropertiesStatement` (Task 6191) needs this estimate
+The proof of `LocalMoyPrasadGroupPropertiesStatement` needs this estimate
 already for its clause 1 (normality of `G(K)_{x,r}`): a depth-zero element of `U_a`
 conjugating a depth-`r` element of `U_{-2a}` produces a middle coordinate that must lie at
 full depth `r`, whereas commutator friendliness applied to `U_a` versus `U_{-a}` gives only
@@ -160,9 +160,9 @@ concerns supplied filtrations and does not bear on the actual filtration here.
   The Library has `OmegaCompatibleApartmentUniquenessProof`, `IntegerOmegaApartmentRigidity`,
   `QuasiSplitApartmentAssembly`, `RootUnitaryCoordinates`,
   `QuasiSplitR2RootUnitaryCoordinatesStatement` and `QuasiSplitMultipliableFactorization`.
-  This unit does not check which of these are proved.
+  This page does not check which of these are proved.
 - The rank-one coordinate comparison is the same one a proof of
-  `KPLocalCorootComponentStatement` (Task 6192) needs; the doubled case only sharpens the
+  `KPLocalCorootComponentStatement` needs; the doubled case only sharpens the
   final valuation estimate.
 
 ## Sources

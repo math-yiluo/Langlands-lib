@@ -1,7 +1,5 @@
 # Solvable radicals of a group with a rational Levi decomposition
 
-Author: Worker 1131.
-
 This internal helper module proves that the solvable radical of a rational
 Levi subgroup determines the solvable radical of the ambient group: it is the
 inverse image of the Levi radical under the Levi retraction. Proved over the

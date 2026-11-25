@@ -1,7 +1,5 @@
 # Charts and affine-line points for the counterexamples to Corollary 5.7 closedness
 
-Author: Worker 105.
-
 Helper module for the proofs of the counterexamples to the closedness assertion of
 Corollary 5.7 of Brian Conrad, *Weil and Grothendieck approaches to adelic points*
 (December 31, 2011), printed p.16

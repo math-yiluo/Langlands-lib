@@ -49,6 +49,7 @@ linear-system morphism and its coordinate-change identities, and the actual
 scheme and module restriction maps. It holds over arbitrary schemes in the
 common universe and for an arbitrary module-sheaf evaluation. Pointwise
 generation of the displayed sections is an explicit hypothesis of the map
-construction. This unit does not prove generation from an abelian scheme,
+construction. This module does not prove generation from an abelian scheme,
 compatibility across smaller opens, a global glued morphism, an embedding,
-or the host moduli representability theorem.
+or the moduli representability theorem stated as
+`LargeLevelRepresentabilityStatement`.

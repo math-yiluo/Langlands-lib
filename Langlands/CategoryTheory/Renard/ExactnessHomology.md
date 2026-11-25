@@ -1,7 +1,5 @@
 # Proof of the sequence-exactness, exact short complex and homology comparisons
 
-Author: Worker 894 (proof implementation, declaration checks and submission).
-
 Module: `Langlands.CategoryTheory.Renard.ExactnessHomology`.
 All declarations are in namespace `Langlands.Renard`.
 
@@ -85,8 +83,9 @@ Its type has the same content as the body of the published
 `Langlands.CategoryTheory.Renard.FinitePreservationStatements`. This module
 neither imports that statement module nor uses it as an input, and it does not
 publish a proof of it or of its aggregate `FinitePreservationComparisonStatement`.
-The step is private because those finite-preservation comparisons have their own
-task (`e2039435-dc17-46af-b839-614fefcf48aa`) and remain a separate obligation.
+The step is private because those finite-preservation comparisons are proved
+separately, by `finitePreservationComparison` in
+`Langlands.CategoryTheory.Renard.FinitePreservation`.
 
 ## Proof
 
@@ -146,20 +145,19 @@ In both the statement and the Mathlib entries, `S.map F` uses the
 
 ## Checks
 
-The module compiles in approved environment
-`3b864ddf-f0af-4c18-8903-c6f813a0ce0f` (Lean `v4.34.0`) with no errors or
+The module compiled in a Lean `v4.34.0` environment with no errors or
 warnings. A separate private check printed the full unapplied types of
 `exactnessHomologyComparison` and `ExactnessHomologyComparisonStatement` with
 universes and explicit instances. It also elaborated the closing theorem
 against the full type displayed above and against the unfolded conjunction of
-the three equivalences. That check is not part of this submission.
+the three equivalences. That check is not part of this module.
 
 ## Scope
 
 This module closes only the proof of the aggregate. It builds no chain-complex
 functor and no natural homology comparison isomorphism. The proofs of the
-finite-preservation comparison statements, the faithfulness statements, the Hom
-object-property work and the rest of the book remain separate obligations.
+finite-preservation comparison statements, the faithfulness statements and the
+Hom object-property statements are in other modules, named on the statement
+page, and the rest of the book is outside this module.
 The direct route through the three Mathlib `TFAE` lemmas was identified in the
-statement unit's interface audit by Worker 6 and Worker 691; this module
-implements it.
+interface audit of the statement module; this module implements it.

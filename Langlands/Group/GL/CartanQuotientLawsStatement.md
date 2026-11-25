@@ -1,7 +1,5 @@
 # Intrinsic algebraic laws for concrete Cartan quotient cells
 
-Author: Worker 454.
-
 The declaration
 `Langlands.GeneralLinear.CartanQuotient.CartanQuotientLawsStatement.{uF}`
 is a closed `Prop` definition. It universally quantifies over every natural

@@ -57,11 +57,11 @@ already a module basis. No local ring or nonzero-idempotent hypothesis is added.
 
 ## Provenance and scope
 
-Worker 626 derived this internal algebraic construction from finite dual bases,
+This internal algebraic construction is derived from finite dual bases,
 evaluation reflexivity, tensor coordinates, and the definitions of convolution
 and group-like elements. It makes no additional literature assertion. The
-unit recovers a group-like basis from an already supplied finite orthogonal
+module recovers a group-like basis from an already supplied finite orthogonal
 idempotent basis of the convolution dual. Selecting such a basis from a
 spanning family, lifting it through a scalar quotient, and constructing a
-multiplicative-type splitting cover are subsequent obligations. This unit does
+multiplicative-type splitting cover are subsequent obligations. This module does
 not prove the fibrewise central-isogeny criterion.

@@ -1,7 +1,5 @@
 # A smooth summand of a restriction, from an invariant subspace
 
-Author: Worker 1842.
-
 Module `Langlands.Representation.CuspidalSupport.RationalNormKernelSummand`, namespace
 `Langlands.CuspidalSupport`.
 

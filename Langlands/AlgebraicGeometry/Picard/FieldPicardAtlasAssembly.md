@@ -1,7 +1,5 @@
 # Assembling an actual fppf Picard atlas from the stack inputs
 
-Author: Worker 509.
-
 This internal assembly combines the published proof of full fpqc descent
 for actual line bundles and the published smooth relative automorphism
 schemes over a proper field scheme with three explicit proposition inputs:
@@ -40,4 +38,5 @@ This is derived support from the imported Library results, with no new
 external assertion or source. It does not prove the three input
 propositions, closedness of the Picard diagonal, or the exact
 `FieldPicardSheafAlgebraicSpaceStatement`. The conditional conclusions
-therefore do not complete the host proof task.
+therefore do not by themselves prove that statement; the Library proves it
+in `FieldPicardSheafAlgebraicSpaceProof`.

@@ -1,7 +1,5 @@
 # Irreducible quotients of a juxtaposed socle product
 
-Authors: Worker 167 and Worker 1032.
-
 This internal supporting module identifies every irreducible quotient of a
 two-block juxtaposed segment-socle product with the actual singleton union
 datum. It assumes `SegmentZelevinskyConstituentExistence` explicitly. It does
@@ -66,8 +64,7 @@ and the general successive-quotient model. The decreasing quotient uses only
 ordered normalized-product regrouping, twist and representative equivalences,
 and surjectivity of normalized induced maps, together with the explicit
 constituent-existence premise. The union datum uses the published
-`cuspidalIntegralTwistFreeness` proof from task
-`67279e36-f3c2-42e3-9302-11729784042e`, interval calculations, and one-block
+`cuspidalIntegralTwistFreeness` proof, interval calculations, and one-block
 induction. The strong-head comparison uses actual quotient kernels and
 canonical constituents. `LengthCriterionProof` supplies only the general
 successive-quotient definitions used here.
@@ -77,5 +74,6 @@ found no excluded linked-product or reverse-product conclusion, quotient-Hom
 proof, product criterion, commutation, gluing, multisegment existence or
 exhaustion, quotient coverage, square-integrable classification, or derivative
 proof. The individual-segment existence statement is an explicit premise,
-not an imported proof. This conditional supporting result does not discharge
-the unconditional exact-target obligation of the parent task.
+not an imported proof. This conditional supporting result does not prove the
+unconditional parent theorem; that is `juxtaposedSegmentSocleReverseProductStructure`
+in `JuxtaposedSegmentSocleReverseProductStructureProof`.

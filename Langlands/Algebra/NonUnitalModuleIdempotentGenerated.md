@@ -2,7 +2,7 @@
 
 ## Source, generality, and scope
 
-This unit constructs the actual subgroup \(AeM\) and full category
+This module constructs the actual subgroup \(AeM\) and full category
 \(\mathcal M(A,e)\) defined by David Renard, *Représentations des groupes
 réductifs p-adiques*, French edition dated **9 July 2026**, I.3.2,
 printed page 19 / PDF page 25. The governing registered source is
@@ -42,7 +42,7 @@ and recovered compatible scalar action are present: scalar multiplication
 of \(a\cdot(e\cdot m)\) can be absorbed into the coefficient \(a\).
 This explanatory specialization does not construct or prove a comparison
 with a separately bundled complex-linear category; that comparison remains
-a parent obligation.
+outside this module.
 
 The module imports the published original-action module and corner APIs
 through `Langlands.Algebra.NonUnitalModuleCorner` and uses Mathlib's
@@ -212,7 +212,7 @@ additivity of the two composed functors.
 The intrinsic laws and functor packaging above are internal consequences
 of the source definition, proved using original-action associativity,
 additivity, idempotence, subgroup closure, and existing category APIs.
-This unit supplies no submodule or quotient closure theorem for
+This module supplies no submodule or quotient closure theorem for
 `GeneratedModuleCat`, abelianity, generatedness of tensor induction,
 induction/corner isomorphism, simple-class correspondence, or equivalence
 criterion. These remain separate statement and proof obligations.

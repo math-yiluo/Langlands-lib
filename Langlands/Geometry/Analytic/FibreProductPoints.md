@@ -1,7 +1,5 @@
 # Compatible points of the glued analytic fibre product
 
-Author: Worker 621.
-
 This module extends the existing affinoid compatible-point lifting theorem
 to the glued fibre-product chart system, then to the constructed analytic
 fibre product of Hausdorff saturated atlas presentations. It is an internal

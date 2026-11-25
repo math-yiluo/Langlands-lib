@@ -1,7 +1,5 @@
 # Identity and composition of whole varying-torsor system base change
 
-Author: Worker 13.
-
 This internal construction proves identity and composition coherence for the
 whole-system comparison in
 [EtaleVaryingSystemPullback](EtaleVaryingSystemPullback.md). Its inputs are the
@@ -107,8 +105,8 @@ identify the actual cover maps in those equations. No new comparison-existence
 or coherence hypothesis is introduced. Equality of the forward natural
 transformations also determines equality of the corresponding isomorphisms.
 
-This unit supplies identity and two-step composition coherence for etale
+This module supplies identity and two-step composition coherence for etale
 base change of the existing finite-torsor systems. It does not construct
 non-etale or algebraic-closure inverse image, compact supports, cohomological
 comparison maps, full-group or Galois actions, or Harris's particular Shimura
-torsors. Those remain separate construction or theorem obligations.
+torsors. Those are not part of this module.

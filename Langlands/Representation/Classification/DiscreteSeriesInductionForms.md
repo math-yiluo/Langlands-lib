@@ -1,6 +1,6 @@
 # Positive forms and semisimplicity for discrete-series induction
 
-Worker 388 specializes existing Library constructions in this auxiliary module. The field
+This auxiliary module specializes existing Library constructions. The field
 universe `uF` and Levi carrier universe `uW` remain independent. Its data
 construction `leviDiscreteSeriesForm` chooses an actual invariant positive
 Hermitian form on the original carrier of an irreducible representation

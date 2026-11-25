@@ -1,7 +1,5 @@
 # Proof of the compact last-row cutoff for zero-row Whittaker coefficients
 
-Author: Worker 252.
-
 This module proves the published proposition
 `Langlands.RankinSelberg.ZeroRowLastRowCutoffStatement.{uF,uV}` from
 `Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffStatement`. The

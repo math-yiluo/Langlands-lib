@@ -1,7 +1,5 @@
 # Finite length of admissible finitely generated GL representations
 
-Author: Worker 122.
-
 `Langlands.glAdmissibleFiniteLength.{uF,uV}` proves the exact existing
 `Langlands.GLAdmissibleFiniteLengthStatement.{uF,uV}`. For every prime,
 actual finite extension of `Q_p`, positive rank, and complex representation,

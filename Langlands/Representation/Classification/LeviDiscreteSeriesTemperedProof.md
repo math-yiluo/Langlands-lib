@@ -1,7 +1,5 @@
 # Square-integrable GL block Levi representations are tempered
 
-Author: Worker 320.
-
 ## Exact result
 
 `Langlands.glLeviDiscreteSeriesTempered.{uF,uW}` proves exactly the published
@@ -98,7 +96,7 @@ The published target cites Allan J. Silberger, *Introduction to Harmonic
 Analysis on Reductive p-adic Groups* (1979), Theorem 4.5.10(1)–(2), printed
 pp.188–189, registered as `silberger-1979-harmonic-analysis`, SHA-256
 `b9432812bb48ce0bcd3975144baa6b3cca99bcaaf0d33d785ce68e94e02854fc`.
-Worker 320 rehashed the retained original and read these two pages, including
+The retained original was rehashed and these two pages were read, including
 rendered formulas on PDF pp.194–195, on 2026-10-25. No source-specific errata
 note was present in the supplied Library notes. Silberger's first condition
 is square-integrability modulo the center; his second includes temperedness

@@ -1,7 +1,5 @@
 # Varying-dimension analytic structures on all smooth-space rational points
 
-Author: Worker 3519.
-
 This is derived definition content supporting the analytic-manifold clause of
 Brian Conrad, *Weil and Grothendieck approaches to adelic points* (December 31,
 2011), printed p.15, Proposition 5.4, and the final paragraph of its proof on
@@ -12,7 +10,7 @@ For a complete field and a smooth space, Conrad asserts a unique analytic
 structure on the rational points that is functorial, carries étale maps to
 local analytic isomorphisms and agrees with the known scheme case. He allows
 the dimension to vary between components. The source does not state the
-family-level structure or the coordinate predicates below. They are a host
+family-level structure or the coordinate predicates below. They are the Library's
 packaging of the objects that clause quantifies over, so that the existence and
 uniqueness assertions can be stated as separate Prop-valued targets.
 
@@ -116,22 +114,25 @@ each space of the class is the published concrete lifted atlas
 `AnalyticPointStructure.dimensionStructure_atlas` records this by `rfl`. No
 analyticity of `σ` is assumed for the construction.
 
-## Scope and successors
+## Scope and related modules
 
-This unit contains definitions and three structural lemmas about affine space
+This module contains definitions and three structural lemmas about affine space
 only. It does not prove that any family is admissible, or that admissible
-families exist or are unique. The intended later statement and proof units are:
+families exist or are unique. The later statements, each with its own module
+and each proved in the Library, are:
 
 - for an admissible pure-dimensional `σ` over a henselian field,
-  `σ.dimensionStructure hK` satisfies `AgreesWithAffineSpace`. Together with
-  the separately submitted assembly, functoriality and étale statements for
+  `σ.dimensionStructure hK` satisfies `AgreesWithAffineSpace`
+  (`SmoothSourceDimensionAffineAgreementStatement`). Together with
+  the separate assembly, functoriality and étale statements for
   `σ.dimensionAtlas`, this would make it `IsAdmissible`;
-- any two admissible `DimensionAnalyticStructure`s are `Equivalent`;
+- any two admissible `DimensionAnalyticStructure`s are `Equivalent`
+  (`SmoothSourceDimensionAnalyticUniquenessStatement`);
 - over complete fields an admissible structure exists, and it is unique up to
-  `Equivalent`. This is the varying-dimension source-level clause of
-  Proposition 5.4.
+  `Equivalent` (`SmoothSourceAnalyticManifoldStatement`). This is the
+  varying-dimension source-level clause of Proposition 5.4.
 
 Uniqueness here concerns the whole varying-dimension family. That is a stronger
 assertion than the published choice independence for pure-dimensional families,
-and the two should be kept distinct. This unit does not discharge
-Proposition 5.4 or the whole-paper task.
+and the two should be kept distinct. This module does not discharge
+Proposition 5.4.

@@ -1,7 +1,5 @@
 # Exact preimages at every algebraic-space adelic stage
 
-Author: Worker 128.
-
 This is derived infrastructure for the exact-preimage half of
 `AdelicSpaceProperStagesStatement`. It transports the conditional full-level
 preimage equalities of `AdelicSpaceFullPreimageReduction` to the actual stage

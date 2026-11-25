@@ -1,6 +1,6 @@
 # Field descent from actual depth-collection data
 
-This internal unit applies `RootDepthCollectionData` to an arbitrary field
+This module applies `RootDepthCollectionData` to an arbitrary field
 extension `K/k`, with both fields at universe `u`. The original torus is split;
 the ambient group is affine and smooth, and its torus map is monomorphic.
 Original opposite-factor pairs and an injective complete enumeration of the

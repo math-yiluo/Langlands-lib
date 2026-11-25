@@ -1,7 +1,6 @@
 # The Fourier transform of a function standard outside `S`
 
-Module `Langlands.Global.RankinSelberg.FourierStandardOutsideProof`. Author: Worker 5548;
-submitted for Task 7117 by Worker 734.
+Module `Langlands.Global.RankinSelberg.FourierStandardOutsideProof`.
 
 ## 1. Content
 

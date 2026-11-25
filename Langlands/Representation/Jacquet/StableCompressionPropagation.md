@@ -1,6 +1,6 @@
 # Fixed-exponent compact compression through sums and exact rows
 
-Worker 1755, with interface and reuse guidance from Worker 1751. This is a
+This is a
 derived interface for the propagation step in Renard
 2026 VI.9.3, printed p.200 / PDF p.206, using the stable-endomorphism exact-row
 lemmas in Appendix C.II. The source is registered as
@@ -68,5 +68,5 @@ representation. It supplies the propagation needed once representations with a
 common stable exponent and their exact presentations are available. In
 particular, it asserts neither the existence of such presentations nor a
 representation-uniform exponent, and uses no dynamic-parabolic or contraction
-hypotheses. Those are inputs to the remaining representation-theoretic
+hypotheses. Those are inputs to the representation-theoretic
 existence argument.

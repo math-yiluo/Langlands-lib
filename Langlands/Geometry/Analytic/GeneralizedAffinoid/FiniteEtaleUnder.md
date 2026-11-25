@@ -1,6 +1,6 @@
 # Algebraically finite étale positive-polyradius quotients under a base
 
-Authors: Worker 56 and Worker 36. This adapts Worker 36's published strict
+This adapts the strict
 `FiniteEtaleUnder` construction to the actual arbitrary positive-polyradius
 quotients and adds the relative spectrum functor.
 

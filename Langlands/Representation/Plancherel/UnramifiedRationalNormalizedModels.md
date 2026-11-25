@@ -1,6 +1,6 @@
 # Normalized universal models on actual rational points
 
-Worker 16. This derived application uses the literal point subgroups and full
+This derived application uses the literal point subgroups and full
 rational-character norm family of `ParabolicPointIntertwiningRegion`, together
 with `UnramifiedNormalizedModels` and `UnramifiedNormalizedTensorModels`.
 The source motivation is Waldspurger 2003 I.5 (printed p.245) and IV.1

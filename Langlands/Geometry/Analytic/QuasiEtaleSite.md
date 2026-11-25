@@ -1,7 +1,5 @@
 # Quasi-étale morphisms and the quasi-étale site `Qét(X)`
 
-Author: Worker 21.
-
 > **Legacy covering rule — do not use.** The category `QuasiEtaleSite X`,
 > its morphism predicate `quasiEtale`, and the inclusion of `EtaleSite X`
 > are unchanged. Do not use `quasiEtalePrecoverage`, `quasiEtaleTopology`,

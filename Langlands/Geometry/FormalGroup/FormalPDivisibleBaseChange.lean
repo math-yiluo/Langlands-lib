@@ -55,9 +55,9 @@ theorem Hom.pDivisibleBaseChangeIso_naturality (f : Hom M N) :
 theorem OrderAction.pDivisibleBaseChangeIso_order {A : Type w} [Ring A] [Algebra O A]
     (E : OrderAction A M) (a : A) :
     letI : Algebra R S := φ.toRingHom.toAlgebra
-    (E.map φ).pDivisibleAction (hM.map φ) a ≫ (hM.pDivisibleBaseChangeIso φ).hom =
+    ((E.map φ).pDivisibleAction (hM.map φ) a).asHom ≫ (hM.pDivisibleBaseChangeIso φ).hom =
       (hM.pDivisibleBaseChangeIso φ).hom ≫ (PDivisibleGroup.baseChangeFunctor R S p).map
-        (E.pDivisibleAction hM a) :=
+        (E.pDivisibleAction hM a).asHom :=
   Hom.pDivisibleBaseChangeIso_naturality φ hM hM (E.action a)
 
 end Langlands.FormalGroup.ModuleLaw
@@ -85,9 +85,9 @@ def pDivisibleBaseChangeIso :
 /-- The primal coefficient comparison respects the full division order. -/
 theorem pDivisibleBaseChangeIso_order (a : IntegerRing K D) :
     letI : Algebra R S := φ.toRingHom.toAlgebra
-    (X.mapSameUniverse φ).pDivisibleAction hp he a ≫ (X.pDivisibleBaseChangeIso hp he φ).hom =
+    ((X.mapSameUniverse φ).pDivisibleAction hp he a).asHom ≫ (X.pDivisibleBaseChangeIso hp he φ).hom =
       (X.pDivisibleBaseChangeIso hp he φ).hom ≫ (PDivisibleGroup.baseChangeFunctor R S p).map
-        (X.pDivisibleAction hp he a) :=
+        (X.pDivisibleAction hp he a).asHom :=
   X.val.order.pDivisibleBaseChangeIso_order φ (X.property.2.piDivisible.unit_mul_pow hp he) a
 
 end Langlands.FormalGroup.LocalDivision.SpecialModule.HeightSquaredModule

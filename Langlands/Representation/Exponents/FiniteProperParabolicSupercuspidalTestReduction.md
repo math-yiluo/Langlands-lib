@@ -1,6 +1,6 @@
 # A finite proper-parabolic supercuspidality test from structural inputs
 
-Worker 1582. This is a conditional reduction for
+This is a conditional reduction for
 `FiniteProperParabolicSupercuspidalTestStatement`, which is stated in
 `Langlands/Representation/Exponents/SmoothRepNoetherianReduction.lean`. That
 statement is a finite form of Renard VI.2.1, Remark 1, printed page 137 / PDF
@@ -57,10 +57,11 @@ normalized Jacquet modules `(jacquetFunctor (D i).p … ).obj A` are all
 `Subsingleton` is `IsSupercuspidal`. That is, its Jacquet module vanishes along
 every proper actual rational parabolic datum.
 
-The module proves none of the three inputs. In the Library at the time of
-writing each has only conditional derivations, so
-`FiniteProperParabolicSupercuspidalTestStatement` stays conditional, and so
-does Renard VI.7.5.
+The module proves none of the three inputs. They are proved by
+`Langlands.GroupScheme.parabolicDynamic`,
+`Langlands.GroupScheme.smoothMaximalSplitTorusConjugacy` and
+`Langlands.GroupScheme.relativeRootSystem`, and
+`FiniteProperParabolicSupercuspidalTestProof` applies this reduction to them.
 
 ## Provenance
 

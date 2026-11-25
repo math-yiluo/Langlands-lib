@@ -1,7 +1,5 @@
 # The singleton block shape and the upper unipotent group
 
-Author: Worker 204.
-
 This module specializes the Library's standard block geometry
 (`Langlands.Group.GL.Blocks`, `Langlands.Group.GL.BlockModulus`) to the
 ordered shape with `n` blocks of size one, the Borel case. It proves that the
@@ -20,9 +18,8 @@ of the identifications proved here.
 
 ## Provenance
 
-Internal. The module introduces one block shape and one homomorphism, both
-determined by the task contract (task 15b0c237, revision 2), and otherwise
-proves identifications between existing Library definitions. The mathematical
+Internal. The module introduces one block shape and one homomorphism, and
+otherwise proves identifications between existing Library definitions. The mathematical
 content is the standard description of the Borel subgroup of `GL_n`: with all
 blocks of size one, the block upper triangular condition is the upper
 triangular condition, the diagonal block condition of the radical is
@@ -62,7 +59,7 @@ definitions cited by name below.
 
 ## Theorems
 
-Index identification (contract item 1):
+Index identification:
 
 - `singletons_length : (singletons n).length = n` and
   `singletons_size i : (singletons n).size i = 1` (both `rfl`).
@@ -74,7 +71,7 @@ Index identification (contract item 1):
 - `singletons_index (i : Fin n) (j : Fin 1) : (singletons n).index i j = i`
   (simp), the same statement for the coordinate embedding `index`.
 
-Membership (contract item 2):
+Membership:
 
 - `singletons_mem_parabolic_iff R g :
   g ∈ (singletons n).parabolic R ↔ g.val.IsUpperTriangular`, for every
@@ -90,7 +87,7 @@ Membership (contract item 2):
   `g : (singletons n).parabolic R`, using that `unipotentSubgroup` is the
   image of `unipotentRadical` under the injective subgroup inclusion.
 
-Identification (contract item 3):
+Identification:
 
 - `upperUnipotentEquivRadical_apply_val R u` (simp): the `GeneralLinear n R`
   element underlying `upperUnipotentEquivRadical R u` is `u` itself.
@@ -100,7 +97,7 @@ Identification (contract item 3):
   `upperUnipotentContinuousEquivRadical_apply R u` (simp): the continuous
   version has the multiplicative equivalence above as its underlying map.
 
-Diagonal Levi elements (contract item 4):
+Diagonal Levi elements:
 
 - `singletonLevi_apply R t i` (simp): `singletonLevi R t i =
   GeneralLinear.scalar (t i)`.
@@ -110,7 +107,7 @@ Diagonal Levi elements (contract item 4):
   `leviEmbedding_apply_same` and `leviEmbedding_apply_ne` together with
   `singletons_index`.
 
-Levi action in matrix terms (contract item 5):
+Levi action in matrix terms:
 
 - `leviAction_apply_val R B m v` (simp), for every block shape
   `B : BlockShape n`, every `m : B.Levi R` and every
@@ -123,7 +120,7 @@ Levi action in matrix terms (contract item 5):
   underlying `(singletons n).leviAction R (singletonLevi R t)
   (upperUnipotentEquivRadical R u)` is `L * u * L⁻¹`.
 
-Modulus (first formula of contract item 7), in namespace
+Modulus, in namespace
 `Langlands.PadicField.TopologicalData`:
 
 - `leviModulus_singletonLevi T t`: for every prime `p` with

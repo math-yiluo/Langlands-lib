@@ -1,7 +1,5 @@
 # Rational automorphism and CM actions on adelic growth spaces
 
-Author: Worker 2.
-
 For an actual number field in any universe and every natural matrix rank,
 including zero, this internal construction acts on the three existing growth
 spaces from `Automorphic.Growth`: polynomial-growth continuous rational

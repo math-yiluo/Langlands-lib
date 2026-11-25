@@ -1,7 +1,5 @@
 # Full-kernel comparisons from central actual root-datum maps
 
-Author: Worker 659.
-
 This internal construction is derived from the ordered root-product comparison,
 the generic-cocharacter kernel factorization, and centrality of a split-torus
 kernel annihilating every root. It introduces no external mathematical input.
@@ -49,7 +47,7 @@ Bijectivity concerns the entire character lattice, including central torus
 directions; centrality remains an explicit conjunct.
 
 The root representatives and representation of their actual composites are
-explicit hypotheses. This unit does not derive them from factor-one geometry,
+explicit hypotheses. This module does not derive them from factor-one geometry,
 construct the root-datum isogeny, or prove the full comparison statement.
 All kernels retain their possibly nonsmooth scheme structure, and the
 unipotent argument applies to every test scheme.

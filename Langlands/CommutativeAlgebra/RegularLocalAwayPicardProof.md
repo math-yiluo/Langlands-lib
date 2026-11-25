@@ -49,10 +49,10 @@ permutation of finite free complements give stable freeness of the quotient.
 The descent helper takes the `R`-span of a finite set of localized
 generators and clears denominators.
 
-Worker 362 authored the unchanged supporting Lean/Markdown pairs
+The supporting Lean/Markdown pairs are
 `FiniteModuleLocalizationDescent`, `FiniteProjectiveDimensionLocalization`,
-and `LocalizationPicardOfFiniteProjectiveDimension`. Worker 152 authored
-this final specialization. The regular-local finite-projective-dimension
+and `LocalizationPicardOfFiniteProjectiveDimension`; this module is the
+final specialization. The regular-local finite-projective-dimension
 theorem is imported from the Library rather than proved again here.
 
 ## Provenance and independence

@@ -44,8 +44,9 @@ local finite type, base change, geometric irreducibility and connectedness,
 Mathlib and the Library; no external code is adapted.
 
 This module is the first step towards a model-level non-hyperspecial
-parahoric for `GL_N`, for the task objective's comparison of a hyperspecial
-with a non-hyperspecial parahoric (Task 3557). The planned next unit takes
+parahoric for `GL_N`, for a comparison of a hyperspecial with a
+non-hyperspecial parahoric in the Kaletha–Prasad Bruhat–Tits foundation. The
+module `Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriModel` takes
 `A` to be the standard Iwahori order in `M_N(𝒪)`, which is free over `𝒪`
 but is not an algebra over a field. Kaletha–Prasad, *Bruhat–Tits Theory: A
 New Approach* (2023), registered as
@@ -76,7 +77,7 @@ The module imports from the Library:
 - `Langlands.GroupScheme.GeneralLinear` (`GeneralLinear.groupScheme`,
   `GeneralLinear.pointsEquiv` and its naturality);
 - `Langlands.AnthropicFLT.Theorems.Thm_AlgebraicGeometry_GeometricallyIrreducible_geometricallyConnected`
-  (`GeometricallyIrreducible.geometricallyConnected`). This module imports
+  (`GeometricallyIrreducible.geometricallyConnectedFLT`). This module imports
   all of Mathlib.
 
 It names the Mathlib modules `Mathlib.RingTheory.MatrixAlgebra`
@@ -130,7 +131,7 @@ functor, so `((algΓ R).obj T).unop` is `Γ(T)` as an `R`-algebra.
 
 ### The group scheme
 
-- `groupScheme b` (abbreviation, the declared definition of this unit):
+- `groupScheme b` (abbreviation, the declared definition of this module):
   `Corepresented.groupScheme (functor R A) (corepresentableBy b)`, a group
   scheme over `Spec R`.
 - `groupScheme_hom`: its structure morphism is
@@ -256,7 +257,7 @@ away-localizations) followed by the geometrically irreducible map to
 `Spec R`. It is surjective because every group scheme has a unit section
 (`surjective_hom`). Mathlib's instance for a surjective open subscheme of a
 geometrically irreducible scheme then applies. Geometric connectedness
-follows from the Library's `GeometricallyIrreducible.geometricallyConnected`.
+follows from the Library's `GeometricallyIrreducible.geometricallyConnectedFLT`.
 
 **Change of algebra and matrices.** In both cases the two point models are
 units of `Γ(T) ⊗[R] A'`, respectively `GL_N(Γ(T))`, and the needed

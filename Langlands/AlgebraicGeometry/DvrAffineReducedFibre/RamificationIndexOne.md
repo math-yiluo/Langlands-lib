@@ -1,7 +1,5 @@
 # Ramification index one and the normalized residue fibre
 
-Worker 594.
-
 `localizedQuotientEquivResidue_of_ramificationIdx_eq_one` compares the
 localization at a prime over the closed point, modulo the extended base
 maximal ideal, with the residue field of that localization. The

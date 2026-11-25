@@ -1,7 +1,6 @@
 # The VII.2.6 uniqueness assertion from named inputs
 
-Author: Worker 4772. This is an internal reduction for proof task
-`225f7d3d-bb91-4746-9084-ea6b91241e41`. It concerns the second assertion
+This is an internal reduction. It concerns the second assertion
 of the Theorem of Renard, *Représentations des groupes réductifs
 p-adiques*, French version dated 9 July 2026, VII.2.6 (printed p.231 /
 PDF p.237). The registered source is
@@ -64,7 +63,7 @@ and square-integrable modulo the center for every Haar measure.
 1. The quotients `M_j(F) ⧸ Z(M_j(F))` get their Borel structures and
    Mathlib's Haar measures. Then `hSq` makes `σ₁` and `σ₂` tempered and
    `hInd` makes `I₁` tempered.
-2. Worker 346's `rationalSquareIntegrableUnimodularForm`, with `hUnimod`,
+2. `rationalSquareIntegrableUnimodularForm`, with `hUnimod`,
    gives `σ₁` an invariant positive form. By
    `leviInduction_isSemisimple_of_form`, `I₁` is semisimple.
 3. Choose a split component of `M₂` (`splitComponentStatement`). Apply
@@ -100,7 +99,7 @@ that unitary pieces with a proper first intersection vanish.
 Both lemmas apply the published `admissibleUnitarySemisimplicity` with
 compact-open cofinality from `compactOpenCofinal_of_nonarchimedean`.
 Admissibility is part of normalized-exponent temperedness. The invariant
-form on the induced representation is Worker 346's
+form on the induced representation is
 `leviInductionUnimodularForm`, built from three inputs:
 
 - ambient unimodularity from `hUnimod`;
@@ -134,10 +133,11 @@ kept. Both parabolic data are arbitrary actual rational parabolics, and
 square-integrability is quantified over all Haar measures. No standardness,
 admissibility, finite-length, central-character, presentation-existence,
 Jacquet-admissibility or Iwahori-contraction hypothesis is added beyond the
-seven listed propositions. Their proofs belong to other tasks:
+seven listed propositions. Their proofs are separate:
 
-- `1ebce298-eeeb-4686-ba30-cabcb8e50d4b` (VII.2.1 Remark 2);
-- `f83123b9-ff38-4210-9ad7-4f119a13d1ac` (VII.2.2);
-- `c1ce4629-6768-4eb5-b4ee-0086526913ea` (quotient compactness);
-- `f0ff1d42-b2ac-439b-a08d-8e2d120a78fa` (VII.2.4 Lemma);
-- `65c3d5dc-0e10-442e-93ee-f13854e419bb` (VII.2.5).
+- `SquareIntegrableNormalizedTemperedProof` (VII.2.1 Remark 2);
+- `LeviInductionNormalizedTemperedProof` (VII.2.2);
+- `ArbitraryParabolicQuotientCompactProof` (quotient compactness);
+- the VII.2.4 Lemma is not proved in the Library; the proof module
+  `TemperedIrreducibleDiscreteSeriesUniquenessProof` avoids it;
+- `TemperedGeometricLemmaProof` (VII.2.5).

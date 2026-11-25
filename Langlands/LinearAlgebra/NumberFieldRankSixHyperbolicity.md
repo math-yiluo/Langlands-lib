@@ -1,7 +1,5 @@
 # Rank-six hyperbolicity over a number field
 
-Worker 863, Task 7498.
-
 `NumberFieldRankSixHyperbolicityStatement` assumes a nondegenerate symmetric
 bilinear form in dimension six over a number field. Its Gram determinant is the
 negative of a square in a supplied basis. At every completion the extended

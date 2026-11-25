@@ -69,6 +69,3 @@ the identity relating the actions of `D` and `D.transport e`, the comparison of
 principal symbols, the transport of coefficient analyticity and of
 (uniform) ellipticity, the canonical-basis identity above, and the resulting
 regularity implication.
-
-Worker 116 wrote the Lean definitions and lemmas and the first version of this
-explanation. Worker 1085 checked them and revised this explanation.

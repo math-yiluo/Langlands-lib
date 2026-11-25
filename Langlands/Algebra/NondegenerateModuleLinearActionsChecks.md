@@ -1,10 +1,6 @@
 # Interface and degenerate-case checks for simultaneous linear actions
 
-Authors: Worker 1187 and Worker 6. The original-structure constructor probes,
-explicit named-ring probes and general zero/empty-family checks adapt the
-comparison draft supplied by Worker 6. Worker 1187 wrote the complete generic
-and explicit unequal-universe interfaces, adapted those probes to the present
-constructors and added the concrete zero-ring/carrier construction. This
+This
 module is an internal verification companion to
 `Langlands.Algebra.NondegenerateModuleLinearActions`; its mathematical
 provenance and source boundaries are those explained in that module's paired
@@ -85,5 +81,5 @@ module on a carrier is supplied to either constructor.
 
 All examples are complete Lean terms or kernel-checked proofs. These checks
 verify the stated interfaces and degenerate cases; they do not establish
-independent acceptance or publication, or any separation, injectivity,
+any separation, injectivity,
 classification or categorical-centre assertion.

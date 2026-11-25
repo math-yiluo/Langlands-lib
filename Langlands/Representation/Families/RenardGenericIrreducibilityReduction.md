@@ -1,7 +1,7 @@
 # Renard VI.8.5 from its inputs
 
-Author: Worker 1697. This module is a supporting unit for task
-`822bbd74-8853-4535-87b2-aede25e9a259`, not its completion. It proves Renard's generic
+This module is a supporting step for Renard VI.8.5, not a complete proof of it. It
+proves Renard's generic
 irreducibility theorem VI.8.5, `GenericInducedIrreducibilityStatement`, from eight
 published statements. None of the eight is proved here.
 
@@ -48,8 +48,10 @@ above, in the same order and at the same universes. `genericInducedIrreducibilit
 proves `GenericInducedIrreducibilityStatement.{u, v}` from
 `GenericInducedIrreducibilityInputs.{u, v}` by passing its fields to
 `genericInducedIrreducibility_of_statements`. Nothing in the module proves
-`GenericInducedIrreducibilityInputs`, so this module does not prove the closed target. The
-remaining obligations for it are exactly the eight propositions.
+`GenericInducedIrreducibilityInputs`, so this module does not prove the closed target. On
+this route the target needs exactly the eight propositions;
+[RenardGenericIrreducibilityRemainingInputs](RenardGenericIrreducibilityRemainingInputs.md)
+supplies proofs of inputs 4–8.
 
 ## Proof outline
 
