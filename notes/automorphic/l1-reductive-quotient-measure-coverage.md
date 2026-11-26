@@ -3,9 +3,9 @@
 This note was written on 7 November 2026 and revised on 13, 14 and 15 November 2026 and once
 more after that.
 
-Finite volume of `G(F) \ G(A_F)^1` and of `[G]` is proved. The good Siegel reduction has one
-open input: finite-place Iwasawa existence (`FinitePlaceGroupPoints.ParabolicIwasawaStatement`).
-Slice-to-global growth is proved by a route that does not need it (§5, item 8).
+Finite volume of `G(F) \ G(A_F)^1` and of `[G]` is proved. The finite-place Iwasawa theorem
+completes the compositions for adelic Iwasawa and for the good Siegel covering (§2).
+The slice-to-global growth theorem uses a covering by finitely many right translates (§5, item 8).
 
 The note records the published Lean construction of the Getz–Hahn quotient
 `[G] = A_G G(F) \ G(A_F)`, its measure and its `L²` and cuspidal spaces, for a group scheme `G`
@@ -14,12 +14,8 @@ adelic constructions below assume both conditions. It also lists the reduction-t
 propositions and which of them are proved. This is the first block of the
 [global automorphic program](global-program-coverage.md).
 
-This note is not a Lean result. "Proved" means that the Library contains a theorem whose type
-is the statement. "Composable" means that a term built only from published theorems has the
-statement's type. Every composable and conditional term named in this note was checked with
-`lean_check` at Library commit `7cb88f40` (one build, with no errors or warnings). Every such
-term used only `propext`, `Classical.choice` and `Quot.sound`. A composable target still needs an
-exact-target proof.
+In the table in §2, "Proved" identifies a Library theorem whose type is the statement.
+"Composable" identifies a type-checked term built from published theorems.
 
 Related notes:
 - [Getz–Hahn (6.1): the literal algebraic tensor removes cusp forms](getz-hahn-literal-tensor-boundary.md)
@@ -113,10 +109,10 @@ measure, and Weil compatibility.
 | `GroupScheme.CentralSplitTorusCharacterStatement` | structural | Proved: `centralSplitTorusCharacter`. |
 | `InfinitePlaceGroupPoints.ParabolicIwasawaStatement` | archimedean Iwasawa | Proved: `parabolicIwasawaStatement`. |
 | `InfinitePlaceGroupPoints.LeviCompatibleIwasawaStatement` | GH Thm B.4.1 | Proved: `leviCompatibleIwasawaStatement`. |
-| `FinitePlaceGroupPoints.ParabolicIwasawaStatement` | GH Prop. B.4.2, Thm B.4.3 | Open; the one open input of the good Siegel reduction. The published finite-volume proof does not use it. A route that is not in the Library derives it, by a reduction `parabolicIwasawaStatement_of_valuationApartmentAxioms`, from three Bruhat–Tits propositions: valuation data satisfying the apartment axioms (KP Theorem 9.6.5), apartment-only affine Iwahori–Tits, and KP Axiom 4.1.8 (2), (3). |
+| `FinitePlaceGroupPoints.ParabolicIwasawaStatement` | GH Prop. B.4.2, Thm B.4.3 | Proved: `FinitePlaceGroupPoints.parabolicIwasawaStatement` (module `FinitePlaceIwasawaProof`). For each finite place and actual rational parabolic it gives a maximal compact subgroup with the parabolic on the left in the local product. |
 | `IntegralIwasawaFamily.ExistenceStatement` | GH §2.4, App. B | Proved: `IntegralIwasawaFamily.existenceStatement` (module `IntegralIwasawaFamilyProof`), which is `existenceStatement_of_maximalCompact` applied to the proved `IntegralModel.maximalCompactStatement`. |
-| `AdelicGroupPoints.ParabolicIwasawaStatement` | GH Thm 2.7.1 | Open. Follows from the finite-place row alone: `parabolicIwasawaStatement_of_archimedean_finite_integral InfinitePlaceGroupPoints.parabolicIwasawaStatement hfinite IntegralIwasawaFamily.existenceStatement`. |
-| `AdelicSiegelFactors.AdelicCompatibleIwasawaCompactStatement` | MW I.1.4 | Open. Follows from the finite-place row alone by `adelicCompatibleIwasawaCompactStatement_of_local`, with the proved Levi-compatible archimedean input and `IntegralIwasawaFamily.existenceStatement`. |
+| `AdelicGroupPoints.ParabolicIwasawaStatement` | GH Thm 2.7.1 | Composable by `parabolicIwasawaStatement_of_archimedean_finite_integral`, applied to the archimedean, finite-place and integral theorems. |
+| `AdelicSiegelFactors.AdelicCompatibleIwasawaCompactStatement` | MW I.1.4 | Composable by `adelicCompatibleIwasawaCompactStatement_of_local`, applied to the Levi-compatible archimedean, finite-place and integral theorems. |
 | `AdelicSiegelFactors.SiegelAlgebraicSetupExistenceStatement` | GH §2.7 setup | Proved: `siegelAlgebraicSetupExistence` (module `AdelicSiegelSetupExistenceProof`), which is `siegelAlgebraicSetupExistence_of_structural genericMinimalParabolic derivedMaximalSplitTorus derivedCentralSplitTorusProduct`. |
 | `AdelicGroupPoints.UnipotentRationalQuotientCompactStatement` | compact `U(F)\U(A)` | Proved: `unipotentRationalQuotientCompact` (module `UnipotentRationalQuotientCompactProof`). |
 | `AdelicSiegelFactors.PositiveTorusUnipotentModulusStatement` | Haar modulus | Composable: `positiveTorusUnipotentModulus_of_coordinates positiveTorusTriangularCoordinates`. |
@@ -125,7 +121,7 @@ measure, and Weil compatibility.
 | `AdelicSiegelFactors.CentralSplitCompactQuotientStatement` | Springer (C) | Proved: `AdelicSiegelFactors.centralSplitCompactQuotient` (module `AdelicSpringerCentralCompactnessProof`); see "Split groups" below. |
 | `RepresentationGrowth.RankOneParabolicRationalOrbitHeightBoundStatement` | Springer §3.6 | Proved: `RepresentationGrowth.rankOneParabolicRationalOrbitHeightBound` (module `AdelicRankOneOrbitHeightBoundProof`), see below. |
 | `AdelicSiegelFactors.AdelicSiegelChamberReductionStatement` | Springer (F) | Proved: `AdelicSiegelFactors.adelicSiegelChamberReduction` (module `AdelicSiegelChamberReductionProof`), see below. |
-| `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` | GH §2.7, MW I.2.1 | Open. Follows from finite-place Iwasawa alone, see below. It implies `AdelicSiegelReductionStatement`. |
+| `AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` | GH §2.7, MW I.2.1 | Composable from the algebraic setup, compatible Iwasawa compact and chamber covering as described below. It implies `AdelicSiegelReductionStatement`. |
 
 **Finite volume (proved).** `AdelicGroupPoints.connectedReductiveFiniteVolume`
 and `AdelicGroupPoints.normOneRationalQuotientFiniteVolume` (module `AdelicFiniteVolumeProof`)
@@ -142,36 +138,31 @@ When a maximal `F`-split torus is central, `centralSplitCompactQuotient` gives a
 norm-one cover. `HasCompactNormOneRationalCover.compactSpace` and the homeomorphism
 `RestrictionSplitCentre.canonicalNormOneQuotientHomeomorph` then give compactness of `[G]`.
 
-**The good Siegel reduction from one open input.** The following terms are built from published
-theorems (namespaces `Langlands.Global` and `Langlands.GroupScheme` opened). They were checked
-verbatim at `7cb88f40`, with axioms `propext`, `Classical.choice` and `Quot.sound` only.
+**Adelic Iwasawa and the good Siegel covering.** The local proof in
+`FinitePlaceIwasawaProof` constructs a special-point stabilizer in the common norm
+kernel of the rational characters. It transports the resulting Iwasawa compact from the
+completion's rational-point group to the actual finite-place evaluation topology.
+See [the finite-place proof](../../Langlands/Global/FinitePlaceIwasawaProof.md).
 
-```lean
-theorem goodSiegel_of_inputs
-    (hchamber : AdelicSiegelFactors.AdelicSiegelChamberReductionStatement.{u})
-    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
-    AdelicSiegelFactors.AdelicGoodSiegelReductionStatement.{u} := by
-  intro F _ _ G _ _ hG
-  obtain ⟨T, i, ν, T₀, j, hS⟩ := AdelicSiegelFactors.siegelAlgebraicSetupExistence_of_structural
-    genericMinimalParabolic derivedMaximalSplitTorus derivedCentralSplitTorusProduct F G hG
-  obtain ⟨K, hK, hKc⟩ := AdelicSiegelFactors.adelicCompatibleIwasawaCompactStatement_of_local
-    InfinitePlaceGroupPoints.leviCompatibleIwasawaStatement hfinite
-    IntegralIwasawaFamily.existenceStatement F G hG T i ν T₀ j hS
-  obtain ⟨C, t, hC, hcover⟩ := AdelicSiegelFactors.exists_isSiegelCover_of_chamber
-    AdelicSiegelFactors.centralSplitCompactQuotient hchamber F G hG T i ν T₀ j hS K hK
-  exact ⟨T, i, ν, T₀, j, hS, C, t, hcover, hC ▸ hKc⟩
+`AdelicGroupPoints.parabolicIwasawaStatement_of_archimedean_finite_integral` takes
+`InfinitePlaceGroupPoints.parabolicIwasawaStatement`,
+`FinitePlaceGroupPoints.parabolicIwasawaStatement` and `IntegralIwasawaFamily.existenceStatement`.
+This gives `AdelicGroupPoints.ParabolicIwasawaStatement` for every actual rational parabolic.
 
-theorem goodSiegel_of_finite
-    (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
-    AdelicSiegelFactors.AdelicGoodSiegelReductionStatement.{u} :=
-  goodSiegel_of_inputs AdelicSiegelFactors.adelicSiegelChamberReduction hfinite
-```
+For a connected reductive `G`, `siegelAlgebraicSetupExistence` gives the maximal split
+torus, generic cocharacter and derived split torus of the setup. Applying
+`adelicCompatibleIwasawaCompactStatement_of_local` to
+`InfinitePlaceGroupPoints.leviCompatibleIwasawaStatement` and the same finite-place and
+integral proofs supplies a maximal compact subgroup whose intersection with the minimal
+parabolic commutes with the positive torus. For this subgroup
+`exists_isSiegelCover_of_chamber` uses Springer's (C) via `centralSplitCompactQuotient` and
+(F) via `adelicSiegelChamberReduction`. The compact factors it returns use that same subgroup,
+so the covering and the commutation property give `AdelicGoodSiegelReductionStatement`.
+`adelicSiegelReductionStatement_of_good` gives `AdelicSiegelReductionStatement`. Both
+compositions, as well as adelic Iwasawa, type-check at arbitrary universe using the
+declarations in Library commit `d6108aa8`.
 
-`goodSiegel_of_inputs` fills the compactness premise of `exists_isSiegelCover_of_chamber` with
-the published (C), `centralSplitCompactQuotient`. `goodSiegel_of_finite` fills its chamber
-premise with the published (F), `adelicSiegelChamberReduction` (see the next paragraph). The
-Siegel finite-measure statement is composable; the Library's `siegelProductFiniteMeasure` is this
-term:
+The Library's `siegelProductFiniteMeasure` has the following proof term.
 
 ```lean
 theorem siegelMeasure : AdelicSiegelFactors.SiegelProductFiniteMeasureStatement.{u} :=
@@ -183,13 +174,8 @@ theorem siegelMeasure : AdelicSiegelFactors.SiegelProductFiniteMeasureStatement.
       relativeRootNegation relativeCharacterRootComplement)
 ```
 
-The three finite-volume statements can also be derived from finite-place Iwasawa through
-`goodSiegel_of_finite` and `siegelMeasure`; the Library's proofs above do not need that input.
-The good Siegel reduction and the Siegel covering `AdelicSiegelReductionStatement` (by
-`adelicSiegelReductionStatement_of_good`) reduce to exactly one open proposition: finite-place
-Iwasawa existence (`FinitePlaceGroupPoints.ParabolicIwasawaStatement`). Springer's compactness (C)
-and the chamber reduction (F) are proved. Slice-to-global growth (§5, item 8) is proved by
-another route.
+Applying `connectedReductiveFiniteVolumeStatement_of_siegel` to the good covering and
+`siegelProductFiniteMeasure` gives a finite-volume proof via the single Siegel product.
 
 **The chamber reduction (F).** The published
 `AdelicSiegelFactors.adelicSiegelChamberReduction_of_rankOne_height` (module
@@ -259,10 +245,9 @@ compact covers at the finite places (`FinitePlaceGroupPoints.exists_isCompact_pa
 from compactness of `P(F_v) \ G(F_v)`); it does not use finite-place Iwasawa.
 `AdelicSiegelFactors.IsSiegelAlgebraicSetup.hasCompactNormOneParabolicCover` gives such an `Ω`
 inside `G(𝔸_F)¹` for the canonical minimal parabolic. These covers are sets, not subgroups.
-The good Siegel reduction asserts the existence of compact factor data and a threshold such that
-the compact subgroup `K` satisfies `IsParabolicIwasawaCompact` (`K` maximal compact with
-`P(𝔸_F) K = G(𝔸_F)`) and the Siegel product `S` satisfies `G(F) S = G(𝔸_F)¹` (both parts of
-`IsSiegelCover`); `goodSiegel_of_finite` obtains such a `K` from finite-place Iwasawa.
+The good Siegel reduction gives compact factor data and a threshold with
+`IsParabolicIwasawaCompact` (`K` maximal compact with `P(𝔸_F) K = G(𝔸_F)`) and
+`G(F) S = G(𝔸_F)¹` for the Siegel product `S`. These are the two parts of `IsSiegelCover`.
 `SiegelProductFiniteMeasureStatement` is different: for any supplied compact factor data whose
 subgroup satisfies `IsParabolicIwasawaCompact` and `IsPositiveTorusCompatible`, and any positive
 threshold, it concludes that the Siegel product meets `G(𝔸_F)¹` in a set of finite measure. It
@@ -399,9 +384,7 @@ Two statements concern them. Both are proved, as `AdelicGroupPoints.adelicParabo
 
 The lemmas `continuous_parabolicModulus_of_eq` and `parabolicModulus_rational_of_eq` give
 continuity of `δ_P` and triviality on `P(F)` under the conclusion of the first statement.
-The integration statement does not assert that such a `K` exists. For an actual parabolic
-inclusion, that existence is the open adelic Iwasawa decomposition
-(`AdelicGroupPoints.ParabolicIwasawaStatement`, §2).
+For an actual parabolic inclusion, the adelic Iwasawa composition in §2 supplies such a `K`.
 
 `Langlands.Global.iwasawaCompatibleMeasureExistence` applies the two theorems to a
 parabolic with a compatible root presentation and a supplied maximal compact `K`
@@ -475,14 +458,8 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
 
 ## 5. Open obligations
 
-1. Finite volume and the good Siegel reduction. The norm-one, reductive and `[G]` finite-volume
-   statements are proved (§2). The good Siegel reduction (`AdelicGoodSiegelReductionStatement`)
-   has one open input, finite-place Iwasawa existence
-   (`FinitePlaceGroupPoints.ParabolicIwasawaStatement`). Springer's compactness (C), the general
-   rank-one bound and the chamber reduction (F) are proved. The integral Iwasawa family is proved.
-   The coordinate statement `MinimalParabolicNormCoordinatesStatement` is not needed for these
-   targets. The route to finite-place Iwasawa through three Bruhat–Tits propositions (§2) is not
-   in the Library.
+1. `AdelicGoodSiegelReductionStatement` includes the positive-torus commutation needed to
+   apply the single-product finite-measure theorem to the factors of the covering (§2).
 2. Exact-target proofs of the composable statements in §2. The Library proves
    `UnipotentRationalQuotientCompactStatement` (`unipotentRationalQuotientCompact`),
    `SiegelProductFiniteMeasureStatement` (`siegelProductFiniteMeasure`),
@@ -491,9 +468,8 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
    `RestrictionSplitCentre.ConnectedReductiveQuotientFiniteVolumeStatement`
    (`connectedReductiveQuotientFiniteVolume`). `PositiveTorusUnipotentModulusStatement` and
    `SimpleRootBoxCompactStatement` are composable, with no exact-target proof recorded here.
-3. Adelic Iwasawa (`AdelicGroupPoints.ParabolicIwasawaStatement`) and the compatible compact
-   subgroup (`AdelicCompatibleIwasawaCompactStatement`): open, and blocked only on the
-   finite-place input (§2).
+3. `AdelicCompatibleIwasawaCompactStatement` uses Levi compatibility at the infinite
+   places because the positive torus has trivial components at the finite places (§2).
 4. Smooth-vector density on `[G]` (`RestrictionSplitCentre.QuotientL2SmoothDensityStatement`
    and the positive-torus version). It waits for the generic
    `Langlands.Analysis.IntegratedIsometricSmoothDensityStatement`, whose remaining input
@@ -540,28 +516,8 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
    `AdelicSiegelFactors.siegelNormMinimalityStatement` (module
    `AdelicSiegelNormMinimalityProof`) and
    `RepresentationGrowth.centralNormOneHeightFactorStatement` (module
-   `AdelicCentralPositiveHeightProof`). So by this route the slice growth
-   target follows from the good Siegel reduction alone. With `goodSiegel_of_finite` (§2) it
-   therefore has the same one open input as the good Siegel reduction, finite-place Iwasawa.
-   The published finite-volume route gives a rational translate into a Siegel
-   product only up to a finite set of right translates (§2), which is not the Siegel covering
-   used by this route. The following terms were checked verbatim at `7cb88f40` with the same axioms as
-   in §2:
-
-   ```lean
-   theorem sliceGrowth_of_good
-       (hgood : AdelicSiegelFactors.AdelicGoodSiegelReductionStatement.{u}) :
-       Langlands.Automorphic.GroupSchemeFunctions.AdelicSliceModerateGrowthStatement.{u} :=
-     Langlands.Automorphic.GroupSchemeFunctions.adelicSliceModerateGrowthStatement_of_siegel
-       (AdelicSiegelFactors.adelicSiegelReductionStatement_of_good hgood)
-       AdelicSiegelFactors.siegelNormMinimalityStatement
-       RepresentationGrowth.centralNormOneHeightFactorStatement
-
-   theorem sliceGrowth_of_finite
-       (hfinite : FinitePlaceGroupPoints.ParabolicIwasawaStatement.{u}) :
-       Langlands.Automorphic.GroupSchemeFunctions.AdelicSliceModerateGrowthStatement.{u} :=
-     sliceGrowth_of_good (goodSiegel_of_finite hfinite)
-   ```
+   `AdelicCentralPositiveHeightProof`). Using the single Siegel covering from §2,
+   this composition type-checks at arbitrary universe.
 
    For `GL_n`, the original matrix slice growth transfers to the slice-growth hypothesis of the statement
    (`continuousGeneralLinearEquiv_mem_polynomialGrowth_of_closedImmersion`, module

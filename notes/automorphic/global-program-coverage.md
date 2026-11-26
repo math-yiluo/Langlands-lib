@@ -2005,3 +2005,65 @@ the enlarged-set premise (for which the Library has only the conditional
 `Langlands/Global/Factors/CuspidalPairEisensteinDerivation.lean`), the holomorphy of the
 corresponding generic Eisenstein coefficient, or the full nonvanishing target; this note
 records no proof of these. They are analytic inputs for L4 and the H3 factor comparison.
+
+## Continuous convolution representatives and quotient transport
+
+For L1, `Langlands.Automorphic.GroupSchemeFunctions.groupSchemeQuotientL2ContinuousRepresentative`
+proves `GroupSchemeQuotientL2ContinuousRepresentativeStatement` for the original
+right action on the positive rational quotient. For every compactly supported
+continuous weight and every input \(L^2\) class, it gives a continuous
+representative of the convolution. The pointwise bound at the coset of \(x\)
+uses the positive rational subgroup measure of its intersection with
+\(x(S S^{-1})x^{-1}\), where \(S\) is the topological support of the weight.
+The uniform evaluation estimate (9.13) of Getz–Hahn Lemma 9.3.3 needs control
+of the cuspidal convolution uniformly in the quotient point. On continuous
+representatives, `groupSchemeFullAEL2ContinuousCuspidality` identifies the
+almost-everywhere cuspidal condition with vanishing of the mass-one constant
+term for every proper rational parabolic at every adelic point.
+[Continuous representative proof](../../Langlands/Automorphic/GroupSchemeQuotientL2ContinuousRepresentativeProof.md),
+[pointwise cuspidality](../../Langlands/Automorphic/GroupSchemeFullAEL2ContinuousCuspidality.md).
+
+For L3, `Langlands.Global.LeftCosetSpace.productQuotientMeasure` proves the
+count-normalized product law for the discrete left quotient by
+\(\{1\}\times H\), transported by a supplied product isomorphism. The proof
+uses the product of the unquotiented factor with a Borel fundamental domain
+for \(H\). The adelic specialization
+`principalQuotientProductMeasure_of_productQuotientMeasure` applies this law
+to the split centre and the norm-one adelic group. Its product measure has
+first factor `positiveCentreHaarMeasure` and second factor `canonicalMeasure`.
+The fixed Haar on the full adelic group determines the normalization of the
+first factor by compatibility with the norm-one Haar. This implements the
+quotient convention of Getz–Hahn §2.6, (2.19)–(2.22) and Lemma 2.6.2, with
+the counting measure of §3.6.
+[Discrete quotient product proof](../../Langlands/Global/LeftCosetProductMeasureProof.md),
+[adelic specialization](../../Langlands/Global/AdelicPrincipalQuotientProductMeasureProof.md).
+
+`Langlands.Global.wavePacketParabolicAmbientLift_of_regularParameter`
+multiplies a relative packet by the Fourier profile of a smooth compactly
+supported ambient coefficient. It uses the relative and ambient coordinates
+together to form a full packet in the same parabolic presentation. The shift
+extends by scalar continuation at each group point to the common holomorphy
+domain. `eisensteinRegularParameter` supplies the nonempty regular regions
+needed to compare the continuations. `wavePacketProductPairing_of_productMeasure`
+uses the exact quotient product to preserve and reflect square integrability
+of functions under the lift by a nonzero profile. The full-quotient pairing
+equals the relative pairing times the strictly positive square integral
+of that profile on the positive centre.
+[Ambient lift](../../Langlands/Global/AdelicWavePacketParabolicAmbientLiftProof.md),
+[regular regions](../../Langlands/Global/AdelicEisensteinRegularParameterProof.md),
+[product pairing](../../Langlands/Global/AdelicWavePacketProductPairingProof.md).
+
+`Langlands.Global.relativeWavePacketOrthogonalityTransfer` uses these
+comparisons to transfer orthogonality of two non-associate packets with
+relative imaginary parameters and square-integrable representatives.
+It applies full-quotient orthogonality to their lifts by one common
+nonzero profile. The count-normalized product law and regular-region
+theorem supply two of its four premises. The other two are descent of
+relative packets under \(A_GG(F)\) and full-quotient non-associate
+orthogonality. The latter is a consequence of the full pairing in Lapid
+2011, Proposition 2, equation (4), for an empty Weyl index set. The
+relative completeness and association arguments and the comparison
+with the discrete spectrum are separate inputs of the reduction of
+Getz–Hahn Theorem 10.5.1.
+[Relative orthogonality transfer](../../Langlands/Global/AdelicRelativeWavePacketOrthogonalityReduction.md),
+[spectral decomposition reduction](../../Langlands/Global/AdelicSpectralDecompositionReduction.md).

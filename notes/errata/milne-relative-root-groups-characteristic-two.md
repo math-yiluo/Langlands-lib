@@ -39,8 +39,8 @@ below, write \(E\) for that exact-generated closed subgroup after splitting
 and \(U_{(a)}\) for the standard group. We prove
 
 \[
- E\ \subsetneq\ (U_{(a)})_L,\qquad
- \dim E<7,\qquad
+ E=O(Q)\cap (U_{(a)})_L\ \subsetneq\ (U_{(a)})_L,\qquad
+ \dim E=5,\qquad
  \dim\mathfrak g_a=4,\quad \dim\mathfrak g_{2a}=3.
 \]
 
@@ -330,21 +330,70 @@ The weights here are algebraic torus characters, not their
 differentials. The characters \(z\) and \(z^2\) are distinct even in
 characteristic two.
 
+## 6a. The exact-generated subgroup in split coordinates
+
+In the split representation write \(x=(x_1,x_2)^t\),
+\(w=(x_3,y_3)^t\) and \(y=(y_1,y_2)^t\). Order the weight blocks by
+\((x,w,y)\). Comparing the \(S\)-weights in the matrix of an
+identity-limit orbit gives the following form for points of
+\((U_{(a)})_L\) over any \(L\)-algebra:
+\[
+(x,w,y)\longmapsto (x+Mw+Cy,\ w+Ny,\ y).
+\]
+Write the rows of \(M\) as \((a_1,b_1)\) and \((a_2,b_2)\), and
+the entries of \(C\) as \(c_{ij}\). Preservation of
+\(Q=x^t y+w_1w_2\) is a polynomial identity. Its \(w_jy_i\)
+coefficients give
+\[
+N=\begin{pmatrix}b_1&b_2\\a_1&a_2\end{pmatrix}.
+\]
+Its coefficients in \(y_1^2,y_2^2,y_1y_2\) give
+\[
+c_{11}=a_1b_1,\qquad c_{22}=a_2b_2,\qquad
+c_{12}+c_{21}=a_1b_2+a_2b_1.
+\]
+Conversely, these equations make every coefficient of the change of
+\(Q\) vanish. A resulting matrix preserves its polar form, has
+determinant one, and contracts to the identity. Thus they give the
+closed intersection \(O(Q)\cap (U_{(a)})_L\) as \(\mathbf A^5_L\)
+with coordinates \(a_1,b_1,a_2,b_2,c_{12}\).
+
+The four root groups for \(e_i-e_3,e_i+e_3\), \(i=1,2\), give
+the four individual \(M\)-coordinates. The \(M\)-block adds under
+multiplication, so for any prescribed \(M\) a product of those four
+groups realizes it. The commutator of the \(e_1-e_3\) element with
+parameter \(u\) and the \(e_2+e_3\) element with parameter \(v\) is
+\[
+I+uv(E_{1\bar 2}+E_{2\bar 1}).
+\]
+Here \(E_{ij}\) denotes a matrix unit and \(\bar i\) is the
+index of \(y_i\). The two off-diagonal sums in the commutator
+have square zero. Their products in the two orders are
+\(uvE_{1\bar2}\) and \(uvE_{2\bar1}\), and the triple products
+vanish. Taking \(u=1\) realizes the whole root group of \(e_1+e_2\),
+which is exactly the subgroup with \(M=0\) in the closed intersection.
+Multiplying any point by the inverse of a product realizing its
+\(M\)-block puts it in that subgroup. This proves
+\(E=O(Q)\cap(U_{(a)})_L\) on every test algebra.
+
+Conjugation by \(S\) gives weight \(a\) on the four entries of \(M\)
+and weight \(2a\) on \(c_{12}\). Thus the Lie algebra of \(E\) has
+the four-dimensional weight space of \(a\) and a one-dimensional
+weight space of \(2a\). The substitutions into \(Q\) and the
+commutator identity were checked in Lean over arbitrary commutative
+rings of characteristic two.
+
 ## 7. Consequences for the printed statements
 
-The group \((U_{(a)})_L\) is irreducible of dimension seven by §6.
-Its intersection with \(O(Q)\) is a proper closed subset by §5.
-It follows that the exact-generated closed subgroup \(E\), contained
-in that intersection, has dimension strictly less than seven.
-No claim about the sharper value of \(\dim E\) is needed.
+The group \((U_{(a)})_L\) has dimension seven by §6. The
+exact-generated subgroup \(E\) has dimension five by §6a.
 
-Thus the exact generating definition cannot simultaneously have the
-standard positive-multiple interpretation and the displayed 25.20
-dimension formula for this example: the right side of that formula
-is \(4+3=7\). The single-\(\mathfrak g_a\) Lie description also does
-not describe the standard \(U_{(a)}\), whose Lie algebra has dimension
-seven. These conclusions follow from the explicit matrix equations,
-independently of the source's dimension formula.
+The right side of the dimension formula in 25.20 is \(4+3=7\),
+which gives the dimension of the positive-multiple group. For the
+exact generating definition in 25.19, the dimension is \(4+1=5\).
+The doubled-weight line in \(\operatorname{Lie}(E)\) also lies
+outside the stated single-\(\mathfrak g_a\) Lie algebra. These
+conclusions follow from the explicit matrix equations.
 
 To express the standard convention, include all absolute root groups
 restricting to positive integral multiples of \(a\), and use the

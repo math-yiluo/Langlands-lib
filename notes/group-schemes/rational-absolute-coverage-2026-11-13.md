@@ -160,9 +160,12 @@ The three proof modules build with zero errors or warnings. The inspected
 root-group theorem has only `propext`, `Classical.choice` and `Quot.sound`.
 
 No further proof is needed for the three displayed exact targets.
-The exact-a generation comparison and the source Lie-space wording remain
-separate reconciliation obligations of the group-scheme program. This note
-does not revise the other sections or totals of the family 5 ledger.
+A characteristic-two quaternionic example separates the two generating
+families and computes a doubled-weight line in the Lie algebra of the
+exactly restricted generated subgroup.
+[Counterexample](../errata/milne-relative-root-groups-characteristic-two.md)
+
+This note does not revise the other sections or totals of the family 5 ledger.
 It does not discharge `DimensionLEOneQuasiSplitStatement` (which the Library
 proves separately, as `dimensionLEOneQuasiSplit` in `Rational/DimensionLEOneQuasiSplitProof.lean`),
 nor the relative parabolic/Levi and fibrewise-isogeny statements. It establishes no completion
