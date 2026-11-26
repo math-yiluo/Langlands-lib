@@ -77,24 +77,6 @@ private theorem lieConj_twice (X : ArchimedeanGL.RealLieAlgebra F n) :
   intro i j
   simp only [lieConj_apply, mixedConj_apply, star_star, Prod.eta]
 
-private theorem complexConjEquiv_lieAction (S : OperatorRealization F n)
-    (X : ArchimedeanGL.RealLieAlgebra F n) (x : S.Space) :
-    S.complexConj.lieAction X (S.complexConjEquiv x) =
-      S.complexConjEquiv (S.lieAction (lieConj F n X) x) := by
-  have h : ArchimedeanLieTransport.realLieEquiv n (fieldConj F) X = lieConj F n X := by
-    apply (ArchimedeanGL.realLieAlgebraToMatrix F n).injective
-    apply Matrix.ext
-    intro i j
-    rw [ArchimedeanLieTransport.realLieEquiv_entry, lieConj_apply]
-    let y := ArchimedeanGL.realLieAlgebraToMatrix F n X i j
-    simpa only [ArchimedeanGLTransport.mixedEquiv, RingEquiv.trans_apply,
-      RingEquiv.apply_symm_apply, infiniteComplexConj] using
-      mixedSpace_infiniteComplexConj F ((InfiniteAdeleRing.ringEquiv_mixedSpace F).symm y)
-  simpa only [OperatorRealization.lieAction, ArchimedeanLieTransport.envelopingEquiv_generator,
-    ArchimedeanLieTransport.complexLieEquiv_complexify, h] using
-    S.complexConjEquiv_differential
-      (ArchimedeanGL.envelopingGenerator F n (ArchimedeanGL.complexify F n X)) x
-
 set_option maxHeartbeats 1000000 in
 set_option maxHeartbeats 2000000 in
 private theorem isContragredientOf_complexConj (S : OperatorRealization F n)
@@ -131,7 +113,7 @@ private theorem isContragredientOf_complexConj (S : OperatorRealization F n)
   · intro X y x
     obtain ⟨f, rfl⟩ := e.surjective x
     have h : e.symm (S.complexConj.lieAction X (e f)) = S.lieAction (lieConj F n X) f :=
-      (congrArg e.symm (complexConjEquiv_lieAction S X f)).trans (e.symm_apply_apply _)
+      (congrArg e.symm (OperatorRealization.complexConjEquiv_lieAction S X f)).trans (e.symm_apply_apply _)
     change C (S.lieAction X y) (e.symm (e f)) +
       C y (e.symm (S.complexConj.lieAction X (e f))) = 0
     exact (congrArg₂ (fun a b => C (S.lieAction X y) a + C y b)

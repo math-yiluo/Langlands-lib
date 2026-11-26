@@ -1,0 +1,7 @@
+# Theta factors on a chamber interval
+
+Fix a regular chamber `P` and faces with positive-root sets `Q' ⊆ Q ⊆ P`. Write \(I\) for the vanishing simple-root set of `Q'` and \(J\subseteq I\) for that of `Q`. `theta_inter_leviRoots` identifies the ordinary relative theta factor with the family of chamber roots indexed by \(J\). Restricting to roots whose evaluation on `Q` is zero preserves indecomposability for the surviving roots, because all the positive roots have nonnegative evaluations on that face.
+
+`thetaHat_face_leviRoots` describes the hatted factor on `Q` for the Levi of `Q'`. Its simple roots are the projections to the space of `Q` of the family indexed by \(I\setminus J\). The kernel of projection within the original flat is the simple-root span indexed by \(J\), and independence of the chamber roots gives independence of the complementary projections. The Gram duals in the span indexed by \(I\) pair to zero with \(J\), so the duals indexed by \(I\setminus J\) belong to the face space. There they pair with the projected simple roots by the Kronecker rule and lie in their span. This identifies the coweights in `thetaHat` with those dual vectors. The restricted parameter evaluates them by their inclusion into the original flat, and both volumes use the same inner product.
+
+The two identifications give the factors in Arthur's (17.9). The exact source is recorded in [Arthur's product splitting formula](GMFamiliesSplittingProof.md).

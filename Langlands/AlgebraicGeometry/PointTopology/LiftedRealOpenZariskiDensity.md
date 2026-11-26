@@ -1,0 +1,3 @@
+# Open-set Zariski density over the universe lift of the reals
+
+A nonempty open subset of the points of a unirational affine group over `ULift ℝ` has Zariski-dense images in the underlying scheme. This is the argument of `RealOpenZariskiDensity` over the lifted field. Each nonempty open coordinate neighbourhood contains the lifts of an open real interval. Polynomial uniqueness on a product of infinite sets gives the result in affine space. A dominant unirational parametrization can be restricted to an affine open and translated so its real-point preimage of the given open is nonempty. Dominance then transfers the affine-space density to the group.

@@ -17,7 +17,7 @@ a valid assignment whose Levi datum uses precisely the ambient torus and
 `KPBuildingAssignment.IsValid.isAvailableFor` also supplies availability for
 the original ambient datum.
 
-The private helper `exists_specialCompactLevi_witness` eliminates the equality
+`exists_specialCompactLevi_of_buildingGeometry` eliminates the equality
 of the torus and heterogeneous equality of its inclusion. It applies the
 published `prescribedLeviSpecialVertex` to obtain a special vertex in the
 prescribed omega-compatible Levi apartment, with literal valuation
@@ -49,3 +49,9 @@ The sole building premise is the given assignment's full corrected
 a published proof. The theorem imposes no restriction on characteristic,
 residue characteristic, rank, splitness, quasi-splitness or ramification,
 and makes no assumption that a valid assignment exists.
+
+The local comparison `exists_specialCompactLevi_of_buildingGeometry`
+requires the ambient apartment axioms and compactness, a compatible Levi
+apartment with topology compatibility, and maximality of its special
+compact stabilizers. These are the geometric inputs to the equality of
+the two subgroups.

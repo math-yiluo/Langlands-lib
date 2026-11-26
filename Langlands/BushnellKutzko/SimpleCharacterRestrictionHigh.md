@@ -1,0 +1,9 @@
+# High-index groups and trace characters
+
+Source: Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), (1.1.6), printed p. 22 (PDF p. 34), (2.4.2), printed pp. 65–66 (PDF pp. 77–78), (3.1.7), printed pp. 90–91 (PDF pp. 102–103), and (3.2.3)–(3.2.4), printed p. 99 (PDF p. 111). Literature ID `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`.
+
+`elementCharacterHom` packages the trace formula of (1.1.6) as a homomorphism into `ℂˣ` on a subgroup of the absolute unit filtration. If the parameter lies in endomorphism-filtration step `s` and the subgroup lies in `U^k`, the bound `1 ≤ s + 2k` suffices. The product formula for `gh − 1` produces a quadratic term. The conductor condition kills that term because its product with the parameter lies in the first positive filtration step. The linear bound `1 ≤ s + k` makes the character trivial. Cyclicity of the trace gives invariance under conjugation by elements centralizing the parameter.
+
+The high-index subgroup identity follows from the lattice recursion of (3.1.7). Above all the cutoffs each lattice contains both the identity and the ambient filtration step. Every unit in the ambient step then lies in the generating carrier. In a defining sequence each nonterminal critical depth is the next stratum's depth and is bounded by the common level. The terminal exponent gives the same bound, using the finite-depth convention for scalar parameters.
+
+At high index the maximum selecting the witness in (3.2.3) is the given index. The prescribed values of a supplied simple character follow by induction, using additivity in the parameter and the filtration bound on consecutive differences. At or above the critical depth the perturbation gives the trivial character. These lemmas give the domain and prescribed values in (3.2.4), with existence of the simple character a separate assertion.

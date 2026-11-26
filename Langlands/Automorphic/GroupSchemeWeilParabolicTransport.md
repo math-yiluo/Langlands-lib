@@ -1,0 +1,9 @@
+# Proper parabolic radicals and their quotient measures under Weil restriction
+
+Each proper rational parabolic below has a matching proper rational parabolic above, and conversely. `WeilSubgroupsMatch` identifies the adelic and principal point subgroups of their actual radicals by the two Weil point comparisons. The result allows a group-scheme isomorphism between the lower group and the Weil restriction.
+
+The proof uses `affineWeilParabolicRadicalTransport` on a represented parabolic and its radical. The dynamic descriptions identify the unipotent radical used in the period definitions with the geometric radical used in that transport. Properness is reflected because a full range after restriction gives a full range on upper affine tests. Points lift through the multiplication map on the tensor coefficient algebra, and functoriality carries that lift down to the original test. A lift of the identity in affine coordinates then gives full range on every test. Properness is preserved because a parabolic with full range is an isomorphism and restriction preserves isomorphisms.
+
+The commuting inclusion diagrams match the adelic and principal subgroups, so the comparison descends to the left rational quotient of each radical. The quotient Haar measures first agree up to the Haar scalar on the radicals by the discrete quotient transport theorem. The probability normalization cancels the scalar exactly.
+
+The algebraic input is Borel–Tits, *Groupes réductifs*, §§6.17–6.19 and 6.21(i), printed pp. 111–112, `borel-tits-1965-groupes-reductifs`, SHA-256 `ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad`. The adelic input is Springer's Weil comparison, *Reduction theory over global fields*, §1.4, pp. 208–209, `springer-1994-reduction-global-fields`, SHA-256 `774f5531200db07140b30ffb8f4adce8cf3a3914ca9f38b796f2a2d24ff18496`.

@@ -12,10 +12,11 @@ factor gives the equal-rank extraction.
 `realOrdinarySmoothEvaluationExtraction` applies this reasoning to the
 actual real ordinary test integrals, using the supplied opposite additive
 scales and quotient measures. It takes a continuous pure map with dense
-span and continuous normalized evaluations as hypotheses. Agreement of
-the evaluations with the ordinary entire normalizations on compact-finite
-pure inputs is also a hypothesis. The compact-finite coefficient maps
-supply the vectors of the precise ordinary models.
+span and continuous normalized evaluations as hypotheses. At each
+spectral point it assumes a tensor-space input with nonzero evaluation.
+Agreement of the evaluations with the ordinary entire normalizations on
+compact-finite pure inputs is also a hypothesis. The compact-finite
+coefficient maps supply the vectors of the precise ordinary models.
 
 For algebraic tensors, `finiteSum_of_algebraicPair` and
 `finiteSum_of_algebraicTriple` expand a tensor whose normalized function

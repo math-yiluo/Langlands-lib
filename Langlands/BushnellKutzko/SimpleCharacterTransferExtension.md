@@ -1,0 +1,7 @@
+# Extending an agreeing high restriction
+
+The source is Bushnell and Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`, (3.6.4) and its nonterminal construction on printed pp. 133–134 (PDF pp. 145–146).
+
+The extension takes as inputs the subgroup carriers and product on the given chains, equality of normalized depths at the original and raised indices, and a high character agreeing on the common high subgroup. The prospective relative character on the second chain comes from the first chain's determinant image. For a target unit in the intersection of the relative group and the high group, choose a unit with the same determinant in the common high relative group. Comparison on that lift proves compatibility of the relative and high characters on the second chain.
+
+The relative subgroup normalizes the high group and fixes its character, so the two restrictions glue. The resulting character inherits the relative determinant property. The relative order normalizer preserves the two subgroups and fixes each prescribed character, by invariance of determinant on the relative group and the supplied normalizer relation on the high group. This proves normalization of the glued character. Finally the two characters agree on the whole common domain because its elements factor through the common relative and high subgroups.

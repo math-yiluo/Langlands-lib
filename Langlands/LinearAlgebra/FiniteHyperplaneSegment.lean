@@ -1,32 +1,33 @@
 import Mathlib.Algebra.Module.Submodule.Union
 import Mathlib.Tactic
 
-/-! # Generic rational segments for finite hyperplane arrangements -/
+/-! # Generic segments for finite hyperplane arrangements -/
 
 noncomputable section
 
 namespace Langlands.LinearAlgebra.FiniteHyperplaneSegment
 
-variable {ι V : Type*} [Finite ι] [AddCommGroup V] [Module ℚ V]
+variable {K ι V : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+  [Finite ι] [AddCommGroup V] [Module K V]
 
 /-- All forms in a finite family are nonzero at the specified vector. -/
-def Regular (f : ι → Module.Dual ℚ V) (x : V) : Prop :=
+def Regular (f : ι → Module.Dual K V) (x : V) : Prop :=
   ∀ i, f i x ≠ 0
 
 /-- Two regular vectors have strictly matching signs for every form. -/
-def SameChamber (f : ι → Module.Dual ℚ V) (x y : V) : Prop :=
+def SameChamber (f : ι → Module.Dual K V) (x y : V) : Prop :=
   ∀ i, 0 < f i x * f i y
 
 /-- The determinant form detecting simultaneous crossings from a fixed start. -/
-def crossingDeterminant (x : V) (f g : Module.Dual ℚ V) : Module.Dual ℚ V :=
+def crossingDeterminant (x : V) (f g : Module.Dual K V) : Module.Dual K V :=
   f x • g - g x • f
 
-/-- A rational segment, with its start at parameter zero and end at one. -/
-def segment (x y : V) (t : ℚ) : V := (1 - t) • x + t • y
+/-- A segment, with its start at parameter zero and end at one. -/
+def segment (x y : V) (t : K) : V := (1 - t) • x + t • y
 
 /-- A finite arrangement has a regular point that preserves every sign already
 nonzero at a specified vector, even if that vector lies on some walls. -/
-theorem exists_regular_preserving_signs (f : ι → Module.Dual ℚ V)
+theorem exists_regular_preserving_signs (f : ι → Module.Dual K V)
     (hf : ∀ i, f i ≠ 0) (y : V) :
     ∃ z, Regular f z ∧ ∀ i, f i y ≠ 0 → 0 < f i y * f i z := by
   classical
@@ -34,7 +35,7 @@ theorem exists_regular_preserving_signs (f : ι → Module.Dual ℚ V)
   obtain ⟨v, hv⟩ := Module.Dual.exists_forall_ne_zero_of_forall_exists f (fun i => by
     by_contra! h
     exact hf i (LinearMap.ext h))
-  let c : ℚ := 1 + ∑ i, |f i v / f i y|
+  let c : K := 1 + ∑ i, |f i v / f i y|
   have hc (i : ι) : 0 < c + f i v / f i y := by
     have hs : |f i v / f i y| ≤ ∑ j, |f j v / f j y| :=
       Finset.single_le_sum (fun j _ => abs_nonneg (f j v / f j y)) (Finset.mem_univ i)
@@ -56,14 +57,14 @@ theorem exists_regular_preserving_signs (f : ι → Module.Dual ℚ V)
 
 /-- Perturbing the end within its chamber makes every nontrivial determinant
 form nonzero. No finite-dimensionality assumption is required. -/
-theorem exists_generic_endpoint (f : ι → Module.Dual ℚ V) {x y : V}
+theorem exists_generic_endpoint (f : ι → Module.Dual K V) {x y : V}
     (hx : Regular f x) (hy : Regular f y) :
     ∃ z, Regular f z ∧ SameChamber f y z ∧
       ∀ i j, crossingDeterminant x (f i) (f j) ≠ 0 →
         crossingDeterminant x (f i) (f j) z ≠ 0 := by
   classical
   let D := {p : ι × ι // crossingDeterminant x (f p.1) (f p.2) ≠ 0}
-  let F : Sum ι D → Module.Dual ℚ V := fun a => match a with
+  let F : Sum ι D → Module.Dual K V := fun a => match a with
     | .inl i => f i
     | .inr p => crossingDeterminant x (f p.val.1) (f p.val.2)
   have hF (a : Sum ι D) : F a ≠ 0 := by
@@ -78,8 +79,8 @@ theorem exists_generic_endpoint (f : ι → Module.Dual ℚ V) {x y : V}
 
 /-- A root that has the same strict sign at both ends never vanishes on the
 closed segment. This is the wall-avoidance property used for restricted roots. -/
-theorem apply_segment_ne_zero_of_mul_pos (f : Module.Dual ℚ V) {x y : V}
-    (h : 0 < f x * f y) {t : ℚ} (ht : 0 ≤ t) (ht' : t ≤ 1) :
+theorem apply_segment_ne_zero_of_mul_pos (f : Module.Dual K V) {x y : V}
+    (h : 0 < f x * f y) {t : K} (ht : 0 ≤ t) (ht' : t ≤ 1) :
     f (segment x y t) ≠ 0 := by
   simp only [segment, map_add, map_smul, smul_eq_mul]
   rcases mul_pos_iff.mp h with h | h
@@ -98,8 +99,8 @@ theorem apply_segment_ne_zero_of_mul_pos (f : Module.Dual ℚ V) {x y : V}
     exact ne_of_lt hn
 
 /-- At a simultaneous segment crossing the corresponding determinant vanishes. -/
-theorem crossingDeterminant_apply_eq_zero {f g : Module.Dual ℚ V} {x y : V}
-    (hx : f x ≠ 0) {t : ℚ} (hf : f (segment x y t) = 0)
+theorem crossingDeterminant_apply_eq_zero {f g : Module.Dual K V} {x y : V}
+    (hx : f x ≠ 0) {t : K} (hf : f (segment x y t) = 0)
     (hg : g (segment x y t) = 0) : crossingDeterminant x f g y = 0 := by
   have ht : t ≠ 0 := by
     intro h
@@ -111,22 +112,22 @@ theorem crossingDeterminant_apply_eq_zero {f g : Module.Dual ℚ V} {x y : V}
   exact (mul_eq_zero.mp h).resolve_left ht
 
 /-- For a generic endpoint, only proportional forms can vanish together. -/
-theorem crossingDeterminant_eq_zero_of_generic {f g : Module.Dual ℚ V} {x y : V}
+theorem crossingDeterminant_eq_zero_of_generic {f g : Module.Dual K V} {x y : V}
     (hx : f x ≠ 0)
     (hgen : crossingDeterminant x f g ≠ 0 → crossingDeterminant x f g y ≠ 0)
-    {t : ℚ} (hf : f (segment x y t) = 0) (hg : g (segment x y t) = 0) :
+    {t : K} (hf : f (segment x y t) = 0) (hg : g (segment x y t) = 0) :
     crossingDeterminant x f g = 0 := by
   by_contra h
   exact hgen h (crossingDeterminant_apply_eq_zero hx hf hg)
 
 /-- A zero determinant form identifies the two forms up to the explicit scalar
 ratio of their values at the regular start. -/
-theorem eq_smul_of_crossingDeterminant_eq_zero {f g : Module.Dual ℚ V} {x : V}
+theorem eq_smul_of_crossingDeterminant_eq_zero {f g : Module.Dual K V} {x : V}
     (hx : f x ≠ 0) (h : crossingDeterminant x f g = 0) :
     g = (g x / f x) • f := by
   apply LinearMap.ext
   intro z
-  have hz := congrArg (fun a : Module.Dual ℚ V => a z) h
+  have hz := congrArg (fun a : Module.Dual K V => a z) h
   change f x * g z - g x * f z = 0 at hz
   simp only [LinearMap.smul_apply, smul_eq_mul]
   rw [div_mul_eq_mul_div]
@@ -135,11 +136,11 @@ theorem eq_smul_of_crossingDeterminant_eq_zero {f g : Module.Dual ℚ V} {x : V}
 
 /-- A generic segment between chambers meets just one proportional class of
 forms at each crossing, while keeping the endpoint in the specified chamber. -/
-theorem exists_segment_with_proportional_crossings (f : ι → Module.Dual ℚ V)
+theorem exists_segment_with_proportional_crossings (f : ι → Module.Dual K V)
     {x y : V} (hx : Regular f x) (hy : Regular f y) :
     ∃ z, Regular f z ∧ SameChamber f y z ∧
-      ∀ (t : ℚ) (i j : ι), f i (segment x z t) = 0 →
-        f j (segment x z t) = 0 → ∃ c : ℚ, c ≠ 0 ∧ f j = c • f i := by
+      ∀ (t : K) (i j : ι), f i (segment x z t) = 0 →
+        f j (segment x z t) = 0 → ∃ c : K, c ≠ 0 ∧ f j = c • f i := by
   obtain ⟨z, hz, hs, hg⟩ := exists_generic_endpoint f hx hy
   refine ⟨z, hz, hs, ?_⟩
   intro t i j hi hj

@@ -85,7 +85,7 @@ private theorem lieConj_twice (X : ArchimedeanGL.RealLieAlgebra F n) :
 
 /-- The CM image equivalence intertwines the real Lie algebra action, twisted by the CM
 conjugation of the Lie algebra. -/
-private theorem complexConjEquiv_lieAction (S : OperatorRealization F n)
+theorem complexConjEquiv_lieAction (S : OperatorRealization F n)
     (X : ArchimedeanGL.RealLieAlgebra F n) (x : S.Space) :
     S.complexConj.lieAction X (S.complexConjEquiv x) =
       S.complexConjEquiv (S.lieAction (lieConj F n X) x) := by

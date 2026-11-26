@@ -1,0 +1,7 @@
+# A common critical approximation on two normalized chains
+
+The source is Bushnell and Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`, printed pp. 65–66 and 133 (PDF pp. 77–78 and 145). The transfer induction takes one common approximation of the element for both orders. `exists_common_critical_approximation` derives this step from the simple approximation theorem for pure strata. The input has a finite critical depth on the first chain strictly below its initial level.
+
+Choose a basis splitting the two relative chains over `E = F[β]`. Use the chain of ideal powers on the line `E` and the regular multiplication action of the element on that line. Each ambient chain has the corresponding scaled lattice coordinates in the common basis. The published diagonal filtration, valuation and critical-exponent comparisons identify both initial and critical depths as multiples of the common line depths, with multipliers the relative periods.
+
+Apply simple approximation on the line at its critical depth and take the same diagonal extension of the resulting element for both orders. The diagonal comparison gives purity and simplicity in each order and preserves congruence at each scaled critical depth. The generated-field ramification indices transport under these diagonal maps, so the divisibility for the line witness also holds for the common ambient element.

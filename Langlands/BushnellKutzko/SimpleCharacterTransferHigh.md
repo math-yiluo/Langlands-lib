@@ -1,0 +1,7 @@
+# Trace characters at the high-index cutoff
+
+The source is Bushnell and Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`, (3.2.1), (3.2.4) and the high-depth determinant comparison on printed pp. 98–99 and 132 (PDF pp. 110–111 and 144).
+
+If `β` has depth at least `−n` and `2k > n`, `highElementCharacter` realizes the trace formula as a multiplicative character on `U^k`. In multiplying `1+x` and `1+y`, the extra term `βxy` lies in depth at least one and its trace is in the maximal ideal. The same formula is invariant under conjugation by units commuting with `β`, by invariance of the trace.
+
+For a field `E` acting on the space and relative chains with the same lattice subsets, the chain depth of scalar multiplication by `b ≠ 0` is the relative period times the uniformizer order of `b`. Once `2k > n`, the determinant bound places `b(det(1+x)−1−tr_E(x))` in the relative maximal ideal. Multiply a coordinate projection of trace one in a relative splitting basis by this scalar. The result has depth at least one in the common lattice chain, hence its trace over `F` is annihilated by the additive character. The trace of a relative-linear endomorphism over `F` is the field trace of its relative trace, as computed in the basis of the scalar tower. This proves that the high trace character of a relative unit depends only on its determinant.

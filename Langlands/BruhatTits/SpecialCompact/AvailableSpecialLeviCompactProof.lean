@@ -22,7 +22,7 @@ section Witness
 variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
     [IsNonarchimedeanLocalField F]
     {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom G.X.hom]
-    (B : ParahoricBuildingData G) (hB : B.SatisfiesPartialBuildingAxioms)
+    (B : ParahoricBuildingData G) (hA : B.SatisfiesApartmentAxioms)
     (ν : cocharacterLattice B.S) (hν : IsGenericCocharacter B.i ν)
     (J : Set (characterLattice B.S)) (hJ : J ⊆ simpleRelativeRoots B.i ν)
     (x : B.Apartment) (hx : B.apartment.IsSpecialApartmentVertex x)
@@ -40,8 +40,10 @@ variable {SM : CommGroupScheme (Spec (CommRingCat.of F))}
       ∀ xM : DM.Apartment, DM.IsSpecialApartmentVertex xM →
         IsCompactOpenMaximal F (DM.specialCompactSubgroup xM))
 
-include hB hν hJ hx hK hDM hDMtop hSM hiM hmax in
-private theorem exists_specialCompactLevi_witness :
+include hA hν hJ hx hK hDM hDMtop hSM hiM hmax in
+/-- The special compact in the prescribed Levi apartment is the literal
+preimage of the ambient compact once the Levi stabilizers are maximal compact. -/
+theorem exists_specialCompactLevi_of_buildingGeometry :
     ∃ xM : DM.Apartment, DM.IsSpecialApartmentVertex xM ∧
       DM.specialCompactSubgroup xM = B.apartment.specialCompactLeviSubgroup ν J x := by
   subst SM
@@ -49,7 +51,7 @@ private theorem exists_specialCompactLevi_witness :
   subst iM
   obtain ⟨xM, hxMs, hxM⟩ := prescribedLeviSpecialVertex
     B.isConnectedReductive B.i B.isMaximalSplitTorus B.centralizer B.apartment
-    B.isOmegaCompatible hB.apartmentAxioms.derivativeRoots_affineRoots
+    B.isOmegaCompatible hA.derivativeRoots_affineRoots
     ν hν J hJ CM DM hDM x hx.1
   have hνM : IsGenericCocharacter (Standard.leviTorusHom B.i ν J) ν := by
     intro a ha
@@ -101,8 +103,8 @@ theorem availableSpecialLeviCompact : AvailableSpecialLeviCompactStatement.{u} :
     intro νM hνM y hy
     exact ((Iwasawa.availableIwasawa F (Standard.leviScheme B.i ν J) hM
       𝔅M havailM νM hνM).1 y hy).2.2.2
-  exact exists_specialCompactLevi_witness B
-    havail.satisfiesPartialBuildingAxioms ν hν J hJ x hx hK BM.i BM.centralizer
+  exact exists_specialCompactLevi_of_buildingGeometry B
+    havail.affineRootSystem.apartmentAxioms ν hν J hJ x hx hK BM.i BM.centralizer
     BM.apartment BM.isOmegaCompatible
     havailM.groupAxioms.affineRootSystem.apartmentAxioms.topologyCompatible hSM hiM hmaxM
 

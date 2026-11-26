@@ -1,0 +1,9 @@
+# Cuspidal operator realizations give irreducible cuspidal `L²` summands after Weil restriction
+
+`Langlands.TraceFormula.weilGeneralLinearCuspidalRealizationSummand` proves `Langlands.TraceFormula.WeilGeneralLinearCuspidalRealizationSummandStatement.{u}` at an arbitrary universe.
+
+The proof compares the positive subgroup of the given lower torus with the positive subgroup of the upper scalar torus. The comparison of adelic groups identifies the full cuspidal subspaces by a continuous linear equivalence. It intertwines the right actions and preserves the class of every pulled-back function. The construction uses `WeilCuspidalTransport.cuspidalEquiv` and `cuspidalEquiv_rightAction`.
+
+`WeilGeneralLinearCuspidalTransport.descends_iff` sends the descent hypothesis for each form to the descent hypothesis over the upper field. The untwisted `generalLinearCuspidalRealizationSummand` then gives the upper irreducible closed submodule and the linear class map into it. The lower submodule is its image under the continuous linear equivalence, and the lower class map is the composite with that equivalence. Closedness, invariance and minimality transport under the two inverse linear maps. The closure of the class-map range transports by the homeomorphism, and `isWeilFormClass_iff` identifies each class with the original matrix-model form.
+
+The untwisted input comes from Getz–Hahn, *An Introduction to Automorphic Representations*, Theorems 9.7.1 and 9.7.3, pp. 264–267. The Weil comparison is discussed there in §1.4, p. 12, and §13.4, p. 350, `getz-hahn-2024-automorphic-representations`, SHA-256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`. The rational and norm-one comparison follows the Library's `normOneComparison`, based on Springer, *Reduction theory over global fields*, §1.4, pp. 208–209, and §3.1(a)–(b), p. 214, `springer-1994-reduction-global-fields`, SHA-256 `774f5531200db07140b30ffb8f4adce8cf3a3914ca9f38b796f2a2d24ff18496`.

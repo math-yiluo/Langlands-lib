@@ -1,0 +1,7 @@
+# A common local Hilbert realization for two Whittaker restrictions
+
+Two linear maps from a common irreducible admissible compact-finite place module into a cuspidal carrier give a single map into the Hilbert direct sum of two copies of the ambient completion. The first map is injective. The diagonal adelic action on the direct sum is continuous and preserves the inner product. Its coefficient lifts are sums of the two ambient coefficient lifts, so they retain joint finiteness and the prescribed differential action.
+
+The analytic closure criterion `preservesImageClosure_of_coefficients` makes the closure of the paired image invariant under the full group at the place. The theorem `gkHilbertClosure` gives an irreducible admissible unitary representation on this closure. Each coordinate projection is a bounded local intertwiner and has image in the finite fixed level of its original map. The fixed-level derivative maps make the two pullbacks of the mixed Whittaker evaluation continuous in the local smooth vector topology. Local unipotent covariance gives them the same Whittaker character. Unitary Whittaker uniqueness yields a scalar equality, which restricts to the two original maps.
+
+`proportional_mixedWhittaker_of_realEmbeddings` and `proportional_mixedWhittaker_of_complexEmbeddings` specialize this argument to the real and complex place charts. The construction derives the common local realization from the Library's joint-finite coefficient, invariant closure and fixed-level results.

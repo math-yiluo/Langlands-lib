@@ -1,20 +1,21 @@
 import Mathlib.Tactic
 import Mathlib.Logic.Relation
 
-/-! # Finite chamber galleries along a rational segment -/
+/-! # Finite chamber galleries along a segment -/
 
 noncomputable section
 
 namespace Langlands.LinearAlgebra.FiniteHyperplaneSegment
 
+variable {K : Type*} [LinearOrder K]
 /-- An interval contains at most one point of the specified finite set. -/
-def SparseInterval (s : Finset ℚ) (a b : ℚ) : Prop :=
+def SparseInterval (s : Finset K) (a b : K) : Prop :=
   (s.filter (fun t => a < t ∧ t < b)).card ≤ 1
 
 /-- A finite set of breakpoints can be crossed by a finite chain of intervals,
 with at most one breakpoint in each interval and none at the chain vertices. -/
-theorem reflTransGen_of_sparse_intervals (R : ℚ → ℚ → Prop) (s : Finset ℚ)
-    {a b : ℚ} (hab : a < b) (hs : ∀ t ∈ s, a < t ∧ t < b)
+theorem reflTransGen_of_sparse_intervals [DenselyOrdered K] (R : K → K → Prop) (s : Finset K)
+    {a b : K} (hab : a < b) (hs : ∀ t ∈ s, a < t ∧ t < b)
     (hstep : ∀ c d, a ≤ c → c < d → d ≤ b → c ∉ s → d ∉ s →
       SparseInterval s c d → R c d) : Relation.ReflTransGen R a b := by
   classical
@@ -37,9 +38,7 @@ theorem reflTransGen_of_sparse_intervals (R : ℚ → ℚ → Prop) (s : Finset 
     have hvu : v ≠ u := (Finset.mem_erase.mp hv).1
     have huv : u < v := lt_of_le_of_ne
       (Finset.min'_le s v (Finset.mem_of_mem_erase hv)) (Ne.symm hvu)
-    let c := (u + v) / 2
-    have huc : u < c := by dsimp [c]; linarith
-    have hcv : c < v := by dsimp [c]; linarith
+    obtain ⟨c, huc, hcv⟩ := exists_between huv
     have hac : a < c := lt_trans (hs u hu).1 huc
     have hcb : c < b := lt_trans hcv (hs v (Finset.mem_of_mem_erase hv)).2
     have hc : c ∉ s := by

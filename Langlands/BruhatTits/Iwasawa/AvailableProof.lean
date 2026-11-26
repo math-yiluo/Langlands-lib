@@ -238,6 +238,18 @@ private theorem minimal_parahoric_products
   · simp only [Subgroup.coe_mul, Subgroup.coe_inv]
     group
 
+/-- Special-vertex Iwasawa products follow from the apartment axioms and
+generation of the zero fixers. -/
+theorem specialCompactParabolicProductFamily
+    (hA : B.SatisfiesApartmentAxioms) (hgen : B.HasZeroFixerGenerators)
+    (ν : cocharacterLattice B.S) (hν : IsGenericCocharacter B.i ν)
+    (x : B.Apartment) (hx : B.apartment.IsSpecialApartmentVertex x) :
+    ParabolicPointProductFamily B.i ν (B.apartment.specialCompactSubgroup x) :=
+  family_mono
+    (family_of_minimal B.isConnectedReductive B.i B.isMaximalSplitTorus ν hν
+      (minimal_parahoric_products B hA hgen ν hν hx.1))
+    (B.parahoricAt_le_compactStabilizer hA.topologyCompatible x)
+
 section Topology
 open Langlands.AlgebraicGeometry.PointTopology Langlands.Plancherel
 local instance : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
@@ -272,22 +284,23 @@ private theorem compact_subgroup_fixes
     rw [smul_smul, mul_inv_cancel_left]
 
 set_option maxHeartbeats 1000000 in
-private theorem available_compact_open_maximal
-    (D : KPBuildingDatum G) (hD : D.SatisfiesGroupAxioms)
-    {y : D.base.ReducedBuilding} (hy : D.base.IsSpecialPoint y) :
-    SpecialCompact.IsCompactOpenMaximal F (D.base.compactStabilizer y) := by
-  let B := D.base
-  have hA := hD.affineRootSystem.apartmentAxioms
+/-- The norm-one stabilizer of a special point is maximal compact by the
+fixed-point argument for the metric realization. -/
+theorem compactOpenMaximal_of_buildingGeometry
+    (M : B.toValuationBuildingData.MetricRealization)
+    (hA : B.SatisfiesApartmentAxioms) (hbound : B.HasBoundedOpenStabilizers)
+    (hinj : Function.Injective B.apartmentMap)
+    (hcommon : ∀ x : B.Apartment,
+      B.toValuationBuildingData.HasCommonApartmentWith (B.apartmentMap x))
+    {y : B.ReducedBuilding} (hy : B.IsSpecialPoint y) :
+    SpecialCompact.IsCompactOpenMaximal F (B.compactStabilizer y) := by
   have : Smooth G.X.hom := B.isConnectedReductive.smooth
   let : IsTopologicalGroup (rationalPoints G) := rationalPoint_isTopologicalGroup F G
-  obtain ⟨hopen, hbound⟩ := hD.boundedSubgroups y
+  obtain ⟨hopen, hybound⟩ := hbound y
   have hclosed : IsClosed (B.compactStabilizer y : Set (rationalPoints G)) :=
     (B.compactStabilizer y).isClosed_of_isOpen hopen
   have hcompact : IsCompact (B.compactStabilizer y : Set (rationalPoints G)) := by
-    exact (hbound.isCompact_closure G.X).of_isClosed_subset hclosed subset_closure
-  obtain ⟨M⟩ := metricRealization F G B.isConnectedReductive B D.realization D.splitting
-    hD.building hD.boundedSubgroups hD.affineStructure hD.affineRootSystem.rootReflections
-    hA hD.affineRootSystem.compatibleApartmentFacets hD.titsSystem
+    exact (hybound.isCompact_closure G.X).of_isClosed_subset hclosed subset_closure
   refine ⟨hcompact, hopen, hcompact, ?_⟩
   intro H hH hle
   obtain ⟨z, hz⟩ := compact_subgroup_fixes B M H hH
@@ -295,12 +308,23 @@ private theorem available_compact_open_maximal
   have hE : RelativeRoot.HasOppositeFactorPairs B.i :=
     fun a ha g hg hg1 => (hF a ha g hg hg1).1.exists
   have hzy : z = y := B.toValuationBuildingData.eq_of_compactStabilizer_fixed_of_special_buildingPoint
-    hA hE hD.affineRootSystem.compatibleApartmentFacets.injective
-    (fun x => D.realization.hasCommonApartmentWith_of_isBuilding hD.building.isBuilding
-      (B.apartmentMap x)) hy (fun g hg => hz g (hle hg))
+    hA hE hinj hcommon hy (fun g hg => hz g (hle hg))
   have hnorm : H ≤ rationalCommonNormKernel G := compactSubgroup_le_rationalCommonNormKernel G H hH
   intro g hg
   exact B.mem_compactStabilizer.mpr ⟨hnorm hg, by simpa only [hzy] using hz g hg⟩
+
+private theorem available_compact_open_maximal
+    (D : KPBuildingDatum G) (hD : D.SatisfiesGroupAxioms)
+    {y : D.base.ReducedBuilding} (hy : D.base.IsSpecialPoint y) :
+    SpecialCompact.IsCompactOpenMaximal F (D.base.compactStabilizer y) := by
+  have hA := hD.affineRootSystem.apartmentAxioms
+  obtain ⟨M⟩ := metricRealization F G D.base.isConnectedReductive D.base D.realization D.splitting
+    hD.building hD.boundedSubgroups hD.affineStructure hD.affineRootSystem.rootReflections
+    hA hD.affineRootSystem.compatibleApartmentFacets hD.titsSystem
+  exact compactOpenMaximal_of_buildingGeometry D.base M hA hD.boundedSubgroups
+    hD.affineRootSystem.compatibleApartmentFacets.injective
+    (fun x => D.realization.hasCommonApartmentWith_of_isBuilding hD.building.isBuilding
+      (D.base.apartmentMap x)) hy
 
 end Topology
 

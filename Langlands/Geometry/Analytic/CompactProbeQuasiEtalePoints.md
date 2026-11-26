@@ -1,0 +1,9 @@
+# Geometric points for the compact-probe quasi-étale topology
+
+For an analytic space $X$ over a complete nonarchimedean normed field $K$, let $L$ be a complete algebraically closed ultrametric extension with a normed $K$-algebra structure. An $L$-valued point $x$ of $X$ defines a point `QuasiEtaleSite.compactProbeGeometricPoint L x` of the compact-probe quasi-étale site. Its fibre on $U \to X$ consists of the $L$-valued points of $U$ over $x$.
+
+`exists_compactProbe_over_point` takes a chart from the local quasi-étale factorization of the site object through a given underlying point. The chart is compact Hausdorff and inherits a quasi-étale map to $X$. Applying the covering test to this chart produces a covering arrow through the point. `compactProbePointAxioms` lifts the full field-valued point through this arrow using the prescribed field-point lift. The published quasi-étale refinements and equalizations establish cofilteredness of the fibre's category of elements, independently of a covering rule.
+
+`surjective_fieldPointProjection_of_base` proves that a field realizing all underlying points of $X$ also realizes every underlying point of every object $U \to X$ of the site. The proof lifts the field-valued point of $X$ at the specified ordinary preimage in $U$. A field with the required base surjectivity exists in the universe `max u (v + 1) uL` by `commonAlgebraicallyClosedPointField`.
+
+Berkovich, *Vanishing cycles for formal schemes* (1994), §3, pp. 543–544, supplies the local description of quasi-étale morphisms. The use of geometric points over underlying points for stalks is described in Berkovich, *Étale equivariant sheaves on p-adic analytic spaces* (1996), §1.5, p. 10. The point construction here uses the compact-probe covering test and the field-valued fibre functor.

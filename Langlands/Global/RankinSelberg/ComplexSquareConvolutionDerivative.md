@@ -1,0 +1,5 @@
+# Differentiating complex square convolution along a matrix exponential
+
+`complexSquareConvolutionDerivative` differentiates the convergent square convolution in its group argument. It allows arbitrary Schwartz tests and continuous coefficients with a polynomial height bound. The derivative is the square convolution of the test differentiated in the direction \(Y\mapsto -XY\), plus the original convolution multiplied by the determinant slope in direction \(-X\). The slope is affine in the determinant power.
+
+Left Haar translation moves the exponential from the coefficient to the test and contributes the inverse determinant weight. The derivative of the shifted test is a Schwartz function. Its translated values on a neighborhood of the identity have a common bound from the Schwartz matrix seminorms. The coefficient bound, submultiplicativity of the height and the Haar matrix tail estimate give an integrable majorant on the stated right half-plane. Differentiation under the integral and the product rule then give the formula. The square integral here is the determinant-twisted form of Jacquet, *Archimedean Rankin–Selberg Integrals*, equation (4.3) and §8.2.

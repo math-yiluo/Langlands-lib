@@ -1,0 +1,7 @@
+# Transfer through one common critical approximation
+
+The source is Bushnell and Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`, the construction and uniqueness part of (3.6.4) on printed pp. 133–134 (PDF pp. 145–146). Here both defining sequences have the same next element. The subgroup properties, high-subgroup equalities, critical twist and transfer for that next element are explicit premises.
+
+A given simple character on the first chain has a high restriction expressed by a simple character for the next element multiplied by the trace twist. Transfer the latter simple character at its given level. The critical twist on the second chain gives a high simple character on the second domain. It agrees with the initial character on the common high subgroup since the transferred characters agree there and the trace twist is the same. The extension lemma glues this high character with the transported relative determinant character. Its determinant factorization, normalization and high twist relation satisfy the recursive definition of a simple character.
+
+For uniqueness, any agreeing transfer has a high character for the next element. Cancel the common trace twist on the high intersection and use uniqueness at the next element. This determines the full high restriction of the transfer. The determinant lift determines its relative restriction, and the two subgroups generate the second domain.

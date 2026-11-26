@@ -1,0 +1,11 @@
+# Weights for vertices cut out by affine inequalities
+
+A `BasisIndex` selects a basis from the normals to a finite system of affine inequalities. The linear function interpolated from the offsets on this basis gives each inequality's `slack` at the corresponding intersection. The offset hyperplane `wallForm` for an external inequality describes exactly when that inequality also becomes an equality. The finite sum `vertexSum` gives each strictly feasible basis intersection a Gram-volume weight divided by the product of the complex parameter evaluations on its normals.
+
+A wall support consists of the basis normals and the additional normal. Its relation `circuitCoeff` expresses the additional normal as a linear combination of the basis normals. For a different basis deletion from the same support, its missing slack times the deleted normal's coefficient equals the original wall form. This follows by evaluating the relation at the linear interpolation for the other basis. The deleted coefficient is therefore nonzero for any deletion that is a basis.
+
+These constructions arise from writing the chamber intersection used in Arthur's descent formula as a finite system of affine inequalities. The linear interpolation and dependency identities are finite-dimensional linear algebra.
+
+The Gram volume of a deletion is the original basis volume times the absolute value of its circuit coefficient. Exchanging the deleted index with the original external index reduces the calculation to the one-column replacement formula in `GMFamilyGramVolume`. This gives a basis for each nonzero coefficient. When the parameter is nonzero on every normal in the wall support, each deletion's weight has the full support product of parameter evaluations as its denominator. Its numerator is the deletion's Gram volume times the parameter evaluation at the deleted normal.
+
+The affine chamber slice is the one in Arthur, *The invariant trace formula. I. Local theory*, printed p. 381. The retained source is `arthur-1988-invariant-trace-formula-I`, SHA-256 `902db792ffe113507165a252b0c1b8c59f78ab8d04def1c5c39b0372362dc3ac`. The basis weights and their circuit formulas are derived from the slice inequalities and ordinary determinant multilinearity.

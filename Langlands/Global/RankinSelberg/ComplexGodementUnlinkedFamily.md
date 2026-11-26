@@ -1,0 +1,5 @@
+# Left covariance of a continued Godement family with unlinked retained data
+
+`complexGodementUnlinkedFamily` keeps the retained characters and their Whittaker coefficient fixed. For any rectangular Schwartz test of finite right unitary translate span, the continued Godement value is entire in the adjoining exponent at each group argument. It satisfies the left Whittaker law for the opposite additive character at every adjoining exponent.
+
+If the imaginary part of the adjoining exponent exceeds the finitely many retained imaginary parts, it cannot link to a retained character. The exponent differences in the linkage condition would have to be real integers. Since the retained list is already unlinked, the enlarged standard module on that open set is irreducible and its continued Godement value lies in the Whittaker model. The pointwise entire dependence extends the left law from the open set to the full parameter plane. This uses the continued Godement construction associated with Jacquet, *Archimedean Rankin–Selberg Integrals*, §7, and the complex irreducibility criterion of Tadić, *GL(n,C)^ and GL(n,R)^*, §3.

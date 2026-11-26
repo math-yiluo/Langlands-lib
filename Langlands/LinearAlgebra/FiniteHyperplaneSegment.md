@@ -1,8 +1,8 @@
-# Generic rational segments in finite hyperplane arrangements
+# Generic segments in finite hyperplane arrangements
 
 This internal linear algebra helper is developed for the rational-parabolic
-gallery proof (`FiniteHyperplaneChamberGallery`). It concerns finite families of rational linear
-forms on any rational vector space and has no group-scheme assumptions.
+gallery proof (`FiniteHyperplaneChamberGallery`). It concerns finite families of linear
+forms on a vector space over an ordered field and has no group-scheme assumptions.
 
 `Regular f x` means that all the forms are nonzero at `x`.
 `SameChamber f x y` means that their values at `x` and `y` have positive
@@ -11,7 +11,7 @@ The segment is `(1-t)x + ty`.
 
 The proof first uses Mathlib's finite proper-submodule avoidance theorem to
 choose a vector where every specified nonzero form is nonzero. Adding this
-vector to a sufficiently large positive rational multiple of a specified
+vector to a sufficiently large positive scalar multiple of a specified
 endpoint preserves all its nonzero signs while resolving its zero values.
 The explicit bound is one plus the sum of the absolute evaluation ratios.
 Apply this construction to the original forms and all nonzero determinant

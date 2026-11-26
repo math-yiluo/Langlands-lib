@@ -1,0 +1,7 @@
+# Reindexing defining sequences for simple characters
+
+`Stratum.DefiningSequenceChoice.suffix` starts the defining sequence at a selected term and retains every later term. The new initial stratum is the selected simple stratum, with its own lattice chain. The order determines the filtration, so the successive critical-depth identities and congruences hold on this chain. The reindexing is strictly increasing and takes the terminal index to the old terminal index. `tail_suffix` identifies the new list of elements as the corresponding drop of the original tail.
+
+`Stratum.DefiningSequenceChoice.atDepthZero` changes the index of the original stratum and of the first sequence term to zero when the original index is nonnegative. Simplicity follows from its strict upper bound on the index, and the identical first element gives equivalence at zero. All later indices and all elements are preserved, as are the critical-depth and derived-stratum conditions. The character recursion has the same chain, level, element and tail after the change, which permits applying results stated for depth-zero inputs.
+
+Source BK93, *The admissible dual of GL(N) via compact open subgroups* (1993), (2.4.2), printed pp. 65–66 (PDF pp. 77–78), and the opening convention of §3.1, printed p. 89 (PDF p. 101). The source identifier is `bushnell-kutzko-1993-admissible-dual-gln` and the retained PDF SHA-256 is `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`.

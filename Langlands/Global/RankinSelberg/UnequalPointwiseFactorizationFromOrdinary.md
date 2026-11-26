@@ -1,0 +1,13 @@
+# Pointwise factorization from the slice comparison and archimedean tests
+
+`UnequalPointwiseFactorizationFromOrdinaryStatement.{u,uQ}` states that the following three inputs imply `UnequalPointwiseFactorizationStatement.{u,uQ}`.
+
+- `InfiniteWhittakerSliceModelStatement.{u,uQ}` supplies the archimedean comparison for each spectral presentation.
+- `RealUnequalPlaceTestsStatement.{u}` supplies an actual pair with holomorphic nonvanishing of both local integrals at every real place covered by its data.
+- `ComplexUnequalOrdinaryPlaceTestsPositiveRankStatement.{u}` supplies ordinary nonvanishing for actual opposite-character restrictions with smaller group \(\mathrm{GL}_{t+1}(\mathbb C)\), \(0<t<r\). One pair and compatible quotient measure give an ordinary nonzero value in each right half-plane.
+
+`complexUnequalOrdinaryPlaceTest_rankOne` supplies the complex case \(t=0\). It takes a normalized actual Whittaker intertwiner for the larger place parameter and an actual smaller restriction with nonzero identity value. The place-model comparison puts the smaller restriction in the model for the inverse character. `ComplexUnequalRankOne.exists_complexUnequalIntegral_rankOne_ne_zero_above` then chooses a test in the larger model, using the compatible quotient measure `complexQuotientMeasureData`. `complexPlaceWhittakerRange` realizes the chosen model coefficient as an actual restriction with finite coordinate one. Combining the two cases of \(t\) proves `ComplexUnequalOrdinaryPlaceTestsStatement` from the positive-index input.
+
+`unequalPointwiseFactorizationFromOrdinary` obtains the complex-place functional equation from the published complex local equations and transfers ordinary nonvanishing to the dual for the same chosen pair and measure. It applies `unequalInfiniteWhittakerSliceReduction` with the resulting complex tests, the supplied real tests and the slice comparison. That reduction supplies the two product formulas, the rectangular indicator and the nonvanishing clauses of the exact global conclusion. The field and spectral-presentation universes remain independent.
+
+This is an internal reduction of the pointwise step in J. W. Cogdell, *Analytic Theory of L-Functions for GLₙ*, §4.1, proof of Theorem 4.1, printed p. 219, with the Whittaker product on printed p. 206. The registered source `cogdell-2004-analytic-theory-gln` has SHA-256 `8117f145869274324b12344dc83fa3289e3bd27c515b8d0d4a0211cd64174944`. The complex local equation and test-existence context is H. Jacquet, *Archimedean Rankin–Selberg integrals*, Theorems 2.1, 2.3, 2.6 and 2.7, author pp. 6–10. The registered author PDF `jacquet-2009-archimedean-rankin-selberg` has SHA-256 `7a11766eadf25fb7452ce7faa193469791796f572fc654c8fe90a8608bb46afe`.

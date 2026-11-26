@@ -1,0 +1,5 @@
+# Square Gaussian convolution generation for arbitrary inducing lists
+
+`complexSquareConvolutionGeneration` shows that the square Gaussian convolution values at each spectral point span the compact-finite irreducible standard module in the supplied order. It allows any group Haar measure and any nonzero Whittaker intertwiner for the stated additive character.
+
+Sort the inducing list by its angular weights. Permutation invariance of irreducible principal series gives a bijective compact and Lie intertwiner from this ordered standard module to the given one. Its composition with the given Whittaker intertwiner satisfies the same Whittaker equations. The bijection carries polynomial convolution families and their inputs to the given module, while permutation invariance preserves the singleton pair factor. Thus all the ordered convolution generators map to convolution generators for the supplied list. Their span maps onto the full module. This is a derived consequence of the square Gaussian normalization in Jacquet, *Archimedean Rankin–Selberg Integrals*, §8.2 and Proposition 8.1, and the Library's permutation theorem for irreducible complex principal series.

@@ -28,7 +28,7 @@ private theorem mem_maximalIdealInField_iff_valuation_lt_one {x : F} :
     let a : 𝒪[F] := ⟨x, hx.le⟩
     exact ⟨a, (valuation F).mem_maximalIdeal_iff.mpr hx, rfl⟩
 
-private theorem mem_maximalIdealInField_iff_annihilates_integers (ψF : AddChar F ℂ)
+theorem mem_maximalIdealInField_iff_annihilates_integers (ψF : AddChar F ℂ)
     (htriv : ∀ a ∈ 𝓂[F], ψF (a : F) = 1) (hnontriv : ∃ a : 𝒪[F], ψF (a : F) ≠ 1)
     (x : F) : x ∈ maximalIdealInField 𝒪[F] F ↔ ∀ a : 𝒪[F], ψF ((a : F) * x) = 1 := by
   constructor

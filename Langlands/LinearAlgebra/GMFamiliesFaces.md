@@ -1,0 +1,7 @@
+# Faces and parameters of a Levi chamber
+
+For a face `Q`, adjoining its positive roots to a chamber of its Levi arrangement gives a chamber `P` with `Q ⊆ P`. A positive perturbation proves this extension formula. Intersecting `P` with `leviRoots R Q` is the inverse operation. `cQM_eq_sum_chambers` uses this bijection to write `cQM` as a sum over the incident chambers.
+
+`faceIndices` identifies an incident face with the simple roots of the chamber that vanish on it. Positive restricted roots are nonnegative integral combinations of the chamber simple roots. Their vanishing is therefore determined by the vanishing set of the simple roots. This yields the reverse order on the subsets. Each subset occurs by prescribing evaluations zero on that subset and one on its complement, using the Euclidean duality on the simple-root span. These arguments give `faceSpace_eq_chamberSpan_orthogonal` and `finrank_faceSpace_add_card`.
+
+The parameter lemmas show that restriction after projection to a containing face space equals direct restriction. They also compare successive projections and show `famRestrict_parabolic`, where the only chamber containing a regular chamber's positive roots is that chamber itself. These derived identities implement the face and parameter conventions of Arthur's (17.7) and (17.9). The source is recorded in [Arthur's product splitting formula](GMFamiliesSplittingProof.md).

@@ -1,0 +1,7 @@
+# Source-open locality of localized analytic étaleness
+
+`localizedSourceOpenEtaleLocus f` is the open subset of the source consisting of points with some open analytic domain on which the restriction of the actual localized morphism `f` is étale. The property on each open subset is checked on the composite with its canonical domain inclusion. The locus is the union of these open subsets. It equals the whole space if and only if `f` is étale.
+
+`etale_of_open_source_cover` proves the nontrivial direction. Write the localized morphism as a strong right fraction and pull the open cover back along the denominator homeomorphism. The denominator restricts to an analytic isomorphism on each domain, and the pulled-back composite is the restriction of the numerator. The restrictions of that strong numerator are consequently strongly étale. `strongEtale_of_open_source_cover` gives étaleness of the numerator, hence of the original fraction. Conversely an étale map has étale restrictions to open domains by étaleness of the canonical open inclusions and closure under composition.
+
+This is the localized form of the Library's source-open locality result. The étale condition at a point is the local flat, unramified condition of Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Definition 3.3.4. The localized proof uses actual domain restriction isomorphisms and the strong all-pieces property over a complete ultrametric normed field.

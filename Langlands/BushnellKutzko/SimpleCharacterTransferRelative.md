@@ -1,0 +1,9 @@
+# Filtered determinant images in the relative endomorphism algebra
+
+Bushnell and Kutzko use determinants over the field `E = F[β]` in *The admissible dual of GL(N) via compact open subgroups* (1993). The source is `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`, (1.2.4) on printed p. 25 and the determinant assertion of (3.6.9) on printed pp. 130–131 (PDF pp. 37 and 142–143).
+
+`relativeDet_image_inf_unitFiltration` works with a finite extension `E/F` acting compatibly on `V` and normalizing each of the two base chains. The subgroup tested in `End_E(V)ˣ` is the preimage of the intersection of the two filtered unit groups in `End_F(V)ˣ`. The image of its determinant is the set of principal units `1 + 𝔭_E^{⌊m₁/e₁⌋+1}` when the relative normalized depths `⌊mᵢ/eᵢ⌋` coincide. This is the determinant comparison on the literal intersection used for transfer agreement.
+
+The spectral and integral-closure realizations of the relative chain agree on lattice subsets. An irreducible in one integer ring corresponds under the integer-ring isomorphism to an irreducible in the other. It shifts the common lattice subsets by both periods, so strictness of the chain identifies those periods. The integral-closure period identity then computes each spectral period as `e(𝔄ᵢ|𝔬_F) / e(E|F)`. Comparing preservation of the common lattices by a unit and its inverse, and the filtration condition on the unit minus the identity, identifies the pullbacks with the unit groups of the spectral relative chains. The determinant calculation for two chains applies directly over `E`.
+
+Taking equal chains gives the determinant image for a single filtered group. Consequently `exists_relative_unit_in_inf_with_det` lifts the determinant of any relative unit in the second filtered group to a relative unit lying in the intersection.

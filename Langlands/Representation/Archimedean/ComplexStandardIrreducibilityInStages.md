@@ -1,0 +1,5 @@
+# Complex standard irreducibility in arbitrary order
+
+`complexStandardIrreducibilityUnlinked` proves that the compact-finite standard module of a list of complex characters is irreducible exactly when its characters are pairwise unlinked. The list may be in any order. In particular, `complexStandardIrreducible_of_sublist` gives irreducibility for every retained sublist at its own rank. The criterion is that of Tadić, *GL(n,C)^ and GL(n,R)^*, §3, pp. 11–13.
+
+For necessity, first put the list in Langlands order using permutation invariance of irreducible principal series. A linked pair produces a nonzero submodule of the dual and an enveloping algebra element that kills that submodule and acts nontrivially on the dual module. The annihilator of the dual submodule under standard duality is proper. The transpose of the enveloping algebra element takes values in this annihilator and acts nontrivially by nondegeneracy of the pairing. This contradicts irreducibility. For sufficiency the ordered criterion applies, and the intertwiners for unlinked adjacent swaps transfer it to the supplied order. Pairwise unlinkage is symmetric and passes to sublists.

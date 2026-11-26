@@ -1,8 +1,8 @@
-# Finite galleries of rational sign chambers
+# Finite galleries of sign chambers
 
 This internal linear algebra construction, for the existence of an
 irreducible induced unramified twist for arbitrary irreducible Levi data,
-concerns a finite family of rational linear forms on an arbitrary rational vector space.
+concerns a finite family of linear forms on a vector space over an ordered field.
 It composes the generic segment construction in `FiniteHyperplaneSegment`
 with the interval subdivision in `FiniteHyperplaneGallery`. No finite
 dimensionality, nonempty family, or root-system structure is assumed.
@@ -15,15 +15,15 @@ open unit interval. Every member has a form vanishing there. When both
 endpoints are regular, parameters in the closed unit interval outside this
 finite set give regular vectors.
 
-`WallAdjacent f keep x y` requires regular endpoints and an actual rational
+`WallAdjacent f keep x y` requires regular endpoints and a
 vector `w` on at least one wall. Every form vanishing at `w` has opposite
 strict signs at the endpoints. Every form nonzero at `w` has the same strict
 sign at `x`, `y` and `w`. Any two vanishing forms are proportional by a
-nonzero rational scalar. Finally, every index satisfying the predicate
+nonzero scalar. Finally, every index satisfying the predicate
 `keep` has nonzero evaluation at `w`. `ChamberStep` is the disjunction of
 strict sign agreement for all forms and this wall adjacency.
 
-The affine auxiliary lemmas are proved directly over the rationals.
+The affine auxiliary lemmas are proved directly over the ordered field.
 Opposite endpoint signs give an interior zero by division by the nonzero
 slope. Conversely, an interior zero gives opposite endpoint signs by
 factoring the two values as the slope times their distances from the zero.
@@ -49,6 +49,6 @@ specified endpoint.
 
 The provenance is the elementary finite-hyperplane argument implemented
 above, using the two imported internal helpers. This module proves only
-the rational sign-chamber gallery. Realizing its vectors and walls by
+the sign-chamber gallery. Realizing its vectors and walls by
 actual dynamic parabolics, proving maximality of the inner parabolics,
 and the representation-theoretic application are not part of this module.

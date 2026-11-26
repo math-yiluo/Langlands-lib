@@ -1,0 +1,5 @@
+# Ternary closure of simple character sets
+
+`simpleCharacters_div_mul_mem` shows that the pointwise combination `χ₁ / χ₂ * χ₃` of three members of a simple character set belongs to the same set. For a nonempty set this is the coset property inside the group of characters of its domain. It is a consequence of the recursive definitions in Bushnell and Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), (3.2.1) and (3.2.3), printed pp. 98–99 (PDF pp. 110–111). The source identifier is `bushnell-kutzko-1993-admissible-dual-gln` and the retained PDF SHA-256 is `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`.
+
+At the terminal element the three prescribed values agree, and the determinant factors combine by the same group operation. At a nonterminal element, normalizing elements preserve the combined character. The recursive witnesses combine by induction. Their twisted comparisons retain one copy of the common twist since the three values are nonzero and the second value appears in the denominator. The extended high-depth clause uses the same argument for the constant twist `1`.

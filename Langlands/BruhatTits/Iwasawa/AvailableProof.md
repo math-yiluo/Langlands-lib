@@ -141,3 +141,19 @@ The helper arguments are internal derivations from the named Library
 results. The proof has no holes or new axioms. Local Lake compilation and
 declaration inspection succeed with universe parameter `u` and axioms
 `propext`, `Classical.choice`, and `Quot.sound`.
+## Local building hypotheses
+
+`specialCompactParabolicProductFamily` uses the apartment axioms and
+generation of zero fixers. The chamber Iwasawa decomposition and the Weyl
+representatives in the parahoric give the minimal-parabolic product. The
+parahoric lies in the compact stabilizer, so conjugacy of minimal parabolics
+and containment in the other parabolics give the product family there.
+
+`compactOpenMaximal_of_buildingGeometry` uses a metric realization, the
+apartment axioms, bounded open stabilizers, injectivity of the apartment map,
+and the common-apartment property at its points. A compact subgroup of
+`G(F)` containing the special norm-one stabilizer fixes a building point.
+The unique-fixed-point property of that stabilizer forces the point to be
+the original special point. Every compact subgroup lies in the norm kernel,
+which then gives the reverse inclusion. The available-datum proof invokes
+this result with the metric realization constructed from its axioms.

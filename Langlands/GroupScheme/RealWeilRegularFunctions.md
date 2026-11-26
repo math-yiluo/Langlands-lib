@@ -1,0 +1,5 @@
+# Real regular functions on archimedean coefficient points
+
+For an affine connected reductive group over an `RCLike` field, `exists_realRegularFunctions` constructs an algebra of real-valued functions on its coefficient points. These functions pull back to regular functions on the Weil restriction to `ULift ℝ`. For a real-linear functional on a coefficient value, the universal point of the Weil restriction writes that value in tensor coordinates. Applying the functional to the first tensor factor gives the regular function that represents the scalar evaluation.
+
+The affine Weil restriction is connected reductive by `AffineWeil.isConnectedReductive_restriction` and is unirational by `ConnectedUnirationality.infinite_reductive_isUnirational`. A neighbourhood of the identity pulls back to a neighbourhood in the real-point topology. The lifted real open-density theorem makes the basic open of a function vanishing there empty, so its coordinate-ring representative is nilpotent and evaluates to zero at every coefficient point.
