@@ -118,17 +118,27 @@ these structural rows.
 
 Renard V.5.4 proves unimodularity and then
 \(\delta_{P\backslash G}(m)=\delta_G(m)/\delta_P(m)=\delta_P(m)^{-1}\).
-For \(a\in A_M\), the quotient modulus is the product
+For the minimal parabolic \(P_\varnothing\) and \(a\in A_\varnothing\), the
+quotient modulus is the product
 
 \[
  \delta_{P\backslash G}(a)
- =\prod_{\gamma\in\Sigma(P)}
+ =\prod_{\gamma\in\Sigma(P_\varnothing)}
    |\gamma(a)|_F^{\,m_\gamma+2m_{2\gamma}}.
 \]
 
-Opposite radicals and inverse powers must be preserved when transferring the
-other displayed equalities in that section; text extraction loses some
-overbars. Naming the function “modulus” is insufficient to fix its orientation.
+The rendered lemma on printed pp. 126–127 (PDF pp. 132–133) gives
+\(\delta_P(m)^{-1}=\delta_N(m)^{-1}=\delta_{\bar N}(m)\).
+The overbar is on the final radical.
+
+For an arbitrary standard parabolic, the determinant of conjugation on the
+Lie algebra of \(N\), restricted to its split component \(A_M\), uses every
+weight \(\alpha\) in \(\Sigma'(P)\) with multiplicity \(\dim\operatorname{Lie}(N)_\alpha\).
+The two-term exponent collects the weights \(\gamma\) and \(2\gamma\) on a
+minimal-parabolic ray. A nonminimal example in split \(G_2\) has a third
+weight \(3\gamma\), which contributes its own factor to the determinant.
+The weight formula and the example are in
+[AdjointDeterminantTorusRestrictionStatement](../../Langlands/GroupScheme/Dynamic/AdjointDeterminantTorusRestrictionStatement.md).
 
 The following current Library constructions can be reused by their Lean names.
 Their companion Markdown was inspected for this note. This table records
