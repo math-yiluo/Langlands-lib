@@ -63,7 +63,9 @@ of Haar measure restricted to a Borel fundamental domain, and the Weil compatibi
 `RationalQuotient F G = G(F) \ G(A_F)` and `normOneRationalQuotientHaarMeasure` on
 `NormOneRationalQuotient F G = G(F) \ G(A_F)^1` (GH (2.19)). No reductivity is assumed.
 `AdelicCharacterLog` gives MW's `log_G : G(A_F) → Hom(Rat(G), ℝ)` as `characterLog`, with
-kernel `normOneSubgroup`.
+kernel `normOneSubgroup`. The principal-adele product formula is
+`NumberField.AdeleRing.norm_algebraMap_eq_one_of_ne_zero` in `Mathlib.NumberTheory.NumberField.AdeleRing`.
+It gives norm one for the image of every nonzero element of `F`.
 
 **Positive tori (MW I.2.1).** The `PositiveRealTorus*`, `AdelicSplitCenter*` and
 `AdelicSplitComponent*` modules treat an `F`-split central torus `i : T ⟶ G`. They give the
@@ -106,6 +108,7 @@ measure, and Weil compatibility.
 | `AdelicGroupPoints.AdelicModularCharacterAdjointDeterminantStatement` | adelic modulus | Proved: `adelicModularCharacterAdjointDeterminant` (module `AdelicModularCharacterAdjointDeterminantProof`), which is `adelicModularCharacterAdjointDeterminantStatement_of_local localModularCharacterAdjointDeterminant`. |
 | `AdelicGroupPoints.AdelicParabolicModulusStatement` | MW I.1.13; GH (8.1) | Proved: `adelicParabolicModulus` (module `AdelicParabolicModulusProof`). `δ_P` is the idele norm of `det Ad` on `Lie U` and the modular character of `P(𝔸_F)`, see §3. |
 | `AdelicGroupPoints.AdelicIwasawaIntegrationStatement` | MW I.1.13 | Proved: `adelicIwasawaIntegration` (module `AdelicIwasawaIntegrationProof`). `dg = c · δ_P(m)⁻¹ du dm dk` for any compact `K` with `P(𝔸_F) K = G(𝔸_F)`, see §3. |
+| `Langlands.Global.IwasawaCompatibleMeasureExistenceStatement` | MW I.1.13 | `iwasawaCompatibleMeasureExistence` (module `AdelicIwasawaCompatibleMeasureProof`) chooses the compatible Levi Haar measure for the stated parabolic presentation and compact factor, see §3. |
 | `PositiveRealTorus.AdelicPositiveDecompositionStatement` | GH Lemma 2.6.2 | Proved: `adelicPositiveDecompositionStatement`. |
 | `GroupScheme.CentralSplitTorusCharacterStatement` | structural | Proved: `centralSplitTorusCharacter`. |
 | `InfinitePlaceGroupPoints.ParabolicIwasawaStatement` | archimedean Iwasawa | Proved: `parabolicIwasawaStatement`. |
@@ -135,6 +138,9 @@ published finite-volume proof" below.
 `AdelicGroupPoints.connectedReductiveFiniteVolume` at universe `0`, because the `[G]` statement
 is about number fields in `Type`. The bridge uses that `quotientHaarMeasure F G S j` is the
 pushforward of the norm-one quotient measure, so both have the same total mass.
+When a maximal `F`-split torus is central, `centralSplitCompactQuotient` gives a compact
+norm-one cover. `HasCompactNormOneRationalCover.compactSpace` and the homeomorphism
+`RestrictionSplitCentre.canonicalNormOneQuotientHomeomorph` then give compactness of `[G]`.
 
 **The good Siegel reduction from one open input.** The following terms are built from published
 theorems (namespaces `Langlands.Global` and `Langlands.GroupScheme` opened). They were checked
@@ -325,10 +331,11 @@ Automorphic forms and constant terms are published on `G(F) \ G(A_F)`, with carr
 `constantTerm` along subgroup quotients. `GroupSchemeForms` defines `IsAdelicAutomorphicForm`
 (moderate growth with compact and centre finiteness). `GroupSchemeAdelicUniformGrowth` defines
 uniform moderate growth (one exponent for all derivatives of the actual enveloping action).
-`GroupSchemeAutomorphicUniformGrowthStatement` states that
-every form of a connected reductive `G` has uniform moderate growth
-(`AdelicAutomorphicUniformGrowthStatement`; MW I.2.17 with I.2.5, case `P = G`; GH Cor. 6.2.5
-is its archimedean analogue). No theorem states it, but it follows from proved results (§5, item 6).
+`GroupSchemeFunctions.adelicAutomorphicUniformGrowth` proves
+`AdelicAutomorphicUniformGrowthStatement` for connected reductive `G` with a closed matrix
+embedding of positive size and a maximal compact subgroup at infinity. One real exponent
+works for all enveloping derivatives, each with its own bound constant (MW I.2.17 with I.2.5
+in the case `P = G`, and GH Corollary 6.2.5 at infinity). See §5, item 6.
 `GroupSchemeSliceAdelicGrowthStatement` states the
 slice-to-global growth comparison (`AdelicSliceModerateGrowthStatement`). Take a connected
 reductive `G`, a closed matrix embedding `rho` of positive size, and a function with an open
@@ -396,6 +403,13 @@ The integration statement does not assert that such a `K` exists. For an actual 
 inclusion, that existence is the open adelic Iwasawa decomposition
 (`AdelicGroupPoints.ParabolicIwasawaStatement`, §2).
 
+`Langlands.Global.iwasawaCompatibleMeasureExistence` applies the two theorems to a
+parabolic with a compatible root presentation and a supplied maximal compact `K`
+with `P(𝔸_F) K = G(𝔸_F)`, for `F : Type`. It fixes the ambient Mathlib Haar measure,
+uses Haar probability on `K` and unipotent Haar measure with quotient mass one, and absorbs
+the scalar into the Levi Haar measure. The integral defining `IsIwasawaCompatibleMeasure`
+then has coefficient one.
+
 **Infinite-place compatibility of the form spaces (GH (6.11)–(6.14)).**
 `Geometry/Manifold/SmoothGroupConjugationLie` proves that `Ad(g)` (the derivative of conjugation)
 preserves the bracket of the identity tangent space of a Lie group. `GroupSchemeInfiniteTranslation`
@@ -445,19 +459,15 @@ and the unchanged original carriers:
   comparisons with every hypothesis discharged by published results: the standard representation, the reductive atlas
   `(isConnectedReductive_generalLinear F (Fin n)).smoothDimension_spec`,
   `adelicDifferentialCommutator_of_smooth` and `parabolicDynamic`. Only `0 < n` remains.
-- Uniform growth of all `GL_n` forms is not proved. So containment in the uniform realization
-  remains an explicit hypothesis of the cuspidal maps.
-- The two carriers have different growth conditions. The original matrix form definition
-  bounds each finite slice separately, with an exponent and constant that may depend on the
-  slice. An actual adelic form has one moderate-growth bound over all adelic points, and
-  `isAdelicAutomorphicForm_iff_generalLinear_and_adelicGrowth` keeps this full adelic bound
-  (`HasAdelicModerateGrowth`) as an extra conjunct on the matrix side. A proof of
-  `AdelicAutomorphicUniformGrowthStatement` (§3, §5) would give uniform growth only to
-  functions that already have the full adelic bound. It would not by itself discharge the
-  containment hypothesis for an arbitrary matrix realization: that also needs the
-  slice-to-global moderate-growth comparison. That comparison is the target
-  `AdelicSliceModerateGrowthStatement` (§3, §5), which applies to `GL_n` for `0 < n`; it is
-  proved (§5, item 8).
+- The original matrix form definition bounds each infinite slice separately, with an exponent
+  and constant that may depend on the finite component.
+  `isAdelicAutomorphicForm_iff_generalLinear_and_adelicGrowth` keeps the full adelic bound
+  (`HasAdelicModerateGrowth`) as an extra conjunct on the matrix side.
+  `adelicSliceModerateGrowthStatement` gives that bound at the form's finite level.
+  `adelicAutomorphicUniformGrowth` then gives a common exponent for all enveloping derivatives.
+  `hasAdelicUniformModerateGrowth_iff` converts to a natural exponent for the height and
+  `hasAdelicUniformPolynomialGrowth_iff_generalLinear` identifies the resulting condition on
+  the original matrix operator action. The standard embedding in this argument has `0 < n`.
 
 The `GL_n` side has cuspidal rapid-decay and band square-integrability results
 (`Langlands/Automorphic/CuspidalL2/`). No comparison of these with the `[G]` `L²` spaces is
@@ -495,14 +505,13 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
    `GroupSchemeConstantTermEnvelopingProof`). It makes the cusp form spaces stable under the
    enveloping action. It also supplies the input for identifying the `GL_n` uniform cuspidal
    realization with all uniform cuspidal forms.
-6. Uniform growth of all automorphic forms, for `GL_n` and for general `G`, is the exact target
-   `AdelicAutomorphicUniformGrowthStatement` (§3). No theorem states it, but it follows from proved
-   results: the implication `adelicAutomorphicUniformGrowthReduction` from
-   `LieGroupEllipticInteriorEstimateStatement` and `AdelicAdaptedCasimirStatement`, which the Library
-   proves (`lieGroupEllipticInteriorEstimate`, `adelicAdaptedCasimir`). Its
-   proof would make the actual uniform form space equal to the whole actual form space. The route uses
-   that elliptic estimate and Casimir element, not a Harish-Chandra reproducing function that works
-   for all infinite slices of a form at once; the Library's `GL_n` kernel treats one function at a time.
+6. `GroupSchemeFunctions.adelicAutomorphicUniformGrowth` (module
+   `GroupSchemeAutomorphicUniformGrowthProof`) proves `AdelicAutomorphicUniformGrowthStatement`
+   (§3). It applies `adelicAutomorphicUniformGrowthReduction` to
+   `lieGroupEllipticInteriorEstimate` and `adelicAdaptedCasimir`. The adapted Casimir yields an
+   elliptic equation for each left translate of the form. The interior estimate bounds its
+   enveloping derivatives by the supremum of the translate near the identity, and
+   submultiplicativity of the height gives the common exponent.
 7. `AdelicParabolicModulusStatement` and `AdelicIwasawaIntegrationStatement` (§3) are proved
    (`adelicParabolicModulus`, `adelicIwasawaIntegration`).
 8. The slice-to-global moderate-growth comparison: whether a function with an open
@@ -556,5 +565,4 @@ published. That comparison belongs to the later Chapter 9 blocks of the program.
 
    For `GL_n`, the original matrix slice growth transfers to the slice-growth hypothesis of the statement
    (`continuousGeneralLinearEquiv_mem_polynomialGrowth_of_closedImmersion`, module
-   `GeneralLinearGrowthIndependence`). Removing the containment hypothesis of the `GL_n` cuspidal
-   realization maps needs proofs of this item and of item 6, and a separate derivation from them.
+   `GeneralLinearGrowthIndependence`). This is the first step of the matrix growth argument in §4.
