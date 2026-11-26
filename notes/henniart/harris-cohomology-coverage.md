@@ -41,7 +41,7 @@ against Library commit `dbd6b52814f3ecfa30bdd5f8785d2e17e89e85dc`; on 13 Novembe
 `2e46b9cac0230529f50cdf96bbe4713c06701fc2`; on 14 November 2026 against `c40a01345b2f4172fa41e07ff31644b40e695003`,
 `ba00e0970dd9ba6222ccc056ca2ee7f06bcc8181`, `58ad0f796899b4aa457077d0146815c24758f739`,
 `320321b3cd4b5100d54cf785192677d59479e65f` and `544dba099880b57da5fdc3cbc715c01cf2579eb2`; on 20 November 2026 against
-`d6b462beebdb629f6b6746bdf0698a800d84104f`; and, last, on 21 November 2026 against
+`d6b462beebdb629f6b6746bdf0698a800d84104f`; and on 21 November 2026 against
 `b47a2385d86db05fb5e69eda98e948bf2539ada2`. All checks used Lean 4.34.0 with Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`. Each update surveyed only the changes that bear on
 the modules described here; a sentence that names a commit states a fact of that commit.
@@ -78,6 +78,45 @@ are recorded where they are used below. Kottwitz 1992 Theorem 1 is the statement
 `b47a2385` two further statements were in preparation and not in the Library: the compact-base
 spectral sequence of Theorem 1.6.1(ii) on the étale and on the quasi-étale model, and the
 compact-base étale compact-support spectral sequence of Corollary 1.5.2(i).
+
+## Analytic and algebraic dependencies at Library `3f72bdc7`
+
+The table pins the Lean and Markdown pairs to Library
+`3f72bdc7a0281aa90900e79d538c35865373ea02`. Each named `Statement`
+is a proposition definition. The first six rows give inputs for the
+smooth compact-support and coefficient-limit constructions. The
+remaining rows give inputs for passing from the geometric CM levels
+to their cohomology with algebraic coefficients.
+
+| Declaration | Source and scope |
+| --- | --- |
+| [`AnalyticEtaleCompactSupportSpectralSequenceForCompactGroupStatement`](../../Langlands/Cohomology/AnalyticGlobalSpectralSequence/CompactGroupSupportStatement.md) | Berkovich, *Equish*, §1.2 and Corollary 1.5.2(i). The second page uses derived smooth invariants, expressed as Ext from the trivial smooth representation, for the actual restriction action on compactly supported cohomology. The Library requires compactness of the acting group so the orbit of a compact support lies in a compact set. The analytic space is Hausdorff, with continuous action and a surjective projection from the field-valued points satisfying the étale point axioms. |
+| [`AnalyticEtaleGodementResolutionStatements`](../../Langlands/Cohomology/AnalyticEtaleGodementResolution/Statement.md) | *Equish* §1.5, Proposition 1.5.1 and Corollary 1.5.2(i), and Harris 1999 §2, Fact 3 and Lemma 2.2. On a Hausdorff space with continuous action, the \(L\)-valued points satisfy the étale point axioms and project surjectively to the space. The iterated term functors are exact, the augmentation is a quasi-isomorphism, and every term is acyclic for smooth compact sections and for ordinary compact sections after restriction. Harris's Fact 4 identifies the separate preservation of divisible systems. |
+| [`AnalyticEtaleCompactDerivedComparisonStatement`](../../Langlands/Cohomology/AnalyticEtaleCompactComparison/DerivedStatement.md) | *Equish*, Corollary 1.5.2(i), first assertion. The actual comparison of compact-section complexes is invertible in derived modules after exact forgetting of the action. Surjectivity of the field-valued point projection is among the support hypotheses. |
+| [`AnalyticEtaleCompactDimensionStatement`](../../Langlands/Cohomology/AnalyticEtaleCompactDimension/Statement.md) | Berkovich 1993, Corollary 5.3.8, absolute bounded-torsion specialization. Compactly supported cohomology vanishes for \(q>2d\) with sheaves of \(\mathbb Z/N\mathbb Z\)-modules for \(N>0\) (universe-lifted coefficients in Lean). The space is Hausdorff with a strict affinoid dimension bound \(d\), over an algebraically closed field with a complete, nontrivial ultrametric norm. The field-valued points satisfy the étale point axioms and project surjectively to the space. |
+| [`AnalyticEtaleFinitenessStatement`](../../Langlands/Cohomology/AnalyticEtaleFiniteness/Statement.md) | Berkovich 1994, Corollary 5.6. The space is compact Hausdorff over an algebraically closed, complete, nontrivially normed ultrametric field \(K\), with quasi-algebraic affinoid neighbourhoods. For each positive integer \(N\) of norm one in \(K\) (the prime-to-residue-characteristic condition), every ordinary étale cohomology group of a finite locally constant sheaf of \(\mathbb Z/N\mathbb Z\)-modules is finite. |
+| [`EtaleAdicFiniteGenerationStatement`](../../Langlands/Cohomology/DivisibleSystem/EtaleAdicFiniteGenerationStatement.md) | Milne 1980, V.1, Lemma 1.11. Finite cohomology at every stage of the étale divisible system gives finite generation and adic completeness of its cohomology limit over the complete coefficient ring. The actual canonical reduction sequence is short exact. |
+| [`CMHarrisLambdaTowerAdmissibleContinuousStatement`](../../Langlands/Shimura/PEL/HarrisTaylorCMLambdaAdmissibleStatement.md) | Harris–Taylor III.1–2. For the represented division-algebra CM levels and an algebraic coefficient representation, the actual level map identifies cohomology with the compact-open fixed vectors of the tower. The tower over the finite coefficient completion is admissible and Galois acts continuously on those fixed vectors. |
+| [`ProperEtaleFinitenessStatement`](../../Langlands/Cohomology/EtaleFiniteness/ProperStatement.md) | SGA 4 XIV 1.2. Over a separably closed field, proper schemes have finite étale cohomology with finite locally constant module sheaves, including in the torsion characteristic of the base. |
+| [`EtaleProperBaseChangeStatement`](../../Langlands/Cohomology/EtaleProperBaseChange/Statement.md) | SGA 4 XII 5.1(iii). The actual derived adjunction map is invertible in a Cartesian square with proper vertical map for bounded-torsion coefficients placed in degree zero. The four derived-category universes are independent. |
+| [`AbelianFirstEtaleCohomologyStatement`](../../Langlands/Cohomology/AbelianScheme/FirstEtaleCohomologyStatement.md) | Milne, *Abelian Varieties*, §15, Theorem 15.1(a). Over a fixed algebraically closed field of characteristic different from \(p\), the first integral \(p\)-adic étale cohomology of an abelian scheme is naturally isomorphic to the dual of its actual Tate module. |
+
+The same Library version gives
+[`compactProbeQuasiEtaleHausdorffComparison`](../../Langlands/Geometry/Analytic/CompactProbeQuasiEtaleHausdorffComparisonProof.md)
+when the target of the ordinary covering sieve is Hausdorff.
+With this proof,
+[`equivariantCompactProbeQuasiEtaleTopology_eq_of_comparison`](../../Langlands/Geometry/Analytic/EquivariantCompactProbeTopology.md)
+identifies the equivariant compact-probe topology with the
+chart-neighbourhood topology because the equivariant probe sources
+are Hausdorff. The smooth sheaf category
+[`CompactProbeQuasiEtaleGSheaf`](../../Langlands/Sheaf/Equivariant/AnalyticCompactProbeQuasiEtale.md)
+uses `twistedCompactProbeQuasiEtaleTopology`, induced on the twisted
+site by the ordinary compact-probe topology.
+The equivariant topos comparison on these objects needs the
+inverse-image and invariant-sheaf adjunction for these topologies.
+The geometric first-cohomology comparison also leaves the relative
+coefficient comparison and the tautological power projectors on the
+CM levels as separate mathematical inputs.
 
 ## Published modules
 
