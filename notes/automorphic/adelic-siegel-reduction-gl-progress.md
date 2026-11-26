@@ -1,13 +1,19 @@
-# Adelic Siegel reduction: the published GL(n) chain and remaining general obligations
+# Adelic Siegel reduction for GL(n) and connected reductive groups
 
-This note was written on 5 November 2026 against Library commit
-`81bddf38b8069213a7ace261e56ea16dd84f3721`. It maps the published matrix-level
-reduction theory for the actual adelic group `AdelicGL F n` to its sources. It
-also records what the general target
+The matrix-level audit uses Library commit `81bddf38b8069213a7ace261e56ea16dd84f3721`. This
+note maps the published matrix-level reduction theory for the actual adelic group
+`AdelicGL F n` to its sources. It also records what a route through this chain to the general target
 `Langlands.Global.AdelicSiegelFactors.AdelicGoodSiegelReductionStatement` in
-`Langlands/Global/AdelicSiegelFiniteVolume.lean` still needs. That target is
-**not proved** in the Library. None of the modules below proves it, and none proves a
-scheme-level instance of it for the general linear group.
+`Langlands/Global/AdelicSiegelFiniteVolume.lean` would need. None of the modules below proves
+that target, and none assembles an explicit scheme-level instance of it for the general
+linear group. The Library proves the target by another route, as
+`Langlands.Global.AdelicSiegelFactors.adelicGoodSiegelReduction` in
+`Langlands/Global/AdelicGoodSiegelReductionProof.lean`: it assembles the algebraic setup
+`siegelAlgebraicSetupExistence`, the compatible Iwasawa compact `adelicCompatibleIwasawaCompact`,
+`centralSplitCompactQuotient` (the number-field sufficiency direction of Springer's (C)) and
+the chamber reduction `adelicSiegelChamberReduction`. The same module proves the original target
+`AdelicSiegelReductionStatement` as `adelicSiegelReduction`. The section "What the GL(n) chain
+does not supply" describes the GL(n)-chain route as of commit `81bddf38`.
 
 ## Sources
 
@@ -206,8 +212,8 @@ routes.
    - `positiveMap` for the diagonal torus must be compared with the diagonal
      positive real ideles `PositiveRealIdeles.full` used in `siegelSetGL`.
 
-   The full scheme-level GL_N instance remains open, and so does the general
-   theorem.
+   The modules of the GL(n) chain do not assemble the explicit scheme-level GL_N
+   instance. The general theorem is `adelicGoodSiegelReduction` (see the introduction).
 2. **Positive-torus compatibility.** No module proves `IsPositiveTorusCompatible`
    for the transported `standardCompact`.
 3. **General connected reductive G.** Springer §3 goes through several steps:
@@ -222,9 +228,15 @@ routes.
 
    The heights above are exactly the vector heights used for an adapted
    representation `ρ : G → GL(V)` once `ρ(g)` is transported to `AdelicGL`.
-   The algebraic inputs, however, have not been proved. These are the generic
-   minimal parabolic,
-   centralizer reductivity and the derived/central split product, and they
-   belong to the structural group-scheme work. Compactness of `M(F)\M(𝔸)^1` for the
-   anisotropic minimal Levi `M` is also open; it is not a consequence of the
-   GL(n) chain.
+   The algebraic inputs are the generic minimal parabolic, centralizer
+   reductivity and the derived/central split product; they are not consequences of the
+   GL(n) chain. The Library proves the algebraic setup as `siegelAlgebraicSetupExistence`
+   (module `Langlands/Global/AdelicSiegelSetupExistenceProof.lean`), from
+   `genericMinimalParabolic`, `derivedMaximalSplitTorus` and
+   `derivedCentralSplitTorusProduct`. Compactness of `M(F)\M(𝔸)^1` for the minimal
+   Levi `M` is not a consequence of the GL(n) chain either. For number fields,
+   `AdelicSiegelFactors.centralSplitCompactQuotient` (module
+   `Langlands/Global/AdelicSpringerCentralCompactnessProof.lean`) gives a compact norm-one
+   rational quotient whenever a maximal split torus is central; this is the sufficiency
+   direction of Springer's (C). The theorem `exists_leviCompactCover_of_setup` (module
+   `Langlands/Global/AdelicSiegelChamberReduction.lean`) applies this to the minimal Levi.

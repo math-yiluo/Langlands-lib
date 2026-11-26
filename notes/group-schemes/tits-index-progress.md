@@ -1,10 +1,12 @@
-# Actual Tits indices: existence, anisotropic kernel and open targets
+# Actual Tits indices of semisimple field groups
 
-This note, dated 13 November 2026, records the status of the Library's actual Tits-index interface for
-semisimple groups over arbitrary fields: the existence and anisotropic-kernel
-proofs, the statements built on the interface with their proofs in the Library,
-how to use the existence theorem, and its role in the local rank-one
-classification. All declarations are in the namespace `Langlands.GroupScheme`.
+The Library's Tits index for a semisimple group over an arbitrary field
+uses its maximal split torus and its absolute based root datum. The
+theorems below give existence and choice independence, identify the
+relative simple roots and split rank, and compute the index of the
+semisimple anisotropic kernel. The existence theorem also supplies the
+index data used in the local rank-one classification. All declarations
+are in `Langlands.GroupScheme`.
 
 ## Source and interface
 
@@ -48,13 +50,13 @@ action of each Galois element.
 |---|---|---|
 | `TitsIndexExistenceStatement` | `Reductive.TitsIndexChoiceStatement` | proved: `titsIndexExistence` |
 | `TitsIndexIndependenceStatement` | `Reductive.TitsIndexChoiceStatement` | proved: `titsIndexIndependence` (`Reductive.TitsIndexIndependenceProof`) |
-| `TitsIndexChoiceStatement` | `Reductive.TitsIndexChoiceStatement` | the conjunction of the two rows above, both proved; no theorem of this statement under its own name |
+| `TitsIndexChoiceStatement` | `Reductive.TitsIndexChoiceStatement` | `⟨titsIndexExistence, titsIndexIndependence⟩` |
 | `TitsIndexStarInvariantStatement`, `TitsIndexRelativeSimpleRootsStatement` (bundled as `TitsIndexStarRelativeRootsStatement`) | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexStarInvariant`, `titsIndexRelativeSimpleRoots`, `titsIndexStarRelativeRoots` (`Reductive.TitsIndexStarProof`) |
 | `TitsIndexSplitRankStatement` | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexSplitRank` (`Reductive.TitsIndexSplitRankProof`) |
 | `TitsIndexRelativeStructureStatement` | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexRelativeStructure` (`Reductive.TitsIndexSplitRankProof`); the conjunction of the two rows above |
 | `TitsAnisotropicKernelStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | proved: `titsAnisotropicKernel` |
 | `TitsAnisotropicKernelIndexStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | proved: `titsAnisotropicKernelIndex` (`Reductive.TitsIndexAnisotropicKernelIndexProof`) |
-| `TitsAnisotropicKernelStructureStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | needs only the index statement, which is proved; no theorem of this statement under its own name |
+| `TitsAnisotropicKernelStructureStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | `⟨titsAnisotropicKernel, titsAnisotropicKernelIndex⟩` |
 
 The existence and anisotropic-kernel proofs are:
 
@@ -85,17 +87,15 @@ so `titsIndexExistence k G hG : Nonempty (TitsIndexData G)` for
 arbitrary. There is no perfectness, infinite-field, local-field or
 positive-rank hypothesis, and characteristic two and rank zero are included.
 
-The theorem gives some index data, not a canonical one. Every other statement
-in the table, and `LocalRankOneTitsIndexStatement`, quantifies over all
-`d : TitsIndexData G`, so it applies to the data obtained this way. A
-conclusion that depends on which `d` was chosen still needs
-`TitsIndexIndependenceStatement`. For `hind` of that type,
-`⟨titsIndexExistence, hind⟩ : TitsIndexChoiceStatement.{u}`; the Library
-proves that statement as `titsIndexIndependence`.
+The existence theorem supplies a choice of index data. The comparison
+theorems for a given `d : TitsIndexData G` and `LocalRankOneTitsIndexStatement`
+apply to these data. For two choices, `titsIndexIndependence` supplies an
+equivalence preserving Cartan pairings, the zero-restriction vertices and
+the absolute Galois action.
 
-The application `titsIndexExistence k G hG`, this pair and the use in
-`localRankOneClassification_of_indexStatements` below were compile-checked
-against this Library.
+The application `titsIndexExistence k G hG`, both conjunctions in the table
+and the use in `localRankOneClassification_of_indexStatements` below
+type-check with the displayed declarations.
 
 ## Route of the existence proof
 

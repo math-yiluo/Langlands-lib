@@ -164,6 +164,37 @@ implications to proofs of their interfaces gives the exact branch targets.
 The B6 distinctness implications provide `HasDistinctMackeyComponents`
 for the input to that branch in the full induction.
 
+## Prime-orbit companions with multiplicity
+
+`Proposition48ExactStabilizerMultiplicityPrimeBranchStatement` and
+`Proposition48ExactStabilizerMultiplicityPrimeBranchTCStatement` have
+independent universes `uF` and `uV` and take
+`Harris1998Theorem12CuspidalMultiplicityStatement.{0, uV, uV}` as A1.
+Each takes `Q.IsSpaced` after exact-stabilizer validity. This requires
+the maximal totally real subfield of `Q.E` to have even degree over `ℚ`
+and the weights of `Q.ξ` to be spaced by at least two above each
+archimedean place of `Q.E`. Both branches use the supplied untwisted
+children to obtain `Q.HasParameterSolution` for `Q.ξ`.
+[Multiplicity branch statements](../../Langlands/Global/Arithmetic/HarrisProposition48MultiplicityStatement.md),
+[spaced data](../../Langlands/Global/Arithmetic/HarrisProposition48SpacedData.md)
+
+Apply `proposition48ExactStabilizerPrimeBranch_of_inputs` with the twelve
+interfaces of the original reductions, using the corresponding rigidity
+in the conjugate-self-duality input. For the unrestricted branch,
+specialize B2 and B4 to totally complex bases. Their TC forms apply
+directly in the companion. The B6 tower argument supplies
+`HasDistinctMackeyComponents` in the full induction. The common
+argument applies restricted B7(2) and the archimedean bridge. Both
+assemblies introduce the multiplicity and spacing hypotheses, and the
+common argument is independent of both.
+[Common prime-orbit argument](../../Langlands/Global/Arithmetic/HarrisProposition48ExactStabilizerPrimeBranchReductionProof.md)
+
+Henniart's induction case in §5.9 uses Arthur–Clozel III, §§5–6 for
+automorphic induction and its complex parameters. His descent
+argument in §§5.10–5.11 invokes the theorem with multiplicity stated
+in §5.5, referred to as “théorème 5.6” in the descent paragraphs.
+[Theorem 1.2 with multiplicity](../../Langlands/Galois/Harris1998MultiplicityStatement.md)
+
 ## Sources
 
 - Harris (1998), *The local Langlands conjecture for GL(n) over a p-adic
@@ -189,6 +220,12 @@ for the input to that branch in the full induction.
   non-archimedean fields)*, `henniart-herb-1995-induction`, SHA-256
   `5e753525048b08007d9605baa9019c8e792512887305ec2e39ae9c3bee6a963e`,
   Proposition 5.5, printed pp. 152–153 (PDF pp. 22–23).
+- Henniart (2001), *Sur la conjecture de Langlands locale pour GL_n*,
+  `henniart-2001-langlands-locale-gln-jtnb`, SHA-256
+  `c9db009ee2f2e561d834b9e1ef07a8b27ff40d0edd19546d3351f38f39b2dac5`.
+  Section 5.5 states the result with multiplicity, printed pp. 178–179
+  (PDF pp. 13–14). Sections 5.9–5.11 distinguish the induction and descent
+  cases, printed pp. 180–182 (PDF pp. 15–17).
 - *Formalizing the large external inputs of the local Langlands
   correspondence for GL_n*, `operator-external-inputs-plan-2026-11-16`,
   `external-inputs-plan.tex`, SHA-256
