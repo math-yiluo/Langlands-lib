@@ -1,4 +1,4 @@
-# Interior derivative bounds by the sup norm for a local elliptic equation
+# Interior derivative bounds for a local elliptic equation
 
 This module proves an interior estimate for one scalar linear equation `D u = 0` on an open set
 `S` of `EuclideanSpace ℝ (Fin d)`. Here `D` is a `CoordinateScalarOperator` of order `r` with
@@ -6,18 +6,13 @@ This module proves an interior estimate for one scalar linear equation `D u = 0`
 symbol `D.principalSymbol x₀ ξ` does not vanish for any nonzero real covector `ξ` at one point
 `x₀ ∈ S`.
 
-## Main result
+## Main results
 
-`exists_localElliptic_interior_derivative_bounds` gives a radius `R > 0` with
-`closedBall x₀ R ⊆ S` and constants `C m ≥ 0` (`m : ℕ`). For every smooth solution `u` of
-`D u = 0` on `S` and every real `M` that bounds `‖u‖` on `closedBall x₀ R`,
-`‖iteratedFDeriv ℝ m u x₀‖ ≤ C m * M`. The ball and the constants depend only on `D`, `S` and
-`x₀`, not on `u`. The theorem holds for every order `r`, including `r = 0`.
+For positive order, `exists_localElliptic_interior_derivative_l2_bounds` gives a radius `R > 0` with `closedBall x₀ R ⊆ S` and finite constants `C m : ℝ≥0∞`. For every smooth solution `u` of `D u = 0` on `S` and every derivative order `m`,
 
-This is a pointwise form of the interior regularity estimate for elliptic equations with `C^∞`
-coefficients, Morrey–Nirenberg (1957), Theorem C. The proof here does not follow their argument.
-It combines `L²` estimates already in the Library with an interpolation step that bounds the
-lower derivatives by the sup norm.
+`‖iteratedFDeriv ℝ m u x₀‖ₑ ≤ C m * eLpNorm u 2 (volume.restrict (closedBall x₀ R))`.
+
+`exists_localElliptic_interior_derivative_bounds` gives the corresponding sup-norm form in every order. If `M` bounds `‖u‖` on the closed ball, the derivative of order `m` at `x₀` is bounded by a real constant times `M`. The constants and ball are independent of the solution. This is an interior regularity estimate for smooth elliptic equations, in the setting of Morrey–Nirenberg (1957), with weighted $L^2$ estimates and the Library's interpolation and pointwise Sobolev bounds.
 
 ## Auxiliary results
 
@@ -39,56 +34,15 @@ It proves the following new results.
   the product is at most the sum over `i ≤ k` of
   `d ^ k * (k choose i) * ballCutoffConst i / (σ - ρ) ^ i` times the `L²` norm of
   `derivWordNorm (k - i) u` on `ball x₀ σ`.
-- `eLpNorm_ballCutoff_smul_le`: the `L²` norm of the cutoff product is at most
-  `volume (closedBall x₀ R) ^ (1/2) * M`.
-- `ballWeightedSeminorm_le_interpolation`: scale-explicit interpolation. For `k ≤ r`, `0 < ε`
-  and a smooth `u` on `ball x₀ R` bounded by `M` on the closed ball, the `k`-th weighted
-  seminorm on `ball x₀ R` is at most
-  `2 ^ k * ε ^ (r - k) * cutoffLeibnizConst d r * ∑_{j ≤ r} (weighted seminorm of order j)`
-  plus `2 ^ k * ε⁻¹ ^ k * volume (closedBall x₀ R) ^ (1/2) * M`.
-  - **Proof.** For each inner radius `ρ` of the weighted seminorm, set
-    `σ = (ρ + R) / 2` and `δ = σ - ρ`. Multiply `u` by `ballCutoff x₀ ρ σ`. The product is
-    smooth with compact support and agrees with `u` on `ball x₀ ρ`. The Library interpolation
-    `orderedTensorL2Interpolation` at scale `ε * δ` bounds its `k`-th tensor by its `r`-th
-    tensor and its `L²` norm. The two auxiliary bounds above then express both in terms of the
-    weighted seminorms of `u` and of `M`. The powers of `δ` match the weights `(R - ρ) ^ k`
-    because `R - ρ = 2 δ`.
+- `eLpNorm_ballCutoff_smul_le` bounds the $L^2$ norm of the cutoff product by `volume (closedBall x₀ R) ^ (1/2) * M` under a sup bound `M`. `eLpNorm_ballCutoff_smul_le_restrict` bounds the same norm by the $L^2$ norm on the enclosing closed ball, since the cutoff takes values in `[0, 1]` and vanishes outside that ball.
+- `ballWeightedSeminorm_le_interpolation` is the sup-norm form of the weighted interpolation estimate. Its proof uses a formulation with an arbitrary common bound for the cutoff products. A cutoff between radii `ρ` and `σ = (ρ + R) / 2` preserves the derivatives on `ball x₀ ρ`. Apply `orderedTensorL2Interpolation` at scale `ε * (σ - ρ)` to bound the lower-order derivative by the top derivative and the norm of the cutoff product. The Leibniz estimate bounds the top derivative by weighted seminorms on the original ball. The factors match because `R - ρ = 2 * (σ - ρ)`.
 
-## Proof of the main result
+## Proof
 
-**Positive order** (`exists_localElliptic_interior_derivative_bounds_of_pos`).
-1. `coordinateScalarLocalEllipticity` extends ellipticity at `x₀` to an open neighbourhood `U`.
-2. `exists_localEllipticSystem_weighted_bounds`, applied with a one-element index type and the
-   zero coupling matrix on `S ∩ U`, gives a ball `closedBall x₀ R ⊆ S`. On that ball, every
-   weighted seminorm of a solution is at most `C m * B`, where `B` bounds the weighted
-   seminorms of orders `< r`.
-3. Take `B` to be the sum of the weighted seminorms of orders `< r`. It is finite by
-   `ballWeightedSeminorm_lt_top_of_continuousOn_closedBall`.
-4. The interpolation bound for each order `k < r`, with
-   `ε = 1 / (2 (A + 1))` where `A = r * 2 ^ r * cutoffLeibnizConst d r * (1 + C r)`, gives
-   `B ≤ (1/2) B + K₀' M` with `K₀' = r * 2 ^ r * ε⁻¹ ^ r * volume (closedBall x₀ R) ^ (1/2)`.
-   The Library lemma `absorbs_half` (it needs `B ≠ ⊤`, step 3) gives `B ≤ K₀ M` with
-   `K₀ = 2 K₀'`, so the `m`-th weighted seminorm is at most `C m * K₀ * M`.
-5. The Library lemma `eLpNorm_half_ball_le_weightedDerivative` bounds the `L²` norm of
-   `iteratedFDeriv ℝ m u` on `ball x₀ (R/2)` by `((R - R/2) ^ m)⁻¹` times the `m`-th weighted
-   seminorm, hence by `L m * M` with `L m = ((R - R/2) ^ m)⁻¹ * C m * K₀`.
-6. The Library averaged Taylor estimate `measure_ball_rpow_mul_enorm_iteratedFDeriv_le`, applied
-   on `ball x₀ (R/2)` to the derivative of order `m` with Taylor order `n = finrank ℝ E`, gives
-   `volume (ball x₀ (R/2)) ^ (1/2) * ‖iteratedFDeriv ℝ m u x₀‖` at most the sum over `j ≤ n` of
-   `(R/2) ^ j / j!` times the `L²` norm of the derivative of order `j + m`, plus a remainder
-   `(R/2) ^ (n + 1) / n!` times the `L²` norm of the derivative of order `m + n + 1`. Inserting
-   the bounds of step 5 and dividing by the positive finite volume factor gives
-   `‖iteratedFDeriv ℝ m u x₀‖ ≤ C' m * M`. The constant `C' m` is the real value of the
-   resulting finite `ℝ≥0∞` constant and does not depend on `u` or `M`. It is the constant
-   called `C m` in the theorem; in steps 2–5, `C m` denotes the system constants of step 2.
+For positive order, `coordinateScalarLocalEllipticity` extends ellipticity at `x₀` to a neighbourhood. Apply `exists_localEllipticSystem_weighted_bounds` on the intersection with `S` to the system indexed by `Unit` with zero coupling. It gives a closed ball and controls every weighted derivative seminorm by a constant times the sum `B` of the seminorms of orders `< r`.
 
-**Order zero** (`exists_localElliptic_interior_derivative_bounds_zero`). Choose any closed ball
-in `S` around `x₀`.
-- If `d = 0`, the space is a single point. Every derivative of positive order vanishes, and the
-  value at `x₀` is bounded by `M`. So `C m = 1` for `m = 0` and `C m = 0` otherwise.
-- If `d > 0`, `D u = c * u`, where `c` is the sum of the order-zero coefficients. Applied to the
-  nonzero covector `EuclideanSpace.proj 0`, ellipticity says `c x₀ ≠ 0`. By continuity `c ≠ 0`
-  near `x₀`, so every solution vanishes near `x₀`. All its derivatives at `x₀` are then `0`,
-  and `C m = 0` works.
+Apply the interpolation estimate with the restricted $L^2$ norm as the common cutoff bound. The top order seminorm is itself bounded by a constant times `B`, so the sum of the interpolation inequalities has the form `B ≤ B / 2 + c * eLpNorm u 2 (volume.restrict (closedBall x₀ R))` after choosing `ε` small. The seminorms in `B` are finite by smoothness on a neighbourhood of the closed ball. Absorption bounds all weighted seminorms by the $L^2$ norm of `u`. Restricting to the ball of half the radius removes the weights. The averaged Taylor estimate `measure_ball_rpow_mul_enorm_iteratedFDeriv_le` then bounds each derivative at the centre by finitely many of these $L^2$ derivative bounds. Dividing by the positive square root of the volume gives the stated estimate. The sup-norm bound in positive order follows by bounding the restricted $L^2$ norm by the square root of the volume times `M`.
 
-The wrapper `exists_localElliptic_interior_derivative_bounds` splits on `r = 0`.
+In order zero and positive dimension ellipticity makes the order-zero coefficient nonzero near `x₀`, so any solution vanishes there. In dimension zero the value bound is immediate and all derivatives of positive order vanish. `exists_localElliptic_interior_derivative_bounds_zero` implements these two cases.
+
+The weighted seminorms and the localized estimate follow the scalar homogeneous case of Morrey–Nirenberg, *On the analyticity of the solutions of linear elliptic systems of partial differential equations* (1957), §5, pp. 287–290. The initial elliptic estimate is in Lemmas 5.1–5.3 and the averaged Taylor step is the pointwise estimate of the kind used in §2, Lemma 2.2. The absorption here uses the Library's ordered tensor interpolation and the coefficients only need smoothness. The retained original is `provided-17e51270c6d50eab8ff7b4142058b4ec69474b21e75225ec9952a95784e8229f`, SHA-256 `61c74249e27625fd25cb0a33d3c77d90ab6b5306fc9bccddc7a6d5314229f915`.

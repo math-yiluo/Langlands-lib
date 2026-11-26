@@ -1,0 +1,5 @@
+# Integrating entire families controlled on vertical lines
+
+`entireStripIntegral` assumes that each spectral slice is almost everywhere strongly measurable and almost every fiber is entire with exponential strip growth. For every bounded real interval `[u,v]`, it requires two lines with abscissae `a < u` and `v < b`. On both entire lines almost every fiber has an exponential bound with a common rate and a nonnegative integrable coefficient in the measure variable. The conclusion gives absolute integrability at every spectral point and an entire integral.
+
+Phragmén–Lindelöf gives a bound at interior spectral points whose coefficient is the same integrable function multiplied by a constant. On every bounded spectral disk this provides an integrable majorant. Dominated holomorphic integration gives the result. The separate criterion `measurable_entireFamily_of_right` reconstructs measurability at each point from the Cauchy power series centered far enough to the right. Every coefficient is an integral on a circle wholly contained in the original right half-plane.

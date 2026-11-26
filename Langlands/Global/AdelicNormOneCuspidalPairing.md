@@ -3,10 +3,12 @@
 `AdelicNormOneCuspidalPairingStatement` expresses the integral of a compact
 right convolution against a test on the norm-one rational quotient as the
 weighted integral of the pairings against the right translates of the input.
-The input is rationally invariant, continuous and of moderate growth. The
-test is rationally invariant, continuous and rapidly decreasing in the
-specified adelic height on a set meeting every rational orbit in the
-norm-one group.
+The group is affine, locally of finite type and connected reductive over a
+number field, with a matrix representation of positive size. The kernel is
+continuous and compactly supported. The input is rationally invariant,
+continuous and of moderate growth. The test is rationally invariant,
+continuous and rapidly decreasing in the specified adelic height on a set
+meeting every rational orbit in the norm-one group.
 
 `adelicNormOneCuspidalPairing_rightConvolution` proves absolute integrability
 on the product of the quotient with the ambient adelic group. The compact

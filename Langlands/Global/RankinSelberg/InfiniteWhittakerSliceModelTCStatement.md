@@ -2,7 +2,7 @@
 
 Module `Langlands.Global.RankinSelberg.InfiniteWhittakerSliceModelTCStatement`, namespace
 `Langlands.Global.RankinSelbergGlobal`. The number-field universe `u` and spectral
-presentation universe `uQ` are independent. Both declarations return `Prop`.
+presentation universe `uQ` are independent. The totally complex statement returns `Prop`.
 
 ## Exact scope
 
@@ -32,7 +32,7 @@ The local affine and smooth group-scheme instances are the same as in the parent
 place subtype empty. The real parameter family has no entries and the real parameter
 conditions are vacuous. The index of `ModelData` is still the sum of the real and complex
 place subtypes, so its model, normalization and slice obligations occur only at complex
-places. No unrestricted declaration is changed.
+places.
 
 ## Provenance and proof boundary
 

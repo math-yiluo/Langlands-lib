@@ -112,3 +112,5 @@ reproduced.
   extended denominator `g`, and the extended numerators `ev i ∘ h`. These are
   differentiable because `f` is weakly holomorphic and `ev i` is continuous
   linear.
+
+The whole space and finite intersections of sets open and dense in coordinates are open and dense in coordinates. The lemmas are `Langlands.Global.isOpenDenseInCoordinates_univ` and `Langlands.Global.isOpenDenseInCoordinates_iInter_of_finite`.

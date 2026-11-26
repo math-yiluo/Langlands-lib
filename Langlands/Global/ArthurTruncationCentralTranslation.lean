@@ -58,7 +58,9 @@ private theorem toA0_add (hT : IsSplitTorus T.toGrp)
   rw [map_add, pair_toA0, pair_toA0, pair_toA0, map_add]
 
 omit [LocallyOfFiniteType G.X.hom] [Mono i.hom.hom.left] in
-private theorem eval_height_torus (α : characterLattice T) (a : AdelicGroupPoints F T.toGrp) :
+/-- On the maximal split torus, evaluating the Iwasawa height gives the logarithm of the
+corresponding character norm. -/
+theorem eval_height_torus (α : characterLattice T) (a : AdelicGroupPoints F T.toGrp) :
     eval T α (height hi hK hρ (map F T.toGrp G i a)) =
       realParameterPairing F T.toGrp ((1 : ℝ) ⊗ₜ[ℤ] α) (characterLog F T.toGrp a) := by
   let f := torusToParabolic F i ν ∅

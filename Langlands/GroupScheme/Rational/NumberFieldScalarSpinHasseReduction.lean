@@ -48,7 +48,7 @@ def ScalarSpinorNormBoundary [CharZero F] {V : Type u} [AddCommGroup V] [Module 
 variable [NumberField F]
 
 include hp in
-private theorem isTrivial_of_kernelMapHasse
+theorem Cocycle.isTrivial_of_kernelHasse
     (hkernel : ∀ (L : Type u) [Field L] [Algebra F L] [FiniteDimensional F L] [IsGalois F L]
       (α : Cocycle (kernel p) (GaloisCocycle.cover F L)),
       (α.map (kernelι p)).LocallyTrivial → (α.map (kernelι p)).IsTrivial)
@@ -206,7 +206,7 @@ theorem isTrivial_of_scalarSpinorNormBoundary
     {L : Type u} [Field L] [Algebra F L] [FiniteDimensional F L] [IsGalois F L]
     (ξ : Cocycle G (GaloisCocycle.cover F L)) (hξ : ξ.LocallyTrivial)
     (hquot : (ξ.map p).IsTrivial) : ξ.IsTrivial :=
-  isTrivial_of_kernelMapHasse hp (kernelMapHasse_of_spinorNormBoundary hp e Q hQ hrank hboundary)
+  Cocycle.isTrivial_of_kernelHasse hp (kernelMapHasse_of_spinorNormBoundary hp e Q hQ hrank hboundary)
     ξ hξ hquot
 
 open Quaternionic Langlands.LinearAlgebra.OrthogonalCocycleDescent in

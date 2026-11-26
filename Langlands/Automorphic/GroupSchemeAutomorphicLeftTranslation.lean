@@ -21,7 +21,7 @@ variable {F : Type u} [Field F] [NumberField F]
   {d : ℕ} {hsmooth : SmoothOfRelativeDimension d G.X.hom}
   (hcalc : AdelicDifferentialCommutator F G hsmooth)
 
-private theorem plotSmoothEnvelopingAction_leftTranslation
+theorem plotSmoothEnvelopingAction_leftTranslation
     (a : InfiniteAdelicGroupPoints F G)
     (D : AdelicEnvelopingAlgebra F G hsmooth) (f : InfinitePlotSmoothFunctions F G) :
     plotSmoothEnvelopingAction F G hsmooth hcalc D (plotSmoothLeftTranslation F G a f) =

@@ -1,0 +1,5 @@
+# Weak approximation of symmetric elements at finite and infinite places
+
+Let \(E\) be a number field and let \(A\) be a finite-dimensional \(E\)-algebra with an \(E\)-linear algebra involution and a supplied finite basis. At finitely many finite places and all infinite places of \(E\), prescribe open sets in the coordinates of the scalar-extended basis. If each open set contains the coordinates of an element fixed by the corresponding completed involution, `symmetricWeakApproximation` gives one element of \(A\) fixed by the original involution whose coordinates meet all the conditions.
+
+The proof applies scalar weak approximation in each basis coordinate. Before approximation it pulls each open set back under the completed linear projection \(x\mapsto(x+\sigma(x))/2\). The coordinate projection is continuous, and the local symmetric point gives a point in the preimage. Applying the original projection to the approximating vector gives a symmetric algebra element. Compatibility of the projection and basis coordinates with tensor scalar extension gives membership at each actual completion.

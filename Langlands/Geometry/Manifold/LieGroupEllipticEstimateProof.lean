@@ -36,18 +36,47 @@ private theorem lieWordAction_apply {E : Type*} [NormedAddCommGroup E] [NormedSp
       P.coeff w * (lieWordDerivative X w : (H → ℂ) → H → ℂ) φ y := by
   simp only [lieWordAction, Finsupp.sum, Finset.sum_apply, Pi.smul_apply, smul_eq_mul]
 
-/-- **Interior estimate for elliptic left-invariant word operators on a Lie group.** In a
-Euclidean chart at the identity the operator `Ptop + Plow` becomes a scalar coordinate operator
-with smooth coefficients whose principal symbol at the chart point is the word symbol of `Ptop`;
-the Euclidean interior derivative bounds then control every derivative at the identity, and
-hence `lieWordAction X Q φ 1`, by the supremum of `‖φ‖` on the image of a closed coordinate
-ball. -/
-theorem lieGroupEllipticInteriorEstimate : LieGroupEllipticInteriorEstimateStatement.{u, v} := by
-  intro E _ _ _ H _ _ _ _ n r X Ptop Plow hPtop hPlow hell Q
+/-- In the Euclidean identity chart, an elliptic word operator is a scalar coordinate operator
+with smooth coefficients and the specified principal symbol at the identity. The same frame
+also expands any word used to test derivatives of solutions. -/
+theorem exists_lieWordCoordinateOperator {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [FiniteDimensional ℝ E] {H : Type v} [TopologicalSpace H] [ChartedSpace E H] [Group H]
+    [LieGroup 𝓘(ℝ, E) ∞ H] {n r : ℕ} (X : Fin n → GroupLieAlgebra 𝓘(ℝ, E) H)
+    (Ptop Plow : MonoidAlgebra ℂ (FreeMonoid (Fin n)))
+    (hPtop : ∀ w ∈ Ptop.coeff.support, w.length = r)
+    (hPlow : ∀ w ∈ Plow.coeff.support, w.length < r)
+    (hell : ∀ ξ : GroupLieAlgebra 𝓘(ℝ, E) H →ₗ[ℝ] ℝ, ξ ≠ 0 → lieWordSymbol X ξ Ptop ≠ 0) :
+    let d := Module.finrank ℝ E
+    let F := EuclideanSpace ℝ (Fin d)
+    let L : E ≃L[ℝ] F := toEuclidean
+    let e := extChartAt 𝓘(ℝ, E) (1 : H)
+    let S := L.symm ⁻¹' e.target
+    let ψ := e.symm ∘ L.symm
+    let x₀ := L (e 1)
+    ∃ (D : CoordinateScalarOperator F d r) (V : Fin n → F → F),
+      IsOpen S ∧ x₀ ∈ S ∧ ψ x₀ = 1 ∧ ContMDiffOn 𝓘(ℝ, F) 𝓘(ℝ, E) ∞ ψ S ∧
+      D.basis = (EuclideanSpace.basisFun (Fin d) ℝ).toBasis ∧
+      (∀ (k : Fin (r + 1)) (W : Fin k.val → Fin d), ContDiffOn ℝ ∞ (D.coefficient k W) S) ∧
+      (∀ ξ : F →L[ℝ] ℝ, ξ ≠ 0 → D.principalSymbol x₀ ξ ≠ 0) ∧
+      (∀ φ : H → ℂ, ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℂ) ∞ φ → ∀ x ∈ S,
+        D.action (φ ∘ ψ) x = lieWordAction X (Ptop + Plow) φ (ψ x)) ∧
+      ∀ φ : H → ℂ, ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℂ) ∞ φ →
+        ∀ (w : FreeMonoid (Fin n)) (N : ℕ), w.length ≤ N → ∀ x ∈ S,
+          (lieWordDerivative X w : (H → ℂ) → H → ℂ) φ (ψ x) =
+            ∑ k ∈ Finset.range (N + 1), ∑ W : Fin k → Fin d,
+              vectorFieldWordCoeff V w.toList k W x *
+                iteratedFDeriv ℝ k (φ ∘ ψ) x
+                  (fun q => EuclideanSpace.basisFun (Fin d) ℝ (W q)) := by
   classical
   let d := Module.finrank ℝ E
   let e := EuclideanSpace.basisFun (Fin d) ℝ
-  obtain ⟨S, ψ, x₀, V, hS, hx₀, hψ₀, hψ, hV, hVx₀, hdir⟩ := exists_lieGroupChartFrame X
+  obtain ⟨S, ψ, x₀, V, hS, hx₀, hψ₀, hψ, rfl, rfl, rfl, hV, hVx₀, hdir⟩ :=
+    exists_lieGroupChartFrame_extChart X
+  let L : E ≃L[ℝ] EuclideanSpace ℝ (Fin d) := toEuclidean
+  let chart := extChartAt 𝓘(ℝ, E) (1 : H)
+  let S := L.symm ⁻¹' chart.target
+  let ψ := chart.symm ∘ L.symm
+  let x₀ := L (chart 1)
   -- the operator in the chart
   let P := Ptop + Plow
   have hlen : ∀ w ∈ P.coeff.support, w.length ≤ r := by
@@ -158,9 +187,29 @@ theorem lieGroupEllipticInteriorEstimate : LieGroupEllipticInteriorEstimateState
     rw [zero_apply,
       ← ContinuousLinearEquiv.apply_symm_apply (toEuclidean : E ≃L[ℝ] EuclideanSpace ℝ (Fin d)) v]
     exact hv
+  exact ⟨D, V, hS, hx₀, hψ₀, hψ, rfl, hcoef, hellD, haction, hexp⟩
+
+/-- **Interior estimate for elliptic left-invariant word operators on a Lie group.** In a
+Euclidean chart at the identity the operator `Ptop + Plow` becomes a scalar coordinate operator
+with smooth coefficients whose principal symbol at the chart point is the word symbol of `Ptop`;
+the Euclidean interior derivative bounds then control every derivative at the identity, and
+hence `lieWordAction X Q φ 1`, by the supremum of `‖φ‖` on the image of a closed coordinate
+ball. -/
+theorem lieGroupEllipticInteriorEstimate : LieGroupEllipticInteriorEstimateStatement.{u, v} := by
+  intro E _ _ _ H _ _ _ _ n r X Ptop Plow hPtop hPlow hell Q
+  classical
+  let d := Module.finrank ℝ E
+  let e := EuclideanSpace.basisFun (Fin d) ℝ
+  let L : E ≃L[ℝ] EuclideanSpace ℝ (Fin d) := toEuclidean
+  let chart := extChartAt 𝓘(ℝ, E) (1 : H)
+  let S := L.symm ⁻¹' chart.target
+  let ψ := chart.symm ∘ L.symm
+  let x₀ := L (chart 1)
+  obtain ⟨D, V, hS, hx₀, hψ₀, hψ, hD, hcoef, hellD, haction, hexp⟩ :=
+    exists_lieWordCoordinateOperator X Ptop Plow hPtop hPlow hell
   -- the Euclidean interior bounds
   obtain ⟨R, -, hRS, Cm, hCm, hbound⟩ :=
-    exists_localElliptic_interior_derivative_bounds D rfl hS hcoef hx₀ hellD
+    exists_localElliptic_interior_derivative_bounds D hD hS hcoef hx₀ hellD
   have hVc : IsCompact (ψ '' closedBall x₀ R) :=
     (isCompact_closedBall x₀ R).image_of_continuousOn (hψ.continuousOn.mono hRS)
   obtain ⟨C, hCdef⟩ : ∃ C : ℝ, C = ∑ w ∈ Q.coeff.support, ‖Q.coeff w‖ *

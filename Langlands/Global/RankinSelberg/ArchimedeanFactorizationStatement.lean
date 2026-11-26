@@ -165,11 +165,11 @@ and for `σ < Re s`
 
 and none of `Ψ_∞`, `Ψ̃_∞`, `Ψ_v`, `Ψ̃_v` (`v ∈ S`) vanishes identically on a right
 half-plane. -/
-def EqualArchimedeanFactorizationStatement : Prop := by
+def EqualArchimedeanFactorizationAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop := by
   classical
   exact
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
     (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
   ∀ (r : ℕ) (T Td T' Td' : Automorphic.CuspidalOperatorRealization F r),
     Automorphic.OperatorRealization.IsContragredientOf Td.realization T.realization →
@@ -249,6 +249,11 @@ def EqualArchimedeanFactorizationStatement : Prop := by
       (∀ a : ℝ, ∃ s : ℂ, a < s.re ∧ infiniteDualIntegral s ≠ 0) ∧
       (∀ (v : S) (a : ℝ), ∃ s : ℂ, a < s.re ∧ (D v).integral s ≠ 0) ∧
       ∀ (v : S) (a : ℝ), ∃ s : ℂ, a < s.re ∧ (D v).dualIntegral s ≠ 0
+
+/-- The equal-rank integrated factorization over each number field. -/
+def EqualArchimedeanFactorizationStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    EqualArchimedeanFactorizationAt.{u, uQ} F
 
 /-- **Result 2**: the factorization over `S` and the infinite places in both rank cases. -/
 def ArchimedeanFactorizationStatement : Prop :=

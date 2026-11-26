@@ -47,3 +47,8 @@ in §8, p. 328. These are PDF pp. 321 and 337 in
 The module proves the commutation used before passing to the norm-one slices.
 It does not construct a split component, prove a norm-one decay estimate or
 an orthogonal projection formula, or carry out the Fourier transform.
+
+`eval_height_torus` evaluates the Iwasawa height on a character of the maximal
+split torus at a torus point. The result is the normalized character logarithm
+on the torus, obtained by factoring its inclusion through the minimal parabolic
+and transporting the character pairing along restriction.

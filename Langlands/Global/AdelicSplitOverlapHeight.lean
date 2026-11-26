@@ -76,9 +76,9 @@ constant `D` such that whenever `x i(s) p = x' i(s') p' γ` with `x, x' ∈ C`, 
 minimal-parabolic factors `p, p'` and a rational point `γ = b₁ n b₂` with `b₁, b₂` in the
 minimal standard parabolic and `n` normalizing the torus, the Weyl translate `n · ψ` at `s'`
 is at most `D` times `ψ` at `s`. -/
-theorem exists_bruhat_height_bound (hG : IsConnectedReductive G) (i : T.toGrp ⟶ G)
-    [Mono i.hom.hom.left] (ν : cocharacterLattice T) (hi : IsMaximalSplitTorus i)
-    (hmax : IsMaximalTorus i) (hν : IsGenericCocharacter i ν)
+theorem exists_bruhat_height_bound_of_compactCover (i : T.toGrp ⟶ G)
+    [Mono i.hom.hom.left] (ν : cocharacterLattice T)
+    (hcover : HasCompactNormOneRationalCover (F := F) (Standard.parabolicScheme i ν ∅))
     {m : ℕ} (ρ : MatrixRepresentation G (Fin m)) (j : Fin m)
     (hP : (ρ.restrict (Standard.parabolicHom i ν ∅)).PreservesCoordinateLine j)
     (hT : (ρ.restrict i).PreservesCoordinateLine j)
@@ -105,8 +105,7 @@ theorem exists_bruhat_height_bound (hG : IsConnectedReductive G) (i : T.toGrp �
     simp [e] at hj
   set ψ := ρ.torusCoordinateLineCharacter i j hT
   obtain ⟨B₁, hB₁, hb₁⟩ := exists_pos_orbitHeight_bounds_of_isCompact F G ρ hm hC
-  obtain ⟨Ω, hΩ, hcover⟩ :=
-    hasCompactNormOneRationalCover_emptyParabolic_of_maximalTorus i ν hG hi hν hmax
+  obtain ⟨Ω, hΩ, hrepΩ⟩ := hcover
   set K : Set (AdelicGroupPoints F G) :=
     (fun z : AdelicGroupPoints F G × normOneSubgroup F P =>
       z.1 * (map F P G incl (z.2 : AdelicGroupPoints F P))⁻¹) '' (C ×ˢ Ω) with hK_def
@@ -140,7 +139,7 @@ theorem exists_bruhat_height_bound (hG : IsConnectedReductive G) (i : T.toGrp �
   have hy : sP * (p₁ : AdelicGroupPoints F P) * sP⁻¹ ∈ normOneSubgroup F P :=
     (normOneSubgroup_normal F P).conj_mem _ p₁.property sP
   set y : normOneSubgroup F P := ⟨_, hy⟩
-  obtain ⟨r, hr⟩ := hcover y⁻¹
+  obtain ⟨r, hr⟩ := hrepΩ y⁻¹
   set ω : normOneSubgroup F P := rationalNormOne F P r * y⁻¹ with hω
   have hsp : sP * (p₁ : AdelicGroupPoints F P) =
       (ω : AdelicGroupPoints F P)⁻¹ * rational F P r * sP := by
@@ -241,5 +240,28 @@ theorem exists_bruhat_height_bound (hG : IsConnectedReductive G) (i : T.toGrp �
     _ ≤ B₂ * (((PositiveRealTorus.normCharacter F T ψ s : ℝ≥0) : ℝ) * (B₁ * H₁)) := by
           gcongr
     _ = B₁ * B₂ * H₁ * ((PositiveRealTorus.normCharacter F T ψ s : ℝ≥0) : ℝ) := by ring
+
+/-- The Bruhat height comparison for a maximal torus that is split. -/
+theorem exists_bruhat_height_bound (hG : IsConnectedReductive G) (i : T.toGrp ⟶ G)
+    [Mono i.hom.hom.left] (ν : cocharacterLattice T) (hi : IsMaximalSplitTorus i)
+    (hmax : IsMaximalTorus i) (hν : IsGenericCocharacter i ν)
+    {m : ℕ} (ρ : MatrixRepresentation G (Fin m)) (j : Fin m)
+    (hP : (ρ.restrict (Standard.parabolicHom i ν ∅)).PreservesCoordinateLine j)
+    (hT : (ρ.restrict i).PreservesCoordinateLine j)
+    {C : Set (AdelicGroupPoints F G)} (hC : IsCompact C) :
+    ∃ D : ℝ, 0 < D ∧ ∀ x ∈ C, ∀ x' ∈ C, ∀ (s s' : AdelicGroupPoints F T.toGrp)
+      (p p' : normOneSubgroup F (Standard.parabolicScheme i ν ∅))
+      (n : normalizerPoints i) (b₁ b₂ : Over.mk (𝟙 (Spec (CommRingCat.of F))) ⟶ G.X),
+      b₁ ∈ standardParabolicPoints i ν ∅ → b₂ ∈ standardParabolicPoints i ν ∅ →
+      x * map F T.toGrp G i s * map F _ G (Standard.parabolicHom i ν ∅) p =
+        x' * map F T.toGrp G i s' * map F _ G (Standard.parabolicHom i ν ∅) p' *
+          rational F G (basePointEquiv (b₁ * (n : Over.mk _ ⟶ G.X) * b₂)) →
+      ((PositiveRealTorus.normCharacter F T
+          (weylAction i n (ρ.torusCoordinateLineCharacter i j hT)) s' : ℝ≥0) : ℝ) ≤
+        D * ((PositiveRealTorus.normCharacter F T
+          (ρ.torusCoordinateLineCharacter i j hT) s : ℝ≥0) : ℝ) :=
+  exists_bruhat_height_bound_of_compactCover i ν
+    (hasCompactNormOneRationalCover_emptyParabolic_of_maximalTorus i ν hG hi hν hmax)
+    ρ j hP hT hC
 
 end Langlands.Global.AdelicSiegelFactors

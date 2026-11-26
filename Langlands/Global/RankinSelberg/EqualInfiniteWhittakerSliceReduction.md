@@ -23,6 +23,11 @@ The premises are the following.
 - `ComplexEqualPlaceTestsStatement` supplies the same local data and
   holomorphic nonvanishing at a complex place.
 
+`InfiniteWhittakerSliceModelAt F` expresses the single-representation comparison for all
+supplied presentations over one field `F`. `equalInfiniteWhittakerTestAt_of_local` uses
+that comparison to assemble the tests at `F`. Its real test premise applies when the
+real-place subtype of `F` is nonempty.
+
 Apply the single-representation comparison to the first realization
 with the given unitary character and to the second with the inverse
 character. Choose the local test data independently. The identity

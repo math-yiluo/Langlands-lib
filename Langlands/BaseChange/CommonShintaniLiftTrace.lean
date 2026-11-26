@@ -13,7 +13,7 @@ namespace Langlands.BaseChange
 
 open HarmonicAnalysis JacquetLanglands MeasureTheory
 
-private theorem distribution_eq_zero_of_localValues_zero
+theorem distribution_eq_zero_of_localValues_zero
     {X : Type*} [TopologicalSpace X] [MeasurableSpace X] [T2Space X]
     [LocallyCompactSpace X] [TotallyDisconnectedSpace X]
     {μ : Measure X} {D : Distribution X} {f : SchwartzBruhat X}

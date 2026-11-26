@@ -1,22 +1,9 @@
-# Maximal-Witt coordinates in odd degree over a quadratic local field
+# Maximal-Witt coordinates at nonsplit finite CM places
 
-The local Hermitian isotropy bound gives an isotropic vector in every
-dimension at least three. Splitting off a hyperbolic plane repeatedly
-leaves at most two coordinates. In odd dimension the middle block is
-therefore one line. Its Gram coefficient is nonzero and fixed by
-conjugation. Multiplying one endpoint in each hyperbolic pair by that
-coefficient makes the whole Gram matrix a scalar multiple of the
-antidiagonal Gram. The adjoint is unchanged by this scalar.
+Over a separable quadratic extension of a nonarchimedean local field, the local Hermitian isotropy bound gives a nonzero isotropic vector in every nondegenerate Hermitian space of dimension at least three. Such a vector and a normalized isotropic partner give a hyperbolic plane with a nondegenerate orthogonal complement. Iteration leaves at most two middle coordinates.
 
-To apply the local isotropy bound with independent field universes, the
-base is represented by its image in the quadratic field with the
-pulled-back valuation. The field correspondence preserves the
-valuation-neighborhood bases and hence local compactness. The quadratic
-degree and the nontrivial conjugation agree under the correspondence.
+In odd dimension, the middle block is one line. Its Gram coefficient is nonzero and fixed by conjugation. Multiplying one endpoint in each hyperbolic pair by that coefficient makes the whole Gram a scalar multiple of the antidiagonal Gram. The scalar cancels in the adjoint. In even dimension, if the signed determinant is a conjugate norm, `HyperbolicDecomposition.completeOfSignedDeterminant` gives a decomposition into hyperbolic planes with zero middle dimension. Ordering their endpoints gives the antidiagonal Gram.
 
-`oddNonsplitMaxWittChart` uses this congruence in the Hermitian matrix
-coordinates of the original local algebra. Evaluation at the unique
-upper completion and its inverse carry the antidiagonal matrix chart
-back to the original completed center. The resulting algebra equivalence
-preserves the specified center inclusion and intertwines the actual
-involution with the maximal-Witt adjoint.
+The base completion is represented by its image in the upper field with the pulled-back valuation, so the field universes can be independent. The correspondence preserves the valuation-neighborhood bases and local compactness. The quadratic degree and the nontrivial coefficient conjugation agree under this correspondence.
+
+The chart constructors take a central simple algebra over a CM quadratic extension with a second-kind involution inducing CM conjugation. At the given nonsplit finite place, they require zero completed Brauer invariant at every upper place. This gives matrix coordinates at the unique upper completion. `oddNonsplitMaxWittChart` then uses the odd-degree congruence. `evenNonsplitMaxWittChart` uses the even-degree congruence and additionally takes a witness that the signed Gram determinant is a product \(\overline b b\) in the upper completion. In each case, inverse evaluation of the center carries the antidiagonal adjoint to the matrices over the original completed center. The equivalence preserves the specified center inclusion and intertwines the original completed involution with the maximal-Witt adjoint.

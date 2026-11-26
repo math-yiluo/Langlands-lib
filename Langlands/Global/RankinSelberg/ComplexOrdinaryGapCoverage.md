@@ -1,0 +1,7 @@
+# Ordinary normalized coverage after adjoining a character
+
+`ComplexOrdinaryGapCoverageStatement t q` lifts pointwise ordinary normalized coverage from ranks `t + 1 + q + 1` and `t + 1` to the pair with the first rank increased by one. The trace scale has unit modulus. The enlarged and smaller standard modules are irreducible, and both ordinary families use the same supplied quotient measure and opposite characters.
+
+At a prescribed point, a lower-rank test gives a nonzero linear functional on the smaller compact-finite model. Normalized square convolutions span that model at the point, so some standard square Gaussian convolution has nonzero value under the functional. Its leading rectangular extension gives a retained family of entire integrals. After multiplication by the adjoining determinant character, this family has the chosen nonzero value at each embedded leading unitary.
+
+The retained Mellin formula supplies integrability for all standard polynomial Gaussian tail products and for the Gaussian with half the exponent. Gaussian moment determination therefore yields a polynomial Gaussian tail product with nonzero pairing. The corresponding split matrix test is compact-finite under the right unitary action. Its continued Godement integral and the compact right-Weyl translate belong to the enlarged Whittaker model. The retained Mellin identity identifies the new entire normalization on a right half-plane, with a nonzero Weyl factor and positive Haar scalar.

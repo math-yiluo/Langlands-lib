@@ -1,0 +1,5 @@
+# Equal-rank normalized square convolution in the adjoining chamber
+
+`complexEqualSquareTraceChamber` computes the normalized unfolded equal-rank double integral on right half-planes in the adjoining shift \(z\) and spectral parameter \(s\). It gives the ordinary lower adjacent normalized functional at \(s\), evaluated on the polynomial square convolution vector at \(s+z\). The quotient datum for the lower adjacent integral and the larger group Haar measure come from the equal-rank unfolding.
+
+Absolute convergence of the product kernel permits Fubini in Jacquet's equation (8.1). In the inner matrix integral the radial shift in the determinant character changes the square spectral parameter to \(s+z\). The square convolution trace then gives its normalized value at the padded quotient representative. In the outer integral the finitely many coefficient vectors of the square convolution have a common right half-plane of convergence and normalized identities. Multiplying the two denominators gives the stated formula. The module also shows that, with the smaller coefficient fixed, the entire normalized unequal-rank values are linear in the larger inducing vector.

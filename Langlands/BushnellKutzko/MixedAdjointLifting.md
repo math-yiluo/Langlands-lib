@@ -34,3 +34,14 @@ corrected preimages is the original endomorphism after the same
 subtraction, since the original difference is in the adjoint kernel.
 This gives the desired depth and adjoint value for the sum, and the
 individual preimages retain their specified depths and adjoint depths.
+
+`exists_relative_corrections` uses the same interpolation for a linear equation
+`(1 + a) z = y (1 + b)` with relative automorphisms `y` and `z`. If `a` and
+`b` have the given base lattice depth, it gives relative endomorphisms `a'`
+and `b'` at that depth with `(1 + a') z = y (1 + b')`. Choose a common
+splitting basis for the relative chain and its translate by `z⁻¹`, and
+interpolate `az` and `b` on that basis. Multiplying the interpolant of `az`
+on the right by `z⁻¹` restores the original lattice condition. Equality on
+the basis proves the equation between the relative maps. This supplies the
+linear step for the relative double cosets in BK93 (1.6.1), printed p. 47
+(PDF p. 59).

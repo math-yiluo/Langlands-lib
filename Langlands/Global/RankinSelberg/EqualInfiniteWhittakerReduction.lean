@@ -1,6 +1,7 @@
 import Langlands.Global.RankinSelberg.ArchimedeanExactFourierProducts
 import Langlands.Global.RankinSelberg.ArchimedeanWhittakerProducts
 import Langlands.Global.RankinSelberg.EqualFiniteWhittakerTests
+import Langlands.Global.RankinSelberg.EqualFactorizationAtStatement
 import Langlands.Global.RankinSelberg.EqualIntegrandProducts
 import Langlands.Global.RankinSelberg.UnipotentClassProductProof
 
@@ -81,9 +82,9 @@ structure EqualInfiniteTestData {F : Type u} [Field F] [NumberField F]
 
 /-- The open archimedean input is a product for the two normalized infinite residuals,
 with actual place restrictions and archimedean test data on every right half-plane. -/
-def EqualInfiniteWhittakerTestStatement : Prop :=
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+def EqualInfiniteWhittakerTestAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
     (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
   ∀ (r : ℕ) (T Td T' Td' : CuspidalOperatorRealization F r),
     OperatorRealization.IsContragredientOf Td.realization T.realization →
@@ -122,12 +123,18 @@ def EqualInfiniteWhittakerTestStatement : Prop :=
         I.κ * ((∏ v, I.WR v (realComponent F (r + 1) v g) * I.WR' v (realComponent F (r + 1) v g)) *
           ∏ w, I.WC w (complexComponent F (r + 1) w g) * I.WC' w (complexComponent F (r + 1) w g))
 
-/-- The infinite residual input suffices for the equal-rank pointwise integrand
-factorization, including the dual with the same scalar. -/
-theorem equalPointwiseOfInfiniteTests (hInfinite : EqualInfiniteWhittakerTestStatement.{u, uQ}) :
-    EqualPointwiseFactorizationStatement.{u, uQ} := by
+/-- The infinite Whittaker test property over each number field. -/
+def EqualInfiniteWhittakerTestStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    EqualInfiniteWhittakerTestAt.{u, uQ} F
+
+/-- The infinite residual input at `F` suffices for the equal-rank pointwise integrand
+factorization at `F`, including the dual with the same scalar. -/
+theorem equalPointwiseAtOfInfiniteTests
+    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
+    (hInfinite : EqualInfiniteWhittakerTestAt.{u, uQ} F) : EqualPointwiseFactorizationAt.{u, uQ} F := by
   classical
-  intro F _ _ _ ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hPS' hsupp aR haR aC haC
+  intro ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hPS' hsupp aR haR aC haC
     dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd' ψv hψv νv hνv
   choose D hn hn' using fun v : S =>
     exists_tests P P' hI hI' v.1 (ψv v.1) (νv v.1) (hνv v.1)
@@ -141,7 +148,7 @@ theorem equalPointwiseOfInfiniteTests (hInfinite : EqualInfiniteWhittakerTestSta
   let a' (v : S) := (second v).vector
   have ha₀ (v : S) : (ℓ v).val (a₀ v) = 1 := (first v).reference_value
   have ha₀' (v : S) : (ℓ' v).val (a₀' v) = 1 := (second v).reference_value
-  obtain ⟨t, t', I, hinfinite⟩ := hInfinite F ψ hψ r T Td T' Td' hTd hTd' P P' hI hI'
+  obtain ⟨t, t', I, hinfinite⟩ := hInfinite ψ hψ r T Td T' Td' hTd hTd' P P' hI hI'
     S hPS hPS' hsupp aR haR aC haC dR dR' dRd dRd' hdR hdR' hdRd hdRd'
     dC dC' dCd dCd' hdC hdC' hdCd hdCd' (fun v => ψv v.1) (fun v => hψv v.1)
     ℓ ℓ' a₀ a₀' ha₀ ha₀'
@@ -222,6 +229,11 @@ theorem equalPointwiseOfInfiniteTests (hInfinite : EqualInfiniteWhittakerTestSta
     exact padic_testData_integral (padicField v.1) (D v) s
   · intro v s
     exact padic_testData_dualIntegral (padicField v.1) (D v) s
+
+/-- The infinite residual inputs over all fields give the unrestricted pointwise factorization. -/
+theorem equalPointwiseOfInfiniteTests (hInfinite : EqualInfiniteWhittakerTestStatement.{u, uQ}) :
+    EqualPointwiseFactorizationStatement.{u, uQ} :=
+  fun F _ _ _ => equalPointwiseAtOfInfiniteTests F (hInfinite F)
 
 /-- The archimedean tests imply the exact published equal-rank factorization conjunct. -/
 def EqualInfiniteWhittakerReductionStatement : Prop :=

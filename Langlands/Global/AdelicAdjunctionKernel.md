@@ -1,0 +1,3 @@
+# Twisted products for the convergence-region adjunction
+
+The product combines the source twist at the inverse Weyl translate with the conjugate target value and the target untwisting character. Its simultaneous left invariances follow from the inducing subgroups and the Iwasawa height identities. Conjugating the reflected product interchanges the forward and reverse integrands. The calculation uses the reality of the character pairing in the chosen real chart and the inverse Weyl parameter identity. This is the integrand comparison in Mœglin–Waldspurger II.1.8 in the Bernstein–Lapid §2.2 normalization.

@@ -25,8 +25,9 @@ coordinates the restriction of `ψ` to the place is `realScaledCharacter (aR v)`
 lies in `FiniteCompletion F v = v.adicCompletion F`, which is by definition the carrier of
 `padicField v`, so the local test functions of `EqualLocalTestData` apply to it directly.
 
-All three statements are `Prop`-valued, with the number-field universe `u` and the presentation universe
-`uQ` free, as in the targets.
+`EqualArchimedeanFactorizationAt F` is the integrated equal-rank proposition with the field
+`F` specified. Its universal closure is `EqualArchimedeanFactorizationStatement`. The
+number-field universe `u` and the presentation universe `uQ` are independent.
 
 ## `UnequalArchimedeanFactorizationStatement`
 

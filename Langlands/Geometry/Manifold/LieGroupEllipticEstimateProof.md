@@ -17,7 +17,9 @@ Morrey–Nirenberg (1957), Theorem C, read in a chart at the identity, in pointw
 
 ## Proof
 
-1. **Chart.** `exists_lieGroupChartFrame X` (module `LieGroupEllipticChart`) gives an open
+`exists_lieWordCoordinateOperator` gives the first three steps in the specified Euclidean identity chart. It supplies the coordinate equation, the ellipticity of its principal symbol at the centre and the expansion of any test word in the same frame.
+
+1. **Chart.** `exists_lieGroupChartFrame_extChart X` (module `LieGroupEllipticChart`) gives an open
    `S ⊆ F = EuclideanSpace ℝ (Fin d)` with `d = finrank ℝ E`, a smooth `ψ` with `ψ x₀ = 1`, and
    smooth vector fields `V i` on `S` with `V i x₀ = toEuclidean (X i)`.
 2. **Coordinate operator.** Write `P = Ptop + Plow`; every word in its support has length
@@ -54,7 +56,7 @@ Morrey–Nirenberg (1957), Theorem C, read in a chart at the identity, in pointw
 
 ## Supporting modules
 
-The proof uses three new helper modules, each with its own Markdown:
+The proof uses these Library modules.
 - `Langlands.Analysis.LocalEllipticInteriorBounds`: the Euclidean interior derivative bounds;
 - `Langlands.Analysis.VectorFieldWordCoefficients`: coordinate coefficients of words in vector
   fields;

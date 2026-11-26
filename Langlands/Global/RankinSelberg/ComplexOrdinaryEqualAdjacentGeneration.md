@@ -1,0 +1,5 @@
+# Finite normalized ordinary sums in equal and adjacent complex ranks
+
+`complexOrdinaryEqualAdjacentGeneration` proves that finitely many normalized ordinary integrals sum identically to one for every equal-rank or adjacent-rank pair of irreducible complex inducing lists at unit-modulus trace scale. In particular the conclusion applies at the standard trace scale and its negative.
+
+The coverage proof starts with the rank-one Tate Gaussian. The adjacent lift gives coverage after increasing the first rank by one, and the equal lift uses the opposite-character adjacent pair to increase the other rank. Irreducibility of a larger list gives irreducibility of the retained sublist. The lifts give pointwise coverage in all equal and adjacent ranks. The relevant normalized values are polynomials, with the equal-rank tests taken to have standard Gaussian rows. Spectral multiplication realizes polynomial multiples by ordinary test operations. Bézout's identity then gives a finite ordinary sum identically equal to one. [Jacquet, *Archimedean Rankin–Selberg Integrals*, §15](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

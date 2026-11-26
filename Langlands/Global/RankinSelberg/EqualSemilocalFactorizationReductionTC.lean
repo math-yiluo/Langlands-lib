@@ -1,4 +1,5 @@
 import Langlands.Global.RankinSelberg.EqualSemilocalFactorizationReduction
+import Langlands.Global.RankinSelberg.EqualFactorizationAtStatement
 import Langlands.Global.RankinSelberg.EqualSemilocalReductionTC
 
 /-! # Totally complex reduction of the equal-rank factorization premise
@@ -39,9 +40,12 @@ def EqualSemilocalFactorizationReductionTCStatement : Prop :=
 open EqualSemilocalFactorizationReduction in
 /-- **The totally complex reduction of the equal-rank factorization premise**: the proof of
 `equalSemilocalFactorizationReduction`, with the real-place facts proved vacuously. -/
-theorem equalSemilocalFactorizationReductionTC :
-    EqualSemilocalFactorizationReductionTCStatement.{u, uQ} := by
-  intro hC h2 h3 F _ _ _ _ ψ hdiag r T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hsupp aR haR
+theorem equalSemilocalFactorizationTC_of_factorizationTC
+    (hC : ComplexEqualFunctionalEquationStatement.{u})
+    (h2 : EqualArchimedeanFactorizationTCStatement.{u, uQ})
+    (h3 : ArchimedeanCentralSignStatement.{u, uQ}) :
+    EqualSemilocalFactorizationTCStatement.{u, uQ} := by
+  intro F _ _ _ _ ψ hdiag r T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hsupp aR haR
     aC haC dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd'
     infiniteL dualInfiniteL infiniteEpsilon ψv hψv νv hνv
   classical
@@ -156,6 +160,12 @@ theorem equalSemilocalFactorizationReductionTC :
     intro s hs
     rw [hfacB s (h2s s hs), hprodd s hs]
     ring
+
+/-- Specialize the unrestricted integrated factorization to the totally complex fields. -/
+theorem equalSemilocalFactorizationReductionTC :
+    EqualSemilocalFactorizationReductionTCStatement.{u, uQ} := by
+  intro hC h2 h3
+  exact equalSemilocalFactorizationTC_of_factorizationTC hC (fun F _ _ _ _ => h2 F) h3
 
 /-- The conjunction `ArchimedeanSemilocalTheoryStatement` (results 1–3 of the archimedean
 theory, both ranks) implies `EqualSemilocalFactorizationTCStatement`. -/

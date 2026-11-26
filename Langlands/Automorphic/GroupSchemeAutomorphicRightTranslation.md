@@ -6,12 +6,17 @@ smoothness and the finite level. The translated compact orbit is the
 image of the original compact orbit under this linear translation
 when the compact subgroup is conjugated by the translating point.
 
-On infinite slices, the right-orbit derivative transforms by the
-adjoint action. The proof extends this through the complex enveloping
-algebra, then transports the finite-codimensional annihilator ideal
-under the induced center isomorphism. Moderate growth follows from
-the height bound on a compact right translate, also for matrix size
-zero.
+On the actual plot-smooth infinite slice space,
+`InfiniteSliceRightTranslationCovarianceStatement` says that translating
+`D f` by `a` gives `Ad(a) D` applied to the translated `f`. The right-orbit
+derivative satisfies this covariance by differentiating conjugation at
+the identity. Scalar extension and induction on sums and products in
+the tensor algebra extend it to the complex enveloping action.
+
+For the automorphy predicate, this covariance transports the
+finite-codimensional annihilator ideal under the induced center
+isomorphism. Moderate growth follows from the height bound on a
+compact right translate, also for matrix size zero.
 
 This is an internal consequence of the Library's actual automorphy
 predicate and right differentiation. It allows comparison of

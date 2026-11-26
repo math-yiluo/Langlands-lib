@@ -11,14 +11,14 @@ declarations are in the namespace `Langlands.Global.AdelicSiegelFactors`. Write
 
 ## Statements
 
-### `exists_adelicHeight_le_mul_rational_of_diagonal`
+### Norm minimality from the diagonal estimate
 
-This theorem takes the following data:
+`exists_adelicHeight_le_mul_rational_of_maximalSplit` takes the following data:
 
 - a number field `F : Type u`;
 - a group scheme `G` over `Spec F` with `[IsAffineHom G.X.hom]` and
   `[LocallyOfFiniteType G.X.hom]`, and `hG : IsConnectedReductive G`;
-- a setup with `IsSiegelAlgebraicSetup F G T i ν T₀ j`;
+- a maximal split torus `i` and a generic cocharacter `ν`;
 - a matrix representation `rho : MatrixRepresentation G (Fin N)` with `0 < N`;
 - compact factors
   `C : CompactFactors F G (Standard.unipotentScheme i ν ∅) (Standard.leviScheme i ν ∅)`;
@@ -40,7 +40,8 @@ H s ≤ c' * H (rational F G q * s)
 
 for every `s` in
 `weakSiegelProduct F G T i ν (canonicalStandardFactors F G T i ν) C T₀ j t` and every
-rational point `q`.
+rational point `q`. The theorem `exists_adelicHeight_le_mul_rational_of_diagonal`
+obtains the torus and cocharacter hypotheses from `IsSiegelAlgebraicSetup`.
 
 ### `siegelNormMinimalityStatement_of_diagonal`
 
@@ -71,7 +72,7 @@ hypotheses `hdiag` and `hA` are Part A of that proof, proved in
 
 ## Proof
 
-### `exists_adelicHeight_le_mul_rational_of_diagonal`
+### Norm minimality from the diagonal estimate
 
 1. **Bounds on the compact factors.** Height is continuous by `continuous_adelicHeight`,
    and the inclusions `ι_N` and `ι_M` are continuous. So `H ∘ ι_N` is bounded on
@@ -79,12 +80,12 @@ hypotheses `hdiag` and `hA` are Part A of that proof, proved in
    bounded on `C.compactSubgroup` by some `B_K`. Here `ι_M` is the map
    `m ↦ map (Standard.leviHom i ν ∅) m` on norm-one points. These bounds are nonnegative,
    because `one_le_adelicHeight` gives `H ≥ 1`.
-2. **Part B.** `exists_adelicHeight_conj_unipotent_le` with `Ω = C.omegaN` gives `B` with
+2. **Part B.** `exists_adelicHeight_conj_unipotent_le_of_maximalSplit` with `Ω = C.omegaN` gives `B` with
    `H(A⁻¹ ι_N(n) A) ≤ B`. Here `n ∈ C.omegaN`, `a` lies in the weak chamber, and
    `A = positiveMap F G T i T₀ j a`.
 3. **Decomposition.** `mem_productSet_iff` writes `s = ι_N(n) · ι_M(m) · A · k`, with
    `n ∈ C.omegaN`, `m ∈ C.omegaM`, `a` in the chamber and `k ∈ C.compactSubgroup`.
-4. **Commutation.** The setup clause `standardLevi i ν ∅ = torusCentralizer i` and
+4. **Commutation.** `standardLevi_empty_eq_torusCentralizer_of_generic` and
    `commute_of_mem_standardLevi_image` (module `AdelicPositiveTorusCompatibility`) show
    that `ι_M(m)` commutes with `A`. Hence `s · k⁻¹ · ι_M(m)⁻¹ = ι_N(n) · A`, and so
    `A = s · k⁻¹ · ι_M(m)⁻¹ · (A⁻¹ ι_N(n) A)⁻¹`.

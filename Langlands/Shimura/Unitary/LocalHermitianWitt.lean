@@ -1,6 +1,7 @@
 import Langlands.Shimura.Unitary.HermitianCoordinates
 import Langlands.Shimura.Unitary.HermitianCongruence
 import Langlands.GroupScheme.Examples.HermitianLocalIsotropy
+import Langlands.GroupScheme.Examples.EvenHermitianDecomposition
 import Langlands.GroupScheme.Examples.HermitianHyperbolicGramCoordinates
 import Langlands.GroupScheme.Examples.HermitianMatrixNondegenerate
 import Langlands.GroupScheme.Rational.GeneralLinearCharacterMatrices
@@ -137,6 +138,33 @@ private theorem maxWittGram_blockOrder (L : Type v) [Field L] {r m n : ℕ}
       MultiHyperbolic.gram, Matrix.one_apply, Fin.ext_iff] <;>
     split_ifs <;> first | rfl | exfalso; omega
 
+private theorem exists_block_gram_congruence {L : Type v} [Field L]
+    {k : RingInvolution L} {n r : ℕ} (H : HermitianMatrix.Form k (Fin n))
+    (D : HyperbolicDecomposition H.linearFirst r)
+    (order : Index (Fin r) (Fin D.middleDimension) ≃ Fin n) :
+    ∃ P : (Matrix (Fin n) (Fin n) L)ˣ,
+      HermitianMatrix.adjoint k (P : Matrix (Fin n) (Fin n) L) *
+          (H.gram : Matrix (Fin n) (Fin n) L) * (P : Matrix (Fin n) (Fin n) L) =
+        (MultiHyperbolic.gram D.middleGram).submatrix order.symm order.symm := by
+  let M := Matrix (Fin n) (Fin n) L
+  let f : (Fin n → L) ≃ₗ[L] (Fin n → L) :=
+    (LinearEquiv.piCongrLeft' L (fun _ => L) order.symm).trans D.functionCoordinates.symm
+  let P : Mˣ := coordinateMatrix f
+  have hf (j : Fin n) : f (Pi.single j 1) =
+      D.functionCoordinates.symm (Pi.single (order.symm j) 1) := by
+    simp only [f, LinearEquiv.trans_apply]
+    apply congrArg D.functionCoordinates.symm
+    ext i
+    simp [Pi.single_apply, order.eq_symm_apply]
+  have hP : HermitianMatrix.adjoint k (P : M) * (H.gram : M) * (P : M) =
+      (MultiHyperbolic.gram D.middleGram).submatrix order.symm order.symm := by
+    apply Matrix.ext
+    intro i j
+    change ((((P : M).map k.bar).transpose * (H.gram : M) * (P : M)) i j) = _
+    rw [coordinateMatrix_congruence_apply, ← H.linearFirst_eq_dotProduct, hf, hf]
+    exact D.functionCoordinates_basis_pairing _ _
+  exact ⟨P, hP⟩
+
 section Matrices
 
 variable {F : Type u} {L : Type v} [Field F] [ValuativeRel F] [TopologicalSpace F]
@@ -157,10 +185,11 @@ private theorem transpose_diagonal (a : Fin n → L) :
     simp
   · simp [Matrix.diagonal_apply_ne, h, Ne.symm h]
 
-private theorem exists_odd_gram_congruence (hc : ∃ x : L, c x ≠ x) (hn : Odd n)
-    (H : Mˣ) (hH : θ (H : M) = H) :
-    ∃ (P : Mˣ) (b : Lˣ),
-      θ (P : M) * (H : M) * (P : M) = (b : L) • maxWittGram L n := by
+private theorem of_quadratic_local_model (hc : ∃ x : L, c x ≠ x) {Q : Prop}
+    (withModel : ∀ (R : Type v) [Field R] [ValuativeRel R] [TopologicalSpace R]
+      [IsNonarchimedeanLocalField R] [Algebra R L] [Algebra.IsQuadraticExtension R L]
+      [Algebra.IsSeparable R L],
+      (∀ x, (fieldInvolution R L).bar x = c x) → Q) : Q := by
   let B := (⊥ : IntermediateField F L)
   let e := IntermediateField.botEquiv F L
   let V := (valuation F).comap e.toRingEquiv.toRingHom
@@ -194,6 +223,14 @@ private theorem exists_odd_gram_congruence (hc : ∃ x : L, c x ≠ x) (hn : Odd
   have hd' := conjugation_unique R L d hd
   have hbar (x : L) : (fieldInvolution R L).bar x = c x :=
     (congrArg (fun f : L ≃ₐ[R] L => f x) hd').symm
+  exact withModel R hbar
+
+private theorem exists_odd_gram_congruence (hc : ∃ x : L, c x ≠ x) (hn : Odd n)
+    (H : Mˣ) (hH : θ (H : M) = H) :
+    ∃ (P : Mˣ) (b : Lˣ),
+      θ (P : M) * (H : M) * (P : M) = (b : L) • maxWittGram L n := by
+  apply of_quadratic_local_model c hc
+  intro R _ _ _ _ _ _ _ hbar
   have hθ (X : M) : θ X = HermitianMatrix.adjoint (fieldInvolution R L) X := by
     apply Matrix.ext
     intro i j
@@ -207,23 +244,11 @@ private theorem exists_odd_gram_congruence (hc : ∃ x : L, c x ≠ x) (hn : Odd
   obtain ⟨k, hk⟩ := hn
   have hm : D.middleDimension = 1 := by omega
   let order := blockOrder (r := r) (m := D.middleDimension) (n := n) (by omega)
-  let f : (Fin n → L) ≃ₗ[L] (Fin n → L) :=
-    (LinearEquiv.piCongrLeft' L (fun _ => L) order.symm).trans D.functionCoordinates.symm
-  let P : Mˣ := coordinateMatrix f
-  have hf (j : Fin n) : f (Pi.single j 1) =
-      D.functionCoordinates.symm (Pi.single (order.symm j) 1) := by
-    simp only [f, LinearEquiv.trans_apply]
-    apply congrArg D.functionCoordinates.symm
-    ext i
-    simp [Pi.single_apply, order.eq_symm_apply]
+  obtain ⟨P, hP'⟩ := exists_block_gram_congruence H' D order
   have hP : θ (P : M) * (H : M) * (P : M) =
       (MultiHyperbolic.gram D.middleGram).submatrix order.symm order.symm := by
     rw [hθ]
-    apply Matrix.ext
-    intro i j
-    change ((((P : M).map (fieldInvolution R L).bar).transpose * (H : M) * (P : M)) i j) = _
-    rw [coordinateMatrix_congruence_apply, ← H'.linearFirst_eq_dotProduct, hf, hf]
-    exact D.functionCoordinates_basis_pairing _ _
+    exact hP'
   let i₀ : Fin D.middleDimension := ⟨0, by omega⟩
   let δ := D.middleGram i₀ i₀
   let X := (θ).units P * H * P
@@ -272,6 +297,38 @@ private theorem exists_odd_gram_congruence (hc : ∃ x : L, c x ≠ x) (hn : Odd
     subst i
     subst j
     simp [δ]
+
+private theorem exists_even_gram_congruence (hc : ∃ x : L, c x ≠ x) (hn : Even n)
+    (H : Mˣ) (hH : θ (H : M) = H) {b : L}
+    (hb : c b * b = (-1) ^ (n / 2) * (H : M).det) :
+    ∃ P : Mˣ, θ (P : M) * (H : M) * (P : M) = maxWittGram L n := by
+  apply of_quadratic_local_model c hc
+  intro R _ _ _ _ _ _ _ hbar
+  have hθ (X : M) : θ X = HermitianMatrix.adjoint (fieldInvolution R L) X := by
+    ext i j
+    exact (hbar (X j i)).symm
+  let H' : HermitianMatrix.Form (fieldInvolution R L) (Fin n) :=
+    ⟨H, (hθ H).symm.trans hH⟩
+  have hb' : (fieldInvolution R L).bar b * b = H'.signedDeterminant := by
+    rw [hbar]
+    exact hb
+  obtain ⟨r, D, hD⟩ := exists_local_hyperbolicDecomposition
+    H'.linearFirst H'.bar_linearFirst H'.linearFirst_nondegenerate
+  let U := D.completeOfSignedDeterminant H' hD hn hb'
+  have hm : U.val.middleDimension = 0 := U.property
+  have hdim : n = U.val.middleDimension + 2 * (n / 2) := by simpa using U.val.finrank_eq
+  let order := blockOrder (r := n / 2) (m := U.val.middleDimension) (n := n) (by omega)
+  obtain ⟨P, hP⟩ := exists_block_gram_congruence H' U.val order
+  have hmid : U.val.middleGram = 1 := by
+    ext i j
+    exact False.elim (by have hi := i.isLt; omega)
+  refine ⟨P, ?_⟩
+  rw [hθ, show (H : M) = (H'.gram : M) by rfl, hP, hmid]
+  ext i j
+  obtain ⟨i, rfl⟩ := order.surjective i
+  obtain ⟨j, rfl⟩ := order.surjective j
+  simpa only [Matrix.submatrix_apply, Equiv.symm_apply_apply] using
+    (maxWittGram_blockOrder L _ (by omega) i j).symm
 
 end Matrices
 
@@ -357,6 +414,13 @@ private theorem isQuasiSplitAt_of_nonsplit_gram_congruence
     simp only [e, AlgEquiv.trans_apply, AlgEquiv.apply_symm_apply]
 
 include hp in
+private theorem nonsplitCoefficientInvolution_ne : ∃ z, c z ≠ z := by
+  obtain ⟨z, hz⟩ := exists_localConjugation_ne (K := K) p
+  refine ⟨C z, fun h => hz ((C).injective ?_)⟩
+  change (localConjugation E K p).transport C (C z) = C z at h
+  rwa [AlgebraInvolution.transport_equiv] at h
+
+include hp in
 /-- In odd degree, vanishing Brauer invariants at a nonsplit finite place give
 the actual maximal-Witt chart for every second-kind involution. -/
 theorem isQuasiSplitAt_of_odd_nonsplit (D : CentralSimpleUnitaryData E K A n) (hn : Odd n)
@@ -366,11 +430,7 @@ theorem isQuasiSplitAt_of_odd_nonsplit (D : CentralSimpleUnitaryData E K A n) (h
   let : IsNonarchimedeanLocalField F := FiniteCompletion.isNonarchimedeanLocalField p
   let : IsQuadraticExtension F L := ⟨nonsplitCompletion_finrank p hp⟩
   let : CharZero L := charZero_of_injective_algebraMap (algebraMap K L).injective
-  have hc : ∃ z, c z ≠ z := by
-    obtain ⟨z, hz⟩ := exists_localConjugation_ne (K := K) p
-    refine ⟨C z, fun h => hz ((C).injective ?_)⟩
-    change (localConjugation E K p).transport C (C z) = C z at h
-    rwa [AlgebraInvolution.transport_equiv] at h
+  have hc := nonsplitCoefficientInvolution_ne p hp
   have hn' : 0 < n := by obtain ⟨k, hk⟩ := hn; omega
   let G := nonsplitHermitianChart p D hn' hp hz
   obtain ⟨P, b, hP⟩ := exists_odd_gram_congruence c hc hn G.gram G.hermitian
@@ -386,6 +446,39 @@ def oddNonsplitMaxWittChart (D : CentralSimpleUnitaryData E K A n) (hn : Odd n)
       (∀ x, e (localInvolution D.toSecondKindInvolution p x) =
         maxWittAdjoint (localConjugation E K p) n (e x))} :=
   let h := isQuasiSplitAt_of_odd_nonsplit p hp D hn hz
+  ⟨h.choose, h.choose_spec⟩
+
+include hp in
+/-- In positive even degree, a norm witness for the signed determinant of the
+nonsplit Hermitian chart gives the actual maximal-Witt chart. -/
+theorem isQuasiSplitAt_of_even_nonsplit_signedDeterminant
+    (D : CentralSimpleUnitaryData E K A n) (hn : 0 < n) (he : Even n)
+    (hz : ∀ q : FinitePlacesAbove K p, HasCompletedBrauerInvariant K A q.val 0)
+    (hb : ∃ b : L, c b * b = (-1) ^ (n / 2) *
+      ((nonsplitHermitianChart p D hn hp hz).gram : M).det) :
+    IsQuasiSplitAt D.toSecondKindInvolution n p := by
+  let : ValuativeRel F := FiniteCompletion.valuativeRel p
+  let : IsNonarchimedeanLocalField F := FiniteCompletion.isNonarchimedeanLocalField p
+  let : IsQuadraticExtension F L := ⟨nonsplitCompletion_finrank p hp⟩
+  let : CharZero L := charZero_of_injective_algebraMap (algebraMap K L).injective
+  have hc := nonsplitCoefficientInvolution_ne p hp
+  let G := nonsplitHermitianChart p D hn hp hz
+  obtain ⟨b, hb⟩ := hb
+  obtain ⟨P, hP⟩ := exists_even_gram_congruence c hc he G.gram G.hermitian hb
+  exact isQuasiSplitAt_of_nonsplit_gram_congruence p hp D hn hz P 1 (by simpa using hP)
+
+include hp in
+/-- Center- and involution-preserving maximal-Witt coordinates at an even-degree
+nonsplit place with zero upper invariants and signed determinant a norm. -/
+def evenNonsplitMaxWittChart (D : CentralSimpleUnitaryData E K A n) (hn : 0 < n) (he : Even n)
+    (hz : ∀ q : FinitePlacesAbove K p, HasCompletedBrauerInvariant K A q.val 0)
+    (hb : ∃ b : L, c b * b = (-1) ^ (n / 2) *
+      ((nonsplitHermitianChart p D hn hp hz).gram : M).det) :
+    {e : LocalAlgebra E A p ≃ₐ[F] Matrix (Fin n) (Fin n) (LocalCenter E K p) //
+      (∀ z, e (localCenterMap E K A p z) = Matrix.scalar (Fin n) z) ∧
+      (∀ x, e (localInvolution D.toSecondKindInvolution p x) =
+        maxWittAdjoint (localConjugation E K p) n (e x))} :=
+  let h := isQuasiSplitAt_of_even_nonsplit_signedDeterminant p hp D hn he hz hb
   ⟨h.choose, h.choose_spec⟩
 
 end CM

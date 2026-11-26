@@ -77,9 +77,10 @@ apartment maps through `a`, Galois-fixed image, facet preimages and `S(K)^1`-fix
 8.3.2/8.3.13 over `K` (`UnramifiedParahoricModelStatement`), KP Fact 2.10.16, KP Proposition
 9.3.24, KP Corollary 2.10.10, the closure invariance of `G(K)^1`-fixers, the affine-root
 description of `G(K)^0`-fixers and the torus clause over `𝒪[F]`, there is a building model
-family over `𝒪[F]` satisfying Axiom 4.1.20 whose neutral models have unramified integral points
-`G(K)^0 ∩ Fix(e(Ω))`, for the zero datum built from `P`. -/
-theorem BuildingModelFamily.exists_satisfiesModelAxioms_of_unramified
+family over `𝒪[F]` satisfying Axiom 4.1.20. Over the unramified integers the full
+and neutral models have integral points `G(K)^1 ∩ Fix(e(Ω))` and
+`G(K)^0 ∩ Fix(e(Ω))`, respectively, for the zero datum built from `P`. -/
+theorem BuildingModelFamily.exists_satisfiesModelAxioms_withBaseChange_of_unramified
     (hpar : UnramifiedParahoricModelStatement.{u})
     (hdesc : UnramifiedSmoothModelDescentStatement.{u})
     (hzero : UnramifiedZeroDescentStatement.{u})
@@ -111,6 +112,10 @@ theorem BuildingModelFamily.exists_satisfiesModelAxioms_of_unramified
             e (P.toValuationBuildingData.apartmentMap w)) :
     ∃ M : BuildingModelFamily P.toValuationBuildingData ↥𝒪[F],
       M.SatisfiesModelAxioms P ∧
+        (∀ Ω : BuildingModelIndex P.toValuationBuildingData,
+          (M.model Ω).full.baseChangeUnramified.integralPoints =
+            characterValuationKernel (MaximalUnramified.valuation F)
+              (baseChanged F (inertiaFixedField F) G) ⊓ C.pointwiseFixer (e '' Ω.val)) ∧
         ∀ Ω : BuildingModelIndex P.toValuationBuildingData,
           (M.model Ω).neutral.baseChangeUnramified.integralPoints =
             (unramifiedZeroDatumOfParahoric P).zeroPoints ⊓ C.pointwiseFixer (e '' Ω.val) := by
@@ -178,7 +183,7 @@ theorem BuildingModelFamily.exists_satisfiesModelAxioms_of_unramified
       (model Ω').neutral_smooth hneut_le
     exact ⟨⟨φf, φn, comp_hom_eq_of_generic φn (model Ω).inclusion (model Ω').inclusion φf⟩⟩
   refine ⟨⟨model, fun Ω Ω' h => (hmor Ω Ω' h).some, torus⟩,
-    ⟨rfl, ?_, ?_, ?_, ?_, htorus, ?_⟩, hneut⟩
+    ⟨rfl, ?_, ?_, ?_, ?_, htorus, ?_⟩, hfull, hneut⟩
   · -- full points
     intro Ω
     exact integralPoints_eq_of_unramified_one e he_inj he_smul (model Ω).full Ω.val (hfull Ω)
@@ -276,5 +281,49 @@ theorem BuildingModelFamily.exists_satisfiesModelAxioms_of_unramified
     obtain ⟨ψ⟩ := nonempty_hom_of_unramified_le hext (model Ω).full (model Ω).neutral
       (model Ω).full_smooth hle
     exact isIso_hom_of_hom (model Ω).inclusion ψ
+
+set_option maxHeartbeats 4000000 in
+include h1 h2 h3 h4 h5 h6 h7 in
+/-- Forget the full base-change point identity while retaining the neutral
+base-change point identity used for the reductive quotients. -/
+theorem BuildingModelFamily.exists_satisfiesModelAxioms_of_unramified
+    (hpar : UnramifiedParahoricModelStatement.{u})
+    (hdesc : UnramifiedSmoothModelDescentStatement.{u})
+    (hzero : UnramifiedZeroDescentStatement.{u})
+    (hext : UnramifiedSmoothHomExtensionStatement.{u})
+    (hclos : UnramifiedOneFixerClosureStatement.{u})
+    (hroot : UnramifiedZeroFixerAffineRootStatement.{u})
+    (htor : UnramifiedTorusClauseStatement.{u})
+    (C : MaximalUnramified.BuildingData F (baseChanged F (inertiaFixedField F) G))
+    (A : MaximalUnramified.SemilinearApartmentData C)
+    (e : P.toValuationBuildingData.ReducedBuilding → C.ReducedBuilding)
+    (a : P.toValuationBuildingData.Apartment →ᵃ[ℝ] C.Apartment)
+    (he_inj : Function.Injective e)
+    (he_smul : ∀ (g : rationalPoints G) (z : P.toValuationBuildingData.ReducedBuilding),
+      e (g • z) = rationalExtend F (inertiaFixedField F) G g • e z)
+    (he_apt : ∀ w : P.toValuationBuildingData.Apartment,
+      e (P.toValuationBuildingData.apartmentMap w) = C.apartmentMap (a w))
+    (hA_fix : ∀ (σ : inertiaFixedField F ≃ₐ[F] inertiaFixedField F)
+        (z : P.toValuationBuildingData.ReducedBuilding),
+      A.action σ (e z) = e z)
+    (hfacet : ∀ w : P.toValuationBuildingData.Apartment,
+      a ⁻¹' AffineRootSystem.facet C.affineRoots (a w) =
+        AffineRootSystem.facet P.toValuationBuildingData.affineRoots w)
+    (hkernel : ∀ s ∈ characterValuationKernel (MaximalUnramified.valuation F)
+        (baseChanged F (inertiaFixedField F) P.S.toGrp),
+      ∀ w : P.toValuationBuildingData.Apartment,
+        rationalPoints.map
+            ((GroupScheme.baseChange (baseMap F (inertiaFixedField F))).map P.i) s •
+          e (P.toValuationBuildingData.apartmentMap w) =
+            e (P.toValuationBuildingData.apartmentMap w)) :
+    ∃ M : BuildingModelFamily P.toValuationBuildingData ↥𝒪[F],
+      M.SatisfiesModelAxioms P ∧
+        ∀ Ω : BuildingModelIndex P.toValuationBuildingData,
+          (M.model Ω).neutral.baseChangeUnramified.integralPoints =
+            (unramifiedZeroDatumOfParahoric P).zeroPoints ⊓ C.pointwiseFixer (e '' Ω.val) := by
+  obtain ⟨M, hM, _, hneutral⟩ := BuildingModelFamily.exists_satisfiesModelAxioms_withBaseChange_of_unramified
+    P R T h1 h2 h3 h4 h5 h6 h7 hpar hdesc hzero hext hclos hroot htor C A e a he_inj he_smul
+    he_apt hA_fix hfacet hkernel
+  exact ⟨M, hM, hneutral⟩
 
 end Langlands.BruhatTits.IntegralModels

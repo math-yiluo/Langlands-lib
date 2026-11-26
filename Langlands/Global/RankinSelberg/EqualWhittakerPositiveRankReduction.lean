@@ -109,7 +109,8 @@ private theorem realEqualPlaceTests_of_positive (h : RealEqualPlaceTestsPositive
       v a d d' dd dd' hd hd' hdd hdd'
   | succ r => exact h F ψ hψ r.succ (Nat.succ_pos r)
 
-private theorem complexEqualPlaceTests_of_positive (h : ComplexEqualPlaceTestsPositiveRankStatement.{u}) :
+/-- Combine the positive-rank complex tests with the rank-one Tate tests. -/
+theorem complexEqualPlaceTests_of_positive (h : ComplexEqualPlaceTestsPositiveRankStatement.{u}) :
     ComplexEqualPlaceTestsStatement.{u} := by
   intro F _ _ _ ψ hψ r
   cases r with

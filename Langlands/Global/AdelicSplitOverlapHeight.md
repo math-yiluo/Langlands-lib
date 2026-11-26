@@ -6,13 +6,12 @@ Springer's overlap estimate (Springer, *Reduction theory over global fields*,
 `x i(s) p = x' i(s') p' γ` are compared through a coordinate line preserved by
 the minimal parabolic, where `γ` is a rational point in Bruhat position
 `b₁ n b₂`. The comparison bounds the Weyl translate `n · ψ` of the line character
-at `s'` by a constant times `ψ` at `s`. The provenance is derived. Springer's
-argument applies heights to the line `e` and to its rational image `γ e`. Here
-that argument is carried out with the Library's published orbit heights,
-compact height bounds, a positive lower bound for the heights of nonzero rational
-vectors, and the compact rational cover of the minimal parabolic. Unlike
-Springer, the module asserts nothing about the shape of the line character; see
-the errata note `notes/errata/springer-1994-reduction-global-fields.md`.
+at `s'` by a constant times `ψ` at `s`. Springer's argument applies heights
+to the line `e` and to its rational image `γ e`. The formal proof uses
+the Library's orbit heights, compact height bounds, a positive lower bound
+for the heights of nonzero rational vectors, and a compact rational cover of
+the minimal parabolic. The character `ψ` is the actual torus character of the
+given line. [Source comparison](../../notes/errata/springer-1994-reduction-global-fields.md).
 
 All declarations are in namespace `Langlands.Global.AdelicSiegelFactors`, over a
 number field `F`.
@@ -33,13 +32,13 @@ number field `F`.
 
 ## Main theorem
 
-`exists_bruhat_height_bound` assumes the following:
+`exists_bruhat_height_bound_of_compactCover` assumes the following.
 
-* `G` is affine and connected reductive;
-* `i` is a monomorphic maximal split torus that is also a maximal torus;
-* `ν` is generic;
+* `G` is affine and `i : T → G` is monomorphic.
+* The standard parabolic `P_∅` for `i` and `ν` admits compact rational
+  representatives in its norm-one group (`HasCompactNormOneRationalCover`).
 * `ρ` is a matrix representation whose coordinate line `j` is preserved by `P_∅`
-  and by the torus, with torus line character `ψ`;
+  and by the torus, with torus line character `ψ`.
 * `C ⊆ G(A)` is compact.
 
 It gives `D > 0` with the following property. Let `x, x' ∈ C`, let `s, s'` be
@@ -51,8 +50,13 @@ adelic torus points, and let `p, p'` lie in the norm-one subgroup of `P_∅`. Le
 then `|(n · ψ)(s')| ≤ D · |ψ(s)|`. Here `|·|` is
 `PositiveRealTorus.normCharacter` and `n · ψ` is the published `weylAction`.
 
-No norm-one condition is imposed on `s` or `s'` in this theorem. The norm-one
-conditions on `p` and `p'` are used.
+The torus points `s` and `s'` range over all of `T(A)`. The factors `p` and
+`p'` range over `P_∅(A)¹`.
+
+`exists_bruhat_height_bound` specializes the comparison to a connected
+reductive group with a generic `ν` and a maximal split torus that is also
+a maximal torus. It obtains the required cover from
+`hasCompactNormOneRationalCover_emptyParabolic_of_maximalTorus`.
 
 ### Proof
 
@@ -64,9 +68,8 @@ Let `e` be the coordinate vector of `j`, and let `H(v, g)` denote the published
    `AdelicGroupPoints.exists_map_mul_rational_normalizer`, which gives `t'` with
    `i(s') n = n i(t')` and `|χ(t')| = |(n · χ)(s')|`. Write `sP` for the image of
    `s'` in `P_∅(A)`. The conjugate `y = sP · (p' c₁) · sP⁻¹` lies in the normal
-   norm-one subgroup of `P_∅`. The published compact cover
-   `hasCompactNormOneRationalCover_emptyParabolic_of_maximalTorus` gives a
-   rational `r ∈ P_∅(F)` with `ω = r · y⁻¹ ∈ Ω` for a fixed compact `Ω`. Thus
+   norm-one subgroup of `P_∅`. The compact cover gives a rational
+   `r ∈ P_∅(F)` with `ω = r · y⁻¹ ∈ Ω` for a fixed compact `Ω`. Thus
    the right side equals `k · rational(g) · i(t') · c₂`, where `g = r n` is
    rational and `k = x' ω⁻¹` lies in the compact set `K = C · Ω⁻¹`.
 2. *Heights of both sides.* Right translation by norm-one points of `P_∅`
@@ -85,6 +88,3 @@ Let `e` be the coordinate vector of `j`, and let `H(v, g)` denote the published
    gives
    `|(n · ψ)(s')| · h₀ ≤ B₂ · |ψ(s)| · H(e, x) ≤ B₁ B₂ H(e, 1) · |ψ(s)|`.
    So `D = B₁ B₂ H(e, 1) / h₀` works.
-
-The main theorem is elaborated with `maxHeartbeats 1600000`, set only for that
-declaration.

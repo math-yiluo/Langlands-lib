@@ -1,0 +1,12 @@
+# Positive-multiple descent of ample Mumford presentations
+
+`Langlands.AbelianScheme.PolarizedFiniteLevel.algebraicallyClosedFieldPolarizationDivision`
+proves `AlgebraicallyClosedFieldPolarizationDivisionStatement` with the published dual, normalization and ampleness conventions. It works over the given algebraically closed field in every characteristic and for every positive natural multiplier.
+
+Let `L` be the original ample line bundle with Mumford map `n • mu`. The multiplication isogeny `[n]` has finite kernel `H` and the Mumford map of `L` restricts to the unit on `H`. The formula for the class of the Mumford family on `H × A` then identifies the class of the translation pullback of `L` with the product of the two projection pullback classes. The class from `H` is trivial because the coordinate ring of `H` is Artinian and its Picard group is trivial. Equality of classes gives an actual translation isomorphism on `H × A`.
+
+`KernelTranslation.exists_descended_power` descends `L^n` along `[n]` to an actual line bundle `M`. The Mumford map of `[n]^*M` is `[n]` followed by the Mumford map of `M` and then by the dual of `[n]`. The dual multiplication law identifies the latter map with `[n]` on the dual. The power formula and the original presentation identify the resulting map with `n • (n • mu)`. Cancelling the multiplication isogeny twice proves that `M` has Mumford map `mu`.
+
+The Mumford maps of `M^n` and `L` now agree. Their line-bundle class formulas at the rational translations imply that `M^n ⊗ L⁻¹` is translation invariant. Over the algebraically closed field, `algClosedFieldTranslationDifferenceLifting` writes it as `t_x^*L ⊗ L⁻¹` for a rational point `x`. Hence `M^n` is isomorphic to the ample bundle `t_x^*L`. Positive tensor-power reflection then gives ampleness of `M`.
+
+The proof uses the theta-group descent argument of Edixhoven, van der Geer and Moonen, *Abelian Varieties*, preliminary version of 8 February 2012, with `H = A[n]` and the initial bundle `L`. The scheme-theoretic kernel and the unit correction on arbitrary test schemes give the descent in characteristics dividing `n` as well. The source is `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`. The relevant passages are (7.21)–(7.25) on Mumford maps and translation differences, (8.6)–(8.11) on the commutator and descent, and (11.2), (11.4)–(11.5) on polarization presentations.

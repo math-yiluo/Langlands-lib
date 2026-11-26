@@ -122,7 +122,9 @@ private theorem rankOne_presentation_conductor (e : ReciprocityCandidate K)
   · rintro h _ ⟨w, hw, rfl⟩
     exact h w hw
 
-private theorem rankOne_hasArtinConductor_iff (e : ReciprocityCandidate K)
+/-- Under geometric reciprocity, the Artin conductor of a rank-one Weil
+class is the multiplicative conductor of its field character. -/
+theorem rankOne_hasArtinConductor_iff (e : ReciprocityCandidate K)
     (he : IsGeometricReciprocity K e) (χ : QuasiCharacter K) (a : ℕ) :
     Numerical.HasArtinConductor K (k := 0) (rankOneWeilCharacterClass.{uK, uW} K e χ) a ↔
       a = (T).multiplicativeConductor χ := by

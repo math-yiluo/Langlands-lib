@@ -1,0 +1,7 @@
+# Compact sup-norm bounds for real block Fourier multipliers
+
+`RealBlockFourierSupNormStatement` gives a bound on the restriction of a block Fourier multiplier to the orthogonal group. For square-summable multiplier coefficients the operator bound is their square-sum norm. The second assertion verifies square summability for the reciprocal binomial tail at every positive discrete weight, with the reciprocal at a zero coefficient interpreted as zero.
+
+Fix a compact point and restrict the input along the block rotation through that point. Divide the block Fourier coefficients by \(2\pi\) to match the normalized Fourier coefficients on the interval. Mathlib's `hasSum_sq_fourierCoeffOn` bounds every finite sum of their squared norms by the square of the input's compact sup norm. The multiplier formula on compact-finite vectors is a finite sum. Finite Cauchy–Schwarz and the sum of the multiplier's squared norms give the operator bound.
+
+The binomial tail formula in `RealBlockMultiplier` gives the absolute value of the tail at mode \(j\) as a binomial coefficient with upper index \(n=\lfloor |j|/2\rfloor+\lfloor(\ell-1+\epsilon_{\ge 0})/2\rfloor\), where \(\ell\) is the discrete weight and \(\epsilon_{\ge 0}\) is the natural-number truncation of the parity parameter. For \(n\ge\ell>0\), Pascal's identity gives \(\binom{n}{\ell}\ge n+1-\ell\). A unit-modulus reflection multiplier preserves this absolute value. Outside the finite set \(|j|\le 4\ell\), the squared reciprocal is at most \(16/j^2\). The usual summable square majorant gives the result.

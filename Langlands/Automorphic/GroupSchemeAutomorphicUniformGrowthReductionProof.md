@@ -74,43 +74,15 @@ All with the published local instances (`completionRCLike`, `smoothChartedSpace 
   `mfderiv c 0 1 = X` (`mvfderiv_comp_apply_of_eq`, `mvfderiv_eq_fderiv`). By
   `evaluate_finitePlotSmoothDifferentialAction` this is the value of the derivative at `p`.
 
-## The main proof
+## The elliptic equation and the growth estimate
 
-Let `f` be a form: `Kinf`-finite, centre-finite and of moderate growth. Take `n`, `X`, `J` from
-`AdelicAdaptedCasimirStatement`, and `Cf`, `e` with `‖f(g)‖ ≤ Cf * adelicHeight(g) ^ e` from
-`hasAdelicModerateGrowth_iff`.
+`exists_elliptic_slice_annihilator` starts with the adapted Casimir and a compact-finite and centre-finite form `f`. It uses the commutator proof supplied for the specified atlas and the original enveloping action.
 
-1. **A finite-dimensional stable space.** Let `W` be the `Kinf`-orbit span of `f`
-   (finite-dimensional). Each translate `R(k) f` is centre-finite
-   (`IsAdelicCenterFinite.infiniteRightAction`), hence so is every vector of `W`. The operators
-   `D_{X j}` (`j ∈ J`) preserve `W` (`differentialAction_mem_orbitSpan`). They commute with the
-   centre action, because centre elements commute with `ι (1 ⊗ X j)`. `exists_stable_finite`
-   gives a finite-dimensional `U ⊇ W` stable under the centre and the `D_{X j}`.
-2. **An annihilating polynomial.** Put `Ωe = ∑ i, ι(1 ⊗ X i)^2`. By the Casimir statement,
-   `zΩ = ∑ i, ι(1 ⊗ X i)^2 - 2 • ∑ j ∈ J, ι(1 ⊗ X j)^2` is central, and
-   `Ωe = zΩ + 2 • ∑ j ∈ J, ι(1 ⊗ X j)^2`. So `Ωe` preserves `U`, and
-   `exists_monic_aeval_eq_zero` gives a monic `p` with `p(Ωe) f = 0`.
-3. **The elliptic word equation.** Let `wsq = ∑ i, [i, i]`, so `wordHom X wsq = Ωe`, and let
-   `m = natDegree p`. Put `Ptop = wsq ^ m` and `Plow = ∑_{k < m} p.coeff k • wsq ^ k`. Then
-   `Ptop + Plow = aeval wsq p` because `p` is monic, so `wordHom X (Ptop + Plow) = p(Ωe)` kills
-   `f`. Every word of `Ptop` has length `2m` and every word of `Plow` has length `< 2m`.
-   `lieWordSymbol X ξ Ptop = (∑ i, ξ(X i)^2)^m`, which is nonzero for `ξ ≠ 0` since the `X i`
-   span.
-4. **The estimate.** For an enveloping element `a`, choose `Q` with `wordHom X Q = a`
-   (`wordHom_surjective`), and take the compact `V` and constant `C` of
-   `LieGroupEllipticInteriorEstimateStatement` for `Ptop`, `Plow` and `Q`. Let `B'` be
-   `max B 1`, where `B` bounds `adelicHeight ∘ ofInfinite` on `V` (continuity,
-   `continuous_adelicHeight`). Write `g = pair a' b` and `φ(y) = f(pair (a' y) b)`. Then `φ` is
-   smooth (`isPlotSmooth_iff_contMDiff`) and satisfies the word equation everywhere (by
-   `lieWordAction_leftTranslation` and `slice_wordHom`). On `V` it is bounded by
-   `Cf * B'^e * adelicHeight(g)^e`, by `pair a' b * ofInfinite y = pair (a' y) b` and
-   `adelicHeight_mul_le`. Hence
-   `‖(a · f)(g)‖ = ‖lieWordAction X Q φ 1‖ ≤ C * Cf * B'^e * adelicHeight(g)^e`.
-   The exponent `e` does not depend on `a`; `hasAdelicUniformModerateGrowth_iff` converts this
-   uniform polynomial bound into `HasAdelicUniformModerateGrowth`.
+1. Let `W` be the finite-dimensional compact orbit span. Each compact translate of `f` is centre-finite by `IsAdelicCenterFinite.infiniteRightAction`, so every vector of `W` is centre-finite. The compact derivatives `D_{X j}` preserve `W` and commute with the centre. `exists_stable_finite` then gives a finite-dimensional space `U` containing `W` and stable under the centre and these derivatives.
+2. The sum of squares `Ω = ∑ i, ι(1 ⊗ X i)^2` preserves `U` because it is the sum of the central Casimir and twice the compact sum of squares. The restricted endomorphism has a monic annihilating polynomial. Multiplying it by `X` makes its degree positive while preserving annihilation. For the resulting polynomial `p`, `p(Ω) f = 0`.
+3. Write `wsq = ∑ i, [i, i]` and `m = p.natDegree`. The top word operator is `wsq ^ m`, and its lower part is `∑_{k < m} p.coeff k • wsq ^ k`. Their sum maps to `p(Ω)` under `wordHom`. The top symbol at a real covector `ξ` is `(∑ i, ξ(X i)^2)^m`, which is nonzero for `ξ ≠ 0` because the `X i` span. The common equation on the slices follows from `slice_wordHom`.
 
-The rationality and finite-level properties of `f` are not used beyond the definitions of the
-carrier and the slices. The closed-subgroup hypothesis on `rho` is not used.
+`adelicAutomorphicUniformGrowthReduction` then uses the interior estimate for this word equation. For an enveloping element `a`, choose `Q` with `wordHom X Q = a` and obtain the compact set `V` and constant for `Q`. The moderate-growth hypothesis bounds `‖f(g)‖` by `Cf * adelicHeight(g)^e`. Let `B' ≥ 1` bound `adelicHeight ∘ ofInfinite` on `V`. Writing `g = pair a' b`, the function `φ(y) = f(pair (a' * y) b)` is smooth and satisfies the equation by left translation. The height inequality gives `‖φ(y)‖ ≤ Cf * B'^e * adelicHeight(g)^e` on `V`, and the interior estimate gives the bound on `lieWordAction X Q φ 1`, which is the value of the derivative at `g`. The exponent `e` is independent of `a`, as required by `hasAdelicUniformModerateGrowth_iff`.
 
 ## Provenance
 

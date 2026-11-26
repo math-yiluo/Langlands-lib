@@ -14,6 +14,11 @@ restricts the section to that basic open. The set of closed-point images of
 rational points is compact in the Noetherian topology, so finitely many such
 open domains cover it.
 
+`exists_finite_cover_of_openImmersion` applies the same construction to the
+rational image of an open immersion. Its local section is the inverse
+of the isomorphism onto the open image, so every section in the finite
+cover takes values in the source of the open immersion.
+
 Over a number field, let the rational points in one such domain have supplied
 homogeneous coordinate vectors. A regular function on the affine target of
 the section pulls back to the localization at the basic-open element. The

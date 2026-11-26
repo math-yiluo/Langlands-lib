@@ -26,8 +26,9 @@ The declarations introduce no measure-normalization assumption.
 
 ## The pointwise equal-rank premise
 
-`EqualPointwiseFactorizationStatement.{u,uQ}`, called A_E here, has exactly the
-universal binders of the published
+`EqualPointwiseFactorizationAt F` is the pointwise statement for the specified number
+field `F`. Its universal closure `EqualPointwiseFactorizationStatement.{u,uQ}`, called
+A_E here, has the same universal binders as
 `EqualArchimedeanFactorizationStatement.{u,uQ}`. In particular it allows every
 number field `F : Type u` with compact `AdeleQuotient F`, an additive character
 trivial on `F`, every rank `r`, the supplied cuspidal realizations and
@@ -101,8 +102,9 @@ EqualPointwiseFactorizationStatement → UnipotentClassProductStatement →
   EqualArchimedeanFactorizationStatement.
 ```
 
-The theorem `equalArchimedeanFactorizationReduction` proves this proposition.
-It introduces all target binders and applies A_E. It applies B to `DR`, `DC`
+`equalArchimedeanFactorizationAt_of_pointwise` uses the pointwise hypothesis at `F` and
+applies the quotient-product measure formula for that field. Quantification over `F` gives
+`equalArchimedeanFactorizationReduction`. The integration argument applies B to `DR`, `DC`
 and the normalized finite quotient measures, whose compatibility has already
 been proved, obtaining `C ≠ 0` and the product integration formula. It chooses
 `c = C * κ`, nonzero by `mul_ne_zero`, and `σ = 0`.

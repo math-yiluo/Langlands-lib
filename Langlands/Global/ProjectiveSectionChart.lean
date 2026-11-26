@@ -225,6 +225,34 @@ theorem exists_finite_cover [IsNoetherian Q.left]
   obtain ⟨D, hDt, hxD⟩ := Set.mem_iUnion₂.mp (ht ⟨x, rfl⟩)
   exact ⟨D, hDt, hxD⟩
 
+/-- For an open chart in the quotient, use sections of its own inclusion to
+cover its rational points by finitely many projective section charts. -/
+theorem exists_finite_cover_of_openImmersion [IsNoetherian Q.left] [IsOpenImmersion q.left]
+    (he : e ≫ projectiveSpaceToSpec F m = Q.hom) :
+    ∃ t : Finset (ProjectiveSectionChart e q), ∀ x : RationalPoint F X,
+      ∃ D ∈ t, (x ≫ q).left (IsLocalRing.closedPoint F) ∈ D.inclusion.left.opensRange := by
+  classical
+  let V := q.left.opensRange
+  let s : openOver F Q V ⟶ X := Over.homMk q.left.isoOpensRange.inv (by
+    change q.left.isoOpensRange.inv ≫ X.hom = _
+    rw [← Over.w q, ← Category.assoc, Scheme.Hom.isoOpensRange_inv_comp]
+    rfl)
+  have hs : s ≫ q = openOverι F Q V :=
+    Over.OverMorphism.ext (Scheme.Hom.isoOpensRange_inv_comp q.left)
+  have hcovered (x : RationalPoint F X) :
+      ∃ D : ProjectiveSectionChart e q,
+        (x ≫ q).left (IsLocalRing.closedPoint F) ∈ D.inclusion.left.opensRange :=
+    exists_at_point he (x ≫ q) V s ⟨x.left (IsLocalRing.closedPoint F), rfl⟩ hs
+  let points := Set.range fun x : RationalPoint F X => (x ≫ q).left (IsLocalRing.closedPoint F)
+  obtain ⟨t, ht⟩ := (TopologicalSpace.NoetherianSpace.isCompact points).elim_finite_subcover
+    (fun D : ProjectiveSectionChart e q => (D.inclusion.left.opensRange : Set Q.left))
+    (fun D => D.inclusion.left.opensRange.2) (by
+      rintro _ ⟨x, rfl⟩
+      exact Set.mem_iUnion.mpr (hcovered x))
+  refine ⟨t, fun x => ?_⟩
+  obtain ⟨D, hDt, hxD⟩ := Set.mem_iUnion₂.mp (ht ⟨x, rfl⟩)
+  exact ⟨D, hDt, hxD⟩
+
 private theorem ratio_eq_of_hasCoordinates
     (j : Fin (m + 1)) (φ : chartRing (F := F) j →ₐ[F] F) (a : Fin (m + 1) → F)
     (ha : ProjectiveSpace.HasCoordinates

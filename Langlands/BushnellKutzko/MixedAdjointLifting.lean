@@ -272,6 +272,45 @@ private theorem right_mul_mem_latticeMaps_iff (g : V ≃ₗ[E] V) {n : ℤ} {x :
 
 variable [TopologicalSpace E] [IsNonarchimedeanLocalField E]
 
+/-- If two relative automorphisms satisfy a linear equation with corrections
+in a base lattice step, the corrections can be taken relative at the same
+depth. Interpolation uses a basis splitting the base chain over `E` and its
+translate by the inverse of the right multiplier. -/
+theorem exists_relative_corrections
+    (L : LatticeChain 𝒪[F] F V) (hC : ∀ i v, v ∈ C.lattice i ↔ v ∈ L.lattice i)
+    (y z : V ≃ₗ[E] V) {m : ℤ} {a b : A}
+    (ha : a ∈ L.endFiltration m) (hb : b ∈ L.endFiltration m)
+    (h : (1 + a) * endOfEquiv z = endOfEquiv y * (1 + b)) :
+    ∃ a' b' : Module.End E V,
+      a'.restrictScalars F ∈ L.endFiltration m ∧ b'.restrictScalars F ∈ L.endFiltration m ∧
+        (1 + a') * z.toLinearMap = y.toLinearMap * (1 + b') := by
+  classical
+  obtain ⟨π, hπ⟩ := IsDiscreteValuationRing.exists_irreducible 𝒪[E]
+  obtain ⟨r, b₀, hb₀⟩ := C.exists_basis_splits hπ
+  obtain ⟨s, c, hcz, hc⟩ := (C.linearEquivMap z.symm).exists_basis_splits_of_splits hπ C b₀ hb₀
+  let rel (x : A) : Module.End E V := c.constr E fun j => x (c j)
+  let a' := rel (a * endOfEquiv z) * z.symm.toLinearMap
+  let b' := rel b
+  have hmem {x : A} : x ∈ latticeMaps C C m ↔ x ∈ L.endFiltration m :=
+    ⟨fun h i v hv => (hC _ _).mp (h i v ((hC _ _).mpr hv)),
+      fun h i v hv => (hC _ _).mpr (h i v ((hC _ _).mp hv))⟩
+  have haRel : a'.restrictScalars F * endOfEquiv z = basisLinearPart c (a * endOfEquiv z) := by
+    apply LinearMap.ext
+    intro v
+    change rel (a * endOfEquiv z) (z.symm (z v)) = rel (a * endOfEquiv z) v
+    rw [z.symm_apply_apply]
+  refine ⟨a', b', ?_, ?_, ?_⟩
+  · apply hmem.mp
+    apply (right_mul_mem_latticeMaps_iff C z).mp
+    rw [haRel]
+    exact basisLinearPart_mem_latticeMaps hπ c hcz (period_linearEquivMap C z.symm)
+      ((right_mul_mem_latticeMaps_iff C z).mpr (hmem.mpr ha))
+  · exact hmem.mp (basisLinearPart_mem_latticeMaps hπ c hc rfl (hmem.mpr hb))
+  · apply c.ext
+    intro j
+    have hj := LinearMap.congr_fun h (c j)
+    simpa [a', b', rel, Module.End.mul_apply] using hj
+
 /-- Lift an adjoint in one lattice step and a sum of three translated steps.
 The input and output chains have common splitting bases over `E`. -/
 theorem exists_mixed_adjoint_lift (L : LatticeChain 𝒪[F] F V)

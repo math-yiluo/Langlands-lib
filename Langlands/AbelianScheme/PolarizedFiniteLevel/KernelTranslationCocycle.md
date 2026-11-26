@@ -1,0 +1,7 @@
+# The scalar defect of kernel translations
+
+For a homomorphism `q : A ⟶ B` of abelian schemes and a line bundle `L` on `A`, `KernelTranslation.Lift q L` is the type of isomorphisms between the pullbacks of `L` by the projection and by the translation map on `ker(q) × A`. A lift gives isomorphisms `step` on each test scheme between the pullbacks along `x` and `xk` for a point `k` of the scheme-theoretic kernel. The pullback comparison `step_precomp` is natural in the test scheme.
+
+Comparing two consecutive steps with the single step for the product gives a unique unit by `lineBundleAutomorphismScalar`. This unit depends only on the two kernel points. Indeed, compare the steps at the tautological point of `T × A`. Every global unit there comes from `T` by `universalGlobalFunctions`, so evaluating at any section of the projection gives the same unit. `scalar` evaluates it at the unit section. Composition of three steps in the two possible parenthesizations proves `scalar_cocycle`.
+
+This calculation implements the multiplication defect from the construction of the theta group of a line bundle. Its use for descent follows Edixhoven, van der Geer and Moonen, *Abelian Varieties*, preliminary version of 8 February 2012, (8.3), (8.6) and (8.10). The source is `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`, Chapter VIII §1 and printed p. 116, PDF p. 120.

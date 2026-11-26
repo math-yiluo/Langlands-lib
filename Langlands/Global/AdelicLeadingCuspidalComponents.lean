@@ -90,6 +90,12 @@ attribute [instance] affineP finiteTypeP affineM finiteTypeM affineU closedU
 variable {F G} [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
   (𝓕 : StandardParabolicFamily F G)
 
+omit [NumberField F] in
+/-- The standard parabolics of a family are closed subgroups. -/
+theorem isClosedImmersion_p (J : StandardIndex F G 𝓕.i 𝓕.ν) :
+    IsClosedImmersion (𝓕.p J).hom.hom.left :=
+  (𝓕.isCompatible J).parabolic.isClosedSubgroup
+
 instance mono_i : Mono 𝓕.i.hom.hom.left := 𝓕.maximalSplit.isSplitSubtorus.mono
 
 /-- The index `J = Δ₀` of all simple roots, the standard parabolic `G` itself. -/

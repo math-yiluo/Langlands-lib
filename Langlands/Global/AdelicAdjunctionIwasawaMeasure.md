@@ -1,0 +1,5 @@
+# Iwasawa measures for unfolding a discrete parabolic subgroup
+
+`coordinates` is the homeomorphism given by multiplication of the adelic radical and Levi. Its inverse uses the Levi retraction and its radical kernel. Closed immersion and injectivity of the diagonal coefficient map identify the principal points in the adelic parabolic image with the principal parabolic points.
+
+`map_iwasawaProduct` first identifies the product of radical Haar, Levi Haar with inverse modulus density, and compact Haar probability with ambient Haar. The supplied compatibility of the measures gives the integral identity on compactly supported test functions, which determines the pushforward measure. `map_iwasawaDiscreteProduct` restricts the Levi and radical factors to their fundamental domains. The Levi projection sends each principal element to a principal Levi point, whose character log is zero. Conjugation by such a Levi point preserves the normalized radical Haar. These identities give the counting-normalized quotient formula using the Haar convention of Mœglin–Waldspurger I.1.13 for the unfolding in II.1.8.

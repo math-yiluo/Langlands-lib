@@ -1,3 +1,4 @@
+import Langlands.Automorphic.GroupSchemePlotSmoothRightCovariance
 import Langlands.Automorphic.GroupSchemeInfiniteTranslation
 import Langlands.Global.AdelicEisensteinGrowthBound
 
@@ -26,51 +27,40 @@ variable {F : Type u} [Field F] [NumberField F]
   {d : ℕ} {hsmooth : SmoothOfRelativeDimension d G.X.hom}
   (hcalc : AdelicDifferentialCommutator F G hsmooth)
 
-private def infiniteSliceRightTranslation (a : InfiniteAdelicGroupPoints F G) :
+/-- Right translation on the actual plot-smooth infinite adelic slice space. -/
+def infiniteSliceRightTranslation (a : InfiniteAdelicGroupPoints F G) :
     Module.End ℂ (InfinitePlotSmoothFunctions F G) :=
   G.plotSmoothRightAction (CommAlgCat.of F (InfiniteAdeleRing F))
     (B := mixedEmbedding.mixedSpace F) (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom a
+
+/-- Evaluating the translated slice at `x` gives the original slice at `x * a`. -/
+@[simp] theorem infiniteSliceRightTranslation_apply (a x : InfiniteAdelicGroupPoints F G)
+    (f : InfinitePlotSmoothFunctions F G) :
+    (infiniteSliceRightTranslation a f).val x = f.val (x * a) := rfl
 
 private theorem infiniteSliceRightTranslation_envelopingAction
     (a : InfiniteAdelicGroupPoints F G) (D : AdelicEnvelopingAlgebra F G hsmooth)
     (f : InfinitePlotSmoothFunctions F G) :
     infiniteSliceRightTranslation a (plotSmoothEnvelopingAction F G hsmooth hcalc D f) =
       plotSmoothEnvelopingAction F G hsmooth hcalc (adelicEnvelopingConjugation F G hsmooth a D)
-        (infiniteSliceRightTranslation a f) := by
-  let := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
-  let := smoothChartedSpace F G hsmooth
-  let := smoothLieGroup F G hsmooth
-  let : LieGroup 𝓘(ℝ, smoothModel F d) (minSmoothness ℝ 3)
-    (InfiniteAdelicGroupPoints F G) := LieGroup.of_le (n := ∞) (by simp)
-  obtain ⟨p, rfl⟩ := RingCon.mkₐ_surjective (α := ℂ)
-    (UniversalEnvelopingAlgebra.ringCon ℂ
-      (ℂ ⊗[ℝ] GroupLieAlgebra 𝓘(ℝ, smoothModel F d) (InfiniteAdelicGroupPoints F G))) D
-  induction p using TensorAlgebra.induction generalizing f with
-  | algebraMap z =>
-    simp only [Algebra.algebraMap_eq_smul_one, map_smul, map_one,
-      LinearMap.smul_apply, Module.End.one_apply]
-  | «ι» X =>
-    change infiniteSliceRightTranslation a (plotSmoothEnvelopingAction F G hsmooth hcalc
-        (UniversalEnvelopingAlgebra.ι ℂ X) f) =
-      plotSmoothEnvelopingAction F G hsmooth hcalc
-        (adelicEnvelopingConjugation F G hsmooth a (UniversalEnvelopingAlgebra.ι ℂ X))
+        (infiniteSliceRightTranslation a f) :=
+  adelicPlotSmoothEnvelopingRightCovariance F G hsmooth hcalc a D f
+
+/-- Right translation by `a` intertwines each actual enveloping operator with the operator
+obtained by adjoint conjugation by `a`. -/
+def InfiniteSliceRightTranslationCovarianceStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] (G : GroupScheme (Spec (CommRingCat.of F)))
+    [IsAffine G.X.left] {d : ℕ} (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+    (hcalc : AdelicDifferentialCommutator F G hsmooth) (a : InfiniteAdelicGroupPoints F G)
+    (D : AdelicEnvelopingAlgebra F G hsmooth) (f : InfinitePlotSmoothFunctions F G),
+    infiniteSliceRightTranslation a (plotSmoothEnvelopingAction F G hsmooth hcalc D f) =
+      plotSmoothEnvelopingAction F G hsmooth hcalc (adelicEnvelopingConjugation F G hsmooth a D)
         (infiniteSliceRightTranslation a f)
-    induction X using TensorProduct.inductionOn with
-    | tmul z X =>
-      rw [adelicEnvelopingConjugation_ι_tmul]
-      simp only [plotSmoothEnvelopingAction_generator, complexPlotSmoothLieAction_tmul,
-        LinearMap.smul_apply, map_smul]
-      apply congrArg (z • ·)
-      apply Subtype.ext
-      funext x
-      exact groupDirectionalValue_rightTranslation 𝓘(ℝ, smoothModel F d) a X
-        ((isPlotSmooth_iff_contMDiff F G hsmooth _).mp f.property) x
-    | add X Y hX hY =>
-      simp only [map_add, LinearMap.add_apply, hX, hY]
-  | mul p q hp hq =>
-    simp only [map_mul, Module.End.mul_apply, hp, hq]
-  | add p q hp hq =>
-    simp only [map_add, LinearMap.add_apply, hp, hq]
+
+theorem infiniteSliceRightTranslationCovariance :
+    InfiniteSliceRightTranslationCovarianceStatement.{u} := by
+  intro F _ _ G _ d hsmooth hcalc a D f
+  exact infiniteSliceRightTranslation_envelopingAction hcalc a D f
 
 private def centerConjugationEquiv (a : InfiniteAdelicGroupPoints F G) :
     AdelicEnvelopingCenter F G hsmooth ≃ₐ[ℂ] AdelicEnvelopingCenter F G hsmooth where

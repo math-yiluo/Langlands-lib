@@ -504,11 +504,31 @@ theorem differentialAction_mem_orbitSpan (Kinf : Subgroup (InfiniteAdelicGroupPo
 end Adelic
 
 
-/-- The interior estimate for elliptic left-invariant word operators and the adapted Casimir
-element imply uniform moderate growth of every actual adelic automorphic form. -/
-theorem adelicAutomorphicUniformGrowthReduction :
-    AdelicAutomorphicUniformGrowthReductionStatement.{u} := by
-  intro h12 h3 F _ _ G _ Kinf N d rho hsmooth hG _hrho hK hN f hf
+/-- The adapted Casimir and joint compact and centre finiteness give one positive-order
+elliptic left-invariant equation for every infinite slice of the same adelic function. -/
+theorem exists_elliptic_slice_annihilator (h3 : AdelicAdaptedCasimirStatement.{u})
+    (F : Type u) [Field F] [NumberField F]
+    (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left]
+    (Kinf : Subgroup (InfiniteAdelicGroupPoints F G)) {d : ℕ}
+    (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+    (hcalc : AdelicDifferentialCommutator F G hsmooth)
+    (hG : Langlands.GroupScheme.IsConnectedReductive G)
+    (hK : Langlands.CompactIwasawa.IsMaximalCompact Kinf)
+    (f : FinitePlotSmoothRationalFunctions F G)
+    (hKfin : IsAdelicInfiniteFinite F G Kinf f)
+    (hZfin : IsAdelicCenterFinite F G hsmooth hcalc f) :
+    letI := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
+    letI := smoothChartedSpace F G hsmooth
+    letI := smoothLieGroup F G hsmooth
+    ∃ (n r : ℕ) (X : Fin n → smoothModel F d)
+        (Ptop Plow : MonoidAlgebra ℂ (FreeMonoid (Fin n))),
+      Submodule.span ℝ (Set.range X) = ⊤ ∧ 0 < r ∧
+      (∀ w ∈ Ptop.coeff.support, w.length = r) ∧
+      (∀ w ∈ Plow.coeff.support, w.length < r) ∧
+      (∀ ξ : smoothModel F d →ₗ[ℝ] ℝ, ξ ≠ 0 →
+        lieWordSymbol (H := InfiniteAdelicGroupPoints F G) X ξ Ptop ≠ 0) ∧
+      ∀ (b : FiniteAdelicGroupPoints F G) (x : InfiniteAdelicGroupPoints F G),
+        lieWordAction X (Ptop + Plow) (finitePlotSmoothSlice F G b f).val x = 0 := by
   let := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
   let := smoothChartedSpace F G hsmooth
   let := smoothLieGroup F G hsmooth
@@ -517,9 +537,6 @@ theorem adelicAutomorphicUniformGrowthReduction :
   let : AddCommGroup (FinitePlotSmoothRationalFunctions F G) :=
     Module.addCommMonoidToAddCommGroup ℂ
   obtain ⟨n, X, J, hspan, hcurve, hcent⟩ := h3 F G Kinf hsmooth hG hK
-  obtain ⟨hKfin, hZfin, hgrowth⟩ := hf
-  obtain ⟨Cf, hCf, e, hfe⟩ := (hasAdelicModerateGrowth_iff F G rho hN f.val).mp hgrowth
-  let hcalc := adelicDifferentialCommutator_of_smooth F G hsmooth
   let Act := adelicEnvelopingAction F G hsmooth hcalc
   let ρK := finitePlotSmoothInfiniteSubgroupAction F G Kinf
   let W := Langlands.FiniteVectors.orbitSpan ρK f
@@ -567,8 +584,16 @@ theorem adelicAutomorphicUniformGrowthReduction :
     refine U.add_mem (hUZ zΩ u hu) (U.smul_mem _ (U.sum_mem fun j hj => ?_))
     rw [map_pow, pow_two, Module.End.mul_apply]
     exact hUD _ ⟨j, hj, rfl⟩ _ (hUD _ ⟨j, hj, rfl⟩ u hu)
-  obtain ⟨p, hpm, hp⟩ := Langlands.Automorphic.UniformGrowthReduction.exists_monic_aeval_eq_zero
+  obtain ⟨p₀, hp₀m, hp₀⟩ := Langlands.Automorphic.UniformGrowthReduction.exists_monic_aeval_eq_zero
     (Act Ωe) U hTU f (hWU (Langlands.FiniteVectors.self_mem_orbitSpan ρK f))
+  let p := Polynomial.X * p₀
+  have hpm : p.Monic := Polynomial.monic_X.mul hp₀m
+  have hp : Polynomial.aeval (Act Ωe) p f = 0 := by
+    rw [show p = Polynomial.X * p₀ from rfl, map_mul, Module.End.mul_apply, hp₀, map_zero]
+  have hpdeg : 0 < p.natDegree := by
+    change 0 < (Polynomial.X * p₀).natDegree
+    rw [Polynomial.natDegree_mul (Polynomial.X_ne_zero) hp₀m.ne_zero, Polynomial.natDegree_X]
+    omega
   -- the corresponding word combinations
   let wsq : MonoidAlgebra ℂ (FreeMonoid (Fin n)) :=
     ∑ i, MonoidAlgebra.single (FreeMonoid.of i * FreeMonoid.of i) 1
@@ -620,11 +645,37 @@ theorem adelicAutomorphicUniformGrowthReduction :
       Finset.sum_pos' (fun j _ => sq_nonneg _) ⟨i, Finset.mem_univ _, by positivity⟩
     rw [map_pow, hω]
     exact pow_ne_zero _ (by exact_mod_cast hpos.ne')
+  refine ⟨n, 2 * m, X, Ptop, Plow, hspan, by dsimp [m]; omega,
+    htop, hlow, hsym, fun b x => ?_⟩
+  rw [← slice_wordHom F G hsmooth hcalc X (Ptop + Plow) b f]
+  change (finitePlotSmoothSlice F G b (Act (wordHom F G hsmooth X (Ptop + Plow)) f)).val x = 0
+  rw [hkill, map_zero]
+  rfl
+
+
+/-- The interior estimate for elliptic left-invariant word operators and the adapted Casimir
+element imply uniform moderate growth of every actual adelic automorphic form. -/
+theorem adelicAutomorphicUniformGrowthReduction :
+    AdelicAutomorphicUniformGrowthReductionStatement.{u} := by
+  intro h12 h3 F _ _ G _ Kinf N d rho hsmooth hG _hrho hK hN f hf
+  let := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
+  let := smoothChartedSpace F G hsmooth
+  let := smoothLieGroup F G hsmooth
+  let : LieGroup 𝓘(ℝ, smoothModel F d) (minSmoothness ℝ 3)
+    (InfiniteAdelicGroupPoints F G) := LieGroup.of_le (n := ∞) (by simp)
+  let : AddCommGroup (FinitePlotSmoothRationalFunctions F G) :=
+    Module.addCommMonoidToAddCommGroup ℂ
+  obtain ⟨hKfin, hZfin, hgrowth⟩ := hf
+  obtain ⟨Cf, hCf, e, hfe⟩ := (hasAdelicModerateGrowth_iff F G rho hN f.val).mp hgrowth
+  let hcalc := adelicDifferentialCommutator_of_smooth F G hsmooth
+  let Act := adelicEnvelopingAction F G hsmooth hcalc
+  obtain ⟨n, r, X, Ptop, Plow, hspan, _, htop, hlow, hsym, hslices⟩ :=
+    exists_elliptic_slice_annihilator h3 F G Kinf hsmooth hcalc hG hK f hKfin hZfin
   -- the uniform bound
   rw [hasAdelicUniformModerateGrowth_iff F G rho hsmooth hcalc hN]
   refine ⟨e, fun a => ?_⟩
   obtain ⟨Q, rfl⟩ := wordHom_surjective F G hsmooth X hspan a
-  obtain ⟨V, C, hV, hC, hest⟩ := h12 (smoothModel F d) (InfiniteAdelicGroupPoints F G) n (2 * m)
+  obtain ⟨V, C, hV, hC, hest⟩ := h12 (smoothModel F d) (InfiniteAdelicGroupPoints F G) n r
     X Ptop Plow htop hlow hsym Q
   have hcont : Continuous fun y : InfiniteAdelicGroupPoints F G =>
       RepresentationGrowth.adelicHeight F G rho (AdelicGroupPoints.ofInfinite F G y) :=
@@ -646,10 +697,8 @@ theorem adelicAutomorphicUniformGrowthReduction :
     hψ.comp (contMDiff_const.mul contMDiff_id)
   have heqn : ∀ x, lieWordAction X (Ptop + Plow) φ x = 0 := by
     intro x
-    rw [lieWordAction_leftTranslation, ← slice_wordHom F G hsmooth hcalc X (Ptop + Plow) b f]
-    change (finitePlotSmoothSlice F G b (Act (wordHom F G hsmooth X (Ptop + Plow)) f)).val _ = 0
-    rw [hkill, map_zero]
-    rfl
+    rw [lieWordAction_leftTranslation]
+    exact hslices b (a' * x)
   have hbound : ∀ y ∈ V, ‖φ y‖ ≤
       Cf * B' ^ e * RepresentationGrowth.adelicHeight F G rho (AdelicGroupPoints.pair F G a' b) ^ e := by
     intro y hy

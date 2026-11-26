@@ -35,8 +35,10 @@ lemma gives exactly the multiplicative conductor \(a(\chi)\), defined by the
 unit filtration. By `Numerical.hasArtinConductor_iff_exists_padicPresentation`,
 `Numerical.HasArtinConductor` is witnessed by p-adic finite inertia presentations,
 and `finiteInertiaConductorEquivalence` compares this computation with any such
-witness for the same class. Hence the
-Swan exponent is \(a(\chi)-1\) with subtraction truncated at zero.
+witness for the same class. The resulting criterion
+`rankOne_hasArtinConductor_iff` identifies the Artin exponent with
+\(a(\chi)\). Hence the Swan exponent is \(a(\chi)-1\) with subtraction
+truncated at zero.
 
 ## Orbits and finite quotients
 

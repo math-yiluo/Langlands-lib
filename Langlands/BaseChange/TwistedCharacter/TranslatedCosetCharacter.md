@@ -1,0 +1,7 @@
+# Character distributions in translated coset coordinates
+
+Let `i : G →* H` be an open embedding of topological groups and `s ∈ H`. The map `j(g) = i(g)s` is an open embedding. A distribution on the Hausdorff group `H` gives a distribution on `G` by extending tests along `j` by zero. If a homeomorphism of `G` intertwines under `j` with conjugation by `i(a)` for `a ∈ G`, the resulting distribution is invariant under that homeomorphism whenever the ambient distribution is invariant under conjugation by `i(a)`.
+
+For locally compact `G` and second-countable locally compact `H` with the Borel structures, let `ν` be Haar on `H`. Its pullback along `j` is Haar on `G`. If `ν` pulled back along `i` is right invariant, then right translation by `i(a)` preserves `ν`. The proof compares the ambient Haar scalar for this translation with its restriction to the open subgroup. On the subgroup the two measures agree, and evaluation on a compact neighborhood of the identity shows that the scalar is one.
+
+When `H` is also totally disconnected, `translatedCosetCharacter` applies these facts to the ordinary character distribution of an admissible complex representation of `H`, using measure-preserving conjugation. This supplies the twisted invariance of the translated character used in the semisimple descent construction. [Clozel, *Characters of non-connected, reductive p-adic groups*, §3.4, p. 154](https://doi.org/10.4153/CJM-1987-008-3)

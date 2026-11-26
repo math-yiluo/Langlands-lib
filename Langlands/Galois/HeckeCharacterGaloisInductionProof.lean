@@ -1,3 +1,4 @@
+import Langlands.Galois.FinitePlaceResidueCharacteristic
 import Langlands.Galois.HeckeCharacterGaloisInductionStatement
 import Langlands.Galois.HeckeInduction.GoodPlace
 import Langlands.ClassFieldTheory.Global.Artin.ArtinUniqueness
@@ -23,17 +24,6 @@ open Langlands.Global Langlands.Global.AdelicFunctoriality
 open Langlands.Automorphic.Unramified.WeakInduction Polynomial
 open Langlands.GaloisRepresentation.HeckeInduction
 open scoped NumberField
-
-/-- Residue characteristics agree for a prime lying over another. -/
-theorem residueCharacteristic_eq_of_liesOver {K : Type uK} {E : Type uE} [Field K] [Field E]
-    [NumberField K] [NumberField E] [Algebra K E] (v : FinitePlace K) (w : FinitePlace E)
-    [w.asIdeal.LiesOver v.asIdeal] :
-    residueCharacteristic w = residueCharacteristic v := by
-  have := v.isMaximal
-  have := w.isMaximal
-  let := Ideal.Quotient.field v.asIdeal
-  exact (Algebra.ringChar_eq (NumberField.RingOfIntegers K ⧸ v.asIdeal)
-    (NumberField.RingOfIntegers E ⧸ w.asIdeal)).symm
 
 /-- **Galois induction of a compatible rank-one family** (Harris 1998, Lemma 1.6). -/
 theorem heckeCharacterGaloisInduction : HeckeCharacterGaloisInductionStatement.{uK, uE, uL} := by

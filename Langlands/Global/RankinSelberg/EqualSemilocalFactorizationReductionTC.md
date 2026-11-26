@@ -17,6 +17,9 @@ namespace `Langlands.Global.RankinSelbergGlobal`:
   (P-TC);
 * the theorem `equalSemilocalFactorizationReductionTC :
   EqualSemilocalFactorizationReductionTCStatement.{u, uQ}`, which proves it (Section 3);
+* the theorem `equalSemilocalFactorizationTC_of_factorizationTC`, which uses only
+  `EqualArchimedeanFactorizationTCStatement` for the integrated factorization premise
+  together with the same complex-place equation and central sign;
 * the theorem `equalSemilocalFactorizationTC_of_archimedeanSemilocalTheory`, which derives
   (P-TC) from the conjunction `ArchimedeanSemilocalTheoryStatement.{u, uQ}` (Section 4);
 * the theorem `equalSemilocalEquationTC_of_archimedean`, which derives the totally complex
@@ -25,11 +28,11 @@ namespace `Langlands.Global.RankinSelbergGlobal`:
 * two local instances (`IsAffine` and `Smooth` for the `GL_n` scheme) that the statements
   need in order to elaborate, as in the module `EqualSemilocalReductionTC`.
 
-The theorem is a **conditional reduction**. It does not prove (P-TC): its three premises are
-statements of the archimedean theory collected in `ArchimedeanSemilocalTheoryStatement`.
-Two of them are proved nowhere in the Library; the third, `ArchimedeanCentralSignStatement`,
-is proved by `archimedeanCentralSign` (module `ArchimedeanCentralSignProof`). It is an
-intermediate result towards (P-TC).
+The three premises of the reduction are statements of the archimedean theory collected in
+`ArchimedeanSemilocalTheoryStatement`. The complex functional equation is the equal-rank
+part of `complexPlaceFunctionalEquation`. The global sign is `archimedeanCentralSign`. The
+integrated factorization enters only at the supplied totally complex field, as captured by
+`equalSemilocalFactorizationTC_of_factorizationTC`.
 
 It is the totally complex companion of `equalSemilocalFactorizationReduction` (module
 [`EqualSemilocalFactorizationReduction`](EqualSemilocalFactorizationReduction.md)), which

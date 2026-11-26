@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicFunctoriality.LocalDegree
 import Langlands.Galois.CompatibleFamily
 import Langlands.Global.FiniteAdeleSplit
 
@@ -5,7 +6,7 @@ import Langlands.Global.FiniteAdeleSplit
 
 namespace Langlands.GaloisRepresentation
 
-universe uK
+universe uK uE
 
 open Langlands.Global
 open scoped NumberField
@@ -32,5 +33,16 @@ theorem finite_setOf_residueCharacteristic_eq (K : Type uK) [Field K] [NumberFie
   change (p : 𝓞 K) ∈ v.asIdeal
   rw [← Ideal.Quotient.eq_zero_iff_mem, map_natCast, ← hv]
   exact CharP.cast_eq_zero (𝓞 K ⧸ v.asIdeal) (residueCharacteristic v)
+
+/-- Residue characteristics agree for a prime lying over another. -/
+theorem residueCharacteristic_eq_of_liesOver {K : Type uK} {E : Type uE} [Field K] [Field E]
+    [NumberField K] [NumberField E] [Algebra K E] (v : FinitePlace K) (w : FinitePlace E)
+    [w.asIdeal.LiesOver v.asIdeal] :
+    residueCharacteristic w = residueCharacteristic v := by
+  have := v.isMaximal
+  have := w.isMaximal
+  let := Ideal.Quotient.field v.asIdeal
+  exact (Algebra.ringChar_eq (NumberField.RingOfIntegers K ⧸ v.asIdeal)
+    (NumberField.RingOfIntegers E ⧸ w.asIdeal)).symm
 
 end Langlands.GaloisRepresentation

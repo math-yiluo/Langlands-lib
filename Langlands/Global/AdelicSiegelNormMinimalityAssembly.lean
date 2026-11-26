@@ -1,11 +1,12 @@
 import Langlands.Global.AdelicSiegelConjugationBound
 import Langlands.Global.AdelicSiegelNormMinimalityStatement
 import Langlands.Global.AdelicPositiveTorusCompatibility
+import Langlands.GroupScheme.Rational.StandardMinimalLeviStructure
 
 /-!
 # Norm minimality on a weak Siegel product from a diagonal height inequality
 
-`exists_adelicHeight_le_mul_rational_of_diagonal` shows that on an actual weak Siegel product
+`exists_adelicHeight_le_mul_rational_of_maximalSplit` shows that on an actual weak Siegel product
 the full adelic height of a point `s` is at most a constant times the height of each rational
 left translate `q s`, provided the positive torus image satisfies the same inequality. The
 constant comes from the compact factors and from the conjugation bound
@@ -30,12 +31,10 @@ variable (F : Type u) [Field F] [NumberField F]
   (i : T.toGrp ⟶ G) (ν : cocharacterLattice T)
   (T₀ : CommGroupScheme (Spec (CommRingCat.of F))) (j : T₀ ⟶ T)
 
-/-- **Norm minimality from the diagonal inequality.** Suppose the height of every positive
-torus image point is at most `c` times the height of each of its rational left translates.
-Then on the weak Siegel product of an actual algebraic Siegel setup, the height of every point
-is at most a constant times the height of each of its rational left translates. -/
-theorem exists_adelicHeight_le_mul_rational_of_diagonal (hG : IsConnectedReductive G)
-    (hsetup : IsSiegelAlgebraicSetup F G T i ν T₀ j) {N : ℕ}
+/-- Norm minimality on ordered factor products follows from the diagonal inequality for a
+maximal split torus and a generic cocharacter. -/
+theorem exists_adelicHeight_le_mul_rational_of_maximalSplit (hG : IsConnectedReductive G)
+    (hi : IsMaximalSplitTorus i) (hν : IsGenericCocharacter i ν) {N : ℕ}
     (rho : MatrixRepresentation G (Fin N)) (hN : 0 < N)
     (C : CompactFactors F G (Standard.unipotentScheme i ν ∅) (Standard.leviScheme i ν ∅))
     (t : ℝ≥0ˣ) {c : ℝ} (hc : 0 ≤ c)
@@ -48,7 +47,7 @@ theorem exists_adelicHeight_le_mul_rational_of_diagonal (hG : IsConnectedReducti
         RepresentationGrowth.adelicHeight F G rho s ≤
           c' * RepresentationGrowth.adelicHeight F G rho (rational F G q * s) := by
   classical
-  have hlevi : standardLevi i ν ∅ = torusCentralizer i := hsetup.2.2.2.2.2.1
+  have hlevi := standardLevi_empty_eq_torusCentralizer_of_generic i ν hG hi hν
   let H := RepresentationGrowth.adelicHeight F G rho
   have hHc : Continuous H := RepresentationGrowth.continuous_adelicHeight F G rho hN
   have hH1 (x : AdelicGroupPoints F G) : 1 ≤ H x :=
@@ -69,8 +68,8 @@ theorem exists_adelicHeight_le_mul_rational_of_diagonal (hG : IsConnectedReducti
   obtain ⟨BM, hBM⟩ := C.compact_omegaM.bddAbove_image (hHc.comp hιM).continuousOn
   obtain ⟨BK, hBK⟩ := C.compact_compactSubgroup.bddAbove_image hHc.continuousOn
   -- the conjugation bound for the unipotent factor
-  obtain ⟨B, hB⟩ := exists_adelicHeight_conj_unipotent_le F G T i ν T₀ j hG hsetup rho hN
-    C.omegaN C.compact_omegaN t
+  obtain ⟨B, hB⟩ := exists_adelicHeight_conj_unipotent_le_of_maximalSplit F G T i ν T₀ j hG hi hν
+    rho hN C.omegaN C.compact_omegaN t
   refine ⟨BN * BM * (c * (BK * BM * B)) * BK, fun s hs q => ?_⟩
   obtain ⟨n, hn, m, hm, a, ha, k, hk, rfl⟩ :=
     (mem_productSet_iff F G T i ν (canonicalStandardFactors F G T i ν) C T₀ j _ _).mp hs
@@ -129,6 +128,24 @@ theorem exists_adelicHeight_le_mul_rational_of_diagonal (hG : IsConnectedReducti
           (mul_nonneg (mul_nonneg hBN0 hBM0) (hA'.trans' (hH0 _)))
         exact mul_le_mul (mul_le_mul hn' hm' (hH0 _) hBN0) hA' (hH0 _) (mul_nonneg hBN0 hBM0)
     _ = BN * BM * (c * (BK * BM * B)) * BK * H (rational F G q * s) := by ring
+
+/-- Norm minimality on the weak Siegel product of an algebraic Siegel setup follows from
+the diagonal inequality on its positive torus. -/
+theorem exists_adelicHeight_le_mul_rational_of_diagonal (hG : IsConnectedReductive G)
+    (hsetup : IsSiegelAlgebraicSetup F G T i ν T₀ j) {N : ℕ}
+    (rho : MatrixRepresentation G (Fin N)) (hN : 0 < N)
+    (C : CompactFactors F G (Standard.unipotentScheme i ν ∅) (Standard.leviScheme i ν ∅))
+    (t : ℝ≥0ˣ) {c : ℝ} (hc : 0 ≤ c)
+    (hdiag : ∀ (a : PositiveRealTorus.intrinsicSubgroup F T₀) (q : RationalGroupPoints F G),
+      RepresentationGrowth.adelicHeight F G rho (positiveMap F G T i T₀ j a) ≤
+        c * RepresentationGrowth.adelicHeight F G rho
+          (rational F G q * positiveMap F G T i T₀ j a)) :
+    ∃ c' : ℝ, ∀ s ∈ weakSiegelProduct F G T i ν (canonicalStandardFactors F G T i ν) C T₀ j t,
+      ∀ q : RationalGroupPoints F G,
+        RepresentationGrowth.adelicHeight F G rho s ≤
+          c' * RepresentationGrowth.adelicHeight F G rho (rational F G q * s) :=
+  exists_adelicHeight_le_mul_rational_of_maximalSplit F G T i ν T₀ j hG hsetup.1 hsetup.2.1
+    rho hN C t hc hdiag
 
 end Langlands.Global.AdelicSiegelFactors
 

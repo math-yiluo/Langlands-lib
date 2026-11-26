@@ -411,3 +411,5 @@ own leading cuspidal component.
   (p. 37; automorphic forms on `U(𝔸) M(k) \ G`), I.3.1–I.3.2
   (pp. 40–43; `A_M`-finite functions and the exponent decomposition), I.3.4–I.3.5
   (pp. 45–48; cuspidal components and the cuspidal form `φ_P^cusp`).
+
+For every standard index `J`, `StandardParabolicFamily.isClosedImmersion_p` gives the closed immersion of `P_J` into the ambient group.

@@ -1,9 +1,9 @@
 # Equal-rank partial Whittaker factorization at one number field
 
 Module `Langlands.Global.RankinSelberg.EqualFactorizationAtStatement`, namespace
-`Langlands.Global.RankinSelbergGlobal`. All five declarations return `Prop`, with independent
-universes `u` for number fields and `uQ` for the spectral presentations. They are companions
-to the unrestricted statements, which are unchanged.
+`Langlands.Global.RankinSelbergGlobal`. The three propositions use independent universes
+`u` for number fields and `uQ` for the spectral presentations. They use the equal-rank
+factorization propositions at a specified field.
 
 ## The two bodies at `F`
 
@@ -43,9 +43,8 @@ use the given characters and their self-dual measures.
 
 In both bodies the two archimedean products, and each ordinary and dual integral at each
 `v : S`, have a nonzero value in every right half-plane. These assertions may choose different
-arguments `s`. The group-scheme smoothness and affineness instances and the archimedean and
-rectangular measurable-space instances used to elaborate the bodies are local to this module
-and agree with the choices in the source definitions.
+arguments `s`. The group-scheme and measurable-space instances used to elaborate the bodies
+are those of their defining modules.
 
 ## Totally complex fields and integration
 
@@ -59,14 +58,12 @@ conditions, and both row-function product formulas remain.
 
 `EqualArchimedeanFactorizationAtReductionStatement` says that at each number field `F` with
 compact `AdeleQuotient F`, `EqualPointwiseFactorizationAt F` implies
-`EqualArchimedeanFactorizationAt F`. It does not assume pointwise factorization at every field.
-The published `equalArchimedeanFactorizationReduction` uses its pointwise hypothesis only at
-its current field `F`. Its two integrations use the same quotient-product measure identity,
-now available as `UnipotentClass.unipotentClassProductStatement` in
-[`UnipotentClassProductProof`](UnipotentClassProductProof.md). The separate rectangular Tate
-identity used for unequal ranks is not an input of the equal-rank integration argument. The
-same-field target itself does not require total complexity and can be applied to the
-pointwise TC wrapper at any totally complex `F`.
+`EqualArchimedeanFactorizationAt F`. The field-specific integration proof
+`equalArchimedeanFactorizationAt_of_pointwise` uses the pointwise hypothesis at `F`. Both
+calculations use the same quotient-product measure identity, proved as
+`UnipotentClass.unipotentClassProductStatement`. Applying the proof to the pointwise TC wrapper
+gives the integrated factorization at any totally complex `F`.
+[`UnipotentClassProductProof`](UnipotentClassProductProof.md)
 
 ## Source and proof boundary
 
@@ -80,7 +77,5 @@ the equal-rank case analogous. The Library separates the infinite places from th
 single-field quantifiers, the totally complex wrappers, and the integration target are
 derived Library interfaces, not separately numbered theorems in Cogdell.
 
-This module states the propositions only. It does not prove the slice comparison, the local
-tests, the pointwise or integrated factorization, the integration implication, or any
-functional equation. The unrestricted equal-rank statement `EqualArchimedeanFactorizationStatement`
-(part of `ArchimedeanFactorizationStatement`) remains unchanged.
+The statements in this module express the restrictions and their integration implication.
+The equal-rank integrated and pointwise bodies are defined in the modules linked above.

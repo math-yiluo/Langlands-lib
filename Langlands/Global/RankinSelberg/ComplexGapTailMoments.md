@@ -1,0 +1,5 @@
+# Nonvanishing from tail moments
+
+`complexGapTailMoments` pairs a continuous retained coefficient with products of standard Gaussian polynomial tests on the observed columns. The hypothesis gives a fixed nonzero coefficient on the embedded leading unitary matrices and absolute integrability for the Gaussian of half the standard exponent and for the polynomial tests.
+
+The observed columns are scaled into a real Euclidean space so that its squared norm is the standard Gaussian exponent. Each directional power is a real-coordinate polynomial. Its monomials separate into products of column polynomials, so vanishing of every test would force every Gaussian-weighted directional moment to vanish. The Gaussian moment determination theorem then gives vanishing for a continuous bump near the identity observation. Localization of the chart makes the rotated real part of this bump pairing positive on a nonempty open set. A measure positive on such sets gives a strictly positive integral, which gives the contradiction.

@@ -1,5 +1,7 @@
 import Langlands.Global.RankinSelberg.RealPrincipalSeriesWhittakerReduction
+import Langlands.Global.RankinSelberg.RealCompactDifferences
 import Langlands.Representation.Archimedean.RealInducedCharacterMaps
+import Langlands.Representation.Archimedean.RealBlockFourierSupNorm
 import Langlands.Representation.Archimedean.RealExponentDeformation
 import Langlands.Representation.Archimedean.RealLinkedJacquetPairReduction
 
@@ -80,14 +82,84 @@ private theorem tail_parity_of_positions (d : ComplexCharacterData) :
   change ((d.weight.natAbs % 2 + 1) % 2 + 0) % 2 = (d.weight.natAbs + 1) % 2
   omega
 
-private theorem surjectiveIntertwiner_ascendingPositions (n : ℕ) (pre post : List RealBlock)
+open RealCompactProbeBounds (CompactBound)
+open RealCompactDifferences (CompactDifferenceBound iteratedDifference)
+
+local notation "V" => Automorphic.realStandardKFinite
+local notation "K" => fun n => Matrix.unitaryGroup (Fin n) ℝ
+
+/-- A standard quotient with a compact-equivariant linear section bounded on compact values. -/
+def CompactlySplitStandardQuotient (n : ℕ) (ds es : List RealBlock) : Prop :=
+  ∃ (T : V n ds →ₗ[ℂ] V n es) (J : V n es →ₗ[ℂ] V n ds),
+    IsRealStandardIntertwiner n (realStandardRep n es) (realStandardLie n es) ds T ∧
+    Function.LeftInverse T J ∧
+    (∀ (k : K n) f, J (realStandardRep n es k f) = realStandardRep n ds k (J f)) ∧
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ (f : V n es) (R : ℝ),
+      CompactBound f R → CompactBound (J f) (C * R)
+
+namespace CompactlySplitStandardQuotient
+
+protected theorem surjective {n : ℕ} {ds es : List RealBlock}
+    (h : CompactlySplitStandardQuotient n ds es) : RealSurjectiveIntertwinerExists n ds es := by
+  obtain ⟨T, J, hT, hTJ, _, _⟩ := h
+  exact ⟨T, hTJ.surjective, hT⟩
+
+protected theorem refl (n : ℕ) (ds : List RealBlock) : CompactlySplitStandardQuotient n ds ds :=
+  ⟨LinearMap.id, LinearMap.id, isRealStandardIntertwiner_id n ds, fun _ => rfl, fun _ _ => rfl,
+    1, zero_le_one, fun f R h => by simpa only [LinearMap.id_apply, one_mul] using h⟩
+
+protected theorem trans {n : ℕ} {ds es fs : List RealBlock}
+    (h₁ : CompactlySplitStandardQuotient n ds es) (h₂ : CompactlySplitStandardQuotient n es fs) :
+    CompactlySplitStandardQuotient n ds fs := by
+  obtain ⟨T₁, J₁, hT₁, hTJ₁, hJ₁, C₁, hC₁, hB₁⟩ := h₁
+  obtain ⟨T₂, J₂, hT₂, hTJ₂, hJ₂, C₂, hC₂, hB₂⟩ := h₂
+  refine ⟨T₂.comp T₁, J₁.comp J₂, hT₁.comp_standard hT₂, ?_, ?_,
+    C₁ * C₂, mul_nonneg hC₁ hC₂, fun f R h => ?_⟩
+  · intro f
+    simp only [LinearMap.comp_apply, hTJ₁ _, hTJ₂ _]
+  · intro k f
+    simp only [LinearMap.comp_apply, hJ₂, hJ₁]
+  · simpa only [LinearMap.comp_apply, mul_assoc] using hB₁ (J₂ f) _ (hB₂ f R h)
+
+/-- The identity on functions gives the section for equal standard modules. -/
+protected theorem of_eq {n : ℕ} {ds es : List RealBlock}
+    (h : realStandardModule n ds = realStandardModule n es) :
+    CompactlySplitStandardQuotient n ds es := by
+  have hK : kFiniteFunctions (realStandardModule n ds) (unitaryCompact ℝ n) =
+      kFiniteFunctions (realStandardModule n es) (unitaryCompact ℝ n) := by rw [h]
+  obtain ⟨e, he⟩ := exists_linearEquiv_coe_eq hK
+  have he' (f : V n es) : (e.symm f).val = f.val := by
+    obtain ⟨v, rfl⟩ := e.surjective f
+    rw [LinearEquiv.symm_apply_apply, he]
+  refine ⟨e.toLinearMap, e.symm.toLinearMap, ⟨?_, ?_⟩, e.apply_symm_apply, ?_,
+    1, zero_le_one, fun f R hf k => ?_⟩
+  · intro k f
+    refine ⟨rightTranslation_mem_kFiniteFunctions_realStandardModule n ds f.2 k.2, ?_⟩
+    apply Subtype.ext
+    rw [LinearEquiv.coe_coe, he, realStandardRep_apply_coe, he]
+    have hk : Unitary.toUnits (⟨k.val.val, k.2⟩ : K n) = k.val := Units.ext rfl
+    rw [hk]
+  · intro X f
+    refine ⟨rightDerivative_mem_kFiniteFunctions_realStandardModule n ds f.2 X, ?_⟩
+    apply Subtype.ext
+    rw [LinearEquiv.coe_coe, he, realStandardLie_one_tmul_apply_coe, he]
+  · intro k f
+    apply Subtype.ext
+    rw [LinearEquiv.coe_coe, he', realStandardRep_apply_coe, realStandardRep_apply_coe, he']
+  · change ‖(e.symm f).val (Unitary.toUnits k)‖ ≤ 1 * R
+    rw [he', one_mul]
+    exact hf k
+
+end CompactlySplitStandardQuotient
+
+private theorem compactlySplitStandardQuotient_ascendingPositions (n : ℕ) (pre post : List RealBlock)
     (b : RealBlock) (hr : realRank (pre ++ b :: post) = n) :
-    RealSurjectiveIntertwinerExists n (pre ++ (ascendingPositions b).map RealBlock.character ++ post)
+    CompactlySplitStandardQuotient n (pre ++ (ascendingPositions b).map RealBlock.character ++ post)
       (pre ++ b :: post) := by
   cases b with
   | character c =>
     simpa [ascendingPositions] using
-      (RealSurjectiveIntertwinerExists.refl n (pre ++ RealBlock.character c :: post))
+      (CompactlySplitStandardQuotient.refl n (pre ++ RealBlock.character c :: post))
   | induced d =>
     by_cases hw : d.weight = 0
     · have he : (ascendingPositions (.induced d)).map RealBlock.character =
@@ -98,42 +170,80 @@ private theorem surjectiveIntertwiner_ascendingPositions (n : ℕ) (pre post : L
           Nat.cast_zero, zero_div, add_zero, sub_zero]
         rfl
       rw [he]
-      exact RealSurjectiveIntertwinerExists.of_eq
+      exact CompactlySplitStandardQuotient.of_eq
         (realStandardModule_append_expand n pre post (.induced d)).symm
     · simp only [ascendingPositions, hw, ite_false, List.map_cons, List.map_nil]
       have hr' : realRank (pre ++ [RealBlock.induced d] ++ post) = n := by simpa using hr
       have hp := tail_parity_of_positions d
       have hl := Int.natAbs_pos.mpr hw
-      have h : RealSurjectiveIntertwinerExists n
+      let J := RealBlockFrobeniusMap.blockFrobMap (RealInducedCharacter.data_tailInv hr' hl hp)
+      let μ (j : ℤ) := (RealBlockMultiplier.tailMultiplier d.weight.natAbs
+        (RealCharacterPair.pairParity (low d) (high d)) ((-1) ^ (highParity d).val) j)⁻¹
+      have hμ : Summable fun j => ‖μ j‖ ^ 2 :=
+        RealBlockFourierSupNorm.summable_sq_inv_tailMultiplier hl _ (by simp)
+      have h : CompactlySplitStandardQuotient n
           (pre ++ [RealBlock.character (RealInducedCharacter.cb d 0),
             RealBlock.character (RealInducedCharacter.ca d (highParity d))] ++ post)
-          (pre ++ [RealBlock.induced d] ++ post) :=
-        ⟨_, RealInducedCharacter.tail_surjective hr' hl hp,
-          RealExponentDeformation.isRealStandardIntertwiner_of_modulo_bot
-            (RealInducedCharacter.modulo_tail hr' hl hp)⟩
+          (pre ++ [RealBlock.induced d] ++ post) := by
+        refine ⟨_, J, RealExponentDeformation.isRealStandardIntertwiner_of_modulo_bot
+          (RealInducedCharacter.modulo_tail hr' hl hp), RealInducedCharacter.tail_tailInv hr' hl hp,
+          RealBlockFrobeniusMap.blockFrobMap_rightTranslation _, Real.sqrt (∑' j, ‖μ j‖ ^ 2),
+          Real.sqrt_nonneg _, fun f R hf k => ?_⟩
+        apply RealBlockFourierSupNorm.norm_blockFrobMap_le
+          (RealInducedCharacter.data_tailInv hr' hl hp) hμ f k.2
+        intro g hg
+        let u : K n := ⟨g.val, hg⟩
+        have hu : Unitary.toUnits u = g := Units.ext rfl
+        simpa only [hu] using hf u
       simpa only [low, high, List.append_assoc, List.cons_append, List.nil_append] using h
 
-private theorem surjectiveIntertwiner_ascendingExpand_aux (n : ℕ) :
+private theorem compactlySplitStandardQuotient_ascendingExpand_aux (n : ℕ) :
     ∀ (ds pre post : List RealBlock), realRank (pre ++ ds ++ post) = n →
-      RealSurjectiveIntertwinerExists n (pre ++ ascendingExpand ds ++ post) (pre ++ ds ++ post)
+      CompactlySplitStandardQuotient n (pre ++ ascendingExpand ds ++ post) (pre ++ ds ++ post)
   | [], pre, post, _ => by
     simpa [ascendingExpand, ascendingCharacters] using
-      (RealSurjectiveIntertwinerExists.refl n (pre ++ post))
+      (CompactlySplitStandardQuotient.refl n (pre ++ post))
   | b :: ds, pre, post, hr => by
     let pre' := pre ++ (ascendingPositions b).map RealBlock.character
     have hr' : realRank (pre' ++ ds ++ post) = n := by
       simpa only [pre', realRank_append, realRank_ascendingPositions, realRank_cons, add_assoc] using hr
-    have h₀ := surjectiveIntertwiner_ascendingExpand_aux n ds pre' post hr'
-    have h₁ := surjectiveIntertwiner_ascendingPositions n pre (ds ++ post) b
+    have h₀ := compactlySplitStandardQuotient_ascendingExpand_aux n ds pre' post hr'
+    have h₁ := compactlySplitStandardQuotient_ascendingPositions n pre (ds ++ post) b
       (by simpa only [List.cons_append, List.append_assoc] using hr)
     have h := h₀.trans (by simpa only [pre', List.append_assoc] using h₁)
     simpa only [pre', ascendingExpand_cons, List.append_assoc, List.cons_append] using h
 
+/-- The ascending character presentation has a compact-equivariant bounded section on
+compact-finite standard vectors. -/
+theorem compactlySplitStandardQuotient_ascendingExpand (n : ℕ) (ds : List RealBlock)
+    (hr : realRank ds = n) : CompactlySplitStandardQuotient n (ascendingExpand ds) ds := by
+  simpa using compactlySplitStandardQuotient_ascendingExpand_aux n ds [] [] (by simpa using hr)
+
 /-- The full ascending character principal series surjects onto the original
 compact-finite real standard module. -/
 theorem surjectiveIntertwiner_ascendingExpand (n : ℕ) (ds : List RealBlock)
-    (hr : realRank ds = n) : RealSurjectiveIntertwinerExists n (ascendingExpand ds) ds := by
-  simpa using surjectiveIntertwiner_ascendingExpand_aux n ds [] [] (by simpa using hr)
+    (hr : realRank ds = n) : RealSurjectiveIntertwinerExists n (ascendingExpand ds) ds :=
+  (compactlySplitStandardQuotient_ascendingExpand n ds hr).surjective
+
+/-- A compact-equivariant linear map with a compact value bound has the same bound
+at every compact difference order. -/
+theorem compactDifferenceBound_of_compactBound {n : ℕ} {ds es : List RealBlock}
+    (J : V n es →ₗ[ℂ] V n ds)
+    (hJ : ∀ (k : K n) f, J (realStandardRep n es k f) = realStandardRep n ds k (J f))
+    {C : ℝ} (hB : ∀ (f : V n es) (R : ℝ), CompactBound f R → CompactBound (J f) (C * R))
+    {m : ℕ} {f : V n es} {R : ℝ} (hf : CompactDifferenceBound m f R) :
+    CompactDifferenceBound m (J f) (C * R) := by
+  have hComm (ks : List (K n)) (v : V n es) :
+      J (iteratedDifference ks v) = iteratedDifference ks (J v) := by
+    induction ks with
+    | nil => rfl
+    | cons k ks ih =>
+      change J (realStandardRep n es k (iteratedDifference ks v) - iteratedDifference ks v) =
+        realStandardRep n ds k (iteratedDifference ks (J v)) - iteratedDifference ks (J v)
+      rw [map_sub, hJ, ih]
+  intro ks hks
+  rw [← hComm, mul_assoc]
+  exact hB _ _ (hf ks hks)
 
 /-- Precomposition with a standard-module intertwiner preserves an exact Whittaker
 coefficient map. -/

@@ -5,7 +5,8 @@
 `EqualInfiniteWhittakerTestStatement.{u,uQ}` and its conclusion is the
 published `EqualArchimedeanFactorizationStatement.{u,uQ}`. The two universes
 remain independent. The reduction includes `r = 0`, which denotes `GL₁`,
-and an empty finite set `S`.
+and an empty finite set `S`. `equalPointwiseAtOfInfiniteTests` proves the pointwise
+identities at a specified number field `F` from `EqualInfiniteWhittakerTestAt F`.
 
 ## Retained premise
 

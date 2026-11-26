@@ -1,0 +1,7 @@
+# Exponential coordinates over an ultrametric field
+
+Let `F` be a characteristic-zero nontrivially normed ultrametric field and let `A` be a normed `F`-algebra. The exponential series of `A` has positive convergence radius. If the residue field of the norm valuation has characteristic `p > 0`, the norm of a nonzero natural number is `‖p‖` raised to its `p`-adic valuation. Legendre's bound then gives `‖n!‖ ≥ ‖p‖ⁿ`. In residue characteristic zero every nonzero natural number has norm one. These bounds control the norms of the multilinear coefficients of the exponential series at a positive radius.
+
+For complete `A`, `ExponentialChartStatement` gives an open partial homeomorphism of `A` with forward map `X ↦ exp X − 1` and with zero in source and target. The target can be taken inside any given open neighborhood of zero, and the source lies in the convergence ball. The proof uses the identity strict derivative at zero and restricts the local inverse function theorem. For complete `F` and finite-dimensional `A`, the map `X ↦ exp X − 1` commutes with algebra automorphisms because their associated continuous linear equivalences commute with the series sum.
+
+The chart supplies the coordinates near the identity used to pass from additive semisimple descent to the exponential form. [Clozel, *Characters of non-connected, reductive p-adic groups*, §3.4, p. 155](https://doi.org/10.4153/CJM-1987-008-3)

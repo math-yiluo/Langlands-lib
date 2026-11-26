@@ -22,7 +22,7 @@ open Langlands.AlgebraicGeometry.Picard Langlands.Scheme.Modules
 open Langlands.AlgebraicGeometry.FiniteEtale Langlands.GroupScheme
 open GroupScheme.Tate (Index)
 
-private theorem fullLevel_eq_of_sections {S : Scheme.{0}} {B : AbelianScheme S} {g m : ℕ}
+theorem fullLevel_eq_of_sections {S : Scheme.{0}} {B : AbelianScheme S} {g m : ℕ}
     (v w : FullLevel B g m) (hvw : v.sections = w.sections) : v = w := by
   cases v
   cases w

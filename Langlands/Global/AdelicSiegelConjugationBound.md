@@ -37,12 +37,12 @@ bounded full adelic height. All declarations are in the namespace
 
 ### Main theorem
 
-`exists_adelicHeight_conj_unipotent_le` takes the following data:
+`exists_adelicHeight_conj_unipotent_le_of_maximalSplit` takes the following data:
 
 - a number field `F : Type u`;
 - a group scheme `G` over `Spec F` with `[IsAffineHom G.X.hom]` and
   `[LocallyOfFiniteType G.X.hom]`, and `hG : IsConnectedReductive G`;
-- a setup with `IsSiegelAlgebraicSetup F G T i ν T₀ j`;
+- a maximal split torus `i` and a generic cocharacter `ν`;
 - a matrix representation `rho : MatrixRepresentation G (Fin N)` with `0 < N`;
 - a compact set `Ω` of adelic points of `Standard.unipotentScheme i ν ∅`;
 - a threshold `t : ℝ≥0ˣ`.
@@ -54,7 +54,9 @@ adelicHeight F G rho ((positiveMap a)⁻¹ * map (Standard.unipotentHom i ν ∅
 ```
 
 for every `n ∈ Ω` and every `a` in the weak simple-root chamber with threshold `t`. Here
-`positiveMap a = positiveMap F G T i T₀ j a`.
+`positiveMap a = positiveMap F G T i T₀ j a`. The theorem
+`exists_adelicHeight_conj_unipotent_le` obtains the torus and cocharacter
+hypotheses from `IsSiegelAlgebraicSetup`.
 
 ## Provenance
 
@@ -89,8 +91,7 @@ lemmas.
 
 ### Main theorem
 
-1. **Setup.** The setup gives `IsMaximalSplitTorus i` and `IsGenericCocharacter i ν`. The
-   Library theorem `positiveTorusTriangularCoordinates` (module
+1. **Coordinates.** The torus and cocharacter hypotheses allow the use of `positiveTorusTriangularCoordinates` (module
    `GroupScheme.Rational.PositiveTorusTriangularCoordinatesProof`) then provides global
    functions `tc : Fin d → AffineCoordinateRing F U.X` on
    `U = Standard.unipotentScheme i ν ∅`. These identify the coordinate ring of `U` with

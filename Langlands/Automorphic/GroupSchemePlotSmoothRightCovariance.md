@@ -1,0 +1,5 @@
+# Right-translation covariance on infinite adelic plot-smooth functions
+
+`AdelicPlotSmoothEnvelopingRightCovarianceStatement` concerns the plot-smooth functions on the actual infinite adelic points of an affine group scheme over a number field, with the specified smooth structure and differential commutator. Right translation intertwines the action of an enveloping element with the action of its adjoint image. The theorem `adelicPlotSmoothEnvelopingRightCovariance` proves the derivative identity on real tangent generators by `groupDirectionalValue_rightTranslation`. Complex linearity and induction on the tensor algebra lift that identity to the enveloping algebra.
+
+For a connected reductive group, `adelicEnvelopingCenterConjugation` fixes each central element under the adjoint action. The resulting `plotSmoothCenterAction_rightTranslation` lets a center equation for the right translate `x ↦ f(xg)` be read as the original center equation at the translated argument. A left radical invariance condition is preserved by right translation.

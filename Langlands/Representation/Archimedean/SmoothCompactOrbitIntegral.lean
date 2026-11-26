@@ -1,6 +1,7 @@
 import Langlands.Representation.Archimedean.SmoothOrbitAveraging
 import Langlands.Representation.Archimedean.CompactWeightedOrbit
 import Mathlib.Analysis.Normed.Module.HahnBanach
+import Mathlib.MeasureTheory.SpecificCodomains.Pi
 
 /-! # Compact orbit integrals in the genuine smooth-vector topology -/
 
@@ -65,6 +66,74 @@ private theorem exists_finiteWords_factor (L : D →L[ℂ] ℂ) :
   change T (F v) = L (e.symm (e v)) at h
   rwa [LinearEquiv.symm_apply_apply] at h
 
+section IntegrableFamily
+
+variable {Y : Type uX} [MeasurableSpace Y] (ν : Measure Y)
+
+private theorem exists_integral_of_words (h : IsContinuousRepresentation R) (f : Y → D)
+    (hf : ∀ s, Integrable (fun y => derivativeCLM I R s (f y)) ν) :
+    ∃ z : D, ∀ s, derivativeCLM I R s z = ∫ y, derivativeCLM I R s (f y) ∂ν := by
+  let q : List A → E := fun s => ∫ y, derivativeCLM I R s (f y) ∂ν
+  have hq : q ∈ closure (range (derivativeCoordinates I R)) := by
+    apply mem_closure_of_finite_projections
+    intro J
+    let F := finiteWords R J
+    let b : Y → J → E := fun y => F (f y)
+    have hb : ∀ i : J, Integrable (fun y => b y i) ν := fun i => hf i.val
+    have heq : (fun i : J => q i.val) = ∫ y, b y ∂ν :=
+      funext fun i => (eval_integral hb i).symm
+    have hrange : (fun v : List A → E => fun i : J => v i.val) '' range (derivativeCoordinates I R) =
+        range F := by
+      rw [← range_comp]
+      rfl
+    rw [heq, hrange]
+    let S := F.toLinearMap.range.topologicalClosure
+    let : IsClosed (S : Set (J → E)) := F.toLinearMap.range.isClosed_topologicalClosure
+    change ∫ y, b y ∂ν ∈ S
+    apply (Submodule.Quotient.mk_eq_zero S).1
+    change S.mkQL (∫ y, b y ∂ν) = 0
+    rw [← S.mkQL.integral_comp_comm (Integrable.of_eval hb)]
+    apply integral_eq_zero_of_ae
+    filter_upwards with y
+    exact (Submodule.Quotient.mk_eq_zero S).2 (Submodule.le_topologicalClosure _ ⟨f y, rfl⟩)
+  rw [(isClosed_range_derivativeCoordinates_units R h).closure_eq] at hq
+  obtain ⟨z, hz⟩ := hq
+  exact ⟨z, fun s => congrFun hz s⟩
+
+omit [FiniteDimensional ℝ A] in
+private theorem apply_integral_of_words (f : Y → D)
+    (hf : ∀ s, Integrable (fun y => derivativeCLM I R s (f y)) ν) (z : D)
+    (hz : ∀ s, derivativeCLM I R s z = ∫ y, derivativeCLM I R s (f y) ∂ν) (L : D →L[ℂ] ℂ) :
+    Integrable (fun y => L (f y)) ν ∧ L z = ∫ y, L (f y) ∂ν := by
+  obtain ⟨J, T, hT⟩ := exists_finiteWords_factor R L
+  let b : Y → J → E := fun y => finiteWords R J (f y)
+  have hb : ∀ i : J, Integrable (fun y => b y i) ν := fun i => hf i.val
+  have hbi : Integrable b ν := Integrable.of_eval hb
+  have hEq : finiteWords R J z = ∫ y, b y ∂ν := by
+    funext i
+    change derivativeCLM I R i.val z = (∫ y, b y ∂ν) i
+    rw [hz, eval_integral hb]
+    rfl
+  refine ⟨by simpa only [Function.comp_def, b, hT] using T.integrable_comp hbi, ?_⟩
+  rw [← hT z, hEq, ← T.integral_comp_comm hbi]
+  simp only [b, hT]
+
+/-- A family with integrable genuine derivative coordinates has a smooth-vector
+integral with those coordinates. Continuous linear scalar evaluations commute
+with this integral. -/
+def SmoothWordIntegralStatement [FiniteDimensional ℝ A] [CompleteSpace E] : Prop :=
+  IsContinuousRepresentation R →
+  ∀ f : Y → D, (∀ s, Integrable (fun y => derivativeCLM I R s (f y)) ν) →
+    ∃ z : D, (∀ s, derivativeCLM I R s z = ∫ y, derivativeCLM I R s (f y) ∂ν) ∧
+      ∀ L : D →L[ℂ] ℂ, Integrable (fun y => L (f y)) ν ∧ L z = ∫ y, L (f y) ∂ν
+
+theorem smoothWordIntegral : SmoothWordIntegralStatement R ν := by
+  intro h f hf
+  obtain ⟨z, hz⟩ := exists_integral_of_words R ν h f hf
+  exact ⟨z, hz, apply_integral_of_words R ν f hf z hz⟩
+
+end IntegrableFamily
+
 include hR
 
 omit [CompleteSpace E] [CompactSpace X] [MeasurableSpace X] [BorelSpace X] in
@@ -73,61 +142,20 @@ private theorem continuous_weightedSmoothOrbit (v : D) :
   w.continuous.smul ((continuous_representation_units R hR).comp
     (j.continuous.prodMk continuous_const))
 
-private theorem integral_finiteWords_mem_closure (v : D) (J : Finset (List A)) :
-    (∫ x, w x • finiteWords R J (representation I R (j x) v) ∂μ) ∈
-      closure (range (finiteWords R J)) := by
-  let F := finiteWords R J
-  let S := F.toLinearMap.range.topologicalClosure
-  let : IsClosed (S : Set (J → E)) := F.toLinearMap.range.isClosed_topologicalClosure
-  let b : X → J → E := fun x => F (w x • representation I R (j x) v)
-  have hb : Integrable b μ :=
-    (F.continuous.comp (continuous_weightedSmoothOrbit R hR j w v)).integrable_of_hasCompactSupport
-      (HasCompactSupport.of_compactSpace _)
-  have hzero : ∫ x, S.mkQL (b x) ∂μ = 0 := by
-    apply integral_eq_zero_of_ae
-    apply Filter.Eventually.of_forall
-    intro x
-    apply (Submodule.Quotient.mk_eq_zero S).2
-    apply Submodule.le_topologicalClosure
-    exact ⟨_, rfl⟩
-  have hmem : ∫ x, b x ∂μ ∈ S := by
-    apply (Submodule.Quotient.mk_eq_zero S).1
-    change S.mkQL (∫ x, b x ∂μ) = 0
-    rw [← S.mkQL.integral_comp_comm hb]
-    exact hzero
-  change (∫ x, b x ∂μ) ∈ closure (range F) at hmem
-  simpa only [b, F, map_smul] using hmem
+omit [CompleteSpace E] in
+private theorem integrable_weightedSmoothOrbit_word (v : D) (s : List A) :
+    Integrable (fun x => derivativeCLM I R s (w x • representation I R (j x) v)) μ := by
+  have hc := (derivativeCLM I R s).continuous.comp (continuous_weightedSmoothOrbit R hR j w v)
+  exact hc.integrable_of_hasCompactSupport (HasCompactSupport.of_compactSpace _)
 
 /-- A compactly weighted smooth orbit has a smooth integral whose coordinates
 are the Bochner integrals of all the genuine Lie words. -/
 theorem exists_compactSmoothAverage (v : D) :
     ∃ y : D, ∀ s : List A,
       derivativeCLM I R s y = ∫ x, w x • derivativeCLM I R s (representation I R (j x) v) ∂μ := by
-  let Q : List A → E := fun s =>
-    ∫ x, w x • derivativeCLM I R s (representation I R (j x) v) ∂μ
-  have hQ : Q ∈ closure (range (derivativeCoordinates I R)) := by
-    apply mem_closure_of_finite_projections
-    intro J
-    let F := finiteWords R J
-    let b : X → J → E := fun x => F (w x • representation I R (j x) v)
-    have hb : Integrable b μ :=
-      (F.continuous.comp (continuous_weightedSmoothOrbit R hR j w v)).integrable_of_hasCompactSupport
-        (HasCompactSupport.of_compactSpace _)
-    have heq : (fun i : J => Q i.val) = ∫ x, b x ∂μ := by
-      funext i
-      change Q i.val = (ContinuousLinearMap.proj (R := ℂ) i) (∫ x, b x ∂μ)
-      rw [← (ContinuousLinearMap.proj (R := ℂ) (φ := fun _ : J => E) i).integral_comp_comm hb]
-      simp only [b, F, map_smul]
-      rfl
-    have hrange : (fun z : List A → E => fun i : J => z i.val) '' range (derivativeCoordinates I R) =
-        range F := by
-      rw [← range_comp]
-      rfl
-    rw [heq, hrange]
-    simpa only [b, F, map_smul] using integral_finiteWords_mem_closure R hR μ j w v J
-  rw [(isClosed_range_derivativeCoordinates_units R hR).closure_eq] at hQ
-  obtain ⟨y, hy⟩ := hQ
-  exact ⟨y, fun s => congrFun hy s⟩
+  obtain ⟨y, hy⟩ := exists_integral_of_words R μ hR
+    (fun x => w x • representation I R (j x) v) (integrable_weightedSmoothOrbit_word R hR μ j w v)
+  exact ⟨y, by simpa only [map_smul] using hy⟩
 
 /-- The weighted compact average as a genuine smooth vector. -/
 def compactSmoothAverage (v : D) : D :=
@@ -166,13 +194,10 @@ theorem derivativeCLM_nil_compactSmoothAverage (v : D) :
 theorem apply_compactSmoothAverage (v : D) (L : D →L[ℂ] ℂ) :
     L (compactSmoothAverage R hR μ j w v) =
       ∫ x, w x • L (representation I R (j x) v) ∂μ := by
-  obtain ⟨J, T, hT⟩ := exists_finiteWords_factor R L
-  have hf : Continuous (fun x => w x • finiteWords R J (representation I R (j x) v)) := by
-    simpa only [Function.comp_def, map_smul] using
-      (finiteWords R J).continuous.comp (continuous_weightedSmoothOrbit R hR j w v)
-  have hi := hf.integrable_of_hasCompactSupport (μ := μ) (HasCompactSupport.of_compactSpace _)
-  rw [← hT, finiteWords_compactSmoothAverage, ← T.integral_comp_comm hi]
-  simp only [map_smul, hT]
+  have h := apply_integral_of_words R μ (fun x => w x • representation I R (j x) v)
+    (integrable_weightedSmoothOrbit_word R hR μ j w v) (compactSmoothAverage R hR μ j w v)
+    (fun s => by simpa only [map_smul] using derivativeCLM_compactSmoothAverage R hR μ j w v s) L
+  simpa only [map_smul] using h.2
 
 omit hR in
 /-- A compactly weighted smooth orbit integral commutes with the genuine word

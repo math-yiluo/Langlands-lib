@@ -5,3 +5,5 @@
 For a regular number-field quadratic form of dimension at least four, the module proves the Hasse kernel of the covering group conditional on that boundary formula and triviality of the projected cocycle. For a cover of the actual special orthogonal scheme, the special orthogonal Hasse kernel supplies the projected trivialization. Lift the projected primitive after a finite Galois refinement and twist the cocycle into the kernel. Hilbert 90 presents the resulting `μ₂` cocycle by one Kummer radical. Triviality on the full completion pullbacks yields the spinor-norm test on a finite comparison field at every infinite place. The number-field spinor-norm representation theorem supplies a global pair. Its boundary trivializes the kernel cocycle in the covering group, and flat descent gives the coboundary on the original field cover.
 
 The central cohomology sequence and its spinor norm are described in Kneser, *Lectures on Galois Cohomology of Classical Groups* (1969), §5.11, p. 99.
+
+`Cocycle.isTrivial_of_kernelHasse` applies the local-to-global condition for the kernel of a central isogeny to a locally trivial cocycle whose image in the quotient is trivial.

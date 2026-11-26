@@ -9,14 +9,14 @@ the Lie group interior estimate; it has no literature source.
 
 ## Results
 
-- `exists_lieGroupChartFrame X` gives:
+- `exists_lieGroupChartFrame_extChart X` gives:
   - an open set `S ⊆ F`;
   - a map `ψ : F → H`, `C^∞` on `S`, and a point `x₀ ∈ S` with `ψ x₀ = 1`;
   - vector fields `V i : F → F`, `C^∞` on `S`, with `V i x₀ = toEuclidean (X i)`.
 
   For every smooth `f : H → ℂ`, every `i` and every `x ∈ S`,
   `groupDirectionalValue (X i) f (ψ x) = fderiv ℝ (f ∘ ψ) x (V i x)`.
-  - **Construction.** Let `e = extChartAt 𝓘(ℝ, E) 1` and `L = toEuclidean`. Set
+  - The explicit chart is part of the result. Let `e = extChartAt 𝓘(ℝ, E) 1` and `L = toEuclidean`. Set
     `S = L.symm ⁻¹' e.target`, `ψ = e.symm ∘ L.symm` and `x₀ = L (e 1)`.
   - The coordinate expression `m (x, z) = L (e (ψ x * e.symm z))` of the group multiplication
     is `C^∞` on an open set containing every `(x, e 1)` with `x ∈ S`, because the group is a Lie
@@ -27,6 +27,7 @@ the Lie group interior estimate; it has no literature source.
     The manifold derivative of `e` at `1` is the identity (`mfderiv_extChartAt_self`). So
     `groupDirectionalValue (X i) f (ψ x)` is the derivative of `a` at `e 1` along `X i`. By the
     chain rule this is `fderiv ℝ (f ∘ ψ) x (V i x)`.
+- `exists_lieGroupChartFrame` gives the same frame with existential chart data.
 - `lieWordDerivative_ofList_cons` and `lieWordDerivative_ofList_nil`: the word `i :: w` acts by
   `groupDirectionalValue (X i)` after the word `w`, and the empty word acts as the identity.
   This follows from the definition of `lieWordDerivative` through `FreeMonoid.lift`.

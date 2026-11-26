@@ -27,20 +27,24 @@ local instance (F : Type u) [Field F] (n : ℕ) : AlgebraicGeometry.IsAffine (Sc
 local instance (F : Type u) [Field F] (n : ℕ) : AlgebraicGeometry.Smooth (Scheme F n).X.hom :=
   GroupScheme.GeneralLinear.smoothStatement _ _
 
-/-- The archimedean Whittaker comparison for one actual cuspidal tensor presentation.
-The local maps have a nonzero identity value and their lines contain all actual slices. -/
-def InfiniteWhittakerSliceModelStatement : Prop :=
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (r : ℕ) (T : CuspidalOperatorRealization F r)
+/-- The local model and slice comparison for each actual cuspidal spectral presentation
+at the given field. -/
+def InfiniteWhittakerSliceModelAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (r : ℕ) (T : CuspidalOperatorRealization F r)
     (P : CuspidalSpectralPresentation.{u, uQ} T)
     (hI : HasIrreducibleAdmissibleComponents P)
-    (χ : AddChar (Adeles F) ℂ),
-    IsStandardAdditiveCharacter F χ →
+    (χ : AddChar (Adeles F) ℂ), IsStandardAdditiveCharacter F χ →
   ∀ (dR : (RP F) → List RealBlock),
     (∀ v, T.realization.HasRealPlaceParameter v (dR v)) →
   ∀ (dC : (CP F) → List ComplexCharacterData),
     (∀ w, T.realization.HasComplexPlaceParameter w (dC w)) →
     Nonempty (ModelData P hI χ)
+
+/-- The local maps have a nonzero identity value and their lines contain all actual slices. -/
+def InfiniteWhittakerSliceModelStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    InfiniteWhittakerSliceModelAt.{u, uQ} F
 
 section Realization
 
@@ -98,23 +102,24 @@ private theorem mul_products {A B : Type*} [Fintype A] [Fintype B] (κ κ' : ℂ
 set_option maxHeartbeats 6000000 in
 /-- Local slice comparisons and independent local tests supply the joint infinite
 premise of the equal-rank reduction. -/
-theorem equalInfiniteWhittakerTest_of_local
-    (hModels : InfiniteWhittakerSliceModelStatement.{u, uQ})
-    (hReal : RealEqualPlaceTestsStatement.{u}) (hComplex : ComplexEqualPlaceTestsStatement.{u}) :
-    EqualInfiniteWhittakerTestStatement.{u, uQ} := by
-  intro F _ _ _ ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hPS' hS aR haR aC haC
+theorem equalInfiniteWhittakerTestAt_of_local
+    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
+    (hModels : InfiniteWhittakerSliceModelAt.{u, uQ} F)
+    (hReal : Nonempty (RP F) → RealEqualPlaceTestsStatement.{u})
+    (hComplex : ComplexEqualPlaceTestsStatement.{u}) : EqualInfiniteWhittakerTestAt.{u, uQ} F := by
+  intro ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hPS' hS aR haR aC haC
     dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd'
     ψv hψv ℓ ℓ' a₀ a₀' ha₀ ha₀'
   have hχ := UnramifiedWhittaker.isStandardAdditiveCharacter_complex F ψ hψ
-  obtain ⟨M⟩ := hModels F r T P hI ψ.complex hχ dR hdR dC hdC
+  obtain ⟨M⟩ := hModels r T P hI ψ.complex hχ dR hdR dC hdC
   let ψ' := inverseCharacter ψ
   have hψ' (x : F) : ψ' (algebraMap F (Adeles F) x) = 1 := by
     change inverseCharacter ψ (algebraMap F (Adeles F) x) = 1
     rw [inverseCharacter_apply, hψ, inv_one]
   have hχ' := UnramifiedWhittaker.isStandardAdditiveCharacter_complex F ψ' hψ'
-  obtain ⟨M'⟩ := hModels F r T' P' hI' ψ'.complex hχ' dR' hdR' dC' hdC'
+  obtain ⟨M'⟩ := hModels r T' P' hI' ψ'.complex hχ' dR' hdR' dC' hdC'
   obtain ⟨I⟩ := infiniteTestData_of_local (aR := aR) (aC := aC)
-    (fun v => hReal F ψ hψ r T Td T' Td' hTd hTd' v (aR v) (haR v)
+    (fun v => hReal ⟨v⟩ F ψ hψ r T Td T' Td' hTd hTd' v (aR v) (haR v)
       (dR v) (dR' v) (dRd v) (dRd' v) (hdR v) (hdR' v) (hdRd v) (hdRd' v))
     (fun w => hComplex F ψ hψ r T Td T' Td' hTd hTd' w (aC w) (haC w)
       (dC w) (dC' w) (dCd w) (dCd' w) (hdC w) (hdC' w) (hdCd w) (hdCd' w))
@@ -137,6 +142,13 @@ theorem equalInfiniteWhittakerTest_of_local
     (mul_products κ κ'
       (fun v => I.WR v (realComponent F (r + 1) v g)) (fun v => I.WR' v (realComponent F (r + 1) v g))
       (fun w => I.WC w (complexComponent F (r + 1) w g)) (fun w => I.WC' w (complexComponent F (r + 1) w g)))
+
+/-- The corresponding local inputs over every number field give the unrestricted test property. -/
+theorem equalInfiniteWhittakerTest_of_local
+    (hModels : InfiniteWhittakerSliceModelStatement.{u, uQ})
+    (hReal : RealEqualPlaceTestsStatement.{u}) (hComplex : ComplexEqualPlaceTestsStatement.{u}) :
+    EqualInfiniteWhittakerTestStatement.{u, uQ} :=
+  fun F _ _ _ => equalInfiniteWhittakerTestAt_of_local F (hModels F) (fun _ => hReal) hComplex
 
 /-- The only inputs are the single-representation slice comparison and the two
 local equal-rank archimedean test assertions. -/

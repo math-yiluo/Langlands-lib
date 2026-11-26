@@ -1,0 +1,7 @@
+# Translation laws of compact real parabolic sections
+
+`RealParabolicSectionEquivarianceStatement` gives two transformation laws for `compactSection`. Right multiplying by the upper rectangle with entry \(Z\) replaces the transverse kernel \(\Phi(Y)\) by \(\Phi(Y+Z)\). Left multiplying by a block lower matrix with invertible diagonal blocks \(a',b'\) replaces the two Levi functions by their left translates by \(a',b'\) and supplies the factors \(|\det a'|^{z_1}|\det b'|^{z_2}\). Both identities hold on the entire real general linear group.
+
+The proof constructs the cell coordinates for each invertible leading pivot. Multiplication on the right by the upper unipotent with entry \(-Y\) eliminates the upper rectangle. The block-triangular determinant then proves invertibility of the second Levi block. For the two transformation laws, direct block multiplication gives the new coordinates. The product formula in `RealParabolicCompactSection` supplies the values on the cell. The leading pivot is preserved by right rectangle translation and is left multiplied by the invertible first Levi block under left block-lower translation. Hence the section evaluations also agree off the cell, where they vanish.
+
+These are the coordinate identities underlying the lower parabolic covariance in Jacquet, *Archimedean Rankin–Selberg Integrals*, §13.2, p. 100 in the author-posted edition, and the open-cell translation in the proof of Proposition 14.1, pp. 103–104.

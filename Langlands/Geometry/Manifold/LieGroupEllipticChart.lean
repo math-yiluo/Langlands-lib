@@ -37,9 +37,12 @@ space of dimension `finrank ℝ E`, a smooth parametrization `ψ : S → H` hitt
 `x₀ ∈ S`, and smooth vector fields `V i` on `S` with `V i x₀ = toEuclidean (X i)`, such that
 the derivative along `X i` of a smooth function `f` at `ψ x` is the directional derivative of
 `f ∘ ψ` at `x` along `V i x`. -/
-theorem exists_lieGroupChartFrame (X : Fin n → GroupLieAlgebra 𝓘E H) :
+theorem exists_lieGroupChartFrame_extChart (X : Fin n → GroupLieAlgebra 𝓘E H) :
     ∃ (S : Set F) (ψ : F → H) (x₀ : F) (V : Fin n → F → F),
       IsOpen S ∧ x₀ ∈ S ∧ ψ x₀ = 1 ∧ ContMDiffOn 𝓘(ℝ, F) 𝓘E ∞ ψ S ∧
+      S = (toEuclidean : E ≃L[ℝ] F).symm ⁻¹' (extChartAt 𝓘E (1 : H)).target ∧
+      ψ = (extChartAt 𝓘E (1 : H)).symm ∘ (toEuclidean : E ≃L[ℝ] F).symm ∧
+      x₀ = toEuclidean (extChartAt 𝓘E (1 : H) 1) ∧
       (∀ i, ContDiffOn ℝ ∞ (V i) S) ∧ (∀ i, V i x₀ = toEuclidean (X i : E)) ∧
       ∀ f : H → ℂ, ContMDiff 𝓘E 𝓘(ℝ, ℂ) ∞ f → ∀ i, ∀ x ∈ S,
         groupDirectionalValue 𝓘E (X i) f (ψ x) = fderiv ℝ (f ∘ ψ) x (V i x) := by
@@ -110,7 +113,7 @@ theorem exists_lieGroupChartFrame (X : Fin n → GroupLieAlgebra 𝓘E H) :
   have hψ₀ : ψ x₀ = 1 := by
     change e.symm (L.symm (L (e 1))) = 1
     rw [L.symm_apply_apply, e.left_inv he₁]
-  refine ⟨S, ψ, x₀, V, hS, hx₀, hψ₀, hψ, fun i => ?_, fun i => ?_, fun f hf i x hx => ?_⟩
+  refine ⟨S, ψ, x₀, V, hS, hx₀, hψ₀, hψ, rfl, rfl, rfl, fun i => ?_, fun i => ?_, fun f hf i x hx => ?_⟩
   · -- smoothness of the vector fields
     have hd : ContDiffOn ℝ ∞ (fun x : F => fderiv ℝ m (x, e 1)) S :=
       (hm.fderiv_of_isOpen hB (by simp)).comp
@@ -155,6 +158,21 @@ theorem exists_lieGroupChartFrame (X : Fin n → GroupLieAlgebra 𝓘E H) :
       mfderiv_extChartAt_self, mvfderiv_eq_fderiv, ha.fderiv]
     rfl
 
+/-- **Euclidean chart frame at the identity.** There are an open set `S` of the Euclidean
+space of dimension `finrank ℝ E`, a smooth parametrization `ψ : S → H` hitting `1` at a point
+`x₀ ∈ S`, and smooth vector fields `V i` on `S` with `V i x₀ = toEuclidean (X i)`, such that
+the derivative along `X i` of a smooth function `f` at `ψ x` is the directional derivative of
+`f ∘ ψ` at `x` along `V i x`. -/
+theorem exists_lieGroupChartFrame (X : Fin n → GroupLieAlgebra 𝓘E H) :
+    ∃ (S : Set F) (ψ : F → H) (x₀ : F) (V : Fin n → F → F),
+      IsOpen S ∧ x₀ ∈ S ∧ ψ x₀ = 1 ∧ ContMDiffOn 𝓘(ℝ, F) 𝓘E ∞ ψ S ∧
+      (∀ i, ContDiffOn ℝ ∞ (V i) S) ∧ (∀ i, V i x₀ = toEuclidean (X i : E)) ∧
+      ∀ f : H → ℂ, ContMDiff 𝓘E 𝓘(ℝ, ℂ) ∞ f → ∀ i, ∀ x ∈ S,
+        groupDirectionalValue 𝓘E (X i) f (ψ x) = fderiv ℝ (f ∘ ψ) x (V i x) := by
+  obtain ⟨S, ψ, x₀, V, hS, hx₀, hψ₀, hψ, _, _, _, hV, hVx₀, hdir⟩ :=
+    exists_lieGroupChartFrame_extChart X
+  exact ⟨S, ψ, x₀, V, hS, hx₀, hψ₀, hψ, hV, hVx₀, hdir⟩
+
 omit [FiniteDimensional ℝ E] [LieGroup 𝓘(ℝ, E) ∞ H] in
 /-- The word `i :: w` acts by differentiating along `X i` after the word `w`. -/
 theorem lieWordDerivative_ofList_cons (X : Fin n → GroupLieAlgebra 𝓘E H) (i : Fin n)
@@ -183,6 +201,7 @@ theorem contMDiff_lieWordDerivative_ofList (X : Fin n → GroupLieAlgebra 𝓘E 
       rw [lieWordDerivative_ofList_cons]
       exact contMDiff_groupDirectionalValue 𝓘E (X i) (contMDiff_lieWordDerivative_ofList X hφ w)
 
+omit [FiniteDimensional ℝ E] in
 /-- **Coordinate expansion of word derivatives.** In a chart frame as in
 `exists_lieGroupChartFrame`, the derivative of a smooth function `φ` along a word of length at
 most `N`, evaluated at `ψ x`, is the combination of the ordered coordinate derivatives of

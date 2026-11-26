@@ -179,7 +179,7 @@ private theorem tail_first_suffix {S : Stratum 𝒪[F] F V} (q : S.DefiningSeque
       simp [Nat.add_comm]
 
 omit [TopologicalSpace F] [IsNonarchimedeanLocalField F] in
-private theorem simpleHGroup_eq_of_layer_eq (L : LatticeChain 𝒪[F] F V) (n : ℤ)
+theorem simpleHGroup_eq_of_layer_eq (L : LatticeChain 𝒪[F] F V) (n : ℤ)
     (β γ : A) (tail tail' : List A) (k : ℕ)
     (h : simpleHLayer L n β tail k = simpleHLayer L n γ tail' k) :
     simpleHGroup L n β tail k = simpleHGroup L n γ tail' k := by

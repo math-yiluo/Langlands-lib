@@ -1,0 +1,3 @@
+# The two cutoff integrals on the common quotient
+
+In the common-quotient proof of adjunction from Mœglin–Waldspurger II.1.8, the target cutoff is read from the target Iwasawa height and the source cutoff from the height after translation by the inverse Weyl representative. The Weyl basis relation identifies the Levi coordinates in the two readings. After moving the Levi variable past the radical, the second cutoff argument differs by the source height of the translated radical point. Both normalized products descend to the canonical target Levi quotient. Integrating the cutoffs in the positive split component gives equality and absolute integrability for the two unfolded kernels and then for their common-quotient integrals.

@@ -1,0 +1,5 @@
+# Clopen cutoff of a distribution
+
+In a Hausdorff space `X`, let `C` be a clopen subset contained in a subspace `U`. The cutoff of a distribution on `U` is a distribution on `X`. It evaluates a test by restricting it to `C`, viewing `C` in `U`, and extending the restricted test by zero on `U`.
+
+`ClopenCutoffStatement` states three properties. The resulting distribution is supported on `C`. If `U` is open, it agrees with the original distribution on tests on `U` supported in `C` and extended to `X` by zero. Its construction commutes with a pair of compatible homeomorphisms of `X` and `U` that preserve membership in `C`. Each property follows by checking the test cutoff at points in and outside `C`. In particular, an invariant distribution on the open domain extends to an invariant ambient distribution after cutting down to an invariant clopen subset. This is the restriction and extension procedure used after descent to the Lie algebra. [Clozel, *Characters of non-connected, reductive p-adic groups*, §3.4, p. 155](https://doi.org/10.4153/CJM-1987-008-3)

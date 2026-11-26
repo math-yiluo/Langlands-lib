@@ -1,0 +1,7 @@
+# Uniqueness of real Whittaker evaluations on standard block models
+
+For each rank-matched real standard block list and nonzero additive scale, `RealExactWhittakerUniquenessStatement` gives uniqueness up to a scalar of continuous Whittaker forms on its genuine smooth vectors. It also identifies the full compact-finite Whittaker coefficient model with the range of any nonzero exact coefficient map at that scale.
+
+Pull both continuous forms back through the smooth equivariant quotient from the ascending character list. The character forms are bounded on the full position principal series by `exists_boundedForm_of_characterEvaluation`. The quotient is surjective on compact-finite vectors, which are dense in the target, so a nonzero target form has nonzero pullback. Apply `hasSmoothWhittakerUniqueness_of_map_character`. The equality of the pulled-back forms then descends by the same compact-finite surjectivity and density.
+
+`RealExactBlockStandardEvaluation` represents the two exact coefficient maps by continuous forms. Comparing those forms compares the maps at every group point. Every summand in the defining supremum of the Whittaker model is therefore in the range of the given nonzero map. The resulting multiplicity-one conclusion is the form used for generic induced representations in Jacquet, *Archimedean Rankin–Selberg Integrals*, §2, p. 4 in the author-posted edition. The proof uses the ascending quotient and the Library's uniqueness theorem for character principal series.

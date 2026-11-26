@@ -110,12 +110,10 @@ variable (F : Type u) [Field F] [NumberField F]
   (i : T.toGrp ⟶ G) (ν : cocharacterLattice T)
   (T₀ : CommGroupScheme (Spec (CommRingCat.of F))) (j : T₀ ⟶ T)
 
-/-- **Chamber conjugates of a compact unipotent set have bounded height.** For an actual
-algebraic Siegel setup, a compact subset `Ω` of the adelic points of the standard unipotent
-subgroup and a threshold `t`, the full adelic height of `a⁻¹ n a` is bounded uniformly for
-`n ∈ Ω` and `a` the image of a point of the weak simple-root chamber. -/
-theorem exists_adelicHeight_conj_unipotent_le (hG : IsConnectedReductive G)
-    (hsetup : IsSiegelAlgebraicSetup F G T i ν T₀ j) {N : ℕ}
+/-- The chamber conjugation estimate for a maximal split torus and a generic
+cocharacter. -/
+theorem exists_adelicHeight_conj_unipotent_le_of_maximalSplit (hG : IsConnectedReductive G)
+    (hTmax : IsMaximalSplitTorus i) (hgen : IsGenericCocharacter i ν) {N : ℕ}
     (rho : MatrixRepresentation G (Fin N)) (hN : 0 < N)
     (Ω : Set (AdelicGroupPoints F (Standard.unipotentScheme i ν ∅))) (hΩ : IsCompact Ω)
     (t : ℝ≥0ˣ) :
@@ -125,7 +123,6 @@ theorem exists_adelicHeight_conj_unipotent_le (hG : IsConnectedReductive G)
           map F (Standard.unipotentScheme i ν ∅) G (Standard.unipotentHom i ν ∅) n *
           positiveMap F G T i T₀ j a) ≤ B := by
   classical
-  obtain ⟨hTmax, hgen, -⟩ := id hsetup
   have : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
   have hcl := Standard.isClosedSubgroup_unipotentHom i ν ∅
   have : IsAffineHom (Standard.unipotentScheme i ν ∅).X.hom := hcl.isAffineHom
@@ -217,6 +214,21 @@ theorem exists_adelicHeight_conj_unipotent_le (hG : IsConnectedReductive G)
     rw [← hcoord, Φ₀.symm_apply_apply, hy']
   rw [← hval]
   exact hB ⟨_, hpK, rfl⟩
+
+/-- Chamber conjugates of compact subsets of the minimal unipotent radical have bounded
+height in an algebraic Siegel setup. -/
+theorem exists_adelicHeight_conj_unipotent_le (hG : IsConnectedReductive G)
+    (hsetup : IsSiegelAlgebraicSetup F G T i ν T₀ j) {N : ℕ}
+    (rho : MatrixRepresentation G (Fin N)) (hN : 0 < N)
+    (Ω : Set (AdelicGroupPoints F (Standard.unipotentScheme i ν ∅))) (hΩ : IsCompact Ω)
+    (t : ℝ≥0ˣ) :
+    ∃ B : ℝ, ∀ n ∈ Ω, ∀ a ∈ PositiveRealTorus.weakSimpleRootChamber F T₀ T j G i ν t,
+      RepresentationGrowth.adelicHeight F G rho
+        ((positiveMap F G T i T₀ j a)⁻¹ *
+          map F (Standard.unipotentScheme i ν ∅) G (Standard.unipotentHom i ν ∅) n *
+          positiveMap F G T i T₀ j a) ≤ B :=
+  exists_adelicHeight_conj_unipotent_le_of_maximalSplit F G T i ν T₀ j hG hsetup.1 hsetup.2.1
+    rho hN Ω hΩ t
 
 end ConjugationBound
 

@@ -52,6 +52,15 @@ subset of the reduced building of `B`.
 
 ## The main theorem
 
+`BuildingModelFamily.exists_satisfiesModelAxioms_withBaseChange_of_unramified`
+retains the integral-point identifications of both base-changed models.
+For each index \(\Omega\), the full model gives \(G(K)^1 \cap
+\operatorname{Fix}(e(\Omega))\) and the neutral model gives
+\(G(K)^0 \cap \operatorname{Fix}(e(\Omega))\). Both identities come from
+`exists_relativeComponentModelData_of_unramified`, which is used to construct
+the models of the family. The following specialization retains the neutral
+identity for use in constructing the quotient family.
+
 `BuildingModelFamily.exists_satisfiesModelAxioms_of_unramified`. Let
 `P : ParahoricBuildingData G`, a realization `R` and a splitting `T` satisfy
 the seven predicates of the target statement `IntegralModelAxiomsStatement`.

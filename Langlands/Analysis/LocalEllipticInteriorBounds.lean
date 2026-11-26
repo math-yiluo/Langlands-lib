@@ -1,7 +1,7 @@
 import Langlands.Analysis.LocalEllipticSystemPointwise
 import Langlands.Analysis.OrderedTensorL2InterpolationProof
 
-/-! # Interior derivative bounds by the sup norm for a local elliptic equation -/
+/-! # Interior derivative bounds for a local elliptic equation -/
 
 noncomputable section
 
@@ -128,17 +128,39 @@ theorem eLpNorm_ballCutoff_smul_le {u : E → ℂ} {x₀ : E} {ρ σ R M : ℝ}
   have hhalf : (2 : ℝ≥0∞).toReal⁻¹ = (1 / 2 : ℝ) := by norm_num
   rwa [Measure.restrict_apply_univ, hhalf] at h
 
+/-- Cutting off in a smaller ball contracts the `L²` norm on a larger closed ball. -/
+theorem eLpNorm_ballCutoff_smul_le_restrict {u : E → ℂ} {x₀ : E} {ρ σ R : ℝ}
+    (hρ : 0 ≤ ρ) (hρσ : ρ < σ) (hσR : σ ≤ R) (hu : ContDiffOn ℝ ∞ u (ball x₀ σ)) :
+    eLpNorm (fun x => ballCutoff x₀ ρ σ x • u x) 2 volume ≤
+      eLpNorm u 2 (volume.restrict (closedBall x₀ R)) := by
+  set F : E → ℂ := fun x => ballCutoff x₀ ρ σ x • u x
+  have hF : Continuous F := (contDiff_ballCutoff_smul hρ hρσ hu).continuous
+  have hsupp : Function.support F ⊆ closedBall x₀ R := by
+    intro x hx
+    by_contra h
+    apply hx
+    have hx' : x ∉ ball x₀ ((ρ + σ) / 2) := fun h' =>
+      h (ball_subset_closedBall (ball_subset_ball (by linarith) h'))
+    simp [F, ballCutoff_eq_zero hρ hρσ hx']
+  rw [← eLpNorm_restrict_eq_of_support_subset hF.aestronglyMeasurable hsupp]
+  apply eLpNorm_mono hF.aestronglyMeasurable
+  intro x
+  simp only [F, norm_smul, Real.norm_eq_abs, abs_of_nonneg (ballCutoff_nonneg _ _ _ _)]
+  exact mul_le_of_le_one_left (norm_nonneg _) (ballCutoff_le_one _ _ _ _)
+
 /-- **Scale-explicit interpolation of weighted seminorms.** On a ball of radius `R`, the
 `k`-th weighted seminorm of a smooth function is bounded by `ε ^ (r - k)` times the sum of its
-weighted seminorms up to order `r`, plus `ε⁻¹ ^ k` times its sup bound, for every `0 < ε`. -/
-theorem ballWeightedSeminorm_le_interpolation {u : E → ℂ} {x₀ : E} {R M ε : ℝ}
+weighted seminorms up to order `r`, plus `ε⁻¹ ^ k` times a common bound for the cutoff products, for every `0 < ε`. -/
+private theorem ballWeightedSeminorm_le_interpolation_of_cutoff_bound {u : E → ℂ} {x₀ : E} {R ε : ℝ} {B : ℝ≥0∞}
     (hR : 0 < R) (hε : 0 < ε) (hu : ContDiffOn ℝ ∞ u (ball x₀ R))
-    (hM : ∀ x ∈ closedBall x₀ R, ‖u x‖ ≤ M) {k : ℕ} (hk : k ≤ r) :
+    (hB : ∀ ρ σ : ℝ, 0 ≤ ρ → ρ < σ → σ ≤ R →
+      eLpNorm (fun x => ballCutoff x₀ ρ σ x • u x) 2 volume ≤ B)
+    {k : ℕ} (hk : k ≤ r) :
     ballWeightedSeminorm (derivWordNorm k u) x₀ R k ≤
       ENNReal.ofReal (2 ^ k * ε ^ (r - k)) * (cutoffLeibnizConst d r *
           ∑ j ∈ Finset.range (r + 1), ballWeightedSeminorm (derivWordNorm j u) x₀ R j) +
         ENNReal.ofReal (2 ^ k * ε⁻¹ ^ k) *
-          (volume (closedBall x₀ R) ^ (1 / 2 : ℝ) * ENNReal.ofReal M) := by
+          B := by
   set T := ∑ j ∈ Finset.range (r + 1), ballWeightedSeminorm (derivWordNorm j u) x₀ R j
   refine iSup₂_le fun ρ hρ => ?_
   have hρ0 : 0 ≤ ρ := (half_pos hR).le.trans hρ.1
@@ -202,7 +224,7 @@ theorem ballWeightedSeminorm_le_interpolation {u : E → ℂ} {x₀ : E} {R M ε
           (f := fun j => ballWeightedSeminorm (derivWordNorm j u) x₀ R j)
           (fun _ _ => zero_le) (Finset.mem_range.2 (by omega))
       _ = cutoffLeibnizConst d r * T := by rw [cutoffLeibnizConst, Finset.sum_mul]
-  have hlow := eLpNorm_ballCutoff_smul_le hρ0 hρσ hσR.le hsm hM
+  have hlow := hB ρ σ hρ0 hρσ hσR.le
   calc
     ENNReal.ofReal ((R - ρ) ^ k) * eLpNorm (derivWordNorm k u) 2 (volume.restrict (ball x₀ ρ))
         ≤ ENNReal.ofReal ((2 * δ) ^ k) *
@@ -226,21 +248,36 @@ theorem ballWeightedSeminorm_le_interpolation {u : E → ℂ} {x₀ : E} {R M ε
           mul_inv_cancel₀ hδ.ne', mul_one]
     _ ≤ _ := add_le_add (mul_le_mul' le_rfl htop) (mul_le_mul' le_rfl hlow)
 
-/-- **Interior estimate for a local elliptic equation with smooth coefficients.** If a scalar
+/-- **Scale-explicit interpolation of weighted seminorms.** On a ball of radius `R`, the
+`k`-th weighted seminorm of a smooth function is bounded by `ε ^ (r - k)` times the sum of its
+weighted seminorms up to order `r`, plus `ε⁻¹ ^ k` times its sup bound, for every `0 < ε`. -/
+theorem ballWeightedSeminorm_le_interpolation {u : E → ℂ} {x₀ : E} {R M ε : ℝ}
+    (hR : 0 < R) (hε : 0 < ε) (hu : ContDiffOn ℝ ∞ u (ball x₀ R))
+    (hM : ∀ x ∈ closedBall x₀ R, ‖u x‖ ≤ M) {k : ℕ} (hk : k ≤ r) :
+    ballWeightedSeminorm (derivWordNorm k u) x₀ R k ≤
+      ENNReal.ofReal (2 ^ k * ε ^ (r - k)) * (cutoffLeibnizConst d r *
+          ∑ j ∈ Finset.range (r + 1), ballWeightedSeminorm (derivWordNorm j u) x₀ R j) +
+        ENNReal.ofReal (2 ^ k * ε⁻¹ ^ k) *
+          (volume (closedBall x₀ R) ^ (1 / 2 : ℝ) * ENNReal.ofReal M) :=
+  ballWeightedSeminorm_le_interpolation_of_cutoff_bound hR hε hu
+    (fun _ _ hρ hρσ hσR => eLpNorm_ballCutoff_smul_le hρ hρσ hσR
+      (hu.mono (ball_subset_ball hσR)) hM) hk
+
+/-- **Local `L²` interior estimate for a scalar elliptic equation.** If a scalar
 operator of positive order `r` with smooth coefficients on an open set `S` is elliptic at
 `x₀ ∈ S`, then there is a closed ball around `x₀` in `S` such that, for every order `m`, the
 `m`-th derivative at `x₀` of every smooth solution of `D u = 0` on `S` is bounded by a constant
-`C m` (independent of the solution) times any bound of `‖u‖` on the ball. -/
-theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
+`C m` (independent of the solution) times the `L²` norm of `u` on the ball. -/
+theorem exists_localElliptic_interior_derivative_l2_bounds (hr : 0 < r)
     (D : CoordinateScalarOperator E d r)
     (hD : D.basis = (EuclideanSpace.basisFun (Fin d) ℝ).toBasis) {S : Set E} (hS : IsOpen S)
     (hcoef : ∀ (k : Fin (r + 1)) (w : Fin k.val → Fin d), ContDiffOn ℝ ∞ (D.coefficient k w) S)
     {x₀ : E} (hx₀ : x₀ ∈ S) (hell : ∀ ξ : E →L[ℝ] ℝ, ξ ≠ 0 → D.principalSymbol x₀ ξ ≠ 0) :
     ∃ R : ℝ, 0 < R ∧ closedBall x₀ R ⊆ S ∧
-      ∃ C : ℕ → ℝ, (∀ m, 0 ≤ C m) ∧
+      ∃ C : ℕ → ℝ≥0∞, (∀ m, C m ≠ ⊤) ∧
         ∀ u : E → ℂ, ContDiffOn ℝ ∞ u S → (∀ x ∈ S, D.action u x = 0) →
-          ∀ M : ℝ, (∀ x ∈ closedBall x₀ R, ‖u x‖ ≤ M) →
-            ∀ m, ‖iteratedFDeriv ℝ m u x₀‖ ≤ C m * M := by
+          ∀ m, ‖iteratedFDeriv ℝ m u x₀‖ₑ ≤ C m *
+            eLpNorm u 2 (volume.restrict (closedBall x₀ R)) := by
   classical
   obtain ⟨U, hUo, hxU, hUell⟩ := coordinateScalarLocalEllipticity hr D x₀
     (fun w => (hcoef (Fin.last r) w).continuousOn.continuousAt (hS.mem_nhds hx₀)) hell
@@ -250,8 +287,6 @@ theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
       (fun k w => (hcoef k w).mono inter_subset_left)
       (hUell.isEllipticOn.mono inter_subset_right) ⟨hx₀, hxU⟩
   have hsubS : closedBall x₀ R ⊆ S := hsub.trans inter_subset_left
-  let V := volume (closedBall x₀ R) ^ (1 / 2 : ℝ)
-  have hV : V ≠ ⊤ := ENNReal.rpow_ne_top_of_nonneg (by norm_num) measure_closedBall_lt_top.ne
   let Λ := cutoffLeibnizConst d r
   let A : ℝ≥0∞ := (r : ℝ≥0∞) * ENNReal.ofReal (2 ^ r) * Λ * (1 + C r)
   have hA : A ≠ ⊤ := ENNReal.mul_ne_top (ENNReal.mul_ne_top (ENNReal.mul_ne_top
@@ -271,14 +306,15 @@ theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
     rw [mul_one_div, div_le_div_iff₀ (by positivity) (by norm_num)]
     linarith
   let b : ℝ := 2 ^ r * ε⁻¹ ^ r
-  let K0 : ℝ≥0∞ := ENNReal.ofReal 2 * ((r : ℝ≥0∞) * (ENNReal.ofReal b * V))
+  let K0 : ℝ≥0∞ := ENNReal.ofReal 2 * ((r : ℝ≥0∞) * ENNReal.ofReal b)
   have hK0 : K0 ≠ ⊤ := ENNReal.mul_ne_top ENNReal.ofReal_ne_top
-    (ENNReal.mul_ne_top (ENNReal.natCast_ne_top r) (ENNReal.mul_ne_top ENNReal.ofReal_ne_top hV))
-  -- the weighted seminorms of every solution are bounded by the sup bound
+    (ENNReal.mul_ne_top (ENNReal.natCast_ne_top r) ENNReal.ofReal_ne_top)
+  -- Absorb the lower order seminorms into the local `L²` norm.
   have hweighted : ∀ u : E → ℂ, ContDiffOn ℝ ∞ u S → (∀ x ∈ S, D.action u x = 0) →
-      ∀ M : ℝ, (∀ x ∈ closedBall x₀ R, ‖u x‖ ≤ M) →
-        ∀ m, ballWeightedSeminorm (derivWordNorm m u) x₀ R m ≤ C m * (K0 * ENNReal.ofReal M) := by
-    intro u hu hsol M hM
+      ∀ m, ballWeightedSeminorm (derivWordNorm m u) x₀ R m ≤
+        C m * (K0 * eLpNorm u 2 (volume.restrict (closedBall x₀ R))) := by
+    intro u hu hsol
+    let M := eLpNorm u 2 (volume.restrict (closedBall x₀ R))
     let N := fun j : ℕ => ballWeightedSeminorm (derivWordNorm j u) x₀ R j
     have hN (j : ℕ) : N j ≠ ⊤ :=
       (ballWeightedSeminorm_lt_top_of_continuousOn_closedBall hR.le
@@ -295,9 +331,13 @@ theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
     have hball : ContDiffOn ℝ ∞ u (ball x₀ R) := hu.mono (ball_subset_closedBall.trans hsubS)
     have hk (k : ℕ) (hk : k ∈ Finset.range r) :
         N k ≤ ENNReal.ofReal (2 ^ r * ε) * (Λ * ((1 + C r) * B)) +
-          ENNReal.ofReal b * (V * ENNReal.ofReal M) := by
+          ENNReal.ofReal b * M := by
       have hkr : k < r := Finset.mem_range.1 hk
-      refine (ballWeightedSeminorm_le_interpolation (r := r) hR hε hball hM hkr.le).trans
+      have hcut (ρ σ : ℝ) (hρ : 0 ≤ ρ) (hρσ : ρ < σ) (hσR : σ ≤ R) :
+          eLpNorm (fun x => ballCutoff x₀ ρ σ x • u x) 2 volume ≤ M :=
+        eLpNorm_ballCutoff_smul_le_restrict hρ hρσ hσR (hball.mono (ball_subset_ball hσR))
+      refine (ballWeightedSeminorm_le_interpolation_of_cutoff_bound
+        (r := r) hR hε hball hcut hkr.le).trans
         (add_le_add (mul_le_mul' (ENNReal.ofReal_le_ofReal ?_) (mul_le_mul' le_rfl hT))
           (mul_le_mul' (ENNReal.ofReal_le_ofReal ?_) le_rfl))
       · have h1 : (2 : ℝ) ^ k ≤ 2 ^ r := pow_le_pow_right₀ (by norm_num) hkr.le
@@ -310,16 +350,16 @@ theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
           pow_le_pow_right₀ (one_le_inv₀ hε |>.2 hε1) hkr.le
         exact mul_le_mul h1 h2 (by positivity) (by positivity)
     have hsum : B ≤ (A * ENNReal.ofReal ε) * B +
-        (r : ℝ≥0∞) * (ENNReal.ofReal b * (V * ENNReal.ofReal M)) := by
+        (r : ℝ≥0∞) * (ENNReal.ofReal b * M) := by
       refine (Finset.sum_le_sum hk).trans (le_of_eq ?_)
       rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul,
         ENNReal.ofReal_mul (by positivity : (0 : ℝ) ≤ 2 ^ r)]
       dsimp only [A]
       ring
     have hhalf : B ≤ ENNReal.ofReal (1 / 2 : ℝ) * B +
-        (r : ℝ≥0∞) * (ENNReal.ofReal b * (V * ENNReal.ofReal M)) :=
+        (r : ℝ≥0∞) * (ENNReal.ofReal b * M) :=
       hsum.trans (add_le_add (mul_le_mul' hAε le_rfl) le_rfl)
-    have hBK : B ≤ K0 * ENNReal.ofReal M := by
+    have hBK : B ≤ K0 * M := by
       refine (absorbs_half hB hhalf).trans (le_of_eq ?_)
       dsimp only [K0]
       ring
@@ -344,28 +384,61 @@ theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
     (ENNReal.add_ne_top.2
       ⟨ENNReal.sum_ne_top.2 fun j _ => ENNReal.mul_ne_top ENNReal.ofReal_ne_top (hL _),
         ENNReal.mul_ne_top ENNReal.ofReal_ne_top (hL _)⟩)
-  refine ⟨R, hR, hsubS, fun m => (P m).toReal, fun _ => ENNReal.toReal_nonneg, ?_⟩
-  intro u hu hsol M hM m
-  have hM0 : 0 ≤ M := (norm_nonneg _).trans (hM x₀ (mem_closedBall_self hR.le))
+  refine ⟨R, hR, hsubS, P, hP, ?_⟩
+  intro u hu hsol m
+  let M := eLpNorm u 2 (volume.restrict (closedBall x₀ R))
   have hball : ContDiffOn ℝ ∞ u (ball x₀ R) := hu.mono (ball_subset_closedBall.trans hsubS)
   have hLp (p : ℕ) : eLpNorm (iteratedFDeriv ℝ p u) 2 (volume.restrict (ball x₀ ρ))
-      ≤ L p * ENNReal.ofReal M := by
+      ≤ L p * M := by
     refine (eLpNorm_half_ball_le_weightedDerivative hR hball p).trans ?_
     dsimp only [L]
     rw [mul_assoc, mul_assoc]
-    exact mul_le_mul' le_rfl (hweighted u hu hsol M hM p)
+    exact mul_le_mul' le_rfl (hweighted u hu hsol p)
   have hSob := measure_ball_rpow_mul_enorm_iteratedFDeriv_le volume hρ
     (hball.mono hρsub) (le_refl n) m
   have hEval : W * ‖iteratedFDeriv ℝ m u x₀‖ₑ ≤
       ((∑ j ∈ Finset.range (n + 1), ENNReal.ofReal (ρ ^ j / j !) * L (j + m)) +
-        ENNReal.ofReal (ρ ^ (n + 1) / n !) * L (n + 1 + m)) * ENNReal.ofReal M := by
+        ENNReal.ofReal (ρ ^ (n + 1) / n !) * L (n + 1 + m)) * M := by
     refine hSob.trans ?_
     simp only [add_mul, Finset.sum_mul, mul_assoc]
     exact add_le_add (Finset.sum_le_sum fun j _ => mul_le_mul' le_rfl (hLp _))
       (mul_le_mul' le_rfl (hLp _))
   have hscaled := mul_le_mul' (le_refl W⁻¹) hEval
   rw [← mul_assoc W⁻¹ W, ENNReal.inv_mul_cancel hW0 hWt, one_mul, ← mul_assoc] at hscaled
-  have hx := ENNReal.toReal_mono (ENNReal.mul_ne_top (hP m) ENNReal.ofReal_ne_top) hscaled
+  exact hscaled
+
+/-- **Interior estimate for a local elliptic equation with smooth coefficients.** If a scalar
+operator of positive order `r` with smooth coefficients on an open set `S` is elliptic at
+`x₀ ∈ S`, then there is a closed ball around `x₀` in `S` such that, for every order `m`, the
+`m`-th derivative at `x₀` of every smooth solution of `D u = 0` on `S` is bounded by a constant
+`C m` (independent of the solution) times any bound of `‖u‖` on the ball. -/
+theorem exists_localElliptic_interior_derivative_bounds_of_pos (hr : 0 < r)
+    (D : CoordinateScalarOperator E d r)
+    (hD : D.basis = (EuclideanSpace.basisFun (Fin d) ℝ).toBasis) {S : Set E} (hS : IsOpen S)
+    (hcoef : ∀ (k : Fin (r + 1)) (w : Fin k.val → Fin d), ContDiffOn ℝ ∞ (D.coefficient k w) S)
+    {x₀ : E} (hx₀ : x₀ ∈ S) (hell : ∀ ξ : E →L[ℝ] ℝ, ξ ≠ 0 → D.principalSymbol x₀ ξ ≠ 0) :
+    ∃ R : ℝ, 0 < R ∧ closedBall x₀ R ⊆ S ∧
+      ∃ C : ℕ → ℝ, (∀ m, 0 ≤ C m) ∧
+        ∀ u : E → ℂ, ContDiffOn ℝ ∞ u S → (∀ x ∈ S, D.action u x = 0) →
+          ∀ M : ℝ, (∀ x ∈ closedBall x₀ R, ‖u x‖ ≤ M) →
+            ∀ m, ‖iteratedFDeriv ℝ m u x₀‖ ≤ C m * M := by
+  obtain ⟨R, hR, hRS, C, hC, hL2⟩ :=
+    exists_localElliptic_interior_derivative_l2_bounds hr D hD hS hcoef hx₀ hell
+  let V := volume (closedBall x₀ R) ^ (1 / 2 : ℝ)
+  have hV : V ≠ ⊤ := ENNReal.rpow_ne_top_of_nonneg (by norm_num) measure_closedBall_lt_top.ne
+  refine ⟨R, hR, hRS, fun m => (C m * V).toReal, fun _ => ENNReal.toReal_nonneg, ?_⟩
+  intro u hu hsol M hM m
+  have hM0 : 0 ≤ M := (norm_nonneg _).trans (hM x₀ (mem_closedBall_self hR.le))
+  have huM : eLpNorm u 2 (volume.restrict (closedBall x₀ R)) ≤ V * ENNReal.ofReal M := by
+    have h := eLpNorm_le_of_ae_bound (p := 2) (μ := volume.restrict (closedBall x₀ R))
+      ((hu.continuousOn.mono hRS).aestronglyMeasurable measurableSet_closedBall)
+      ((ae_restrict_iff' measurableSet_closedBall).2 (ae_of_all _ hM))
+    have hhalf : (2 : ℝ≥0∞).toReal⁻¹ = (1 / 2 : ℝ) := by norm_num
+    rwa [Measure.restrict_apply_univ, hhalf] at h
+  have h := (hL2 u hu hsol m).trans (mul_le_mul' le_rfl huM)
+  rw [← mul_assoc] at h
+  have hx := ENNReal.toReal_mono
+    (ENNReal.mul_ne_top (ENNReal.mul_ne_top (hC m) hV) ENNReal.ofReal_ne_top) h
   rwa [ENNReal.toReal_mul, ENNReal.toReal_ofReal hM0, toReal_enorm] at hx
 
 /-- **The order-zero case.** For an operator of order `0` (multiplication by a smooth

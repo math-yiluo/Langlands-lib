@@ -67,11 +67,11 @@ end PadicMeasure
 /-- Pointwise input for equal-rank factorization: the target's local choices, Schwartz and
 Fourier formulas, nonvanishing, and pointwise products of local integrands with one scalar.
 The two global integral identities are not assumed. -/
-def EqualPointwiseFactorizationStatement : Prop := by
+def EqualPointwiseFactorizationAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop := by
   classical
   exact
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
     (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
   ∀ (r : ℕ) (T Td T' Td' : Automorphic.CuspidalOperatorRealization F r),
     Automorphic.OperatorRealization.IsContragredientOf Td.realization T.realization →
@@ -174,6 +174,11 @@ def EqualPointwiseFactorizationStatement : Prop := by
       (∀ (v : S) (a : ℝ), ∃ s : ℂ, a < s.re ∧ (D v).integral s ≠ 0) ∧
       ∀ (v : S) (a : ℝ), ∃ s : ℂ, a < s.re ∧ (D v).dualIntegral s ≠ 0
 
+/-- The equal-rank pointwise factorization over each number field. -/
+def EqualPointwiseFactorizationStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    EqualPointwiseFactorizationAt.{u, uQ} F
+
 /-- Pointwise factorization and the shared quotient-product measure premise imply the
 published equal-rank archimedean factorization target. -/
 def EqualArchimedeanFactorizationReductionStatement : Prop :=
@@ -182,15 +187,17 @@ def EqualArchimedeanFactorizationReductionStatement : Prop :=
 
 /-- Integrating the two pointwise identities with one quotient-product measure formula
 gives the ordinary and dual identities with the same nonzero scalar. -/
-theorem equalArchimedeanFactorizationReduction :
-    EqualArchimedeanFactorizationReductionStatement.{u, uQ} := by
+theorem equalArchimedeanFactorizationAt_of_pointwise
+    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
+    (hA : EqualPointwiseFactorizationAt.{u, uQ} F) (hB : UnipotentClassProductStatement.{u}) :
+    EqualArchimedeanFactorizationAt.{u, uQ} F := by
   classical
-  intro hA hB F _ _ _ ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hsupp aR haR aC haC
+  intro ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hsupp aR haR aC haC
     dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd' ψv hψv νv hνv
   obtain ⟨x, x', Φ, hx, hx', hΦ, hΦS, κ, WR, WR', ΦR, DR, WC, WC', ΦC, DC, D, fS, gS,
       hκ, hWR, hWR', hWC, hWC', hΦprod, hΦhatprod, hfS, hgS, hord, hdual,
       hn1, hn2, hn3, hn4⟩ :=
-    hA F ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hsupp aR haR aC haC
+    hA ψ hψ r T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hsupp aR haR aC haC
       dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd' ψv hψv νv hνv
   obtain ⟨CB, hCB, hprod⟩ := hB F r S DR DC
     (fun v => equalPadicQuotientMeasure (padicField v.1) r)
@@ -218,6 +225,12 @@ theorem equalArchimedeanFactorizationReduction :
       ArchimedeanLocal.complexEqualDualIntegral, ArchimedeanLocal.equalIntegral,
       ArchimedeanLocal.realEqualIntegrand, ArchimedeanLocal.complexEqualIntegrand]
     ring
+
+/-- Apply the integration proof at each number field. -/
+theorem equalArchimedeanFactorizationReduction :
+    EqualArchimedeanFactorizationReductionStatement.{u, uQ} := by
+  intro hA hB F _ _ _
+  exact equalArchimedeanFactorizationAt_of_pointwise F (hA F) hB
 
 /-- The two pointwise premises and the shared measure premises imply both rank cases.
 This is a conditional reduction of the full task target. -/

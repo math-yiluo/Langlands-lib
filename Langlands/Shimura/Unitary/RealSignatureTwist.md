@@ -1,9 +1,16 @@
 # Prescribing all real signatures by a symmetric unit
 
-At each real embedding the algebra has its complex matrix coordinates
-and its original Hermitian Gram matrix H. In those coordinates,
-H⁻¹J is fixed by the adjoint for H, where J is the prescribed signature
-matrix. Twisting by H⁻¹J would give Gram matrix J at that place.
+Let \(E\) be a totally real number field, \(K/E\) a CM quadratic
+extension, and \(A\) a degree-\(n\) central simple \(K\)-algebra with
+\(n>1\). The given second-kind involution on \(A\) induces CM
+conjugation on \(K\). At each real embedding \(\tau\) of \(E\), prescribe
+a positive dimension \(0\le r(\tau)\le n\). The corresponding matrix
+is \(J=\operatorname{diag}(1_{r(\tau)},-1_{n-r(\tau)})\).
+
+The real scalar extension has complex matrix coordinates and a
+Hermitian Gram matrix \(H\) for the given involution. In those
+coordinates \(H^{-1}J\) is fixed by the adjoint for \(H\). Twisting by
+\(H^{-1}J\) gives Gram matrix \(J\) at that place.
 
 The finite-dimensional real matrix coordinates are continuous in the
 scalar extension of a basis of the original algebra. Weak approximation
@@ -15,6 +22,7 @@ extension and the finite-dimensional left multiplication map reflect
 invertibility back to the original algebra.
 
 `realSignatureTwist` uses this symmetric unit to twist the original
-involution. At each real embedding the resulting Gram matrix is
-congruent to the prescribed one, so the change of basis gives the
-actual involution-preserving equivalence asserted by `HasSignature`.
+involution on \(A\). At each real embedding the Gram matrix is
+congruent to the prescribed one. The change of basis gives the
+`HasSignature` equivalence from \(\mathbb R\otimes_{E,\tau}A\) to
+\(M_n(\mathbb C)\) with the adjoint for \(J\).

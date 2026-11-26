@@ -1,0 +1,7 @@
+# Schwartz kernels on the bottom row for real rank raising
+
+`RealRankRaisingKernelStatement` starts with any compactly supported smooth complex kernel on the compensating subgroup with leading size \(r+1\). Multiplying by the density of left Haar measure with respect to right Haar measure gives a kernel with the same compact support constraint. In the coordinates \((x,\det h)\), the weighted kernel extends by zero to a compactly supported Schwartz function on the full real bottom row. Its support stays in the locus with nonzero last entry.
+
+The open-locus coordinate formula is smooth because the two varying diagonal entries are the last entry and its inverse. Smoothness of the ambient matrix formula implies smoothness of the map into the subgroup's exponential charts. The relative Haar density is a real power of the positive absolute value of the last entry there. The coordinate image of the original support is compact and avoids the zero-last-entry hyperplane. Its open complement gives a zero neighborhood at every point on that hyperplane. The extended function is therefore smooth and compactly supported on the whole row, hence Schwartz.
+
+Jacquet, *Archimedean Rankin–Selberg Integrals*, Lemma 14.1, pp. 106–107 in the author-posted edition, uses the right Haar weight on the subgroup and extends compact smoothing kernels by zero to Schwartz rows. `RealRankRaisingHaar` gives the comparison with left Haar measure. The weighted extension realizes that comparison in the Schwartz test.

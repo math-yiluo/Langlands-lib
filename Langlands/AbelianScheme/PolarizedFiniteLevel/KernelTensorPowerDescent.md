@@ -1,0 +1,7 @@
+# Effective descent of a tensor power along an isogeny
+
+`KernelTranslation.exists_descended_power` takes an isogeny of abelian schemes over an algebraically closed field, a line bundle on the source and an isomorphism between its universal kernel translation pullback and its projection pullback. If the full kernel is killed by `n`, it constructs a line bundle on the target whose isogeny pullback is the `n`-th tensor power of the given bundle.
+
+Two points `x,y` with equal images under the isogeny determine the kernel point `x⁻¹y`. The comparison for the power of the line bundle is the tensor power of the translation isomorphism, multiplied by the correction unit evaluated at `x⁻¹y`. The defect of the powered maps is the `n`-th power of the original scalar two-cocycle. The equation for the correction unit makes the comparisons compose for three points with equal images. Pullback from the universal kernel pair makes the comparisons natural for maps of test schemes. `lineBundleDescentEffective` then gives the actual descended bundle.
+
+This is the effective descent construction underlying Edixhoven, van der Geer and Moonen, *Abelian Varieties*, preliminary version of 8 February 2012, (8.10)–(8.11), with isotropy established by the tensor power. The source is `edixhoven-vandergeer-moonen-abelian-varieties-draft`, SHA-256 `81e88e484e1e830286ffed93d4636c80e50a1c341ffe19cc198bd856be713b42`, printed pp. 116–117, PDF pp. 120–121.

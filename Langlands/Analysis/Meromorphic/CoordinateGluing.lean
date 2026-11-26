@@ -266,3 +266,25 @@ theorem hasLocalMeromorphicData_of_isMeromorphicOn {W : TopologicalSpace.Opens (
 end Evaluation
 
 end Langlands.Analysis.Meromorphic
+
+namespace Langlands.Global
+
+open Langlands.Analysis.Meromorphic
+
+variable {X : Type*} [AddCommGroup X] [Module ℂ X]
+
+/-- The whole space is open and dense in coordinates. -/
+theorem isOpenDenseInCoordinates_univ : IsOpenDenseInCoordinates (Set.univ : Set X) :=
+  fun n e => by
+    rw [Set.preimage_univ]
+    exact ⟨isOpen_univ, dense_univ⟩
+
+/-- A finite intersection of sets open and dense in coordinates, over any finite index type. -/
+theorem isOpenDenseInCoordinates_iInter_of_finite {κ : Type*} [Finite κ] {U : κ → Set X}
+    (hU : ∀ j, IsOpenDenseInCoordinates (U j)) : IsOpenDenseInCoordinates (⋂ j, U j) :=
+  fun n e => by
+    rw [Set.preimage_iInter]
+    exact ⟨isOpen_iInter_of_finite fun j => (hU j n e).1,
+      dense_iInter_of_isOpen (fun j => (hU j n e).1) fun j => (hU j n e).2⟩
+
+end Langlands.Global

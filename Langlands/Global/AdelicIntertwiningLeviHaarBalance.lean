@@ -4,6 +4,8 @@ import Langlands.Global.AdelicLeviDynamicModulus
 import Langlands.Representation.Aubert.General.CentralizingUnipotentHaarDeterminant
 import Langlands.Representation.Aubert.General.CorrectedOrbitJacquet
 import Langlands.Global.AdelicPositiveRootCharacterRelation
+import Langlands.Global.AdelicRestrictionSplitCentreCanonical
+import Langlands.GroupScheme.Rational.ParabolicRootPresentationProof
 
 /-! # Haar balance for the adelic intertwining quotient -/
 
@@ -198,19 +200,35 @@ set_option maxHeartbeats 1500000 in
 set_option maxRecDepth 1200 in
 /-- The normalized Haar balance on the actual intertwining quotient follows from the
 three radical determinants on the common Levi. -/
-theorem intertwiningLeviHaarBalance : IntertwiningLeviHaarBalanceStatement := by
+private theorem intertwiningLeviHaarBalance_of_presentations
+    {F : Type u} [Field F] [NumberField F]
+    {G P M U Q M' V : GroupScheme (Spec (CommRingCat.of F))}
+    {A A' : CommGroupScheme (Spec (CommRingCat.of F))}
+    [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+    [IsAffine P.X.left] [LocallyOfFiniteType P.X.hom] [IsAffine M.X.left]
+    [LocallyOfFiniteType M.X.hom] [IsAffine U.X.left] [IsAffine Q.X.left] [LocallyOfFiniteType Q.X.hom]
+    [IsAffine M'.X.left] [LocallyOfFiniteType M'.X.hom] [IsAffine V.X.left]
+    [IsAffineHom V.X.hom] [LocallyOfFiniteType V.X.hom]
+    {p : P ⟶ G} [IsClosedImmersion p.hom.hom.left] {iU : U ⟶ P} {l : M ⟶ P}
+    (hi : IsClosedSubgroup (iU ≫ p)) {a : A.toGrp ⟶ M} (r : ParabolicRootPresentation p l a)
+    {q : Q ⟶ G} [IsClosedImmersion q.hom.hom.left] {iV : V ⟶ Q} {l' : M' ⟶ Q}
+    [hj : IsClosedImmersion (iV ≫ q).hom.hom.left]
+    {a' : A'.toGrp ⟶ M'} (r' : ParabolicRootPresentation q l' a')
+    {w : Over.mk (𝟙 (Spec (CommRingCat.of F))) ⟶ G.X} {c : M' ⟶ M}
+    (hG : IsConnectedReductive G) (hU : LeviSubgroup.IsGeometricUnipotentRadical iU)
+    (hV : LeviSubgroup.IsGeometricUnipotentRadical iV) (hw : IsWeylConjugation p l q l' w c)
+    (m : AdelicGroupPoints F M') :
+    intertwiningLeviHaarFactor iU iV hw hU.1.isNormal hV.1.isNormal hi hV.1.isUnipotent m *
+        parameterPower F P (halfModulusParameter F P) (map F M P l (map F M' M c m)) =
+      parameterPower F Q (halfModulusParameter F Q) (map F M' Q l' m) := by
   classical
-  intro F _ _ G P M U Q M' V A A' _ _ _ _ _ _ _ _ _ _ _ p _ iU l hi a r q _ iV l' hj a' r' w c
-    _ _ _ _ hG hU hV hw m
+  have : IsClosedImmersion (iU ≫ p).hom.hom.left := hi
   let χP := CommGroupScheme.groupHom r.splitComponentCocharacter ≫ a ≫ l ≫ p
   let χQ := CommGroupScheme.groupHom r'.splitComponentCocharacter ≫ a' ≫ l' ≫ q
   let f := G.innerIso w
   let C := IntertwiningStabilizer p iU (iV ≫ q) w
   let jC := intertwiningStabilizerHom p iU (iV ≫ q) w
   let ιC := intertwiningStabilizerToParabolic iU iV q p w
-  have : LocallyOfFiniteType P.X.hom := IsClosedSubgroup.locallyOfFiniteType (j := p) r.isCompatible.parabolic.isClosedSubgroup
-  have : LocallyOfFiniteType Q.X.hom := IsClosedSubgroup.locallyOfFiniteType (j := q) r'.isCompatible.parabolic.isClosedSubgroup
-  have : LocallyOfFiniteType V.X.hom := IsClosedSubgroup.locallyOfFiniteType (j := iV ≫ q) hj
   have : IsAffineHom V.X.hom := isAffineHom_of_isAffine _
   have : Smooth G.X.hom := hG.smooth
   have : Smooth Q.X.hom := r'.isCompatible.parabolic.smooth
@@ -346,5 +364,57 @@ theorem intertwiningLeviHaarBalance : IntertwiningLeviHaarBalanceStatement := by
       congrArg (· * Real.sqrt p₀) (Real.sq_sqrt hq₀).symm
     _ = Real.sqrt q₀ * (Real.sqrt p₀ * Real.sqrt q₀) := by ring
     _ = Real.sqrt q₀ * c₀ := by rw [hsqrt]
+
+/-- The normalized Haar balance on the actual intertwining quotient follows from the three
+radical determinants on the common Levi. -/
+theorem intertwiningLeviHaarBalance : IntertwiningLeviHaarBalanceStatement := by
+  intro F _ _ G P M U Q M' V A A' _ _ _ _ _ _ _ _ _ _ _ p _ iU l hi a r q _ iV l' hj a' r' w c
+    _ _ _ _ hG hU hV hw m
+  exact intertwiningLeviHaarBalance_of_presentations hi r r' hG hU hV hw m
+
+/-- For the specified rational parabolics of a connected reductive number-field group,
+    with geometric unipotent radicals and Weyl-conjugate Levi subgroups, the quotient Haar
+    factor times the source half modulus equals the target half modulus. -/
+def IntertwiningLeviHaarBalanceOfParabolicsStatement : Prop :=
+  ∀ {F : Type u} [Field F] [NumberField F]
+    {G P M U Q M' V : GroupScheme (Spec (CommRingCat.of F))}
+    [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+    [IsAffine P.X.left] [LocallyOfFiniteType P.X.hom]
+    [IsAffine Q.X.left] [LocallyOfFiniteType Q.X.hom]
+    [IsAffine V.X.left] [IsAffineHom V.X.hom] [LocallyOfFiniteType V.X.hom]
+    {p : P ⟶ G} {iU : U ⟶ P} {l : M ⟶ P} {q : Q ⟶ G} {iV : V ⟶ Q} {l' : M' ⟶ Q}
+    [IsClosedImmersion (iV ≫ q).hom.hom.left]
+    {w : Over.mk (𝟙 (Spec (CommRingCat.of F))) ⟶ G.X} {c : M' ⟶ M},
+    IsConnectedReductive G → ∀ (hp : IsParabolicSubgroup p)
+      (hU : LeviSubgroup.IsGeometricUnipotentRadical iU),
+      IsRationalLeviSubgroup l → IsParabolicSubgroup q →
+      ∀ (hV : LeviSubgroup.IsGeometricUnipotentRadical iV),
+        IsRationalLeviSubgroup l' → ∀ (hw : IsWeylConjugation p l q l' w c)
+          (m : AdelicGroupPoints F M'),
+          intertwiningLeviHaarFactor iU iV hw hU.1.isNormal hV.1.isNormal
+              (hU.1.isClosedSubgroup.comp hp.isClosedSubgroup) hV.1.isUnipotent m *
+              parameterPower F P (halfModulusParameter F P) (map F M P l (map F M' M c m)) =
+            parameterPower F Q (halfModulusParameter F Q) (map F M' Q l' m)
+
+/-- Choose split components and compatible root presentations to apply determinant balance. -/
+theorem intertwiningLeviHaarBalance_of_parabolics :
+    IntertwiningLeviHaarBalanceOfParabolicsStatement.{u} := by
+  intro F _ _ G P M U Q M' V _ _ _ _ _ _ _ _ _ p iU l q iV l' _ w c hG hp hU hl hq hV hl' hw m
+  have := hG.isAffineHom
+  have : IsClosedImmersion p.hom.hom.left := hp.isClosedSubgroup
+  have : IsClosedImmersion q.hom.hom.left := hq.isClosedSubgroup
+  have hM := hl.isClosedSubgroup.comp hp.isClosedSubgroup
+  have hM' := hl'.isClosedSubgroup.comp hq.isClosedSubgroup
+  have hUG := hU.1.isClosedSubgroup.comp hp.isClosedSubgroup
+  have : IsAffine M.X.left := isAffine_left_of_isClosedSubgroup F (l ≫ p) hM
+  have : LocallyOfFiniteType M.X.hom := hM.locallyOfFiniteType
+  have : IsAffine M'.X.left := isAffine_left_of_isClosedSubgroup F (l' ≫ q) hM'
+  have : LocallyOfFiniteType M'.X.hom := hM'.locallyOfFiniteType
+  have : IsAffine U.X.left := isAffine_left_of_isClosedSubgroup F (iU ≫ p) hUG
+  obtain ⟨A, a, ha⟩ := exists_isSplitComponent M
+  obtain ⟨A', a', ha'⟩ := exists_isSplitComponent M'
+  obtain ⟨r⟩ := parabolicRootPresentationExistence F G hG P M A p l a hp hl ha
+  obtain ⟨r'⟩ := parabolicRootPresentationExistence F G hG Q M' A' q l' a' hq hl' ha'
+  exact intertwiningLeviHaarBalance_of_presentations hUG r r' hG hU hV hw m
 
 end Langlands.Global
