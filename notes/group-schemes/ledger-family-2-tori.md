@@ -20,6 +20,7 @@ for the D5 and F8 updates were checked at Library commit
 the proof routes. [14 November coverage note](diagonalizable-galois-coverage-2026-11-14.md)
 
 D6 was checked at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
+D7 was checked at Library commit `cf95b60a0d1a76782b35d915d189d581090e1c62`.
 
 General results on maximal tori (existence, base change, conjugacy, finite-field and
 Henselian versions) belong to families 4 and 8 of the program and are not listed here. The
@@ -374,6 +375,24 @@ algebraic groups with the fixed characters over the separable closure.
   theorem, with `𝔾_m` on the target or source side. The proof first appeared in the Library at `2d12bd934a2a0da7808014bfe52c6d67fde3eb62`, with Lake and exact-target checks.
   [Statement](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesStatement.md),
   [proof](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesProof.md)
+
+**D7. The absolute character anti-equivalence for field tori.** Source:
+Milne 2017, §12.g and Theorem 12.23, printed pp.239–240 (PDF 255–256),
+and Definition 12.14, printed p.236 (PDF 252).
+- `TorusAbsoluteCharacterEquivalenceStatement` says that for every field
+  `k`, `FieldTorus.characterFunctor k` is an equivalence from the opposite
+  category of actual field tori to `FreeDiscreteGaloisModule.{u,u} k`.
+  The functor takes the character lattice over the separable closure,
+  with its canonical absolute Galois action, and acts on homomorphisms
+  by pullback. The target has finite free integral modules, continuous
+  actions for the Krull and discrete topologies, and equivariant integral
+  linear maps.
+- Status P. `torusAbsoluteCharacterEquivalence` restricts the fully faithful
+  character functor of D4. For essential surjectivity it takes the group
+  supplied by D4 and splits its diagonalizable model over the separable
+  closure using a finite basis of the free character lattice.
+  [Statement](../../Langlands/GroupScheme/Torus/AbsoluteCharacterEquivalenceStatement.md)
+  [Proof](../../Langlands/GroupScheme/Torus/AbsoluteCharacterEquivalenceProof.md)
 
 ## E. Finite separable Weil restriction and the Deligne torus
 

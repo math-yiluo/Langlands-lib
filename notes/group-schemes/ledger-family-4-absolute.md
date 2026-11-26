@@ -9,6 +9,9 @@ published proofs for C13, E3 and the first two interfaces of F. Its
 [section on C11 and the third interface of F](absolute-coverage-2026-11-13.md#proofs-of-c11-and-of-the-third-interface-of-f)
 records the exact independent proofs for C11 and the third interface of F.
 
+The additional field comparisons in A6, A10, A11, B7 and D8 are recorded at
+Library commit `cf95b60a0d1a76782b35d915d189d581090e1c62`.
+
 This note, dated 10 November 2026, is the source-to-declaration
 ledger for family 4 of the algebraic and reductive group-scheme program. Family 4 covers:
 
@@ -144,6 +147,10 @@ p.367 (PDF 383).
 - Scope: Milne's theorem is the equality `N_G(B) = B` of algebraic subgroups. The Lean
   statement is its form on `k`-points over an algebraically closed field.
 - Status P: `borelNormalizer` (`Absolute/BorelNormalizerProof`).
+- The all-test equality over any field follows from
+  `borelContainingSubgroupSelfNormalizer` in A10. For a geometric Borel
+  inclusion `j`, take `P = B`, `i = j` and `f = 𝟙 B`, then project the
+  normalizer equality. This specialization type-checks for every field.
 
 **A7. Borel pairs.** Source: Milne 2017, Definition 17.12 and the following paragraph,
 printed p.355 (PDF 371).
@@ -172,8 +179,16 @@ Definition 17.6, printed p.353 (PDF 369), and §17.66, printed p.375 (PDF 391).
   (`Absolute/BorelContainingSubgroupConnectedStatement`). Hypotheses: as A3; a smooth closed
   subgroup `i : P ⟶ G`, a Borel subgroup `j : B ⟶ G` and `f : B ⟶ P` with `f ≫ i = j`.
   Conclusion: `P` is connected.
-- Scope: Milne also proves `P = N_G(P)`; that part has no Lean statement here.
 - Status P: `borelContainingSubgroupConnectedStatement` (`Absolute/BorelContainingSubgroupConnected`).
+- `BorelContainingSubgroupSelfNormalizerStatement` gives the connectedness
+  and normalizer equality over an arbitrary field for a smooth connected
+  affine ambient group. The inclusion of a geometric Borel subgroup defined
+  over the ground field factors through the smooth closed subgroup `P`.
+  The normalizer equality is one of subgroup functors on every test scheme.
+  The type of `borelContainingSubgroupSelfNormalizer` checks against this
+  statement in Library commit `f6b0359632cfaf9fecb86c3d848069710250b487`.
+  [Statement](../../Langlands/GroupScheme/Absolute/BorelContainingSubgroupSelfNormalizerStatement.md)
+  [Proof](../../Langlands/GroupScheme/Absolute/BorelContainingSubgroupSelfNormalizerProof.md)
 
 **A11. Borel subgroups of centralizers.** Source: Milne 2017, Theorem 17.46, printed
 pp.365–366 (PDF 381–382). Milne: for a torus `S` in a Borel subgroup `B`, `C_G(S) ∩ B` is a
@@ -192,6 +207,17 @@ Borel subgroup of `C_G(S)`, and over an algebraically closed field every Borel s
   the image of a cocharacter. The Lean statement does not say that the intersection
   `C_G(S) ∩ B` is a Borel subgroup, and does not contain the converse.
 - Status P: `centralizerBorelIntersection` (`Absolute/CentralizerBorelIntersectionProof`).
+- `TorusCentralizerBorelStatement` gives the intersection and the converse.
+  It assumes a smooth connected affine group over a field, a closed torus
+  `s : S ⟶ G`, and a closed representative of its centralizer. For a
+  geometric Borel subgroup `B` containing `S`, the intersection
+  `C_G(S) ∩ B` represents a geometric Borel subgroup of the centralizer.
+  Over an algebraically closed field every Borel subgroup of `C_G(S)`
+  arises this way. The equality with the intersection is on all tests.
+  The type of `torusCentralizerBorel` checks against this statement in Library
+  commit `f6b0359632cfaf9fecb86c3d848069710250b487`.
+  [Statement](../../Langlands/GroupScheme/Absolute/TorusCentralizerBorelStatement.md)
+  [Proof](../../Langlands/GroupScheme/Absolute/TorusCentralizerBorelProof.md)
 
 **A12. Maximal tori are self-centralizing.** Source: Milne 2017, Corollary 17.84, printed
 p.379 (PDF 395), the "only if" direction; Proposition 17.61(a), printed p.372 (PDF 388), for
@@ -282,6 +308,13 @@ is isomorphic to `𝔾_a`.
   contains no comparison with the Lie root spaces of B6, and names no isomorphism with
   `𝔾_a` beyond "vector group of dimension 1".
 - Status P: `absoluteRootVectorLine` (`Absolute/RootVectorLineProof`).
+- For the ambient Lie weight space itself, `SplitRootLieLineStatement`
+  says that each root space of a split maximal torus of a connected
+  reductive group is a free line over the ground field. It allows every
+  field. The type of `splitRootLieLine_independent` checks against this
+  statement in Library commit `f6b0359632cfaf9fecb86c3d848069710250b487`.
+  [Statement](../../Langlands/GroupScheme/Reductive/SplitRootLieLineStatement.md)
+  [Proof](../../Langlands/GroupScheme/Reductive/SplitRootLieLineIndependentProof.md)
 
 **B8. Semisimple rank one: at most one positive root.** Source: Milne 2017, §20.e, printed
 p.412 (PDF 428), and the proof of Theorem 21.11(b), printed p.428 (PDF 444).
@@ -530,6 +563,20 @@ Theorem 17.16, printed p.356 (PDF 372), and A.75–A.76, printed p.583 (PDF 599)
 - Scope: only the covering. The disjointness of the double cosets is not stated.
 - Status P: `absoluteBruhatCovering` (`Absolute/BruhatCoveringProof`).
 
+**D8. Parabolics are self-normalizing on all test schemes.** Source: Conrad 2014,
+Corollary 5.2.8, printed pp.155–156 (PDF 155–156).
+- Over any field `k`, `ParabolicSelfNormalizerStatement` assumes
+  `IsConnectedReductive G` and `IsParabolicSubgroup j` for `j : P ⟶ G`.
+  It gives `(SubgroupFunctor.range j).normalizer = SubgroupFunctor.range j`
+  on every `k`-scheme test. Parabolicity uses a Borel factorization over the
+  algebraic closure, so the theorem also applies to parabolics in
+  non-quasi-split groups.
+- Status P: `parabolicSelfNormalizer` (`Rational/ParabolicNormalizerProof`).
+  See also [family 5, section B](ledger-family-5-rational.md#b-rational-parabolics-minimal-parabolics-and-rational-levi-subgroups)
+  (B7).
+  [Statement](../../Langlands/GroupScheme/Rational/ParabolicNormalizerStatement.md)
+  [Proof](../../Langlands/GroupScheme/Rational/ParabolicNormalizerProof.md)
+
 ## E. The determinant of `Ad` on `Lie U(χ)`
 
 In E1–E3, `P`, `M`, `U` are arbitrary closed subgroups representing `P(χ)`, `Z(χ)` and
@@ -610,6 +657,11 @@ equivariance on all tests and an isomorphism at the terminal stage.
 - C rows: C11 (whose independence restriction excludes the composite route; proved since, see
   the C11 update), C13 and E3, the five components of C12, and the first two internal interfaces
   of F (named wrappers only).
-- Scope differences recorded above: A6 (point form of the normalizer theorem), A10 (no
-  `P = N_G(P)`), A11 (existence half only), B7 (algebraically closed, no Lie comparison),
-  D7 (covering only).
+- The additional declarations in A6, A10 and A11 give the all-test Borel
+  normalizer, the normalizer of a smooth Borel overgroup and both parts of
+  the torus-centralizer Borel theorem.
+- D8 gives the all-test normalizer equality for every parabolic of a connected
+  reductive group over a field, including parabolics in non-quasi-split groups.
+- Scope differences for the originally cited statements occur in B7
+  (algebraically closed, no comparison of subgroup and ambient Lie line)
+  and D7 (covering).
