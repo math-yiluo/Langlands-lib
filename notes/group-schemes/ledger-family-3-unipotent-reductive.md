@@ -13,7 +13,9 @@ ledger for family 3 of the algebraic and reductive group-scheme program. Family 
 
 A full classification of pseudo-reductive groups is not part of the family.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. All Lean names are in `Langlands.GroupScheme` unless
+The original rows describe Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`.
+The additional comparisons in B5, B6, F7 and F12 use Library commit
+`053314145457c1e8d2da92d3141cbba5942613d7`. All Lean names are in `Langlands.GroupScheme` unless
 a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that commit.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`.
 
@@ -142,10 +144,24 @@ Conrad–Gabber–Prasad, the paragraph after Definition 1.1.1, printed p.4 (PDF
   Hypotheses: `[PerfectField k]`. Conclusion: `IsPseudoReductive G ↔ IsConnectedReductive G`.
 - Status P: `perfectFieldPseudoReductive` (`Reductive/PerfectFieldProof`).
 
-**B5. A pseudo-reductive group that is not reductive.** Source: Conrad–Gabber–Prasad,
-Example 1.1.3, printed pp.4–5 (PDF 30–31): for an imperfect field `k` and a nontrivial
-finite purely inseparable `k'/k`, `R_{k'/k}(GL_1)` is pseudo-reductive and not reductive.
-- Status M: the Library has no statement of this example.
+**B5. Pseudo-reductivity of purely inseparable Weil restriction of `𝔾_m`.**
+Conrad–Gabber–Prasad, *Pseudo-reductive groups*, second edition, Example 1.1.3,
+printed pp.4–5 (PDF pp.30–31). Registered source
+`conrad-gabber-prasad-2015-pseudo-reductive`, SHA-256
+`1b77af44c90211db9a3efa50896a3722f4fd2df332b7ce2ec52202eb243e7f54`.
+- `WeilGmPurelyInseparablePseudoReductiveStatement` takes a finite purely
+  inseparable extension `k'/k` of degree greater than one. It asserts the
+  two conclusions `IsPseudoReductive (WeilGm.groupScheme (CommRingCat.of k) k')`
+  and `¬ IsConnectedReductive (WeilGm.groupScheme (CommRingCat.of k) k')`.
+  The actual Weil restriction has points `(k' ⊗[k] A)ˣ` on a `k`-algebra `A`.
+- Status P by `weilGmPurelyInseparablePseudoReductive`. The proof of failure
+  of reductivity finds a nontrivial unit of order `p` after extending the
+  scalars to an algebraically closed field, using a nonzero nilpotent in
+  the scalar tensor product. A connected reductive commutative field
+  group would be a torus, and a split torus over such a field has no
+  nontrivial `p`-torsion points in characteristic `p`.
+  [Statement](../../Langlands/GroupScheme/Reductive/WeilGmPurelyInseparableStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/WeilGmPurelyInseparableProof.md)
 
 **B6. Pseudo-reductivity and separable extensions.** Source: Conrad–Gabber–Prasad,
 Proposition 1.1.9(1), printed p.8 (PDF 34), proof p.9 (PDF 35): for any separable
@@ -155,9 +171,16 @@ only if `G_K` is.
   Hypotheses: `[Algebra.IsSeparable k K]` (so `K/k` is separable **algebraic**); `G`
   pseudo-reductive. Conclusion: `G_K` is pseudo-reductive.
 - Status P: `pseudoReductiveSeparableExtension` (`Reductive/PseudoReductiveSeparableExtensionProof`).
-- Scope: only the ascent direction, only algebraic extensions, and not the equality of
-  radicals. Ascent along separable transcendental extensions and the equality of radicals
-  have status M.
+- `SeparableAlgebraicUnipotentRadicalStatement` gives the full comparison
+  for any separable algebraic `K/k`. For a smooth connected affine group,
+  the base change of every represented `k`-unipotent radical is a
+  `K`-unipotent radical, and pseudo-reductivity is equivalent over the two
+  fields. The representative condition supplies the comparison of the
+  actual closed subgroups. Status P by `separableAlgebraicUnipotentRadical`.
+  The more general separable extensions in the source use an additional
+  specialization argument on p.9.
+  [Statement](../../Langlands/GroupScheme/Reductive/SeparableUnipotentRadicalStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/SeparableUnipotentRadicalProof.md)
 - Reflection direction, for **every** field extension `K/k`: `HasTrivialUnipotentRadical.of_fieldExtension`
   (`Reductive/SemisimpleFieldReflectionProof`). Hypotheses: `k`, `K : Type u`,
   `[Algebra k K]`, `G` with affine structure map, and `G_K` with trivial `K`-unipotent
@@ -538,10 +561,19 @@ A.1.13, printed p.471 (PDF 497).
   (`Reductive/CommutingMultiplicationFiniteCenters`): for `G` semisimple and commuting smooth
   connected closed subgroups `H`, `K` with finite centres whose multiplication is
   surjective, `H × K` is semisimple.
-- Direct products: the contract lists products in this family. The Library has no
-  statement that a direct product of connected reductive, semisimple or pseudo-reductive
-  groups has the same property; status M. This ledger cites no numbered source item for
-  it.
+- `DirectProductReductiveStatement` gives the three binary product
+  closure properties for pseudo-reductivity, connected reductivity and
+  semisimplicity over any field. The underlying scheme is the fibre
+  product, with componentwise group law. The proof of Conrad–Gabber–Prasad
+  Proposition 1.4.3, printed p.29 (PDF p.55), uses the pseudo-reductive
+  closure under semidirect products, which includes the trivial action.
+  Conrad, *Reductive group schemes*, Theorem 5.1.19 at p.150 and the
+  proof of Lemma 6.3.1 at p.213 use products of semisimple and reductive
+  groups, respectively. Registered source `conrad-2014-reductive-group-schemes`,
+  SHA-256 `1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a`.
+  Status P by `directProductReductive`.
+  [Statement](../../Langlands/GroupScheme/Reductive/DirectProductStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/DirectProductProof.md)
 
 **F8. Characteristic zero.**
 - `ReductiveCharZeroSemisimplicityStatement` (`Reductive/CharZeroSemisimplicityStatement`):
@@ -566,7 +598,6 @@ definition (iii), printed p.191 (PDF 203), and Theorem A.1.0, a) ⇒ b), printed
   there is a homogeneous invariant polynomial `F` of positive degree, invariant on all test
   schemes, with `F(v) ≠ 0`.
 - Status P: `reductiveGeometricReductivity` (`Reductive/GeometricReductivityProof`).
-- Linear reductivity is not used as a definition of reductivity anywhere in the Library.
 
 **F10. Density of rational points.** Source: Milne 2017, Theorem 17.93(b), printed p.382
 (PDF 398).
@@ -582,6 +613,26 @@ A.8.12, printed pp.552–553 (PDF 578–579).
   quotient `G/H` whose structure map is affine. Conclusion: the identity component of `H` is
   connected reductive.
 - Status P: `affineHomogeneousQuotientReductive` (`Reductive/AffineHomogeneousQuotientProof`).
+
+**F12. Linear reductivity in positive characteristic.** Milne, *Algebraic
+Groups*, 2022 corrected reprint, Definition 12.52 and Remark 12.56, printed
+pp.248–249 (PDF pp.259–260). Registered source `milne-2022-algebraic-groups`,
+SHA-256 `f2ddd8fa4d263085f173934664b246007a2c0bd539739b7c82de39bfb5d21f40`.
+- `IsLinearlyReductive G` requires every finite matrix representation to be
+  spanned by its simple subrepresentations. Stability is tested over all
+  commutative ground-field algebras. The geometric unipotent radical is
+  used in `IsConnectedReductive`, and F9 gives a homogeneous invariant
+  polynomial at each nonzero fixed vector in its scope.
+- Status P. Over a field of nonzero characteristic `p`, for an affine
+  group scheme of finite type, `nagataLinearlyReductive` proves
+  `NagataLinearlyReductiveStatement`. Linear reductivity is equivalent
+  to having a multiplicative-type identity component and a number of
+  geometric components prime to `p`. The identity component is given
+  by an actual open immersion with the identity component as its
+  range, including for non-smooth group schemes.
+  [Predicate](../../Langlands/GroupScheme/Torus/NagataReductionStatements.md),
+  [statement](../../Langlands/GroupScheme/Torus/NagataLinearlyReductiveStatement.md),
+  [proof](../../Langlands/GroupScheme/Torus/NagataLinearlyReductiveProof.md)
 
 ## G. Pseudo-parabolic subgroups
 
@@ -657,5 +708,7 @@ it, and only a named proposition declaration and its wrapper are missing. The sa
 for reflection of pseudo-reductivity along arbitrary extensions (B6), which follows from
 the published D results listed there.
 
-The wrapper theorems for the two C rows, and named statements with wrappers for the two
-reflections above, need no new mathematics. Items 1–3 need statements.
+Rows B5 and F7 give exact proofs for items 1 and 3. Row B6 gives the
+radical comparison and the pseudo-reductivity equivalence for separable
+algebraic extensions. The two C rows use the projections of
+`algebraicExtensionAscent`.
