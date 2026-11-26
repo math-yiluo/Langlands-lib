@@ -71,6 +71,10 @@ conjugated root directions, arranged so that only one common growth exponent is 
   hypothesis `hgrowth`.
 - `exists_list_prod`: every product `∏_i f(i)^(m_i)` is the product of `f` along some list.
 
+`exists_weighted_bound_list_family` runs the same induction with any nonnegative
+weight that bounds all derivative words up to their word-dependent constants.
+`exists_bound_list_family` uses the power of `realMatrixHeight` as this weight.
+
 ### Entries on `torus y · k` (part 3)
 
 - `conjRoot_apply`: `conjRoot g i p q = (g⁻¹)_(p,i) · g_(i+1,q)`.

@@ -1,3 +1,4 @@
+import Langlands.Correspondence.HenniartPadicArtinTransport
 import Langlands.Correspondence.HenniartRefinedStrata
 import Langlands.Correspondence.HenniartWeilConductorIntegralityProof
 
@@ -16,6 +17,7 @@ theorem weilArtinConductorExistence : WeilArtinConductorExistenceStatement.{uK, 
   have hClass : FiniteRepresentation.classOf A.val = weilClassForget K σ :=
     congrArg (FiniteRepresentation.forgetPropertyClass _) hA
   obtain ⟨P, hP, a, -, ha, -⟩ := (weilConductorIntegrality p K A.val).2 A.property.1
-  exact ⟨a, A.val, P, hP, hClass, ha⟩
+  exact ⟨a, (Numerical.hasArtinConductor_iff_exists_padicPresentation K σ a).mpr
+    ⟨A.val, P, hP, hClass, ha⟩⟩
 
 end Langlands.Henniart

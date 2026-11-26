@@ -1,0 +1,3 @@
+# A square bound for integrable kernels
+
+`integrable_sq_norm_kernelIntegral` is the weighted Cauchy–Schwarz step in the square norm estimate for an intertwining integral. It applies to a complex kernel of finite absolute mass and a jointly measurable family whose squared-norm integrals in the output variable have a common finite bound. The absolute value of the kernel defines a finite density measure. Cauchy–Schwarz for that measure bounds the square of the absolute integral. Tonelli's theorem then bounds the total squared norm by the squared mass of the kernel times the uniform bound. This is an internal measure-theoretic consequence of Hölder's inequality and Tonelli's theorem.

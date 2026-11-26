@@ -101,46 +101,48 @@ private theorem eq_zero_of_trace_mul_eq_zero (a : E)
   have : e d i = 1 := (hd i).trans (mul_inv_cancel₀ (by simpa using hi))
   simp [hd0] at this
 
-private def matrixTracePairing (F : Type u) (E : Type v) [Field F] [CommRing E]
+/-- Matrix trace followed by coefficient trace, applied to a product. -/
+def adjointTracePairing (F : Type u) (E : Type v) [Field F] [CommRing E]
     [Algebra F E] (n : ℕ) : LinearMap.BilinForm F (Matrix (Fin n) (Fin n) E) :=
   LinearMap.compr₂ (LinearMap.mul F _) ((Algebra.trace F E).comp (Matrix.traceLinearMap (Fin n) F E))
 
 omit [CharZero F] [Module.Finite F E] [IsReduced E] in
-private theorem matrixTracePairing_apply (X Y : Mat) :
-    matrixTracePairing F E n X Y = Algebra.trace F E (Matrix.trace (X * Y)) :=
+theorem adjointTracePairing_apply (X Y : Mat) :
+    adjointTracePairing F E n X Y = Algebra.trace F E (Matrix.trace (X * Y)) :=
   rfl
 
 private theorem matrixTracePairing_separates (Z : Mat)
-    (hZ : ∀ X : Mat, matrixTracePairing F E n Z X = 0) : Z = 0 := by
+    (hZ : ∀ X : Mat, adjointTracePairing F E n Z X = 0) : Z = 0 := by
   ext i j
   change Z i j = 0
   apply eq_zero_of_trace_mul_eq_zero (F := F)
   intro a
-  simpa [matrixTracePairing_apply, Matrix.trace_mul_single, smul_eq_mul, mul_comm a] using
+  simpa [adjointTracePairing_apply, Matrix.trace_mul_single, smul_eq_mul, mul_comm a] using
     hZ (Matrix.single j i a)
 
-private theorem matrixTracePairing_nondegenerate : (matrixTracePairing F E n).Nondegenerate := by
+private theorem matrixTracePairing_nondegenerate : (adjointTracePairing F E n).Nondegenerate := by
   refine ⟨matrixTracePairing_separates, ?_⟩
   intro Z hZ
   apply matrixTracePairing_separates (F := F)
   intro X
-  rw [matrixTracePairing_apply, Matrix.trace_mul_comm, ← matrixTracePairing_apply]
+  rw [adjointTracePairing_apply, Matrix.trace_mul_comm, ← adjointTracePairing_apply]
   exact hZ X
 
 omit [CharZero F] [Module.Finite F E] [IsReduced E] in
-private theorem matrixTracePairing_twistedMatrixConj
+/-- Twisted matrix conjugation preserves the trace pairing. -/
+theorem adjointTracePairing_preserved
     (σ : E ≃ₐ[F] E) (δ : GeneralLinear n E) (X Y : Mat) :
-    matrixTracePairing F E n (twistedMatrixConj σ δ X) (twistedMatrixConj σ δ Y) =
-      matrixTracePairing F E n X Y := by
+    adjointTracePairing F E n (twistedMatrixConj σ δ X) (twistedMatrixConj σ δ Y) =
+      adjointTracePairing F E n X Y := by
   have hmul : twistedMatrixConj σ δ X * twistedMatrixConj σ δ Y =
       twistedMatrixConj σ δ (X * Y) := by
     simp only [twistedMatrixConj_apply, map_mul, mul_assoc, Units.inv_mul_cancel_left]
-  rw [matrixTracePairing_apply, hmul, twistedMatrixConj_apply, Matrix.trace_mul_comm,
+  rw [adjointTracePairing_apply, hmul, twistedMatrixConj_apply, Matrix.trace_mul_comm,
     ← mul_assoc, Units.inv_mul, one_mul, AlgEquiv.mapMatrix_apply,
-    ← AddMonoidHom.map_trace σ, Algebra.trace_eq_of_algEquiv, matrixTracePairing_apply]
+    ← AddMonoidHom.map_trace σ, Algebra.trace_eq_of_algEquiv, adjointTracePairing_apply]
 
 private theorem isNilpotent_of_annihilates_upperTriangular (Z : Mat)
-    (h : ∀ Y : upperTriangularSubalgebra F E n, matrixTracePairing F E n Z Y = 0) :
+    (h : ∀ Y : upperTriangularSubalgebra F E n, adjointTracePairing F E n Z Y = 0) :
     IsNilpotent Z := by
   have hbelow (i j : Fin n) (hij : j ≤ i) : Z i j = 0 := by
     apply eq_zero_of_trace_mul_eq_zero (F := F)
@@ -150,7 +152,7 @@ private theorem isNilpotent_of_annihilates_upperTriangular (Z : Mat)
       apply Matrix.single_apply_of_ne
       rintro ⟨rfl, rfl⟩
       exact (not_lt_of_ge hij hpq)
-    simpa [matrixTracePairing_apply, Matrix.trace_mul_single, smul_eq_mul, mul_comm a] using
+    simpa [adjointTracePairing_apply, Matrix.trace_mul_single, smul_eq_mul, mul_comm a] using
       h ⟨Matrix.single j i a, hu⟩
   have hpow (k : ℕ) : ∀ i j : Fin n, (j : ℕ) < i + k → (Z ^ k) i j = 0 := by
     induction k with
@@ -318,7 +320,7 @@ theorem twistedTriangularDifferential_surjective : TwistedTriangularDifferential
   intro F _ _ E _ _ _ _ n l σ hσ δ hδ
   let D := twistedTriangularDifferential σ δ
   let T := twistedMatrixConj σ δ
-  let B := matrixTracePairing F E n
+  let B := adjointTracePairing F E n
   let e := B.toDual matrixTracePairing_nondegenerate
   apply LinearMap.range_eq_top.mp
   rw [← Submodule.dualAnnihilator_eq_bot_iff]
@@ -328,7 +330,7 @@ theorem twistedTriangularDifferential_surjective : TwistedTriangularDifferential
       B Z (D (X, Y)) = 0 :=
     (Submodule.mem_dualAnnihilator (e Z)).mp hf _ (LinearMap.mem_range_self D (X, Y))
   have hinv (X Y : Matrix (Fin n) (Fin n) E) : B (T X) (T Y) = B X Y :=
-    matrixTracePairing_twistedMatrixConj σ δ X Y
+    adjointTracePairing_preserved σ δ X Y
   have hfix : T Z = Z := by
     apply eq_of_sub_eq_zero
     apply matrixTracePairing_separates (F := F)

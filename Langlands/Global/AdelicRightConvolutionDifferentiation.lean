@@ -135,7 +135,8 @@ theorem rightConvolution_eq_integral_leftKernel (h f : AdelicGroupPoints F G →
   simpa only [rightConvolution, inv_mul_cancel_left, mul_comm] using
     integral_mul_left_eq_self («μ» := μG) (fun z => f z * h (x⁻¹ * z)) x
 
-private theorem rightConvolution_integrable {h f : AdelicGroupPoints F G → ℂ}
+/-- A continuous compactly supported kernel times a left translate of a locally integrable function is integrable. -/
+theorem integrable_kernel_mul {h f : AdelicGroupPoints F G → ℂ}
     (hh : Continuous h) (hc : HasCompactSupport h) (hf : LocallyIntegrable f μG)
     (x : AdelicGroupPoints F G) : Integrable (fun a => h a * f (x * a)) μG := by
   let h' (z : AdelicGroupPoints F G) := h (x⁻¹ * z)
@@ -317,7 +318,7 @@ theorem adelicRightConvolutionDifferentiation : AdelicRightConvolutionDifferenti
   let := fun v : InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
   let := smoothChartedSpace F G hsmooth
   obtain ⟨L, hLo, hL⟩ := hh.2.2
-  refine ⟨rightConvolution_integrable hh.1.1 hh.2.1 hfi,
+  refine ⟨integrable_kernel_mul hh.1.1 hh.2.1 hfi,
     isAdelicSmoothFunction_of_slices hsmooth L hLo (rightConvolution_finite_level L hL) ?_, ?_⟩
   · exact fun b a => (rightConvolution_slice_at hsmooth hh hf hfi a b).1
   · exact fun X a b => (rightConvolution_slice_at hsmooth hh hf hfi a b).2 X

@@ -9,3 +9,7 @@ For a compact full-row-rank Godement generator, keep its smaller input fixed. Th
 This implements the spanning step used to justify splitting the test in the complex adjacent-rank calculation, in the half-plane supplied by Godement convergence. [Jacquet, *Archimedean Rankin–Selberg integrals*, Proposition 7.1 and Section 8.3](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf).
 
 For the version allowing scalar dilations of the Gaussian tests, see [Dilated Gaussian spanning](ComplexGodementDilatedGaussianSpanning.md).
+
+The compact-finite section argument also applies to any Schwartz test whose right unitary translates span a finite-dimensional space, provided the Godement section integral is absolutely convergent for Schwartz tests at the given parameters.
+
+When the angular weights are fixed, the unitary restrictions of these Schwartz sections lie in one finite-dimensional space as the radial parameters vary through the convergence region. A basis of the right unitary test span expresses each section on the compact group in terms of fixed basis coordinates weighted by its angular determinant character.

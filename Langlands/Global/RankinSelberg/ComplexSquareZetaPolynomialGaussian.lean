@@ -55,7 +55,8 @@ private def squareGaussian (A : Mat) : ℂ := (Real.exp (-scale * matrixSqNorm A
 /-- A polynomial in the real and imaginary matrix entries times the standard square Gaussian. -/
 def squarePolynomialGaussian (P : Poly) (A : Mat) : ℂ := eval (coordinates A) P * squareGaussian A
 
-private theorem matrixSqNorm_mul_unitary (A : Mat) (k : K) :
+/-- The squared entry norm is invariant under right unitary multiplication. -/
+theorem matrixSqNorm_mul_unitary (A : Mat) (k : K) :
     matrixSqNorm (A * k.val.val) = matrixSqNorm A := by
   have h := matrixGaussian_mul_unitary A k
   unfold matrixGaussian at h
@@ -88,7 +89,8 @@ theorem rightAverage_squarePolynomialGaussian (κ : Measure K) [IsFiniteMeasure 
   obtain ⟨Q, hQ, h⟩ := InductionStages.integral_mem κ V ha hI
   exact ⟨Q, (mem_restrictTotalDegree _ _ _).mp hQ, h.symm⟩
 
-private theorem matrixSqNorm_upperTriangularEntries (d : Row) (u : Off → ℂ) :
+/-- The squared entry norm of an upper triangular matrix splits over the two coordinate sets. -/
+theorem matrixSqNorm_upperTriangularEntries (d : Row) (u : Off → ℂ) :
     matrixSqNorm (upperTriangularEntries d u) = (∑ i, ‖d i‖ ^ 2) + ∑ ij, ‖u ij‖ ^ 2 := by
   have h (i j : Fin n) : ‖upperTriangularEntries d u i j‖ ^ 2 =
       (if h : i < j then ‖u ⟨(i, j), h⟩‖ ^ 2 else 0) + (if i = j then ‖d i‖ ^ 2 else 0) := by

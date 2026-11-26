@@ -15,9 +15,10 @@ theorem weilArtinConductorExistence : WeilArtinConductorExistenceStatement.{uK, 
 Take a representative `A` of the class; it is continuous and irreducible. The second clause of
 `Langlands.Henniart.weilConductorIntegrality` (`HenniartWeilConductorIntegralityProof`) gives,
 for the continuous representation `A`, a finite inertia presentation with surjective inertia
-restriction and a natural number `a` equal to its Artin expression. The representative, the
-presentation and `a` are the witnesses of `HasArtinConductor`; the class condition holds because
-`A` represents the class.
+restriction and a natural number `a` equal to its Artin expression. This presentation is a
+`Ramification.Padic.FiniteInertiaPresentation`; with the representative and `a` it gives
+`HasArtinConductor K σ a` by `Numerical.hasArtinConductor_iff_exists_padicPresentation`
+(`HenniartPadicArtinTransport`). The class condition holds because `A` represents the class.
 
 The integrality itself is the finite theorem: the Artin expression of a presentation is that of a
 representation of the inertia group of a finite Galois extension of p-adic fields, which is a

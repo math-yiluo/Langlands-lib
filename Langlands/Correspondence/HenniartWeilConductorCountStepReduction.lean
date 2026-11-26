@@ -1,3 +1,4 @@
+import Langlands.Correspondence.HenniartPadicArtinTransport
 import Langlands.Correspondence.HenniartWeilElementaryLayer
 import Langlands.Correspondence.HenniartNumericalReductionProof
 import Langlands.LocalFactor.Ramification.InertiaPresentationProof
@@ -20,8 +21,8 @@ finite inertia presentation used in `HasArtinConductor`. -/
 theorem hasArtinConductor_unique {k a b : ℕ}
     {σ : IrreducibleWeilClass.{uK, uW} K k.succPNat}
     (ha : HasArtinConductor K σ a) (hb : HasArtinConductor K σ b) : a = b := by
-  obtain ⟨A, P, hP, hA, ha⟩ := ha
-  obtain ⟨B, Q, hQ, hB, hb⟩ := hb
+  obtain ⟨A, P, hP, hA, ha⟩ := (hasArtinConductor_iff_exists_padicPresentation K σ a).mp ha
+  obtain ⟨B, Q, hQ, hB, hb⟩ := (hasArtinConductor_iff_exists_padicPresentation K σ b).mp hb
   obtain ⟨e⟩ := (FiniteRepresentation.classOf_eq_iff A B).mp (hA.trans hB.symm)
   have h := (finiteInertiaConductorEquivalence K A B e P Q hP hQ).1
   rw [ha, hb] at h
@@ -32,7 +33,7 @@ theorem hasArtinConductor_unramifiedTwist {k a : ℕ}
     {σ : IrreducibleWeilClass.{uK, uW} K k.succPNat}
     (ha : HasArtinConductor K σ a) (z : ℂˣ) :
     HasArtinConductor K (weilUnramifiedTwist K k z σ) a := by
-  obtain ⟨A, P, hP, hA, ha⟩ := ha
+  obtain ⟨A, P, hP, hA, ha⟩ := (hasArtinConductor_iff_exists_padicPresentation K σ a).mp ha
   let χ := Weil.Local.unramifiedCharacter (Weil.Local.localDegree K) z
   let B := FiniteRepresentation.twist χ.toMonoidHom A
   have hr : localInertiaRepresentation K A = localInertiaRepresentation K B := by
@@ -43,7 +44,7 @@ theorem hasArtinConductor_unramifiedTwist {k a : ℕ}
   let Q : FiniteInertiaPresentation K B := FiniteInertiaPresentation.mk P.extension (by
     rw [← hr]
     exact P.kernel_le)
-  refine ⟨B, Q, hP, ?_, ?_⟩
+  refine (hasArtinConductor_iff_exists_padicPresentation K _ a).mpr ⟨B, Q, hP, ?_, ?_⟩
   · calc
       FiniteRepresentation.classOf B =
           FiniteRepresentation.twistClass χ.toMonoidHom (FiniteRepresentation.classOf A) := rfl

@@ -1,3 +1,4 @@
+import Langlands.Correspondence.HenniartPadicArtinTransport
 import Langlands.Correspondence.HenniartWeilSwanBreak
 import Langlands.LocalFactor.Ramification.WeilExponent
 
@@ -26,6 +27,7 @@ theorem hasArtinConductor_iff_artinExponent_eq {k : ℕ}
     {A : FiniteRepresentation.{0, uK, uW} ℂ (localWeilGroup K)}
     (hA : FiniteRepresentation.classOf A = weilClassForget K σ) (a : ℕ) :
     HasArtinConductor K σ a ↔ artinExponent K A = a := by
+  rw [hasArtinConductor_iff_exists_padicPresentation]
   constructor
   · rintro ⟨B, P, hP, hB, ha⟩
     obtain ⟨e⟩ := (FiniteRepresentation.classOf_eq_iff A B).mp (hA.trans hB.symm)

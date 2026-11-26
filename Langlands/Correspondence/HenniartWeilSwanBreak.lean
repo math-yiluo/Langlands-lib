@@ -119,7 +119,9 @@ theorem weilRepresentative_continuous_irreducible {k : ℕ}
 theorem hasWeilSwan_eq_rank_mul_breakLabel {k s : ℕ}
     {σ : IrreducibleWeilClass.{uK, uW} K k.succPNat} (hs : HasWeilSwan K σ s) :
     (s : ℝ) = ((k + 1 : ℕ) : ℝ) * breakLabel K ⟨k.succPNat, σ⟩ := by
-  obtain ⟨a, ⟨A, P, hP, hA, ha⟩, rfl⟩ := hs
+  obtain ⟨a, ha, rfl⟩ := hs
+  obtain ⟨A, P, hP, hA, ha⟩ :=
+    (Numerical.hasArtinConductor_iff_exists_padicPresentation K σ a).mp ha
   obtain ⟨hc, hi⟩ := weilRepresentative_continuous_irreducible K hA
   obtain ⟨ht, hn⟩ := weilRepresentative_break_rank K hA
   rw [← hn, ← ht]

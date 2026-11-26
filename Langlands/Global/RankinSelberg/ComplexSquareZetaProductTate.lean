@@ -140,7 +140,8 @@ theorem integrable_upperTriangularSlice (Φ : 𝓢(Mat, ℂ)) (d : Z) :
   rw [ae_dirac_eq] at h
   simpa only [Filter.eventually_pure, OneMemClass.coe_one, Units.val_one, mul_one, one_mul] using h
 
-private theorem upperMarginal_rightAverage (κ : Measure K) [IsFiniteMeasure κ]
+/-- In the upper marginal of a compact average, the upper entries can be integrated first. -/
+theorem upperMarginal_rightAverage (κ : Measure K) [IsFiniteMeasure κ]
     (w : K → ℂ) (hw : Continuous w) (Φ : 𝓢(Mat, ℂ)) (a : ℂˣ) (d : Z) :
     upperMarginal a (rightAverage κ w hw Φ) d =
       (ComplexTraceFourier.scale a ^ Fintype.card (UpperEntryPair n) : ℝ≥0) *

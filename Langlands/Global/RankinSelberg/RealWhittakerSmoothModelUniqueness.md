@@ -1,0 +1,7 @@
+# Real uniform Whittaker uniqueness from smooth extension
+
+`realUniformWhittakerMultiplicityOneFromSmoothExtension` assumes real smooth Casselman–Wallach extension at the local carrier universes. For an irreducible real standard module of the indicated rank and a fixed nonzero additive scale, if a uniform coefficient map takes value one at the identity on some source vector, every uniform coefficient map is its scalar multiple.
+
+The smooth evaluation theorem gives a continuous Whittaker form on the genuine smooth standard module for each coefficient map. Pull both forms back along the same equivariant smooth quotient from the ascending character presentation. This quotient is surjective on the compact-finite source vectors. The ascending presentation is a full character list with the original total rank, so the pulled-back forms give compact-derivative-bounded Whittaker forms on the full smooth position principal series. The original value one lifts along the quotient and shows that the first pulled-back form is nonzero.
+
+Smooth principal-series uniqueness gives the scalar relating the two pulled-back forms. Lift an original compact-finite vector along the quotient and evaluate the two forms on the same right translate of that lift. The quotient commutes with right translation, so the evaluations are the original coefficients and obey the same scalar identity. This is an internal composition of the Library's smooth evaluation, ascending quotient and principal-series uniqueness results.

@@ -1,0 +1,5 @@
+# Diagonal blocks in conjugacy-orbit closures
+
+For an idempotent `p` in an associative algebra, put `q = 1 − p`. The subalgebra `upperBlockAlgebra` consists of elements `a` satisfying `q a p = 0`. Multiplying two upper triangular block matrices keeps the lower off-diagonal block zero, and the diagonal blocks multiply separately. This gives the algebra map `diagonalBlockHom` sending `a` to `p a p + q a q`.
+
+Suppose the scalar field is nontrivially normed and addition and scalar multiplication are continuous on the ambient algebra. The lemma `diagonalBlock_mem_closure_conjugates` works with an algebra map from a second algebra carrying the idempotent. Conjugate by the image of `t p + q`, whose inverse is the image of `t⁻¹ p + q` for `t ≠ 0`. The lower off-diagonal block is zero, so conjugation gives the diagonal part plus `t` times the upper off-diagonal block. As `t` tends to zero through nonzero scalars, the limit is the diagonal part. This realizes a block degeneration of the kind used in semisimple orbit-closure arguments. [Clozel, *Characters of non-connected, reductive p-adic groups*, Lemma 8, p. 156](https://doi.org/10.4153/CJM-1987-008-3)

@@ -24,6 +24,17 @@ theorem IsCyclicAlgebra.isGalois (h : IsCyclicAlgebra σ l) : IsGalois F E := by
   exact IntermediateField.mem_bot.mpr (h.2.2.2.2 x
     ((IntermediateField.mem_fixedField_iff _ _).mp hx σ (Subgroup.mem_top σ)))
 
+/-- A cyclic algebra of degree `l` that is a field is abelian Galois. -/
+theorem IsCyclicAlgebra.isAbelianGalois {F : Type u} [Field F] {E : Type v} [Field E]
+    [Algebra F E] {σ : E ≃ₐ[F] E} {l : ℕ} (h : IsCyclicAlgebra σ l) :
+    IsAbelianGalois F E := by
+  let : FiniteDimensional F E := h.1
+  let : IsGalois F E := h.isGalois
+  have hcard : orderOf σ = Nat.card (E ≃ₐ[F] E) := by
+    rw [IsGalois.card_aut_eq_finrank, h.2.1, h.2.2.2.1]
+  let : IsCyclic (E ≃ₐ[F] E) := isCyclic_of_orderOf_eq_card σ hcard
+  exact IsAbelianGalois.of_isCyclic F E
+
 private theorem prod_pow_apply_eq_norm (h : IsCyclicAlgebra σ l) (x : E) :
     (∏ i : Fin l, (σ ^ (i : ℕ)) x) = algebraMap F E (Algebra.norm F x) := by
   classical

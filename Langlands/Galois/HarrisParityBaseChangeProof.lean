@@ -1,3 +1,4 @@
+import Langlands.Automorphic.ConjugateSelfDualCriterion
 import Langlands.Galois.HarrisParityBaseChangeStatement
 import Langlands.Automorphic.ContragredientSphericalSpectrum
 import Langlands.Automorphic.ContragredientUniqueness
@@ -95,34 +96,6 @@ private theorem complexConjEquiv_lieAction (S : OperatorRealization F n)
       (ArchimedeanGL.envelopingGenerator F n (ArchimedeanGL.complexify F n X)) x
 
 set_option maxHeartbeats 1000000 in
-private theorem isConjugateSelfDual_of_complexConj (S : OperatorRealization F n)
-    (h : S.complexConj.IsContragredientOf S) : S.IsConjugateSelfDual := by
-  let e := S.complexConjEquiv.toLinearEquiv
-  obtain ⟨B, ⟨hf, hk, hLie⟩, hB, hinj, hsurj⟩ := h
-  let C := B.compl₁₂ LinearMap.id e.toLinearMap
-  have hflip (x : S.Space) : C.flip x = B.flip (e x) := rfl
-  refine ⟨C, ⟨?_, ?_, ?_⟩, fun x => hB (e x), ?_, ?_⟩
-  · intro d y x
-    change B (S.finiteRepresentation (finiteConj F n d) y)
-      (S.complexConjEquiv (S.finiteRepresentation d x)) = B y (S.complexConjEquiv x)
-    simpa only [S.complexConjEquiv_finite, finiteConj_twice] using
-      hf (finiteConj F n d) y (S.complexConjEquiv x)
-  · intro k y x
-    change B (S.compactRepresentation (compactConj F n k) y)
-      (S.complexConjEquiv (S.compactRepresentation k x)) = B y (S.complexConjEquiv x)
-    simpa only [S.complexConjEquiv_compact, compactConj_twice] using
-      hk (compactConj F n k) y (S.complexConjEquiv x)
-  · intro X y x
-    change B (S.lieAction (lieConj F n X) y) (S.complexConjEquiv x) +
-      B y (S.complexConjEquiv (S.lieAction X x)) = 0
-    simpa only [complexConjEquiv_lieAction, lieConj_twice] using
-      hLie (lieConj F n X) y (S.complexConjEquiv x)
-  · intro x x' hx
-    exact e.injective (hinj ((hflip x).symm.trans (hx.trans (hflip x'))))
-  · intro l hl
-    obtain ⟨x, hx⟩ := hsurj l hl
-    exact ⟨e.symm x, (hflip _).trans ((congrArg B.flip (e.apply_symm_apply x)).trans hx)⟩
-
 set_option maxHeartbeats 2000000 in
 private theorem isContragredientOf_complexConj (S : OperatorRealization F n)
     (h : S.IsConjugateSelfDual) : S.complexConj.IsContragredientOf S := by
@@ -169,17 +142,6 @@ private theorem isContragredientOf_complexConj (S : OperatorRealization F n)
   · intro l hl
     obtain ⟨x, hx⟩ := hsurj l hl
     exact ⟨e x, (hflip _).trans ((congrArg C.flip (e.symm_apply_apply x)).trans hx)⟩
-
-private theorem arithmeticComap_fieldConj [CompactSpace (AdeleQuotient F)] {r : ℕ}
-    (S : CuspidalOperatorRealization F r) :
-    S.arithmeticComap (fieldConj F) = S.complexConj := by
-  have h : (S.arithmeticComap (fieldConj F)).realization = S.complexConj.realization := by
-    change S.realization.arithmeticComap (fieldConj F) = S.realization.complexConj
-    apply Subrepresentation.toSubmodule_injective
-    rw [OperatorRealization.arithmeticComap_toSubmodule, OperatorRealization.complexConj_toSubmodule]
-    rfl
-  simpa only [CuspidalOperatorRealization.arithmeticComap, CuspidalOperatorRealization.complexConj,
-    CuspidalOperatorRealization.mk.injEq] using h
 
 end CMPairing
 
@@ -361,7 +323,7 @@ private theorem complexConj_isWeakBaseChangeOf
     T.complexConj.isoClass.IsWeakBaseChangeOf.{uE, uE, uV, uW} S.complexConj.isoClass := by
   obtain ⟨P, Q, hPQ⟩ :=
     (CuspidalOperatorRealization.IsoClass.isWeakBaseChangeOf_isoClass_iff T S).mp hbc
-  rw [← arithmeticComap_fieldConj S, ← arithmeticComap_fieldConj T]
+  rw [← CuspidalOperatorRealization.arithmeticComap_fieldConj S, ← CuspidalOperatorRealization.arithmeticComap_fieldConj T]
   refine (CuspidalOperatorRealization.IsoClass.isWeakBaseChangeOf_isoClass_iff _ _).mpr
     ⟨P.arithmeticComap (fieldConj E), Q.arithmeticComap (fieldConj N), ?_⟩
   have hplaces := (finitePlaceEquiv (fieldConj E).symm).injective.tendsto_cofinite.eventually hPQ
@@ -440,7 +402,7 @@ theorem harrisParityBaseChange : HarrisParityBaseChangeStatement.{uE, uW} := by
         CuspidalOperatorRealization.complexConj_complexConj] using
         congrArg CuspidalOperatorRealization.IsoClass.complexConj hTdConj
     apply T.isoClass_isConjugateSelfDual_iff.mpr
-    apply isConjugateSelfDual_of_complexConj
+    apply OperatorRealization.isConjugateSelfDual_of_complexConj_isContragredientOf
     exact (T.complexConj.isoClass_isContragredientOf_iff T).mp
       (hTdClass ▸ (Td.isoClass_isContragredientOf_iff T).mpr hTd)
 

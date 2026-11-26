@@ -29,8 +29,10 @@ and conductors, not the conductor-count step.
    of the presentation and representative. More precisely,
    `hasWeilSwan_iff_eq_rank_mul_lastBreak` says `HasWeilSwan K σ s` holds exactly
    when the real cast of `s` is the rank times the last break of any actual
-   representative of `σ`. The forward direction uses the presentation in the
-   hypothesis and the published intrinsic class break label. The reverse
+   representative of `σ`. The forward direction uses a p-adic presentation
+   witnessing the hypothesis, given by
+   `hasArtinConductor_iff_exists_padicPresentation`, and the published intrinsic
+   class break label. The reverse
    direction compares the proposed natural number with `weilSwanExponent` by
    injectivity of the natural cast into the reals.
 4. `lastBreak_le_iff_isTrivialAbove` uses the published strict threshold at

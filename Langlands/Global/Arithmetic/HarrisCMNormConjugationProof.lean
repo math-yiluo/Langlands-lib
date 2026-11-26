@@ -1,3 +1,4 @@
+import Langlands.Global.CMConjugationGL
 import Langlands.Global.Arithmetic.HarrisParityArithmeticTransportStatement
 import Langlands.Global.Arithmetic.HarrisDatumCharacterRealizationProof
 
@@ -14,17 +15,6 @@ open scoped NumberField FiniteExtension NumberField.LiesOver
 
 private abbrev cmConj (K : Type*) [Field K] [NumberField K] [IsCMField K] : K ≃+* K :=
   (IsCMField.complexConj K).toRingEquiv
-
-private theorem finitePlaceConj_involutive (K : Type*) [Field K] [NumberField K] [IsCMField K] :
-    Function.Involutive (finitePlaceEquiv (cmConj K)) := by
-  have h : (cmConj K).trans (cmConj K) = RingEquiv.refl K := by
-    ext x
-    exact IsCMField.complexConj_apply_apply K x
-  intro p
-  have hp := congrArg (fun e : FinitePlace K ≃ FinitePlace K => e p)
-    (finitePlaceEquiv_trans (cmConj K) (cmConj K))
-  rw [h, finitePlaceEquiv_refl] at hp
-  exact hp.symm
 
 section
 
@@ -44,7 +34,7 @@ private def finitePlacesAboveConj (p : FinitePlace E) :
         (finitePlaceEquiv (cmConj E') q)
       change ((finitePlaceEquiv (cmConj E')) ((finitePlaceEquiv (cmConj E')) q)).asIdeal.LiesOver
         ((finitePlaceEquiv (cmConj E)) ((finitePlaceEquiv (cmConj E)) p)).asIdeal at h'
-      rw [finitePlaceConj_involutive E' q, finitePlaceConj_involutive E p] at h'
+      rw [CMConjugation.finitePlaceComplexConj_involutive q, CMConjugation.finitePlaceComplexConj_involutive p] at h'
       exact h'
 
 private theorem finiteLocalNorm_conj (p : FinitePlace E) (q : FinitePlace E')

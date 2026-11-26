@@ -1,3 +1,4 @@
+import Langlands.Correspondence.HenniartLocalNumerical
 import Langlands.Correspondence.SupercuspidalSpecification
 import Langlands.LocalFactor.Ramification.InertiaPresentation
 import Langlands.Representation.Classification.SupercuspidalStrata
@@ -28,13 +29,16 @@ open Langlands.Correspondence Langlands.VirtualRepresentation
 variable {p : ℕ} [Fact p.Prime] (K : PadicField.{uK} p)
 
 /-- `a` is the Artin conductor exponent of `σ`, computed for a representative at
-an actual finite inertia presentation with surjective inertia restriction. -/
+an actual finite inertia presentation with surjective inertia restriction. This is
+`LocalNumerical.HasArtinConductor` at the field `K.Carrier`, its algebraic closure
+and the instances of `K.canonicalTopologicalData`. -/
 def HasArtinConductor {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} K k.succPNat)
     (a : ℕ) : Prop :=
-  ∃ (A : FiniteRepresentation.{0, uK, uW} ℂ (Weil.Local.localWeilGroup K))
-    (P : Ramification.Padic.FiniteInertiaPresentation K A)
-    (hsurj : Function.Surjective (Ramification.Padic.weilInertiaRestriction K P.extension)),
-    FiniteRepresentation.classOf A = weilClassForget K σ ∧ P.artinConductor hsurj = (a : ℚ)
+  letI := K.canonicalTopologicalData.valuativeRel
+  letI := K.canonicalTopologicalData.topology
+  letI := K.canonicalTopologicalData.localField
+  letI := Algebra.charZero_of_charZero (Padic p) K.Carrier
+  LocalNumerical.HasArtinConductor.{uK, uK, uW} K.Carrier (AlgebraicClosure K.Carrier) σ a
 
 /-- The conductor of a supercuspidal class of `GL_(k+1)`: its first level with a
 nonzero vector fixed by the last-row congruence subgroup (JPSS 1981, §5). -/

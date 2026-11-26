@@ -1,0 +1,7 @@
+# Polynomial products in the equal-rank square unfolding
+
+Assume polynomial ordinary normalizations for adjacent ranks at the opposite additive scale. For a standard square polynomial Gaussian, the unfolded equal-rank integral uses the supplied group Haar measure on the larger general linear group and the supplied unipotent quotient measure on the smaller group. Its normalizing multiplier is the reciprocal adjacent-pair \(L\)-factor at \(s\) times the reciprocal singleton-pair \(L\)-factor at \(s+z\), both formed from the supplied character lists. Each reciprocal \(L\)-factor is a product of shifted reciprocal complex Tate factors. After multiplication by these factors, each \(z\) in the adjoining chamber gives a polynomial in \(s\) on the spectral chamber.
+
+The reproducing compact weight expands the larger coefficient into finitely many smaller adjacent factors and determinant-twisted square matrix factors. The square polynomial theorem supplies a polynomial for each matrix factor. The adjoining exponent shifts its spectral argument. Each term is therefore the product of an adjacent polynomial in `s` and a matrix polynomial evaluated at `s + z`. The two denominators of the unfolding yield the stated identity on a common right half-plane in each variable.
+
+This implements the polynomial part of the equal-rank product formula in Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §8.2 and Proposition 8.1, author-posted pp. 54–58 and 60–61.

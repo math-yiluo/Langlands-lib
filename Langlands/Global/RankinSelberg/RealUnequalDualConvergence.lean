@@ -207,12 +207,12 @@ theorem continuous_rectDecay {d a : ℕ} : Continuous (rectDecay (d := d) (a := 
 
 /-! ### Integrability criteria -/
 
-theorem integrable_exp_comp_alphaQ {ν : Measure (LeftUnipotentQuotient t ℝ)} {κ : ℝ≥0}
+theorem integrable_exp_comp_alphaQ_of_le {ν : Measure (LeftUnipotentQuotient t ℝ)} {κ : ℝ≥0}
     {L : (Fin (t + 1) → ℝ) →L[ℝ] ℝ}
     (hκL : ∀ B : (Fin (t + 1) → ℝ) → ℝ≥0∞, Measurable B →
       ∫⁻ q, B (alphaQ q) ∂ν = (κ : ℝ≥0∞) * ∫⁻ x, ENNReal.ofReal (Real.exp (L x)) * B x)
-    {E : (Fin (t + 1) → ℝ) → ℝ} (hE : Continuous E)
-    (hEL : ∀ y, L y + E y ≤ -∑ j, |y j|) :
+    {E : (Fin (t + 1) → ℝ) → ℝ} (hE : Continuous E) {c : ℝ} (hc : 0 < c)
+    (hEL : ∀ y, L y + E y ≤ -c * ∑ j, |y j|) :
     Integrable (fun q => Real.exp (E (alphaQ q))) ν := by
   refine ⟨(Real.continuous_exp.comp (hE.comp continuous_alphaQ)).aestronglyMeasurable, ?_⟩
   rw [hasFiniteIntegral_iff_ofReal (ae_of_all _ fun q => (Real.exp_pos _).le)]
@@ -223,11 +223,20 @@ theorem integrable_exp_comp_alphaQ {ν : Measure (LeftUnipotentQuotient t ℝ)} 
         (κ : ℝ≥0∞) * ∫⁻ x, ENNReal.ofReal (Real.exp (L x)) *
           ENNReal.ofReal (Real.exp (E x)) := hκL _ hBm
     _ ≤ (κ : ℝ≥0∞) * ∫⁻ x : Fin (t + 1) → ℝ,
-          ENNReal.ofReal (Real.exp (-1 * ∑ j, |x j|)) := by
+          ENNReal.ofReal (Real.exp (-c * ∑ j, |x j|)) := by
       refine mul_le_mul_right (lintegral_mono fun x => ?_) _
       rw [← ENNReal.ofReal_mul (Real.exp_pos _).le, ← Real.exp_add]
-      exact ENNReal.ofReal_le_ofReal (Real.exp_le_exp.mpr (by linarith [hEL x]))
-    _ < ⊤ := ENNReal.mul_lt_top ENNReal.coe_lt_top (lintegral_exp_neg_mul_sum_abs_lt_top one_pos)
+      exact ENNReal.ofReal_le_ofReal (Real.exp_le_exp.mpr (hEL x))
+    _ < ⊤ := ENNReal.mul_lt_top ENNReal.coe_lt_top (lintegral_exp_neg_mul_sum_abs_lt_top hc)
+
+theorem integrable_exp_comp_alphaQ {ν : Measure (LeftUnipotentQuotient t ℝ)} {κ : ℝ≥0}
+    {L : (Fin (t + 1) → ℝ) →L[ℝ] ℝ}
+    (hκL : ∀ B : (Fin (t + 1) → ℝ) → ℝ≥0∞, Measurable B →
+      ∫⁻ q, B (alphaQ q) ∂ν = (κ : ℝ≥0∞) * ∫⁻ x, ENNReal.ofReal (Real.exp (L x)) * B x)
+    {E : (Fin (t + 1) → ℝ) → ℝ} (hE : Continuous E)
+    (hEL : ∀ y, L y + E y ≤ -∑ j, |y j|) :
+    Integrable (fun q => Real.exp (E (alphaQ q))) ν :=
+  integrable_exp_comp_alphaQ_of_le hκL hE one_pos (by simpa using hEL)
 
 /-! ### Convergence and holomorphy of the dual block integral -/
 

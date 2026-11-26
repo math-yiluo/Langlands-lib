@@ -36,6 +36,14 @@ def reciprocityHom (e : ReciprocityCandidate F) :
     Weil.Local.localWeilGroup F →* F.Carrierˣ :=
   (LocalFactor.RankOne.reciprocityUnits F e).toMonoidHom
 
+/-- The composite of abelianization with local reciprocity is surjective. -/
+theorem reciprocityHom_surjective (e : ReciprocityCandidate F) :
+    Function.Surjective (reciprocityHom F e) := by
+  intro a
+  obtain ⟨z, hz⟩ := e.surjective a
+  induction z using QuotientGroup.induction_on with
+  | H w => exact ⟨w, hz⟩
+
 /-- A field quasi-character pulled back to the actual local Weil group. -/
 def weilCharacter (e : ReciprocityCandidate F) (χ : QuasiCharacter F) :
     Weil.Local.localWeilGroup F →* ℂˣ :=

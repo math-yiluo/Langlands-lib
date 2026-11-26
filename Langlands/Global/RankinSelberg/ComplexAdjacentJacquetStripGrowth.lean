@@ -6,7 +6,9 @@ import Langlands.Global.RankinSelberg.ComplexAdjacentSplitIntegrals
 import Langlands.Global.RankinSelberg.ComplexLocalCompactMatchedProjection
 import Langlands.Global.RankinSelberg.ComplexLocalJacquetEndpointConvergence
 import Langlands.Global.RankinSelberg.ComplexSquareZetaCoefficientAverage
+import Langlands.Global.RankinSelberg.ComplexSquareZetaPolynomialAverage
 import Langlands.Global.RankinSelberg.ComplexSquareZetaStripGrowth
+import Mathlib.Analysis.Calculus.Deriv.Polynomial
 import Langlands.Global.RankinSelberg.OrdinarySemilocalNormalization
 import Langlands.Representation.Archimedean.ComplexStandardDeterminantTwist
 
@@ -29,7 +31,9 @@ open ComplexDeterminantTwist (detCharacter detCharacter_mul detCharacter_inv_mul
 open ComplexGodement (characterWeight normPower exists_height_bound_standard)
 open ComplexGodementAddedCharacter (continuedValue)
 open Langlands.Analysis.SchwartzMatrixNorm (operatorToEntry)
-open ComplexSquareZeta (compactCoefficient leftAverageInv zetaKernel)
+open ComplexSquareZeta (compactCoefficient leftAverageInv zetaKernel squarePolynomialGaussian
+  leftAverageInv_squarePolynomialGaussian finiteDimensional_leftSquarePolynomialGaussian)
+open ComplexGodementGaussianPolynomial (Coordinates)
 open ComplexJacquet (complexAdjacentCompactWeight complexLocalCompactMatchedProjection
   complexLocalCompactProjectionReduction complexCompactMatrixTranslate
   complexLocalEqualEndpointConvergence)
@@ -93,14 +97,25 @@ private theorem singleton_pairFactor (d : ComplexCharacterData) (es : Fin (r + 1
     List.map_ofFn, denominator_complexLFactor, List.prod_ofFn, Function.comp_apply,
     ComplexCharacterData.lFactor, ComplexCharacterData.mul, add_comm d.weight, add_comm d.exponent]
 
-private theorem twistedCoefficientStripGrowth (μ : Measure G) [μ.IsHaarMeasure]
+private def SquareTraceProperty (R : (ℂ → ℂ) → Prop) (μ : Measure G) (κ : Measure Kc)
+    [IsFiniteMeasure κ] (d : ComplexCharacterData) (es : Fin (r + 1) → ComplexCharacterData)
+    (Φ : 𝓢(Mat, ℂ)) : Prop :=
+  let ds := fun i => (es i).mul d
+  ∀ (w : Kc → ℂ) (hw : Continuous w) (f : G → ℂ), f ∈ complexStandardModule (r + 1) (List.ofFn ds) →
+    ∃ (τ : ℝ) (Z : ℂ → ℂ), Differentiable ℂ Z ∧ R Z ∧
+      ∀ s : ℂ, τ < s.re → Z s = (complexLFactor (List.ofFn ds)).denominator s *
+        ∫ g, zetaKernel (leftAverageInv κ id continuous_id w hw Φ) f s g ∂μ
+
+private theorem twistedCoefficientNormalization (R : (ℂ → ℂ) → Prop)
+    (μ : Measure G) [μ.IsHaarMeasure]
     (κ : Measure Kc) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
     (d : ComplexCharacterData) (es : Fin (r + 1) → ComplexCharacterData)
     (Φ : 𝓢(Mat, ℂ)) (f : G → ℂ) (w : Kc → ℂ)
-    (hf : f ∈ complexStandardModule (r + 1) (List.ofFn es)) (hw : Continuous w) :
+    (hf : f ∈ complexStandardModule (r + 1) (List.ofFn es)) (hw : Continuous w)
+    (hSquare : SquareTraceProperty R μ κ d es Φ) :
     let J (s : ℂ) (g : G) := Φ g.val * characterWeight d ((r : ℂ) / 2 + s) (determinant g) *
       compactCoefficient κ id w f g
-    ∃ (σ : ℝ) (Z : ℂ → ℂ), Differentiable ℂ Z ∧ HasStripExponentialGrowth Z ∧
+    ∃ (σ : ℝ) (Z : ℂ → ℂ), Differentiable ℂ Z ∧ R Z ∧
       ∀ s : ℂ, σ < s.re → Integrable (J s) μ ∧
         Z s = (complexPairLFactor [d] (List.ofFn es)).denominator s * ∫ g, J s g ∂μ := by
   intro J
@@ -117,8 +132,7 @@ private theorem twistedCoefficientStripGrowth (μ : Measure G) [μ.IsHaarMeasure
   have hw' : Continuous w' :=
     ((Units.continuous_val.comp (d.character⁻¹.continuous.comp
       determinantContinuous.continuous)).comp continuous_subtype_val).mul hw
-  let Ψ := leftAverageInv κ id continuous_id w' hw' Φ
-  obtain ⟨τ, Z, hZd, hZg, hZ⟩ := ComplexSquareZeta.complexSquareZetaStripGrowth μ κ ds Ψ f' hf'
+  obtain ⟨τ, Z, hZd, hZg, hZ⟩ := hSquare w' hw' f' hf'
   obtain ⟨M, hM⟩ := exists_height_bound_standard (Nat.succ_pos r) (List.ofFn ds) List.length_ofFn
   obtain ⟨C, hC, hbound⟩ := hM f' hf'
   have hJ (s : ℂ) : J s = zetaKernel Φ (compactCoefficient κ id w' f') s := by
@@ -144,7 +158,7 @@ private theorem twistedCoefficientStripGrowth (μ : Measure G) [μ.IsHaarMeasure
   rw [hJ s]
   refine ⟨hAvg.1, ?_⟩
   rw [hAvg.2, ← singleton_pairFactor d es]
-  exact (hZ s ((le_max_left _ _).trans_lt hs)).2
+  exact hZ s ((le_max_left _ _).trans_lt hs)
 
 private theorem finiteSumStripGrowth {l : ℕ} {f : Fin l → ℂ → ℂ}
     (hf : ∀ i, HasStripExponentialGrowth (f i)) :
@@ -168,9 +182,7 @@ private theorem cons_pairFactor (d : ComplexCharacterData) (ds es : List Complex
 
 open scoped Langlands.Archimedean.ComplexDuality
 
-/-- The actual split Godement test with a compact-finite square factor has a normalized
-ordinary integral of exponential strip growth, given the smaller equal-rank growth input. -/
-def ComplexAdjacentJacquetStripGrowthStatement : Prop :=
+private def AdjacentJacquetNormalization (R : (ℂ → ℂ) → Prop) : Prop :=
   ∀ (D : ComplexQuotientMeasureData r) [SFinite D.measure]
     (κ : Measure Kc) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
     (a : ℂˣ) (d : ComplexCharacterData)
@@ -186,15 +198,21 @@ def ComplexAdjacentJacquetStripGrowthStatement : Prop :=
     (∀ V : complexWhittakerModel r (List.ofFn es) a,
       ∃ A : OrdinaryIntegralNormalization (complexEqualIntegral D U V (splitRowTransform a φ))
         (fun s => ((complexPairLFactor ds (List.ofFn es)).denominator s)⁻¹),
-        HasStripExponentialGrowth A.value) →
+        R A.value) →
+    (letI : MeasurableSpace Kc := inducedUnitaryMeasurableSpace r
+     ∀ (κ₀ : Measure Kc) [IsFiniteMeasure κ₀] [κ₀.IsHaarMeasure],
+       SquareTraceProperty R D.groupHaar κ₀ d es Φ) →
     let W (g : G') := continuedValue D.groupHaar (complexSelfDualMeasure a) d a
       (operatorToEntry (columnProd Φ φ)) U.val g 0
-    ∃ R : OrdinaryIntegralNormalization (complexUnequalIntegral gap D W (B f))
+    ∃ N : OrdinaryIntegralNormalization (complexUnequalIntegral gap D W (B f))
       (fun s => ((complexPairLFactor (d :: ds) (List.ofFn es)).denominator s)⁻¹),
-      HasStripExponentialGrowth R.value
+      R N.value
 
-theorem complexAdjacentJacquetStripGrowth : ComplexAdjacentJacquetStripGrowthStatement (r := r) := by
-  intro D _ κ _ _ a d ds es hds U B hB f Φ φ hΦ hA W
+private theorem adjacentJacquetNormalization (R : (ℂ → ℂ) → Prop)
+    (hR : ∀ (l : ℕ) (c : ℂ) (A Z : Fin l → ℂ → ℂ),
+      (∀ j, R (A j)) → (∀ j, R (Z j)) → R (fun s => c * ∑ j, A j s * Z j s)) :
+    AdjacentJacquetNormalization (r := r) R := by
+  intro D _ κ _ _ a d ds es hds U B hB f Φ φ hΦ hA hSquare W
   let e := Langlands.RankinSelberg.isOpenEmbedding_generalLinear_val (K := ℂ) (r + 1)
   let : LocallyCompactSpace G := e.locallyCompactSpace
   let : SecondCountableTopology G := e.secondCountableTopology
@@ -235,7 +253,8 @@ theorem complexAdjacentJacquetStripGrowth : ComplexAdjacentJacquetStripGrowthSta
   choose τE hτE using fun j => complexLocalEqualEndpointConvergence hds List.length_ofFn (-a)
     D U.val (V' j) ψ U.2 (by simpa only [neg_neg] using (hw' j).1)
   choose τZ Z hZd hZg hτZ using fun j =>
-    @twistedCoefficientStripGrowth r μ inferInstance κ₀ hκ₀f hκ₀h d es Φ f.val (w' j) f.2.1 (hw' j).2
+    @twistedCoefficientNormalization r R μ inferInstance κ₀ hκ₀f hκ₀h
+      d es Φ f.val (w' j) f.2.1 (hw' j).2 (@hSquare κ₀ hκ₀f hκ₀h)
   obtain ⟨tZ, htZ⟩ := complexPairLFactor_denominator_ne_zero [d] (List.ofFn es)
   obtain ⟨β, hβ⟩ := (Set.finite_range fun j => max (τA j) (max (τE j) (τZ j))).bddAbove
   let c : ℂ := (d.character ((-1 : ℂˣ) ^ (r + 1)) : ℂ)
@@ -244,11 +263,7 @@ theorem complexAdjacentJacquetStripGrowth : ComplexAdjacentJacquetStripGrowthSta
     fun s => ((A j).analytic s (mem_univ _)).differentiableAt
   have hNd : Differentiable ℂ N :=
     (Differentiable.fun_sum fun j _ => (hAd j).mul (hZd j)).const_mul c
-  have hc : HasStripExponentialGrowth (fun _ => c) :=
-    fun _ _ => ⟨‖c‖, 0, 0, norm_nonneg _, le_rfl, fun _ _ _ _ => by simp⟩
-  have hNg : HasStripExponentialGrowth N := hc.mul
-    (finiteSumStripGrowth (f := fun j s => (A j).value s * Z j s)
-      fun j => (hAg j).mul (hZg j))
+  have hNg : R N := hR l c (fun j => (A j).value) Z hAg hZg
   refine ⟨⟨N, fun s _ => hNd.analyticAt s, ⟨max (max σ τ) (max β tZ), fun s hs => ?_⟩⟩, hNg⟩
   have hs' := (le_max_left (max σ τ) (max β tZ)).trans_lt hs
   have hs'' := (le_max_right (max σ τ) (max β tZ)).trans_lt hs
@@ -281,5 +296,90 @@ theorem complexAdjacentJacquetStripGrowth : ComplexAdjacentJacquetStripGrowthSta
   change complexEqualIntegral D U.val (V' j) ψ s = _ at hAeq
   rw [hAeq]
   ring
+
+/-- The actual split Godement test with a compact-finite square factor has a normalized
+ordinary integral of exponential strip growth, given the smaller equal-rank growth input. -/
+def ComplexAdjacentJacquetStripGrowthStatement : Prop :=
+  ∀ (D : ComplexQuotientMeasureData r) [SFinite D.measure]
+    (κ : Measure Kc) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
+    (a : ℂˣ) (d : ComplexCharacterData)
+    (ds : List ComplexCharacterData) (es : Fin (r + 1) → ComplexCharacterData),
+    ds.length = r + 1 →
+  ∀ (U : complexWhittakerModel r ds (-a))
+    (B : complexStandardKFinite (r + 1) (List.ofFn es) →ₗ[ℂ] (G → ℂ)),
+    IsComplexWhittakerIntertwiner r (List.ofFn es) a B →
+  ∀ (f : complexStandardKFinite (r + 1) (List.ofFn es))
+    (Φ : 𝓢(Mat, ℂ)) (φ : 𝓢(Vec, ℂ)),
+    FiniteDimensional ℂ
+      (Submodule.span ℂ (Set.range fun k : Kc => fun X => Φ (k.val⁻¹.val * X))) →
+    (∀ V : complexWhittakerModel r (List.ofFn es) a,
+      ∃ A : OrdinaryIntegralNormalization (complexEqualIntegral D U V (splitRowTransform a φ))
+        (fun s => ((complexPairLFactor ds (List.ofFn es)).denominator s)⁻¹),
+        HasStripExponentialGrowth A.value) →
+    let W (g : G') := continuedValue D.groupHaar (complexSelfDualMeasure a) d a
+      (operatorToEntry (columnProd Φ φ)) U.val g 0
+    ∃ R : OrdinaryIntegralNormalization (complexUnequalIntegral gap D W (B f))
+      (fun s => ((complexPairLFactor (d :: ds) (List.ofFn es)).denominator s)⁻¹),
+      HasStripExponentialGrowth R.value
+
+theorem complexAdjacentJacquetStripGrowth : ComplexAdjacentJacquetStripGrowthStatement (r := r) := by
+  intro D hD κ hκf hκh a d ds es hds U B hB f Φ φ hΦ hA
+  refine @adjacentJacquetNormalization r HasStripExponentialGrowth ?_ D hD κ hκf hκh a d
+    ds es hds U B hB f Φ φ hΦ hA ?_
+  · intro l c A Z hA hZ
+    have hc : HasStripExponentialGrowth (fun _ => c) :=
+      fun _ _ => ⟨‖c‖, 0, 0, norm_nonneg _, le_rfl, fun _ _ _ _ => by simp⟩
+    exact hc.mul (finiteSumStripGrowth (fun j => (hA j).mul (hZ j)))
+  · intro κ₀ hκ₀f hκ₀h w hw f₀ hf₀
+    let : D.groupHaar.IsHaarMeasure := D.groupHaar_isHaar
+    let Ψ := leftAverageInv κ₀ id continuous_id w hw Φ
+    obtain ⟨τ, Z, hZd, hZg, hZ⟩ := ComplexSquareZeta.complexSquareZetaStripGrowth
+      D.groupHaar κ₀ (fun i => (es i).mul d) Ψ f₀ hf₀
+    exact ⟨τ, Z, hZd, hZg, fun s hs => (hZ s hs).2⟩
+
+/-- For a standard square polynomial Gaussian, the continued split Godement test has a
+polynomial ordinary normalization if the lower equal-rank normalizations for the transformed
+row test are polynomial. -/
+def ComplexAdjacentJacquetPolynomialStatement : Prop :=
+  ∀ (D : ComplexQuotientMeasureData r) [SFinite D.measure]
+    (κ : Measure Kc) [IsFiniteMeasure κ] [κ.IsHaarMeasure]
+    (a : ℂˣ) (d : ComplexCharacterData)
+    (ds : List ComplexCharacterData) (es : Fin (r + 1) → ComplexCharacterData),
+    ds.length = r + 1 →
+  ∀ (U : complexWhittakerModel r ds (-a))
+    (B : complexStandardKFinite (r + 1) (List.ofFn es) →ₗ[ℂ] (G → ℂ)),
+    IsComplexWhittakerIntertwiner r (List.ofFn es) a B →
+  ∀ (f : complexStandardKFinite (r + 1) (List.ofFn es))
+    (Φ : 𝓢(Mat, ℂ)) (φ : 𝓢(Vec, ℂ)) (p : MvPolynomial (Coordinates (r + 1) (r + 1)) ℂ),
+    (Φ : Mat → ℂ) = squarePolynomialGaussian p →
+    (∀ V : complexWhittakerModel r (List.ofFn es) a,
+      ∃ (A : OrdinaryIntegralNormalization (complexEqualIntegral D U V (splitRowTransform a φ))
+        (fun s => ((complexPairLFactor ds (List.ofFn es)).denominator s)⁻¹)) (P : Polynomial ℂ),
+        A.value = P.eval) →
+    let W (g : G') := continuedValue D.groupHaar (complexSelfDualMeasure a) d a
+      (operatorToEntry (columnProd Φ φ)) U.val g 0
+    ∃ (N : OrdinaryIntegralNormalization (complexUnequalIntegral gap D W (B f))
+      (fun s => ((complexPairLFactor (d :: ds) (List.ofFn es)).denominator s)⁻¹)) (P : Polynomial ℂ),
+      N.value = P.eval
+
+theorem complexAdjacentJacquetPolynomial : ComplexAdjacentJacquetPolynomialStatement (r := r) := by
+  intro D hD κ hκf hκh a d ds es hds U B hB f Φ φ p hΦ hA
+  let R (F : ℂ → ℂ) : Prop := ∃ P : Polynomial ℂ, F = P.eval
+  have hFin : ∀ (l : ℕ) (c : ℂ) (A Z : Fin l → ℂ → ℂ),
+      (∀ j, R (A j)) → (∀ j, R (Z j)) → R (fun s => c * ∑ j, A j s * Z j s) := by
+    intro l c A Z hA hZ
+    choose P hP using hA
+    choose Q hQ using hZ
+    refine ⟨Polynomial.C c * ∑ j, P j * Q j, funext fun s => ?_⟩
+    simp only [hP, hQ, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_finsetSum]
+  refine @adjacentJacquetNormalization r R hFin D hD κ hκf hκh a d ds es hds U B hB f Φ φ
+    (finiteDimensional_leftSquarePolynomialGaussian Φ p hΦ) hA ?_
+  intro κ₀ hκ₀f hκ₀h w hw f₀ hf₀
+  let : D.groupHaar.IsHaarMeasure := D.groupHaar_isHaar
+  let Ψ := leftAverageInv κ₀ id continuous_id w hw Φ
+  obtain ⟨p', _, hp'⟩ := leftAverageInv_squarePolynomialGaussian κ₀ id continuous_id w hw Φ p hΦ
+  obtain ⟨τ, P, _, hP⟩ := ComplexSquareZeta.complexSquareZetaPolynomialGaussian (r + 1) (Nat.succ_pos r)
+    D.groupHaar κ₀ (fun i => (es i).mul d) Ψ p' hp' f₀ hf₀
+  exact ⟨τ, P.eval, P.differentiable, ⟨P, rfl⟩, fun s hs => (hP s hs).2⟩
 
 end Langlands.Global.RankinSelbergGlobal.ComplexAdjacentUnfolding

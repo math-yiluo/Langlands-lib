@@ -78,54 +78,62 @@ private def sectionLinear (ν : Measure H) (d : ComplexCharacterData) (f : H →
       simp only [godementSectionIntegrand, Pi.smul_apply, smul_eq_mul, mul_assoc]
     rw [h, integral_const_mul, mul_left_comm]
 
-private abbrev gaussianTestOrbit (P : Poly) : Submodule ℂ (Rect → ℂ) :=
-  Submodule.span ℂ (Set.range fun k : U => translateTest k.val (gaussianPolynomial P))
+private abbrev schwartzTestOrbit (Φ : 𝓢(Rect, ℂ)) : Submodule ℂ (Rect → ℂ) :=
+  Submodule.span ℂ (Set.range fun k : U => translateTest k.val Φ)
 
-private theorem gaussianTestOrbit_le (P : Poly) : gaussianTestOrbit P ≤ schwartzFunctions := by
+private theorem schwartzTestOrbit_le (Φ : 𝓢(Rect, ℂ)) : schwartzTestOrbit Φ ≤ schwartzFunctions := by
   apply Submodule.span_le.mpr
   rintro _ ⟨k, rfl⟩
-  obtain ⟨Q, hQ⟩ := exists_rightTranslate_gaussianPolynomial P k
-  exact ⟨gaussianPolynomial Q, funext fun X => (hQ X).symm⟩
+  let e : Rect ≃L[ℝ] Rect :=
+    ({ toFun X := X * k.val.val
+       invFun X := X * k.val⁻¹.val
+       left_inv X := by simp [Matrix.mul_assoc]
+       right_inv X := by simp [Matrix.mul_assoc]
+       map_add' X Y := Matrix.add_mul X Y _
+       map_smul' c X := Matrix.smul_mul c X _ } : Rect ≃ₗ[ℝ] Rect).toContinuousLinearEquiv
+  exact ⟨SchwartzMap.compCLMOfContinuousLinearEquiv ℂ e Φ, rfl⟩
 
-private theorem gaussianSection_continuous_unitary (ν : Measure H)
-    (d : ComplexCharacterData) (f : H → ℂ) (P : Poly)
-    (hconv : ∀ (Φ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand d Φ f g) ν) :
-    Continuous (fun k : U => godementSection ν d (gaussianPolynomial P) f k.val) := by
-  let V := gaussianTestOrbit P
-  let : FiniteDimensional ℂ V := finiteDimensional_translateTest_gaussianPolynomial P
-  let T := (sectionLinear ν d f hconv).comp (Submodule.inclusion (gaussianTestOrbit_le P))
+private theorem schwartzSection_continuous_unitary (ν : Measure H)
+    (d : ComplexCharacterData) (f : H → ℂ) (Φ : 𝓢(Rect, ℂ))
+    (hfinite : FiniteDimensional ℂ (schwartzTestOrbit Φ))
+    (hconv : ∀ (Ψ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand d Ψ f g) ν) :
+    Continuous (fun k : U => godementSection ν d Φ f k.val) := by
+  let V := schwartzTestOrbit Φ
+  let : FiniteDimensional ℂ V := hfinite
+  let T := (sectionLinear ν d f hconv).comp (Submodule.inclusion (schwartzTestOrbit_le Φ))
   let L : V →ₗ[ℂ] ℂ := (LinearMap.proj 1).comp T
   obtain ⟨j, x, c, hL⟩ := InductionStages.exists_eval_sum V L
-  let v (k : U) : V := ⟨translateTest k.val (gaussianPolynomial P), Submodule.subset_span ⟨k, rfl⟩⟩
-  have h (k : U) : godementSection ν d (gaussianPolynomial P) f k.val =
+  let v (k : U) : V := ⟨translateTest k.val Φ, Submodule.subset_span ⟨k, rfl⟩⟩
+  have h (k : U) : godementSection ν d Φ f k.val =
       characterWeight d ((m : ℂ) / 2) (determinant k.val) *
-        ∑ i : Fin j, c i * gaussianPolynomial P (x i * k.val.val) := by
-    have hk := godementSection_right_mul ν d (gaussianPolynomial P) f 1 k.val
+        ∑ i : Fin j, c i * Φ (x i * k.val.val) := by
+    have hk := godementSection_right_mul ν d Φ f 1 k.val
     rw [one_mul] at hk
     refine hk.trans (congrArg (fun z => characterWeight d ((m : ℂ) / 2) (determinant k.val) * z) ?_)
     exact hL (v k)
   simp_rw [h]
   refine ((continuous_characterWeight d _).comp (determinantContinuous.continuous.comp
     continuous_subtype_val)).mul (continuous_finsetSum _ fun i _ => continuous_const.mul ?_)
-  exact (gaussianPolynomial P).continuous.comp
+  exact Φ.continuous.comp
     (continuous_const.matrix_mul (Units.continuous_val.comp continuous_subtype_val))
 
-private theorem gaussianSection_finiteOrbit (ν : Measure H)
-    (d : ComplexCharacterData) (f : H → ℂ) (P : Poly)
-    (hconv : ∀ (Φ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand d Φ f g) ν) :
+private theorem schwartzSection_finiteOrbit (ν : Measure H)
+    (d : ComplexCharacterData) (f : H → ℂ) (Φ : 𝓢(Rect, ℂ))
+    (hfinite : FiniteDimensional ℂ (schwartzTestOrbit Φ))
+    (hconv : ∀ (Ψ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand d Ψ f g) ν) :
     FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : U =>
-      rightTranslation ℂ G k.val (godementSection ν d (gaussianPolynomial P) f))) := by
-  let V := gaussianTestOrbit P
-  let : FiniteDimensional ℂ V := finiteDimensional_translateTest_gaussianPolynomial P
-  let T := (sectionLinear ν d f hconv).comp (Submodule.inclusion (gaussianTestOrbit_le P))
+      rightTranslation ℂ G k.val (godementSection ν d Φ f))) := by
+  let V := schwartzTestOrbit Φ
+  let : FiniteDimensional ℂ V := hfinite
+  let T := (sectionLinear ν d f hconv).comp (Submodule.inclusion (schwartzTestOrbit_le Φ))
   refine Submodule.finiteDimensional_of_le (S₂ := LinearMap.range T) (Submodule.span_le.mpr ?_)
   rintro _ ⟨k, rfl⟩
-  let Φ : V := ⟨translateTest k.val (gaussianPolynomial P), Submodule.subset_span ⟨k, rfl⟩⟩
+  let Ψ : V := ⟨translateTest k.val Φ, Submodule.subset_span ⟨k, rfl⟩⟩
   let c := characterWeight d ((m : ℂ) / 2) (determinant k.val)
-  refine ⟨c • Φ, ?_⟩
+  refine ⟨c • Ψ, ?_⟩
   rw [map_smul]
   funext g
-  exact (godementSection_right_mul ν d (gaussianPolynomial P) f g k.val).symm
+  exact (godementSection_right_mul ν d Φ f g k.val).symm
 
 set_option maxHeartbeats 500000 in
 private theorem mem_standard_of_compact_covariance (d : ComplexCharacterData)
@@ -179,15 +187,67 @@ private theorem mem_standard_of_compact_covariance (d : ComplexCharacterData)
   rw [← heq]
   exact hF'
 
+/-- An absolutely convergent Godement section of a right unitary-finite Schwartz test
+belongs to the compact-finite standard module. -/
+theorem schwartzSection_standard (ν : Measure H) [ν.IsMulRightInvariant]
+    (d : ComplexCharacterData) (ds : List ComplexCharacterData) (f : H → ℂ)
+    (hf : f ∈ complexStandardModule m ds) (Φ : 𝓢(Rect, ℂ))
+    (hfinite : FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : U => translateTest k.val Φ)))
+    (hconv : ∀ (Ψ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand d Ψ f g) ν) :
+    godementSection ν d Φ f ∈ Larger d ds :=
+  mem_standard_of_compact_covariance d ds _
+    (schwartzSection_continuous_unitary ν d f Φ hfinite hconv)
+    (schwartzSection_finiteOrbit ν d f Φ hfinite hconv)
+    (godementSection_covariant ν d ds Φ hf)
+
 private theorem gaussianSection_standard (ν : Measure H) [ν.IsMulRightInvariant]
     (d : ComplexCharacterData) (ds : List ComplexCharacterData) (f : H → ℂ)
     (hf : f ∈ complexStandardModule m ds) (P : Poly)
     (hconv : ∀ (Φ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand d Φ f g) ν) :
     godementSection ν d (gaussianPolynomial P) f ∈ Larger d ds :=
-  mem_standard_of_compact_covariance d ds _
-    (gaussianSection_continuous_unitary ν d f P hconv)
-    (gaussianSection_finiteOrbit ν d f P hconv)
-    (godementSection_covariant ν d ds (gaussianPolynomial P) hf)
+  schwartzSection_standard ν d ds f hf (gaussianPolynomial P)
+    (finiteDimensional_translateTest_gaussianPolynomial P) hconv
+
+/-- At fixed angular weights, Godement sections formed with the same right unitary-finite
+Schwartz test have their compact restrictions in one finite-dimensional subspace. -/
+theorem finiteDimensional_schwartzSection_profiles {P : Type*} (ν : Measure H)
+    (d : P → ComplexCharacterData) (f : P → H → ℂ) (θ : KU → ℂ)
+    (hθ : ∀ p k, characterWeight (d p) ((m : ℂ) / 2) (determinant (Unitary.toUnits k)) = θ k)
+    (Φ : 𝓢(Rect, ℂ))
+    (hfinite : FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun k : U => translateTest k.val Φ)))
+    (hconv : ∀ p (Ψ : 𝓢(Rect, ℂ)) g, Integrable (godementSectionIntegrand (d p) Ψ (f p) g) ν) :
+    FiniteDimensional ℂ (Submodule.span ℂ (Set.range fun (p : P) (k : KU) =>
+      godementSection ν (d p) Φ (f p) (Unitary.toUnits k))) := by
+  classical
+  let V := schwartzTestOrbit Φ
+  let : FiniteDimensional ℂ V := hfinite
+  let b := Module.finBasis ℂ V
+  let u (k : KU) : V := ⟨translateTest (Unitary.toUnits k) Φ,
+    Submodule.subset_span ⟨⟨Unitary.toUnits k, k.2⟩, rfl⟩⟩
+  let h (i : Fin (Module.finrank ℂ V)) (k : KU) := θ k * b.repr (u k) i
+  have hfin : FiniteDimensional ℂ (Submodule.span ℂ (Set.range h)) :=
+    FiniteDimensional.span_of_finite _ (Set.finite_range _)
+  apply Submodule.finiteDimensional_of_le (S₂ := Submodule.span ℂ (Set.range h))
+  apply Submodule.span_le.mpr
+  rintro _ ⟨p, rfl⟩
+  let T := (sectionLinear ν (d p) (f p) (hconv p)).comp (Submodule.inclusion (schwartzTestOrbit_le Φ))
+  let L : V →ₗ[ℂ] ℂ := (LinearMap.proj (1 : G)).comp T
+  have hEq : (fun k : KU => godementSection ν (d p) Φ (f p) (Unitary.toUnits k)) =
+      ∑ i : Fin (Module.finrank ℂ V), L (b i) • h i := by
+    funext k
+    have hR := godementSection_right_mul ν (d p) Φ (f p) 1 (Unitary.toUnits k)
+    rw [one_mul, hθ p k] at hR
+    change _ = θ k * L (u k) at hR
+    rw [hR, ← b.sum_repr (u k), map_sum, Finset.mul_sum, Finset.sum_apply]
+    apply Finset.sum_congr rfl
+    intro i _
+    simp only [map_smul, Pi.smul_apply, smul_eq_mul]
+    change θ k * (b.repr (u k) i * L (b i)) = L (b i) * (θ k * b.repr (u k) i)
+    ring
+  change (fun k : KU => godementSection ν (d p) Φ (f p) (Unitary.toUnits k)) ∈
+    Submodule.span ℂ (Set.range h)
+  rw [hEq]
+  exact Submodule.sum_mem _ fun i _ => Submodule.smul_mem _ _ (Submodule.subset_span ⟨i, rfl⟩)
 
 /-- Godement sections of polynomial Gaussian tests with compact-finite smaller inputs. -/
 def gaussianGodementSections (ν : Measure H) (d : ComplexCharacterData) (ds : List ComplexCharacterData) :

@@ -1,3 +1,4 @@
+import Langlands.Correspondence.HenniartPadicArtinTransport
 import Langlands.Correspondence.HenniartSurjectivityTransfer
 import Langlands.Correspondence.HenniartConductorFinitenessProof
 import Langlands.Correspondence.HenniartArithmeticTwistProof
@@ -240,7 +241,8 @@ theorem weil_exponent_of_twist
       (localUnramifiedCharacter K z) _ σ₀))
     (weilPairClass K (rankOneWeilCharacterClass.{uK, uW} K e 1)) (c * (z * 1) ^ m) m at h'
   rw [← hσ] at h'
-  obtain ⟨A, P, hsurj, hA, hP⟩ := ha
+  obtain ⟨A, P, hsurj, hA, hP⟩ :=
+    (Numerical.hasArtinConductor_iff_exists_padicPresentation K σ a).mp ha
   have hX : weilPairClass K σ = WeilDeligneRepresentation.classOf
       (WeilDeligneRepresentation.zeroMonodromy (localNormCharacter K).toMonoidHom A) := by
     unfold weilPairClass

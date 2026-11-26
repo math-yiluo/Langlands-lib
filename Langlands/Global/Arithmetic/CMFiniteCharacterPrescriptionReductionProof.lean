@@ -1,3 +1,4 @@
+import Langlands.Global.CMConjugationGL
 import Langlands.Global.Arithmetic.CMFiniteCharacterPrescriptionReductionStatement
 
 noncomputable section
@@ -42,19 +43,6 @@ private theorem comp_trivialFinite
   rw [ideleClassEquiv_ofAdicCompletion]
   exact DFunLike.congr_fun hψ _
 
-private theorem finitePlaceComplexConj_involutive
-    {K : Type u} [Field K] [NumberField K] [IsCMField K] :
-    Function.Involutive (finitePlaceEquiv (IsCMField.complexConj K).toRingEquiv) := by
-  have h : (IsCMField.complexConj K).toRingEquiv.trans
-      (IsCMField.complexConj K).toRingEquiv = RingEquiv.refl K := by
-    ext x
-    exact IsCMField.complexConj_apply_apply K x
-  intro p
-  have hh := finitePlaceEquiv_trans (IsCMField.complexConj K).toRingEquiv
-    (IsCMField.complexConj K).toRingEquiv
-  rw [h, finitePlaceEquiv_refl] at hh
-  exact (Equiv.congr_fun hh p).symm
-
 /-- The finite-order prescription premise implies its CM conjugate-self-dual form. -/
 theorem cmFiniteCharacterPrescriptionOfFiniteOrder :
     CMFiniteCharacterPrescriptionOfFiniteOrderStatement.{u} := by
@@ -94,7 +82,7 @@ theorem cmFiniteCharacterPrescriptionOfFiniteOrder :
     have h := comp_trivialFinite (IsCMField.complexConj K).toRingEquiv
       ψ (c w.1) (hConjugate w)
     change ψc.finiteComponent (c (c w.1)) = 1 at h
-    have hc : c (c w.1) = w.1 := finitePlaceComplexConj_involutive w.1
+    have hc : c (c w.1) = w.1 := CMConjugation.finitePlaceComplexConj_involutive w.1
     rwa [hc] at h
   have hψcinf : ψc.HasPrescribedInfinityComponent 1 :=
     comp_trivialInfinity (IsCMField.complexConj K).toRingEquiv ψ hψinf

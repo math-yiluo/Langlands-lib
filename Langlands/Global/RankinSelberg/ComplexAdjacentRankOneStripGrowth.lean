@@ -33,7 +33,8 @@ local notation "Mat" => Matrix (Fin 1) (Fin 1) ℂ
 local notation "Vec" => Fin 1 → ℂ
 local notation "Q" => LeftUnipotentQuotient 0 ℂ
 
-private theorem unfoldedKernel_eq_prod_for_character (d e : ComplexCharacterData)
+/-- The adjacent unfolded kernel separates when the second coefficient is a character. -/
+theorem unfoldedKernel_eq_prod_for_character (d e : ComplexCharacterData)
     (Φ : Mat → ℂ) (φ : Vec → ℂ) (W V : G → ℂ) (C : ℂ)
     (hV : ∀ g, V g = C * (e.character (determinant g) : ℂ)) (s : ℂ) (p : G × Q) :
     unfoldedKernel d 0 s Φ φ W V p =
@@ -51,7 +52,8 @@ private theorem unfoldedKernel_eq_prod_for_character (d e : ComplexCharacterData
       normPower s (determinant p.1) * _
   ring
 
-private theorem pairFactor_two_one (c d e : ComplexCharacterData) :
+/-- The pair factor of a two-character list with a singleton splits over the two characters. -/
+theorem pairFactor_two_one (c d e : ComplexCharacterData) :
     complexPairLFactor [c, d] [e] =
       (complexPairLFactor [c] [e]).mul (complexPairLFactor [d] [e]) := by
   simp only [complexPairLFactor, complexPairBlocks, List.flatMap_cons, List.flatMap_nil,

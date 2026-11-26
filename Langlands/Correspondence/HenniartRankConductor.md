@@ -36,7 +36,9 @@ is the epsilon factor of `b₀ ⊗ 1` and of `π₀ × 1` (`candidate_pairEpsilo
   pair epsilon value of the bottom-field data `(A, B)` is the value of `A ⊗ B ≅ A`
   (`B` is the restriction of the trivial character: `tensorCharacterLineEquiv`,
   `twistOneEquiv`), a zero-monodromy pair, so it is `conditionalDeligneValue` of the
-  class of `A`. The Artin presentation of `σ` transports to the restriction of `A`
+  class of `A`. The Artin presentation of `σ`, a p-adic finite inertia presentation
+  given by `Numerical.hasArtinConductor_iff_exists_padicPresentation`, transports to
+  the restriction of `A`
   along an equivalence with the same conductor (`exists_presentation_of_equiv`, from
   `artinConductorOfQuotient_equiv`). `hSC` then gives the value `D q^(-(a + n(ψ₁) r) s)`,
   where `n(ψ₁) = n(ψ)` for the bottom-field character `ψ₁` (`additiveConductor_base_eq`,

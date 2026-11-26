@@ -1,4 +1,4 @@
-import Langlands.Analysis.SeveralComplex.Hartogs.TaylorCoefficients
+import Langlands.Analysis.SeveralComplex.Hartogs.Basic
 import Langlands.Analysis.SeveralComplex.HolomorphicCoefficientDecay
 import Mathlib.Analysis.Complex.Convex
 import Mathlib.Analysis.Complex.LocallyUniformLimit
@@ -55,25 +55,21 @@ private theorem exists_series_norm_bound {c : ℕ → ℂ → ℂ} {A : ℝ}
     exact mul_le_mul (hA n z (closedBall_subset_closedBall (by norm_num : (3 / 2 : ℝ) ≤ 2) hz))
       hs' (by positivity) hA₀
 
-/-- Holomorphic right and left half-plane functions of two variables at parameter `1`
-have a common entire continuation if their slices near parameter `0` do.
-Both half-planes are uniform on the parameter disk of radius `3`. -/
-def CompactParameterEntireContinuationStatement : Prop :=
-  ∀ (F G : ℂ × ℂ → ℂ) (σ τ : ℝ),
+/-- A right half-plane family with entire spectral slices near parameter `0` has a
+joint holomorphic continuation on the parameter disk of radius `3 / 2` times `ℂ`. -/
+def CompactParameterJointEntireContinuationStatement : Prop :=
+  ∀ (F : ℂ × ℂ → ℂ) (σ : ℝ),
     DifferentiableOn ℂ F (ball 0 3 ×ˢ {s : ℂ | σ < s.re}) →
-    DifferentiableOn ℂ G (ball 0 3 ×ˢ {s : ℂ | s.re < τ}) →
     (∃ δ : ℝ, 0 < δ ∧ ∀ z ∈ ball 0 δ, ∃ N : ℂ → ℂ, Differentiable ℂ N ∧
-      EqOn N (fun s => F (z, s)) {s : ℂ | σ < s.re} ∧
-      EqOn N (fun s => G (z, s)) {s : ℂ | s.re < τ}) →
-    ∃ N : ℂ → ℂ, Differentiable ℂ N ∧
-      EqOn N (fun s => F (1, s)) {s : ℂ | σ < s.re} ∧
-      EqOn N (fun s => G (1, s)) {s : ℂ | s.re < τ}
+      EqOn N (fun s => F (z, s)) {s : ℂ | σ < s.re}) →
+    ∃ N : ℂ × ℂ → ℂ, DifferentiableOn ℂ N (ball 0 (3 / 2) ×ˢ univ) ∧
+      EqOn N F (ball 0 (3 / 2) ×ˢ {s : ℂ | σ < s.re})
 
 set_option maxHeartbeats 700000 in
-theorem compactParameterEntireContinuation : CompactParameterEntireContinuationStatement := by
-  intro F G σ τ hF hG ⟨δ, hδ, hInit⟩
+theorem compactParameterJointEntireContinuation :
+    CompactParameterJointEntireContinuationStatement := by
+  intro F σ hF ⟨δ, hδ, hInit⟩
   let rightHalf : Set ℂ := {s : ℂ | σ < s.re}
-  let leftHalf : Set ℂ := {s : ℂ | s.re < τ}
   let P : Set ℂ := ball 0 3
   let Q : Set ℂ := ball 0 (3 / 2)
   let s₀ : ℂ := ((σ + 2 : ℝ) : ℂ)
@@ -104,7 +100,7 @@ theorem compactParameterEntireContinuation : CompactParameterEntireContinuationS
     let e := min δ 1
     refine ⟨e, lt_min hδ one_pos, fun z hz b hb => ?_⟩
     have hz₃ : z ∈ P := ball_subset_ball ((min_le_right _ _).trans (by norm_num)) hz
-    obtain ⟨N, hN, hNplus, _⟩ := hInit z (ball_subset_ball (min_le_left _ _) hz)
+    obtain ⟨N, hN, hNplus⟩ := hInit z (ball_subset_ball (min_le_left _ _) hz)
     let T : ℝ := 2 / b
     have hT : 0 < T := by positivity
     obtain ⟨M, hM⟩ := (isCompact_sphere s₀ T).exists_bound_of_continuousOn hN.continuous.continuousOn
@@ -146,7 +142,40 @@ theorem compactParameterEntireContinuation : CompactParameterEntireContinuationS
       ((hFs z hzP).analyticOnNhd hPlus) ((convex_halfSpace_re_gt σ).isPreconnected) hs₀
     filter_upwards [ball_mem_nhds s₀ (show (0 : ℝ) < 2 by norm_num)] with s hs
     exact (hasSum_taylorCoeff one_pos (by norm_num : (1 : ℝ) < 2) ((hFs z hzP).mono hsBall) hs).tsum_eq
-  have hNG (s : ℂ) (hs : s ∈ leftHalf) : EqOn (fun z => N z s) (fun z => G (z, s)) Q := by
+  exact ⟨fun p => N p.1 p.2,
+    differentiableOn_prod_of_separately isOpen_ball isOpen_univ
+      (fun s _ => hNz s) (fun z hz => (hNs z hz).differentiableOn),
+    fun p hp => hNF p.1 hp.1 hp.2⟩
+
+/-- Holomorphic right and left half-plane functions of two variables at parameter `1`
+have a common entire continuation if their slices near parameter `0` do.
+Both half-planes are uniform on the parameter disk of radius `3`. -/
+def CompactParameterEntireContinuationStatement : Prop :=
+  ∀ (F G : ℂ × ℂ → ℂ) (σ τ : ℝ),
+    DifferentiableOn ℂ F (ball 0 3 ×ˢ {s : ℂ | σ < s.re}) →
+    DifferentiableOn ℂ G (ball 0 3 ×ˢ {s : ℂ | s.re < τ}) →
+    (∃ δ : ℝ, 0 < δ ∧ ∀ z ∈ ball 0 δ, ∃ N : ℂ → ℂ, Differentiable ℂ N ∧
+      EqOn N (fun s => F (z, s)) {s : ℂ | σ < s.re} ∧
+      EqOn N (fun s => G (z, s)) {s : ℂ | s.re < τ}) →
+    ∃ N : ℂ → ℂ, Differentiable ℂ N ∧
+      EqOn N (fun s => F (1, s)) {s : ℂ | σ < s.re} ∧
+      EqOn N (fun s => G (1, s)) {s : ℂ | s.re < τ}
+
+theorem compactParameterEntireContinuation : CompactParameterEntireContinuationStatement := by
+  intro F G σ τ hF hG ⟨δ, hδ, hInit⟩
+  obtain ⟨N, hN, hNF⟩ := compactParameterJointEntireContinuation F σ hF
+    ⟨δ, hδ, fun z hz => by
+      obtain ⟨N, hN, hNF, _⟩ := hInit z hz
+      exact ⟨N, hN, hNF⟩⟩
+  let Q : Set ℂ := ball 0 (3 / 2)
+  have hNs (z : ℂ) (hz : z ∈ Q) : Differentiable ℂ (fun s => N (z, s)) :=
+    differentiableOn_univ.mp
+      (hN.comp ((differentiable_const z).prodMk differentiable_id).differentiableOn
+        (fun _ hs => ⟨hz, hs⟩))
+  have hNz (s : ℂ) : DifferentiableOn ℂ (fun z => N (z, s)) Q :=
+    hN.comp (differentiable_id.prodMk (differentiable_const s)).differentiableOn
+      (fun _ hz => ⟨hz, mem_univ _⟩)
+  have hNG (s : ℂ) (hs : s.re < τ) : EqOn (fun z => N (z, s)) (fun z => G (z, s)) Q := by
     have hGz : DifferentiableOn ℂ (fun z => G (z, s)) Q :=
       hG.comp (differentiable_id.prodMk (differentiable_const s)).differentiableOn
         (fun _ hz => ⟨ball_subset_ball (by norm_num : (3 / 2 : ℝ) ≤ 3) hz, hs⟩)
@@ -156,15 +185,18 @@ theorem compactParameterEntireContinuation : CompactParameterEntireContinuationS
     filter_upwards [ball_mem_nhds (0 : ℂ) hδ,
       ball_mem_nhds (0 : ℂ) (show (0 : ℝ) < 3 / 2 by norm_num)] with z hzδ hz
     obtain ⟨P₀, hP₀, hP₀plus, hP₀minus⟩ := hInit z hzδ
-    have heq : N z = P₀ := by
+    have heq : (fun s => N (z, s)) = P₀ := by
+      let s₀ : ℂ := ((σ + 2 : ℝ) : ℂ)
       apply AnalyticOnNhd.eq_of_eventuallyEq
         (fun w _ => (hNs z hz).analyticAt w)
         (fun w _ => hP₀.analyticAt w) (z₀ := s₀)
-      filter_upwards [hPlus.mem_nhds hs₀] with w hw
-      exact (hNF z hz hw).trans (hP₀plus hw).symm
+      filter_upwards [ball_mem_nhds s₀ (show (0 : ℝ) < 2 by norm_num)] with w hw
+      have hw' := halfPlane_ball_subset σ hw
+      exact (hNF (show (z, w) ∈ Q ×ˢ {s : ℂ | σ < s.re} from ⟨hz, hw'⟩)).trans
+        (hP₀plus hw').symm
     exact (congrFun heq s).trans (hP₀minus hs)
   have h1 : (1 : ℂ) ∈ Q := by
     exact mem_ball_zero_iff.2 (by norm_num)
-  exact ⟨N 1, hNs 1 h1, hNF 1 h1, fun s hs => hNG s hs h1⟩
+  exact ⟨fun s => N (1, s), hNs 1 h1, fun _ hs => hNF ⟨h1, hs⟩, fun s hs => hNG s hs h1⟩
 
 end Langlands.Analysis.SeveralComplex

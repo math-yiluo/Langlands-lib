@@ -69,7 +69,9 @@ private theorem map_real_mul (ν : AdditiveHaarMeasure ℝ) (a : ℝ) (ha : a �
     ← Real.norm_eq_abs, ← coe_nnnorm, ← NNReal.coe_inv, ENNReal.ofReal_coe_nnreal]
   rfl
 
-private theorem map_scale_realUpperEntries
+/-- Scaling each strictly upper entry multiplies its Haar pushforward by the product of
+the reciprocal absolute values of the entry scales. -/
+theorem map_scale_realUpperEntries
     (ν : AdditiveHaarMeasure ℝ) [SigmaFinite ν.measure] (a : J → ℝˣ) :
     (upperEntryProductMeasure ν n).map (fun (X : J → ℝ) ij => (a ij : ℝ) * X ij) =
       (∏ ij : J, ‖(a ij : ℝ)‖₊)⁻¹ • upperEntryProductMeasure ν n := by

@@ -39,3 +39,5 @@ This is an internal derivation using the trace-pairing method of
 Henniart–Lemaire (2011), I.2.7, Lemma 1, printed page 19. The upper
 triangular directions are chosen for the compact averaging argument of
 Harish-Chandra (1981), §§3–4.
+
+The form `adjointTracePairing` pairs matrices by the field trace of their product trace. `adjointTracePairing_preserved` gives its invariance under twisted conjugation.

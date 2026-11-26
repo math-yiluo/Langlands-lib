@@ -1,0 +1,13 @@
+# Supercuspidality and the stabilizer count from a self-pair comparison
+
+`cuspidalSelfPairDescentProfile` derives supercuspidality and the norm-twist stabilizer count for an irreducible square-integrable action `π` of `GL_n(F)` with `n > 0` over a p-adic field `F` with its canonical topology. The carrier of `π` has an independent universe. The lower certificates use a chosen nontrivial unitary additive character of `F` and its self-dual Haar measure. A supplied finite set enumerates exactly the characters of `Fˣ` that are trivial on the norms from `E`, each with open kernel.
+
+For each character `κ` in that set, `R κ` is the certified pair denominator for `π` and its smooth dual twisted by `κ ∘ det`. The input polynomial `Q` has root multiplicity `s` at `1` and is nonzero at `q_F^f`. The comparison is `Q.comp (X^f) = ∏ κ, R κ` with `f > 0`.
+
+Evaluate the identity at `q_F`. The nonzero upper value makes every lower value nonzero, including the polynomial for the trivial character. The square-integrable self-pair criterion then forces the lower representation to be supercuspidal. The same-field supercuspidal formula makes each lower order at `1` the indicator of the stabilizer test. The finite subtype of contributing characters is equivalent to the actual `normTwistStabilizer`. The order of the product is the sum of the lower orders, and composition by `X^f` preserves the order at `1`, giving `Nat.card (normTwistStabilizer E π) = s`.
+
+This is the self-pair argument underlying the supercuspidal case of Henniart–Lemaire, II.4.12, Remarque, using II.4.6(4) and the local pair formulas of II.3.5. The proof takes the cross-field polynomial identity as an input and proves its local consequences.
+
+The source is G. Henniart and B. Lemaire, *Changement de base et induction automorphe pour GL_n en caractéristique non nulle*, Mémoires de la SMF 124 (2011), II.3.5(i)–(iii), II.4.6(4), and II.4.12, printed pp. 80–81, 89 and 96–97 (PDF pp. 88–89, 97 and 104–105). Source `provided-a0a5445aba86b871bcd83f08813de3234fddb463ff9bb3c9dfd60d2d2fcdae61`, SHA-256 `7af2940c75a75937c1bf9096eb329931d4245cf592e3572db0ff93ec6e76c5e0`. These passages give the same-field factor formulas and the comparison used in the self-pair method.
+
+`unitaryCuspidalProduct_selfPair` in `UnitaryCuspidalProductSelfPair` gives the corresponding upper profile for a nonempty normalized block product of pairwise inequivalent unitarizable supercuspidals of the same positive rank over a p-adic field. Its unitarizability premise is used for the tempered product formula and for the absolute values of the pair Euler parameters. In the orbit argument, a common real determinant twist gives the unitarizable factors before this profile is applied.

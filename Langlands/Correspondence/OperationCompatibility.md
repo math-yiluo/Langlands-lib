@@ -163,3 +163,5 @@ automorphic relations come from the modules `AutomorphicRelations` and
 The module compiles without errors or warnings,
 together with `Domains` and `SupercuspidalRelations`. Every condition returns
 `Prop`.
+
+`reciprocityHom_surjective` gives a Weil-group lift of each field unit for the supplied reciprocity candidate.

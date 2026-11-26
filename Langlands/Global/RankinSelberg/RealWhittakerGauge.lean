@@ -202,13 +202,15 @@ theorem rootSize_nonneg (g : Langlands.GeneralLinear (r + 1) ℝ) (i : Fin r) :
 
 /-- The simple-root list estimate shares its constant across a family with common bounds
 for the right derivatives. -/
-theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.GeneralLinear (r + 1) ℝ → ℂ)
-    (hreg : ∀ j Xs, iteratedRightDerivative r Xs (W j) ∈ regularFunctions r a) {N : ℕ}
+theorem exists_weighted_bound_list_family {ι : Type*} {a : ℝˣ}
+    (W : ι → Langlands.GeneralLinear (r + 1) ℝ → ℂ)
+    (hreg : ∀ j Xs, iteratedRightDerivative r Xs (W j) ∈ regularFunctions r a)
+    {weight : Langlands.GeneralLinear (r + 1) ℝ → ℝ} (hweight : ∀ g, 0 ≤ weight g)
     (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
-      ‖iteratedRightDerivative r Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N)
+      ‖iteratedRightDerivative r Xs (W j) g‖ ≤ C * weight g)
     (is : List (Fin r)) :
     ∀ Ys, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g, ‖iteratedRightDerivative r Ys (W j) g‖ ≤
-      C * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := by
+      C * (is.map (rootSize g)).prod * weight g := by
   induction is with
   | nil =>
     intro Ys
@@ -227,8 +229,7 @@ theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.
       List.prod_nonneg fun x hx => by
         obtain ⟨j, -, rfl⟩ := List.mem_map.mp hx
         exact rootSize_nonneg g j
-    have hH : 0 ≤ realMatrixHeight g ^ N :=
-      pow_nonneg (RealPlaceRestriction.realMatrixHeight_nonneg g) N
+    have hH : 0 ≤ weight g := hweight g
     have key := rightDerivative_conjRoot (hreg j Ys) g i
     have h1 : ‖iteratedRightDerivative r Ys (W j) g‖ * (2 * π * |(a : ℝ)|) =
         ‖rightDerivative (matrixModel ℝ (r + 1)) (conjRoot g i)
@@ -240,7 +241,7 @@ theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.
     have h2 : ‖rightDerivative (matrixModel ℝ (r + 1)) (conjRoot g i)
           (iteratedRightDerivative r Ys (W j)) g‖ ≤
         rootSize g i * ((∑ pq, C pq) * (is.map (rootSize g)).prod *
-          realMatrixHeight g ^ N) := by
+          weight g) := by
       refine (norm_rightDerivative_le _ _ g).trans ?_
       rw [rootSize, Finset.sum_mul]
       refine Finset.sum_le_sum fun p _ => ?_
@@ -251,8 +252,8 @@ theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.
         ‖rightDerivative (matrixModel ℝ (r + 1)) (Matrix.single p q 1)
             (iteratedRightDerivative r Ys (W j)) g‖ =
             ‖iteratedRightDerivative r (Matrix.single p q 1 :: Ys) (W j) g‖ := rfl
-        _ ≤ C (p, q) * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := hC (p, q) j g
-        _ ≤ (∑ pq, C pq) * (is.map (rootSize g)).prod * realMatrixHeight g ^ N := by
+        _ ≤ C (p, q) * (is.map (rootSize g)).prod * weight g := hC (p, q) j g
+        _ ≤ (∑ pq, C pq) * (is.map (rootSize g)).prod * weight g := by
           gcongr
           exact Finset.single_le_sum (f := C) (fun pq _ => hC0 pq) (Finset.mem_univ (p, q))
     rw [List.map_cons, List.prod_cons]
@@ -262,8 +263,18 @@ theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.
           ‖iteratedRightDerivative r Ys (W j) g‖ * (2 * π * |(a : ℝ)|) / (2 * π * |(a : ℝ)|) := by
         field_simp
       _ ≤ rootSize g i * ((∑ pq, C pq) * (is.map (rootSize g)).prod *
-          realMatrixHeight g ^ N) / (2 * π * |(a : ℝ)|) := by gcongr
+          weight g) / (2 * π * |(a : ℝ)|) := by gcongr
       _ = _ := by ring
+
+theorem exists_bound_list_family {ι : Type*} {a : ℝˣ} (W : ι → Langlands.GeneralLinear (r + 1) ℝ → ℂ)
+    (hreg : ∀ j Xs, iteratedRightDerivative r Xs (W j) ∈ regularFunctions r a) {N : ℕ}
+    (hN : ∀ Xs, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g,
+      ‖iteratedRightDerivative r Xs (W j) g‖ ≤ C * realMatrixHeight g ^ N)
+    (is : List (Fin r)) :
+    ∀ Ys, ∃ C : ℝ, 0 ≤ C ∧ ∀ j g, ‖iteratedRightDerivative r Ys (W j) g‖ ≤
+      C * (is.map (rootSize g)).prod * realMatrixHeight g ^ N :=
+  exists_weighted_bound_list_family W hreg
+    (fun g => pow_nonneg (RealPlaceRestriction.realMatrixHeight_nonneg g) N) hN is
 
 /-- Each simple root in the list contributes a factor `rootSize g i`, at the cost of one more
 right derivative, which keeps the common growth exponent. -/

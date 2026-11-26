@@ -34,7 +34,8 @@ private theorem not_mem_source_exceptional (a : L ≃+* K) (E : Finset (FinitePl
   simpa only [transportExceptional, Finset.mem_map_equiv, Equiv.symm_symm] using hv
 
 omit [NumberField K] [NumberField L] in
-private theorem arithmeticPlace_inverse (e : K ≃+* L) (v : FinitePlace K) :
+/-- Pullback of finite places along the inverse field isomorphism. -/
+theorem arithmeticPlace_inverse (e : K ≃+* L) (v : FinitePlace K) :
     finitePlaceEquiv e.symm v = (finitePlaceEquiv e).symm v := by
   apply (finitePlaceEquiv e).injective
   rw [Equiv.apply_symm_apply, ← Equiv.trans_apply, ← finitePlaceEquiv_trans,

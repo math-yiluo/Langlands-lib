@@ -42,11 +42,13 @@ local notation "Vec" => Fin (r + 1) → ℂ
 local notation "gap" => Nat.lt_succ_self r
 local notation "columnProd" => ComplexGodementColumnProduct.columnProduct
 
-private def godementTest (D : ComplexQuotientMeasureData r) (a : ℂˣ)
+/-- The continued Godement coefficient at zero additional shift. -/
+def godementTest (D : ComplexQuotientMeasureData r) (a : ℂˣ)
     (d : ComplexCharacterData) (Φ : 𝓢(Rect, ℂ)) (U : G → ℂ) (g : G') : ℂ :=
   continuedValue D.groupHaar (complexSelfDualMeasure a) d a (operatorToEntry Φ) U g 0
 
-private theorem godementTest_sum {l : ℕ} (D : ComplexQuotientMeasureData r) (a : ℂˣ)
+/-- The continued Godement coefficient is additive on finite sums of rectangular tests. -/
+theorem godementTest_sum {l : ℕ} (D : ComplexQuotientMeasureData r) (a : ℂˣ)
     (d : ComplexCharacterData) (Φ : Fin l → 𝓢(Rect, ℂ)) {ds : List ComplexCharacterData}
     (U : complexWhittakerModel r ds (-a)) (g : G') :
     godementTest D a d (∑ j, Φ j) U.val g = ∑ j, godementTest D a d (Φ j) U.val g := by
@@ -85,7 +87,9 @@ private theorem gaussianTest_columnSplit (D : ComplexQuotientMeasureData r)
   rw [hsplit]
   exact godementTest_sum D a d _ U g
 
-private theorem splitTest_rightIntegrable (D : ComplexQuotientMeasureData r) [SFinite D.measure]
+/-- The ordinary kernel of a split continued Godement coefficient is integrable on a right
+half-plane. -/
+theorem splitTest_rightIntegrable (D : ComplexQuotientMeasureData r) [SFinite D.measure]
     (a : ℂˣ) (d : ComplexCharacterData) {ds es : List ComplexCharacterData}
     (hds : ds.length = r + 1) (hes : es.length = r + 1)
     (Φ : 𝓢(Mat, ℂ)) (φ : 𝓢(Vec, ℂ))

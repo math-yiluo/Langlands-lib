@@ -45,7 +45,8 @@ private theorem cons_mem_chamber (q : Q) (hq : q ∈ chamber r) (x : ℂ) (hx : 
   · simpa only [Fin.castSucc_zero, Fin.cons_zero, Fin.cons_succ] using hx
   · simpa only [Fin.castSucc_succ, Fin.cons_succ] using hq j
 
-private theorem canonicalChamberRemoval (A : P → Prop)
+/-- Continuation along parameter lines extends a strong chamber result to all inducing exponents. -/
+theorem canonicalChamberRemoval (A : P → Prop)
     (reflection : ∀ p : ℂ → P, Differentiable ℂ p →
       (∃ δ : ℝ, 0 < δ ∧ ∀ z ∈ ball 0 δ, A (p z)) → A (p 1))
     (hStrong : ∀ q : Q, ∃ M : ℕ, ∀ p : P, smallerExponents p = q → p ∈ chamber m →
@@ -132,7 +133,8 @@ theorem complexUnequalCanonicalGrowthFromChamber (h : t < m) (μ : AdditiveHaarM
     ∀ p : P, HasUnequalCanonicalPairGrowth h μ a D l p (characterList k e) V :=
   canonicalChamberRemoval _ (complexUnequalCanonicalGrowthReflection h μ a D l k e V hV) hStrong
 
-private theorem quotient_sFinite (D : ComplexQuotientMeasureData r) : SFinite D.measure := by
+/-- A compatible complex unipotent quotient measure is s-finite. -/
+theorem quotient_sFinite (D : ComplexQuotientMeasureData r) : SFinite D.measure := by
   let e := Langlands.RankinSelberg.isOpenEmbedding_generalLinear_val (K := ℂ) m
   let : SecondCountableTopology H := e.secondCountableTopology
   let : LocallyCompactSpace H := e.locallyCompactSpace

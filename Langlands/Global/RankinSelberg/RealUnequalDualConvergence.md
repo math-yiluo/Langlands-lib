@@ -54,7 +54,8 @@ All declarations are in the namespace
 - `integrable_exp_comp_alphaQ`: if integration against a measure on the quotient, in the toral
   coordinate `alphaQ`, is integration against `κ exp(L x) dx` (the output of
   `RealIwasawaMeasure.exists_lintegral_alphaQ`), and `L y + E(y) ≤ −∑ |y_j|` with `E` continuous,
-  then `exp(E ∘ alphaQ)` is integrable.
+  then `exp(E ∘ alphaQ)` is integrable. `integrable_exp_comp_alphaQ_of_le` allows any
+  strictly positive coefficient on the sum of absolute values.
 
 ## The main theorem
 

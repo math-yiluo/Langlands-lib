@@ -1,0 +1,7 @@
+# Products and grouping of finite Euler data in a functional equation
+
+`FiniteEulerData.product` takes a finite family of Euler data on one set of places and multiplies the local factors and partial functions. A common right half-plane supports the product of Euler products. On the exceptional set the product of the completed equations follows by commuting the two finite products and multiplying the equalities of meromorphic germs.
+
+`FiniteEquationGroupingStatement` groups the local factors along a map with finite fibres. The exceptional set upstairs is the full preimage of the exceptional set downstairs. The proof regroups the two outside-set Euler products by the fibres of the restricted map. Inside the exceptional set the fibres are disjoint and cover the upstairs set, so all three completed factors agree with the original products. Nonzero meromorphic germs are preserved by finite products. `localFactorsProduct_gamma` identifies the resulting gamma factor with the product of its constituent gamma factors.
+
+This internal operation underlies the combination of pair functional equations over the places above a base place in Henniart–Herb (1995), §8.16, printed pp. 180–183. The functional equations and genuine local-factor certificates enter as inputs. The registered source is `henniart-herb-1995-induction`, SHA-256 `5e753525048b08007d9605baa9019c8e792512887305ec2e39ae9c3bee6a963e`.

@@ -4,6 +4,9 @@ import Langlands.Global.RankinSelberg.ComplexRankZeroLocal
 import Langlands.Representation.GodementJacquet.ComplexPrincipalSeriesCompactEquation
 import Langlands.Global.RankinSelberg.ComplexCompactMatrixGrowth
 import Langlands.Global.RankinSelberg.ComplexLocalNormalizedGrowth
+import Langlands.Global.RankinSelberg.ComplexSquareZetaPolynomialAverage
+import Langlands.Global.RankinSelberg.ComplexGodementPaddedRestriction
+import Langlands.Analysis.SchwartzMatrixNorm
 
 /-! # The normalized matrix factor in the complex Jacquet comparisons -/
 
@@ -311,5 +314,77 @@ theorem complexLocalMatrixGrowth : ComplexLocalMatrixGrowthStatement (r := r) :=
   obtain ⟨h₁, h₂⟩ := hright s ((le_max_left _ _).trans_lt hs)
   obtain ⟨_, _, h₃, h₄⟩ := hτ s ((le_max_right _ _).trans_lt hs)
   exact ⟨h₁.trans (congrArg (_ * ·) h₃.symm), h₂.trans (congrArg (_ * ·) h₄.symm)⟩
+
+open ComplexSquareZeta (zetaKernel squarePolynomialGaussian leftAverageInv leftAverageInv_squarePolynomialGaussian
+  complexSquareZetaCoefficientAverage complexSquareZetaPolynomialGaussian)
+open ComplexGodement (exists_height_bound_standard)
+open ComplexGodementGaussianPolynomial (Coordinates)
+open ComplexGodementPaddedRestriction (normPower_determinant)
+open Langlands.Analysis.SchwartzMatrixNorm (OperatorSchwartz)
+
+/-- The exact determinant-twisted matrix integral for a standard square polynomial Gaussian
+has polynomial normalization by the singleton pair factor. -/
+def ComplexLocalMatrixPolynomialStatement : Prop :=
+  ∀ (μ : Measure G) [μ.IsHaarMeasure] (ν : Measure Kc) [ν.IsHaarMeasure] [IsFiniteMeasure ν]
+    (d : ComplexCharacterData) (e : Fin n → ComplexCharacterData)
+    (f : G → ℂ), f ∈ complexStandardModule n (List.ofFn e) →
+    ∀ (w : Kc → ℂ), Continuous w →
+    ∀ (Φ : OperatorSchwartz n n) (p : MvPolynomial (Coordinates n n) ℂ),
+      (Φ : M → ℂ) = squarePolynomialGaussian p →
+      let b := complexCompactCoefficient ν w f
+      ∃ (σ : ℝ) (P : Polynomial ℂ), P.natDegree ≤ p.totalDegree ∧
+        ∀ s : ℂ, σ < s.re → Integrable (complexJacquetMatrixIntegrand d b Φ s) μ ∧
+          P.eval s = (complexPairLFactor [d] (List.ofFn e)).denominator s *
+            ∫ g, complexJacquetMatrixIntegrand d b Φ s g ∂μ
+
+open scoped Matrix.Norms.Operator in
+set_option maxHeartbeats 950000 in
+theorem complexLocalMatrixPolynomial : ComplexLocalMatrixPolynomialStatement (r := r) := by
+  intro μ hμ ν hν hνf d e f hf w hw Φ p hΦ b
+  let e' := fun i => (e i).mul d
+  let f' := complexDeterminantTwist d f
+  let w' (k : Kc) := w k * (d.character ((determinant k.val)⁻¹) : ℂ)
+  have hw' : Continuous w' := continuous_twistedCompactWeight d w hw
+  have hf' : f' ∈ complexStandardModule n (List.ofFn e') := by
+    change complexDeterminantTwist d f ∈ complexStandardModule n (List.ofFn (fun i => (e i).mul d))
+    rw [show (fun i : Fin n => (e i).mul d) = (fun x : ComplexCharacterData => x.mul d) ∘ e from rfl,
+      ← List.map_ofFn]
+    exact ComplexDeterminantTwist.detCharacter_mul_mem_principalSeries d.character
+      (fun i z => ComplexDeterminantTwist.complexPositionCharacter_map_mul d (List.ofFn e) i
+        (by simpa only [List.length_ofFn] using i.isLt) z) hf
+  let Ψ := leftAverageInv ν id continuous_id w' hw' Φ
+  obtain ⟨p', hp'D, hp'⟩ := leftAverageInv_squarePolynomialGaussian ν id continuous_id w' hw' Φ p hΦ
+  obtain ⟨τ, P, hPdeg, hP⟩ := complexSquareZetaPolynomialGaussian n (Nat.succ_pos r) μ ν e' Ψ p' hp' f' hf'
+  obtain ⟨N, hN⟩ := exists_height_bound_standard (Nat.succ_pos r) (List.ofFn e') List.length_ofFn
+  obtain ⟨C, hC, hBound⟩ := hN f' hf'
+  have hPair : complexLFactor (List.ofFn e') = complexPairLFactor [d] (List.ofFn e) := by
+    apply ReciprocalEntire.ext
+    funext s
+    rw [complexPairLFactor, pairBlocks_singleton_left]
+    simp only [denominator_complexLFactor, List.map_ofFn, List.prod_ofFn, Function.comp_apply,
+      ComplexCharacterData.lFactor, ComplexCharacterData.mul, e', add_comm d.weight, add_comm d.exponent]
+  refine ⟨max τ ((n : ℝ) + N), P, hPdeg.trans hp'D, fun s hs => ?_⟩
+  have hsT : (n : ℝ) + N ≤ (s + ((n : ℂ) - 1) / 2).re := by
+    have h := (le_max_right τ ((n : ℝ) + N)).trans_lt hs
+    have hr : (0 : ℝ) ≤ r / 2 := by positivity
+    simp only [add_sub_cancel_right, Complex.add_re, Complex.div_ofNat_re,
+      Complex.natCast_re]
+    linarith
+  have hAvg := complexSquareZetaCoefficientAverage μ ν id continuous_id w' hw' Φ f'
+    hf'.1.continuous N C hC hBound s (by simpa only [Nat.cast_succ] using hsT)
+  have hK : complexJacquetMatrixIntegrand d b Φ s =
+      zetaKernel Φ (ComplexSquareZeta.compactCoefficient ν id w' f') s := by
+    funext g
+    have hb' := compactCoefficient_detTwist d ν w f g
+    change complexJacquetMatrixIntegrand d b Φ s g =
+      zetaKernel Φ (complexCompactCoefficient ν w' f') s g
+    rw [complexJacquetMatrixIntegrand, zetaKernel, hb', normPower_determinant]
+    simp only [Nat.cast_succ, add_sub_cancel_right]
+    change _ = _ * (_ * b g) * _
+    ring
+  rw [hK]
+  refine ⟨hAvg.1, ?_⟩
+  rw [hAvg.2, ← hPair]
+  exact (hP s ((le_max_left _ _).trans_lt hs)).2
 
 end Langlands.Global.RankinSelbergGlobal.ComplexJacquet

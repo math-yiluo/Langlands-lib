@@ -135,7 +135,8 @@ private def equalKernelPair (V : G → ℂ) (φ : 𝓢(Row, ℂ)) :
     apply Prod.ext <;> funext s x <;>
       simp [complexEqualIntegrand, ArchimedeanLocal.equalIntegrand, ArchimedeanLocal.dualFunction, mul_assoc]
 
-private theorem exists_smallerQuotientData : Nonempty (ComplexQuotientMeasureData r) := by
+/-- Compatible complex group and unipotent quotient measures exist at each positive rank. -/
+theorem exists_smallerQuotientData : Nonempty (ComplexQuotientMeasureData r) := by
   let U := GeneralLinear.upperUnipotent m ℂ
   let t := RankinSelberg.isOpenEmbedding_generalLinear_val (K := ℂ) m
   let : LocallyCompactSpace H := t.locallyCompactSpace

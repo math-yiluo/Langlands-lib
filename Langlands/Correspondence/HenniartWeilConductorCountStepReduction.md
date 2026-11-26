@@ -10,9 +10,10 @@ step in Corollaire 1.4.
 
 ## Implemented reduction
 
-- The Artin conductor is unique: use the isomorphism of two representatives of
-  the same class and `finiteInertiaConductorEquivalence` to compare their finite
-  presentation sums. Unramified twisting preserves the inertia representation
+- The Artin conductor is unique: `hasArtinConductor_iff_exists_padicPresentation`
+  gives p-adic finite inertia presentations witnessing the two conductors; use the
+  isomorphism of the two representatives of the same class and
+  `finiteInertiaConductorEquivalence` to compare their finite presentation sums. Unramified twisting preserves the inertia representation
   because the twist character is `1` there. Present the twist on the original
   finite Galois field and compare the descended Artin sums using that inertia
   equality. The two facts imply Swan uniqueness at a fixed rank on each

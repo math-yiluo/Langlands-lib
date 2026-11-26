@@ -25,3 +25,5 @@ cofinite assertion in `CuspidalArithmeticSpectralTransportStatement`.
 The proof is an internal consequence of the Library's arithmetic pullback,
 finite tensor reindexing and local spherical compatibility, with independent
 universes for the two number fields and the factor carriers.
+
+`arithmeticPlace_inverse` identifies pullback of a finite place along the inverse field isomorphism with the inverse equivalence on finite places.

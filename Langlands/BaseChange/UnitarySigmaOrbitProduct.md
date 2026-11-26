@@ -1,0 +1,5 @@
+# Temperedness of the unitary supercuspidal orbit product
+
+Over a characteristic-zero local field `E` the actual positive-length orbit product of a unitarizable irreducible supercuspidal representation is irreducible, unitarizable and tempered. The proof gives `E` its same-carrier `PadicField` presentation and pulls the seed back along the entrywise field automorphisms. These pullbacks preserve supercuspidality, irreducibility and unitarizability.
+
+Lift the carriers of the conjugates to the common universe needed by `bernsteinUnitaryProductIrreducibility` and `unitarizableSupercuspidalProduct_isTempered`. The actual normalized product is equivalent to the product of the lifted factors. The two induction theorems supply the three properties, and the equivalence transfers them to the actual orbit product. The same-carrier construction starts with the given topology, and equality of the topological data identifies the supplied and canonical inputs to the temperedness theorem. This is an internal consequence of the normalized product results for unitarizable supercuspidal blocks.

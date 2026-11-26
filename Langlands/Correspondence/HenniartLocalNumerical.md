@@ -81,11 +81,28 @@ They retain their original rank argument, including rank zero for
 | `weilTwistIrreducibleCount K Ω k s` | `Langlands.Henniart.Numerical.weilTwistIrreducibleCount F k s` |
 | `weilConductorCount K Ω k j` | `Langlands.Henniart.Numerical.weilConductorCount F k j` |
 
-The class and forget map specialize by unfolding.
+Every row specializes by unfolding of definitions, in the scheme of the
+Library's general Weil group: `Weil.Local.localResidueMap F` is
+`Weil.Local.SepClosed.localResidueMap` at `F.Carrier`,
+`AlgebraicClosure F.Carrier` and these instances, and the p-adic Weil group,
+degree map and inertia are built from it by the formulas of the general ones,
+so they unfold to them. The p-adic `Numerical.HasArtinConductor F σ a` is defined as
+`HasArtinConductor F.Carrier (AlgebraicClosure F.Carrier) σ a`. Its finite
+inertia presentations are therefore the general ones,
+`Ramification.Local.SepClosed.FiniteInertiaPresentation`, whose finite
+Galois subextensions carry the spectral norm over
+`LocalGalois.localNormedField F.Carrier`; the presentations
+`Ramification.Padic.FiniteInertiaPresentation` carry the spectral norm over
+`Padic p` and are different terms. Both compute the same relation, by
+`Numerical.hasArtinConductor_iff_exists_padicPresentation` in
+`Langlands.Correspondence.HenniartPadicArtinTransport`. The other p-adic
+declarations of the table keep the formulas of the general ones and unfold
+to them. The following examples check every row, and the two abbreviations
+of `Weil.Local.Parameters`, by `rfl`.
 
 ```lean
 import Langlands.Correspondence.HenniartLocalNumerical
-import Langlands.Correspondence.Domains
+import Langlands.Correspondence.HenniartRefinedStrata
 
 noncomputable section
 open Langlands Langlands.Henniart Langlands.Correspondence
@@ -98,6 +115,14 @@ local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topolo
 local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
 local instance : CharZero F.Carrier := Algebra.charZero_of_charZero (Padic p) F.Carrier
 
+example : Weil.Local.LocalWeilRepresentation.{uK, uW} F =
+    FiniteRepresentation.{0, uK, uW} ℂ
+      (Weil.Local.SepClosed.localWeilGroup F.Carrier (AlgebraicClosure F.Carrier)) := rfl
+
+example (n : ℕ) : Weil.Local.LocalContinuousIrreducibleWeilClasses.{uK, uW} F n =
+    FiniteRepresentation.ContinuousIrreducibleClasses.{uK, uW}
+      (Weil.Local.SepClosed.localWeilGroup F.Carrier (AlgebraicClosure F.Carrier)) n := rfl
+
 example (n : ℕ+) : IrreducibleWeilClass.{uK, uW} F n =
     LocalNumerical.IrreducibleWeilClass.{uK, uK, uW}
       F.Carrier (AlgebraicClosure F.Carrier) n := rfl
@@ -105,6 +130,38 @@ example (n : ℕ+) : IrreducibleWeilClass.{uK, uW} F n =
 example {n : ℕ+} (σ : IrreducibleWeilClass.{uK, uW} F n) :
     weilClassForget F σ =
       LocalNumerical.weilClassForget F.Carrier (AlgebraicClosure F.Carrier) σ := rfl
+
+example {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} F k.succPNat) (a : ℕ) :
+    Numerical.HasArtinConductor F σ a =
+      LocalNumerical.HasArtinConductor F.Carrier (AlgebraicClosure F.Carrier) σ a := rfl
+
+example (k : ℕ) (z : ℂˣ) : Numerical.weilUnramifiedTwist.{uK, uW} F k z =
+    LocalNumerical.weilUnramifiedTwist.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k z := rfl
+
+example (k a : ℕ) : Numerical.weilOrbitStratum.{uK, uW} F k a =
+    LocalNumerical.weilOrbitStratum.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k a := rfl
+
+example {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} F k.succPNat) (s : ℕ) :
+    Numerical.HasWeilSwan F σ s =
+      LocalNumerical.HasWeilSwan F.Carrier (AlgebraicClosure F.Carrier) σ s := rfl
+
+example {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} F k.succPNat) :
+    Numerical.weilTorsionNumber F σ =
+      LocalNumerical.weilTorsionNumber F.Carrier (AlgebraicClosure F.Carrier) σ := rfl
+
+example (k s f : ℕ) : Numerical.weilRefinedStratum.{uK, uW} F k s f =
+    LocalNumerical.weilRefinedStratum.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k s f := rfl
+
+example (k s : ℕ) : Numerical.weilTwistIrreducibleCount.{uK, uW} F k s =
+    LocalNumerical.weilTwistIrreducibleCount.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k s := rfl
+
+example (k j : ℕ) : Numerical.weilConductorCount.{uK, uW} F k j =
+    LocalNumerical.weilConductorCount.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k j := rfl
 ```
 
 ## Laurent-series specialization

@@ -135,18 +135,19 @@ theorem surjectiveIntertwiner_ascendingExpand (n : ℕ) (ds : List RealBlock)
     (hr : realRank ds = n) : RealSurjectiveIntertwinerExists n (ascendingExpand ds) ds := by
   simpa using surjectiveIntertwiner_ascendingExpand_aux n ds [] [] (by simpa using hr)
 
-private theorem isUniform_pullback {r : ℕ} {ds es : List RealBlock} {a : ℝˣ}
+/-- Precomposition with a standard-module intertwiner preserves an exact Whittaker
+coefficient map. -/
+theorem isRealWhittakerIntertwiner_pullback {r : ℕ} {ds es : List RealBlock} {a : ℝˣ}
     {T : Automorphic.realStandardKFinite (r + 1) es →ₗ[ℂ]
       Automorphic.realStandardKFinite (r + 1) ds}
     (hT : IsRealStandardIntertwiner (r + 1) (realStandardRep (r + 1) ds)
       (realStandardLie (r + 1) ds) es T)
     {B : Automorphic.realStandardKFinite (r + 1) ds →ₗ[ℂ]
       (Langlands.GeneralLinear (r + 1) ℝ → ℂ)}
-    (hB : IsRealUniformWhittakerIntertwiner r ds a B) :
-    IsRealUniformWhittakerIntertwiner r es a (B.comp T) := by
-  obtain ⟨⟨hN, hSmooth, hGrowth, hK, hLie⟩, N, hBound⟩ := hB
-  refine ⟨⟨fun f => hN (T f), fun f => hSmooth (T f), fun f => hGrowth (T f), ?_, ?_⟩,
-    N, fun f => hBound (T f)⟩
+    (hB : IsRealWhittakerIntertwiner r ds a B) :
+    IsRealWhittakerIntertwiner r es a (B.comp T) := by
+  obtain ⟨hN, hSmooth, hGrowth, hK, hLie⟩ := hB
+  refine ⟨fun f => hN (T f), fun f => hSmooth (T f), fun f => hGrowth (T f), ?_, ?_⟩
   · intro k f f' hf'
     let k₀ : Matrix.unitaryGroup (Fin (r + 1)) ℝ := ⟨k.val.val, k.property⟩
     have hk₀ : Unitary.toUnits k₀ = k.val := Units.ext rfl
@@ -162,6 +163,18 @@ private theorem isUniform_pullback {r : ℕ} {ds es : List RealBlock} {a : ℝˣ
     change B (T f') = rightDerivative (matrixModel ℝ (r + 1)) X (B (T f))
     rw [he, hF]
     exact hLie X (T f) _ (realStandardLie_one_tmul_apply_coe _ ds X (T f))
+
+private theorem isUniform_pullback {r : ℕ} {ds es : List RealBlock} {a : ℝˣ}
+    {T : Automorphic.realStandardKFinite (r + 1) es →ₗ[ℂ]
+      Automorphic.realStandardKFinite (r + 1) ds}
+    (hT : IsRealStandardIntertwiner (r + 1) (realStandardRep (r + 1) ds)
+      (realStandardLie (r + 1) ds) es T)
+    {B : Automorphic.realStandardKFinite (r + 1) ds →ₗ[ℂ]
+      (Langlands.GeneralLinear (r + 1) ℝ → ℂ)}
+    (hB : IsRealUniformWhittakerIntertwiner r ds a B) :
+    IsRealUniformWhittakerIntertwiner r es a (B.comp T) := by
+  obtain ⟨hExact, N, hBound⟩ := hB
+  exact ⟨isRealWhittakerIntertwiner_pullback hT hExact, N, fun f => hBound (T f)⟩
 
 /-- Uniform Whittaker coefficients pull back along the ascending surjection,
 preserving their values and the common height exponent. -/

@@ -1,0 +1,7 @@
+# Angular tests for the complex square matrix integral
+
+For nondecreasing integral angular weights \(w_i\), there is a standard square polynomial Gaussian and a compact profile of weights \(w_i\) with value one at the identity. The integral of the test over the strict upper entries of a triangular matrix times a unitary matrix is the product of the scalar angular Tate Gaussians on its diagonal, each multiplied by \(\pi\), times the conjugate of the compact profile and a nonzero Haar constant. The statement allows any complex diagonal entries and uses the product of the given additive Haar measure over the strict upper entries.
+
+The polynomial uses holomorphic principal minors on the initial index sets where \((-w_i)^+\) exceeds a threshold and conjugate principal minors on the final index sets where \(w_i^+\) exceeds a threshold. Each index occurs once for each of its thresholds. Upper triangular multiplication preserves each final set, so the conjugate minors contribute only diagonal powers and unitary minors. The remaining polynomial is holomorphic in the strict upper entries. Its Gaussian integral is its value at zero times the Gaussian mass. With the strict upper entries zero, both sets of minors scale by their diagonal powers. These are precisely the scalar Tate powers. Restricting the conjugate polynomial to the unitary group gives the stated torus character, continuity and finite translate span.
+
+The test is for the triangular matrix zeta integral of Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §4.7 and Proposition 8.1.

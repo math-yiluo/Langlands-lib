@@ -1,3 +1,4 @@
+import Langlands.Correspondence.HenniartPadicArtinTransport
 import Langlands.Correspondence.HenniartWeilElementaryLayer
 import Langlands.Correspondence.RankOneOperationCompatibility
 import Langlands.Correspondence.UnramifiedReciprocityBridge
@@ -131,6 +132,7 @@ private theorem rankOne_hasArtinConductor_iff (e : ReciprocityCandidate K)
     (FiniteRepresentation.characterLine_isContinuous ψ)
   have hP := HerbrandBridge.weilInertiaRestriction_surjective K P.extension
   have ha := rankOne_presentation_conductor K e he χ P hP
+  refine (Numerical.hasArtinConductor_iff_exists_padicPresentation K (k := 0) _ a).trans ?_
   constructor
   · rintro ⟨B, Q, hQ, hB, hb⟩
     change FiniteRepresentation.classOf B = FiniteRepresentation.classOf A at hB

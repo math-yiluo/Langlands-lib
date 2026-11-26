@@ -3,8 +3,8 @@
 This module defines the Swan exponents, torsion numbers, refined orbit strata
 and counts used in Option II of the operator's numerical local Langlands
 route. It states four propositions and proves none of them. All mathematical
-objects and twists are those of the published
-`Langlands.Correspondence.HenniartNumericalStatement`; that module is unchanged.
+objects and twists are those of
+`Langlands.Correspondence.HenniartNumericalStatement`.
 
 ## Sources and scope
 
@@ -41,6 +41,62 @@ The source note treats non-archimedean local fields in §2 and p-adic fields in
 §6. This module covers precisely all `K : PadicField.{uK} p`, for all primes
 `p`, and all positive ranks `n = k + 1`. The field universe `uK`, Weil carrier
 universe `uW`, and supercuspidal carrier universe `uV` are independent.
+
+## Generality of the Weil-side definitions
+
+The five Weil-side definitions below, `HasWeilSwan`, `weilTorsionNumber`,
+`weilRefinedStratum`, `weilTwistIrreducibleCount` and `weilConductorCount`,
+have the formulas of the general definitions with the same names in
+`Langlands.Henniart.LocalNumerical` (module `HenniartLocalNumerical`), which
+take any nonarchimedean local field `K` with a separable closure `Ω`, in any
+characteristic. Their ingredients `HasArtinConductor`, `weilUnramifiedTwist`,
+the Weil group and its degree map are the general ones at `K.Carrier`,
+`AlgebraicClosure K.Carrier` and the valuative relation, topology and
+local-field instance of `K.canonicalTopologicalData`: `HasArtinConductor` by
+its definition, the others by unfolding. So each p-adic definition here unfolds
+to the general one at these instances. The following examples check this by
+`rfl`; the page of `HenniartLocalNumerical` checks the other declarations of its
+table.
+
+```lean
+import Langlands.Correspondence.HenniartLocalNumerical
+import Langlands.Correspondence.HenniartRefinedStrata
+
+noncomputable section
+open Langlands Langlands.Henniart Langlands.Correspondence
+universe uK uW
+
+variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uK} p)
+
+local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance : CharZero F.Carrier := Algebra.charZero_of_charZero (Padic p) F.Carrier
+
+example {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} F k.succPNat) (s : ℕ) :
+    Numerical.HasWeilSwan F σ s =
+      LocalNumerical.HasWeilSwan F.Carrier (AlgebraicClosure F.Carrier) σ s := rfl
+
+example {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} F k.succPNat) :
+    Numerical.weilTorsionNumber F σ =
+      LocalNumerical.weilTorsionNumber F.Carrier (AlgebraicClosure F.Carrier) σ := rfl
+
+example (k s f : ℕ) : Numerical.weilRefinedStratum.{uK, uW} F k s f =
+    LocalNumerical.weilRefinedStratum.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k s f := rfl
+
+example (k s : ℕ) : Numerical.weilTwistIrreducibleCount.{uK, uW} F k s =
+    LocalNumerical.weilTwistIrreducibleCount.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k s := rfl
+
+example (k j : ℕ) : Numerical.weilConductorCount.{uK, uW} F k j =
+    LocalNumerical.weilConductorCount.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k j := rfl
+```
+
+The GL-side definitions `HasSupercuspidalSwan`, `supercuspidalTorsionNumber`,
+`supercuspidalRefinedStratum`, the proposition `CountsAgreeUpToSlope` and the
+four proposition targets remain p-adic.
 
 ## Definitions in `Langlands.Henniart.Numerical`
 
@@ -162,8 +218,9 @@ It packages preservation and the counting lemma, without adjoining
 
 ## Dependencies and proofs
 
-The module imports the unchanged published numerical-statement module and
-Mathlib's set-cardinality and natural-divisor interfaces. It introduces no
+The module imports the numerical-statement module
+`Langlands.Correspondence.HenniartNumericalStatement` and Mathlib's
+set-cardinality and natural-divisor interfaces. It introduces no
 proofs or axioms. The proposition targets are proved in other modules:
 `RefinedStrataStatement`, and with it its two components, as `refinedStrata`
 (module `HenniartRefinedStrataProof`), and `WeilArtinConductorExistenceStatement`

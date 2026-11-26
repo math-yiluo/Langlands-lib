@@ -210,4 +210,18 @@ theorem lieConj_apply (X : ArchimedeanGL.RealLieAlgebra E n) (i j : Fin n) :
     ArchimedeanGL.realLieAlgebraToMatrix E n (lieConj E n X) i j =
       mixedConj E (ArchimedeanGL.realLieAlgebraToMatrix E n X i j) := rfl
 
+/-- The CM involution acts involutively on finite places. -/
+theorem finitePlaceComplexConj_involutive
+    {K : Type u} [Field K] [NumberField K] [IsCMField K] :
+    Function.Involutive (finitePlaceEquiv (IsCMField.complexConj K).toRingEquiv) := by
+  have h : (IsCMField.complexConj K).toRingEquiv.trans
+      (IsCMField.complexConj K).toRingEquiv = RingEquiv.refl K := by
+    ext x
+    exact IsCMField.complexConj_apply_apply K x
+  intro p
+  have hh := finitePlaceEquiv_trans (IsCMField.complexConj K).toRingEquiv
+    (IsCMField.complexConj K).toRingEquiv
+  rw [h, finitePlaceEquiv_refl] at hh
+  exact (Equiv.congr_fun hh p).symm
+
 end Langlands.Global.CMConjugation

@@ -20,3 +20,5 @@ embedding of fields is injective.
 In the unramified case, the published norm-order formula multiplies
 the order by the extension degree. Thus `IsNormAssociated.ord_determinant_eq`
 compares the normalized orders for every associated pair in every rank.
+
+`IsCyclicAlgebra.isAbelianGalois` gives the abelian Galois structure of a field extension with a cyclic-algebra generator.

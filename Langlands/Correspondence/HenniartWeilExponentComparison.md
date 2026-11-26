@@ -34,8 +34,9 @@ representative.
 
 ## Proofs
 
-- `hasArtinConductor_iff_artinExponent_eq`. If `B`, a presentation `P` and `a` witness the
-  relation, `A` and `B` are equivalent (same class), so `artinExponent K A = artinExponent K B`
+- `hasArtinConductor_iff_artinExponent_eq`. By `hasArtinConductor_iff_exists_padicPresentation`
+  (`HenniartPadicArtinTransport`) the relation is witnessed by p-adic finite inertia
+  presentations. If `B`, such a presentation `P` and `a` witness the relation, `A` and `B` are equivalent (same class), so `artinExponent K A = artinExponent K B`
   (`artinExponent_eq_of_equiv`), which is `P.artinConductor hP = a` (`artinExponent_eq`).
   Conversely, `A` is continuous (`weilRepresentative_continuous_irreducible`), so it has a
   presentation computing its exponent (`exists_presentation_of_isContinuous`), which witnesses the

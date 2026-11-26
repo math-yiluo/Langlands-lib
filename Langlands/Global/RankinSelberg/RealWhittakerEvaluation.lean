@@ -2,18 +2,20 @@ import Langlands.Global.ArchimedeanAnalyticJetProof
 import Langlands.Global.ArchimedeanCompactComponentCoverageProof
 import Langlands.Global.ArchimedeanCompactGroupFiniteProof
 import Langlands.Global.ArchimedeanEnvelopingJetProof
+import Langlands.Global.ArchimedeanFiniteUniformGrowthProof
 import Langlands.Global.ArchimedeanJointFiniteAnalyticityProof
 import Langlands.Global.ArchimedeanPlaceEnveloping
+import Langlands.Global.ArchimedeanPlaceRestriction
 import Langlands.Global.ArchimedeanSeparateJointFiniteProof
-import Langlands.Global.RankinSelberg.RealLocalWhittakerModel
+import Langlands.Global.RankinSelberg.RealUniformWhittakerModel
 import Langlands.Representation.Archimedean.RealPrincipalSeriesInfinitesimalCharacter
 
-/-! # Real Whittaker intertwiners are determined by their evaluation at the identity -/
+/-! # Identity evaluation and derivative growth of real Whittaker intertwiners -/
 
 noncomputable section
 
 open Langlands.Archimedean Langlands.LocalFactor.Archimedean NumberField
-open scoped Classical ContDiff Manifold Matrix.Norms.Operator TensorProduct
+open scoped Classical ContDiff Manifold Matrix.Norms.Operator NNReal TensorProduct
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -199,11 +201,14 @@ private theorem projection_mem_center (v : RP) (z : EnvelopingCenter F n) :
   simpa only [map_mul] using congrArg (realPlaceEnvelopingProjection F n v)
     ((Subalgebra.mem_center_iff.mp z.property) u)
 
-private theorem coefficients_jointFinite (v : RP) {a : ℝˣ} {B : D}
+private theorem coefficients_finite (v : RP) {a : ℝˣ} {B : D}
     (hB : IsRealWhittakerIntertwiner r ds a B) (f : V) :
-    IsJointFinite F n (coefficients F r ds v B hB.2.1 f) := by
+    IsCenterFinite F n (coefficients F r ds v B hB.2.1 f) ∧
+      FiniteVectors.IsFiniteVector
+        ((smoothRightAction F n).comp (standardInfiniteCompact F n).subtype)
+        (coefficients F r ds v B hB.2.1 f) := by
   let L := coefficients F r ds v B hB.2.1
-  apply separateJointFinite F n (L f)
+  constructor
   · have hle : centerOrbitSpan F n (L f) ≤ Submodule.span ℂ {L f} := by
       apply Submodule.span_le.mpr
       rintro _ ⟨z, rfl⟩
@@ -214,8 +219,7 @@ private theorem coefficients_jointFinite (v : RP) {a : ℝˣ} {B : D}
       rw [hc, Module.algebraMap_end_apply, map_smul]
       exact Submodule.smul_mem _ _ (Submodule.subset_span (Set.mem_singleton _))
     exact Submodule.finiteDimensional_of_le hle
-  · apply compactGroupFiniteDifferential F n (L f)
-    have : Module.Finite ℂ (Langlands.FiniteVectors.orbitSpan ρ f) :=
+  · have : Module.Finite ℂ (Langlands.FiniteVectors.orbitSpan ρ f) :=
       (isRealGKModule_realStandardModule n ds).1 f
     have hle : Langlands.FiniteVectors.orbitSpan
         ((smoothRightAction F n).comp (standardInfiniteCompact F n).subtype) (L f) ≤
@@ -227,6 +231,12 @@ private theorem coefficients_jointFinite (v : RP) {a : ℝˣ} {B : D}
       exact Submodule.mem_map_of_mem
         (Langlands.FiniteVectors.action_mem_orbitSpan ρ (compactProjection F r v k) f)
     exact Submodule.finiteDimensional_of_le hle
+
+private theorem coefficients_jointFinite (v : RP) {a : ℝˣ} {B : D}
+    (hB : IsRealWhittakerIntertwiner r ds a B) (f : V) :
+    IsJointFinite F n (coefficients F r ds v B hB.2.1 f) := by
+  obtain ⟨hZ, hK⟩ := coefficients_finite F r ds v hB f
+  exact separateJointFinite F n _ hZ (compactGroupFiniteDifferential F n _ hK)
 
 private theorem coefficients_eval_compact (v : RP) {a : ℝˣ} {B : D}
     (hB : IsRealWhittakerIntertwiner r ds a B) (k : standardInfiniteCompact F n) (f : V) :
@@ -258,6 +268,147 @@ theorem eq_of_eval (v : RP) {a : ℝˣ} {B C : D}
     (jointFiniteAnalyticity F n F₀ hFin) (envelopingZeroJet F n F₀ k.val hZero) x hx
   exact sub_eq_zero.mp hx₀
 
+private def inclusion (v : RP) : G →* AG :=
+  (archimedeanGLCoordinates F n).symm.toMonoidHom.comp (realPlaceGL F n v)
+
+omit [NumberField F] in
+private theorem projection_inclusion (v : RP) (g : G) :
+    projection F r v (inclusion F r v g) = g := by
+  apply Units.ext
+  change matrixProjection F r v
+    (archimedeanGLCoordinates F n ((archimedeanGLCoordinates F n).symm
+      (realPlaceGL F n v g))).val = g.val
+  rw [ContinuousMulEquiv.apply_symm_apply, realPlaceGL_val]
+  ext i j
+  change (Pi.mulSingle v g.val : RP → M) v i j = g.val i j
+  rw [Pi.mulSingle_eq_same]
+
+private theorem norm_projection_entry (v : RP) (g : AG) (i j : Fin n) :
+    ‖(projection F r v g).val i j‖ ≤ matrixHeight F n g := by
+  let x := (archimedeanGLCoordinates F n g).val i j
+  change ‖x.1 v‖ ≤ _
+  exact (norm_le_pi_norm x.1 v).trans ((norm_fst_le x).trans
+    ((ArchimedeanGL.norm_entry_le (archimedeanGLCoordinates F n g).val i j).trans
+      (norm_val_le_matrixHeight F n g)))
+
+private theorem height_projection (v : RP) (g : AG) :
+    realMatrixHeight (projection F r v g) ≤ (2 * (n : ℝ) * n) * matrixHeight F n g ^ 2 := by
+  unfold realMatrixHeight
+  calc
+    _ ≤ ∑ _i : Fin n, ∑ _j : Fin n, (matrixHeight F n g ^ 2 + matrixHeight F n g ^ 2) := by
+      refine Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => add_le_add
+        (pow_le_pow_left₀ (norm_nonneg _) (norm_projection_entry F r v g i j) _) ?_
+      rw [← map_inv]
+      exact pow_le_pow_left₀ (norm_nonneg _)
+        ((norm_projection_entry F r v g⁻¹ i j).trans_eq (matrixHeight_inv F n g)) _
+    _ = _ := by simp; ring
+
+private theorem rowNorm_le_rank_mul (X : A) (b : ℝ) (hb : 0 ≤ b)
+    (hX : ∀ i j, ‖X i j‖ ≤ b) : ‖X‖ ≤ (n : ℝ) * b := by
+  let B : ℝ≥0 := ⟨b, hb⟩
+  have h : ‖X‖₊ ≤ (n : ℝ≥0) * B := by
+    rw [Matrix.linfty_opNNNorm_def]
+    apply Finset.sup_le
+    intro i _
+    have hs : (∑ j, ‖X i j‖₊) ≤ ∑ _j : Fin n, B := by
+      apply Finset.sum_le_sum
+      intro j _
+      exact_mod_cast hX i j
+    simpa [nsmul_eq_mul] using hs
+  exact_mod_cast h
+
+private theorem norm_inclusion_entry (v : RP) (g : G) (i j : Fin n) :
+    ‖(realPlaceGL F n v g).val i j‖ ≤ realMatrixHeight g := by
+  have h₁ : (1 : ℝ) ≤ realMatrixHeight g :=
+    le_trans (by norm_num) (RealPlaceRestriction.two_le_realMatrixHeight (Nat.succ_pos r) g)
+  have hb : 0 ≤ realMatrixHeight g := zero_le_one.trans h₁
+  rw [realPlaceGL_val]
+  apply norm_prod_le_iff.mpr
+  constructor
+  · apply (pi_norm_le_iff_of_nonneg hb).mpr
+    intro w
+    change ‖(Pi.mulSingle v g.val : RP → M) w i j‖ ≤ realMatrixHeight g
+    by_cases h : w = v
+    · subst w
+      rw [Pi.mulSingle_eq_same]
+      exact RealPlaceRestriction.norm_entry_le_realMatrixHeight (Nat.succ_pos r) g i j
+    · rw [Pi.mulSingle_eq_of_ne h, Matrix.one_apply]
+      split_ifs <;> simp [h₁, hb]
+  · apply (pi_norm_le_iff_of_nonneg hb).mpr
+    intro w
+    change ‖(1 : Matrix (Fin n) (Fin n) ℂ) i j‖ ≤ realMatrixHeight g
+    rw [Matrix.one_apply]
+    split_ifs <;> simp [h₁, hb]
+
+private theorem height_inclusion (v : RP) (g : G) :
+    matrixHeight F n (inclusion F r v g) ≤ (n : ℝ) * realMatrixHeight g := by
+  have hval (x : G) :
+      ‖(archimedeanGLCoordinates F n (inclusion F r v x)).val‖ ≤ (n : ℝ) * realMatrixHeight x := by
+    change ‖(archimedeanGLCoordinates F n ((archimedeanGLCoordinates F n).symm
+      (realPlaceGL F n v x))).val‖ ≤ _
+    rw [ContinuousMulEquiv.apply_symm_apply]
+    exact rowNorm_le_rank_mul F r _ _ (RealPlaceRestriction.realMatrixHeight_nonneg _)
+      (norm_inclusion_entry F r v x)
+  have hi := hval g⁻¹
+  rw [map_inv, map_inv, RealPlaceRestriction.realMatrixHeight_inv] at hi
+  have hn : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast (Nat.succ_le_succ (Nat.zero_le r))
+  unfold matrixHeight
+  exact max_le
+    (one_le_mul_of_one_le_of_one_le hn
+      (le_trans (by norm_num) (RealPlaceRestriction.two_le_realMatrixHeight (Nat.succ_pos r) g)))
+    (max_le (hval g) hi)
+
+private def liftWord (v : RP) (Xs : List M) : EnvelopingAlgebra F n :=
+  (Xs.map fun X => envelopingGenerator F n (complexify F n (realPlaceLieInclusion F n v X))).prod
+
+private theorem liftWord_apply (v : RP) (Xs : List M) (W : G → ℂ)
+    (hW : ContMDiff (matrixModel ℝ n) 𝓘(ℝ, ℂ) ∞ W) (g : AG) :
+    (ArchimedeanGL.envelopingAction F n (liftWord F r v Xs) (pullback F r v W hW)).val g =
+      RealLocalWhittaker.iteratedRightDerivative r Xs W (projection F r v g) := by
+  induction Xs generalizing g with
+  | nil => simp [liftWord, pullback, RealLocalWhittaker.iteratedRightDerivative]
+  | cons X Xs ih =>
+      have hSmooth := RealUniformWhittaker.contMDiff_iteratedRightDerivative hW Xs
+      have he :
+          ArchimedeanGL.envelopingAction F n (liftWord F r v Xs) (pullback F r v W hW) =
+            pullback F r v (RealLocalWhittaker.iteratedRightDerivative r Xs W) hSmooth :=
+        Subtype.ext (funext ih)
+      rw [show liftWord F r v (X :: Xs) = envelopingGenerator F n
+        (complexify F n (realPlaceLieInclusion F n v X)) * liftWord F r v Xs from rfl,
+        ArchimedeanGL.envelopingAction_mul, he,
+        envelopingAction_real_generator, pullback_differential, realProjection_realInclusion,
+        Pi.single_eq_same]
+      rfl
+
+theorem coefficients_uniformDerivativeGrowth (v : RP) {a : ℝˣ} {B : D}
+    (hB : IsRealWhittakerIntertwiner r ds a B) (f : V) :
+    RealUniformWhittaker.HasUniformDerivativeGrowth (B f) := by
+  obtain ⟨C, d, hC, hg⟩ := RealLocalWhittaker.HasPolynomialGrowth.of_bound (hB.2.2.1 f)
+  let k : ℝ := 2 * (n : ℝ) * n
+  have hk : 0 ≤ k := by dsimp [k]; positivity
+  have hbound (g : AG) :
+      ‖(coefficients F r ds v B hB.2.1 f).val g‖ ≤ (C * k ^ d) * matrixHeight F n g ^ (2 * d) := by
+    calc
+      _ ≤ C * realMatrixHeight (projection F r v g) ^ d := hg _
+      _ ≤ C * (k * matrixHeight F n g ^ 2) ^ d :=
+        mul_le_mul_of_nonneg_left
+          (pow_le_pow_left₀ (RealPlaceRestriction.realMatrixHeight_nonneg _)
+            (height_projection F r v g) _) hC
+      _ = _ := by rw [mul_pow, pow_mul, mul_assoc]
+  obtain ⟨hZ, hK⟩ := coefficients_finite F r ds v hB f
+  refine ⟨2 * d, fun Xs => ?_⟩
+  obtain ⟨E, hE, he⟩ := @finiteUniformDifferentialGrowth F _ _ n (coefficients F r ds v B hB.2.1 f)
+    hK hZ (C * k ^ d) (by positivity) (2 * d) hbound (liftWord F r v Xs)
+  refine ⟨E * (n : ℝ) ^ (2 * d), by positivity, fun g => ?_⟩
+  have hb := he (inclusion F r v g)
+  change ‖(ArchimedeanGL.envelopingAction F n (liftWord F r v Xs)
+    (pullback F r v (B f) (hB.2.1 f))).val (inclusion F r v g)‖ ≤ _ at hb
+  rw [liftWord_apply, projection_inclusion] at hb
+  refine hb.trans ?_
+  rw [mul_assoc, ← mul_pow]
+  exact mul_le_mul_of_nonneg_left
+    (pow_le_pow_left₀ (matrixHeight_nonneg F n _) (height_inclusion F r v g) _) hE
+
 end RealWhittakerEvaluation
 
 /-- Evaluation at the identity on all source vectors determines a specified real Whittaker
@@ -273,5 +424,18 @@ theorem realWhittakerEvaluation : RealWhittakerEvaluationStatement := by
   intro r ds a B C hB hC h
   exact RealWhittakerEvaluation.eq_of_eval ℚ r ds ⟨Rat.infinitePlace, Rat.isReal_infinitePlace⟩
     hB hC h
+
+/-- Every exact real Whittaker coefficient has one polynomial height exponent for
+all its right derivative words. -/
+def RealExactWhittakerDerivativeGrowthStatement : Prop :=
+  ∀ (r : ℕ) (ds : List RealBlock) (a : ℝˣ),
+    realWhittakerModel r ds a ≤ RealUniformWhittaker.uniformGrowthFunctions r
+
+theorem realExactWhittakerDerivativeGrowth : RealExactWhittakerDerivativeGrowthStatement := by
+  intro r ds a
+  refine iSup_le fun B => iSup_le fun hB => ?_
+  rintro _ ⟨f, rfl⟩
+  exact ⟨hB.2.1 f, RealWhittakerEvaluation.coefficients_uniformDerivativeGrowth ℚ r ds
+    ⟨Rat.infinitePlace, Rat.isReal_infinitePlace⟩ hB f⟩
 
 end Langlands.Global.RankinSelbergGlobal

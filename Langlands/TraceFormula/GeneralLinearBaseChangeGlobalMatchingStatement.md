@@ -1,0 +1,307 @@
+# Global matching of orbital integrals from local concordance for cyclic base change of `GL_n` (statement)
+
+The module `Langlands.TraceFormula.GeneralLinearBaseChangeGlobalMatchingStatement` defines one
+proposition and proves nothing:
+
+- `Langlands.TraceFormula.GeneralLinearBaseChangeGlobalMatchingStatement.{u}`.
+
+It is the local-to-global step of cyclic base change for `GL_n`. Test functions `φ` on
+`W(𝔸_K)`, `W = Res_{L/K} GL_n`, and `f` on `GL_n(𝔸_K)` are restricted tensor products of
+concordant local functions at a finite set `S` of places of `K` and of the characteristic
+functions of the integral subgroups (the unit elements of the Hecke algebras) outside `S`.
+Assume the fundamental lemma for the unit elements at every finite place outside `S`. Then
+there is one real constant `c > 0` for which the two hypotheses on orbital integrals of
+`Langlands.TraceFormula.GeneralLinearBaseChangeTraceComparisonStatement` hold: matching of
+the global twisted and ordinary orbital integrals at rational norm pairs, and vanishing of the
+global ordinary orbital integrals at rational elements that are not norms.
+
+This is derived content; see "Sources and derivation" below.
+
+## Notation from the Library
+
+The module defines nothing besides the proposition. It has local `IsAffine` and `Smooth`
+instances for `GLₙ` (from `GroupScheme.GeneralLinear.isAffine_groupScheme` and
+`GroupScheme.GeneralLinear.smoothStatement`), the local notations `GLₙ` and `Wₙ`, and local
+instances that give `GL_n(K_i)` and `GL_n(E_i)` their Borel σ-algebras. It opens the scoped
+field instance `Langlands.TraceFormula.PlaceCompletion.field` on the completions.
+
+As in `GeneralLinearBaseChangeTraceComparisonStatement`:
+
+- `K`, `L : Type u` are number fields with `[Algebra K L] [FiniteDimensional K L]`,
+  `σ : L ≃ₐ[K] L` and `l : ℕ` with `IsCyclicAlgebra σ l` (`Langlands.BaseChange.Norm`): `L` is
+  a finite reduced `K`-algebra of dimension `l`, `σ` has order `l` and fixed field `K`. So
+  `L/K` is cyclic of degree `l` and `σ` generates its Galois group.
+- `GLₙ = GroupScheme.GeneralLinear.groupScheme (Fin n) (CommRingCat.of K)` and
+  `Wₙ = weilGroup K L GLₙ`. `AffineWeil.unit K L GLₙ : GLₙ ⟶ Wₙ` is the unit of the Weil
+  restriction, the diagonal embedding `G → Res_{L/K} G_L`.
+- `normOneSubgroup K G = G(𝔸_K)¹` and `rationalNormOneSubgroup K G = G(K)` inside it.
+  `positivePointMap K G T₀ i` and `normalizedPositiveHaarMeasure K G T₀ i hi I e₀ hc` are the
+  positive real points `A⁺` of a central split torus `i : T₀ → G` and their Haar measure
+  (`Langlands.Global.AdelicSplitCenterHaar`).
+- `θ = normOneAut K (unitGaloisAut K L GLₙ σ)` is the automorphism of `W(𝔸_K)¹` attached to
+  `σ`. `Φ : W(𝔸_K) → AdelicGL L n = GL_n(𝔸_L)` is `AdelicGaloisUnit.weilAdelicEquiv`, then
+  the base-change isomorphism of `GL_n`, then `GeneralLinearGroupPoints.adelicHomeomorph L n`.
+  The norm `N(g) = g Θ(g) ⋯ Θ^{l-1}(g)` is the ordered product of
+  `adelicAut K (unitGaloisAut K L GLₙ σ ^ k) g` for `k` in `List.range l`.
+  `incl = Matrix.GeneralLinearGroup.map AdelicFunctoriality.adeleInclusion` is the entrywise
+  inclusion `GL_n(𝔸_K) → GL_n(𝔸_L)`, and `ΦG(g) = incl (adelicHomeomorph K n g)`. These five
+  `let`s are written exactly as in `GeneralLinearBaseChangeTraceComparisonStatement`.
+- `AdelicGL.rational L n` embeds `GL_n(L)` diagonally in `GL_n(𝔸_L)`, and
+  `FiniteAdelicGL.localProjection L n w (AdelicGL.finite L n ·)` is the component at a finite
+  place `w`. `IsRegularElliptic` (`Langlands.JacquetLanglands.RegularElliptic`) means that the
+  characteristic polynomial is separable and irreducible.
+- `twistedCentralizer θ δ = {x | x⁻¹ δ θ(x) = δ}`; `twistedOrbitalIntegral θ δ ν F` integrates
+  `x ↦ F(x⁻¹ δ θ(x))` over the left cosets of the centralizer against the quotient measure
+  `ν`, and `orbitalIntegral q ν F` is the case `θ = id` (`Langlands.TraceFormula.TwistedOrbital`).
+  `IsCompatible C μ μC ν` (`Langlands.QuotientIntegration`) says that `ν` is the quotient of
+  `μ` by `μC` in the quotient integration formula.
+- `Place K = InfinitePlace K ⊕ FinitePlace K` (`Langlands.Global.InfinitePlace` and
+  `Langlands.Global.FinitePlace`, written in full in the Lean), `PlaceGroupPoints K G i = G(K_i)`
+  and `AdelicGroupPoints.atPlace` (`Langlands.Global.AdelicGroupLocalPoints`).
+- `Langlands.GeneralLinearGroup.integralSubgroup (Fin n) O` is `GL_n(O)` for a subring `O`.
+  `GL_n(O_v)` is written with the subring `(v.adicCompletionIntegers K).toSubring` of
+  `placeCompletion K (.inr v)`.
+
+From the module `Langlands.TraceFormula.GeneralLinearBaseChangeLocal`:
+
+- `placeCompletion K i = K_i`, with its field structure `PlaceCompletion.field`, and
+  `LocalBaseChangeAlgebra K L i = E_i = K_i ⊗_K L`. `localGalois K L σ i = id ⊗ σ` is the
+  automorphism `σ_i` of `E_i` over `K_i`.
+- `localPointsEquiv K L n i : W(K_i) ≃* GL_n(E_i)` and
+  `localGLEquiv K n i : GLₙ(K_i) ≃* GL_n(K_i)` identify the local points.
+- `localIntegers K L v` is the subring `O_{E_v}` of `E_v` generated by `O_v ⊗ 1` and
+  `1 ⊗ 𝓞_L`, at a finite place `v`. `localIntegralFamily K L n` is `GL_n(O_{E_v})` (pulled
+  back by `localPointsEquiv`) at the finite places and the whole group at the infinite places;
+  `glIntegralFamily K n` is the same for `GL_n(O_v)`.
+- `IsAdelicFactorization K T φloc U φ` says that `φ(x) = ∏_{i ∈ T} φloc_i(x_i)` if
+  `x_i ∈ U_i` for every `i ∉ T`, and `φ(x) = 0` otherwise.
+
+From the module `Langlands.BaseChange.OrbitalIntegral`:
+
+- `AreConcordant σ l μF μE φ f` is Henniart–Lemaire's "φ et f concordent" (I.2.5,
+  printed p. 17) for the measures `μF` on `GL_n(F)` and `μE` on `GL_n(E)`. It has two parts.
+  First (`VanishesOffNorms`), the orbital integrals of `f` vanish at every regular semisimple
+  `γ` that is not a norm (`IsNorm`), for every right Haar measure on the centralizer and every
+  compatible quotient measure. Second, at every pair `(δ, γ)` with `N(δ)` conjugate in
+  `GL_n(E)` to `γ` (`IsNormAssociated`) and `γ` regular semisimple, the σ-orbital integral of
+  `φ` at `δ` equals the orbital integral of `f` at `γ`, for all associated right Haar
+  measures on the two centralizers and all compatible quotient measures (`ConcordAt`).
+
+## Statement
+
+Fix `K`, `L`, `σ`, `l` with `IsCyclicAlgebra σ l`, and `n : ℕ`. Fix a commutative group
+scheme `T₀` over `K`, a type `I : Type u` with `[Fintype I]` and an isomorphism
+`e₀ : T₀.toGrp ≅ splitTorus _ I`, and morphisms `iG : T₀.toGrp ⟶ GLₙ` and
+`iW : T₀.toGrp ⟶ Wₙ`. Both are central (`IsCentral`), and their character restrictions
+`characterRestrict` are injective with image of finite index. Assume
+`iW = iG ≫ AffineWeil.unit K L GLₙ`, and assume that `Measure.haar` on `normOneSubgroup K Wₙ`
+and on `normOneSubgroup K GLₙ` is right invariant.
+
+Let `S : Finset (Place K)` contain every infinite place. Let `μF i` on `GL_n(K_i)` and
+`μE i` on `GL_n(E_i)` be measures, for every place `i`, that are Haar measures for `i ∈ S`
+(they are used only at the places of `S`).
+
+Hypothesis (fundamental lemma for the unit elements): for every finite place `v` of `K` with
+`.inr v ∉ S` and all Haar measures `μFv` on `GL_n(K_v)` and `μEv` on `GL_n(E_v)` with
+`μFv(GL_n(O_v)) = 1` and `μEv(GL_n(O_{E_v})) = 1`,
+`AreConcordant (localGalois K L σ (.inr v)) l μFv μEv 1_{GL_n(O_{E_v})} 1_{GL_n(O_v)}`,
+where `1_X` is the indicator function `Set.indicator X 1`.
+
+Conclusion: there is `c : ℝ` with `0 < c` with the following property. Let
+`φloc i : GL_n(E_i) → ℂ` and `floc i : GL_n(K_i) → ℂ` be local functions, for every place
+`i`, that are continuous with compact support at every `i ∈ S` and satisfy
+`AreConcordant (localGalois K L σ i) l (μF i) (μE i) (φloc i) (floc i)` at every `i ∈ S`. Let
+`φ : W(𝔸_K) → ℂ` and `f : GLₙ(𝔸_K) → ℂ` satisfy
+
+- `IsAdelicFactorization K S (fun i p => φloc i (localPointsEquiv K L n i p))
+  (localIntegralFamily K L n) φ`, and
+- `IsAdelicFactorization K S (fun i p => floc i (localGLEquiv K n i p))
+  (glIntegralFamily K n) f`.
+
+Let `A = intrinsicSubgroup K T₀` be the group of positive real points of `T₀`, on which both
+averages are taken. Let `αW = normalizedPositiveHaarMeasure K Wₙ T₀ iW hiW I e₀ hcW` and
+`αG = normalizedPositiveHaarMeasure K GLₙ T₀ iG hiG I e₀ hcG`, two Haar measures on `A`. The
+averages are `φ¹(x) = ∫_A φ(positivePointMap K Wₙ T₀ iW a * x) dαW(a)` on `W(𝔸_K)¹` and
+`f¹(x) = ∫_A f(positivePointMap K GLₙ T₀ iG a * x) dαG(a)` on `G(𝔸_K)¹`. These are the `let`s
+`φOne` and `fOne`, written as in `GeneralLinearBaseChangeTraceComparisonStatement`.
+Then for every finite place `w` of `L` and every finite place `v` of `K`:
+
+1. (Matching at norms.) Let `r ∈ W(K)` and `q ∈ G(K)` be rational norm-one points and
+   `y ∈ GL_n(L)` with `Φ(N(r)) y = y ΦG(q)`, and suppose that `Φ(N(r))` is regular elliptic at
+   `w` or `q` is regular elliptic at `v`. Let `e` be a group isomorphism from the
+   `θ`-centralizer of `r` in `W(𝔸_K)¹` onto the centralizer of `q` in `G(𝔸_K)¹` with
+   `ΦG(e(x)) = y⁻¹ Φ(x) y`. Let `μr` be a right-invariant measure on the first centralizer
+   that is finite on compacts and positive on nonempty open sets, let `μq` be a
+   right-invariant measure on the second with `μr.map e = μq`, and let `νr` and `νq` be
+   quotient measures compatible (`IsCompatible`) with `Measure.haar` on the norm-one groups
+   and with `μr` and `μq`; the coset spaces carry their Borel σ-algebras, supplied as
+   instance arguments. Then
+   `twistedOrbitalIntegral θ r νr φ¹ = (c : ℂ) * orbitalIntegral q νq f¹`.
+2. (Vanishing off norms.) Let `q ∈ G(K)` be a rational norm-one point, regular elliptic at
+   `v`, with `Φ(N(r)) y ≠ y ΦG(q)` for every rational norm-one point `r` of `W` and every
+   `y ∈ GL_n(L)`. Then `orbitalIntegral q νq f¹ = 0` for every right-invariant measure `μq`
+   on the centralizer of `q` in `G(𝔸_K)¹` that is finite on compacts and positive on nonempty
+   open sets and every compatible quotient measure `νq`.
+
+These two conclusions are, word for word, the two hypotheses on orbital integrals of
+`GeneralLinearBaseChangeTraceComparisonStatement` for `TW = TG = T₀`, `IW = IG = I` and
+`eW = eG = e₀`, with its constant `c : ℂ` taken to be the real number `c` here. The Lean
+conclusion is their conjunction.
+
+### The constant `c`
+
+`c` is chosen after `K`, `L`, `σ`, `l`, `n`, `T₀`, `iG`, `iW`, `I`, `e₀`, `S`, the measures
+`μF`, `μE` and the fundamental-lemma hypothesis, and before the local functions, `φ`, `f`
+and the places `w` and `v`. So it depends only on the fields, `n`, the central torus and its
+embeddings, `S` and the local Haar measures at the places of `S`.
+
+## Why the statement is true (not formalized)
+
+The module does not prove the statement. The argument follows the sources, with the measure
+normalizations of the Library's averages.
+
+Notation. Write `pW = positivePointMap K Wₙ T₀ iW` and `pG = positivePointMap K GLₙ T₀ iG`.
+`A ≅ ℝ_{>0}^I` through `e₀`, and `αW = ρ αG` for a real number `ρ > 0`, since both are Haar
+measures on `A`. By `map_normalizedPositiveHaarMeasure_prod` (`Langlands.Global.AdelicSplitCenterHaar`),
+the multiplication map `(a, x) ↦ pW(a) x` from `A × W(𝔸_K)¹` to `W(𝔸_K)` carries
+`αW × Measure.haar` exactly onto `Measure.haar`. The map `(b, x) ↦ pG(b) x` does the same for
+`αG` and `G`. Since `iW = iG ≫ AffineWeil.unit`, `Φ(pW(a)) = ΦG(pG(a))`. These elements are
+central, and `pW(a)` is fixed by `Θ`. A point `pG(b)` is a scalar matrix: its entry is the same
+positive real number at every infinite place and `1` at every finite place.
+
+For `δ` in `W(𝔸_K)` write `TO(φ, δ; ν) = ∫ φ(x⁻¹ δ Θ(x)) dν(x)` over the cosets of its full
+`Θ`-centralizer in `W(𝔸_K)`, and `O(f, γ; ν)` for the untwisted analogue on `G(𝔸_K)`. Write
+`C_r¹ = twistedCentralizer θ r` and `C_q¹` for the centralizer of `q` in `G(𝔸_K)¹`.
+
+1. Full centralizers and quotient measures. `W(𝔸_K) = pW(A) × W(𝔸_K)¹` with `pW(A)` central
+   and `Θ`-fixed. So for every `a ∈ A` the `Θ`-centralizer of `pW(a) r` in `W(𝔸_K)` is
+   `C_r = pW(A) C_r¹`, and the coset spaces `C_r¹ \ W(𝔸_K)¹` and `C_r \ W(𝔸_K)` are the same.
+   Likewise the centralizer of `pG(b) q` in `G(𝔸_K)` is `C_q = pG(A) C_q¹`. Give both full
+   centralizers the same positive factor `αG`: `m_r` is the image of `αG × μr` and `m_q` the
+   image of `αG × μq`. Measure.haar on `W(𝔸_K)` is the image of `αW × Measure.haar = ρ αG ×
+   Measure.haar`, so the quotient measure compatible with Measure.haar and `m_r` is `ρ νr`.
+   The one compatible with Measure.haar on `G(𝔸_K)` and `m_q` is `νq` (scaling of compatible
+   quotient measures, `IsCompatible.smul_eq_smul` in
+   `Langlands.Analysis.Local.QuotientCompatibleScaling`).
+2. Reduction to full orbital integrals. `φ` is continuous with compact support: at the places of
+   `S` it is a product of such local functions, and outside `S` the indicator of a compact open
+   subgroup of the restricted product. `r` is `θ`-semisimple, because `Φ(N(r))` is conjugate
+   to `ΦG(q)` and `q` is regular semisimple (step 4). So its twisted orbit is closed, and
+   `(a, x) ↦ φ(pW(a) x⁻¹ r Θ(x)) = φ(x⁻¹ (pW(a) r) Θ(x))` is continuous with compact support on
+   `A × (C_r \ W(𝔸_K))`. Fubini applies:
+   `TO(φ¹, r; νr) = ∫_A TO(φ, pW(a) r; νr) dαW(a) = ∫_A TO(φ, pW(a) r; ρ νr) dαG(a)`.
+   The factor `ρ` of `αW = ρ αG` moves into the quotient measure. Likewise
+   `O(f¹, q; νq) = ∫_A O(f, pG(b) q; νq) dαG(b)`.
+3. The `A`-substitution. For `a ∈ A`, `N(pW(a) r) = pW(a)^l N(r)`, since `pW(a)` is central and
+   `Θ`-fixed. Hence `Φ(N(pW(a) r)) y = y ΦG(pG(a^l) q)`. The isomorphism `ẽ : C_r → C_q`,
+   `ẽ(pW(t) x) = pG(t) e(x)`, satisfies `ΦG(ẽ(z)) = y⁻¹ Φ(z) y`. It carries `m_r` to
+   `αG × e_* μr = m_q`. So `m_r` and `m_q` correspond under conjugation by `y`, as the
+   centralizer measures of the pair `(pW(a) r, pG(a^l) q)`.
+4. Product formula. `Φ(N(r))` is regular elliptic at `w` or `q` is regular elliptic at `v`, so the
+   characteristic polynomial of `q` is separable over `K`. Hence `q` is regular semisimple in
+   `GL_n(K)` and in every `GL_n(K_i)`. `C_q` and `C_r` are the adelic points of tori over `K`:
+   the centralizer of `q` and its inner form, the twisted centralizer of `r`. At every place, `ẽ`
+   is conjugation by `y`. Write `m_r = d_r ∏_i m_{r,i}` with local Haar measures `m_{r,i}` that
+   give the maximal compact subgroup volume one at almost every place. Put
+   `m_{q,i} = (conjugation by y)_* m_{r,i}`; then `m_q = d_r ∏_i m_{q,i}` with the same scalar
+   `d_r`, and `m_{r,i}`, `m_{q,i}` are associated in the sense of `IsAssociatedMeasure` (with
+   `x = y`). Write Measure.haar on `W(𝔸_K)` as `c_W ∏_i μE'_i` and on `G(𝔸_K)` as
+   `c_G ∏_i μF'_i`. Here `μE'_i = μE i` and `μF'_i = μF i` for `i ∈ S`. For `i ∉ S` they are the
+   Haar measures giving `GL_n(O_{E_i})` and `GL_n(O_i)` volume one, transported by
+   `localPointsEquiv` and `localGLEquiv`. With local quotient measures `ν_{r,i}` compatible with
+   `μE'_i` and `m_{r,i}`, and `ν_{q,i}` compatible with `μF'_i` and `m_{q,i}`, step 1 gives
+   `TO(φ, pW(a) r; ρ νr) = (c_W / d_r) ∏_i TO_i(φ_i, (pW(a) r)_i; ν_{r,i})` and
+   `O(f, pG(a^l) q; νq) = (c_G / d_r) ∏_i O_i(f_i, (pG(a^l) q)_i; ν_{q,i})`. Almost all factors
+   are `1`.
+5. Local matching. At every place `i`, `((pW(a) r)_i, (pG(a^l) q)_i)` is norm-associated through
+   `y`, and its second entry is regular semisimple. At `i ∈ S` the local factors agree by
+   `AreConcordant` for `μF i` and `μE i`. At a finite place `i ∉ S` they agree by the
+   fundamental-lemma hypothesis for the volume-one measures. The common scalar `d_r` cancels:
+   `TO(φ, pW(a) r; ρ νr) = (c_W / c_G) O(f, pG(a^l) q; νq)`.
+6. Assembling. By steps 2 and 5,
+   `TO(φ¹, r; νr) = (c_W / c_G) ∫_A O(f, pG(a^l) q; νq) dαG(a)`. The map `a ↦ a^l` is an
+   automorphism of `A ≅ ℝ_{>0}^I`. In logarithmic coordinates it is multiplication by `l`, so
+   it carries `αG` to `l^{-|I|} αG`. Hence
+   `TO(φ¹, r; νr) = (c_W / c_G) · l^{-|I|} · O(f¹, q; νq)`, which is conclusion 1 with
+   `c = (c_W / c_G) · l^{-|I|}`. The ratio `ρ` has cancelled. It entered once through
+   `αW = ρ αG` in the average `φ¹` and once, inversely, through the full quotient measure
+   `ρ νr`. `c_W` and `c_G` depend only on Measure.haar on `W(𝔸_K)` and `G(𝔸_K)` and on the
+   local measures. So `c > 0` depends only on data fixed before the functions.
+7. Vanishing off norms. The rational points `W(K)` are `GL_n(L)` with `Θ` acting entrywise by
+   `σ`. So the hypothesis of conclusion 2 says that `q` is not a global norm. An element of
+   `GL_n(K)` is a global norm if and only if it is a local norm at every place (Arthur–Clozel,
+   Chapter 1, Lemma 1.2, printed p. 4; its proof uses the Hasse norm theorem). So `q_i` is not
+   a norm from `GL_n(E_i)` at some place `i`. For `b ∈ A`, `pG(b)_i` is `1` if `i` is finite
+   and a positive real scalar if `i` is infinite. In both cases it is the `l`-th power of a
+   central `σ_i`-fixed element, so `pG(b)_i q_i` is not a norm either. The first part of
+   `AreConcordant` at `i` gives the vanishing of the local orbital integral of `f_i` at
+   `pG(b)_i q_i`: from the hypothesis at `i ∈ S`, or from the fundamental-lemma hypothesis at
+   `i ∉ S`. With `m_q` the image of `αG × μq` and its product decomposition as in step 4, the
+   product formula gives `O(f, pG(b) q; νq) = 0` for every `b ∈ A`. By step 2,
+   `O(f¹, q; νq) = 0`.
+
+## Sources and derivation
+
+- J. Arthur and L. Clozel, *Simple algebras, base change, and the advanced theory of the trace
+  formula*, Annals of Mathematics Studies 120, Princeton University Press, 1989 (registered
+  source `arthur-clozel-1989-base-change`; PDF page = printed page + 14 in Chapter 1).
+  Chapter 1, §4, over a number field `k` and a cyclic extension `k'`. Proposition 4.9
+  (Kottwitz), the fundamental lemma for the unit elements of the Hecke algebras, is on printed
+  p. 42. Also on printed p. 42, the test functions transform under a fixed character `χ_k` of
+  `Z_1 = N_{k'/k} Z(𝔸_{k'})`. On printed p. 43, associated local functions `φ_v`, `f_v`, units
+  of the Hecke algebras at almost every place, give `φ = ⊗ φ_v` and `f = ⊗ f_v`. The set of
+  places with other local functions contains the places where `k'` ramifies, and at the
+  infinite places the local functions are associated as well. The twisted trace formula
+  (4.4) (printed pp. 43–44) is a sum over twisted conjugacy classes of products of local
+  twisted orbital integrals "defined with the Tamagawa measures". On printed p. 44, the
+  comparison of (4.4) with (4.5) uses that "an element of `G(k)` is a global norm if and only
+  if it is a local norm everywhere (Lemma 1.2)" and gives (4.6). Lemma 1.2 is on printed p. 4.
+- G. Henniart and B. Lemaire, *Changement de base et induction automorphe pour `GL_n` en
+  caractéristique non nulle*, Mémoires de la SMF 124, 2011 (source ID
+  `provided-a0a5445aba86b871bcd83f08813de3234fddb463ff9bb3c9dfd60d2d2fcdae61`; PDF page =
+  printed page + 8). I.2.5 (printed p. 17) defines associated measures and concordance, for
+  locally constant compactly supported functions on `G(E)` and `G(F)` over a nonarchimedean
+  local field `F`. II.6 works over a global function field (II.6.1, printed p. 118). II.6.2
+  (printed pp. 118–119) chooses Haar measures on every `G(F_v)` and `G(E_v)`, giving the maximal
+  compact subgroups volume one at almost every place; their products are the measures on
+  `G(𝔸_F)` and `G(𝔸_E)`. It also fixes a unitary character `ω` of `Z¹ = N(Z(𝔸_E))` and
+  `χ = ω ∘ N`. II.6.3 (printed pp. 119–120) takes the global centralizer measures as products
+  of local ones and the global orbital integrals as products of local orbital integrals. II.6.6
+  (printed pp. 122–123) takes associated local centralizer measures, of volume one on the
+  maximal compact subgroups at almost every place. It calls decomposed global functions
+  concordant when their local components are, and compares the two trace formulas for them.
+
+Derived content. Both sources carry out the local-to-global step inside the comparison of the
+trace formulas, with a fixed central character. Arthur–Clozel use Tamagawa measures over a
+number field. Henniart–Lemaire, over a global function field, use products of chosen local
+Haar measures and associated local centralizer measures. Here the step is isolated as a
+statement over number fields whose conclusions are the two hypotheses of
+`GeneralLinearBaseChangeTraceComparisonStatement`. It is placed in the group-scheme setting
+of the Library: in place of a central character it uses the norm-one subgroups and the
+averages over the positive points `A` of a central split torus. It allows arbitrary Haar measures at the places of
+`S` and the given Haar measures of the norm-one groups. So the constant `c` is existential,
+and the fundamental lemma for the unit elements is a hypothesis. The Library's `AreConcordant`
+states Henniart–Lemaire's two orbital conditions for arbitrary complex functions on `GL_n(F)`
+and `GL_n(E)`, for a topological field `F` and a commutative `F`-algebra `E` with an
+automorphism `σ`. The statement uses it at all places of `S`, including
+the infinite ones, for continuous compactly supported local functions.
+
+## Relation to other results of the Library
+
+- `Langlands.TraceFormula.GeneralLinearBaseChangeTraceComparisonStatement`: the two
+  conclusions are its two hypotheses on orbital integrals, written in the same form, for
+  `TW = TG = T₀`, `IW = IG = I`, `eW = eG = e₀` and the constant `(c : ℂ)`.
+- `Langlands.BaseChange.unitFundamentalLemma : UnitFundamentalLemmaStatement` proves the
+  fundamental lemma for the unit elements for a cyclic extension of `p`-adic fields with equal
+  ramification indices over `ℚ_p`, in the setting of `PadicField` and its spherical Haar
+  measures.
+  `Langlands.BaseChange.splitMatching` and `Langlands.BaseChange.splitContinuousMatching`
+  treat matching at places that split. This module does not relate them to its hypothesis at
+  the places `v ∉ S`.
+
+## What this module does not claim
+
+It does not prove the fundamental lemma for the unit elements (it is a hypothesis), it does not
+say which places must lie in `S` (in Arthur–Clozel, printed p. 43, the corresponding set
+contains the places where the extension ramifies), and it does not give the value of `c`. It
+says nothing about spectral sides or traces.

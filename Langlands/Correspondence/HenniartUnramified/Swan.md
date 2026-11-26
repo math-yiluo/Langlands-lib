@@ -8,7 +8,9 @@ proves that the original predicate `HasWeilSwan K σ s` holds exactly when
 In particular `hasWeilSwan_iff_eq_label` shows that the choice of conductor
 in the definition does not affect the label.
 
-The proof at a finite inertia presentation uses the published Artin formula:
+The proof takes a p-adic finite inertia presentation witnessing the Artin
+conductor, given by `hasArtinConductor_iff_exists_padicPresentation`. At this
+presentation it uses the published Artin formula:
 the codimension at index zero plus the integral of the upper codimension
 profile. On positive indices an irreducible representation has fixed space
 zero through its last break, and the whole space above it. The actual upper

@@ -1,0 +1,9 @@
+# Central characters of unitary virtual supercuspidal classes
+
+`Langlands.VirtualRepresentation.PadicSupercuspidal.latticeCentralCharacter` is the product of the central characters of unitary supercuspidal basis classes raised to their signed multiplicities. The extension by integral linearity is the one in Henniart (2000), §2.6, p. 446.
+
+`unitaryBasisCentralCharacter` takes the scalar character of the corresponding cuspidal datum via `unitaryCuspidalDatumBasisEquiv`. `CuspidalDatum.scalarCharacter_acts` gives its action on the chosen representative, and `Henniart.Extension.supercuspidalCentralActsBy_iff` transfers the action to the basis class. `Henniart.Extension.supercuspidalCentralActsBy_unique` is pointwise uniqueness of a scalar acting on a nonzero representation. It implies `isUnitaryCentralCharacter_iff`, which identifies the central-character relation with the graph of `latticeCentralCharacter`. The product over the finite support gives the zero, addition, integer scalar and basis formulas.
+
+`isUnitaryCentralCharacter_of_isUnitaryLatticeSupport` identifies the central character of an irreducible representation with that of its witnessed support. First `SegmentFullJacquet.exists_hasScalarCharacter` and `CuspidalDatum.scalarCharacter_eq_of_isRepresentedBy` identify the block characters. Next `hasScalarCharacter_normalizedProductInduced` gives their product on the normalized induction and `HasScalarCharacter.of_isSubquotient` passes it to the irreducible representation. Evaluating on a nonzero vector identifies that product with the given character. The multiset support has exactly the same product by `latticeCentralCharacter_unitarySupportLattice`.
+
+This construction supplies the automorphic character in the determinant clause of `Langlands.Global.PoleComparison.RelativeIsometryFactorStatement`.

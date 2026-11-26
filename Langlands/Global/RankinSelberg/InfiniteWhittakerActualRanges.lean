@@ -65,7 +65,8 @@ private theorem placeTuplePoint_update_complex (n : ℕ) (w : {w : InfinitePlace
     · rw [Function.update_of_ne (Sum.inr_injective.ne h), Pi.mulSingle_eq_of_ne h]
       rfl
 
-private theorem finitePoint_one (n : ℕ) : finitePoint F n 1 = 1 := by
+/-- Embedding the identity of the finite adelic group gives the identity in every rank. -/
+theorem finitePoint_one (n : ℕ) : finitePoint F n 1 = 1 := by
   unfold finitePoint adelicPoint
   rw [map_one]
   change (GeneralLinearGroupPoints.adelicEquiv F n).symm (AdelicGL.ofFinite F n 1) = 1

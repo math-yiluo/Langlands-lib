@@ -1,0 +1,5 @@
+# Conjugation by a semisimple linear automorphism
+
+`isSemisimple_conjugationOnEnd` concerns an invertible semisimple linear endomorphism of a finite-dimensional vector space over a perfect field. Its conjugation operator on the whole endomorphism space is semisimple.
+
+The minimal polynomial has nonzero constant term because the original operator is invertible. Polynomial Bézout with `X` expresses the inverse as a polynomial in the operator, hence the inverse is semisimple too. Left multiplication by the operator and right multiplication by its inverse have squarefree annihilators inherited from their minimal polynomials. Right multiplication is represented as left multiplication on the opposite algebra. These operators commute, so their product is semisimple. It is the conjugation operator. This identifies the semisimple adjoint action used in the matrix version of the semisimple descent argument. [Clozel, *Characters of non-connected, reductive p-adic groups*, §3.4, p. 154](https://doi.org/10.4153/CJM-1987-008-3)

@@ -68,12 +68,23 @@ supercuspidal classes of `GL_(k+1)(K)` defined by vanishing Jacquet modules.
 Weil carrier universe `uW` and supercuspidal carrier universe `uV` are
 independent. These are the domains of `Correspondence.SupercuspidalMap`.
 
-- `Numerical.HasArtinConductor K σ a`: some representative `A` of `σ` has an
-  actual `Ramification.Padic.FiniteInertiaPresentation`, with surjective
+- `Numerical.HasArtinConductor K σ a` is defined as
+  `LocalNumerical.HasArtinConductor K.Carrier (AlgebraicClosure K.Carrier) σ a`
+  (module `HenniartLocalNumerical`), at the valuative relation, topology and
+  local-field instance of `K.canonicalTopologicalData`; the separable-closure
+  instance of `AlgebraicClosure K.Carrier` comes from characteristic zero,
+  through the `Padic p`-algebra structure. It says that some representative
+  `A` of `σ` has an actual
+  `Ramification.Local.SepClosed.FiniteInertiaPresentation`, with surjective
   inertia restriction, whose Artin expression equals `a`. That expression is
   Serre's sum `Σ_i |G_i|/|G_0| · codim V^(G_i)` over the lower ramification
   filtration of the presenting finite Galois extension. The relation chooses
-  no presentation. Integrality (Hasse–Arf), existence of presentations and
+  no presentation. The p-adic presentations
+  `Ramification.Padic.FiniteInertiaPresentation` compute the same relation:
+  `Numerical.hasArtinConductor_iff_exists_padicPresentation` (module
+  `HenniartPadicArtinTransport`) proves that `HasArtinConductor K σ a` holds
+  exactly when some representative has such a presentation, with surjective
+  inertia restriction, whose Artin expression is `a`. Integrality (Hasse–Arf), existence of presentations and
   independence of the presentation are separate published targets
   (`FiniteGaloisConductorIntegralityStatement` and
   `InertiaSurjectivityPresentationAndConductorIndependenceStatement`), not
@@ -112,6 +123,52 @@ independent. These are the domains of `Correspondence.SupercuspidalMap`.
   contain a supercuspidal class of `GL_(k+1)` with conductor `a`. Both orbit
   quotients use every complex unit, so they identify classes differing by
   any unramified twist.
+
+## Generality of the Weil-side definitions
+
+The Weil-side definitions `HasArtinConductor`, `weilUnramifiedTwist` and
+`weilOrbitStratum` are the general definitions with the same names in
+`Langlands.Henniart.LocalNumerical`, for nonarchimedean local fields of any
+characteristic, at `K.Carrier`, `AlgebraicClosure K.Carrier` and the
+instances of `K.canonicalTopologicalData`. `HasArtinConductor` is defined
+that way. `weilUnramifiedTwist` and `weilOrbitStratum` keep their formulas:
+`Weil.Local.localWeilGroup K`, `Weil.Local.localDegree K` and
+`Weil.Local.unramifiedCharacter (Weil.Local.localDegree K) z` unfold to the
+general Weil group, degree map and unramified character of
+`Langlands.Weil.Local.SepClosed`, so both definitions unfold to the general
+ones. The examples below check this by `rfl`; the page of
+`HenniartLocalNumerical` checks the classes, the forgetful map and the
+abbreviations of `Weil.Local.Parameters` in the same way. The supercuspidal
+side, `conductor`, `supercuspidalUnramifiedTwist`, `IsNumericalInjection`,
+`supercuspidalOrbitStratum` and the four propositions remain p-adic.
+
+```lean
+import Langlands.Correspondence.HenniartLocalNumerical
+import Langlands.Correspondence.HenniartNumericalStatement
+
+noncomputable section
+open Langlands Langlands.Henniart Langlands.Correspondence
+universe uK uW
+
+variable {p : ℕ} [Fact p.Prime] (F : PadicField.{uK} p)
+
+local instance : ValuativeRel F.Carrier := F.canonicalTopologicalData.valuativeRel
+local instance : TopologicalSpace F.Carrier := F.canonicalTopologicalData.topology
+local instance : IsNonarchimedeanLocalField F.Carrier := F.canonicalTopologicalData.localField
+local instance : CharZero F.Carrier := Algebra.charZero_of_charZero (Padic p) F.Carrier
+
+example {k : ℕ} (σ : IrreducibleWeilClass.{uK, uW} F k.succPNat) (a : ℕ) :
+    Numerical.HasArtinConductor F σ a =
+      LocalNumerical.HasArtinConductor F.Carrier (AlgebraicClosure F.Carrier) σ a := rfl
+
+example (k : ℕ) (z : ℂˣ) : Numerical.weilUnramifiedTwist.{uK, uW} F k z =
+    LocalNumerical.weilUnramifiedTwist.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k z := rfl
+
+example (k a : ℕ) : Numerical.weilOrbitStratum.{uK, uW} F k a =
+    LocalNumerical.weilOrbitStratum.{uK, uK, uW}
+      F.Carrier (AlgebraicClosure F.Carrier) k a := rfl
+```
 
 ## The four propositions
 
@@ -168,14 +225,17 @@ components.
 
 ## Dependencies
 
-All imports are published modules of Library commit
-`18a1f10aef8ea135d90e8474439a5e6d9c130008`; the table gives the first twelve
-hexadecimal digits of the SHA-256 of each `.lean` file there.
+All imports other than `Correspondence/HenniartLocalNumerical` are published
+modules of Library commit `18a1f10aef8ea135d90e8474439a5e6d9c130008`; the
+table gives the first twelve hexadecimal digits of the SHA-256 of each `.lean`
+file there, and of `Correspondence/HenniartLocalNumerical` at the commit named
+in its row.
 
 | Module (under `Langlands/`) | Declarations used | `.lean` SHA-256 |
 | --- | --- | --- |
 | `Correspondence/SupercuspidalSpecification` | through its imports of `Correspondence/Domains` (`34903bc08863`) and `Correspondence/SupercuspidalRelations` (`701f46d9e700`): `IrreducibleWeilClass`, `SupercuspidalAutomorphicClass`, `weilClassForget` | `b40cc87cb82b` |
-| `LocalFactor/Ramification/InertiaPresentation` | `FiniteInertiaPresentation`, `.artinConductor`, `weilInertiaRestriction` | `84c62107d6a3` |
+| `LocalFactor/Ramification/InertiaPresentation` | finite inertia presentations, reached through `Correspondence/HenniartLocalNumerical` | `84c62107d6a3` |
+| `Correspondence/HenniartLocalNumerical` | `LocalNumerical.HasArtinConductor`, which uses `Ramification.Local.SepClosed.FiniteInertiaPresentation`, `.artinConductor` and `weilInertiaRestriction`; Library commit `b304c4f466feb1c522f6ac175d373bc1a9cab490` | `5aed6e627609` |
 | `Representation/Classification/SupercuspidalStrata` | `GeneralLinear.SupercuspidalClass.firstFixedLevel` | `fe7fddcd7c5c` |
 | `VirtualRepresentation/Weil/Local` | local Weil basis | `841da167450a` |
 | `VirtualRepresentation/Weil/Twist` | `Weil.UnramifiedOrbitClasses`, `Weil.unramifiedOrbitClass` | `10cace6b1825` |

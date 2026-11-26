@@ -1,0 +1,3 @@
+# The intertwining stabilizer as a dynamic subgroup of the target parabolic
+
+The transported source cocharacter factors through the target Levi. Its centralizer inside the target parabolic is that Levi. Applying the target Levi projection to a point contracted by the cocharacter gives a point contracted by a central cocharacter of the Levi, hence the identity. Thus the contracted points lie in the target unipotent radical. The closed-immersion comparison of dynamic subgroups identifies the contracted points with the intersection of the target radical and the transported source radical. The pullback description of the stabilizer gives an actual closed subgroup representative.

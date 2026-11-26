@@ -1,0 +1,3 @@
+# Detecting a supercuspidal discrete series by its self-pair denominator
+
+For a positive-rank irreducible square-integrable representation, nonvanishing of the certified self-pair denominator at the residue cardinality implies supercuspidality. The proof chooses the centered segment description of the given action. The denominator of the midpoint base paired with its smooth dual vanishes at the spectral variable `1` by smooth biduality. When the segment length is at least two, the centered self-pair formula uses a shift of one. At spectral argument `-1` the shifted base factor therefore gives a root, and the whole denominator vanishes at the residue cardinality. The length-one criterion for a segment head now gives supercuspidality on the original representation.

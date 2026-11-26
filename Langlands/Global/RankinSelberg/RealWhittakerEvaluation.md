@@ -1,4 +1,6 @@
-# Uniqueness of real Whittaker coefficient maps from evaluation
+# Evaluation and derivative growth of real Whittaker coefficients
+
+## Uniqueness from evaluation
 
 `RealWhittakerEvaluationStatement` compares two smooth moderate-growth
 Whittaker intertwiners of the same real K-finite standard module. If they
@@ -37,3 +39,28 @@ coefficient maps by their scalar evaluations. The bounded
 realization and equivariant extension of these evaluations remain
 separate proof obligations.
 [Jacquet, *Archimedean Rankin–Selberg Integrals*, Lemma 2.4 and §11](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)
+
+## One growth exponent for the derivatives of each coefficient
+
+`RealExactWhittakerDerivativeGrowthStatement` gives one polynomial
+height exponent for all right derivative words of each function in
+`realWhittakerModel`. The exponent can depend on the function and the
+constant can depend on the word.
+
+The pullback used for identity evaluation is compact finite and center
+finite. The height of its real projection is bounded by a constant times
+the square of the archimedean height. The original polynomial bound
+therefore gives an archimedean height exponent for the pullback.
+`finiteUniformDifferentialGrowth` applies the same exponent to every
+enveloping derivative. Each real derivative word is the restriction of
+the corresponding enveloping word in the inserted real directions.
+The archimedean height of an inserted real matrix is at most its real
+matrix height times the matrix size. Thus the derivative bounds return
+to the real group with a common exponent. Taking the supremum of the
+intertwiner ranges preserves membership in the submodule of functions
+with this property.
+
+This is an internal application of compact-central differential
+reproduction to the initial convergence estimates, corresponding to the
+use of derivative bounds in Jacquet's Proposition 3.1 and §3.2.
+[Registered author edition](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

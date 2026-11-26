@@ -59,7 +59,8 @@ theorem exists_continuous_standardEvaluation
   rw [ContinuousLinearMap.comp_apply, hT, hAgree]
   exact hEval f g
 
-private theorem derivativeCLM_compactEval (ds : List RealBlock) (Xs : List M) (f : S ds)
+/-- Evaluation of a word of compact-model derivatives is the iterated right derivative. -/
+theorem derivativeCLM_compactEval (ds : List RealBlock) (Xs : List M) (f : S ds)
     (k : U) :
     (derivativeCLM I (R ds) Xs (derivativeEquiv ds f)).val k =
       RealLocalWhittaker.iteratedRightDerivative r Xs f.val (Unitary.toUnits k) := by

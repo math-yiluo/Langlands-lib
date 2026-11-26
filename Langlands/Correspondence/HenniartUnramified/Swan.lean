@@ -95,7 +95,8 @@ theorem hasWeilSwan_iff_rank_mul_lastBreak {k : ℕ}
     HasWeilSwan K σ s ↔ (s : ℝ) = (k + 1 : ℕ) * lastBreak K A := by
   have aux (a : ℕ) (ha : HasArtinConductor K σ a) :
       ((a - (k + 1) : ℕ) : ℝ) = (k + 1 : ℕ) * lastBreak K A := by
-    obtain ⟨C, P, hP, hC, hArtin⟩ := ha
+    obtain ⟨C, P, hP, hC, hArtin⟩ :=
+      (Numerical.hasArtinConductor_iff_exists_padicPresentation K σ a).mp ha
     obtain ⟨R, hR⟩ := Quotient.exists_rep σ.val
     have hRclass : classOf R.val = weilClassForget K σ := congrArg (forgetPropertyClass _) hR
     obtain ⟨e⟩ := (classOf_eq_iff _ _).mp (hC.trans hRclass.symm)

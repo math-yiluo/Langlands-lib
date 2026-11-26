@@ -24,3 +24,26 @@ with the split-place clause of `UnitaryLocalProfileRealizationStatement`.
 This is an internal comparison between local chart interfaces in the
 Library for use in the realization direction of Clozel's split-place
 profiles.
+
+## Maximal-Witt charts from an upper matrix factor
+
+`maxWittChartOfSplitCompletion` takes a matrix chart at the chosen upper
+completion and a second-kind involution. In the actual product of the
+completed factors, the involution swaps the two central idempotents.
+The first component of the chart is the given matrix equivalence,
+written over the base completion using the degree-one field chart.
+The second component is obtained by applying the involution, taking
+that first component, and applying the antidiagonal matrix adjoint
+with trivial coefficient involution. The two anti-multiplicative maps
+make the second component multiplicative. The involution recovers its
+inverse from the first-factor chart.
+
+The oriented center equivalence identifies matrices over the completed
+center with pairs of matrices over the base completion. The two
+components send the center to the two scalar matrices and exchange
+under the antidiagonal adjoint. Recombining them gives the algebra
+equivalence required by `IsQuasiSplitAt`, including both compatibilities.
+`isQuasiSplitAt_of_zeroCompletedBrauerInvariant` obtains the initial
+matrix chart from injectivity of the finite Brauer invariant and the
+neutral-class splitting theorem. Scalar extension preserves the
+central simple degree, so the matrix chart has the prescribed size.

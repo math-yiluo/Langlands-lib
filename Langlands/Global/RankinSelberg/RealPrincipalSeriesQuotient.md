@@ -16,11 +16,12 @@ characters give equality of standard modules by the weight-zero
 expansion. Character blocks are kept. Induction on the list composes
 these surjections.
 
-Given an original uniform coefficient map \(B\), precompose it with
-the resulting surjection. The character identity, smoothness and
-common height exponent are preserved because each new coefficient
-is an original coefficient. The intertwiner identities follow by
-transporting the compact and Lie actions through the surjection.
+`isRealWhittakerIntertwiner_pullback` proves that precomposition with
+a standard-module intertwiner preserves the exact coefficient map.
+Each new coefficient is an original coefficient, so it satisfies the
+character identity, smoothness and the height bound. The compact and
+Lie actions transport through the intertwiner. For a uniform map,
+the same precomposition also preserves the common height exponent.
 Surjectivity gives every original coefficient as a coefficient in
 the ascending character model.
 

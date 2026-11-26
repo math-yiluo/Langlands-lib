@@ -37,3 +37,5 @@ using compact-derivative-bounded functionals in the square matrix zeta
 functional equation. Whittaker equivariance on the whole expanded space
 is an additional premise in the separate uniform coefficient extension
 reduction.
+
+`derivativeCLM_compactEval` identifies the compact evaluation of each derivative coordinate with the iterated right derivative of the standard function.

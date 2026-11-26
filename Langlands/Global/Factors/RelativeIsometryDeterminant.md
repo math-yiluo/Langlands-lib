@@ -1,0 +1,11 @@
+# Determinant compatibility of the relative generated isometry
+
+`Langlands.Global.PoleComparison.relativeIsometryDeterminantCompatibility` proves the determinant clause of `Langlands.Global.PoleComparison.RelativeIsometryFactorStatement`. For a generated positive isometry \(T\), every \(T x\) has a virtual central character whose pullback along any geometric reciprocity candidate is the determinant of \(x\).
+
+`LocalWeil.unitaryDeterminant_eq_determinant_realizeExact` compares the lattice determinant with the determinant on exact \(K_0\). The comparison is linear, so it suffices to compute on a basis class using `unitaryDeterminant_generator`, `realizeExact_generator`, `ExactGrothendieckGroup.determinant_ofClass` and `Weil.forgetProperty_basisContinuousClass`. The witnessed expansion then identifies the lattice determinant of a generator with the determinant of the local restriction by `ExactGrothendieckGroup.determinantCharacter_ofRepresentation_apply`.
+
+`RelativeWeilGroup.associatedCentralCharacter` identifies the determinant of the global Weil representation with the inverse of the associated Hecke central character evaluated on the transfer. `RelativeWeilGroup.localTransferReciprocity` identifies the transfer on the local image with the inverse of the idèle obtained by local reciprocity. The inversions cancel. On the automorphic side, `localComponent_hasCentralCharacter` and `representation_scalar_of_hasCentralCharacter` give the restricted Hecke character on the local component. `PadicSupercuspidal.isUnitaryCentralCharacter_of_isUnitaryLatticeSupport` identifies it with the character of the witnessed support.
+
+`pairedLattice_determinant` extends the resulting character identity from generator pairs to their integral span. `relative_graph_mem_pair` places \((x,T x)\) in that span, and `isUnitaryCentralCharacter_latticeCentralCharacter` supplies the central-character witness for \(T x\).
+
+The proof implements the finite-relative form of Henniart (2000), §2.6 Proposition (a), determinant clause, pp. 446–447, and §2.8, p. 448. The global character input is from §2.2, p. 444. The registered source `henniart-2000-simple-proof` has SHA-256 `be283c3e8187f1eed365537c72379c3e06e7791756954c2ac783c6beea2979de`.

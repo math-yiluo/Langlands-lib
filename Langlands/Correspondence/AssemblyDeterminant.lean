@@ -160,13 +160,8 @@ theorem centralActsBy_apply {n : ℕ+} {π : AutomorphicClass.{uF, uA} F n} {a :
 
 /-- The reciprocity homomorphism is surjective. -/
 theorem reciprocityHom_surjective (e : ReciprocityCandidate F) :
-    Function.Surjective (reciprocityHom F e) := by
-  intro z
-  obtain ⟨x, hx⟩ := QuotientGroup.mk_surjective (e.symm z)
-  refine ⟨x, ?_⟩
-  change e (QuotientGroup.mk x) = z
-  rw [hx]
-  exact e.apply_symm_apply z
+    Function.Surjective (reciprocityHom F e) :=
+  Langlands.Correspondence.reciprocityHom_surjective F e
 
 /-- Under geometric reciprocity, the normalized absolute value of `rec w` is the norm
 character at `w`. -/

@@ -83,3 +83,5 @@ is the standard one: `c` acts on adeles by functoriality and on matrices
 entrywise. The module is derived: it makes this implicit action explicit. It
 works for an arbitrary CM field, which is more general than Harris's fields
 `E₀·K₀`.
+
+`finitePlaceComplexConj_involutive` gives the involution on the finite places induced by CM conjugation.

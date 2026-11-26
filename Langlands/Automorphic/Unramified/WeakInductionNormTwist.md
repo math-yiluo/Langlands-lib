@@ -1,0 +1,5 @@
+# Determinant twisting of cuspidal weak induction
+
+A Hecke determinant twist of the downstairs cusp and the corresponding twist by the idele-class norm pullback upstairs preserve the weak-induction relation. At an unramified place of the extension, the canonical upstairs uniformizer differs from the image of the downstairs uniformizer by a valuation unit. Its norm contributes the downstairs uniformizer to the power of the residue degree, and the norm of the valuation unit is invisible to an unramified character. Thus the upstairs Euler polynomial is scaled by the downstairs character value to that same residue degree. The residue-degree substitution commutes with the scaling, and the cofinite comparison keeps all upper places and all Satake multiplicities. The field and presentation universes are independent.
+
+This is the cofinite Euler step in the determinant twisting of automorphic induction in Henniart–Herb (1995), §8.16, printed p. 183, in the paragraph preceding (16). The registered source is `henniart-herb-1995-induction`, SHA-256 `5e753525048b08007d9605baa9019c8e792512887305ec2e39ae9c3bee6a963e`.

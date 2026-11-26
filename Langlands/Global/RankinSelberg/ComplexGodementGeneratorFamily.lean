@@ -107,7 +107,9 @@ private theorem uniform_bound_pullback (W : P → G → ℂ)
   obtain ⟨C, hC, hB⟩ := hN J
   exact ⟨C, hC, fun q hq h => hB (smallerExponents q) (hsub q hq) h⟩
 
-private theorem differentiable_generatorValue (ν : Measure G) [ν.IsHaarMeasure]
+/-- The continued integral for a fixed Schwartz test is pointwise entire in the
+inducing parameters under the uniform estimates for the smaller family. -/
+theorem differentiable_generatorValue (ν : Measure G) [ν.IsHaarMeasure]
     (μ : AdditiveHaarMeasure ℂ) (a : ℂˣ) (d : ComplexCharacterData)
     (Φ : EntrySchwartz (r + 1) (r + 1 + 1)) (W : P → G → ℂ)
     (hWc : ∀ p, Continuous (W p)) (hWd : ∀ h, Differentiable ℂ (fun p => W p h))

@@ -1,0 +1,9 @@
+# Restricting an induced spectrum to the full Galois orbit
+
+`WeakInductionOrbitRestrictionStatement` is the local spectral calculation for any finite Galois extension of number fields at an unramified finite base place. Given the induced Euler polynomial at the base, raising its Satake multiset to the residue degree at an upper place gives the sum of the upper spectra along the full Galois orbit of that place. Every automorphism contributes a summand, including automorphisms with the same image place. The field universes are independent.
+
+`weakInductionOrbitRestriction` compares the roots of the induced polynomial with the roots of its factors of the form `1 - c X^f`. Each such factor supplies `f` copies of `c` after taking the residue-degree power. The Galois group acts transitively on the finite places over the base place and preserves their residue degrees. Its map to the orbit of a fixed upper place has equal-sized fibres. The fundamental identity for ramification and residue degrees, with ramification index one, gives their common size `f`. This yields the same multiset on each side.
+
+`weakInductionOrbitBaseChange` attaches the local calculation to the actual arithmetic pullbacks of a presentation of the inducing cusp. It forms the isobaric sum over all Galois elements, checks the rank equation, and applies the multiset calculation outside the finite set in the original weak induction and the projections of the finite presentation exceptions. This proves `WeakInductionOrbitBaseChangeStatement` with its two additional, independent presentation universes.
+
+The unramified conventions are those of Arthur and Clozel, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula* (1989), III.(1.1), p. 199, and III.Definition 6.1 and formulas (6.1)–(6.2), pp. 215–216. The implementation uses only the algebra of the induced polynomials and arithmetic transport, so it applies also to noncyclic Galois extensions.

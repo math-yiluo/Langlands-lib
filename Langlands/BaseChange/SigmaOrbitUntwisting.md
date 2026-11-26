@@ -1,0 +1,7 @@
+# Restoring the original real twist of a supercuspidal σ-lift
+
+The same-carrier p-adic realization identifies the relative norm pullback of the real power on `F` with the real power on `E`. Apply `sigmaLiftFieldTwist` with the inverse power, preserving the lower carrier and the nonzero constant in the lift. The actual twist of the upper induced representation is equivalent to the original `sigmaOrbitProduct` by the normalized product twist isomorphism and cancellation of the powers. Transport the intertwiner and the distributional identity along this equivalence.
+
+Determinant twisting preserves supercuspidality and irreducibility. Twisting any equivalence by a common character preserves and reflects the test for stabilizing the action. Determinant twists commute, so the actual norm-twist stabilizer subgroup is the same before and after untwisting. The topology instances in the conclusions are the supplied local-field GL topology instances.
+
+The analytic twist rule is Henniart–Lemaire, *Changement de base et induction automorphe pour GL_n en caractéristique non nulle* (2011), II.2.9 Remarque (4), printed p. 70 (PDF p. 78). Their passage from essentially σ-discrete representations to σ-discrete representations uses this rule in II.4.7, printed p. 89 (PDF p. 97). Source `provided-a0a5445aba86b871bcd83f08813de3234fddb463ff9bb3c9dfd60d2d2fcdae61`, SHA-256 `7af2940c75a75937c1bf9096eb329931d4245cf592e3572db0ff93ec6e76c5e0`.

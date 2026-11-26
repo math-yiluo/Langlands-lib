@@ -1,0 +1,5 @@
+# Adelically measured dynamic radicals at Levi points
+
+The actual adelic images of a represented dynamic parabolic, its centralizer and its unipotent subgroup admit a continuous semidirect decomposition. The dynamic limit map gives its continuous projection. On the Levi factor the modular character is the product of the Levi modular character and the forward action modulus on the unipotent subgroup. The first factor is one for a connected reductive Levi.
+
+The adelic adjoint determinant formula on a smooth parabolic representative identifies its modular character with a character norm. Restriction to the Levi splits the determinant into the two Lie summands. The adjoint determinant of the connected reductive Levi is trivial, leaving exactly the determinant of the Levi action on the unipotent subgroup. This proves the forward modulus comparison at every Levi point. The consequence is useful for the parabolic within the target parabolic defined by a transported source cocharacter, where the ambient group of that dynamic construction need only be affine.
