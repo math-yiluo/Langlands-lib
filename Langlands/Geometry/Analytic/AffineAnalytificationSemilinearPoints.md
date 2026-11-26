@@ -1,0 +1,5 @@
+# Semilinear maps on affine analytic point spaces
+
+Let \(K\) be a complete nonarchimedean field with nontrivial norm, and let the commutative \(K\)-algebras \(A\) and \(B\) have chosen finite polynomial presentations \(P\) and \(Q\). A ring homomorphism \(A\to B\) semilinear over a norm-preserving ring endomorphism of \(K\) gives `semilinearBaseMap` from the points of \((\operatorname{Spec} B)^{\mathrm{an}}\) to the points of \((\operatorname{Spec} A)^{\mathrm{an}}\). It uses `BaseChangeComparison.pullback` to restrict each extending seminorm. The evaluation formula proves continuity in the seminorm topology and identifies the construction with the existing affine point map for a \(K\)-algebra homomorphism.
+
+The underlying seminorm description is Berkovich, *Spectral theory and analytic geometry over non-Archimedean fields*, Theorem 3.4.1 and Remark 3.4.2 (1990). The semilinear form uses the same seminorm construction and the norm preservation of the base map. Semilinear analytic actions are used in Berkovich, *Étale equivariant sheaves on \(p\)-adic analytic spaces*, §1.1.1(i) (1996).

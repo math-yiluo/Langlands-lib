@@ -87,8 +87,9 @@ private theorem pairCompactRationalOn_of_presentation
       ((SubgroupFunctor.range (d.n ≫ d.p)).carrier (Over.mk (𝟙 _)))
       ((SubgroupFunctor.range d'.p).carrier (Over.mk (𝟙 _)))
       ((SubgroupFunctor.range (d'.n ≫ d'.p)).carrier (Over.mk (𝟙 _))) K)
-    (hA : A.IsAdmissible) (hfin : A.HasFiniteLength) (hΩ : IsOpen Ω) :
-    IsRationalOperatorOn Ω (compactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A) := by
+    (hA : A.IsAdmissible) (hfin : A.HasFiniteLength)
+    {D : Set (unramifiedCharacters (normCharacters χ))} (hDΩ : D ⊆ Ω) (hD : IsOpen D) :
+    IsRationalOperatorOn D (restrictedCompactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A D hDΩ) := by
   let := hG.smooth
   let eP := parabolicPoints_eq χ ψ d.realizes
   let eP' := parabolicPoints_eq χ ψ' d'.realizes
@@ -104,8 +105,8 @@ private theorem pairCompactRationalOn_of_presentation
     (commonDecomposition χ ψ' hψ') (radical_isClosed ψ')
     pt.decomposition pt.radical_closed pt.decomposition' pt.radical_closed' hsq
   let cc := characterComparison χ ψ d.r d.realizes
-  let D := cc.symm ⁻¹' Ω
-  have hD : IsOpen D := hΩ.preimage cc.symm.continuous
+  let D₀ := cc.symm ⁻¹' D
+  have hD₀ : IsOpen D₀ := hD.preimage cc.symm.continuous
   let A₀ := presentationRepresentation χ ψ d.realizes A
   let qMeasure := presentationQuotientMeasure χ ψ d.realizes K ψ' d'.realizes hK
   let ν₀ := parabolicLeviRationalNormCharacters d.r
@@ -118,8 +119,8 @@ private theorem pairCompactRationalOn_of_presentation
       (A.twist (parameterTransport χ z.val).val.toMonoidHom
         (unramifiedCharacter_isOpen_ker (leviNormCharacters χ) (parameterTransport χ z.val)))
       (pairQuotientMeasure K hK ψ ψ')).mpr z.property
-  have hfull (w : D) : isFull w.val :=
-    (congrArg isFull (cc.apply_symm_apply w.val)).mp (hfullAt ⟨cc.symm w.val, w.property⟩)
+  have hfull (w : D₀) : isFull w.val :=
+    (congrArg isFull (cc.apply_symm_apply w.val)).mp (hfullAt ⟨cc.symm w.val, hDΩ w.property⟩)
   let c := transportedRationalUnramifiedCharacterCoordinates d.r.isCompatible.levi.isConnectedReductive
     (parabolicLeviPointHomeomorph d.r)
   have hdom := compactIntegralLocallyDominatedOn_of_isOpen_of_monomials
@@ -128,7 +129,7 @@ private theorem pairCompactRationalOn_of_presentation
     A₀ _ qMeasure c.toHomeomorph (fun m => ⟨_, fun z =>
       transportedRationalUnramifiedCharacterCoordinates_apply_eval
         d.r.isCompatible.levi.isConnectedReductive (parabolicLeviPointHomeomorph d.r) z m⟩)
-    hD hfull
+    hD₀ hfull
   have hrat := parabolicLevi_standardCompactRationalOn_of_dominated_of_finiteLength
     d.r d'.r (d.levi_comp.trans d'.levi_comp.symm) d.radical d'.radical rfl rfl rfl
     pt.decomposition pt.radical_closed hδ K pt.parabolic_closed hK pt.factorization
@@ -138,16 +139,16 @@ private theorem pairCompactRationalOn_of_presentation
     (presentationIntersectionHaar χ ψ d.realizes K ψ' d'.realizes hK)
     (presentationQuotientMeasure_isCompatible χ ψ d.realizes K ψ' d'.realizes hK)
     hsq₀ A₀ (representationOfEq_isAdmissible' eM A hA)
-    (representationOfEq_hasFiniteLength' eM A hfin) hD hfull hdom
-  let op (w : D) := sourceOperator χ ψ ψ' d.r d.realizes d'.realizes pt.decomposition
+    (representationOfEq_hasFiniteLength' eM A hfin) hD₀ hfull hdom
+  let op (w : D₀) := sourceOperator χ ψ ψ' d.r d.realizes d'.realizes pt.decomposition
     pt.radical_closed pt.decomposition' pt.radical_closed' pt.parabolic_closed pt.parabolic_closed'
     K hK pt.factorization pt.factorization' pt.projection_continuous pt.projection_continuous'
     A hδ hδ' hsq₀ w.val (hfull w)
-  have hrat' : IsRationalOperatorOn D op := hrat
-  have hratD := (isRationalOperatorOn_comparison_iff χ ψ d.r d.realizes D op).mpr hrat'
-  have hsub : Ω ⊆ cc ⁻¹' D := by
+  have hrat' : IsRationalOperatorOn D₀ op := hrat
+  have hratD := (isRationalOperatorOn_comparison_iff χ ψ d.r d.realizes D₀ op).mpr hrat'
+  have hsub : D ⊆ cc ⁻¹' D₀ := by
     intro z hz
-    change cc.symm (cc z) ∈ Ω
+    change cc.symm (cc z) ∈ D
     rw [cc.symm_apply_apply]
     exact hz
   have hconj := ((hratD.restrict hsub).precomp
@@ -158,28 +159,38 @@ private theorem pairCompactRationalOn_of_presentation
     pt.parabolic_closed pt.parabolic_closed' K hK pt.factorization pt.factorization'
     pt.projection_continuous pt.projection_continuous' hψK hψ'K A hδ hδ' hsq₀
   have hoperator :
-      (fun z : Ω =>
+      (fun z : D =>
         (targetPictureComparison χ ψ ψ' hψ' d.realizes d'.realizes pt.decomposition' K A).toLinearEquiv.toLinearMap ∘ₗ
           (op ⟨cc z.val, hsub z.property⟩ ∘ₗ
             (compactPictureComparison χ ψ hψ d.realizes pt.decomposition K A).toLinearEquiv.symm.toLinearMap)) =
-      compactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A := by
+      restrictedCompactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A D hDΩ := by
     funext z
-    exact hop z.val z.property (hfullAt z)
+    exact hop z.val (hDΩ z.property) (hfullAt ⟨z.val, hDΩ z.property⟩)
   rw [← hoperator]
   exact hconj
+
+include ha in
+/-- On any open subset of the full convergence domain, one regular denominator
+clears the actual compact operator and is nonzero throughout the subset. -/
+theorem pairCompactRationalOn_of_isOpen_subset
+    (hA : A.IsAdmissible) (hfin : A.HasFiniteLength)
+    {D : Set (unramifiedCharacters (normCharacters χ))} (hDΩ : D ⊆ Ω) (hD : IsOpen D) :
+    IsRationalOperatorOn D (restrictedCompactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A D hDΩ) := by
+  let d := parabolicData χ ψ hG hψ T a ha
+  let d' := parabolicData χ ψ' hG hψ' T a ha
+  let pt := presentationPointData F G hG χ ψ ψ' hψ hψ' T (parameterScheme χ)
+    d.P d'.P d.U d'.U d.p d.l d'.p d'.l a d.n d'.n d.r d.realizes d'.realizes K hψK hψ'K
+  exact pairCompactRationalOn_of_presentation hG χ ψ ψ' hψ hψ' a K hK hψK hψ'K hsq A
+    d d' pt hA hfin hDΩ hD
 
 include ha in
 /-- If the actual full domain is open, the actual compact family admits a
 common rational denominator nonzero at every parameter of that domain. -/
 theorem pairCompactRationalOn_of_isOpen_fullDomain
     (hA : A.IsAdmissible) (hfin : A.HasFiniteLength) (hΩ : IsOpen Ω) :
-    IsRationalOperatorOn Ω (compactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A) := by
-  let d := parabolicData χ ψ hG hψ T a ha
-  let d' := parabolicData χ ψ' hG hψ' T a ha
-  let pt := presentationPointData F G hG χ ψ ψ' hψ hψ' T (parameterScheme χ)
-    d.P d'.P d.U d'.U d.p d.l d'.p d'.l a d.n d'.n d.r d.realizes d'.realizes K hψK hψ'K
-  exact pairCompactRationalOn_of_presentation hG χ ψ ψ' hψ hψ' a K hK hψK hψ'K hsq A
-    d d' pt hA hfin hΩ
+    IsRationalOperatorOn Ω (compactFamily χ hG K hK ψ hψ hψK ψ' hψ' hψ'K hsq A) :=
+  pairCompactRationalOn_of_isOpen_subset hG χ ψ ψ' hψ hψ' a ha K hK
+    hψK hψ'K hsq A hA hfin subset_rfl hΩ
 
 /-- A nonempty open actual full domain gives continuation data for that
 entire domain, with its original quotient measure. -/

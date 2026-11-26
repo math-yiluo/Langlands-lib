@@ -1,3 +1,4 @@
+import Langlands.LocalFactor.Ramification.Herbrand.RelativeIndex
 import Langlands.Correspondence.HenniartTameWeilFields
 import Langlands.ClassFieldTheory.Local.NormOrderProof
 import Langlands.Galois.Local.TotallyRamifiedSolvabilityProof
@@ -18,23 +19,6 @@ open Polynomial
 
 universe u
 
-/-- For a normal subgroup, the cosets in a product of subgroups are
-represented by elements of the normal factor. -/
-private theorem relIndex_normal_sup {G : Type*} [Group G] (H N : Subgroup G)
-    [N.Normal] : H.relIndex (N ⊔ H) = H.relIndex N := by
-  let e := Subgroup.quotientSubgroupOfEmbeddingOfLE H (le_sup_left : N ≤ N ⊔ H)
-  symm
-  apply Nat.card_congr (Equiv.ofBijective e ⟨e.injective, ?_⟩)
-  intro q
-  obtain ⟨⟨x, hx⟩, rfl⟩ := QuotientGroup.mk_surjective q
-  obtain ⟨n, hn, h, hh, rfl⟩ := Subgroup.mem_sup_of_normal_left.mp hx
-  refine ⟨QuotientGroup.mk (⟨n, hn⟩ : N), ?_⟩
-  rw [show e (QuotientGroup.mk (⟨n, hn⟩ : N)) =
-    QuotientGroup.mk (Subgroup.inclusion le_sup_left ⟨n, hn⟩) from rfl,
-    QuotientGroup.eq]
-  change n⁻¹ * (n * h) ∈ H
-  simpa using hh
-
 /-- Inertia with cyclic quotient by a normal p-subgroup has at most one
 subgroup of any prescribed prime-to-p index. -/
 private theorem subgroup_eq_of_tame_index {G : Type*} [Group G] [Finite G]
@@ -44,7 +28,7 @@ private theorem subgroup_eq_of_tame_index {G : Type*} [Group G] [Finite G]
   have contains (H : Subgroup G) (hH : H.index = m) : P ≤ H := by
     obtain ⟨n, hn⟩ := hP.index (H.subgroupOf P)
     have hd : H.relIndex P ∣ m := by
-      rw [← hH, ← relIndex_normal_sup H P]
+      rw [← hH, ← Langlands.Ramification.HerbrandBridge.relIndex_normal_sup H P]
       exact Subgroup.relIndex_dvd_index_of_le le_sup_right
     have hidx : H.relIndex P = p ^ n := hn
     have hn0 : n = 0 := by
@@ -218,7 +202,7 @@ private theorem fixing_relIndex_inertia {m : ℕ} (E : TameTotallyRamifiedExtens
     (IntermediateField.finrank_eq_fixingSubgroup_index (AlgebraicClosure K.Carrier)
       E.1.field).symm.trans hdeg
   change H.relIndex Iₐ = m
-  rwa [← relIndex_normal_sup, htop, Subgroup.relIndex_top_right]
+  rwa [← Langlands.Ramification.HerbrandBridge.relIndex_normal_sup, htop, Subgroup.relIndex_top_right]
 
 local notation "Closure" => AlgebraicClosure K.Carrier
 local notation "FiniteGaloisField" => FiniteGaloisIntermediateField K.Carrier Closure
@@ -355,7 +339,7 @@ private theorem exists_unique_tame_field_for_lift {m : ℕ} (hm : ¬ p ∣ m)
     · exact le_inf le_sup_left hJI
   have htop := inertia_sup_eq_top_of_section K s hs D le_sup_right
   have hDindex : D.index = m := by
-    rw [← Subgroup.relIndex_top_right, ← htop, relIndex_normal_sup,
+    rw [← Subgroup.relIndex_top_right, ← htop, Langlands.Ramification.HerbrandBridge.relIndex_normal_sup,
       ← Subgroup.inf_relIndex_right D Iₐ, hinter]
     exact hindex
   let : D.FiniteIndex := ⟨fun h => hm (hDindex ▸ h ▸ dvd_zero p)⟩

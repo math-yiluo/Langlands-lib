@@ -1,0 +1,7 @@
+# Normalized finite covariance of the cuspidal coefficient pairing
+
+Fix the cuspidal realizations, their spectral presentations, and the irreducibility and admissibility of their supplied finite local components. `GroupedFiniteScalarCovarianceStatement` applies to a bundled finite inducing evaluation whose coefficient space is the tensor of the restricted Levi block coefficients associated with those presentations. The finite source representation is a parameter. The bundle supplies the normalized vector covariance under a finite parabolic element, with the positive half character and the external action of the finite Levi factors.
+
+The proof pairs the evaluated finite coefficient with any tensor of the actual infinite coefficients. Scalar evaluation of that pair is linear in the finite coefficient, so the half character factors out. The external finite Levi action is the indexed tensor map of the individual block actions. `groupedCoefficientEquiv_finite` evaluates that tensor map as right translation of the scalar argument by the Levi projection, embedded with identity infinite coordinate. The result is precisely `HasFiniteScalarCovariance` for the evaluation field of the bundle.
+
+This is the scalar form of the vector covariance of normalized induction in Getz–Hahn (2024), §10.1, printed pp. 270–271 (PDF pp. 282–283), `getz-hahn-2024-automorphic-representations`, SHA-256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.

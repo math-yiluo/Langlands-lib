@@ -85,12 +85,18 @@ private theorem rightDerivative_upper_torus {a : ℝˣ} {W : G → ℂ}
     ring
   exact hvalue.unique hc'
 
-private theorem exists_generic_of_ne_zero_on {ds : List RealBlock} {a : ℝˣ}
+private theorem exists_nonzero_whittakerEvaluation {ds : List RealBlock} {a : ℝˣ}
     (Y : Submodule ℂ (V ds))
     (hY : IsGKSubmodule (realStandardRep n ds) (realStandardLie n ds) Y)
     {B : (V ds) →ₗ[ℂ] (G → ℂ)} (hB : IsRealWhittakerIntertwiner r ds a B)
     {v : V ds} (hv : v ∈ Y) {g : G} (hg : B v g ≠ 0) :
-    @IsRealGenericGKModule n ↥Y _ _ (BGChase.restrictLie (realStandardLie n ds) Y hY.2) := by
+    ∃ y : Fin n → ℝ,
+      let ℓ : Y →ₗ[ℂ] ℂ := (LinearMap.proj (torus y)).comp (B.comp Y.subtype)
+      ℓ ≠ 0 ∧ ∃ c : Fin n → ℝ, (∀ i : Fin n, i.val + 1 < n → c i ≠ 0) ∧
+        ∀ X : M, (∀ i j : Fin n, (j : ℕ) ≤ i → X i j = 0) → ∀ w : Y,
+          ℓ (BGChase.restrictLie (realStandardLie n ds) Y hY.2 (1 ⊗ₜ[ℝ] X) w) =
+            (Complex.I * ((∑ i : Fin n, ∑ j : Fin n,
+              if j.val = i.val + 1 then c i * X i j else 0 : ℝ) : ℂ)) * ℓ w := by
   let y := alpha g
   let k := kpart g
   let ku : Matrix.unitaryGroup (Fin n) ℝ := ⟨k.val.val, k.property⟩
@@ -113,7 +119,7 @@ private theorem exists_generic_of_ne_zero_on {ds : List RealBlock} {a : ℝˣ}
     if hi : i.val + 1 < n then
       2 * Real.pi * (a : ℝ) * Real.exp (y i - y ⟨i.val + 1, hi⟩)
     else 0
-  refine ⟨ℓ, hℓ, c, ?_, ?_⟩
+  refine ⟨y, hℓ, c, ?_, ?_⟩
   · intro i hi
     dsimp only [c]
     rw [dite_eq_left hi]
@@ -209,26 +215,32 @@ private theorem maximallyFaithful_of_generic (m : ℕ) {E : Type} [AddCommGroup 
 set_option backward.isDefEq.respectTransparency true in
 set_option synthInstance.maxHeartbeats 100000 in
 set_option maxHeartbeats 1000000 in
-theorem realWhittakerLeftPolynomialVanishing : RealWhittakerLeftPolynomialVanishingStatement := by
-  intro r ds p k hp Y hY hPol a B hB v hv
+/-- Polynomial dependence along one lower simple root precludes a nondegenerate
+Whittaker functional on an invariant subspace. -/
+theorem not_generic_of_leftPolynomial (r : ℕ) (ds : List RealBlock) (p k : ℕ)
+    (hp : p + 1 < r + 1) (Y : Submodule ℂ (Automorphic.realStandardKFinite (r + 1) ds))
+    (hY : IsGKSubmodule (realStandardRep (r + 1) ds) (realStandardLie (r + 1) ds) Y)
+    (hPol : ∀ f ∈ Y, ∀ g : Langlands.GeneralLinear (r + 1) ℝ,
+      ∃ q : Polynomial ℂ, q.degree < k ∧ ∀ t : ℝ,
+        f.val (lowerRootElement (r + 1) p hp t * g) = q.eval (t : ℂ)) :
+    ¬ @IsRealGenericGKModule (r + 1) ↥Y _ _
+      (BGChase.restrictLie (realStandardLie (r + 1) ds) Y hY.2) := by
+  intro hGen
   let _ : AddCommGroup ↥(Automorphic.realStandardKFinite (r + 1) ds) :=
     (Automorphic.realStandardKFinite (r + 1) ds).addCommGroup
   let _ : Module ℂ ↥(Automorphic.realStandardKFinite (r + 1) ds) :=
     (Automorphic.realStandardKFinite (r + 1) ds).module
   let _ : AddCommGroup ↥Y := Y.addCommGroup
   let _ : Module ℂ ↥Y := Y.module
-  rw [LinearMap.mem_ker]
-  funext g
-  change B v g = 0
-  by_contra hg
-  have hv₀ : v ≠ 0 := by
-    intro h
-    apply hg
-    rw [h, map_zero, Pi.zero_apply]
+  obtain ⟨v, hv, hv₀⟩ : ∃ v, v ∈ Y ∧ v ≠ 0 := by
+    obtain ⟨ℓ, hℓ, _⟩ := hGen
+    have hEx : ∃ w : Y, ℓ w ≠ 0 := by
+      by_contra! he
+      exact hℓ (LinearMap.ext he)
+    obtain ⟨w, hw⟩ := hEx
+    exact ⟨w.val, w.property, fun h => hw (by rw [show w = 0 from Subtype.ext h, map_zero])⟩
   let π := realStandardLie (r + 1) ds
   let σ := BGChase.restrictLie π Y hY.2
-  have hGen : @IsRealGenericGKModule (r + 1) ↥Y _ _ σ :=
-    exists_generic_of_ne_zero_on Y hY hB hv hg
   have hFaithful := @maximallyFaithful_of_generic (r + 1) ↥Y _ _ σ hGen
   let T : UniversalEnvelopingAlgebra ℂ (ℂ ⊗[ℝ] Matrix (Fin (r + 1)) (Fin (r + 1)) ℝ)
       →ₗ[ℂ] (Y →ₗ[ℂ] Automorphic.realStandardKFinite (r + 1) ds) :=
@@ -246,5 +258,77 @@ theorem realWhittakerLeftPolynomialVanishing : RealWhittakerLeftPolynomialVanish
     (Nat.mul_ne_zero (by omega) (by omega))
   exact RealLinkedQuotientGrowth.not_forall_le hc hn
     (fun d => hLower d T (fun u _ hu => hCentral u hu)) hUpper (fun _ => le_rfl)
+
+theorem realWhittakerLeftPolynomialVanishing : RealWhittakerLeftPolynomialVanishingStatement := by
+  intro r ds p k hp Y hY hPol a B hB v hv
+  rw [LinearMap.mem_ker]
+  funext g
+  change B v g = 0
+  by_contra hg
+  obtain ⟨y, hℓ, hCov⟩ := exists_nonzero_whittakerEvaluation Y hY hB hv hg
+  exact not_generic_of_leftPolynomial r ds p k hp Y hY hPol ⟨_, hℓ, hCov⟩
+
+private theorem exists_functional_of_surjective {E F : Type}
+    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
+    (T : E →ₗ[ℂ] F) (hTs : Function.Surjective T) (ℓ : E →ₗ[ℂ] ℂ)
+    (hK : T.ker ≤ ℓ.ker) :
+    ∃ ℓ' : F →ₗ[ℂ] ℂ, ∀ w : E, ℓ' (T w) = ℓ w :=
+  ⟨(T.liftOfSurjective hTs) ⟨ℓ, hK⟩, fun _ => T.equivOfSurjective_apply hTs hK⟩
+
+/-- If the image of a standard-module intertwiner is polynomial along a lower simple
+root, its kernel detects every nonzero Whittaker coefficient map on the source. -/
+theorem eq_zero_of_leftPolynomial_range {ds es : List RealBlock} {a : ℝˣ}
+    {T : (V ds) →ₗ[ℂ] V es}
+    (hT : IsRealStandardIntertwiner n (realStandardRep n es) (realStandardLie n es) ds T)
+    (p k : ℕ) (hp : p + 1 < n)
+    (hPol : ∀ f ∈ T.range, ∀ g : G, ∃ q : Polynomial ℂ, q.degree < k ∧ ∀ t : ℝ,
+      f.val (lowerRootElement n p hp t * g) = q.eval (t : ℂ))
+    {B : (V ds) →ₗ[ℂ] (G → ℂ)} (hB : IsRealWhittakerIntertwiner r ds a B)
+    (hKer : T.ker ≤ B.ker) : B = 0 := by
+  let Y : Submodule ℂ (V ds) := ⊤
+  let _ : AddCommGroup ↥Y := Y.addCommGroup
+  let _ : Module ℂ ↥Y := Y.module
+  let _ : AddCommGroup ↥T.range := T.range.addCommGroup
+  let _ : Module ℂ ↥T.range := T.range.module
+  have hY : IsGKSubmodule (realStandardRep n ds) (realStandardLie n ds) Y :=
+    ⟨fun _ _ _ => Submodule.mem_top, fun _ _ _ => Submodule.mem_top⟩
+  have hR : IsGKSubmodule (realStandardRep n es) (realStandardLie n es) T.range := by
+    simpa only [Y, Submodule.map_top] using hT.isGKSubmodule_map hY
+  let TH := T.rangeRestrict.comp Y.subtype
+  have hTH : Function.Surjective TH := by
+    rintro ⟨_, f, rfl⟩
+    exact ⟨⟨f, Submodule.mem_top⟩, rfl⟩
+  have hLie (X : M) (w : Y) :
+      TH (BGChase.restrictLie (realStandardLie n ds) Y hY.2 (1 ⊗ₜ[ℝ] X) w) =
+        BGChase.restrictLie (realStandardLie n es) T.range hR.2 (1 ⊗ₜ[ℝ] X) (TH w) := by
+    apply Subtype.ext
+    exact hT.map_realStandardLie (1 ⊗ₜ[ℝ] X) w.val
+  apply LinearMap.ext
+  intro f
+  funext g
+  change B f g = 0
+  by_contra hg
+  have hf : f ∈ Y := Submodule.mem_top
+  obtain ⟨y, hℓ, c, hc, hCov⟩ :=
+    exists_nonzero_whittakerEvaluation (r := r) (ds := ds) (B := B) (v := f) (g := g)
+      Y hY hB hf hg
+  let ℓ : Y →ₗ[ℂ] ℂ := (LinearMap.proj (torus y)).comp (B.comp Y.subtype)
+  have hK : TH.ker ≤ ℓ.ker := by
+    intro w hw
+    rw [LinearMap.mem_ker] at hw ⊢
+    change B w.val (torus y) = 0
+    have h := hKer (LinearMap.mem_ker.mpr (congrArg Subtype.val hw))
+    exact congrFun (LinearMap.mem_ker.mp h) _
+  obtain ⟨ℓ', hEval⟩ :=
+    exists_functional_of_surjective (E := ↥Y) (F := ↥T.range) TH hTH ℓ hK
+  have hℓ' : ℓ' ≠ 0 := by
+    intro he
+    exact hℓ (LinearMap.ext fun w => (hEval w).symm.trans (LinearMap.congr_fun he (TH w)))
+  apply not_generic_of_leftPolynomial r es p k hp T.range hR hPol
+  refine ⟨ℓ', hℓ', c, hc, fun X hX w => ?_⟩
+  obtain ⟨w, rfl⟩ := hTH w
+  rw [← hLie X w, hEval (BGChase.restrictLie (realStandardLie n ds) Y hY.2 (1 ⊗ₜ[ℝ] X) w),
+    hEval w]
+  exact hCov X hX w
 
 end Langlands.Global.RankinSelbergGlobal.RealLocalWhittaker

@@ -16,6 +16,10 @@ characters give equality of standard modules by the weight-zero
 expansion. Character blocks are kept. Induction on the list composes
 these surjections.
 
+`compactlySplitStandardQuotient_ascendingExpand` supplies a compact-equivariant
+section with a uniform bound on compact values. By `compactDifferenceBound_of_compactBound`,
+the section satisfies the same bound at each compact difference order.
+
 `isRealWhittakerIntertwiner_pullback` proves that precomposition with
 a standard-module intertwiner preserves the exact coefficient map.
 Each new coefficient is an original coefficient, so it satisfies the
@@ -25,7 +29,22 @@ the same precomposition also preserves the common height exponent.
 Surjectivity gives every original coefficient as a coefficient in
 the ascending character model.
 
-The ascending list is a permutation of the position expansion,
-which is the presentation used in the local gamma factor calculation.
-This internal quotient argument supplies the model comparison for the
-reduction of both real Rankin–Selberg equations to character lists.
+`realAscendingWhittakerModels_eq` proves equality of the two exact
+coefficient spaces for every \(r\geq 0\), every real block list of
+total rank \(r+1\), and every nonzero real additive scale \(a\).
+Both spaces use the same scale \(a\). The kernel of a single
+nonzero-weight tail is polynomial along its lower root by
+`ascendingTailKernel_polynomial`. Exact Whittaker vanishing on that
+kernel and surjectivity descend every coefficient of the ascending
+pair to a coefficient of the original block. The character and
+weight-zero cases are identities of standard modules. Repeating this
+step over the list gives descent from the full ascending expansion.
+
+The ascending list is a permutation of the position expansion used
+in the local gamma factor calculation. The quotient and kernel
+vanishing supply the exact model comparison for the real
+Rankin–Selberg reduction to character lists. The corresponding
+principal-series passage in Jacquet's *Archimedean Rankin–Selberg
+Integrals* (2009), §11, embeds the smooth induced model in a character
+principal series and restricts its Whittaker form, using Lemma 2.4
+for nonvanishing. [Jacquet, Proposition 11.1 and the preceding reduction, author-posted p. 82](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

@@ -87,6 +87,10 @@ theorem exists_finite_adelicCompactProfiles (f : C(A, ℂ))
 variable [CompactSpace K] [MeasurableSpace K] [BorelSpace K]
   (measure : Measure K) [measure.IsHaarMeasure]
 
+/-- Average the values of a function along the right compact translates. -/
+def rightCompactFunctionAverage (a : C(K, ℂ)) (f : A → ℂ) : A → ℂ :=
+  fun x => ∫ k, a k * f (x * incK k) ∂measure
+
 /-- Fixed finite compact profiles give weights reproducing every function with
 those profiles. Direct averaging by the first weight always outputs those profiles. -/
 theorem exists_reproducing_adelicCompactProfileWeights (E : Submodule ℂ (K → ℂ))

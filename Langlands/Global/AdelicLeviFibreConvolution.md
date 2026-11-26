@@ -1,0 +1,11 @@
+# Levi fibre derivatives of transported convolution
+
+`subgroupFibreSmoothSlice` restricts a smooth infinite slice of an adelic function to the infinite subgroup fibre through an arbitrary adelic point. At the subgroup point \(m\) the result is \(f(j(m)x)\), where \(j(m)\) denotes the image of the included infinite point. The smooth slice is obtained by right translation and pullback by the regular subgroup map.
+
+For a parabolic \(P\) and a Levi map \(l:M\to P\), `twistedConvolutionEnd_fibreEnveloping` compares an enveloping derivative of the output fibre through \(x\) with the integral of the same derivatives of the input fibres through \(xt\). The input \(f\) is continuous with plot-smooth infinite slices. The theorem takes smooth relative dimensions for the ambient group and the Levi, smooth Iwasawa height pairings on the ambient infinite slices, and the Levi differential commutator for the complex enveloping action. Smoothness of the height pairings gives the plot-smooth output slice by multiplying the smooth convolution by the inverse height power.
+
+Fix a subgroup \(L\) of \(G(\mathbb A_f)\) such that \(f\) is invariant under right multiplication by \((1,b)\) for every \(b\in L\). The test kernel \(h\) satisfies \(t_f\in L\) whenever \(h(t)\ne 0\). The weight is the continuous compactly supported kernel \(h(t)w_\lambda(xt)/w_\lambda(x)\), which is independent of the Levi variable. Where the weight is nonzero, right \(L\)-invariance replaces the finite coordinate of \(xt\) by that of \(x\) in every input fibre. The subgroup map and multiplication make the resulting function jointly smooth in the Levi variable and the infinite coordinate of \(t\).
+
+The theorem `compactIntegralPlotSmooth_enveloping` applies to this family over the compact support of \(h\) with the restricted Haar measure. Extending back to the entire adelic group leaves the integral unchanged because the weight vanishes off that support.
+
+The resulting formula preserves the vanishing of an actual Levi enveloping derivative on all fibres. It is a derived differentiation step for the transported convolution on inducing data in Mœglin–Waldspurger, *Spectral Decomposition and Eisenstein Series* (1995), I.4.5, printed pp. 60–62.

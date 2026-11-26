@@ -70,3 +70,27 @@ theorem pairingHaarPreservation (B : LinearMap.BilinForm F A) (μ : Measure A) [
   rw [map_linearEquiv_addHaar, show distribHaarChar F d = 1 from hχ, inv_one, one_smul]
 
 end Langlands.HarmonicAnalysis.UnitConjugation
+
+namespace Langlands.HarmonicAnalysis.UnitConjugation
+
+open MeasureTheory
+
+variable {F : Type*} {A : Type*} [Field F] [Ring A] [Algebra F A] [finiteA : FiniteDimensional F A]
+
+variable [ValuativeRel F] [TopologicalSpace F] [localF : IsNonarchimedeanLocalField F]
+  [TopologicalSpace A] [IsTopologicalRing A] [moduleTopology : IsModuleTopology F A]
+  [MeasurableSpace A] [borelA : BorelSpace A]
+
+include finiteA localF moduleTopology borelA in
+/-- Conjugation preserves additive Haar measure of any normalization when the
+bilinear pairing is symmetric, nondegenerate and invariant under unit conjugation. -/
+def LocalFieldPairingHaarPreservationStatement (B : LinearMap.BilinForm F A) (μ : Measure A)
+    [μ.IsAddHaarMeasure] : Prop :=
+  PairingHaarPreservationStatement B μ
+
+/-- Additive Haar measure is preserved by conjugation for an invariant pairing. -/
+theorem localFieldPairingHaarPreservation (B : LinearMap.BilinForm F A) (μ : Measure A) [μ.IsAddHaarMeasure] :
+    LocalFieldPairingHaarPreservationStatement B μ :=
+  pairingHaarPreservation B μ
+
+end Langlands.HarmonicAnalysis.UnitConjugation

@@ -1,0 +1,9 @@
+# Norm closures of real Harish-Chandra images
+
+`RealSmoothGKImageClosureStatement` concerns an admissible Harish-Chandra module \(V\) for \(GL_n(\mathbb R)\) equipped with an injective compact and Lie equivariant map into a genuine smooth carrier. Given any compact and Lie equivariant linear map from \(V\) into the genuine smooth vectors of a jointly continuous normed representation \(R\), the norm closure of the underlying image is \(GL_n(\mathbb R)\)-invariant. The two normed carriers and \(V\) have independent universes. The result applies to a diagonal product representation when the two component maps form the graph of an intertwiner.
+
+`realSmoothGKImageClosure` first transfers the compact commutation of the transported Cartan square sum to \(V\) using the injective realization. For \(v\in V\), choose the finite-dimensional compact orbit span of \(v\). Its matrix representation is continuous by the scalar coefficient hypothesis in `IsRealGKModule`. Postcomposition by the algebraic Cartan square sum acts on the finite-dimensional space of compact intertwiners from that orbit span into \(V\). Evaluate a monic annihilating polynomial of this endomorphism at the inclusion of the orbit span and at the coordinates of \(v\). This gives the required polynomial annihilation on \(V\) and hence on its smooth image.
+
+`MixedOrbit.representation_mem_closure_of_stable` applies to the smooth image using this polynomial annihilation, compact and derivative stability, and component coverage by the actual orthogonal subgroup. Each full group translate of a vector in the underlying image thus belongs to its norm closure. Continuity of each bounded group operator proves the same for every vector in the closure.
+
+The argument adapts the finite-dimensional intertwiner calculation in `SmoothCompactPolynomialAnnihilation` to algebraic admissibility and uses the orbit coefficient argument in `MixedOrbitClosure`.

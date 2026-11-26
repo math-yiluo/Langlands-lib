@@ -1,0 +1,7 @@
+# Right translations of compact real parabolic standard sections
+
+`RealParabolicSectionRightTranslationStatement` gives the right upper-rectangle and right Levi translations of `standardSection`. The type-level rank transport preserves the numerical column indices. Right multiplication by the rectangle with entry \(Z\) changes the kernel to \(\Phi(Y+Z)\). Right multiplication by \(\operatorname{diag}(a',b')\) right-translates the two Levi functions, changes the kernel to \(\Phi((a')^{-1}Yb')\), and multiplies the section by \(|\det a'|^{-n/2}|\det b'|^{m/2}\).
+
+The upper-rectangle formula follows from the translation law before the left block exchange. For the right Levi formula, take open-cell coordinates \([A,AY;C,CY+S]\). Block multiplication gives the new Levi arguments \(Aa'\) and \(Sb'\), lower block \(Ca'\), and rectangle \((a')^{-1}Yb'\). This rectangle pullback preserves smoothness and compact support. The determinant factors multiply. A singular leading pivot stays singular under right multiplication by the first Levi block, so both sides of the formula also vanish off the cell.
+
+The determinant and rectangle changes are those used for the leading-block right translate in Jacquet, *Archimedean Rankin–Selberg Integrals*, proof of Proposition 14.1, pp. 103–104 of the author-posted edition. The formula keeps both Levi matrices arbitrary and applies before taking a Whittaker functional.

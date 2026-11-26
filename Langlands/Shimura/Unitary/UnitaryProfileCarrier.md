@@ -1,0 +1,5 @@
+# Transport of a unitary profile to a lifted carrier
+
+Let \(E\) be a totally real number field and \(K/E\) a totally complex quadratic extension, in independent universes. Start with a degree-\(n\) central simple unitary algebra whose carrier is in the universe of \(K\). Given the required real signature charts, finite maximal-Witt charts outside the chosen support, and signed Brauer invariants on that support, `unitaryLocalProfileWitnessOfAlgebra` gives the profile on a carrier in the joint field universe.
+
+The canonical equivalence from the lifted algebra preserves multiplication, the two scalar structures and the transported involution. Its scalar-extended equivalences commute with the completed involutions, as checked on pure tensors and sums. Composing with a given local chart therefore preserves its adjoint condition. At a finite base place the equivalence also preserves the prescribed map from the completed center. At each completion of \(K\) on the support, the scalar extension of the same equivalence transports the actual Brauer representative and retains its invariant.

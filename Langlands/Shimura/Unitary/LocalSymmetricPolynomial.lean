@@ -87,7 +87,8 @@ section Spectra
 
 variable (F : Type u) [Field F] {n : ℕ}
 
-/-- A monic polynomial with distinct base-field roots indexed by `Fin n`. -/
+/-- The monic product of the factors `X - C (i.val : F)` indexed by `Fin n`.
+Its roots are distinct in characteristic zero. -/
 def distinctScalarPolynomial : F[X] := ∏ i : Fin n, (X - C (i.val : F))
 
 theorem distinctScalarPolynomial_monic : (distinctScalarPolynomial (n := n) F).Monic :=

@@ -13,9 +13,10 @@ complete ultrametric normed field `K : Type u` and the localized category
   `QuasiEtaleLocalDomainFactorizationsStatement K`
   (`quasiEtaleBaseChange_of_localDomainFactorizations`).
 
-The last result is conditional. Its hypothesis is an unproved Library
-proposition. This module does not prove `QuasiEtaleBaseChangeStatement`
-unconditionally.
+The last result is conditional. Its hypothesis is a Library proposition that
+this module does not prove. This module does not prove
+`QuasiEtaleBaseChangeStatement` unconditionally. For a Hausdorff source of
+the quasi-étale leg, base change is proved outright, by the second result.
 
 ## Declarations
 
@@ -63,6 +64,12 @@ previous theorem.
 The Hausdorff hypothesis is on the source `Y` of the quasi-étale leg only.
 Nothing is assumed about `X`, `S` or `Y'`.
 
+This theorem is the content of `QuasiEtaleHausdorffBaseChangeStatement`
+(module `QuasiEtaleHausdorffStabilityStatement`), the base change clause of
+Berkovich 1994, Lemma 3.1(i), for a Hausdorff source. The module
+`QuasiEtaleHausdorffBaseChangeProof` proves that statement from it
+(`quasiEtaleHausdorffBaseChange`).
+
 ### `quasiEtaleBaseChange_of_localDomainFactorizations`
 
 Hypothesis: `h : QuasiEtaleLocalDomainFactorizationsStatement.{u, v} K`, the
@@ -100,4 +107,8 @@ of étale morphisms and from Berkovich 1993, Theorem 3.4.1. This module uses
 pointed form of the quasi-étale condition, which is the hypothesis
 `QuasiEtaleLocalDomainFactorizationsStatement`. That module's Markdown
 explains why the Library's nonpointed definition requires it for a
-non-Hausdorff source.
+non-Hausdorff source. It also records a proof of the general case in the
+literature: Ducros, *Families of Berkovich spaces*, Lemma 5.4.11, which
+rests on Ducros's Theorem 5.4.6 (whose proof uses the analytic Zariski Main
+Theorem) and on Berkovich 1993, Theorem 3.4.1. That page also explains what
+a direct gluing of étale envelopes would require beyond Theorem 3.4.1.

@@ -15,7 +15,7 @@ namespace Langlands.Global.AdelicGroupPoints
 
 open InfiniteAdelicGroupPoints Langlands.Automorphic.GroupSchemeFunctions Langlands.Geometry.Manifold
 
-private theorem complexEnveloping_induction {L : Type u} [LieRing L] [LieAlgebra ℝ L]
+theorem complexEnveloping_induction {L : Type u} [LieRing L] [LieAlgebra ℝ L]
     {P : UniversalEnvelopingAlgebra ℂ (ℂ ⊗[ℝ] L) → Prop}
     (h1 : P 1) (hadd : ∀ x y, P x → P y → P (x + y))
     (hsmul : ∀ (c : ℂ) x, P x → P (c • x))

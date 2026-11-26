@@ -1,5 +1,13 @@
 # Descent of real Whittaker coefficients across a finite-dimensional kernel
 
+`model_le_of_vanishingKernel` gives exact coefficient descent across a
+surjective standard intertwiner whose kernel is killed by every exact
+coefficient map on its source. Each map factors linearly through the
+surjection. Lifting target vectors verifies smoothness, unipotent
+covariance, moderate growth and the compact and Lie intertwining
+identities. The finite-dimensional case uses this descent after proving
+the kernel vanishing.
+
 `RealWhittakerFiniteKernelDescentStatement` concerns a surjective compact and Lie algebra intertwiner between two real standard modules of the same rank greater than one. If its kernel is finite dimensional, the exact Whittaker functions of the source lie in the exact Whittaker model of the target for the same nonzero real additive parameter.
 
 The proof first considers any finite-dimensional subspace of regular Whittaker functions invariant under all matrix right derivatives. At a point \(g\), fix a simple root and conjugate its matrix direction by \(g^{-1}\). Evaluation at a left diagonal translate of \(g\) is an eigenvector for the dual of this fixed right derivative whenever the evaluation is nonzero. The character derivative along the simple root is nonzero. Diagonal scaling multiplies the eigenvalue by \(\exp(t)\) when the corresponding logarithmic diagonal coordinate changes by \(t\). A nonzero value at \(g\) would give nonzero evaluation on an interval by continuity, hence infinitely many distinct eigenvalues. The finite-dimensionality of the dual forces the subspace to be zero.

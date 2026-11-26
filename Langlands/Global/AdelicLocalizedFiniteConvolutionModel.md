@@ -1,0 +1,7 @@
+# Finite models for localized convolution on the Iwasawa twists
+
+`IsIwasawaCompact.hasConvolutionEquationAt_of_localized_averaged_stability` starts with a finite-dimensional subspace of continuous functions containing the inducing vector. A specified open subgroup of the finite adelic points restricts the support of the kernels. The subspace is assumed stable under the transported two-sided compact averages of all such kernels and at every parameter. The two compact weights reproduce every vector at the base parameter.
+
+Twisting the model at the base parameter turns the transported operators into ordinary right convolution. The localized approximate identity approximates a basis on a finite set of evaluation points. The compact weights leave the basis values unchanged in the limit and make the resulting test kernel finite under the left and right infinite compact translations. One resulting convolution acts injectively on this finite-dimensional space. Untwisting gives the same conclusion for the transported operator on the original model. The holomorphic finite-model theorem then uses this one operator to obtain the uniform scalar equation.
+
+This finite-dimensional argument implements the localized approximation and characteristic polynomial steps in Mœglin–Waldspurger, *Spectral Decomposition and Eisenstein Series* (1995), I.4.5, printed pp. 60–62, and Bernstein–Lapid, *On the meromorphic continuation of Eisenstein series*, JAMS 37 (2024), Lemma 8.3, p. 223. The lemma takes the stable finite-dimensional space as an input.

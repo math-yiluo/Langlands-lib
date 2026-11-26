@@ -1,0 +1,7 @@
+# The even unitary profile from discriminant localization
+
+Let \(K/E\) be a totally complex quadratic extension of a totally real number field, with the two fields in independent universes. For \(n>1\), `initialUnitaryProfile` constructs one degree-\(n\) central simple unitary algebra with the signed Brauer invariants at the selected split finite places, zero upper completed invariants away from them, and the prescribed real signature charts. It first constructs the algebra with a unitary involution from the signed Brauer profile and then sets the real signatures by a symmetric twist.
+
+`UnitaryProfileDiscriminantValues` specifies the localization formulas for a supplied base-field Brauer class. The required finite values are half the chosen residue modulo the integers at the selected split places, zero at other split places, and the signed Gram determinant norm test at the nonsplit places outside the support. The required real value is the half-class of \(n/2+n-r_\tau\) at the corresponding real embedding.
+
+For even \(n\), `realizeEvenUnitaryLocalProfileOfDiscriminant` assumes this class and the compatibility of the prescribed residues and signatures. Brauer reciprocity gives a finite even set of nonsplit norm defects. A symmetric twist removes those defects and preserves the real signature charts, giving actual maximal-Witt charts at every place outside the support. Transport along the canonical algebra equivalence to the lifted carrier supplies the realized profile in the joint universe, with the signed completed Brauer representatives.

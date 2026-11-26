@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicPrincipalQuotientMeasure
 import Langlands.Global.AdelicPrincipalQuotientProductMeasureProof
 import Langlands.Global.AdelicSpectralDecompositionReduction
 import Langlands.Global.AdelicWavePacketProductPairingProof
@@ -30,19 +31,16 @@ local notation "E" => principalQuotientProductEquiv F G hG
 local notation "c" => (∫ a : canonicalSubgroup F G, ‖ambientWavePacketProfile eG b (Subtype.val a)‖ ^ 2
   ∂(positiveCentreHaarMeasure F G hG))
 
-private theorem principalProductMeasure : PrincipalQuotientProductMeasureStatement :=
-  principalQuotientProductMeasure_of_productQuotientMeasure LeftCosetSpace.productQuotientMeasure
-
 include hb hbc hbne in
 private theorem memLp_ambientProfileL2Lift (f : Lp ℂ 2 μQ) :
     MemLp (lift f) 2 μfull :=
-  ((wavePacketProductPairing_of_productMeasure principalProductMeasure
+  ((wavePacketProductPairing_of_productMeasure principalQuotientProductMeasure
     F G hG eG b hb hbc hbne).2.2.1 f).mpr (Lp.memLp f)
 
 /-- Multiplication by the profile gives a linear lift of `L²` classes. -/
 private def ambientProfileL2LinearMap : Lp ℂ 2 μQ →ₗ[ℂ] Lp ℂ 2 μfull := by
   have hq : QuasiMeasurePreserving (Prod.snd ∘ E) μfull μQ :=
-    Measure.quasiMeasurePreserving_snd.comp (principalProductMeasure F G hG).quasiMeasurePreserving
+    Measure.quasiMeasurePreserving_snd.comp (principalQuotientProductMeasure F G hG).quasiMeasurePreserving
   let hLp := memLp_ambientProfileL2Lift hG eG b hb hbc hbne
   refine { toFun := fun f => (hLp f).toLp (lift f), map_add' := ?_, map_smul' := ?_ }
   · intro f g
@@ -72,7 +70,7 @@ private def ambientProfileL2LinearMap : Lp ℂ 2 μQ →ₗ[ℂ] Lp ℂ 2 μfull
 def ambientProfileL2Isometry : Lp ℂ 2 μQ →ₗᵢ[ℂ] Lp ℂ 2 μfull := by
   let J := ambientProfileL2LinearMap hG eG b hb hbc hbne
   let s : ℝ := (Real.sqrt c)⁻¹
-  have hpair := wavePacketProductPairing_of_productMeasure principalProductMeasure
+  have hpair := wavePacketProductPairing_of_productMeasure principalQuotientProductMeasure
     F G hG eG b hb hbc hbne
   have hrep (f : Lp ℂ 2 μQ) : (J f : RationalQuotient F G → ℂ) =ᵐ[μfull] lift f :=
     (memLp_ambientProfileL2Lift hG eG b hb hbc hbne f).coeFn_toLp

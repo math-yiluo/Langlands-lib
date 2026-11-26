@@ -1,0 +1,7 @@
+# Levi unipotent covariance of the real parabolic trace
+
+Fix a compact rectangle test with transverse moment one. The scalar coefficient of the transverse Fourier moment is the Whittaker evaluation of the corresponding smooth section. `RealParabolicTraceLeviStatement` proves that this scalar transforms by the product of the two Whittaker characters when the two Levi inputs are right-translated by their upper-unipotent groups.
+
+For arbitrary invertible Levi elements, reconstructing the scalar function of the genuine right translate gives the two standard-module translates and the rectangle pullback \(Y\mapsto A^{-1}YB\), with the parabolic determinant weights. When both elements are upper unipotent, their determinants are one. The rectangle pullback preserves the product Haar measure by the rectangular determinant change of variables and fixes the last-row, first-column entry by triangularity. Hence it preserves the transverse Fourier moment. The unipotent matrix obtained by taking the block sum has the sum of the two Levi superdiagonals, so the actual Whittaker covariance produces the product of the Levi characters.
+
+The statement gives the two Levi transformation laws of the trace in Jacquet, *Archimedean Rankin–Selberg Integrals*, proof of Proposition 14.1, pp. 103–104 of the author-posted edition. It uses the explicit normalized section, the transverse Fourier dependence, and a fixed test of moment one.

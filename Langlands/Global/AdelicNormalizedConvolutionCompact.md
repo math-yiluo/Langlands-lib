@@ -27,6 +27,27 @@ image contains the right compact orbit of the convolved output. The
 common finite level is the intersection of the kernel's open left
 level and the finite factor of \(K\).
 
+`normalizedConvolutionCompactRestriction` gives one finite-dimensional
+space of functions on \(K_\infty\) for a fixed left-finite kernel.
+It contains the compact restrictions
+\(k \mapsto (\phi *_\lambda v)(gk)\) of the normalized convolutions for
+every continuous input \(v\), complex parameter \(\lambda\), and adelic
+point \(g\). Here \(\phi *_\lambda v\) denotes `inducedConvolution`
+with kernel \(\phi\). The result uses the supplied compact Iwasawa
+factorization.
+
+Let \(W\) be the span of the kernels \(h \mapsto \phi(kh)\) for
+\(k \in K_\infty\). Evaluation at \(g\) after convolution with \(v\)
+at \(\lambda\) is a linear functional on \(W\). Evaluating the
+functional at \(h \mapsto \phi(k^{-1}h)\) gives the value of the
+original convolution at \(gk\) by the Haar substitution and the
+invariance of the untwisting multiplier. The linear map from \(W^*\)
+that performs these evaluations depends only on the kernel and
+\(K_\infty\). Its image is the required space. This gives the compact
+restriction condition in `ParabolicHarishChandraFinitenessStatement`,
+which formulates the fixed compact types used in Mœglin and Waldspurger,
+*Spectral Decomposition and Eisenstein Series*, I.2.17, pp. 37–38.
+
 `IsIwasawaCompact.integral_translate_left_equivariant` proves that
 normalized convolution also preserves any scalar left equivariance
 relation at a point of the parabolic. The two height factors contributed

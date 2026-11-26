@@ -45,8 +45,13 @@ Hausdorff, compactness or smallness hypothesis is imposed on `U` or `X`.
   charts are compact, hence closed, so the charts not containing `y` can be
   dropped.
 
-The general case, with a source that need not be Hausdorff, is open in the
-Library. This module does not claim that it is proved.
+This module does not prove the general case, with a source that need not be
+Hausdorff. The module `QuasiEtaleHausdorffStabilityStatement` states the
+clauses of Berkovich's Lemma 3.1 for Hausdorff sources, where the Hausdorff
+case above is available in place of this proposition. For instance
+`quasiEtaleHausdorffBaseChange` (module `QuasiEtaleHausdorffBaseChangeProof`)
+proves base change for a Hausdorff source through
+`quasiEtale_of_isPullback_of_t2Space`.
 
 ## Provenance
 
@@ -84,17 +89,48 @@ The proposition says that, for quasi-étale arrows of the Library's localized
 category, the 1994 nonpointed form implies the pointed form, as in the
 quasinet condition of 1993 §1.1, for every source.
 
-Expected truth. The author expects the proposition to hold in Berkovich
-geometry, for this reason. A point `y` lies in finitely many affinoid domains
-`V'₁, …, V'ₘ` whose union is a neighbourhood of `y`: the charts of a net
-through `y`. On each `V'ᵢ` the restriction of `f` should again be quasi-étale.
-Flatness and unramifiedness at a point of an analytic domain can be read on
-any affinoid domain containing the point, and Ducros's characterization of
-quasi-étale maps as the quasi-smooth maps of relative dimension zero is local
-in the G-topology (Ducros's work is not among the registered sources; this is
-heuristic support only). Each `V'ᵢ` is Hausdorff, so the Hausdorff case then gives
-pointed factorizations inside `V'ᵢ`. This sketch is not formalized, and the
-Library has none of these ingredients.
+Truth in Berkovich geometry. Ducros, *Families of Berkovich spaces*,
+Astérisque 400 (2018), registered as `ducros-2018-families-berkovich-spaces`
+(arXiv:1107.4259v6), recalls Berkovich's nonpointed definition in 5.4.10 and
+proves in Lemma 5.4.11 (printed pp.120–121) that, at each point, it is
+equivalent to his own notion of quasi-étaleness at that point. The two
+directions of his proof are the two halves of the proposition.
+
+- From the nonpointed form to his notion, he uses one affinoid domain of the
+  family that contains the point. His notion is local at a point for the
+  analytic domains containing it (5.2.10, printed p.110, through Jacobian
+  presentations).
+- From his notion back to affinoid domains, he takes affinoid domains `Vᵢ`
+  through the point, with union a neighbourhood. On each he applies his
+  Theorem 5.4.6 (printed pp.118–119), a characterization of quasi-smoothness
+  for good spaces whose proof uses the analytic Zariski Main Theorem. In the
+  quasi-étale case this gives an affinoid neighbourhood of the point in `Vᵢ`
+  that is an affinoid domain of a space étale over an affinoid domain `Uᵢ` of
+  the target. Berkovich 1993,
+  Theorem 3.4.1 (finite étale covers of the germs `(X, x)` and `(Uᵢ, x)` are
+  both equivalent to finite étale `𝓗(x)`-algebras) then extends that étale
+  space to an open neighbourhood of the image point. The resulting domains
+  contain the point.
+
+One might instead try to work directly with the étale envelopes of the given
+family, gluing the envelope of a member that misses `y` to the envelope of a
+member that contains `y`. If a member `V` misses `y` but accumulates at it,
+then, since `V` is compact, some point of `V` cannot be separated from `y`.
+That inseparability does not supply the gluing data. Points that cannot be
+separated can have different images in the target: in the doubled disc
+described below, take `f` to be the identity of the doubled space; the two
+Gauss points cannot be separated, and their images are distinct points of
+the target. Even when two points have the same
+image `x`, the pointed étale germs of their envelopes over the target germ
+at `x` need not be isomorphic, since their completed residue fields can be
+different finite separable extensions of `𝓗(x)`. Such an approach would have
+to find envelopes refined over a common target germ, identify their finite
+étale fibres compatibly with the chart maps, and check that the resulting
+germ isomorphisms have compatible representatives on the overlaps. Berkovich
+1993, Theorem 3.4.1, lifts a compatible isomorphism of fibres to an
+isomorphism of germs, but it does not produce those data. This page gives
+no argument that produces them, and this module formalizes neither
+approach.
 
 ## Why the statement is needed
 
@@ -113,9 +149,10 @@ of radius close to `1` are missed. The Library note
 `QuasiEtaleCompactRefinementsObstruction` uses the same doubled-disc
 behaviour for a different purpose.
 
-The module `QuasiEtaleBaseChangeReduction` uses this proposition to prove
+The module `QuasiEtaleBaseChangeReduction` derives
 `QuasiEtaleBaseChangeStatement` (Berkovich 1994, Lemma 3.1(i), base change
-clause) for every pullback square. It combines it with
+clause), for every pullback square, from this proposition
+(`quasiEtaleBaseChange_of_localDomainFactorizations`). It combines it with
 `HasLocalDomainEtaleFactorizations.of_isPullback` and the published étale base
 change `localizedEtalePullbackBaseChange`. Other clauses of Lemma 3.1 meet the
 same obstruction.

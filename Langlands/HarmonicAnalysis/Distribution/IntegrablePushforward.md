@@ -1,0 +1,5 @@
+# Pushforward of an integrable weight
+
+Let `p` be a measurable map, and suppose the pushforward of `μ` along `p` is absolutely continuous with respect to the σ-finite measure `ν`. Then every `μ`-integrable complex function `f` has a `ν`-integrable density `r` for its weighted pushforward. For every bounded measurable complex function `g`, the integral of `r · g` against `ν` equals the integral of `f · (g ∘ p)` against `μ`.
+
+The proof writes the real and imaginary parts of `f` as differences of their nonnegative parts. Each nonnegative part defines a finite measure absolutely continuous with respect to `μ`. Its pushforward is absolutely continuous with respect to `ν`, so its Radon–Nikodym derivative is integrable. Integrating against a test and applying the integration formula for pushforward measures gives the corresponding identity. Adding the four terms yields the complex formula. This is a measure-theoretic ingredient in transporting a density back through the descent submersion. [Harish-Chandra, *A submersion principle and its applications*, §3, p. 97]

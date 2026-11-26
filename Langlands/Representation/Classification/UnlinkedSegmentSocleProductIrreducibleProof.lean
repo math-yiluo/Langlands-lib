@@ -1,3 +1,4 @@
+import Langlands.Representation.IrreducibleLine
 import Langlands.Representation.Classification.SegmentSocleCriterionHalvesStatement
 import Langlands.Representation.Classification.SegmentSocleDerivativesStatement
 import Langlands.HarmonicAnalysis.PadicUnitaryAdditiveCharacterExistsProof
@@ -97,17 +98,8 @@ theorem subrepresentation_nontrivial (ρ : Representation ℂ G V) [Nontrivial V
 
 /-- A one-dimensional representation is irreducible. -/
 theorem isIrreducible_of_finrank_eq_one (ρ : Representation ℂ G V)
-    (h : Module.finrank ℂ V = 1) : Representation.IsIrreducible ρ := by
-  have : Module.Finite ℂ V := Module.finite_of_finrank_eq_succ h
-  have : Nontrivial V := Module.nontrivial_of_finrank_eq_succ h
-  refine { toNontrivial := subrepresentation_nontrivial ρ, eq_bot_or_eq_top := fun K => ?_ }
-  have hle : Module.finrank ℂ K.toSubmodule ≤ 1 := h ▸ Submodule.finrank_le _
-  interval_cases hK : Module.finrank ℂ K.toSubmodule
-  · left
-    exact Subrepresentation.toSubmodule_injective (Submodule.finrank_eq_zero.mp hK)
-  · right
-    exact Subrepresentation.toSubmodule_injective
-      (Submodule.eq_top_of_finrank_eq (hK.trans h.symm))
+    (h : Module.finrank ℂ V = 1) : Representation.IsIrreducible ρ :=
+  ρ.isIrreducible_of_complex_finrank_eq_one h
 
 end Lattice
 

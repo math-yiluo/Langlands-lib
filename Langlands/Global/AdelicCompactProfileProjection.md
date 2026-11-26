@@ -31,3 +31,5 @@ averaging in Mœglin–Waldspurger, *Spectral Decomposition and Eisenstein
 Series*, I.4.5, printed pp. 60–61
 (`moeglin-waldspurger-1995-spectral-decomposition`, collection fingerprint
 `1ba99fb90916a687503e88c7191dad43b9c4865b68e6b4221a4f2126f2d2f141`).
+
+`rightCompactFunctionAverage` integrates an arbitrary function along its right compact translates against a continuous weight.

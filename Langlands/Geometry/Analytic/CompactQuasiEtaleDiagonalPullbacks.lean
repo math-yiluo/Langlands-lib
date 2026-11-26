@@ -47,7 +47,7 @@ theorem HasLocalDomainEtaleFactorizations.domainι_comp
       exact Category.assoc _ _ _
     exact hw ▸ (((hCfact E hE).2.of_domain_le hFE).iso_comp e)
 
-private theorem isPullback_of_relative_diagonal
+theorem isPullback_of_relative_diagonal
     {C : Type*} [Category* C] {A B X U V P Q : C}
     {f : U ⟶ B} {g : V ⟶ B} {b : B ⟶ X} {p : P ⟶ U} {q : P ⟶ V}
     {s : Q ⟶ B} {t : Q ⟶ B} {m : P ⟶ Q} {d : B ⟶ Q} {a : A ⟶ B} {j : A ⟶ P}

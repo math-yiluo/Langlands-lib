@@ -1,3 +1,4 @@
+import Langlands.Global.AdelicNormalizedConvolutionCompact
 import Langlands.Global.AdelicInducedConvolutionFiniteSpanStatement
 import Langlands.Global.AdelicEisensteinGrowthBound
 import Langlands.Global.EisensteinConstantTerm.Height
@@ -51,15 +52,6 @@ theorem IsIwasawaCompact.inducedRightTranslate_map_mul (lam : Param) (v : H → 
     add_sub_add_left_eq_sub, mul_assoc]
 
 variable [LocallyOfFiniteType G.X.hom]
-
-/-- Left parabolic covariance is preserved by the integrated action. -/
-theorem IsIwasawaCompact.inducedConvolution_map_mul (lam : Param) (φ v : H → ℂ)
-    (q : AdelicGroupPoints F P) (s : ℂ)
-    (hv : ∀ g, v (map F P G p q * g) = s * v g) (g : H) :
-    hK.inducedConvolution lam φ v (map F P G p q * g) =
-      s * hK.inducedConvolution lam φ v g := by
-  simp_rw [IsIwasawaCompact.inducedConvolution, hK.inducedRightTranslate_map_mul lam v q s hv,
-    mul_left_comm _ s, integral_const_mul]
 
 omit [LocallyOfFiniteType G.X.hom] in
 /-- The twist multiplier on a compact set of right translates is bounded independently of
@@ -155,7 +147,7 @@ theorem inducedConvolutionParabolicCovariance : InducedConvolutionParabolicCovar
     have hinv (y : AdelicGroupPoints F G) : v (map F P G p q * y) = 1 * v y := by
       rw [show map F P G p q = g from hq, hleft g hg, one_mul]
     rw [← show map F P G p q = g from hq,
-      hK.inducedConvolution_map_mul lam φ v q 1 hinv, one_mul]
-  · exact fun a ha g => hK.inducedConvolution_map_mul lam φ v (map F M P l a) _ (hsplit a ha) g
+      hK.integral_translate_left_equivariant φ v lam q 1 hinv, one_mul]
+  · exact fun a ha g => hK.integral_translate_left_equivariant φ v lam (map F M P l a) _ (hsplit a ha) g
 
 end Langlands.Global.AdelicGroupPoints

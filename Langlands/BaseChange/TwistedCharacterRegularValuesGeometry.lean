@@ -1,3 +1,4 @@
+import Langlands.Analysis.Local.WeylChartCoordinates
 import Langlands.BaseChange.TwistedCharacterRegularValuesReduction
 import Langlands.BaseChange.TwistedCharacter.MatrixHaarChart
 import Langlands.BaseChange.TwistedConjugationMatrixSubmersion
@@ -14,12 +15,6 @@ open Filter HarmonicAnalysis HarishChandraSchwartz MeasureTheory Set Topology
 open scoped ENNReal NNReal Topology
 
 universe u v uW
-
-private theorem ultrametricDist_prod (A B : Type*) [PseudoMetricSpace A] [PseudoMetricSpace B]
-    [IsUltrametricDist A] [IsUltrametricDist B] : IsUltrametricDist (A × B) :=
-  ⟨fun a b c => by
-    simpa only [Prod.dist_eq, max_assoc, max_comm, max_left_comm] using
-      max_le_max (dist_triangle_max a.1 b.1 c.1) (dist_triangle_max a.2 b.2 c.2)⟩
 
 section Pushforward
 
@@ -53,7 +48,7 @@ private theorem locallyConstantPushforward_of_compactSubmersion
   let : NormedAlgebra F Mat := finiteAlgebraNormedAlgebra F Mat
   let : IsUltrametricDist Mat := finiteAlgebraNormedRing_ultrametric F Mat
   let : IsUltrametricDist Tri := IsUltrametricDist.subtype (fun A : Mat => A ∈ Tri)
-  let : IsUltrametricDist (Mat × Tri) := ultrametricDist_prod Mat Tri
+  let : IsUltrametricDist (Mat × Tri) := Langlands.Analysis.WeylChart.prod_isUltrametricDist
   let : ProperSpace Mat := FiniteDimensional.proper F Mat
   let : ProperSpace Tri := FiniteDimensional.proper F Tri
   let : MeasurableSpace Mat := borel Mat

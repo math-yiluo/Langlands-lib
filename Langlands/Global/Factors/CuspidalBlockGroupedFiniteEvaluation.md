@@ -1,0 +1,7 @@
+# Bundled evaluation in grouped finite Levi coefficients
+
+For compatible references in the local finite inducing sections, `groupedFiniteEvaluation` records the evaluation into the tensor, indexed by Levi blocks, of the restricted block coefficients. Its finite source is the restricted tensor of the normalized local inductions in the given block order. The finite Levi acts on each block through its restricted tensor representation, and `groupedFiniteLeviAction` takes the external tensor of those actions.
+
+The fields reuse `blockEvaluation_right`, `blockEvaluation_parabolic`, and `blockEvaluation_compact_injective`. Right translation agrees with evaluation at the translated finite argument. Left parabolic multiplication applies the Levi projection and scales by the positive half character. Evaluations at all finite integral compact elements jointly distinguish source vectors. The separation uses the nonzero block references outside the exceptional set. `cuspidalGroupedFiniteEvaluation` supplies these references and their nonvanishing from the given spectral presentations. It uses their embedded local components, while the presentations retain their own factor universe.
+
+The construction packages the Library's finite evaluation laws in `FiniteEvaluationData`. It implements the finite part of the factorization of normalized induction in Getz–Hahn (2024), §10.1, printed pp. 270–271 (PDF pp. 282–283), `getz-hahn-2024-automorphic-representations`, SHA-256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.

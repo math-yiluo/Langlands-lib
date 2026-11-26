@@ -1,0 +1,7 @@
+# Quantitative logarithms and Lipschitz estimates on the orthogonal group
+
+`OrthogonalLocalLogarithmStatement` gives a radius \(r>0\) for each real orthogonal group. An element \(k\) with \(\|k-I\|<r\) has a skew-adjoint logarithm \(X\) with \(\|X\|\le 2\|k-I\|\), where the norms are the matrix operator norms in the real general linear model.
+
+`orthogonalLocalLogarithm` uses the inverse function theorem for the matrix exponential at zero. Its first-order expansion bounds the error by \(\|X\|/2\) on a neighborhood of zero and gives the claimed displacement comparison. The continuity of the local inverse ensures that \(X^*\) and \(-X\) both lie in the region of injectivity. Orthogonality gives \(\exp(X^*)=k^*=k^{-1}=\exp(-X)\), so \(X^*=-X\).
+
+`exists_lipschitz_bound_of_skew_derivatives` then controls the global Lipschitz constant of a continuous complex function on \(O(n)\) by a rank-dependent constant times its supremum norm plus a uniform bound for right skew derivatives in directions of norm at most one. For sufficiently close \(x,y\), apply the local logarithm to \(x^{-1}y\) and use the one-variable mean value bound on \(s\mapsto f(x\exp(sX))\). The exponential addition law identifies the derivative at each \(s\) with the derivative at zero based at \(x\exp(sX)\). Compactness bounds the norms of the inverse matrices, and the supremum norm bounds the difference for pairs separated by a fixed positive distance.

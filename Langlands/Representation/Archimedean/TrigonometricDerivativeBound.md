@@ -1,0 +1,5 @@
+# Supremum derivative bounds for trigonometric polynomials
+
+`TrigonometricDerivativeBoundStatement` bounds the derivative of a complex trigonometric polynomial of degree at most \(N\) and supremum norm at most \(A\) by \((2N+1)NA\) at every point. The finite Fourier inversion formula has at most \(2N+1\) terms. Each normalized coefficient has norm at most \(A\), since the unnormalized coefficient integrates against a function of modulus one over an interval of length \(2\pi\). Differentiating the finite expansion introduces a frequency factor bounded by \(N\) in each term.
+
+`comp_mem_trigPoly_of_mem_degreeLE` restricts an entry polynomial on \(O(n)\) of degree at most \(N\) along a curve with matrix entries of trigonometric degree at most one. Composition is an algebra homomorphism and sends the entry span into `trigPoly 1`. Multiplication adds trigonometric degrees, so the restriction has degree at most \(N\). `right_blockRotation_mem_trigPoly` applies this to a right rotation in an adjacent plane, whose entries after multiplication by a fixed orthogonal matrix are affine in sine and cosine.

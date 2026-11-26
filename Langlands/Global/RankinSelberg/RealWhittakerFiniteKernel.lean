@@ -117,40 +117,16 @@ theorem eq_bot_of_finiteDimensional_derivativeInvariant (hr : 0 < r) {a : ℝˣ}
   have hFinite : Finite (Ioo (-δ) δ) := Finite.of_injective f hf
   exact (Ioo_infinite (show -δ < δ by linarith)).not_finite (Set.finite_coe_iff.mp hFinite)
 
-/-- A surjective standard-module intertwiner with a finite-dimensional kernel preserves
-the exact coefficient space in the direction of descent in every rank greater than one. -/
-def RealWhittakerFiniteKernelDescentStatement : Prop :=
-  ∀ (r : ℕ), 0 < r → ∀ (ds es : List RealBlock) (a : ℝˣ),
-    ∀ T : Automorphic.realStandardKFinite (r + 1) ds →ₗ[ℂ] Automorphic.realStandardKFinite (r + 1) es,
-      Function.Surjective T →
-      IsRealStandardIntertwiner (r + 1) (realStandardRep (r + 1) es) (realStandardLie (r + 1) es) ds T →
-      FiniteDimensional ℂ (LinearMap.ker T) →
-      realWhittakerModel r ds a ≤ realWhittakerModel r es a
-
-theorem model_le_of_finiteKernel (hr : 0 < r) {ds es : List RealBlock} (a : ℝˣ)
+/-- A surjective standard-module map descends the exact Whittaker model if its kernel
+is killed by every exact coefficient map. -/
+theorem model_le_of_vanishingKernel {ds es : List RealBlock} (a : ℝˣ)
     (T : (V ds) →ₗ[ℂ] V es) (hTs : Function.Surjective T)
     (hT : IsRealStandardIntertwiner (r + 1) (realStandardRep (r + 1) es) (realStandardLie (r + 1) es) ds T)
-    (hDim : FiniteDimensional ℂ (LinearMap.ker T)) :
+    (hVan : ∀ B : (V ds) →ₗ[ℂ] (G → ℂ), IsRealWhittakerIntertwiner r ds a B →
+      LinearMap.ker T ≤ LinearMap.ker B) :
     realWhittakerModel r ds a ≤ realWhittakerModel r es a := by
   refine iSup_le fun B => iSup_le fun hB => ?_
-  let A := (LinearMap.ker T).map B
-  let _ : FiniteDimensional ℂ (LinearMap.ker T) := hDim
-  let _ : FiniteDimensional ℂ A := inferInstance
-  have hA : A ≤ regularFunctions r a := by
-    rintro W ⟨f, hf, rfl⟩
-    exact ⟨hB.1 f, hB.2.1 f, HasPolynomialGrowth.of_bound (hB.2.2.1 f)⟩
-  have hStable (X : Mat) (W : G → ℂ) (hW : W ∈ A) : D X W ∈ A := by
-    obtain ⟨f, hf, rfl⟩ := hW
-    obtain ⟨hf', hTf'⟩ := hT.2 X f
-    let f' : V ds := ⟨D X f.val, hf'⟩
-    have hKer : T f' = 0 := by rw [hTf', LinearMap.mem_ker.mp hf, map_zero]
-    exact ⟨f', LinearMap.mem_ker.mpr hKer, hB.2.2.2.2 X f f' rfl⟩
-  have hZero := eq_bot_of_finiteDimensional_derivativeInvariant hr A hA hStable
-  have hKer : LinearMap.ker T ≤ LinearMap.ker B := by
-    intro f hf
-    have hb : B f ∈ A := ⟨f, hf, rfl⟩
-    rw [hZero, Submodule.mem_bot] at hb
-    exact LinearMap.mem_ker.mpr hb
+  have hKer := hVan B hB
   let B' := (T.liftOfSurjective hTs) ⟨B, hKer⟩
   have hComp (f : V ds) : B' (T f) = B f := T.equivOfSurjective_apply hTs hKer
   have hB' : IsRealWhittakerIntertwiner r es a B' := by
@@ -193,6 +169,41 @@ theorem model_le_of_finiteKernel (hr : 0 < r) {ds es : List RealBlock} (a : ℝ�
       exact hB.2.2.2.2 X f f' rfl
   rintro W ⟨f, rfl⟩
   exact Submodule.mem_iSup_of_mem B' (Submodule.mem_iSup_of_mem hB' ⟨T f, hComp f⟩)
+
+/-- A surjective standard-module intertwiner with a finite-dimensional kernel preserves
+the exact coefficient space in the direction of descent in every rank greater than one. -/
+def RealWhittakerFiniteKernelDescentStatement : Prop :=
+  ∀ (r : ℕ), 0 < r → ∀ (ds es : List RealBlock) (a : ℝˣ),
+    ∀ T : Automorphic.realStandardKFinite (r + 1) ds →ₗ[ℂ] Automorphic.realStandardKFinite (r + 1) es,
+      Function.Surjective T →
+      IsRealStandardIntertwiner (r + 1) (realStandardRep (r + 1) es) (realStandardLie (r + 1) es) ds T →
+      FiniteDimensional ℂ (LinearMap.ker T) →
+      realWhittakerModel r ds a ≤ realWhittakerModel r es a
+
+theorem model_le_of_finiteKernel (hr : 0 < r) {ds es : List RealBlock} (a : ℝˣ)
+    (T : (V ds) →ₗ[ℂ] V es) (hTs : Function.Surjective T)
+    (hT : IsRealStandardIntertwiner (r + 1) (realStandardRep (r + 1) es) (realStandardLie (r + 1) es) ds T)
+    (hDim : FiniteDimensional ℂ (LinearMap.ker T)) :
+    realWhittakerModel r ds a ≤ realWhittakerModel r es a := by
+  apply model_le_of_vanishingKernel a T hTs hT
+  intro B hB
+  let A := (LinearMap.ker T).map B
+  let _ : FiniteDimensional ℂ (LinearMap.ker T) := hDim
+  let _ : FiniteDimensional ℂ A := inferInstance
+  have hA : A ≤ regularFunctions r a := by
+    rintro W ⟨f, hf, rfl⟩
+    exact ⟨hB.1 f, hB.2.1 f, HasPolynomialGrowth.of_bound (hB.2.2.1 f)⟩
+  have hStable (X : Mat) (W : G → ℂ) (hW : W ∈ A) : D X W ∈ A := by
+    obtain ⟨f, hf, rfl⟩ := hW
+    obtain ⟨hf', hTf'⟩ := hT.2 X f
+    let f' : V ds := ⟨D X f.val, hf'⟩
+    have hKer : T f' = 0 := by rw [hTf', LinearMap.mem_ker.mp hf, map_zero]
+    exact ⟨f', LinearMap.mem_ker.mpr hKer, hB.2.2.2.2 X f f' rfl⟩
+  have hZero := eq_bot_of_finiteDimensional_derivativeInvariant hr A hA hStable
+  intro f hf
+  have hb : B f ∈ A := ⟨f, hf, rfl⟩
+  rw [hZero, Submodule.mem_bot] at hb
+  exact LinearMap.mem_ker.mpr hb
 
 theorem realWhittakerFiniteKernelDescent : RealWhittakerFiniteKernelDescentStatement :=
   fun _ hr _ _ a T hTs hT hDim => model_le_of_finiteKernel hr a T hTs hT hDim

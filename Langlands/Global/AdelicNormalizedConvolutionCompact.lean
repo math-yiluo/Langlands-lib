@@ -41,17 +41,21 @@ theorem IsIwasawaCompact.integral_translate_eq_heightPower_mul_rightConvolution
   change kernel h * (hK.heightPower (-lam) g * hK.parameterTwist v lam (g * h)) = _
   rw [mul_left_comm]
 
-/-- The left-compact-translate span of the kernel bounds the right-compact-translate span of
-the normalized convolution. Each translate is in the image of one linear map from the
-left-translate span. -/
-theorem IsIwasawaCompact.integral_translate_isInfiniteSubgroupFiniteFunction
+private def leftCompactKernelSpan (Ki : Subgroup (InfiniteAdelicGroupPoints F G))
+    (kernel : Ad → ℂ) : Submodule ℂ (Ad → ℂ) :=
+  Submodule.span ℂ (range fun k : Ki => fun h : Ad => kernel (ofInfinite F G k * h))
+
+private def inverseLeftKernelTranslate {Ki : Subgroup (InfiniteAdelicGroupPoints F G)}
+    (kernel : Ad → ℂ) (k : Ki) : leftCompactKernelSpan Ki kernel :=
+  ⟨fun h => kernel (ofInfinite F G ((k⁻¹ : Ki) : InfiniteAdelicGroupPoints F G) * h),
+    Submodule.subset_span ⟨k⁻¹, rfl⟩⟩
+
+private def convolutionOnLeftCompactKernelSpan
     {kernel v : Ad → ℂ} (hk : IsLeftFiniteTestFunction F G K∞ kernel)
-    (hv : Continuous v) (lam : Λ) :
-    IsInfiniteSubgroupFiniteFunction F G K∞ (hK.inducedConvolution lam kernel v) := by
-  let S := range fun k : K∞ => fun h : Ad => kernel (ofInfinite F G k * h)
-  let V := Submodule.span ℂ S
-  let : FiniteDimensional ℂ V := hk.2.2.1
-  have hcs (ψ : Ad → ℂ) (hψ : ψ ∈ V) : Continuous ψ ∧ HasCompactSupport ψ := by
+    (hv : Continuous v) (lam : Λ) : leftCompactKernelSpan K∞ kernel →ₗ[ℂ] (Ad → ℂ) := by
+  have hcs (ψ : Ad → ℂ) (hψ : ψ ∈ leftCompactKernelSpan K∞ kernel) :
+      Continuous ψ ∧ HasCompactSupport ψ := by
+    unfold leftCompactKernelSpan at hψ
     induction hψ using Submodule.span_induction with
     | mem ψ hψ =>
       obtain ⟨k, rfl⟩ := hψ
@@ -60,13 +64,13 @@ theorem IsIwasawaCompact.integral_translate_isInfiniteSubgroupFiniteFunction
     | zero => exact ⟨continuous_const, HasCompactSupport.zero⟩
     | add ψ χ _ _ hψ hχ => exact ⟨hψ.1.add hχ.1, hψ.2.add hχ.2⟩
     | smul c ψ _ hψ => exact ⟨continuous_const.mul hψ.1, hψ.2.smul_left⟩
-  have hInt (ψ : V) (g : Ad) : Integrable
+  have hInt (ψ : leftCompactKernelSpan K∞ kernel) (g : Ad) : Integrable
       (fun h => ψ.1 h * hK.inducedRightTranslate lam h v g) dh := by
     have hprod : Continuous (fun h => ψ.1 h * hK.inducedRightTranslate lam h v g) :=
       (hcs _ ψ.2).1.mul (continuous_const.mul
         ((hK.continuous_parameterTwist hv lam).comp (continuous_const.mul continuous_id)))
     exact hprod.integrable_of_hasCompactSupport (hcs _ ψ.2).2.mul_right
-  let L : V →ₗ[ℂ] (Ad → ℂ) :=
+  exact
     { toFun := fun ψ => hK.inducedConvolution lam ψ.1 v
       map_add' := fun ψ χ => by
         funext g
@@ -78,18 +82,50 @@ theorem IsIwasawaCompact.integral_translate_isInfiniteSubgroupFiniteFunction
         change (∫ h, (a * ψ.1 h) * hK.inducedRightTranslate lam h v g ∂dh) = _
         simp only [mul_assoc, integral_const_mul]
         rfl }
-  change FiniteDimensional ℂ (Submodule.span ℂ _)
-  refine Submodule.finiteDimensional_of_le (Submodule.span_le.2 ?_ : _ ≤ LinearMap.range L)
-  rintro _ ⟨k, rfl⟩
-  refine ⟨⟨_, Submodule.subset_span ⟨k⁻¹, rfl⟩⟩, funext fun g => ?_⟩
+
+private theorem inducedConvolution_apply_inverseLeftKernelTranslate
+    (kernel v : Ad → ℂ) (lam : Λ) (g : Ad) (k : K∞) :
+    hK.inducedConvolution lam (inverseLeftKernelTranslate kernel k).1 v g =
+      hK.inducedConvolution lam kernel v (g * ofInfinite F G k) := by
   have hk_mem : ofInfinite F G (k : InfiniteAdelicGroupPoints F G) ∈ K := k.property
   have hpow : hK.heightPower (-lam) (g * ofInfinite F G k) = hK.heightPower (-lam) g := by
     simp only [IsIwasawaCompact.heightPower, hK.height_mul_right g hk_mem]
-  change hK.inducedConvolution lam
-    (fun h => kernel (ofInfinite F G ((k⁻¹ : K∞) : InfiniteAdelicGroupPoints F G) * h)) v g =
-      hK.inducedConvolution lam kernel v (g * ofInfinite F G k)
-  simp only [hK.integral_translate_eq_heightPower_mul_rightConvolution, hpow, Subgroup.coe_inv, map_inv]
+  simp only [inverseLeftKernelTranslate, hK.integral_translate_eq_heightPower_mul_rightConvolution,
+    hpow, Subgroup.coe_inv, map_inv]
   rw [rightConvolution_mul_right]
+
+/-- The left-compact-translate span of the kernel bounds the right-compact-translate span of
+the normalized convolution. Each translate is in the image of one linear map from the
+left-translate span. -/
+theorem IsIwasawaCompact.integral_translate_isInfiniteSubgroupFiniteFunction
+    {kernel v : Ad → ℂ} (hk : IsLeftFiniteTestFunction F G K∞ kernel)
+    (hv : Continuous v) (lam : Λ) :
+    IsInfiniteSubgroupFiniteFunction F G K∞ (hK.inducedConvolution lam kernel v) := by
+  let : FiniteDimensional ℂ (leftCompactKernelSpan K∞ kernel) := hk.2.2.1
+  let L := convolutionOnLeftCompactKernelSpan hK hk hv lam
+  change FiniteDimensional ℂ (Submodule.span ℂ _)
+  refine Submodule.finiteDimensional_of_le (Submodule.span_le.2 ?_ : _ ≤ LinearMap.range L)
+  rintro _ ⟨k, rfl⟩
+  exact ⟨inverseLeftKernelTranslate kernel k,
+    funext fun g => inducedConvolution_apply_inverseLeftKernelTranslate hK kernel v lam g k⟩
+
+/-- The restrictions to right archimedean compact orbits of all normalized convolutions
+with a fixed left-finite kernel lie in one finite-dimensional subspace. -/
+theorem IsIwasawaCompact.exists_finiteDimensional_inducedConvolution_compactRestrictions
+    {kernel : Ad → ℂ} (hk : IsLeftFiniteTestFunction F G K∞ kernel) :
+    ∃ E : Submodule ℂ (K∞ → ℂ), FiniteDimensional ℂ E ∧
+      ∀ (v : Ad → ℂ), Continuous v → ∀ lam g,
+        (fun k : K∞ => hK.inducedConvolution lam kernel v (g * ofInfinite F G k)) ∈ E := by
+  let W := leftCompactKernelSpan K∞ kernel
+  let : FiniteDimensional ℂ W := hk.2.2.1
+  let restrict : Module.Dual ℂ W →ₗ[ℂ] (K∞ → ℂ) :=
+    { toFun := fun ℓ k => ℓ (inverseLeftKernelTranslate kernel k)
+      map_add' := fun _ _ => rfl
+      map_smul' := fun _ _ => rfl }
+  refine ⟨LinearMap.range restrict, inferInstance, fun v hv lam g => ?_⟩
+  let evaluate : (Ad → ℂ) →ₗ[ℂ] ℂ := LinearMap.proj g
+  refine ⟨evaluate.comp (convolutionOnLeftCompactKernelSpan hK hk hv lam), funext fun k => ?_⟩
+  exact inducedConvolution_apply_inverseLeftKernelTranslate hK kernel v lam g k
 
 /-- An open subgroup of the finite adelic points fixes the normalized convolutions on the
 right at every parameter. Intersect the left level of the kernel with the finite Iwasawa
@@ -172,5 +208,22 @@ theorem normalizedConvolutionCompactConditions : NormalizedConvolutionCompactCon
   intro F _ _ G P _ _ _ p _ K hK hmax kernel Ki hk
   exact ⟨fun _ hv lam => hK.integral_translate_isInfiniteSubgroupFiniteFunction hk hv lam,
     hK.integral_translate_has_finite_level hmax hk⟩
+
+/-- For a fixed left-finite kernel, the right archimedean compact restrictions of the normalized
+convolutions of all continuous inputs at all complex parameters have a common finite span. -/
+def NormalizedConvolutionCompactRestrictionStatement : Prop :=
+  ∀ (F : Type) [Field F] [NumberField F] (G P : GroupScheme (Spec (CommRingCat.of F)))
+    [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom] [IsAffine P.X.left]
+    (p : P ⟶ G) [IsClosedImmersion p.hom.hom.left] (K : Subgroup (AdelicGroupPoints F G))
+    (hK : IsIwasawaCompact p K) (kernel : AdelicGroupPoints F G → ℂ),
+    let Ki := K.comap (ofInfinite F G).toMonoidHom
+    IsLeftFiniteTestFunction F G Ki kernel →
+    ∃ E : Submodule ℂ (Ki → ℂ), FiniteDimensional ℂ E ∧
+      ∀ (v : AdelicGroupPoints F G → ℂ), Continuous v → ∀ lam g,
+        (fun k : Ki => hK.inducedConvolution lam kernel v (g * ofInfinite F G k)) ∈ E
+
+theorem normalizedConvolutionCompactRestriction : NormalizedConvolutionCompactRestrictionStatement := by
+  intro F _ _ G P _ _ _ p _ K hK kernel Ki hk
+  exact hK.exists_finiteDimensional_inducedConvolution_compactRestrictions hk
 
 end Langlands.Global

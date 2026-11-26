@@ -125,3 +125,61 @@ internal assembly of that argument from the two named premises. The use of
 Theorem 3.4.1 is isolated in (B). The condition that every domain of a local
 family contains the point is isolated in (A); the source's definition does
 not ask for it.
+
+## Hausdorff sources
+
+The proof above uses (A) three times: for `f` at `y`, for `g` at `f(y)`, and
+in the local step for the quasi-étale morphism with source `domainObj W P`,
+where `P = w⁻¹(E)` is a domain of the étale envelope `W` of a factorization
+of `f`. When `A` and `B` are Hausdorff, the Library theorem
+`hasLocalDomainEtaleFactorizations_of_quasiEtale` (module
+`QuasiEtaleDomainLocality`) covers the first two uses. It does not cover the
+third, because `W` need not be Hausdorff. The module
+`QuasiEtaleHausdorffCompReduction` first shrinks the envelope to a Hausdorff
+open subset, which is possible because every Library space is locally
+Hausdorff. Its theorem `quasiEtale_comp_of_t2Space` proves composition for
+Hausdorff `A` and `B` from (B) alone.
+
+## The general case
+
+This module and the modules it imports do not prove (A) for a source that is
+not Hausdorff. In Berkovich's definition (1994, printed p.543), the affinoid
+domains `V₁, …, Vₙ` whose union is a neighbourhood of `y` need not contain
+`y`. In a Hausdorff space a compact domain missing `y` is closed and can be
+dropped. In general it can accumulate at `y`. Example: glue two closed discs
+of radius two along the complement of the closed unit disc, and let `y` be
+the Gauss point of radius one in the first copy. The unit disc of the first
+copy and the whole second copy cover the glued space. The second copy misses
+`y`, and the unit disc is not a neighbourhood of `y`. The Markdown of
+`QuasiEtaleCompactRefinementsObstruction` describes this space.
+
+Two sources bear on (A) for a source that is not Hausdorff. Neither is
+formalized here.
+
+- Ducros, *Families of Berkovich spaces*, Astérisque 400 (2018), registered as
+  `ducros-2018-families-berkovich-spaces`. In 5.4.10 Ducros recalls
+  Berkovich's definition: `y` has a compact analytic neighbourhood
+  `V₁ ∪ … ∪ Vₙ`, where each `Vᵢ` is an affinoid domain of the source that is
+  isomorphic over the target to an affinoid domain of an étale space. The
+  union is a neighbourhood of `y`, and an individual `Vᵢ` may omit `y`.
+  Lemma 5.4.11 (printed pp.120–121 of arXiv:1107.4259v6) proves this notion
+  equivalent at each point to Ducros's own notion of quasi-étaleness, which is
+  local at a point for the analytic domains containing it (5.2.10). The
+  implication from Ducros's notion to Berkovich's starts from a finite union
+  of affinoid domains through `y` that is a neighbourhood of `y`. On each
+  piece it applies Ducros's Theorem 5.4.6. That theorem characterizes
+  quasi-smoothness at a point, for morphisms of good spaces, by an affinoid
+  neighbourhood of the point that is isomorphic over the target to an affinoid
+  domain of a smooth space. Its proof uses the analytic Zariski Main Theorem,
+  cited there as [Duc07b], Theorem 3.2. Separately, the proof of Lemma 5.4.11
+  uses Berkovich 1993, Theorem 3.4.1, to extend finite étale covers of germs
+  from an affinoid domain of the target to the target itself.
+- Berkovich's proof of Lemma 3.1 (1994, printed p.544) says only that the
+  lemma follows from the properties of étale morphisms and from Berkovich
+  1993, Theorem 3.4.1, on finite étale germs. A proof along these lines would
+  use that theorem to glue the étale envelopes near `y` with those near the
+  points of the other domains that cannot be separated from `y`. The source
+  gives no details.
+
+Statement (B) rests on the same theorem, through Corollary 3.4.2; see the
+Markdown of `QuasiEtaleCompPrerequisites`.

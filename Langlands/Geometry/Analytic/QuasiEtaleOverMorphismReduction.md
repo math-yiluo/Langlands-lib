@@ -27,17 +27,67 @@ factorization (`HasDomainEtaleFactorization`). The hypothesis is the body of the
 Once that statement is proved, applying this reduction to the proof yields the exact
 `QuasiEtaleOverMorphismStatement.{u, v} K`.
 
-The premise is unproved in the Library. The Library proves it for a Hausdorff source
-(`hasLocalDomainEtaleFactorizations_of_quasiEtale`) and proves the converse in general
-(`HasLocalDomainEtaleFactorizations.quasiEtale`). The Library's `IsQuasiEtaleAt` follows
-Berkovich's 1994 definition (printed p.543): its charts need not contain the point.
+This module does not prove the premise. The module `QuasiEtaleDomainLocality` proves it for
+a Hausdorff source (`hasLocalDomainEtaleFactorizations_of_quasiEtale`) and proves the converse
+in general (`HasLocalDomainEtaleFactorizations.quasiEtale`). The Library's `IsQuasiEtaleAt`
+follows Berkovich's 1994 definition (printed p.543): its charts need not contain the point.
 
-Without a Hausdorff hypothesis the premise cannot be replaced by direct manipulation of such
-families. Consider two closed discs glued along an open subset, with a doubled boundary
-point. Take `Z` to be the first disc, `Y = X` to be the glued space, `f` the inclusion and
-`g = 𝟙`. Preimages under `f` of a nonpointed chart family of `g` at the doubled point include
-an open annulus. No finite family of compact charts inside the preimages is then a
-neighbourhood of the point.
+Without a Hausdorff hypothesis, local factorizations of `f` cannot in general be obtained by
+refining a fixed nonpointed chart family of `g`. The configuration is the doubled disc
+described in the Markdown of `QuasiEtaleCompactRefinementsObstruction`. Let `B` be the closed disc of radius two and
+`D` its closed unit subdisc, and glue two copies of `B` along the open subset `B \ D`. Take
+`Y = X` to be the double, `g = 𝟙`, `Z = B` and `f` the inclusion of the first copy. Let `x` be
+the radius-one Gauss point of the first copy. The arrow from `D` into the first copy and the
+inclusion of the whole second copy are affinoid charts whose images cover the double. For
+`g = 𝟙` they form a nonpointed family of quasi-étale charts at `x`, since the second copy
+misses `x`. Their inverse images under `f` are `D` and `B \ D`. The point `x`
+lies in `D`, outside `B \ D`, and in the closure of `B \ D`, so `D` is not a neighbourhood of
+`x` in `B`. A finite union of compact subsets of `B \ D` is closed in the Hausdorff space `B`
+and misses `x`. If finitely many compact charts, each contained in `D` or in `B \ D`, had a
+union that is a neighbourhood of `x`, removing those contained in `B \ D` would leave a
+neighbourhood of `x` contained in `D`. So no finite refinement subordinate to the two inverse
+images is a neighbourhood of `x`. Here `f` is an open immersion and is quasi-étale, and `g`
+has pointed factorizations at `x` (the first copy is an open domain containing `x`). The
+example therefore does not contradict the lemma or the premise; it shows only that this
+refinement argument fails.
+
+## The Hausdorff case
+
+The module `QuasiEtaleHausdorffOverMorphismProof` proves the lemma when the middle object `Y`
+has a Hausdorff underlying space, with no hypothesis on `Z` or `X`:
+`quasiEtale_of_comp_of_t2Space`, and in the form of `QuasiEtaleHausdorffOverMorphismStatement`
+(module `QuasiEtaleHausdorffStabilityStatement`) the theorem `quasiEtaleHausdorffOverMorphism`.
+It uses the graph factorization `HasDomainEtaleFactorization.of_comp_of_factor` of this
+module. It needs pointed local factorizations of `g` only
+(`quasiEtale_of_comp_of_hasLocalDomainEtaleFactorizations`): the charts of `f ≫ g` may miss the
+point, since each chart range is compact and is covered entirely. For a Hausdorff `Y` these
+factorizations of `g` are `hasLocalDomainEtaleFactorizations_of_quasiEtale`.
+
+## The general case
+
+For a middle object that is not Hausdorff, `QuasiEtaleOverMorphismStatement` is not proved by
+this module or by `QuasiEtaleHausdorffOverMorphismProof`. By
+`quasiEtale_of_comp_of_hasLocalDomainEtaleFactorizations`, it would follow from pointed local
+factorizations of every quasi-étale arrow, that is from
+`QuasiEtaleLocalDomainFactorizationsStatement`. The argument of the Hausdorff case does not
+extend by using a nonpointed chart family of `g` in place of pointed domains: the charts for
+`f` would have to refine the fixed inverse images of that family under `f`, and the doubled
+disc above has no finite such refinement that is a neighbourhood of the point. Two routes to
+the general case are known in the literature; neither is formalized here.
+
+1. Berkovich's: Lemma 3.1 of the 1994 paper is derived there (printed p.544) from properties of
+   étale morphisms and from Theorem 3.4.1 of *Étale cohomology for non-Archimedean analytic
+   spaces*, Publ. Math. IHÉS 78 (1993) (registered as `berkovich-1993-etale-cohomology`), which
+   identifies the finite étale covers of a germ `(X, x)` with the finite étale `𝓗(x)`-algebras.
+2. Ducros's: in *Families of Berkovich spaces*, Astérisque 400 (2018) (registered as
+   `ducros-2018-families-berkovich-spaces`, arXiv version 1107.4259v6), 5.4.10 recalls
+   Berkovich's nonpointed definition, and Lemma 5.4.11 (printed pp.120–121 of the arXiv
+   version) proves that it agrees at each point with Ducros's quasi-étaleness (quasi-smoothness
+   of relative dimension zero). Ducros's notion at a point `y` can be read on any analytic
+   domain containing `y` (5.2.10, for quasi-smoothness), which is the pointed behaviour the
+   premise asks for. The proof of 5.4.11 uses Ducros's Theorem 5.4.6 (an affinoid
+   neighbourhood of a point where a morphism of good spaces is quasi-smooth is an affinoid
+   domain of a smooth space) and Berkovich's Theorem 3.4.1.
 
 ## Results
 

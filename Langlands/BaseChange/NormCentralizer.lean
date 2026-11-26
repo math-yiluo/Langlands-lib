@@ -1,3 +1,4 @@
+import Langlands.BaseChange.WeylTorusLie
 import Langlands.BaseChange.RegularCentralizer
 
 /-! The continuous identification of ordinary and twisted centralizers at a regular norm. -/
@@ -13,29 +14,6 @@ universe u v
 
 variable {F : Type u} [Field F] {E : Type v} [CommRing E] [Algebra F E]
 variable {σ : E ≃ₐ[F] E} {l n : ℕ}
-
-private theorem exists_baseChange_of_fixed [Nontrivial E]
-    (hσ : IsCyclicAlgebra σ l) {c : GeneralLinear n E}
-    (hc : entrywiseAut σ n c = c) : ∃ t : GeneralLinear n F, baseChange F E n t = c := by
-  let f := (algebraMap F E).mapMatrix (m := Fin n)
-  have hf : Function.Injective f := Matrix.map_injective (algebraMap F E).injective
-  have descend (g : GeneralLinear n E) (hg : entrywiseAut σ n g = g) :
-      ∃ A : Matrix (Fin n) (Fin n) F, f A = g.val := by
-    have hentry (i j : Fin n) : ∃ a : F, algebraMap F E a = g i j :=
-      hσ.2.2.2.2 _ (congrArg (fun t : GeneralLinear n E => t i j) hg)
-    choose a ha using hentry
-    exact ⟨Matrix.of a, Matrix.ext ha⟩
-  obtain ⟨A, hA⟩ := descend c hc
-  obtain ⟨B, hB⟩ := descend c⁻¹ (by rw [map_inv, hc])
-  have hAB : A * B = 1 := by
-    apply hf
-    rw [map_mul, map_one, hA, hB]
-    exact c.val_inv
-  have hBA : B * A = 1 := by
-    apply hf
-    rw [map_mul, map_one, hA, hB]
-    exact c.inv_val
-  exact ⟨⟨A, B, hAB, hBA⟩, Units.ext hA⟩
 
 variable [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F]
 variable [TopologicalSpace E] [IsTopologicalRing E] [IsModuleTopology F E]
@@ -104,7 +82,7 @@ def normCentralizerEquiv (hσ : IsCyclicAlgebra σ l)
     let c' := x⁻¹ * c.val * x
     have hc' : c' ∈ sigmaCentralizer σ n δ' :=
       conj_mem_sigmaCentralizer σ n c.property x
-    obtain ⟨t, ht⟩ := exists_baseChange_of_fixed hσ (fixed c' hc')
+    obtain ⟨t, ht⟩ := hσ.exists_baseChange_of_fixed (fixed c' hc')
     have htmem : t ∈ glCentralizer γ := by
       rw [glCentralizer_eq_centralizer, Subgroup.mem_centralizer_singleton_iff]
       apply hmap.injective

@@ -1,5 +1,9 @@
 import Langlands.Global.RankinSelberg.RealPrincipalSeriesWhittakerReduction
 import Langlands.Global.RankinSelberg.RealCompactDifferences
+import Langlands.Global.RankinSelberg.RealAscendingTailPolynomial
+import Langlands.Global.RankinSelberg.RealOrdinaryGenerationPermutation
+import Langlands.Global.RankinSelberg.RealWhittakerFiniteKernel
+import Langlands.Global.RankinSelberg.RealWhittakerPolynomialKernel
 import Langlands.Representation.Archimedean.RealInducedCharacterMaps
 import Langlands.Representation.Archimedean.RealBlockFourierSupNorm
 import Langlands.Representation.Archimedean.RealExponentDeformation
@@ -152,6 +156,14 @@ protected theorem of_eq {n : ℕ} {ds es : List RealBlock}
 
 end CompactlySplitStandardQuotient
 
+private theorem ascendingPositions_weight_zero (d : ComplexCharacterData) (hw : d.weight = 0) :
+    (ascendingPositions (.induced d)).map RealBlock.character = realBlockExpand (.induced d) := by
+  simp only [ascendingPositions, realBlockExpand, hw, ite_true, List.map_cons, List.map_nil,
+    high, low, RealInducedCharacter.ca, RealInducedCharacter.cb,
+    RealInducedCharacter.aExp, RealInducedCharacter.bExp, highParity, Int.natAbs_zero,
+    Nat.cast_zero, zero_div, add_zero, sub_zero]
+  rfl
+
 private theorem compactlySplitStandardQuotient_ascendingPositions (n : ℕ) (pre post : List RealBlock)
     (b : RealBlock) (hr : realRank (pre ++ b :: post) = n) :
     CompactlySplitStandardQuotient n (pre ++ (ascendingPositions b).map RealBlock.character ++ post)
@@ -162,14 +174,7 @@ private theorem compactlySplitStandardQuotient_ascendingPositions (n : ℕ) (pre
       (CompactlySplitStandardQuotient.refl n (pre ++ RealBlock.character c :: post))
   | induced d =>
     by_cases hw : d.weight = 0
-    · have he : (ascendingPositions (.induced d)).map RealBlock.character =
-          realBlockExpand (.induced d) := by
-        simp only [ascendingPositions, realBlockExpand, hw, ite_true, List.map_cons, List.map_nil,
-          high, low, RealInducedCharacter.ca, RealInducedCharacter.cb,
-          RealInducedCharacter.aExp, RealInducedCharacter.bExp, highParity, Int.natAbs_zero,
-          Nat.cast_zero, zero_div, add_zero, sub_zero]
-        rfl
-      rw [he]
+    · rw [ascendingPositions_weight_zero d hw]
       exact CompactlySplitStandardQuotient.of_eq
         (realStandardModule_append_expand n pre post (.induced d)).symm
     · simp only [ascendingPositions, hw, ite_false, List.map_cons, List.map_nil]
@@ -244,6 +249,60 @@ theorem compactDifferenceBound_of_compactBound {n : ℕ} {ds es : List RealBlock
   intro ks hks
   rw [← hComm, mul_assoc]
   exact hB _ _ (hf ks hks)
+
+private theorem ascendingPositionModel_le (r : ℕ) (pre post : List RealBlock) (b : RealBlock)
+    (hr : realRank (pre ++ b :: post) = r + 1) (a : ℝˣ) :
+    realWhittakerModel r (pre ++ (ascendingPositions b).map RealBlock.character ++ post) a ≤
+      realWhittakerModel r (pre ++ b :: post) a := by
+  cases b with
+  | character c => simp [ascendingPositions, List.append_assoc]
+  | induced d =>
+    by_cases hw : d.weight = 0
+    · rw [ascendingPositions_weight_zero d hw]
+      exact realWhittakerModel_le_of_surjective a
+        (RealSurjectiveIntertwinerExists.of_eq (realStandardModule_append_expand (r + 1) pre post (.induced d)))
+    · have hr' : realRank (pre ++ [RealBlock.induced d] ++ post) = r + 1 := by simpa using hr
+      have hl := Int.natAbs_pos.mpr hw
+      have hp := tail_parity_of_positions d
+      have hData := RealInducedCharacter.data_tail hr' hl hp
+      have hT := RealExponentDeformation.isRealStandardIntertwiner_of_modulo_bot
+        (RealInducedCharacter.modulo_tail hr' hl hp)
+      have hModel : realWhittakerModel r (pre ++ [.character (low d), .character (high d)] ++ post) a ≤
+          realWhittakerModel r (pre ++ [.induced d] ++ post) a := by
+        apply RealLocalWhittaker.model_le_of_vanishingKernel a _ (RealInducedCharacter.tail_surjective hr' hl hp) hT
+        intro B hB
+        exact RealLocalWhittaker.realWhittakerLeftPolynomialVanishing r _ (realRank pre)
+          d.weight.natAbs hData.lt _ hT.isGKSubmodule_ker
+          (fun f hf g => ascendingTailKernel_polynomial hr' hl hp f hf g) a B hB
+      simpa only [ascendingPositions, hw, ite_false, List.map_cons, List.map_nil, List.append_assoc,
+        List.cons_append, List.nil_append] using hModel
+
+private theorem ascendingExpandModel_le_aux (r : ℕ) (a : ℝˣ) :
+    ∀ (ds pre post : List RealBlock), realRank (pre ++ ds ++ post) = r + 1 →
+      realWhittakerModel r (pre ++ ascendingExpand ds ++ post) a ≤
+        realWhittakerModel r (pre ++ ds ++ post) a
+  | [], pre, post, _ => by simp [ascendingExpand, ascendingCharacters]
+  | b :: ds, pre, post, hr => by
+    let pre' := pre ++ (ascendingPositions b).map RealBlock.character
+    have hr' : realRank (pre' ++ ds ++ post) = r + 1 := by
+      simpa only [pre', realRank_append, realRank_ascendingPositions, realRank_cons, add_assoc] using hr
+    have h₀ := ascendingExpandModel_le_aux r a ds pre' post hr'
+    have h₁ := ascendingPositionModel_le r pre (ds ++ post) b
+      (by simpa only [List.cons_append, List.append_assoc] using hr) a
+    have h := h₀.trans (by simpa only [pre', List.append_assoc] using h₁)
+    simpa only [pre', ascendingExpand_cons, List.append_assoc, List.cons_append] using h
+
+/-- For every rank-correct real block list, its ascending character expansion has exactly
+the original Whittaker coefficient space. -/
+def RealAscendingWhittakerModelEqualityStatement : Prop :=
+  ∀ (r : ℕ) (ds : List RealBlock), realRank ds = r + 1 → ∀ a : ℝˣ,
+    realWhittakerModel r (ascendingExpand ds) a = realWhittakerModel r ds a
+
+theorem realAscendingWhittakerModels_eq : RealAscendingWhittakerModelEqualityStatement := by
+  intro r ds hr a
+  apply le_antisymm
+  · simpa using ascendingExpandModel_le_aux r a ds [] [] (by simpa using hr)
+  · exact realWhittakerModel_le_of_surjective a (surjectiveIntertwiner_ascendingExpand (r + 1) ds hr)
 
 /-- Precomposition with a standard-module intertwiner preserves an exact Whittaker
 coefficient map. -/
