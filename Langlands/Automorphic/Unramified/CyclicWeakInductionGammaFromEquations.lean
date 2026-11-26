@@ -183,9 +183,17 @@ def CyclicWeakInductionGammaOrderFromTwistEquationsStatement : Prop :=
   CyclicWeakInductionSelfPairGammaOrderAtUniquePlaceStatement.{uF,uE,uV,uW}
 
 set_option maxHeartbeats 800000 in
-theorem cyclicWeakInductionGammaOrderFromTwistEquations :
-    CyclicWeakInductionGammaOrderFromTwistEquationsStatement.{uF,uE,uV,uW} := by
-  intro hFE hFEE hOrbit F E _ _ _ _ _ _ _ _ _ σ hgen v w hw r m S T Q₀ P₀ U R₀
+/-- The equal-rank equations at the supplied base and extension fields give the local
+self-pair order comparison by the cofinite orbit identity and the two-twist comparison. -/
+theorem cyclicWeakInductionGammaOrderAtFromTwistEquations
+    (F : Type uF) (E : Type uE) [Field F] [NumberField F] [Field E] [NumberField E]
+    [Algebra F E] [IsGalois F E] [CompactSpace (AdeleQuotient F)]
+    [CompactSpace (AdeleQuotient E)]
+    (hFE : EqualRankTwistEngineInputsAt.{uF,uV} F)
+    (hFEE : EqualRankTwistEngineInputsAt.{uE,uW} E)
+    (hOrbit : WeakInductionOrbitBaseChangeStatement.{uF,uE,uV,uW}) :
+    CyclicWeakInductionSelfPairGammaOrderAtUniquePlace.{uF,uE,uV,uW} F E := by
+  intro _ σ hgen v w hw r m S T Q₀ P₀ U R₀
     _ _ hQi hQa hPsc hRsc hConj hWeak
   obtain ⟨Sd, hSd⟩ := cuspidalContragredientExistence F r S
   obtain ⟨Td, hTd⟩ := cuspidalContragredientExistence E m T
@@ -229,8 +237,8 @@ theorem cyclicWeakInductionGammaOrderFromTwistEquations :
     normTwistedPairGammaOrder.{uF,uE,uV,uW,0} F E I
       (ψ := standardGlobalAdditiveCharacter F) (ψE := standardGlobalAdditiveCharacter E)
       (r := r) (t := r) (m := m) (n := m) D A
-      (hFE F _ (standardCharacter_ne_one (K := F)) (standardGlobalAdditiveCharacter_diagonal F) r D)
-      (fun i => hFEE E _ (standardCharacter_ne_one (K := E))
+      (hFE _ (standardCharacter_ne_one (K := F)) (standardGlobalAdditiveCharacter_diagonal F) r D)
+      (fun i => hFEE _ (standardCharacter_ne_one (K := E))
         (standardGlobalAdditiveCharacter_diagonal E) m (A i))
       hMatch v z
   obtain ⟨G, hG, hEval⟩ := standard_setup_dualPair_gamma hSd (isContragredientOf_symm hSd)
@@ -253,5 +261,10 @@ theorem cyclicWeakInductionGammaOrderFromTwistEquations :
     ∑ i, meromorphicOrderAt (rationalSpectralValue (residueCardinality w.1) (H i)) (s : ℂ)
   rw [hEval, hOrder, hUniv, Finset.sum_singleton]
   exact Finset.sum_congr rfl fun i _ => (hEval' i (s : ℂ)).symm
+
+theorem cyclicWeakInductionGammaOrderFromTwistEquations :
+    CyclicWeakInductionGammaOrderFromTwistEquationsStatement.{uF,uE,uV,uW} := by
+  intro hFE hFEE hOrbit F E _ _ _ _ _ _ _ _
+  exact cyclicWeakInductionGammaOrderAtFromTwistEquations F E (hFE F) (hFEE E) hOrbit
 
 end Langlands.Automorphic.Unramified

@@ -1,0 +1,7 @@
+# Haar factorization in a product
+
+Let `G` be a Hausdorff, locally compact, totally disconnected group with a Borel left Haar measure `μ`, and let `Y` be a Hausdorff space. If `D` on `G × Y` is invariant under left translation in the first coordinate, `HaarTensorFactorizationStatement` gives a unique distribution `S` on `Y` with `D = μ ⊗ S`. The distribution `μ` here is integration on the actual Schwartz–Bruhat test space for `G`.
+
+For a fixed test `g` on `Y`, the functional `f ↦ D(f ⊗ g)` is a left-invariant distribution on `G`. Haar-distribution uniqueness makes it a multiple of integration against `μ`. Evaluating at a test of integral one computes that multiple as `S(g)` and gives its complex linearity. The finite tensor expansion of a product test proves the claimed factorization on every test. Testing against tensors with the integral-one factor proves uniqueness.
+
+If `μ` is also right invariant and `D` is invariant under the product of right translation by `a` and a homeomorphism `e` of `Y`, then `pushforward_eq_of_haarTensor_symmetry` shows that `S` is invariant under `e`. On a tensor, the right translation acts on the first test without changing its integral. This is the factorization used when pulling back an invariant distribution along the conjugation submersion in semisimple descent. [Clozel, *Characters of non-connected, reductive p-adic groups*, §3.4, p. 154](https://doi.org/10.4153/CJM-1987-008-3)

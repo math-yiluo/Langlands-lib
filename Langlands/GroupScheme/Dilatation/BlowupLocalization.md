@@ -1,0 +1,5 @@
+# Localization of affine dilatations and their reductions
+
+For a flat algebra \(A\) over a Dedekind domain, a nonzero base element \(t\), and an ideal \(I\), `blowupLocalizationEquiv` identifies the localization of \(A[I/t]\) at the image of a submonoid of \(A\) with the blow-up algebra of the localized ring and extended ideal. The map from the localization comes from extending the centre ideal and inverting the original denominators. The inverse comes from the flat-test lifting property, since divisibility of the centre generators carries to the localization. The two universal properties verify the compositions.
+
+`blowupResidueLocalizationEquiv` identifies reduction modulo \(t\) of the localized dilatation with base change of the reduced dilatation along the localization of \(A/I\). The reduction of the old denominator submonoid is the image of that same submonoid in the centre algebra. Quotient and localization commute, so the reduced square is a pushout of rings. This supplies the comparison needed to use the local blow-up charts of Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach*, Appendix A.5.9–10, printed p. 635.

@@ -1,6 +1,6 @@
 import Langlands.Automorphic.AssociatedGammaAutomorphicFamily
 import Langlands.Global.Factors.CuspidalPairLocalDataProof
-import Langlands.Global.Factors.CuspidalPairPartialGammaGlobalReduction
+import Langlands.Global.Factors.CuspidalPairPartialGammaGlobalTCReduction
 import Langlands.Global.Factors.CuspidalSatakeBoundReduction
 import Langlands.Global.RankinSelberg.EqualAnalyticProof
 import Langlands.Global.RankinSelberg.EqualDualEulerFactorizationProof
@@ -48,7 +48,7 @@ theorem hasEngineInputs_of_globalEquation
 set_option maxHeartbeats 2500000 in
 set_option backward.isDefEq.respectTransparency false in
 private theorem hasEngineInputs_of_equalPackage
-    (D : AutomorphicTwistSetup.{u, uQ} ψ r r) (hEq : EqualPackageStatement.{u, uQ})
+    (D : AutomorphicTwistSetup.{u, uQ} ψ r r) (hEq : EqualPackageAt.{u, uQ} F)
     (hψ : ∃ x : Adeles F, ψ x ≠ 1) (hdiag : ∀ x : F, ψ (diagonal F x) = 1) :
     D.HasEngineInputs := by
   classical
@@ -68,7 +68,7 @@ private theorem hasEngineInputs_of_equalPackage
   have hunr := hChoice c
   have hχi := HeckeCharacter.hasPrescribedInfinityComponent_one_inv hχ
   obtain ⟨_, _, _, _, _, hI, hJ, hA, hB, hA₀, hB₀, hIJ, hf, hfd, hsem⟩ :=
-    hEq F ψ hdiag r T Td D.T' D.Td' hTd D.hTd' P D.P' Pd D.Pd' hP D.h'
+    hEq ψ hdiag r T Td D.T' D.Td' hTd D.hTd' P D.P' Pd D.Pd' hP D.h'
       S hS₁ hS₂ hS₃ hS₄ hSψ D.aR D.aR_spec D.aC D.aC_spec D.dR D.dR' D.dRd D.dRd'
       (fun v => OperatorRealization.HasRealPlaceParameter.heckeDeterminantTwist _ hχ (D.dR_spec v))
       D.dR'_spec
@@ -109,13 +109,19 @@ private theorem hasEngineInputs_of_equalPackage
 
 end AutomorphicTwistSetup
 
+/-- Functional-equation inputs for determinant twists of actual equal-rank cuspidal
+pairs at the given field. -/
+def EqualRankTwistEngineInputsAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+    (∃ x : Adeles F, ψ x ≠ 1) → (∀ x : F, ψ (diagonal F x) = 1) →
+    ∀ (r : ℕ) (D : AutomorphicTwistSetup.{u, uQ} ψ r r), D.HasEngineInputs
+
 /-- Functional-equation inputs for the family of determinant twists of every actual
 equal-rank cuspidal pair. -/
 def EqualRankTwistEngineInputsStatement : Prop :=
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
-    (∃ x : Adeles F, ψ x ≠ 1) → (∀ x : F, ψ (diagonal F x) = 1) →
-    ∀ (r : ℕ) (D : AutomorphicTwistSetup.{u, uQ} ψ r r), D.HasEngineInputs
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    EqualRankTwistEngineInputsAt.{u, uQ} F
 
 /-- The completed global pair equation gives the required equal-rank inputs. -/
 theorem equalRankTwistEngineInputs_of_globalEquation
@@ -133,6 +139,17 @@ theorem equalRankTwistEngineInputs_of_semilocalEquation :
   intro hS F _ _ _ ψ hψ hdiag r D
   have hEq := equalPackage EqualAnalytic.equalAnalyticStatement_proof equalUnfoldingStatement_proof
     equalEulerFactorization equalDualEulerFactorization hS
-  exact D.hasEngineInputs_of_equalPackage hEq hψ hdiag
+  exact D.hasEngineInputs_of_equalPackage (hEq F) hψ hdiag
+
+/-- The totally complex semi-local equation suffices for the same twist inputs at any
+supplied totally complex field. -/
+theorem equalRankTwistEngineInputsAt_of_semilocalEquationTC
+    (hS : EqualSemilocalEquationTCStatement.{u, uQ})
+    (F : Type u) [Field F] [NumberField F] [NumberField.IsTotallyComplex F]
+    [CompactSpace (AdeleQuotient F)] : EqualRankTwistEngineInputsAt.{u, uQ} F := by
+  intro ψ hψ hdiag r D
+  have hEq := CuspidalPairPartialGammaTC.equalPackageTC EqualAnalytic.equalAnalyticStatement_proof
+    equalUnfoldingStatement_proof equalEulerFactorization equalDualEulerFactorization hS
+  exact D.hasEngineInputs_of_equalPackage (hEq F) hψ hdiag
 
 end Langlands.Global.CuspidalPairFunctionalEquation

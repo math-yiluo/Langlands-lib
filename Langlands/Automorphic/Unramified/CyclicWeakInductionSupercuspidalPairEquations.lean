@@ -52,4 +52,20 @@ theorem cyclicWeakInductionSupercuspidalFromEqualSemilocal :
     (equalRankTwistEngineInputs_of_semilocalEquation hF)
     (equalRankTwistEngineInputs_of_semilocalEquation hE)
 
+/-- The equal-rank semi-local equations over totally complex fields suffice for the
+supercuspidality conclusion over a totally complex base. -/
+def CyclicWeakInductionSupercuspidalFromEqualSemilocalTCStatement : Prop :=
+  EqualSemilocalEquationTCStatement.{uF,uV} →
+  EqualSemilocalEquationTCStatement.{uE,uW} →
+  CyclicWeakInductionSupercuspidalTCStatement.{uF,uE,uV,uW}
+
+theorem cyclicWeakInductionSupercuspidalFromEqualSemilocalTC :
+    CyclicWeakInductionSupercuspidalFromEqualSemilocalTCStatement.{uF,uE,uV,uW} := by
+  intro hF hE F E _ _ _ _ _ _ _ _ _
+  let _ : NumberField.IsTotallyComplex E := NumberField.isTotallyComplex_of_algebra F E
+  exact cyclicWeakInductionSupercuspidalAt_of_gammaOrder F E
+    (cyclicWeakInductionGammaOrderAtFromTwistEquations F E
+      (equalRankTwistEngineInputsAt_of_semilocalEquationTC hF F)
+      (equalRankTwistEngineInputsAt_of_semilocalEquationTC hE E) weakInductionOrbitBaseChange)
+
 end Langlands.Automorphic.Unramified

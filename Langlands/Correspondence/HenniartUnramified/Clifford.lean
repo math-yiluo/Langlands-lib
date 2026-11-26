@@ -1,3 +1,4 @@
+import Langlands.Representation.Clifford.IrreduciblePullback
 import Langlands.Correspondence.HenniartUnramified.Coinduction
 
 /-! # Schur lemmas for block representations and properties of the explicit coinduction -/
@@ -23,14 +24,6 @@ theorem end_scalar [FiniteDimensional ℂ V] (ρ : Representation ℂ J V) (hi :
   obtain ⟨c, hc⟩ :=
     (IsIrreducible.algebraMap_intertwiningMap_bijective_of_isAlgClosed (ρ := ρ)).surjective T
   exact ⟨c, (congrArg IntertwiningMap.toLinearMap hc).symm⟩
-
-/-- A nonzero intertwiner between irreducible representations is an equivalence. -/
-theorem nonempty_equiv_of_ne_zero (ρ : Representation ℂ J V) (σ : Representation ℂ J W)
-    (hρ : ρ.IsIrreducible) (hσ : σ.IsIrreducible) (T : ρ.IntertwiningMap σ) (hT : T ≠ 0) :
-    Nonempty (ρ.Equiv σ) := by
-  let := hρ
-  let := hσ
-  exact ⟨T.ofBijective ((IsIrreducible.bijective_or_eq_zero T).resolve_right hT)⟩
 
 /-- Precomposition with a surjective homomorphism preserves irreducibility. -/
 theorem isIrreducible_comp_surjective {J' : Type*} [Group J'] (ρ : Representation ℂ J V)

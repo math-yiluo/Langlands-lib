@@ -1,0 +1,7 @@
+# Analytic images and the algebraic center
+
+For a morphism $g\colon X\to Y$ of schemes locally of finite type over a complete nontrivially normed ultrametric field, `range_analytification` identifies the image of the continuous map $g^{\mathrm{an}}$ with the inverse image of $g(X)$ by the center $Y^{\mathrm{an}}\to Y$. `liftAnalyticPoint` selects a point of the actual analytic fibre whenever the target point's center lies in $g(X)$. `analytification_jointlySurjective` applies this construction to jointly surjective families of scheme maps.
+
+One inclusion of the image formula is naturality of the center. For the other, choose a target affine chart representing the analytic point. Choose a source affine chart in its algebraic inverse image through an algebraic preimage of the center. The affine coordinate map carries the prime of that preimage to the prime of the analytic point's center. The affine point lifting theorem then gives an analytic preimage in the chosen source chart. Its image in the glued space is the initial analytic point by the local formula for analytification.
+
+The glued analytification and center are those of Berkovich, *Spectral Theory and Analytic Geometry over Non-Archimedean Fields* (1990), §3.4, Theorem 3.4.1, proof step (3), and Remark 3.4.2, pp. 63–64. The image formula is derived from those constructions and `AffineAnalytification.exists_baseMap_eq`. The construction assumes local finite type over the ground field on both schemes and applies without separatedness.

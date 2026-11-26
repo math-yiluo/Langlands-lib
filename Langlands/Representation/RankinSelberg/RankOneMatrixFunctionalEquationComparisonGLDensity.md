@@ -28,7 +28,7 @@ map is the published open embedding of the actual matrix unit group.
 embedding, without requiring the density itself to be measurable. Its proof
 uses the embedding's restriction and lower-integral formulas.
 `map_withDensity_equiv` gives the corresponding inverse-composition formula
-for a measurable equivalence.
+for a measurable equivalence. [Transport of densities](../../HarmonicAnalysis/MeasureDensityTransport.md)
 
 ## Invariance and Haar properties
 

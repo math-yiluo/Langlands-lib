@@ -283,20 +283,23 @@ structure SimpleCharacterCore (ψF : AddChar F ℂ) (S : Stratum 𝒪[F] F V)
 
 /-- The first defining-sequence term whose cutoff lies above `m` gives a core twist.
 The input lattice comparison and critical-approximation twist are the clauses of (3.1.9) and (3.3.18). -/
-theorem exists_simpleCharacterCore (hlattices : SimpleStratumLatticePropertiesStatement.{uF, uV})
+theorem exists_simpleCharacterCore_with_depth_bound
+    (hlattices : SimpleStratumLatticePropertiesStatement.{uF, uV})
     (hrestriction : SimpleCharacterRestrictionStatement.{uF, uV})
     (ψF : AddChar F ℂ) (hψ : IsBKAdditiveCharacter ψF)
     {S : Stratum 𝒪[F] F V} (q : S.DefiningSequenceChoice) (hS : S.IsSimple) (hrS : 0 ≤ S.r)
-    (m : ℕ) (hm : (m : ℤ) < S.n / 2) : Nonempty (SimpleCharacterCore ψF S q m) := by
+    (m : ℕ) (hm : (m : ℤ) < S.n / 2) :
+    ∃ core : SimpleCharacterCore ψF S q m, core.stratum.r ≤ max S.r (2 * (m : ℤ) + 1) := by
   suffices ∀ k {S : Stratum 𝒪[F] F V} (q : S.DefiningSequenceChoice), q.steps = k →
-    S.IsSimple → 0 ≤ S.r → (m : ℤ) < S.n / 2 → Nonempty (SimpleCharacterCore ψF S q m) from
+    S.IsSimple → 0 ≤ S.r → (m : ℤ) < S.n / 2 →
+      ∃ core : SimpleCharacterCore ψF S q m, core.stratum.r ≤ max S.r (2 * (m : ℤ) + 1) from
     this q.steps q rfl hS hrS hm
   intro k
   induction k using Nat.strong_induction_on with
   | _ k ih =>
     intro S q hk hS hrS hm
     by_cases hcore : (m : ℤ) < finiteCriticalDepth S.chain S.n S.b / 2
-    · refine ⟨⟨S, q, rfl, rfl, le_rfl, by simp, hS, hcore, rfl, ?_⟩⟩
+    · refine ⟨⟨S, q, rfl, rfl, le_rfl, by simp, hS, hcore, rfl, ?_⟩, le_max_left _ _⟩
       have ht : elementCharacter (traceCharacter ψF) (S.b - S.b) = (fun _ : G => 1) := by
         funext g
         simp [elementCharacter]
@@ -331,7 +334,12 @@ theorem exists_simpleCharacterCore (hlattices : SimpleStratumLatticePropertiesSt
     have hsteps : q'.steps < k := by
       change q.steps - 1 < k
       omega
-    obtain ⟨core⟩ := ih q'.steps hsteps q' rfl hT (hrS.trans hrST.le) hm
+    obtain ⟨core, hcoreBound⟩ := ih q'.steps hsteps q' rfl hT (hrS.trans hrST.le) hm
+    have hTBound : T.r ≤ 2 * (m : ℤ) + 1 := by omega
+    have hbound : core.stratum.r ≤ max S.r (2 * (m : ℤ) + 1) := by
+      refine hcoreBound.trans ?_
+      rw [max_eq_right hTBound]
+      exact le_max_right _ _
     have hc : S.b - T.b ∈ S.chain.endFiltration (-T.r) := by
       simpa only [neg_sub] using neg_mem hST.2.2.2.2
     have hc' : T.b - core.stratum.b ∈ S.chain.endFiltration (-core.stratum.r) := core.congruence
@@ -339,7 +347,7 @@ theorem exists_simpleCharacterCore (hlattices : SimpleStratumLatticePropertiesSt
       simpa only [sub_add_sub_cancel] using
         add_mem (S.chain.endFiltration_antitone (neg_le_neg core.depth_le) hc) hc'
     refine ⟨⟨core.stratum, core.sequence, core.chain_eq, core.level_eq, hrST.le.trans core.depth_le,
-      hcongr, core.isSimple, core.below_cutoff, hdom.trans core.domain_eq, ?_⟩⟩
+      hcongr, core.isSimple, core.below_cutoff, hdom.trans core.domain_eq, ?_⟩, hbound⟩
     have htwistEq (g : G) : elementCharacter (traceCharacter ψF) (T.b - core.stratum.b) g *
         elementCharacter (traceCharacter ψF) (S.b - T.b) g =
           elementCharacter (traceCharacter ψF) (S.b - core.stratum.b) g := by
@@ -347,5 +355,14 @@ theorem exists_simpleCharacterCore (hlattices : SimpleStratumLatticePropertiesSt
         show T.b - core.stratum.b + (S.b - T.b) = S.b - core.stratum.b by abel]
     rw [← funext htwistEq]
     exact htwist.trans core.twist
+
+/-- Each depth below half the level has a core approximation. -/
+theorem exists_simpleCharacterCore (hlattices : SimpleStratumLatticePropertiesStatement.{uF, uV})
+    (hrestriction : SimpleCharacterRestrictionStatement.{uF, uV})
+    (ψF : AddChar F ℂ) (hψ : IsBKAdditiveCharacter ψF)
+    {S : Stratum 𝒪[F] F V} (q : S.DefiningSequenceChoice) (hS : S.IsSimple) (hrS : 0 ≤ S.r)
+    (m : ℕ) (hm : (m : ℤ) < S.n / 2) : Nonempty (SimpleCharacterCore ψF S q m) :=
+  (exists_simpleCharacterCore_with_depth_bound hlattices hrestriction ψF hψ q hS hrS m hm).elim
+    (fun core _ => ⟨core⟩)
 
 end Langlands.BushnellKutzko

@@ -19,7 +19,7 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensio
 
 /-- The Haar packing argument applies to a finite family of separated centres, with
 arbitrary ball and separation radii. -/
-private theorem card_le_of_separated_centres {ι : Type v} (s : Finset ι) (f : ι → E)
+theorem card_le_of_separated_centres {ι : Type v} (s : Finset ι) (f : ι → E)
     {R ε : ℝ} (hR : 0 ≤ R) (hε : 0 < ε) (hs : ∀ i ∈ s, ‖f i‖ ≤ R)
     (hsep : ∀ i ∈ s, ∀ j ∈ s, i ≠ j → ε + ε ≤ dist (f i) (f j)) :
     (s.card : ℝ) ≤ ((R + ε) / ε) ^ Module.finrank ℝ E := by

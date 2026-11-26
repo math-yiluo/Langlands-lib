@@ -1,7 +1,7 @@
 # Compatibility of Henniart's candidate with cyclic base change of prime degree
 
-This module gives two definitions and one proposition. It proves nothing. The
-proposition is interface E3 of the operator's plan note *Formalizing the large
+This module gives two definitions and two propositions. It proves nothing. The
+first proposition is interface E3 of the operator's plan note *Formalizing the large
 external inputs of the local Langlands correspondence for GL_n*
 (`operator-external-inputs-plan-2026-11-16`, `external-inputs-plan.tex`,
 line 240), stated for the Library's candidate. It is the form of input (I4)
@@ -168,6 +168,72 @@ every \(g\in\Gamma\), then
 
 **Forgetting the compatibility.** Keeping `Ch` and its first property for every
 `p` and `S` gives the Library's `LocalCyclicBaseChangeStatement`, input (I3).
+
+## The reduction to (I4)
+
+`CandidateCompatibleNumericalInjectionsReductionStatement.{uK, uW, uV} : Prop`
+is the implication
+
+```text
+CandidateExistenceStatement.{uK, uW, uV, uW, uK} →
+  CandidateBaseChangeCompatibilityStatement.{uK, uW, uV} →
+    CompatibleNumericalInjectionsStatement.{uK, uW, uV}
+```
+
+that is: candidate existence (Henniart 2000, Théorème 3.1 with §§3.7–3.8, in
+the local form of the module `Langlands.Correspondence.HenniartStableMapStatement`)
+and the compatibility above give input (I4), the Library's rank-bounded
+`CompatibleNumericalInjectionsStatement` (module
+`Langlands.Correspondence.HenniartCompatibleInjections`). The universe of the
+auxiliary data of the candidates in `CandidateExistenceStatement` is `uW`, and
+its finite quotients live in the field universe `uK`, as in the Library's
+`Extension.supercuspidalCorrespondenceHenniartSupercuspidalConductor`. The
+module does not prove the implication.
+
+**No stable existence in all ranks.** The implication does not assume
+`StableExistsAt` in every rank. Such a premise would be circular: the Library
+obtains stable existence in rank \(n\) from the surjectivity of the candidate
+in the ranks below \(n\), that is, from numerical surjectivity. Instead,
+(I4) supplies the hypothesis `Numerical.SurjectiveBelowRank N` for its bound
+\(N\), and the ranks up to \(N\) are reached from it as follows.
+
+**How (I4) follows.** Fix `p`, a step `S` and \(N\) with
+`SurjectiveBelowRank N`. The argument uses, besides the two premises, only
+theorems of the Library.
+
+1. *Stable existence up to \(N\).* Over every p-adic field `K` and in every
+   rank \(n\le N\), `StableExistsAt K n` holds, by strong induction on \(n\).
+   Rank one is `Extension.rankOneStage_of_reciprocity`. For \(1<n\le N\), every
+   rank \(r<n\) satisfies \(r<N\): stable existence in rank \(r\) holds by
+   induction, so the candidate in rank \(r\) is a numerical injection (step 2),
+   hence surjective by `SurjectiveBelowRank N`, and
+   `Extension.stableSurjectiveAt_of_surjective` gives the surjectivity of the
+   stable images in rank \(r\). Then `Extension.choiceIndependenceStep_of_inputs`
+   gives stable existence in rank \(n\).
+2. *The candidate is a numerical injection where it is defined.* It is
+   injective (`Extension.rankExtension_injective`), preserves conductors
+   (`Extension.SupercuspidalConductor.rankExtension_conductor`) and commutes with
+   unramified twists (`Extension.rankExtension_twist`), as in the proof of
+   `Extension.SupercuspidalConductor.surjectivityStepReduction`.
+3. *The families.* \(\varphi_L\) and \(\varphi_M\) are the candidates
+   `Extension.rankExtension` over \(L\) and \(M\) in the ranks \(k+1\le N\), and
+   `Ch` is the map given by `CandidateBaseChangeCompatibilityStatement` for `S`;
+   it is a weak cyclic base change.
+4. *(CI1).* `Numerical.IsBaseChangeCompatible S Ch N φL φM` is
+   `Numerical.IsCandidateBaseChangeCompatible S Ch` applied in rank \(k+1\le N\),
+   where every member of the restriction decomposition has rank at most \(N\),
+   so that the candidate over \(M\) is defined there by step 1.
+5. *Reflection of Galois invariance.* If \(\varphi_M(\tau)\) is fixed by every
+   \(g\in\Gamma\), then (CI2) gives \(\varphi_M(\tau^w)=\varphi_M(\tau)^{g}=\varphi_M(\tau)\)
+   for every \(w\in W_L\), and the injectivity of \(\varphi_M\) gives
+   \(\tau^w=\tau\): this is `Numerical.ReflectsGaloisInvariance S N φM`.
+
+The other inputs of the Library theorems used here are themselves proved in
+the Library: `LocalClassField.commonClosureReciprocityExistence`,
+`NonabelianSystem.exists_system`, the spectral conductor statement (from
+`SpectralConductor.spectralConductorRankOneReduction`),
+`RankinSelberg.pairEpsilonExponentReduction` and
+`Conductor.supercuspidalPadicConductorExponent`. No further premise is needed.
 
 ## Provenance
 

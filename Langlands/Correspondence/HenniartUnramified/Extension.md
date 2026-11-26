@@ -2,7 +2,7 @@
 
 General lemmas:
 
-- `isIrreducible_of_comp`: if `ρ ∘ c` is irreducible, then so is `ρ`.
+- `isIrreducible_of_comp` gives irreducibility of `ρ` from that of `ρ ∘ c`. [Pullbacks and intertwiners](../../Representation/Clifford/IrreduciblePullback.md)
 - `isIrreducible_twist`: character twists preserve irreducibility.
 - `equivComp`: an equivalence remains an equivalence after precomposition.
 

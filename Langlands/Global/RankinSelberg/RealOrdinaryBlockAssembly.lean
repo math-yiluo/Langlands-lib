@@ -66,7 +66,8 @@ private theorem determinant_deformBlocks (ds : List RealBlock) (z : ℂ) :
   · simp [blockOfParams, RealBlock.determinant, ComplexCharacterData.coe_realInducedDeterminant,
       ComplexCharacterData.character_eq, realToComplex, characterOfParams_weight]
 
-private theorem realBlockExponent_deformBlocks {ds : List RealBlock} {z : ℂ} (hz : z.re = 0) :
+/-- At a purely imaginary parameter, each deformed block has purely imaginary exponent. -/
+theorem realBlockExponent_deformBlocks {ds : List RealBlock} {z : ℂ} (hz : z.re = 0) :
     ∀ d ∈ deformBlocks ds z, realBlockExponent d = 0 := by
   intro d hd
   obtain ⟨i, rfl⟩ := List.mem_ofFn.mp hd
@@ -103,6 +104,55 @@ private theorem mem_ascendingExpand {r : ℕ} {ds : List RealBlock} {a : ℝˣ} 
     (hr : realRank ds = r + 1) (hW : W ∈ realWhittakerModel r ds a) :
     W ∈ realUniformWhittakerModel r (ascendingExpand ds) a :=
   uniformModel_le_ascendingExpand r ds hr a (realWhittakerModels_eq r ds hr a ▸ hW)
+
+/-- A holomorphic test family in the ascending models, whose vectors also belong to the
+original block models at the parameter values in `S`. -/
+def HasRealOrdinaryHolomorphicTestFamilyOn {r t : ℕ} (S : Set ℂ) (ds es : List RealBlock)
+    (a : ℝˣ) (I : (G r → ℂ) → (G t → ℂ) → ℂ → ℂ) (W : G r → ℂ) (V : G t → ℂ) : Prop :=
+  ∃ (U : ℂ → G r → ℂ) (U' : ℂ → G t → ℂ) (σ : ℝ), U 1 = W ∧ U' 1 = V ∧
+    (∀ z ∈ ball 0 3,
+      U z ∈ realUniformWhittakerModel r (ascendingExpand (deformBlocks ds z)) a ∧
+      U' z ∈ realUniformWhittakerModel t (ascendingExpand (deformBlocks es z)) (-a)) ∧
+    (∀ z ∈ ball 0 3 ∩ S, U z ∈ realWhittakerModel r (deformBlocks ds z) a ∧
+      U' z ∈ realWhittakerModel t (deformBlocks es z) (-a)) ∧
+    DifferentiableOn ℂ (fun u : ℂ × ℂ => I (U u.1) (U' u.1) u.2)
+      (ball 0 3 ×ˢ {s : ℂ | σ < s.re})
+
+/-- Holomorphic families for all unequal-rank and positive-index equal-rank ordinary tests,
+with original block membership on `S`. -/
+def RealOrdinaryHolomorphicTestFamiliesOn (S : Set ℂ) : Prop :=
+  (∀ (r t : ℕ) (h : t < r) (ds es : List RealBlock),
+    realRank ds = r + 1 → realRank es = t + 1 →
+    ∀ (a : ℝˣ) (D : RealQuotientMeasureData t) (W : G r → ℂ) (V : G t → ℂ),
+      W ∈ realWhittakerModel r ds a → V ∈ realWhittakerModel t es (-a) →
+      HasRealOrdinaryHolomorphicTestFamilyOn S ds es a (realUnequalIntegral h D) W V) ∧
+  ∀ (r : ℕ), 0 < r → ∀ (ds es : List RealBlock), realRank ds = r + 1 → realRank es = r + 1 →
+    ∀ (a : ℝˣ) (D : RealQuotientMeasureData r) (W V : G r → ℂ)
+      (Φ : SchwartzMap (Fin (r + 1) → ℝ) ℂ),
+      W ∈ realWhittakerModel r ds a → V ∈ realWhittakerModel r es (-a) →
+      HasRealOrdinaryHolomorphicTestFamilyOn S ds es a
+        (fun W V => realEqualIntegral D W V Φ) W V
+
+private theorem HasRealOrdinaryHolomorphicTestFamily.on_set
+    {r t : ℕ} {S : Set ℂ} {ds es : List RealBlock} {a : ℝˣ}
+    {I : (G r → ℂ) → (G t → ℂ) → ℂ → ℂ} {W : G r → ℂ} {V : G t → ℂ}
+    (h : HasRealOrdinaryHolomorphicTestFamily ds es a I W V)
+    (hr : realRank ds = r + 1) (ht : realRank es = t + 1) :
+    HasRealOrdinaryHolomorphicTestFamilyOn S ds es a I W V := by
+  obtain ⟨U, U', σ, hU, hU', hModel, hHol⟩ := h
+  refine ⟨U, U', σ, hU, hU', ?_, fun z hz => hModel z hz.1, hHol⟩
+  intro z hz
+  exact ⟨mem_ascendingExpand ((realRank_deformBlocks ds z).trans hr) (hModel z hz).1,
+    mem_ascendingExpand ((realRank_deformBlocks es z).trans ht) (hModel z hz).2⟩
+
+/-- Full block membership follows when the specified set of parameters is the whole plane. -/
+theorem HasRealOrdinaryHolomorphicTestFamilyOn.of_univ
+    {r t : ℕ} {ds es : List RealBlock} {a : ℝˣ}
+    {I : (G r → ℂ) → (G t → ℂ) → ℂ → ℂ} {W : G r → ℂ} {V : G t → ℂ}
+    (h : HasRealOrdinaryHolomorphicTestFamilyOn univ ds es a I W V) :
+    HasRealOrdinaryHolomorphicTestFamily ds es a I W V := by
+  obtain ⟨U, U', σ, hU, hU', _, hModel, hHol⟩ := h
+  exact ⟨U, U', σ, hU, hU', fun z hz => hModel z ⟨hz, mem_univ z⟩, hHol⟩
 
 private def PositionNormalization (ds es : List RealBlock) (Z : ℂ → ℂ) : Prop :=
   Nonempty (OrdinaryIntegralNormalization Z
@@ -180,21 +230,22 @@ private theorem normalization_at_one (ds es : List RealBlock) (b : ℝˣ) (c : �
     hResult 1 hOne
   simpa only [deformBlocks_one] using hAtOne
 
-/-- The real ordinary continuation follows from normalized growth for character pairs,
-the tempered scalar Whittaker bound, and the holomorphic deformation of the exact tests. -/
-def RealOrdinaryBlockAssemblyStatement : Prop :=
+/-- The real block assembly uses membership in the original block models at the purely
+imaginary parameters, and membership in the ascending character models on the whole disk. -/
+def RealOrdinaryBlockAssemblyOnImaginaryAxisStatement : Prop :=
   (∀ (r t : ℕ) (h : t < r), RealLocalUnequalCharacterGrowthAtRanks r t h) →
     (∀ r : ℕ, 0 < r → RealLocalEqualCharacterGrowthAtRank r) →
     (∀ r : ℕ, 0 < r → RealTemperedWhittakerBoundAtRank r) →
-    RealOrdinaryHolomorphicTestFamiliesStatement →
+    RealOrdinaryHolomorphicTestFamiliesOn {z : ℂ | z.re = 0} →
     RealOrdinaryNormalizedContinuationStatement
 
 set_option maxHeartbeats 1200000 in
-theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
+theorem realOrdinaryBlockAssemblyOnImaginaryAxis :
+    RealOrdinaryBlockAssemblyOnImaginaryAxisStatement := by
   intro hUnequal hEqual hBound hFamilies
   constructor
   · rintro r t h ds es hr ht a D ⟨W, V⟩
-    obtain ⟨U, U', σ, hU, hU', hModel, hHol⟩ := hFamilies.1 r t h ds es hr ht a D W V W.2 V.2
+    obtain ⟨U, U', σ, hU, hU', hAscending, hModel, hHol⟩ := hFamilies.1 r t h ds es hr ht a D W V W.2 V.2
     let c := NNReal.sqrt ‖(a : ℝ)‖₊
     have hc : 0 < c := NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)
     let sign := (determinant ds (-1) : ℂ) ^ (t + 1) * (determinant es (-1) : ℂ)
@@ -209,7 +260,7 @@ theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
       have he := (realRank_deformBlocks es z).trans ht
       have hN := hUnequal r t h (ascendingExpand (deformBlocks ds z)) (ascendingExpand (deformBlocks es z))
         ⟨_, rfl⟩ ⟨_, rfl⟩ ((realRank_ascendingExpand _).trans hd) ((realRank_ascendingExpand _).trans he)
-        a D (U z) (U' z) (mem_ascendingExpand hd (hModel z hz).1) (mem_ascendingExpand he (hModel z hz).2)
+        a D (U z) (U' z) (hAscending z hz).1 (hAscending z hz).2
       rw [RealPrincipalSeries.determinant_ascendingExpand, RealPrincipalSeries.determinant_ascendingExpand,
         determinant_deformBlocks, determinant_deformBlocks] at hN
       exact normalizations_of_ascending hN
@@ -219,8 +270,8 @@ theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
     refine normalization_at_one ds es (-a) c hc sign hSign Z Zd σ hHol
       (fun z hz => (hSlice z hz).1) ?_
     intro z hz him
-    obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z hz).1
-    obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z hz).2
+    obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z ⟨hz, him⟩).1
+    obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z ⟨hz, him⟩).2
     exact ⟨(realTemperedOrdinaryConvergence.1 r t h D a _ _ hW hV hWg hVg).2,
       (realTemperedBlockConvergence r t h D a _ _ hW hV hWg hVg).2, (hSlice z hz).2⟩
   · intro r
@@ -231,7 +282,7 @@ theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
       rintro ds es hr ht a D ⟨W, V, Φ⟩
       let r := k + 1
       have hp : 0 < r := Nat.succ_pos k
-      obtain ⟨U, U', σ, hU, hU', hModel, hHol⟩ :=
+      obtain ⟨U, U', σ, hU, hU', hAscending, hModel, hHol⟩ :=
         hFamilies.2 r hp ds es hr ht a D W V Φ W.2 V.2
       let c := NNReal.sqrt ‖(a : ℝ)‖₊
       have hc : 0 < c := NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)
@@ -247,7 +298,7 @@ theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
         have he := (realRank_deformBlocks es z).trans ht
         have hN := hEqual r hp (ascendingExpand (deformBlocks ds z)) (ascendingExpand (deformBlocks es z))
           ⟨_, rfl⟩ ⟨_, rfl⟩ ((realRank_ascendingExpand _).trans hd) ((realRank_ascendingExpand _).trans he)
-          a D (U z) (U' z) Φ (mem_ascendingExpand hd (hModel z hz).1) (mem_ascendingExpand he (hModel z hz).2)
+          a D (U z) (U' z) Φ (hAscending z hz).1 (hAscending z hz).2
         rw [RealPrincipalSeries.determinant_ascendingExpand, determinant_deformBlocks] at hN
         exact normalizations_of_ascending hN
       change Nonempty (OrdinaryIntegralNormalization (realEqualIntegral D (W : G r → ℂ) V Φ)
@@ -256,9 +307,26 @@ theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
       refine normalization_at_one ds es (-a) c hc sign hSign Z Zd σ hHol
         (fun z hz => (hSlice z hz).1) ?_
       intro z hz him
-      obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z hz).1
-      obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z hz).2
+      obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z ⟨hz, him⟩).1
+      obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z ⟨hz, him⟩).2
       exact ⟨(realTemperedOrdinaryConvergence.2 r D a (-a) _ _ Φ hW hV hWg hVg).2.1,
         (realTemperedOrdinaryConvergence.2 r D a (-a) _ _ Φ hW hV hWg hVg).2.2, (hSlice z hz).2⟩
+
+/-- The real ordinary continuation follows from normalized growth for character pairs,
+the tempered scalar Whittaker bound, and the holomorphic deformation of the exact tests. -/
+def RealOrdinaryBlockAssemblyStatement : Prop :=
+  (∀ (r t : ℕ) (h : t < r), RealLocalUnequalCharacterGrowthAtRanks r t h) →
+    (∀ r : ℕ, 0 < r → RealLocalEqualCharacterGrowthAtRank r) →
+    (∀ r : ℕ, 0 < r → RealTemperedWhittakerBoundAtRank r) →
+    RealOrdinaryHolomorphicTestFamiliesStatement →
+    RealOrdinaryNormalizedContinuationStatement
+
+theorem realOrdinaryBlockAssembly : RealOrdinaryBlockAssemblyStatement := by
+  intro hUnequal hEqual hBound hFamilies
+  apply realOrdinaryBlockAssemblyOnImaginaryAxis hUnequal hEqual hBound
+  exact ⟨fun r t h ds es hr ht a D W V hW hV =>
+      (hFamilies.1 r t h ds es hr ht a D W V hW hV).on_set hr ht,
+    fun r hp ds es hr ht a D W V Φ hW hV =>
+      (hFamilies.2 r hp ds es hr ht a D W V Φ hW hV).on_set hr ht⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealBlockParameters

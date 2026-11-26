@@ -8,7 +8,7 @@ it needs finite dimensionality.
   lemma over the algebraically closed field `ℂ`.
 - `nonempty_equiv_of_ne_zero`: a nonzero intertwiner between irreducible
   representations is an equivalence, since its kernel and image are subrepresentations.
-  No finiteness is needed.
+  The result holds in arbitrary dimension. [Pullbacks and intertwiners](../../Representation/Clifford/IrreduciblePullback.md)
 - `isIrreducible_comp_surjective`: precomposing with a surjective homomorphism
   preserves irreducibility, because both representations have the same
   subrepresentations.

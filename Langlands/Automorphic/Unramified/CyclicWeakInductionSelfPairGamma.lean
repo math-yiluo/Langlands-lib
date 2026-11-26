@@ -50,10 +50,9 @@ def HasLocalDualPairGamma {v : FinitePlace K} {r : ℕ}
 /-- The local order comparison for the self-pair of a supplied weak induction.
 The upper product pairs the original upper action with the smooth dual of
 each of its arithmetic conjugates, including the identity conjugate. -/
-def CyclicWeakInductionSelfPairGammaOrderAtUniquePlaceStatement : Prop :=
-  ∀ (F : Type uF) (E : Type uE) [Field F] [NumberField F] [Field E] [NumberField E]
-    [Algebra F E] [IsGalois F E] [CompactSpace (AdeleQuotient F)]
-    [CompactSpace (AdeleQuotient E)],
+def CyclicWeakInductionSelfPairGammaOrderAtUniquePlace (F : Type uF) (E : Type uE)
+    [Field F] [NumberField F] [Field E] [NumberField E] [Algebra F E]
+    [CompactSpace (AdeleQuotient F)] [CompactSpace (AdeleQuotient E)] : Prop :=
     (Module.finrank F E).Prime →
     ∀ (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
     ∀ (v : FinitePlace F) (w : FinitePlacesAbove E v),
@@ -82,6 +81,13 @@ def CyclicWeakInductionSelfPairGammaOrderAtUniquePlaceStatement : Prop :=
           ∑ i, meromorphicOrderAt
             (rationalSpectralValue (padicField w.1).canonicalTopologicalData.residueCardinality (D i))
             (t : ℂ)
+
+/-- The unique-place self-pair order comparison over every cyclic number-field extension. -/
+def CyclicWeakInductionSelfPairGammaOrderAtUniquePlaceStatement : Prop :=
+  ∀ (F : Type uF) (E : Type uE) [Field F] [NumberField F] [Field E] [NumberField E]
+    [Algebra F E] [IsGalois F E] [CompactSpace (AdeleQuotient F)]
+    [CompactSpace (AdeleQuotient E)],
+      CyclicWeakInductionSelfPairGammaOrderAtUniquePlace.{uF, uE, uV, uW} F E
 
 private theorem isSupercuspidal_iff_padicObject {r : ℕ} {v : FinitePlace K}
     (A : LocalRealization K (r + 1) v) (hi : A.IsIrreducible) (ha : A.IsAdmissible) :
@@ -156,10 +162,32 @@ def CyclicWeakInductionSupercuspidalFromGammaOrderStatement : Prop :=
   CyclicWeakInductionSupercuspidalStatement.{uF, uE, uV, uW}
 
 set_option maxHeartbeats 1500000 in
-theorem cyclicWeakInductionSupercuspidal_of_gammaOrder :
-    CyclicWeakInductionSupercuspidalFromGammaOrderStatement.{uF, uE, uV, uW} := by
+/-- Apply the self-pair criterion using the local order comparison for the supplied
+field extension. -/
+theorem cyclicWeakInductionSupercuspidalAt_of_gammaOrder
+    (F : Type uF) (E : Type uE) [Field F] [NumberField F] [Field E] [NumberField E]
+    [Algebra F E] [IsGalois F E] [CompactSpace (AdeleQuotient F)]
+    [CompactSpace (AdeleQuotient E)]
+    (hMatch : CyclicWeakInductionSelfPairGammaOrderAtUniquePlace.{uF, uE, uV, uW} F E) :
+    (Module.finrank F E).Prime →
+    ∀ (σ : E ≃ₐ[F] E), (∀ τ : E ≃ₐ[F] E, τ ∈ Subgroup.zpowers σ) →
+    ∀ (v : FinitePlace F) (w : FinitePlacesAbove E v),
+      (∀ w' : FinitePlacesAbove E v, w' = w) →
+    ∀ (r m : ℕ) (S : CuspidalOperatorRealization F r)
+      (T : CuspidalOperatorRealization E m)
+      (P : CuspidalSpectralPresentation.{uE, uW} T),
+      HasUnitaryCentralCharacter T →
+      (P.localComponent w.1).IsSupercuspidal →
+      (∀ i : ℕ, 0 < i → i < Module.finrank F E →
+        ∃ (U : CuspidalOperatorRealization E m)
+          (Q : CuspidalSpectralPresentation.{uE, uW} U),
+          T.isoClass.IsGaloisConjugate (σ ^ i) U.isoClass ∧
+          (Q.localComponent w.1).IsSupercuspidal ∧
+          (Q.localComponent w.1).isoClass ≠ (P.localComponent w.1).isoClass) →
+      IsoClass.IsWeakInductionOf.{uF, uE, uV, uW} S.isoClass T.isoClass →
+      IsoClass.HasSupercuspidalComponent.{uF, uV} S.isoClass v := by
   classical
-  intro hMatch F E _ _ _ _ _ _ _ _ hPrime σ hgen v w hw r m S T P hT hP hconj hWeak
+  intro hPrime σ hgen v w hw r m S T P hT hP hconj hWeak
   let : w.1.asIdeal.LiesOver v.asIdeal := w.2
   let d := Module.finrank F E
   let i₀ : Fin d := ⟨0, hPrime.pos⟩
@@ -183,7 +211,7 @@ theorem cyclicWeakInductionSupercuspidal_of_gammaOrder :
     Q₀.exists_small hQ₀
   obtain ⟨Q, hQ⟩ := hSmall
   obtain ⟨ψv, νv, ψw, νw, G, D, hG, hD, hOrders⟩ :=
-    hMatch F E hPrime σ hgen v w hw r m S T Q P U R hS hT (hQ v).1 (hQ v).2 hP hR hTU hWeak
+    hMatch hPrime σ hgen v w hw r m S T Q P U R hS hT (hQ v).1 (hQ v).2 hP hR hTU hWeak
   have hPu := cuspidalUnitaryLocalUnitarity E m T hT P w.1 hP.choose hP.choose_spec.choose
   have hRu (i : Fin d) : IsUnitarizable ((R i).localComponent w.1).representation := by
     obtain ⟨e⟩ := P.nonempty_localComponent_equiv_of_galoisConjugate w (R i) hw
@@ -212,6 +240,11 @@ theorem cyclicWeakInductionSupercuspidal_of_gammaOrder :
   have hSC := supercuspidalOfSelfPairGammaOrder (residuePrime v) K ψv νv r π.obj
     hπ hπu G hG hzero hsimple
   exact ⟨S, Q, rfl, (isSupercuspidal_iff_padicObject (Q.localComponent v) (hQ v).1 (hQ v).2).mpr hSC⟩
+
+theorem cyclicWeakInductionSupercuspidal_of_gammaOrder :
+    CyclicWeakInductionSupercuspidalFromGammaOrderStatement.{uF, uE, uV, uW} := by
+  intro hMatch F E _ _ _ _ _ _ _ _
+  exact cyclicWeakInductionSupercuspidalAt_of_gammaOrder F E (hMatch F E)
 
 /-- The same argument supplies the totally complex target under the local order comparison. -/
 theorem cyclicWeakInductionSupercuspidalTC_of_gammaOrder

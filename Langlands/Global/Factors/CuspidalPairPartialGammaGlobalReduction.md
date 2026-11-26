@@ -17,6 +17,8 @@ finite places of `S`. This module contains:
 * in the namespace `Langlands.Global.CuspidalPairPartialGammaGlobal`, the lemmas the proof uses
   and two auxiliary Prop-valued definitions, `UnequalPackageStatement` and
   `EqualPackageStatement` (Section 3). The module proves both of them from the premises.
+  `EqualPackageAt F` is the equal-rank package at a specified number field `F` with compact
+  additive adelic quotient. Its universal closure is `EqualPackageStatement`.
 
 The theorem is a reduction. It does not prove (G'). Section 5 says which of its ten premises
 the Library proves.

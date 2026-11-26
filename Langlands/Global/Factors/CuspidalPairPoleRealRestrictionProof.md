@@ -1,0 +1,9 @@
+# Surjectivity of real cuspidal Whittaker restriction
+
+`realPlaceWhittakerRestrictionSurjectivity` proves `RealPlaceWhittakerRestrictionSurjectivityStatement.{u}`. It realizes every function of the specified local model by restriction from the supplied cuspidal realization, for both compatible additive characters and the given real place and standard-module parameter.
+
+Let \(B_0\) be the ordinary Whittaker coefficient map normalized to take value \(1\) at the identity on some source vector. The proof takes the surjective compact-finite intertwiner \(T\) from the ascending character principal series onto the original standard module. For each ordinary coefficient map \(B\), the composite \(B \circ T\) is an ordinary Whittaker intertwiner for the same scale. `RealExactStandardEvaluation.exists_standardEvaluation` realizes it by a continuous Whittaker functional on the genuine smooth character principal series. `exists_boundedForm_of_characterEvaluation` expresses this functional on the smooth position series with a finite compact derivative bound and the same translated values.
+
+The form for \(B_0 \circ T\) is nonzero because a lift of the normalized source vector gives value \(1\) at the identity. Smooth uniqueness on the character principal series makes the form for \(B \circ T\) a scalar multiple \(c\) of this form. For every original vector \(f\), evaluate both forms on translates of a single lift of \(f\) along \(T\). This yields \(Bf = B_0(cf)\) as functions, so every generating range of the ordinary local model lies in the range of \(B_0\).
+
+`realPlaceWhittakerRestrictionFromNormalizedRange` applies this result to the actual-place normalized maps at \(a\) and \(-a\). It uses the real character line in size one. In each case a preimage under the normalized map gives a vector of the supplied cuspidal realization whose Whittaker function restricts to the given function at finite coordinate \(1\).

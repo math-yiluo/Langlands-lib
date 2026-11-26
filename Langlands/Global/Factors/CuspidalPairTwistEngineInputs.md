@@ -6,4 +6,10 @@
 
 `equalRankTwistEngineInputs_of_semilocalEquation` combines the equal-rank semi-local equation with the established global analytic, unfolding and Euler factorization results for equal-rank pairs. For each twist it chooses a finite set containing the exceptional places of the two presentations and their contragredients and the finite additive ramification. The given archimedean parameters still apply because the twisting character is trivial there. The equal-rank partial equation is formed with the integral gamma factors of the chosen local pair data. The finite-factor comparison then gives continuation of the completed functions. The Satake bounds give Euler convergence, and the engine adapter gives the functional equation for each enlargement of the chosen set.
 
+`EqualRankTwistEngineInputsAt F` expresses the twist property at a specified field `F`. The
+proof from `EqualPackageAt F` uses the same local factor choices and the same continuation
+argument for any such field. `equalRankTwistEngineInputsAt_of_semilocalEquationTC` uses
+`equalPackageTC` to construct that package from the totally complex equal-rank semi-local
+equation when `F` is totally complex.
+
 The equal-rank global integrals and their Euler factorization are those of Cogdell, *Analytic theory of L-functions for GL(n)* (2004), §2.3 and Theorem 2.2, pp. 209–211. The character on the additive adelic quotient is fixed in §1, pp. 198–199. The passage from global and local integral equations to the Rankin–Selberg equation follows the argument for Theorem 4.1, pp. 219–220, through its equal-rank formulation in the Library.

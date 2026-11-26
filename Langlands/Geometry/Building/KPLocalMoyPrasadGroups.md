@@ -1,13 +1,12 @@
 # The groups `G(K)_{x,r}` of a quasi-split group over `K = F^ur`
 
 This module defines the subgroups `G(K)_{x,r}` of Kaletha–Prasad Definition
-7.3.3(3) at the constant concave function `f = r`. They are defined for building
-data over the maximal unramified extension `K` of a nonarchimedean local field `F`,
-when the centralizer `Z = Z_G(S)` of the maximal `K`-split torus is a torus. KP §7.2
-(PDF p. 276) covers this case: "When G is quasi-split, then Z = T is a maximal
-torus". The torus part `Z(K)_r` is the published `localTorusFiltration`. The module
-also proves the basic API: monotonicity, the generators, and the form as a
-supremum. It proves no other property of these groups.
+7.3.3(3) at the constant concave function `f = r` on building data over the
+maximal unramified extension `K` of a nonarchimedean local field `F`.
+`moyPrasadWith` takes the chosen centralizer family as a parameter.
+`moyPrasad` specializes it to the published `localTorusFiltration` when the
+centralizer `Z = Z_G(S)` of the maximal `K`-split torus is a torus, as in
+the quasi-split case of KP §7.2 (PDF p. 276).
 
 ## Sources
 
@@ -66,10 +65,10 @@ Lemma 7.2.3.
 (hZ : IsTorus B.centralizer.Z)
 ```
 
-Here `IsTorus` is `Langlands.GroupScheme.IsTorus`, the field version. Every
-declaration below takes `B` and then `hZ`, in that order. All declarations are
-in namespace `Langlands.Geometry.Building.MaximalUnramified.BuildingData`, so
-dot notation `B.moyPrasad hZ x r` works.
+Here `IsTorus` is `Langlands.GroupScheme.IsTorus`, the field version. The
+standard specialization takes `B` and then `hZ`. The general construction
+takes `B` and a family of subgroups of `Z(K)`. All declarations are in
+`Langlands.Geometry.Building.MaximalUnramified.BuildingData`.
 
 - `centralizerTorus B hZ` is `B.centralizer.Z` viewed as a `CommGroupScheme`.
   Its commutativity is the Library theorem `IsTorus.isCommMonObj hZ`. Since
@@ -91,6 +90,12 @@ properties.
 
 ## Definitions
 
+- `moyPrasadWith B T x r` is the supremum of the image of `T r` under
+  `rationalPoints.map B.centralizer.j` and the constant-depth sharp
+  filtration of `B.apartment` at `x`. This is the generator construction
+  of Definition 7.3.3 with the centralizer term left as a parameter, as in
+  Remark 7.3.5. `moyPrasadWith_antitone` proves that an antitone `T` gives
+  antitone subgroups by monotonicity of the root filtrations.
 - `centralizerTorusFiltration B hZ r : Subgroup (rationalPoints B.centralizer.Z)`
   is KP's `Z(K)_r = T(K)_r` for `r : ℝ≥0`. It is defined as the published
   `localTorusFiltration F (B.centralizerTorus hZ) hZ r` (statement
@@ -99,7 +104,8 @@ properties.
 - `centralizerTorusImage B hZ r : Subgroup (rationalPoints H)` is the image
   `j(Z(K)_r)` under `rationalPoints.map B.centralizer.j`.
 - `moyPrasad B hZ x r : Subgroup (rationalPoints H)`, for `x : B.Apartment` and
-  `r : ℝ≥0`, is `G(K)_{x,r}`. It is defined as
+  `r : ℝ≥0`, uses `moyPrasadWith B (B.centralizerTorusFiltration hZ) x r`.
+  Hence it is definitionally the supremum
   `B.centralizerTorusImage hZ r ⊔ B.apartment.sharpFiltration x (fun _ => (r : ℝ))`.
 
   The second term is the Library's `G(K)♯_{x,r}` (module
@@ -201,8 +207,9 @@ proof uses only functoriality, (1) and (2).
 
 ## Provenance
 
-`moyPrasad` is the source definition, KP Definition 7.3.3(3) at `f = r`, with
-`Z(K)_• = T(K)_•` taken as the Library filtration. `centralizerTorus`,
+`moyPrasadWith` is the subgroup-generation construction of KP Definition
+7.3.3(3) at `f = r`. `moyPrasad` takes `Z(K)_• = T(K)_•` from the
+Library's standard torus filtration. `centralizerTorus`,
 `centralizerTorusFiltration` and `centralizerTorusImage` are the internal
 names this needs. The transport lemmas `*_eq_map_iso` are internal
 consequences of functoriality, for callers that present `Z` through another

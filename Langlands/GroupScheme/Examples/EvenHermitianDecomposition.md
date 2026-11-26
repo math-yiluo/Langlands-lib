@@ -1,0 +1,5 @@
+# Completing an even Hermitian hyperbolic decomposition
+
+For a Hermitian form over a separable quadratic field extension in even dimension \(n\), `HyperbolicDecomposition.completeOfSignedDeterminant` takes a decomposition with at most two middle coordinates and a norm witness for the signed Gram determinant. It gives an actual decomposition with \(n/2\) hyperbolic planes and zero middle dimension.
+
+If the supplied decomposition has a middle block, parity forces its dimension to be two. The determinant formula for the hyperbolic blocks proves that the middle block is nonsingular. Its signed determinant is the original signed determinant multiplied by the conjugate norm of the determinant of the basis change. The binary signed determinant calculation gives an isotropic vector in that middle block. The proof checks the middle pairing on standard basis vectors, then extends the original isotropic coordinates by the line spanned by the new vector. This gives an actual totally isotropic subspace of dimension \(n/2\), which supplies the full decomposition.

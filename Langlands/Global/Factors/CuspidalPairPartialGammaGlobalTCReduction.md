@@ -27,7 +27,8 @@ The module contains:
     (Section 3);
   * two auxiliary Prop-valued definitions, `UnequalPackageTCStatement` and
     `EqualPackageTCStatement`, and the theorems `unequalPackageTC` and `equalPackageTC`, which
-    prove them from the premises (Section 4).
+    prove them from the premises (Section 4). `EqualPackageTCStatement` quantifies
+    `EqualPackageAt F` over the totally complex number fields `F`.
 
 The theorem is a reduction: it does not prove the totally complex form of (G'). Section 6
 says which of its premises the Library proves. It belongs to the restriction of the global

@@ -1,3 +1,4 @@
+import Langlands.Galois.FinitePlaceResidueCharacteristic
 import Langlands.Galois.AlgebraicHeckeAvatarStatement
 import Langlands.ClassFieldTheory.Global.Artin.ArtinUniqueness
 import Langlands.Global.FiniteAdeleSplit
@@ -12,16 +13,6 @@ namespace Langlands.GaloisRepresentation
 
 open Langlands.Global Langlands.ClassFieldTheory.Global.Artin
 open scoped NumberField
-
-private theorem finite_residueCharacteristic_fiber (K : Type uK) [Field K] [NumberField K]
-    {p : ℕ} (hp : p ≠ 0) :
-    {v : FinitePlace K | residueCharacteristic v = p}.Finite := by
-  refine (Set.finite_coe_iff.mp (finite_natCast_mem_asIdeal K p hp)).subset ?_
-  intro v hv
-  change residueCharacteristic v = p at hv
-  change (p : 𝓞 K) ∈ v.asIdeal
-  rw [← Ideal.Quotient.eq_zero_iff_mem, map_natCast, ← hv]
-  exact CharP.cast_eq_zero (𝓞 K ⧸ v.asIdeal) (residueCharacteristic v)
 
 /-- The common finite part, the local correction, the finite geometric lifts and
 their congruence limit give the uniform adic avatar. -/
@@ -47,7 +38,7 @@ theorem algebraicHeckeAvatarAssembly : AlgebraicHeckeAvatarAssemblyStatement.{uK
               NumberField.FinitePlace.embedding lam (a v : L) := by
     obtain ⟨η, _, haway⟩ := correct K L χ t ι emb φ ht hemb hφ lam
     have hp : (residueCharacteristic lam).Prime := CharP.prime_ringChar (𝓞 L ⧸ lam.asIdeal)
-    let T := S ∪ (finite_residueCharacteristic_fiber K hp.ne_zero).toFinset
+    let T := S ∪ (finite_setOf_residueCharacteristic_eq K hp.ne_zero).toFinset
     have hgood (v : FinitePlace K) :
         v ∉ T ↔ v ∉ S ∧ residueCharacteristic v ≠ residueCharacteristic lam := by
       simp [T]

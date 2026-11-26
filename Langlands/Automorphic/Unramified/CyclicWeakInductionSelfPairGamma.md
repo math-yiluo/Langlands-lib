@@ -10,6 +10,11 @@ factors. The upstairs factors pair the original component of `T` with
 the actual smooth contragredient of each conjugate component. The
 identity conjugate occurs once in the indexing family.
 
+`CyclicWeakInductionSelfPairGammaOrderAtUniquePlace F E` expresses the comparison for
+specified number fields `F` and `E`. `cyclicWeakInductionSupercuspidalAt_of_gammaOrder`
+uses this comparison at the specified Galois extension to prove its supercuspidality
+conclusion. Universal quantification over the fields gives the unrestricted reduction.
+
 The comparison is modeled on Henniart–Herb (1995), Lemma 8.13 and
 §§8.16–8.17, printed pp. 179–184 (PDF pp. 49–54). Their cofinite pair
 Euler identity and functional-equation localization lead to a comparison

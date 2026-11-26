@@ -25,6 +25,10 @@ def RealTemperedWhittakerBoundAtRank (r : ℕ) : Prop :=
           ‖W (torus y * k.val)‖ ≤
             C * Real.exp (torusModularLog (r + 1) y / 2 + ε * ∑ j, |y j|)
 
+/-- The exact scalar tempered estimate in all ranks above one. -/
+def RealTemperedWhittakerBoundStatement : Prop :=
+  ∀ r : ℕ, 0 < r → RealTemperedWhittakerBoundAtRank r
+
 /-- The scalar bound at a rank also bounds every right derivative of every coefficient. -/
 theorem hasTemperedDerivativeBound_of_model {r : ℕ} {ds : List RealBlock} {a : ℝˣ}
     {W : Langlands.GeneralLinear (r + 1) ℝ → ℂ}

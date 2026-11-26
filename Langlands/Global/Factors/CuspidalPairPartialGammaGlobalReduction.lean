@@ -545,13 +545,13 @@ theorem unequalPackage (hA : RankinSelbergGlobal.UnequalAnalyticStatement.{u})
     rw [hBeq u hSu]
     exact e1.trans (e2.trans hWp)
 
-/-- What the five equal-rank premises give for `t = r`, in the form of
-`UnequalPackageStatement`. -/
-def EqualPackageStatement : Prop := by
+/-- The global and semi-local equations and the Euler factorizations for equal-rank pairs
+at the given number field. -/
+def EqualPackageAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop := by
   classical
   exact
-  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+  ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
     (∀ x : F, ψ (diagonal F x) = 1) →
   ∀ (r : ℕ) (T Td : CuspidalOperatorRealization F r) (T' Td' : CuspidalOperatorRealization F r),
     OperatorRealization.IsContragredientOf Td.realization T.realization →
@@ -614,6 +614,12 @@ def EqualPackageStatement : Prop := by
         (∏ v ∈ S, RatFunc.eval (RingHom.id ℂ)
           (RankinSelberg.spectralPoint (residueCardinality v) s) (G v)) *
           infiniteEpsilon s * dualInfiniteL (1 - s) * A s
+
+/-- What the five equal-rank premises give for `t = r`, in the form of
+`UnequalPackageStatement`. -/
+def EqualPackageStatement : Prop :=
+  ∀ (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)],
+    EqualPackageAt.{u, uQ} F
 
 /-- The five equal-rank premises give the equal-rank package. -/
 theorem equalPackage (hA : RankinSelbergGlobal.EqualAnalyticStatement.{u})

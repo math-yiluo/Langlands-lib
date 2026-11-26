@@ -16,24 +16,6 @@ section General
 variable {K : Type*} [Group K] {L : Type*} [Group L]
 variable {V : Type uV} [AddCommGroup V] [Module ℂ V]
 
-/-- Irreducibility of a precomposition implies irreducibility. -/
-theorem isIrreducible_of_comp (ρ : Representation ℂ L V) (c : K →* L)
-    (h : Representation.IsIrreducible (ρ.comp c)) : ρ.IsIrreducible := by
-  let := h
-  have hbot : (⊥ : Subrepresentation ρ) ≠ ⊤ := by
-    intro he
-    have hbt : (⊥ : Submodule ℂ V) = ⊤ := congrArg Subrepresentation.toSubmodule he
-    exact bot_ne_top (α := Subrepresentation (ρ.comp c))
-      (Subrepresentation.toSubmodule_injective hbt)
-  refine { exists_pair_ne := ⟨⊥, ⊤, hbot⟩, eq_bot_or_eq_top := fun W => ?_ }
-  let W' : Subrepresentation (ρ.comp c) :=
-    ⟨W.toSubmodule, fun k _ hv => W.apply_mem_toSubmodule (c k) hv⟩
-  rcases h.eq_bot_or_eq_top W' with h' | h'
-  · have h'' := congrArg Subrepresentation.toSubmodule h'
-    exact Or.inl (Subrepresentation.toSubmodule_injective h'')
-  · have h'' := congrArg Subrepresentation.toSubmodule h'
-    exact Or.inr (Subrepresentation.toSubmodule_injective h'')
-
 /-- Character twists preserve irreducibility. -/
 theorem isIrreducible_twist (χ : L →* ℂˣ) (ρ : Representation ℂ L V) (h : ρ.IsIrreducible) :
     (Langlands.twist χ ρ).IsIrreducible := by

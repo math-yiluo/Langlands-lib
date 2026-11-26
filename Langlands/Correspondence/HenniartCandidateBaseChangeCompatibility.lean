@@ -12,7 +12,9 @@ extensions `Extension.rankExtension` of the stable candidate images (Henniart
 of the constituents of its restriction to `W_M` (route note §6.5, (CI1)), and
 the candidate over `M` is equivariant for the action of `W_L` (route note
 §6.5, (CI2)). Both properties are asked in every rank where the candidates are
-defined. Definitions and a proposition only.
+defined. The second proposition is the reduction of input (I4) of Option II,
+`CompatibleNumericalInjectionsStatement`, to candidate existence and this
+compatibility. Definitions and propositions only.
 -/
 
 noncomputable section
@@ -65,5 +67,14 @@ def CandidateBaseChangeCompatibilityStatement : Prop :=
     ∃ Ch : CyclicBaseChangeMap.{uK, uV} S,
       IsWeakCyclicBaseChange S Ch ∧ IsCandidateBaseChangeCompatible.{uK, uW, uV} S Ch ∧
         IsCandidateGaloisEquivariant.{uK, uW, uV} S
+
+/-- The reduction of input (I4) to the candidate: candidate existence and the
+compatibility of the candidate with cyclic base change of prime degree give
+rank-bounded numerical injections compatible with a common weak cyclic base
+change. -/
+def CandidateCompatibleNumericalInjectionsReductionStatement : Prop :=
+  CandidateExistenceStatement.{uK, uW, uV, uW, uK} →
+    CandidateBaseChangeCompatibilityStatement.{uK, uW, uV} →
+      CompatibleNumericalInjectionsStatement.{uK, uW, uV}
 
 end Langlands.Henniart

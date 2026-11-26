@@ -149,13 +149,15 @@ private theorem joint_family_differentiable {r : ℕ} {W : ℂ → G r → ℂ}
     ∀ g, DifferentiableOn ℂ (fun u : ℂ × ℂ => W u.1 g) parameterDiskProduct :=
   fun g => ((hW g).comp differentiable_fst).differentiableOn
 
-/-- If the ascending character models are contained in the original block models, the
-canonical coefficient families satisfy the joint holomorphy premise for the exact tests. -/
-theorem realOrdinaryHolomorphicTestFamilies_of_ascending
+/-- The canonical families satisfy joint holomorphy and belong to the original models
+on any locus where reverse ascending inclusion holds. -/
+theorem realOrdinaryHolomorphicTestFamiliesOn_of_ascending (S : Set ℂ)
     (hRange : RealUniformCanonicalRangePremise)
-    (hReverse : ∀ (r : ℕ) (ds : List RealBlock), realRank ds = r + 1 → ∀ a : ℝˣ,
-      realUniformWhittakerModel r (ascendingExpand ds) a ≤ realWhittakerModel r ds a) :
-    RealOrdinaryHolomorphicTestFamiliesStatement := by
+    (hReverse : ∀ (r : ℕ) (ds : List RealBlock), realRank ds = r + 1 →
+      ∀ (a : ℝˣ) (z : ℂ), z ∈ S →
+      realUniformWhittakerModel r (ascendingExpand (deformBlocks ds z)) a ≤
+        realWhittakerModel r (deformBlocks ds z) a) :
+    RealOrdinaryHolomorphicTestFamiliesOn S := by
   constructor
   · intro r t h ds es hr ht a D W V hW hV
     obtain ⟨U, hU, hUm, hUr, hUd, hUg⟩ := realCanonicalOrdinaryDeformation hRange r ds hr a W hW
@@ -166,9 +168,9 @@ theorem realOrdinaryHolomorphicTestFamilies_of_ascending
       (fun u => (hUr u.1).2.1.continuous) (fun u => (hU'r u.1).2.1.continuous)
       (joint_family_differentiable hUd) (joint_family_differentiable hU'd)
       (joint_family_gauge hUg) (joint_family_gauge hU'g)
-    refine ⟨U, U', σ, hU, hU', fun z _ => ⟨?_, ?_⟩, hInt.mono fun u hu => ⟨⟨hu.1, mem_univ _⟩, hu.2⟩⟩
-    · exact hReverse r _ ((realRank_deformBlocks ds z).trans hr) a (hUm z)
-    · exact hReverse t _ ((realRank_deformBlocks es z).trans ht) (-a) (hU'm z)
+    exact ⟨U, U', σ, hU, hU', fun z _ => ⟨hUm z, hU'm z⟩,
+      fun z hz => ⟨hReverse r ds hr a z hz.2 (hUm z), hReverse t es ht (-a) z hz.2 (hU'm z)⟩,
+      hInt.mono fun u hu => ⟨⟨hu.1, mem_univ _⟩, hu.2⟩⟩
   · intro r _ ds es hr ht a D W V Φ hW hV
     obtain ⟨U, hU, hUm, hUr, hUd, hUg⟩ := realCanonicalOrdinaryDeformation hRange r ds hr a W hW
     obtain ⟨U', hU', hU'm, hU'r, hU'd, hU'g⟩ := realCanonicalOrdinaryDeformation hRange r es ht (-a) V hV
@@ -178,8 +180,20 @@ theorem realOrdinaryHolomorphicTestFamilies_of_ascending
       (fun u => (hUr u.1).2.1.continuous) (fun u => (hU'r u.1).2.1.continuous)
       (joint_family_differentiable hUd) (joint_family_differentiable hU'd)
       (joint_family_gauge hUg) (joint_family_gauge hU'g)
-    refine ⟨U, U', σ, hU, hU', fun z _ => ⟨?_, ?_⟩, hInt.mono fun u hu => ⟨⟨hu.1, mem_univ _⟩, hu.2⟩⟩
-    · exact hReverse r _ ((realRank_deformBlocks ds z).trans hr) a (hUm z)
-    · exact hReverse r _ ((realRank_deformBlocks es z).trans ht) (-a) (hU'm z)
+    exact ⟨U, U', σ, hU, hU', fun z _ => ⟨hUm z, hU'm z⟩,
+      fun z hz => ⟨hReverse r ds hr a z hz.2 (hUm z), hReverse r es ht (-a) z hz.2 (hU'm z)⟩,
+      hInt.mono fun u hu => ⟨⟨hu.1, mem_univ _⟩, hu.2⟩⟩
+
+/-- If the ascending character models are contained in the original block models, the
+canonical coefficient families satisfy the joint holomorphy premise for the exact tests. -/
+theorem realOrdinaryHolomorphicTestFamilies_of_ascending
+    (hRange : RealUniformCanonicalRangePremise)
+    (hReverse : ∀ (r : ℕ) (ds : List RealBlock), realRank ds = r + 1 → ∀ a : ℝˣ,
+      realUniformWhittakerModel r (ascendingExpand ds) a ≤ realWhittakerModel r ds a) :
+    RealOrdinaryHolomorphicTestFamiliesStatement := by
+  have h := realOrdinaryHolomorphicTestFamiliesOn_of_ascending univ hRange fun r ds hr a z _ =>
+    hReverse r _ ((realRank_deformBlocks ds z).trans hr) a
+  exact ⟨fun r t hlt ds es hr ht a D W V hW hV => (h.1 r t hlt ds es hr ht a D W V hW hV).of_univ,
+    fun r hp ds es hr ht a D W V Φ hW hV => (h.2 r hp ds es hr ht a D W V Φ hW hV).of_univ⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealBlockParameters

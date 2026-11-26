@@ -30,11 +30,12 @@ constructs this pairing.
 
 Michael Harris, *The local Langlands conjecture for GL(n) over a p-adic field, n < p*,
 Invent. Math. 134 (1998), 177–210 (registered source `harris-1998-local-langlands`),
-Proposition 4.8 (printed pp.202–203, `math_9611226v1.tex` lines 1554–1563): the hypothesis
-`ξ = ξ⁻¹ ∘ c` is at lines 1558–1559, and the conclusion `Π ∈ 𝒰(n,E)` (line 1561) includes
-condition (ii) of Theorem 1.2, `π ≃ π̌ ∘ c` (lines 532 and 565–567). The proof of the prime
-orbit (lines 1646–1664) does not argue conjugate self-duality separately. The argument for
-it is given in the proof of Lemma 1.6 (lines 741–746): since `χ = χ⁻¹ ∘ c`, the induced
+Proposition 4.8, stated on printed p. 201 (`math_9611226v1.tex` lines 1554–1563): the
+hypothesis `ξ = ξ⁻¹ ∘ c` is at lines 1558–1559, and the conclusion `Π ∈ 𝒰(n,E)` (line 1561)
+includes condition (ii) of Theorem 1.2 (printed p. 185), `π ≃ π̌ ∘ c` (lines 532 and
+565–567). The prime-orbit argument in the proof of Proposition 4.8 (printed p. 203, lines
+1646–1664) does not argue conjugate self-duality separately. The argument for it is given
+in the proof of Lemma 1.6 (printed p. 188, lines 741–746): since `χ = χ⁻¹ ∘ c`, the induced
 Galois representation is isomorphic to its conjugate contragredient, and strong
 multiplicity one gives `π ≃ π̌ ∘ c`. The Lean proof replaces the Galois representation by
 the unramified Euler factors of the induction and strong multiplicity one by Euler
