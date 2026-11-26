@@ -15,7 +15,9 @@ A full classification of pseudo-reductive groups is not part of the family.
 
 The original rows describe Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`.
 The additional comparisons in B5, B6, F7 and F12 use Library commit
-`053314145457c1e8d2da92d3141cbba5942613d7`. All Lean names are in `Langlands.GroupScheme` unless
+`053314145457c1e8d2da92d3141cbba5942613d7`. The field-extension proofs for
+B6 and C1–C2 were checked at `f6b0359632cfaf9fecb86c3d848069710250b487`.
+All Lean names are in `Langlands.GroupScheme` unless
 a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that commit.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`.
 
@@ -181,20 +183,16 @@ only if `G_K` is.
   specialization argument on p.9.
   [Statement](../../Langlands/GroupScheme/Reductive/SeparableUnipotentRadicalStatement.md),
   [proof](../../Langlands/GroupScheme/Reductive/SeparableUnipotentRadicalProof.md)
-- Reflection direction, for **every** field extension `K/k`: `HasTrivialUnipotentRadical.of_fieldExtension`
-  (`Reductive/SemisimpleFieldReflectionProof`). Hypotheses: `k`, `K : Type u`,
-  `[Algebra k K]`, `G` with affine structure map, and `G_K` with trivial `K`-unipotent
-  radical. Conclusion: `G` has trivial `k`-unipotent radical. Status D. Smoothness and
-  connectedness descend by `smooth_of_baseChange` and `connectedSpace_of_baseChange`
-  (`Rational/UnipotentRadicalProperties`), using `fieldExtension_fpqc`
-  (`BaseChangeReflection`); affineness descends by
-  `Langlands.AlgebraicGeometry.fieldExtensionAffineDescent`
-  (`Langlands/AlgebraicGeometry/FieldExtensionAffineDescentProof`, outside
-  `Langlands/GroupScheme/`). These D results prove that `G` is pseudo-reductive whenever
-  `G_K` is: that short proof was type-checked, with axioms `propext`,
-  `Classical.choice` and `Quot.sound`. The same descent steps begin the published proof
-  of `IsConnectedReductive.of_fieldExtension` (C1). No proposition declaration states this
-  reflection; only a named statement and its wrapper theorem are missing.
+- For every field extension `K/k`, `PseudoReductiveFieldReflectionStatement`
+  asserts that pseudo-reductivity of `G_K` implies that of `G`. The term
+  `fieldExtensionReflection.2` proves this component of
+  `FieldExtensionReflectionStatement`. The proof descends smoothness,
+  affineness and connectedness and applies
+  `HasTrivialUnipotentRadical.of_fieldExtension`. The smoothness,
+  affineness and connectedness of `G` all follow from the hypothesis
+  on `G_K`.
+  [Statement](../../Langlands/GroupScheme/Reductive/FieldExtensionReflectionStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/FieldExtensionReflectionProof.md)
 
 **B7. Rational unipotent points of pseudo-reductive groups.** Source: derived from the proof
 of Conrad–Gabber–Prasad, Proposition C.1.6, printed pp.586–587 (PDF 612–613).
@@ -233,16 +231,22 @@ p.400 (PDF 416): `G` is reductive if and only if `G_{k'}` is, for any field `k' 
   connected reductive implies `G` connected reductive. Status P:
   `connectedReductiveAlgebraicExtensionReflection` (`Reductive/AlgebraicExtensionReflectionProof`).
 - `ConnectedReductiveAlgebraicExtensionAscentStatement` (`Reductive/AlgebraicExtensionAscentStatement`):
-  the algebraic case of the first item. Status C: `algebraicExtensionAscent.1`.
+  the algebraic case of the first item. Status P by
+  `connectedReductiveAlgebraicExtensionAscent`, which projects the
+  first component of `algebraicExtensionAscent`.
+  [Proof](../../Langlands/GroupScheme/Reductive/AlgebraicExtensionAscentConnectedReductiveProof.md)
 - `IsConnectedReductive.of_fieldExtension` (`Reductive/SemisimpleFieldReflectionProof`):
   for **any** field extension `K/k` (with `k`, `K : Type u` and `[Algebra k K]`) and any
   group scheme `G` over `k`, with no hypothesis on `G`, if `G_K` is connected reductive
   then `G` is connected reductive. Status D: a published theorem, not a proposition
   declaration.
-- Together with the first item, this gives the full equivalence of Milne 19.13 for every
-  field extension. No proposition declaration states the reflection for arbitrary
-  extensions; what is missing is only such a named statement and its wrapper theorem, not
-  mathematics.
+- `ConnectedReductiveFieldExtensionIffStatement` gives Milne's full
+  equivalence for arbitrary field extensions, including transcendental
+  and inseparable extensions. `fieldExtensionReflection.1` proves
+  this component of `FieldExtensionReflectionStatement` from the
+  ascent theorem and `IsConnectedReductive.of_fieldExtension`.
+  [Statement](../../Langlands/GroupScheme/Reductive/FieldExtensionReflectionStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/FieldExtensionReflectionProof.md)
 
 **C2. Semisimplicity under field extension.** Source: Milne 2017, Proposition 19.5, printed
 pp.398–399 (PDF 414–415): `G` is semisimple if and only if `G_{k'}` is; and Proposition
@@ -260,7 +264,10 @@ pp.398–399 (PDF 414–415): `G` is semisimple if and only if `G_{k'}` is; and 
   (`Reductive/AlgebraicExtensionReflectionProof`).
 - `SemisimpleAlgebraicExtensionAscentStatement` (`Reductive/AlgebraicExtensionAscentStatement`):
   for **algebraic** `K/k`, `G` semisimple implies `G_K` semisimple; a special case of
-  `IsSemisimpleFieldExtensionStatement`. Status C: `algebraicExtensionAscent.2`.
+  `IsSemisimpleFieldExtensionStatement`. Status P by
+  `semisimpleAlgebraicExtensionAscent`, which projects the second
+  component of `algebraicExtensionAscent`.
+  [Proof](../../Langlands/GroupScheme/Reductive/AlgebraicExtensionAscentSemisimpleProof.md)
 - The conjunctions `AlgebraicExtensionAscentStatement` and
   `AlgebraicExtensionReflectionStatement`: status P, `algebraicExtensionAscent`
   (`Reductive/AlgebraicExtensionAscent`) and `algebraicExtensionReflection`
@@ -702,13 +709,10 @@ The original snapshot recorded three assertions with missing Lean statements (M)
    `R_{u,k}(G)_K = R_{u,K}(G_K)` (B6).
 3. Direct products of connected reductive, semisimple and pseudo-reductive groups (F7).
 
-Reflection of connected reductivity along arbitrary field extensions (C1, Milne 19.13) is
-not in this list: the published theorem `IsConnectedReductive.of_fieldExtension` (D) proves
-it, and only a named proposition declaration and its wrapper are missing. The same holds
-for reflection of pseudo-reductivity along arbitrary extensions (B6), which follows from
-the published D results listed there.
-
 Rows B5 and F7 give exact proofs for items 1 and 3. Row B6 gives the
 radical comparison and the pseudo-reductivity equivalence for separable
-algebraic extensions. The two C rows use the projections of
-`algebraicExtensionAscent`.
+algebraic extensions. The two components of `fieldExtensionReflection`
+give the connected reductivity equivalence and pseudo-reductivity
+reflection for arbitrary extensions. Each of the algebraic ascent
+components of `algebraicExtensionAscent` also has its named proof in
+C1 and C2.

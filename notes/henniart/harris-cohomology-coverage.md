@@ -118,6 +118,26 @@ The geometric first-cohomology comparison also leaves the relative
 coefficient comparison and the tautological power projectors on the
 CM levels as separate mathematical inputs.
 
+## Relative abelian cohomology and Hodge–Tate comparison at Library `05331414`
+
+The following statement pairs are pinned to
+`053314145457c1e8d2da92d3141cbba5942613d7` with Lean 4.35.0 and Mathlib
+`56a005855ea17e0b0958f73ec801ae140b0a1679`. Their mathematical inputs
+are the actual small-étale and coherent cohomology constructions.
+
+| Declaration | Source and scope |
+| --- | --- |
+| [`RelativeFirstEtaleCohomologyStatement`](../../Langlands/Cohomology/AbelianScheme/RelativeFirstEtaleCohomologyStatement.md) | Milne 1980, III §4, and SGA 4 XII 5.2(iii). For an abelian scheme over a scheme in universe zero and a positive invertible exponent, the actual first higher direct image of the constant coefficient sheaf is isomorphic to the internal character sheaf of the torsion. The sheaf condition for the character presheaf is proved. The isomorphism uses the universe lift of the higher direct image. |
+| [`RelativeAbelianMultiplicationCohomologyStatement`](../../Langlands/Cohomology/AbelianScheme/RelativeMultiplicationStatement.md) | Milne, *Abelian Varieties*, Theorem 15.1, Milne 1980, V.1, Lemma 1.11, and SGA 4 XII 5.2(iii). For a prime \(p\) invertible on the base, the actual relative pullback by \([m]\) in degree \(q\) with constant \(\mathbb Z/p^r\mathbb Z\) coefficients is scalar \(m^q\). The map comes from the derived adjunction and the inverse image of the constant sheaf. |
+| [`ProperSmoothHodgeTateNaturalStatement`](../../Langlands/Cohomology/HodgeTate/ProperSmoothStatement.md) | Faltings 1988, §1(b)–(c) and III §4. For a finite extension of \(\mathbb Q_p\), in each degree one family of semilinear Galois comparisons for proper smooth schemes intertwines all pullbacks over that field. The actual differential-form summand of degree \(j\) has cyclotomic twist \(-j\), following the introduction. `properSmoothHodgeTateStatement_of_natural` specializes the family to a single scheme. |
+
+The finite-coefficient relative statements enter the Tate module and
+multiplication-by-two projector comparisons of Harris–Taylor III.2,
+p. 98. The proper smooth comparison then intertwines the corresponding
+linear combinations of pullbacks. Identification of the projector with
+the Harris coefficient system and comparison under Hecke transfers are
+further mathematical inputs for the labelled multiplicity theorem.
+
 ## Published modules
 
 | Module | Declarations | Content |
