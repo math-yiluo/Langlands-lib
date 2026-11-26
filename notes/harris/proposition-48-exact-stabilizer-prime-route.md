@@ -119,11 +119,41 @@ the comparison of cyclic descents in the singleton case.
 
 ## Transfer inputs and reductions
 
-| Input | Declaration and route |
+The Library states the following transfer assertions, which enter the
+decomposition as unproved premises in their respective field scopes.
+The conditional results below give the dependencies between them.
+
+| Named premise | Source and dependencies |
 | --- | --- |
-| III.4.2(c), both field scopes | Use the going-up clauses of `CyclicPrimeJointRankInductionStatement` with `IsobaricData.exists_unitary_weakBaseChange_of_singletons` and upper `CuspidalEulerConstituentRecoveryStatement`. In TC use `cyclicPrimeCuspidalBaseChangeExistenceTC_of_jointRankInduction` followed by `cyclicPrimeIsobaricBaseChangeTC_of_singletons`, with `CuspidalEulerConstituentRecoveryTCStatement` over the upper field. The two analytic rank steps are `CyclicPrimeJointRankStepStatement` and `CyclicPrimeJointRankStepTCStatement`. These express the actual occurrence and cuspidality inputs of III.4.2(a), (b), (d) and (e) at each rank for a prime-degree extension. In the TC step all infinite places of the base split, so the archimedean matching is split complex. The unrestricted step also includes nonsplit real matching. |
-| B2, both field scopes | `CyclicRegularInductionReductionStatement` and `CyclicRegularInductionReductionTCStatement` use actual regular-induction existence, the exact local norm-character order and lower Euler constituent recovery. For `CyclicRegularInductionExistenceStatement` or its TC form, start from the going-down orbit case, III.4.2(e), in `CyclicPrimeRegularOrbitRealizationStatement` or its TC form. Use the norm-twist pair count, the reverse arithmetic orbit comparison, equivariance, recovery and induction by stages. The prime case supplies an actual orbit witness and the cofinite polynomial comparisons certify the successive weak inductions down a composite cyclic extension. |
-| B3, both field scopes | `CyclicRegularOrbitLiftReductionStatement` and its TC form use the same actual regular-induction existence together with `WeakInductionOrbitBaseChangeStatement` and the corresponding `CyclicWeakBaseChangePairMultiplicityStatement` or TC form. Constituent-pair counts and positivity of the ranks yield uniqueness among unitary isobaric data with that orbit as weak base change. |
+| `CyclicPrimeJointRankStepStatement` and `CyclicPrimeJointRankStepTCStatement` | The actual occurrence and cuspidality arguments of III.4.2(a), (b), (d) and (e) use II.(17.7)–(17.8) in the form III.(4.1)–(4.2), together with going up or down at strictly smaller positive total ranks. See the analytic inputs below. [Joint rank statements](../../Langlands/Automorphic/Unramified/CyclicPrimeJointRankInductionStatement.md) |
+| `CyclicPrimeJointRankInductionStatement` and `CyclicPrimeJointRankInductionTCStatement` | The Library proves `cyclicPrimeJointRankInductionReduction` and `cyclicPrimeJointRankInductionReductionTC`. Strong induction pairs going up and going down at every positive total rank, given the matching analytic rank step. [General reduction](../../Langlands/Automorphic/Unramified/CyclicPrimeJointRankInductionReductionProof.md), [TC reduction](../../Langlands/Automorphic/Unramified/CyclicPrimeJointRankInductionReductionTCProof.md) |
+| `CyclicPrimeRegularOrbitRealizationStatement` and `CyclicPrimeRegularOrbitRealizationTCStatement` | The going-down orbit clause of the corresponding joint rank induction, III.4.2(e), gives an actual lower cusp whose upper weak base change is the full regular orbit. Apply that clause at the total rank of the orbit. [Prime orbit statements](../../Langlands/Automorphic/Unramified/CyclicPrimeRegularOrbitRealizationStatement.md) |
+| `CyclicPrimeCuspidalBaseChangeExistenceTCStatement` | The going-up clauses of the TC joint rank induction use the norm-kernel self-twist dichotomy in III.4.2(a)–(b). The proved `cyclicPrimeCuspidalBaseChangeExistenceTC_of_jointRankInduction` gives actual upper singleton or orbit lifts for each supplied unitary lower cusp. [TC singleton reduction](../../Langlands/Automorphic/Unramified/CyclicPrimeCuspidalBaseChangeExistenceTCReduction.md) |
+| `CyclicPrimeIsobaricBaseChangeStatement` and `CyclicPrimeIsobaricBaseChangeTCStatement` | In III.4.2(c), take the finite sum of actual unitary singleton lifts and use upper Euler constituent recovery for uniqueness with multiplicity. `CyclicPrimeIsobaricBaseChangeReductionStatement` takes the unrestricted joint rank induction and `CuspidalEulerConstituentRecoveryStatement`. The TC assembly is proved by `cyclicPrimeIsobaricBaseChangeTC_of_singletons` from TC singleton lift existence and `CuspidalEulerConstituentRecoveryTCStatement`. The tower argument uses the existence clause of each premise. [General reduction statement](../../Langlands/Automorphic/Unramified/CyclicPrimeIsobaricBaseChangeReductionStatement.md), [TC assembly](../../Langlands/Automorphic/Unramified/CyclicPrimeIsobaricBaseChangeTCAssembly.md) |
+| `CyclicRegularInductionExistenceStatement` and `CyclicRegularInductionExistenceTCStatement` | The corresponding `CyclicRegularInductionExistenceReductionStatement` and `CyclicRegularInductionExistenceReductionTCStatement` take actual prime-orbit realizations, norm-twist pair counts and the reverse orbit comparison. Over composite cyclic extensions they use equivariance and upper Euler recovery to retain regularity and compose the weak inductions by stages. In degree one, a field isomorphism transports the actual cusp, and genuine attachments at both carrier universes give the Euler comparison. The source is III.4.2(e), III.6.2 and III.6.4. [Shared existence reductions](../../Langlands/Automorphic/Unramified/CyclicRegularInductionExistenceReductionStatement.md) |
+| B2, `CyclicRegularInductionStatement` and `CyclicRegularInductionTCStatement` | The corresponding reductions for III.6.2 use actual regular-induction existence, the exact local norm-character order and lower Euler constituent recovery. [Regular induction reductions](../../Langlands/Automorphic/Unramified/CyclicRegularInductionReductionStatement.md) |
+| B3, `CyclicRegularOrbitLiftStatement` and `CyclicRegularOrbitLiftTCStatement` | The reductions for III.6.4 take the same actual regular-induction existence and use the forward orbit comparison `WeakInductionOrbitBaseChangeStatement` and the corresponding `CyclicWeakBaseChangePairMultiplicityStatement` or TC form. Constituent-pair counts and positivity of the ranks give uniqueness among unitary isobaric data with that orbit as weak base change. [Orbit-lift reductions](../../Langlands/Automorphic/Unramified/CyclicRegularOrbitLiftReductionStatement.md) |
+
+The analytic rank steps require the ordinary and twisted discrete
+distributions of the invariant trace formulas, including their proper Levi
+terms. Arthur–Clozel II.(17.7)–(17.8) compare these distributions on
+matching tests. In III.4.2 the occurrence argument expands the distributions
+in automorphic representations. It uses Langlands' description of the
+discrete spectrum through cuspidal data and Jacquet–Shalika constituent
+recovery in the separation of unramified Hecke characters. For the regular
+orbit in (e), the normalized intertwining operators and Weyl-group
+coefficients give a nonzero contribution from the Levi of equal blocks.
+After spectral isolation, the source uses the lower-rank clauses and the
+Rankin–Selberg pole comparisons to obtain a cusp. Over a totally complex
+base the archimedean matching is split complex, and the finite matching,
+proper Levi terms and occurrence argument still enter this source proof.
+The unrestricted comparison also uses nonsplit real matching.
+The invariant comparison and the automorphic occurrence argument are
+external inputs to these rank-step premises.
+[Cyclic transfer source map](../henniart/arthur-clozel-proposition48-cyclic-transfer.md)
+
+| Other branch input | Declaration and use |
+| --- | --- |
 | Rigidity, isobaric invariance and A1 | `CuspidalSpectralRigidityStatement` and `CuspidalSpectralRigidityTCStatement` provide the Euler recovery used by the transfer reductions (Arthur–Clozel III.(2.4), citing Jacquet–Shalika). The distinctness theorems retain these premises, and the branch uses rigidity for the self-duality comparison. `proposition48IsobaricInvariance` and its TC form prove the invariance inputs suggested by Harris, p. 202. `Harris1998Theorem12CuspidalStatement` records the cuspidal form of Theorem 1.2, printed p. 185 (PDF p. 9), in the branch signature. [Theorem 1.2 statement](../../Langlands/Galois/Harris1998ExistenceStatement.md) |
 | Local and complex-place inputs | B6 takes the strong local support comparison through the tower as above. B4 concerns the local component of the actual global weak induction at the unique-place step. Restricted B7 uses strong lifting at split complex places (III.5.1), with the orbit comparison for weak induction and the passage from aggregate data to literal parameters. Restricted B7 concerns the cusps with the auxiliary pair supplied by the branch argument. |
 
@@ -148,11 +178,13 @@ for the input to that branch in the full induction.
 - Arthur and Clozel (1989), *Simple Algebras, Base Change, and the Advanced
   Theory of the Trace Formula*, `arthur-clozel-1989-base-change`, SHA-256
   `c2e47ee562810367ebcacd3f1c242eda40b9e78b271668e36d99ce31001f9a19`.
-  Printed locators are III.(1.1)–(1.2) and (2.4), pp. 199–200,
-  III.4.2(a)–(c) and (e), pp. 202–210, III.5.1, pp. 212–213, and
-  III.6.1, III.6.2 and III.6.4, pp. 214–218. Local lifting is I.6.2 and
-  the extension after I.6.8, pp. 51–53 and 59–60. PDF page numbers
-  are fourteen greater than printed pages.
+  The discrete comparison is II.(17.7)–(17.8), printed pp. 197–198.
+  See III.(1.1)–(1.2) and (2.4), pp. 199–200, III.4.2(a)–(e) and
+  (4.1)–(4.5), pp. 202–210, III.5.1, pp. 212–213, and III.6.1,
+  III.6.2 and III.6.4, pp. 214–218. Local lifting is I.6.2 and the
+  extension after I.6.8, pp. 51–53 and 59–60. PDF page numbers are
+  fourteen greater than printed pages.
+  [Arthur's copy of the book](https://www.math.utoronto.ca/arthur/pdf/30.pdf)
 - Henniart and Herb (1995), *Automorphic induction for GL(n) (over local
   non-archimedean fields)*, `henniart-herb-1995-induction`, SHA-256
   `5e753525048b08007d9605baa9019c8e792512887305ec2e39ae9c3bee6a963e`,

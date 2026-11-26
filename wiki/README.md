@@ -21,6 +21,8 @@ results are its Lean declarations.
 
 - [Springer reduction theory: stabilizer indexing and line weights](../notes/errata/springer-1994-reduction-global-fields.md) — Verified original-source discrepancies, the SL₃ and GL₂ character computations, Godement's preceding-intersection and ambient-character formulations, and remaining chamber-proof obligations.
 
+- [Platonov–Rapinchuk §6.8: the A₇ subgroup of a simply connected E₇ is SL₈/μ₂](../notes/errata/platonov-rapinchuk-1994-e7-a7-subgroup.md) — The coroot-lattice index computation showing that the A₇ subsystem subgroup used on printed pp. 377 and 386 is not simply connected, its effect on the E₇ Hasse argument, and a rank-one componentwise route for the quadratic step.
+
 - [Nilradical reflection for reductive groups: infinitesimal-rigidity sources](../notes/group-schemes/reductive-infinitesimal-rigidity-sources.md) — SGA 3 locations showing that the smooth-`Isom` lifting route (XXIV 1.3–1.12) rests on the isomorphism theorem of Exp. XXIII, and that SGA 3 obtains the `H²` vanishing needed by the deformation route (III 3.5–3.10) only from that theorem (XXIV 1.13–1.14), with the consequences for an independent proof of `ReductiveNilradicalIsomorphismReflectionStatement`.
 
 - [Dynamic quotient properness: torsor extension and structural sources](../notes/group-schemes/dynamic-quotient-source-map.md) — Original-source locations for the affine-quotient route through geometric reductivity, its concrete rank-one inputs and the remaining independence and supplied-quotient obligations.
@@ -71,9 +73,9 @@ results are its Lean declarations.
 
 - [Local Kneser–Tits: published reductions and open inputs](../notes/group-schemes/local-kneser-tits-route.md) — How `LocalKneserTitsStatement` reduces by published theorems to rank-one Levi factors, local cocycle vanishing, three Weil-restriction statements and the absolutely almost-simple rank-one case, which of these are proved, the case analysis over the rank-one classification and a dependency-cycle warning.
 
-- [Actual Tits indices: existence, anisotropic kernel and open targets](../notes/group-schemes/tits-index-progress.md) — Status of the Tits §§2.1–2.3 index interface over arbitrary fields: the published existence and anisotropic-kernel proofs, how to use `titsIndexExistence`, the unproved independence, relative-structure and kernel-index statements, and the first input of the local rank-one reduction that it now supplies.
+- [Actual Tits indices: existence, anisotropic kernel and open targets](../notes/group-schemes/tits-index-progress.md) — The proofs of existence, independence and relative structure for Tits indices over arbitrary fields, the description of the anisotropic kernel and its index, and the use of `titsIndexExistence` in the local rank-one reduction.
 
-- [Group-scheme ledger, family 6: Galois and central structure](../notes/group-schemes/ledger-family-6-galois-central.md) — Source-to-declaration rows for torus lattice actions and invariant-lattice descent, absolute character exactness, the star action, quasi-split groups and inner forms, centres and adjoint groups, derived groups and cocentres, central isogenies and simply connected covers.
+- [Group-scheme ledger, family 6: Galois and central structure](../notes/group-schemes/ledger-family-6-galois-central.md) — Source-to-declaration rows for torus lattices, the star action, actual Tits indices, inner forms and quasi-split uniqueness, centres and adjoint groups, derived groups and cocentres, central isogenies and simply connected covers.
 
 - [Galois and derived structure: family 6 coverage update](../notes/group-schemes/galois-derived-coverage-2026-11-13.md) — Exact published quasi-split star-action, derived-structure conjunction and arbitrary-algebra derived-annihilation proofs, with their scopes and the historical ledger statuses they replace.
 

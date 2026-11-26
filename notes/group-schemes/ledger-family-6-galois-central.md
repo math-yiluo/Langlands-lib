@@ -16,6 +16,8 @@ That version updated
 A6, D9 and F3 from commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`.
 Row A9 records results checked on 18 November 2026. A10 was checked
 at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
+Rows A11, B4 and B5 use the declarations at Library commit
+`66a181ec9cda271c1ff0dcf555f386b52dc687c7`.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
 are relative to `Langlands/GroupScheme/` in that commit. "Field group" means a group
@@ -222,6 +224,41 @@ specializes to that formula for commutative affine algebraic groups.
   [proof](../../Langlands/GroupScheme/Torus/GaloisInvariantLatticesProof.md),
   [family 2, D6](ledger-family-2-tori.md#d-field-tori-and-galois-actions-on-lattices)
 
+**A11. The actual Tits index of a semisimple group.** J. Tits, *Classification
+of algebraic semisimple groups* (1966), §§2.1–2.3 and 2.5.1, printed
+pp.38–40 (PDF pp.43–45). Registered source `tits-1966-classification-algebraic-semisimple`,
+SHA-256 `962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4`.
+
+- `titsIndexExistence` and `titsIndexIndependence` prove the two components
+  of `TitsIndexChoiceStatement`. For a semisimple group over an arbitrary
+  field, with affine and locally finite type structure map, they give
+  compatible actual maximal and maximal split tori, based root data over the
+  separable closure, and comparison of any two resulting indices. The
+  comparison preserves the Cartan pairings, the zero-restriction simple
+  vertices, and the star action of each Galois element.
+  [Statement](../../Langlands/GroupScheme/Reductive/TitsIndexChoiceStatement.md),
+  [existence proof](../../Langlands/GroupScheme/Reductive/TitsIndexExistenceProof.md),
+  [independence proof](../../Langlands/GroupScheme/Reductive/TitsIndexIndependenceProof.md)
+- Status P for `TitsIndexRelativeStructureStatement` by
+  `titsIndexRelativeStructure`. For each such index, the star action
+  preserves the zero-restriction vertices. Restriction sends the orbits
+  of the complementary vertices bijectively to the actual simple relative
+  roots. Their number equals the split rank as defined by dimensions of
+  closed split subtori.
+  [Statement](../../Langlands/GroupScheme/Reductive/TitsIndexRelativeStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/TitsIndexSplitRankProof.md)
+- `titsAnisotropicKernel` and `titsAnisotropicKernelIndex` prove the two
+  components of `TitsAnisotropicKernelStructureStatement`. For every
+  represented centralizer of the chosen maximal split torus and every
+  derived subgroup of that representative, they give semisimplicity,
+  anisotropy and the identification of its index with the subdiagram on
+  the zero-restriction vertices. This uses restriction and pushforward
+  along an actual torus map for the roots and coroots, and the identified
+  simple vertices carry the same star action.
+  [Statement](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelStatement.md),
+  [anisotropy proof](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelProof.md),
+  [index proof](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelIndexProof.md)
+
 ## B. Quasi-split groups and inner forms
 
 `IsQuasiSplit G` (`Reductive/QuasiSplit`) means: `G` is connected reductive and has a
@@ -251,6 +288,51 @@ printed p.387.
   Hypotheses: a central isogeny `π : G ⟶ A` of field groups, `G` connected reductive, and
   `IsQuasiSplit A`. Conclusion: `IsQuasiSplit G`.
 - Status P: `centralIsogenyQuasiSplitLift` (`CentralIsogeny/QuasiSplitLift`).
+
+**B4. The star action detects inner forms.** Conrad, *Reductive group schemes*
+(2014), Proposition 7.2.2, p.252, and the identification of the outer class
+by the star action on p.256. Registered source `conrad-2014-reductive-group-schemes`,
+SHA-256 `1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a`.
+
+- Status P. `innerFormStarAction` proves `InnerFormStarActionStatement`.
+  Take two affine, locally finite type groups over an arbitrary field,
+  an adjoint quotient of the first, and Galois pinning data of both over
+  the separable closure. An inner discrepancy for an actual local group
+  isomorphism over a finite Galois extension exists exactly when there is
+  a based root-datum isomorphism intertwining the two full star actions.
+  The discrepancy acts through the first group's adjoint quotient on
+  every test scheme.
+  [Statement](../../Langlands/GroupScheme/Reductive/InnerFormStarActionStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/InnerFormStarActionProof.md)
+
+**B5. Uniqueness of the quasi-split inner form over a field.** Conrad,
+Proposition 7.2.12 and its proof, pp.258–259, from the same registered source
+as B4. The proposition applies over semilocal affine bases.
+
+- Status P for `ReductiveSemilocalQuasiSplitInnerFormStatement` by
+  `reductiveSemilocalQuasiSplitInnerForm`. It takes a reductive group over a
+  semilocal ring with a represented fppf quotient by its full centre and the
+  adjoint action of that quotient. It gives existence of a relative
+  quasi-split inner form and an isomorphism over the base between any two
+  such forms. For this theorem the inner-form data comprise an étale
+  surjective cover with an all-test inner discrepancy.
+  [Statement](../../Langlands/GroupScheme/Reductive/SemilocalQuasiSplitInnerFormStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/SemilocalQuasiSplitInnerFormProof.md)
+- For a connected reductive `G` over an arbitrary field `k` and
+  `d d' : QuasiSplitInnerForm G`, this gives `Nonempty (d.model ≅ d'.model)`.
+  Obtain the adjoint quotient of `G` by `adjointQuotientExistence` and use
+  `IsAdjointQuotient.isFppfQuotient` and `IsAdjointQuotient.innerAction_restrict`.
+  Apply `IsConnectedReductive.isReductive` and
+  `IsGeometricBorelSubgroup.isRelativeBorelSubgroup` to obtain relative
+  quasi-splitness of the two models. For each model the finite Galois
+  extension in its data gives an étale surjective cover. Its cocycle
+  naturality gives the required discrepancy on every refinement, and
+  `IsAdjointQuotient.hasInnerDiscrepancy_symm` inverts the local family to
+  use the adjoint action of `G`. The uniqueness clause of the semilocal
+  theorem then applies over `k`.
+  [Field inner-form data](../../Langlands/GroupScheme/Rational/QuasiSplitInnerForm.md),
+  [relative Borel comparison](../../Langlands/GroupScheme/RelativeLevi/HenselianBorelReduction.md),
+  [discrepancy symmetry](../../Langlands/GroupScheme/Rational/InnerDiscrepancySymmetry.md)
 
 ## C. Centres and adjoint groups
 

@@ -415,6 +415,18 @@ enveloping action compatibly with `Kinf`, and the `GL_n` cusp forms form an oper
 
 ## 4. GL_n comparisons
 
+**The split-centre quotient.** For `F : Type` and rank `n > 0`,
+`GeneralLinearGroupPoints.splitCentreHomeomorph` identifies `A_{GL_n}` with the scalar
+matrices from `PositiveRealIdeles.full F`. The same positive real parameter acts at all
+infinite places, and the finite components are one. `splitCentreQuotientHomeomorph`
+identifies `[GL_n]` with `AdelicGL.SplitCentreQuotient F n`, the left quotient of the
+existing matrix group by the positive scalars and the principal matrices. The map on
+representatives intertwines positive right translation. With the Borel measurable structure
+on the matrix group, `splitCentreQuotientMeasure_isCompatible` gives the same Weil formula
+with the transported ambient and subgroup Haar measures. The matrix quotient measure is
+finite. This realizes GH (2.20)–(2.21) in the matrix carrier.
+[AdelicGLSplitCentreQuotient](../../Langlands/Global/AdelicGLSplitCentreQuotient.md)
+
 The specializations to the `Langlands.Automorphic` GL_n spaces are published in the
 `Langlands/Automorphic/GeneralLinear*` modules. All use the actual general-linear group scheme
 and the unchanged original carriers:
@@ -424,13 +436,15 @@ and the unchanged original carriers:
 - differential, enveloping and centre actions: `GeneralLinearFiniteAdelicDifferential`,
   `GeneralLinearFiniteAdelicEnveloping`, `GeneralLinearAdelicCenterFinite`;
 - constant terms: `GeneralLinearConstantTermComparison` and `GeneralLinearIntrinsicConstantTerm`
-  (`constantTerm_generalLinearBlock`, with `CompactSpace (AdeleQuotient F)` explicit);
+  (`hasConvergentConstantTerm_generalLinearBlock_intrinsic` and
+  `constantTerm_generalLinearBlock_intrinsic`), with `CompactSpace (AdeleQuotient F)`
+  supplied by `compactSpace_adeleQuotient`;
 - cusp forms: `GeneralLinearCuspidalComparison` (`generalLinearCuspidalEquiv`), the proved
   `GeneralLinearParabolicCuspidalComparisonStatement` (all proper rational parabolics against
   standard maximal blocks), `GeneralLinearParabolicCuspidalEquivalence` and
   `GeneralLinearParabolicCuspidalInclusion`.
 
-**Operator realizations (11 November 2026).**
+**Operator realizations.**
 - `GeneralLinearUniformOperatorRealization` makes the matrix-side uniform-growth forms an invariant
   subspace of `fullAutomorphicAction`, hence an `OperatorRealization`. It proves that the actual
   uniform forms map onto exactly this subspace, with intertwining of the enveloping and finite
@@ -450,7 +464,22 @@ and the unchanged original carriers:
   `adelicAutomorphicUniformGrowth` then gives a common exponent for all enveloping derivatives.
   `hasAdelicUniformModerateGrowth_iff` converts to a natural exponent for the height and
   `hasAdelicUniformPolynomialGrowth_iff_generalLinear` identifies the resulting condition on
-  the original matrix operator action. The standard embedding in this argument has `0 < n`.
+  the original matrix operator action.
+- `GeneralLinearFullAdelicComparison` exports `generalLinearAutomorphicForm_uniformGrowth`
+  for every closed embedding of positive matrix size. The equalities
+  `uniformGeneralLinearOperatorRealization_eq_top` and
+  `uniformCuspidalGeneralLinearOperatorRealization_eq_cuspidal` identify the uniform
+  realizations with the whole original stable operator space and the largest original
+  cuspidal realization. For the standard embedding in rank `n > 0`,
+  `canonicalUniformAdelicAutomorphicFormsEquiv` and `canonicalCuspidalRealizationAdelicEquiv`
+  give continuous complex linear equivalences with the actual uniform forms and cusp forms,
+  respectively. They act on the original functions via `finitePlotSmoothGeneralLinearEquiv`
+  and use the induced compact-open topologies. The cusp comparison uses the same
+  additive-quotient compactness instance as the matrix constant term. Borel–Jacquet §§3.3
+  and 4.1–4.4 give the finite-level and cusp conventions, MW I.2.3 and I.2.17 give the
+  common-exponent growth condition, and GH Definitions 6.3.1 and 6.5.1 give the adelic
+  growth and all-parabolic vanishing conditions.
+  [GeneralLinearFullAdelicComparison](../../Langlands/Automorphic/GeneralLinearFullAdelicComparison.md)
 
 The `GL_n` side has cuspidal rapid-decay and band square-integrability results
 (`Langlands/Automorphic/CuspidalL2/`). No comparison of these with the `[G]` `L²` spaces is

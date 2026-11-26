@@ -42,6 +42,8 @@ to a source does not imply permission to publish its contents.
 
 - [Springer reduction theory: stabilizer indexing and line weights](../notes/errata/springer-1994-reduction-global-fields.md) — Verified original-source discrepancies, the SL₃ and GL₂ character computations, Godement's preceding-intersection and ambient-character formulations, and remaining chamber-proof obligations.
 
+- [Platonov–Rapinchuk §6.8: the A₇ subgroup of a simply connected E₇ is SL₈/μ₂](../notes/errata/platonov-rapinchuk-1994-e7-a7-subgroup.md) — The coroot-lattice index computation showing that the A₇ subsystem subgroup used on printed pp. 377 and 386 is not simply connected, its effect on the E₇ Hasse argument, and a rank-one componentwise route for the quadratic step.
+
 - [Relative root groups in characteristic two: exact-root generation and positive multiples](../notes/errata/milne-relative-root-groups-characteristic-two.md) — A paper quaternionic type-C₃ counterexample to the standard-group interpretation of Milne's exact-root generators, with maximal tori, all-test matrices, a quadratic-form obstruction and the unchanged positive-multiple Library scope.
 
 - [Milne 16.27 and 16.29: sections of trigonalizable groups need smoothness](../notes/errata/milne-2017-trigonalizable-section-conjugacy.md) — Paper counterexamples in characteristic p: α_p ⋊ μ_p (Raynaud's SGA 3 XVII 5.9(d) example, made explicit) and α_p ⋊ G_m, to section conjugacy and to the maximal-diagonalizable-subgroup description, the failing step (15.3 needs smooth groups), the SGA 3 XVII 5.1.1 ii) scope, why 16.26 is unaffected, the falsity of `TrigonalizableSectionConjugacyStatement` and its corrected replacement `TrigonalizableSectionConjugacySmoothStatement`.
