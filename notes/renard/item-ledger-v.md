@@ -680,8 +680,10 @@ Status codes, as in the Chapter VI ledger:
 
 | Item | Lean | Status |
 | --- | --- | --- |
-| Normalized valuation, `𝔒_F`, `𝔓_F`, units, uniformizer decomposition, finite residue field, `\|x\|_F = q^{-v_F(x)}` | Mathlib's `IsNonarchimedeanLocalField` with `ValuativeRel`; `Langlands.FML.ord` and its laws, `LocalField.ResidueField`, `residueCardinality`, `residueNormalizedAbsoluteValue` ([ResidueNormalization](../../Langlands/LocalField/ResidueNormalization.md)); `PL.fieldNormUnits`, `PL.fieldOrderUnits` | Rec (ref. [21]); D |
-| Additive Haar measure and `∫ f(ax) dx = \|a\|_F^{-1} ∫ f(x) dx` | `Langlands.HarmonicAnalysis.GeneralScalarHaarScalingStatement` and its specialization `Langlands.BaseChange.map_mul_residueAbsolute` for the actual residue-normalized absolute value | P for the pushforward equality. Bochner change of variables and the integral against a scaled measure give the formula for locally constant compactly supported functions |
+| Normalized valuation, `𝔒_F`, `𝔓_F`, units, finite residue field, `\|x\|_F = q^{-v_F(x)}` | Mathlib's `IsNonarchimedeanLocalField` with `ValuativeRel`; `Langlands.FML.ord` and its laws, `LocalField.ResidueField`, `residueCardinality`, `residueNormalizedAbsoluteValue` ([ResidueNormalization](../../Langlands/LocalField/ResidueNormalization.md)); `PL.fieldNormUnits`, `PL.fieldOrderUnits` | Rec (ref. [21]); D |
+| Uniformizer decomposition of `Fˣ` for each uniformizer of order one (103 / 109) | `Langlands.LocalField.UniformizerUnitDecompositionStatement`, using `FML.unitGroup F` and integer powers of the chosen uniformizer | S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f` |
+| Additive Haar measure and `∫ f(ax) dx = \|a\|_F^{-1} ∫ f(x) dx` (104 / 110) | `Langlands.HarmonicAnalysis.LocalFieldScalarHaarIntegralStatement` for compactly supported locally constant complex functions and the actual residue-normalized absolute value | P at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. The proof `Langlands.HarmonicAnalysis.localFieldScalarHaarIntegral` uses `Langlands.BaseChange.map_mul_residueAbsolute` and Bochner change of variables. [Proof](../../Langlands/HarmonicAnalysis/LocalFieldScalarHaarIntegralProof.md) |
+| Metric topology and ideal powers at zero (103–104 / 109–110) | `Langlands.LocalField.ResidueNormalizedMetricStatement` uses the actual distance `\|x-y\|_F`. `Langlands.LocalField.MaximalIdealNeighborhoodBasisStatement` uses the images of the maximal-ideal powers in `F` | S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. Both formulations apply in either characteristic. [Metric](../../Langlands/LocalField/ResidueNormalizedMetricStatement.md), [ideal powers](../../Langlands/LocalField/MaximalIdealNeighborhoodBasisStatement.md) |
 | Topology of `F`, of `GL_n(F)` and the subgroups `K_n` | Mathlib local-field topology; `rationalPointTopology` and `rationalPoint_isTopologicalGroup`, `rationalPoint_locallyCompactSpace` | Rec; D |
 
 ## V.2 Reductive p-adic groups (104–109 / 110–115)
@@ -689,10 +691,12 @@ Status codes, as in the Chapter VI ledger:
 | Item | Lean | Status |
 | --- | --- | --- |
 | V.2.1 radicals, reductive groups, derived group, centre, maximal tori, conjugacy of maximal split tori | `IsConnectedReductive`, derived subgroup representability, `GS.MaximalSplitTorusConjugacyStatement` | Rec (S02–S03); conjugacy P: `maximalSplitTorusConjugacy` |
+| V.2.1 finiteness of rational conjugacy classes of maximal tori (104 / 110) | `GS.MaximalTorusRationalConjugacyFinitenessStatement`, using finitely many actual embedded maximal tori and `GS.SubgroupConjugate` over the original field | Rec (S03); S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. The statement assumes characteristic zero. [Statement](../../Langlands/GroupScheme/Rational/MaximalTorusRationalConjugacyFinitenessStatement.md) |
 | V.2.1 split component and its uniqueness | `GS.IsSplitComponent`; `GS.SplitComponentStatement` (existence, uniqueness up to isomorphism over `G`) | D; P: `splitComponentStatement` |
-| V.2.1 topology independent of the embedding; `G` unimodular | `rationalPointTopology`; unimodularity is V.5.4 below | Rec (S04); D |
+| V.2.1 topology independent of the embedding; `G` unimodular | `rationalPointTopology` and `GS.LocalFieldLinearTopologyStatement` for finite-type affine groups over a local field. Unimodularity is V.5.4 below | Rec (S04); D for the canonical topology, S for the comparison at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. [Topology statement](../../Langlands/GroupScheme/Rational/LocalFieldLinearTopologyStatement.md) |
 | V.2.2 `X^*(G)`, triviality on `𝒟G`, finite-rank lattice, duals | `GroupScheme.rationalCharacters`; `GS.RationalCharacterLatticeStatement` | D; P: `rationalCharacterLattice` |
-| V.2.2 Remarks (tori): cocharacter pairing `χ(φ(t)) = t^{⟨χ,φ⟩}`, coordinate algebra `F[X^*(T)]`, anisotropic and split tori, maximal split and anisotropic subtori, almost direct product | `latticePairing`, `rationalCharacterEval_cocharacterPoints`; `IsSplitTorus` (isomorphic to `splitTorus S I`); largest split subtorus (`Rational.TorusSplitPart`); `GS.TorusAnisotropicPartStatement` ([statement](../../Langlands/GroupScheme/Rational/TorusAnisotropicPartStatement.md)) | Rec (S05). D for the listed constructions; P for the named pairing laws and largest split subtorus; P for the maximal anisotropic subtorus and finite surjective multiplication `A × T_an → T`: `torusAnisotropicPart` |
+| V.2.2 Remarks (tori): cocharacter pairing `χ(φ(t)) = t^{⟨χ,φ⟩}`, geometric coordinate algebra, anisotropic and split tori, maximal split and anisotropic subtori, almost direct product | `latticePairing`, `rationalCharacterEval_cocharacterPoints`; `IsSplitTorus` (isomorphic to `splitTorus S I`); largest split subtorus (`Rational.TorusSplitPart`); `GS.TorusAnisotropicPartStatement` ([statement](../../Langlands/GroupScheme/Rational/TorusAnisotropicPartStatement.md)) | Rec (S05). D for the listed constructions; P for the named pairing laws and largest split subtorus; P for the maximal anisotropic subtorus and finite surjective multiplication `A × T_an → T`: `torusAnisotropicPart` |
+| V.2.2 Remark 1, basis of characters in the geometric coordinate algebra (105 / 111) | `GS.GeometricTorusCoordinateAlgebraStatement` uses the character lattice of `T` over the algebraic closure and specifies the image of each monomial as the actual character function | Rec (S05); S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. [Statement](../../Langlands/GroupScheme/Torus/GeometricTorusCoordinateAlgebraStatement.md) |
 | V.2.3 (V.2.3.1) `H_G`, `⁰G`, `Λ(G)`, exact sequence; `⁰G = ⋂ ker \|χ\|_F` | `PL.rationalCharacterValuation`, `PL.rationalCommonNormKernel`, `PL.rationalCharacterValuationImage`, `PL.rationalNormKernelQuotientEquiv`; `rationalCharacterValuation_ker` | D; P |
 | V.2.3 Lemma: `\|χ\|_F` smooth, kernel contains every compact subgroup | `isLocallyConstant_rationalNormCharacter`, `compactSubgroup_le_rationalCommonNormKernel`; generic `PL.CommonNormKernelTopologyStatement` | P (`commonNormKernelTopology`) |
 | V.2.3 Proposition: `⁰G` open, closed, normal; compact subgroups and `𝒟G` in `⁰G` | `isOpen_rationalCommonNormKernel`, `isClosed_rationalCommonNormKernel`, instance `rationalCommonNormKernel_normal`, `derivedPoints_le_rationalCommonNormKernel` | P |
@@ -723,6 +727,18 @@ Lean files of the Library at that time. The source was reread at V.2.2 Remark 2 
 PDF pp.111, 113. Compilation of the statement supplies no proof evidence. At Library
 `58ad0f796899b4aa457077d0146815c24758f739` the statement is proved: the
 theorem `torusAnisotropicPart` is in the Library (fourth-update table at the top of this note).
+
+The two bidual identifications in V.2.2 use the evaluation equivalence
+`Module.evalEquiv` with the finite free character lattice supplied by
+`rationalCharacterLattice` over the ground field and its algebraic
+closure. For the torus in Remark 1, `torusFiniteGaloisSplitting` and
+`IsTorus.isSplitTorus_of_finiteGaloisSplitting` give a split presentation
+after base change to the algebraic closure. The actual character and
+cocharacter lattices then identify with each other's integer duals by
+`latticePairing_isPerfPair_of_split`. These applications were checked at
+Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`.
+[Character lattice proof](../../Langlands/GroupScheme/Rational/CharacterLatticeProof.md),
+[perfect pairing](../../Langlands/GroupScheme/Torus/WeilRestrictionNormOneCharacters.md)
 
 ## V.3 Parabolic subgroups (109–117 / 115–123)
 
@@ -1158,6 +1174,33 @@ The section refers to [14] (Bruhat–Tits).
 | V.5.5 Proposition (127 / 133): nearest point on the closure of an open cone `C` and its characterizations (i)–(iii); Corollary (128 / 134): the decomposition along a basis and its dual basis | `Langlands.Renard.ConeProjectionStatements`, in a corrected formulation: `C` is a nonempty convex open cone, and the equivalence with (iii) is asserted only for `C ≠ E` (for `C = E` the strict dual cone `Č` is empty and (iii) fails, although the projection is `v` itself). The Corollary has no extra hypothesis | P: `coneProjectionStatements`. See source issue I3 |
 | V.5.5, display before the Corollary (128 / 134): for the cone of the Corollary, `Č = {∑ sᵢ αᵢ, sᵢ > 0}` | not stated (the statement's Markdown explains why) | Source issue I3: false as printed |
 | V.5.5 end: proof of V.3.18 | `GS.langlandsCombinatorialDecomposition` | P. The formal proof follows a different route: it uses the V.5.5 Corollary only for existence, and proves uniqueness and the three projection characterizations from variational inequalities (see the [proof Markdown](../../Langlands/GroupScheme/Rational/LanglandsDecompositionProof.md)) |
+
+### The standard integral compact for the general linear group
+
+At Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`, the following
+proofs use the integral points of the standard `GL_N` model at the actual
+diagonal torus. They apply in both field characteristics and to every
+generic diagonal cocharacter. Inside each standard Levi the compact is
+the preimage along its original inclusion, whose image is the literal
+intersection in the ambient group. The theorem names below are in
+`Langlands.BruhatTits.SpecialCompact`.
+
+| Item | Exact theorem | Scope |
+| --- | --- | --- |
+| V.5.1 opening and (1), 122 / 128 | `generalLinearIntegralIwasawa : GeneralLinearIntegralIwasawaStatement` | Compact, open and maximal, with both product orders for the actual minimal parabolic. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralIwasawaProof.md) |
+| V.5.1 (2)–(3), 122 / 128 | `generalLinearIntegralParabolics : GeneralLinearIntegralParabolicsStatement` | Integral representatives for the relative Weyl quotient and the literal ordered Levi and radical product for each standard parabolic. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralParabolicsProof.md) |
+| V.5.1 (4), 122 / 128, with V.3.23, 117 / 123 | `generalLinearIntegralCartan : GeneralLinearIntegralCartanStatement` | Bijectivity of the positive common-uniformizer representatives onto the integral double cosets. The residual transversal can be the singleton identity. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralCartanProof.md) |
+| V.5.1 (5), 122 / 128, comparison of the inherited compact | `generalLinearStandardLeviIntegralPoints : GeneralLinearStandardLeviIntegralPointsStatement` | Over a valuative field the Levi is the weight-block subgroup, and the inherited compact maps to the integral block matrices over the valuation ring. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearStandardLeviIntegralPointsProof.md) |
+| V.5.1 (5), 122 / 128, opening and (1) inside the Levi | `generalLinearIntegralLeviIwasawa : GeneralLinearIntegralLeviIwasawaStatement` | Compact-open maximality and the two products with the inherited minimal parabolic inside each standard Levi. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralLeviIwasawaProof.md) |
+| V.5.2 (i)–(iv), 123 / 129 | `generalLinearSimultaneousStandardBasis : GeneralLinearSimultaneousStandardBasisStatement` | The single normal compact-open basis at this integral subgroup, with the simultaneous parabolic decompositions, split-component normalization and both radical contraction assertions in `SimultaneousStandardBasisAt`. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearSimultaneousStandardBasisProof.md) |
+
+At the same commit the inherited Weyl and parabolic clauses and the
+inherited Cartan bijection are stated by
+`GeneralLinearIntegralLeviParabolicsStatement` and
+`GeneralLinearIntegralLeviCartanStatement`. The ambient and Levi
+finite covering formulas for every generic diagonal cocharacter are
+stated by `Langlands.HarishChandraSchwartz.GeneralLinearGenericCartanCoveringStatement`.
+[Generic covering statement](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/GeneralLinearGenericCartanCoveringStatement.md)
 
 ### Verified V.5.3 module-form proof
 
