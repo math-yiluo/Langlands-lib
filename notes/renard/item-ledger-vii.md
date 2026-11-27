@@ -27,6 +27,8 @@ The VII.4 proof steps, conditional proofs and source issues below were checked
 on 20 November 2026 at Library `5704217a2667191d63b37f0e85a2da41c15b21d2`.
 The four statement publications below were checked
 on 21 November 2026 at Library `a11d1e75f52192f694c9901f4b7fd7098b0f8ff9`.
+The VII.1 and VII.2 proofs and applications listed below, and the proof of
+(VII.4.1.3), were checked at Library `2f86a99eb5616254ac5b9c399603c9bbbea15f7a`.
 All declarations below are in `Langlands.Aubert.General.RepresentedParabolic`
 (abbreviated `RP`) unless another namespace is written. The focused source maps
 [root-exponent-tempered-progress](root-exponent-tempered-progress.md) and
@@ -58,10 +60,10 @@ checked. The last column gives the proof the Library has now.
 
 | Coverage | Published statement | Proof in the Library |
 | --- | --- | --- |
-| VII.2.4 standard vanishing test | [`UnitaryJacquetVanishingStandardReductionStatement`](../../Langlands/Representation/Exponents/UnitaryJacquetVanishingStandardReductionStatement.md) | not proved |
-| VII.2.6 standard embedding witness | [`DiscreteSeriesEmbeddingStandardReductionStatement`](../../Langlands/Representation/Exponents/DiscreteSeriesEmbeddingStandardReductionStatement.md) | not proved |
-| VII.2.4 and VII.2.6 from building data | [`TemperedDiscreteSeriesFromBuildingStatement`](../../Langlands/Representation/Exponents/TemperedDiscreteSeriesFromBuildingStatement.md) | not proved |
-| (VII.4.1.3) ambient displacement | [`DominantWeylDisplacementStatement`](../../Langlands/Representation/LanglandsClassification/DominantWeylDisplacementStatement.md) | not proved |
+| VII.2.4 standard vanishing test | [`UnitaryJacquetVanishingStandardReductionStatement`](../../Langlands/Representation/Exponents/UnitaryJacquetVanishingStandardReductionStatement.md) | [`unitaryJacquetVanishingStandardReduction`](../../Langlands/Representation/Exponents/UnitaryJacquetVanishingStandardReductionProof.md) |
+| VII.2.6 standard embedding witness | [`DiscreteSeriesEmbeddingStandardReductionStatement`](../../Langlands/Representation/Exponents/DiscreteSeriesEmbeddingStandardReductionStatement.md) | [`discreteSeriesEmbeddingStandardReduction`](../../Langlands/Representation/Exponents/DiscreteSeriesEmbeddingStandardReductionProof.md) |
+| VII.2.4 and VII.2.6 from building data | [`TemperedDiscreteSeriesFromBuildingStatement`](../../Langlands/Representation/Exponents/TemperedDiscreteSeriesFromBuildingStatement.md) | [`temperedDiscreteSeriesFromBuilding`](../../Langlands/Representation/Exponents/TemperedDiscreteSeriesFromBuildingProof.md) |
+| (VII.4.1.3) ambient displacement | [`DominantWeylDisplacementStatement`](../../Langlands/Representation/LanglandsClassification/DominantWeylDisplacementStatement.md) | [`Langlands.GroupScheme.dominantWeylDisplacement`](../../Langlands/Representation/LanglandsClassification/DominantWeylDisplacementProof.md) |
 
 Most Chapter VII statements are **derived formulations** for the represented-parabolic
 interface. They range over arbitrary actual rational parabolics instead of standard ones,
@@ -76,6 +78,39 @@ only tests every supplied presentation and requires none to exist. Each statemen
 Markdown documents its departures. The rows below name the departures that change
 mathematical content.
 
+### Checked applications of the building proofs
+
+Lean checks each term in the table against the indicated exact proposition
+at independent field and representation-carrier universes `u` and `v`.
+Rows marked **A** refer to these applications of named Library theorems.
+
+| Exact proposition in `RP` | Lean term with `RP` open |
+| --- | --- |
+| `ArbitraryParabolicCasselmanCriterionStatement.{u, v}` | `casselmanFromBuilding Langlands.Geometry.Building.bruhatTitsAvailability` |
+| `MaximalLeviSupercuspidalReducibilityStatement.{u, v}` | `maximalLeviReducibilityFromJointBasis Langlands.BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence` |
+| `TemperedSquareIntegrableUnitaryPartStatement.{u, v}` | `(temperedDiscreteSeriesFromBuilding Langlands.Geometry.Building.groupAxiomsExistence).1` |
+| `TemperedIrreducibleDiscreteSeriesStatement.{u, v}` | `(temperedDiscreteSeriesFromBuilding Langlands.Geometry.Building.groupAxiomsExistence).2.1` |
+| `TemperedIrreducibleUnitarizableStatement.{u, v}` | `(temperedDiscreteSeriesFromBuilding Langlands.Geometry.Building.groupAxiomsExistence).2.2` |
+
+`casselmanFromBuilding` uses the common Cartan and Iwahori basis for
+sufficiency and pairs it with the independent necessity proof.
+`maximalLeviReducibilityFromJointBasis` uses the joint basis for admissibility
+and compact support, and derives fixed-level finiteness as used in VI.3.4.
+The premises are proved by
+[`bruhatTitsAvailability`](../../Langlands/Geometry/Building/BruhatTitsAvailabilityProof.md)
+and [`jointSpecialCompactBasisExistence`](../../Langlands/BruhatTits/SpecialCompact/JointBasisProof.md).
+
+`temperedDiscreteSeriesFromBuilding` obtains Casselman's criterion from
+one-group building existence via `bruhatTitsAvailabilityReduction`. For VII.2.4
+it identifies strict positivity of normalized Jacquet exponents with vanishing
+of the unitary parts at all proper represented rational parabolics. For VII.2.6
+it uses an irreducible quotient of the unitary Jacquet part at a minimal
+parabolic with nonzero unitary part and obtains an embedding by Frobenius
+reciprocity. The corollary induces an invariant positive form from the
+square-integrable representation of the Levi and restricts it along the
+embedding. The one-group premise is proved by
+[`groupAxiomsExistence`](../../Langlands/Geometry/Building/GroupAxiomsExistenceProof.md).
+
 ## VII.1 Casselman's criterion and applications
 
 | Item | Pages | Lean | Status |
@@ -84,42 +119,40 @@ mathematical content.
 | (VII.1.1.1) and finiteness of `Exp` in finite length | 220 / 226 | `RP.ArbitraryParabolicExponentStatement` | P: `arbitraryParabolicExponent` |
 | VII.1.1 Remark (`P = G`) | 220 / 226 | `RP.ArbitraryParabolicExponentStatement` | P |
 | VII.1.1 Lemma (i)–(ii) | 220–221 / 226–227 | `RP.ArbitraryParabolicExponentStatement` | P |
-| VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`; necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | S. Necessity P: `arbitraryParabolicCasselmanNecessity`. The corrected condition is the strictly positive root cone from the final decay test in the proof. The printed coroot-chamber necessity fails on an actual square-integrable representation of `Sp₄(ℚ₃)` (I2) |
-| VII.1.2 Theorem with Bruhat–Tits availability | 221–224 / 227–230 | `RP.CasselmanFromBuildingStatement` | S. The published Bruhat–Tits availability proposition is the explicit premise for joint Cartan and Iwahori basis assembly and hence for sufficiency. The necessity proof applies independently |
-| VII.1.2 first paragraph of the proof, reduction to the central uniformizer lattice | 221 / 227 | `RP.CentralUniformizerSquareIntegrabilityStatement` | S. The evaluated cocharacter lattice is closed, its quotient in the full center is compact, and square integrability modulo the two central subgroups is equivalent for arbitrary quotient Haar normalizations |
-| VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper`; `Langlands.HarishChandraSchwartz.CartanLabelledSeriesStatement` | P for the overlap-tolerant upper estimate on the full central quotient used by sufficiency, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. S for the two-sided comparison on the uniformizer quotient, with disjoint coarse cells and at most \(r^2\) fine labels per point. Under the cover assumption the integral and labelled series are finite together (I3) |
-| VII.1.2 ambient Haar weights in the series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.HarishChandraSchwartz.CentralUniformizerCellVolumeStatement` | S. Each compact-open double coset embeds in the central uniformizer quotient and keeps its ambient Haar mass for the quotient measure compatible with counting measure on the lattice |
-| VII.1.2 partition by the \(S_M(n)\) after (VII.1.2.2) | 222–223 / 228–229 | `Langlands.GroupScheme.CocharacterCone.ThresholdPartitionStatement` | S. A finite residue set and exponents along diagonal cocharacter rays parameterize the actual integral cone modulo its annihilator. Bounded and unbounded exponents give the prescribed disjoint threshold pieces (I7) |
-| VII.1.2 double-coset volume following (VII.1.2.2) | 222–223 / 228–229 | `Langlands.Aubert.General.standardBasisMember_rayIndex`, `Langlands.Aubert.General.RationalPointFamily.rationalLatticeQuotientVolume`; `Langlands.HarishChandraSchwartz.IwahoriLeviDoubleCosetVolumeStatement` | P for the finite-translate upper bound on the full central quotient, checked at Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. S for the exact formula including the Levi index, under the Iwahori factorization, ambient injectivity and the two radical contractions (I4) |
-| VII.1.3 opening paragraph, standard Levi transporters | 224 / 230 | `Langlands.GroupScheme.StandardLeviTransporterCosetsStatement`; `Langlands.GroupScheme.MaximalStandardLeviPointCosetsStatement` | S. The comparison of left coset sets has no proof in the Library. The second statement uses the comparison and the Weyl-side V.4.8 result to count two cosets precisely for maximal proper standard parabolics and to identify the conjugate parabolic for a representative of the second coset (I5) |
-| VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` (and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement`) | S; reduction P. Derived: an arbitrary maximal rational parabolic, with "`M = M'` and `ρ^w = ρψ`" expressed through a normalizing element of `G(F)` |
-| VII.1.3 Theorem with a joint compact basis | 224–226 / 230–232 | `RP.MaximalLeviReducibilityFromJointBasisStatement` | S. The joint special-compact basis gives admissibility, compact support and the fixed-level VI.3.4 finiteness at the induced carrier universe. The conclusion is the full represented reducibility criterion |
+| VII.1.2 Theorem (Casselman's criterion) | 221 / 227 | `RP.ArbitraryParabolicCasselmanCriterionStatement`, with necessity `RP.ArbitraryParabolicCasselmanNecessityStatement` | A. Necessity is also proved by `arbitraryParabolicCasselmanNecessity`. The corrected condition is the strictly positive root cone from the final decay test. The printed coroot-chamber necessity fails for an actual square-integrable representation of `Sp₄(ℚ₃)` (I2) |
+| VII.1.2 Theorem with Bruhat–Tits availability | 221–224 / 227–230 | `RP.CasselmanFromBuildingStatement` | P by `casselmanFromBuilding`. Bruhat–Tits availability gives the joint Cartan and Iwahori basis used for sufficiency |
+| VII.1.2 first paragraph of the proof, reduction to the central uniformizer lattice | 221 / 227 | `RP.CentralUniformizerSquareIntegrabilityStatement` | P by `centralUniformizerSquareIntegrability`. The evaluated cocharacter lattice is closed, its quotient in the full center is compact, and square integrability modulo the two central subgroups is equivalent for arbitrary quotient Haar normalizations |
+| VII.1.2 Cartan refinement after (VII.1.2.1) and labelled series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.cartanLatticeL2`, `Langlands.countableCellLpUpper`, `Langlands.HarishChandraSchwartz.CartanLabelledSeriesStatement` | P for the overlap-tolerant upper estimate on the full central quotient, checked at Library `b0b4deb8c936156b61ecb9730f7ff1ebb8ff3f5c`. `cartanLabelledSeries` proves the two-sided comparison on the uniformizer quotient with disjoint coarse cells and at most \(r^2\) fine labels per point. Under the cover assumption the integral and labelled series are finite together (I3) |
+| VII.1.2 ambient Haar weights in the series preceding (VII.1.2.2) | 221–222 / 227–228 | `Langlands.HarishChandraSchwartz.CentralUniformizerCellVolumeStatement` | P by `centralUniformizerCellVolume`. Each compact-open double coset embeds in the central uniformizer quotient and keeps its ambient Haar mass for the quotient measure compatible with counting measure on the lattice |
+| VII.1.2 partition by the \(S_M(n)\) after (VII.1.2.2) | 222–223 / 228–229 | `Langlands.GroupScheme.CocharacterCone.ThresholdPartitionStatement` | P by `Langlands.GroupScheme.CocharacterCone.thresholdPartition`. A finite residue set and exponents along diagonal cocharacter rays parameterize the integral cone modulo its annihilator. Bounded and unbounded exponents give the disjoint threshold pieces (I7) |
+| VII.1.2 double-coset volume following (VII.1.2.2) | 222–223 / 228–229 | `Langlands.Aubert.General.standardBasisMember_rayIndex`, `Langlands.Aubert.General.RationalPointFamily.rationalLatticeQuotientVolume`, `Langlands.HarishChandraSchwartz.IwahoriLeviDoubleCosetVolumeStatement` | P for the finite-translate upper bound on the full central quotient, checked at Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. `iwahoriLeviDoubleCosetVolume` proves the exact formula including the Levi index under Iwahori factorization, ambient injectivity and the two radical contractions (I4) |
+| VII.1.3 opening paragraph, standard Levi transporters | 224 / 230 | `Langlands.GroupScheme.StandardLeviTransporterCosetsStatement` and `Langlands.GroupScheme.MaximalStandardLeviPointCosetsStatement` | `standardLeviTransporterCosets` proves the comparison of left coset sets. The second proposition (S) uses the comparison and the Weyl-side V.4.8 result for the two-coset characterization of maximal proper standard parabolics and the conjugate parabolic for a representative of the second coset (I5) |
+| VII.1.3 Theorem | 224 / 230 | `RP.MaximalLeviSupercuspidalReducibilityStatement` and the reduction `RP.MaximalLeviSupercuspidalReducibilityFromInputsStatement` | A for the criterion and P for the reduction. The represented criterion uses arbitrary maximal rational parabolics and expresses the inducing-twist condition through an element of \(G(F)\) that normalizes the Levi |
+| VII.1.3 Theorem with a joint compact basis | 224–226 / 230–232 | `RP.MaximalLeviReducibilityFromJointBasisStatement` | P by `maximalLeviReducibilityFromJointBasis`. The joint special-compact basis gives admissibility, compact support and fixed-level VI.3.4 finiteness at the induced carrier universe |
 | VII.1.3 Corollary (i)–(iii) | 226–227 / 232–233 | `RP.MaximalLeviBlockStatements`; `RP.MaximalLeviBlockProjectionEquivalenceStatement` | S. The first statement expresses (ii) as Jacquet nonvanishing and (iii) as full faithfulness and essential surjectivity of induction. The second statement names `r_D` using a left adjoint to the block inclusion. It asserts projection existence, faithfulness of `r_D`, invertibility of `π → i_P^G r_D(π)` and the equivalence with inverse `i_P^G`. It first appeared at Library commit `c40a0134` |
 
-The four new statement pairs first entered the Library at
+These four statement pairs first entered the Library at
 `95d37e11bd46972d484c6fc9e6b864ff7625cf9e`. The Lean and Markdown files at
-the checked commit match the files as first checked. The Library proves none
-of the four.
+the checked commit match the files as first checked.
 
 | Statement explanation | Proof in the Library |
 | --- | --- |
-| [Casselman criterion with building availability](../../Langlands/Representation/Exponents/CasselmanFromBuildingStatement.md) | not proved |
-| [Central uniformizer lattice](../../Langlands/Representation/Exponents/CentralUniformizerSquareIntegrabilityStatement.md) | not proved |
-| [Standard Levi transporter cosets](../../Langlands/GroupScheme/Rational/StandardLeviTransporterCosetsStatement.md) | not proved |
-| [Maximal standard Levi point cosets](../../Langlands/GroupScheme/Rational/MaximalStandardLeviPointCosetsStatement.md) | not proved |
+| [Casselman criterion with building availability](../../Langlands/Representation/Exponents/CasselmanFromBuildingStatement.md) | [`casselmanFromBuilding`](../../Langlands/Representation/Exponents/CasselmanFromBuildingProof.md) |
+| [Central uniformizer lattice](../../Langlands/Representation/Exponents/CentralUniformizerSquareIntegrabilityStatement.md) | [`centralUniformizerSquareIntegrability`](../../Langlands/Representation/Exponents/CentralUniformizerSquareIntegrabilityProof.md) |
+| [Standard Levi transporter cosets](../../Langlands/GroupScheme/Rational/StandardLeviTransporterCosetsStatement.md) | [`Langlands.GroupScheme.standardLeviTransporterCosets`](../../Langlands/GroupScheme/Rational/StandardLeviTransporterCosetsProof.md) |
+| [Maximal standard Levi point cosets](../../Langlands/GroupScheme/Rational/MaximalStandardLeviPointCosetsStatement.md) | S |
 
 The following five statements first entered the Library at
 `6e9e589baa721ce995563f73f648b6f4e45718a1`. Their Lean and Markdown files
-match the files as first checked at the checked commit. The Library proves
-none of the five.
+match the files as first checked.
 
 | Statement explanation | Proof in the Library |
 | --- | --- |
-| [Labelled Cartan series](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CartanLabelledSeriesStatement.md) | not proved |
-| [Uniformizer quotient cell volume](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CentralUniformizerCellVolumeStatement.md) | not proved |
-| [Cocharacter cone threshold partition](../../Langlands/GroupScheme/Rational/CocharacterConeThresholdPartitionStatement.md) | not proved |
-| [Iwahori double-coset volume with the Levi index](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/IwahoriLeviDoubleCosetVolumeStatement.md) | not proved |
-| [Maximal-Levi reducibility from a joint compact basis](../../Langlands/Representation/Exponents/MaximalLeviReducibilityFromJointBasisStatement.md) | not proved |
+| [Labelled Cartan series](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CartanLabelledSeriesStatement.md) | [`Langlands.HarishChandraSchwartz.cartanLabelledSeries`](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CartanLabelledSeriesProof.md) |
+| [Uniformizer quotient cell volume](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CentralUniformizerCellVolumeStatement.md) | [`Langlands.HarishChandraSchwartz.centralUniformizerCellVolume`](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/CentralUniformizerCellVolumeProof.md) |
+| [Cocharacter cone threshold partition](../../Langlands/GroupScheme/Rational/CocharacterConeThresholdPartitionStatement.md) | [`Langlands.GroupScheme.CocharacterCone.thresholdPartition`](../../Langlands/GroupScheme/Rational/CocharacterConeThresholdPartitionProof.md) |
+| [Iwahori double-coset volume with the Levi index](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/IwahoriLeviDoubleCosetVolumeStatement.md) | [`Langlands.HarishChandraSchwartz.iwahoriLeviDoubleCosetVolume`](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/IwahoriLeviDoubleCosetVolumeProof.md) |
+| [Maximal-Levi reducibility from a joint compact basis](../../Langlands/Representation/Exponents/MaximalLeviReducibilityFromJointBasisStatement.md) | [`maximalLeviReducibilityFromJointBasis`](../../Langlands/Representation/Exponents/MaximalLeviReducibilityFromJointBasisProof.md) |
 
 ## VII.2 Tempered representations
 
@@ -133,14 +166,14 @@ none of the five.
 | VII.2.2 Lemma | 227–228 / 233–234 | `RP.LeviInductionNormalizedTemperedStatement` | P: `leviInductionNormalizedTempered` |
 | VII.2.3 Lemma | 229 / 235 | `RP.UnitaryJacquetPartTemperedStatement` | P: `unitaryJacquetPartTempered` |
 | VII.2.4 Proposition | 229 / 235 | `RP.TemperedInductionUnitaryReciprocityStatement`, `RP.TemperedJacquetUnitaryRestrictionStatement` | P: `temperedInductionUnitaryReciprocity`, `temperedJacquetUnitaryRestriction` |
-| VII.2.4 Lemma | 230 / 236 | `RP.TemperedSquareIntegrableUnitaryPartStatement` | S |
-| VII.2.4 Lemma, standard-parabolic test | 230 / 236 | `RP.UnitaryJacquetVanishingStandardReductionStatement` | S. For any smooth complex representation, rational conjugation compares vanishing at all proper represented rational parabolics with vanishing in the fixed proper standard family |
+| VII.2.4 Lemma | 230 / 236 | `RP.TemperedSquareIntegrableUnitaryPartStatement` | A |
+| VII.2.4 Lemma, standard-parabolic test | 230 / 236 | `RP.UnitaryJacquetVanishingStandardReductionStatement` | P by `unitaryJacquetVanishingStandardReduction`. For any smooth complex representation, rational conjugation compares vanishing at all proper represented rational parabolics with vanishing in the fixed proper standard family |
 | VII.2.5 Proposition | 230 / 236 | `RP.TemperedGeometricLemmaStatement` | P: `temperedGeometricLemma` |
-| VII.2.6 Theorem | 231 / 237 | `RP.TemperedIrreducibleDiscreteSeriesStatement`, `RP.TemperedIrreducibleDiscreteSeriesUniquenessStatement`; step `RP.NormalizedTemperedSubrepresentationStatement` | `RP.TemperedIrreducibleDiscreteSeriesStatement` S; uniqueness P: `temperedIrreducibleDiscreteSeriesUniqueness` (`Exponents/TemperedIrreducibleDiscreteSeriesUniquenessProof`); step P: `normalizedTemperedSubrepresentation` |
-| VII.2.6 Theorem, standard-parabolic witness | 231 / 237 | `RP.DiscreteSeriesEmbeddingStandardReductionStatement` | S. A single rational conjugation standardizes the parabolic and Levi. The comparison retains square integrability of the inducing representation for every Borel Haar measure on its center quotient |
-| VII.2.6 Corollary | 232 / 238 | `RP.TemperedIrreducibleUnitarizableStatement` | S |
+| VII.2.6 Theorem | 231 / 237 | `RP.TemperedIrreducibleDiscreteSeriesStatement`, `RP.TemperedIrreducibleDiscreteSeriesUniquenessStatement`, and `RP.NormalizedTemperedSubrepresentationStatement` | A for the embedding equivalence. Uniqueness is proved by `temperedIrreducibleDiscreteSeriesUniqueness` and the subrepresentation step by `normalizedTemperedSubrepresentation` |
+| VII.2.6 Theorem, standard-parabolic witness | 231 / 237 | `RP.DiscreteSeriesEmbeddingStandardReductionStatement` | P by `discreteSeriesEmbeddingStandardReduction`. A single rational conjugation standardizes the parabolic and Levi. The comparison retains square integrability of the inducing representation for every Borel Haar measure on its center quotient |
+| VII.2.6 Corollary | 232 / 238 | `RP.TemperedIrreducibleUnitarizableStatement` | A |
 | VII.2.6 Remark (without irreducibility the Corollary can fail) | 232 / 238 | `RP.TemperedReducibleNotUnitarizableStatement` | P: `temperedReducibleNotUnitarizable` (`Exponents/TemperedReducibleNotUnitarizableProof`) |
-| VII.2.4 Lemma and VII.2.6 Theorem, existence equivalence, and Corollary with building data | 230–232 / 236–238 | `RP.TemperedDiscreteSeriesFromBuildingStatement` | S. `Langlands.Geometry.Building.GroupAxiomsExistenceStatement` is the explicit premise for the joint compact basis used in Casselman's sufficiency. The unconditional targets are the VII.2.3–VII.2.4 statements on unitary Jacquet parts and the three VII.2.6 statements above |
+| VII.2.4 Lemma and VII.2.6 embedding equivalence and Corollary with building data | 230–232 / 236–238 | `RP.TemperedDiscreteSeriesFromBuildingStatement` | P by `temperedDiscreteSeriesFromBuilding`. `Langlands.Geometry.Building.GroupAxiomsExistenceStatement` supplies the geometry for the strict-root-cone criterion in the proof of the VII.2.4 Lemma. The other conclusions are the VII.2.6 embedding equivalence and unitarizability |
 
 ## VII.3 Intertwining operators of induced representations
 
@@ -164,7 +197,7 @@ none of the five.
 | VII.4.1 Lemma | 241 / 247 | `RP.LanglandsTripletOppositeRegularityStatement`; proved steps `RP.LanglandsTripletOppositePieceSeparationStatement`, `RP.LanglandsTripletOppositeRegularityReductionStatement` | P: `langlandsTripletOppositeRegularity` (`LanglandsClassification/LanglandsTripletRegularityProof`); steps P |
 | (VII.4.1.1), cone for the tempered exponent contribution | 241 / 247 | `RP.GeometricLemmaIntersectionDatum.normalizedRealPart_sub_unramifiedPieceRealPart_mem_nonnegCone`, `Langlands.GroupScheme.ParabolicRootPresentation.neg_mem_nonnegCone_of_opposite` | P as the `hxQ` and `hxP` steps of `langlandsTripletOppositePieceSeparation`. The bound is on the full geometric-lemma piece's exponent after subtracting its unramified contribution |
 | (VII.4.1.2), nonzero negative-cone shift for the unramified contribution | 241–242 / 247–248 | `RP.GeometricLemmaIntersectionDatum.unramifiedPieceDisplacement_mem_nonnegCone_and_ne_zero` | P as the `hδ` step of `langlandsTripletOppositePieceSeparation`. Lean uses the original inducing real part minus the piece parameter, so the displacement lies in the nonnegative cone of \(P\) |
-| (VII.4.1.3), ambient Weyl displacement | 241–242 / 247–248 | `Langlands.GroupScheme.DominantWeylDisplacementStatement` | S. Over any field, a point of the closed coroot chamber minus its inverse Weyl translate lies in the nonnegative simple-root cone in the full real character space (I8) |
+| (VII.4.1.3), ambient Weyl displacement | 241–242 / 247–248 | `Langlands.GroupScheme.DominantWeylDisplacementStatement` | P by `dominantWeylDisplacement`. Over any field, a point of the closed coroot chamber minus its inverse Weyl translate lies in the nonnegative simple-root cone in the full real character space (I8) |
 | VII.4.2 Theorem (i)–(iii) | 243–246 / 249–252 | `RP.LanglandsQuotientUniqueStatement`, `RP.LanglandsQuotientInjectiveStatement`, `RP.LanglandsQuotientExhaustiveStatement`, conjunction `RP.LanglandsClassificationStatement` | S. P for `RP.LanglandsClassificationFromInputsStatement`, with four Chapter VI premises. See the proofs of the implications below and source issue I9 |
 | VII.4.2 sentence after the proof of (i), exponent characterization of `J(P, σ, ψ)` | 243 / 249 | `RP.LanglandsQuotientExponentCharacterizationStatement` | S. P for `RP.LanglandsQuotientExponentCharacterizationFromSecondAdjointnessStatement`, with second adjointness as its sole premise |
 
@@ -330,7 +363,9 @@ as recorded.
 - **V2. Represented versus standard parabolics.** The source works with standard
   (semi-standard) parabolics and transports by conjugation; the statements use all actual
   rational parabolics. VII.2.1 Remark 3 (`NormalizedTemperedStandardReductionStatement`,
-  proved) compares the temperedness conditions.
+  proved) compares the temperedness conditions. The VII.2.4 vanishing test uses
+  proper standard parabolics, and the VII.2.6 embedding witness may be chosen
+  from the standard family by the two reductions listed in VII.2.
 
 ## Source issues
 
@@ -451,10 +486,9 @@ as recorded.
 
 ## Genuine gaps of Chapter VII
 
-1. VII.1.2: sufficiency of the strictly positive root-cone condition in
-   `RP.ArbitraryParabolicCasselmanCriterionStatement`. The Library does not prove
-   the exact equivalence, nor the intermediate target with Bruhat–Tits
-   availability, `RP.CasselmanFromBuildingStatement`.
+1. VII.1.3, opening paragraph. `Langlands.GroupScheme.MaximalStandardLeviPointCosetsStatement`
+   asks for the maximality characterization by the number of rational point
+   cosets and the opposite-parabolic conclusion for the second coset.
 2. VII.1.3 Corollary: projection existence, faithfulness, the adjunction unit
    isomorphism and equivalence in `RP.MaximalLeviBlockProjectionEquivalenceStatement`
    have no unconditional proof in the Library.

@@ -19,7 +19,9 @@ The original rows describe Library commit `f2c5495316f5a5631bc8c11875b7509d93271
 Rows D12, D13 and the quotient-group statement in I2 use the declarations at
 `83410f0ef589431fd290293765b33c3a3adc2ac7`. E7 and the exact comparison
 proofs in I1 and I3 use the declarations at
-`7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. All Lean names are in
+`7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. The flag-cell proof in D14 and
+the quotient-group proof in I2 use the declarations at
+`db940683e1d682d84831e8365720f1c79b5c9b0c`. All Lean names are in
 `Langlands.GroupScheme` unless a namespace is shown. Module paths are relative to
 `Langlands/GroupScheme/`.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`. "Connected
@@ -618,6 +620,40 @@ printed p.551 (PDF p.567), describes the product of varieties.
   [Statement](../../Langlands/GroupScheme/Rational/BruhatFactorizationStatement.md),
   [proof](../../Langlands/GroupScheme/Rational/BruhatFactorizationProof.md)
 
+**D14. Rational Bruhat cells in the flag quotient.** Milne 2017,
+§25.27, printed p.551 (PDF p.567), gives the flag parametrization with
+the minimal parabolic and maximal split torus specified in the
+Chapter 25 erratum. The rational lifting input is Milne 25.9(b),
+printed p.546 (PDF p.562). The ground-field double cosets are those
+of Borel–Tits 5.15, printed pp.100–101 (PDF pp.47–48).
+
+- `RationalBruhatFlagCellStatement` uses the field, group, torus and
+  generic cocharacter of D1. It takes a smooth, surjective,
+  quasi-compact \(q:G\to Q\) with exact right-\(P\)-coset fibres
+  on every scheme test, where \(P=P(\chi)\). For the affine
+  representatives of \(U=U(\chi)\) and \(V=U(\chi^{-1})\), the map
+  \(a\mapsto q(an)\) from the scheme pullback \(U\cap nVn^{-1}\) is a
+  locally closed immersion for every \(n\in N(k)\).
+  Its \(k\)-point image is \(\{q(pn)\mid p\in P(k)\}\). These images
+  are indexed by \(N(k)/Z(k)\), and every point of \(Q(k)\) belongs
+  to exactly one of them.
+- `rationalBruhatFlagCell` proves the proposition (P). It descends
+  the opposite open chart through \(q\) and translates it by \(n\).
+  The finite-field lifting argument uses the parabolic torsor
+  fibres, and the infinite-field argument uses density and the
+  opposite chart. The double-coset comparison then gives the
+  rational partition.
+  [Statement](../../Langlands/GroupScheme/Rational/BruhatFlagCellStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/BruhatFlagCellProof.md)
+- For the canonical affine representative of \(P(\chi)\),
+  `smoothSubgroupQuotientExistence` supplies \(q\) with the required
+  fibre relation, and `parabolicSubgroupQuotientProper` makes \(Q\)
+  proper. The partition in D14 concerns the ground-field rational
+  points. Mixed flags after scalar extension are described in the
+  [Weil restriction example](../errata/milne-25-27-geometric-bruhat-coverage.md).
+  [Quotient existence](../../Langlands/GroupScheme/HomogeneousQuotientProof.md),
+  [properness](../../Langlands/GroupScheme/ParabolicQuotientProperProof.md)
+
 ## E. Split components, rational characters and the centre
 
 **E1. The split component.** Source: Renard V.2.1, printed p.104 (PDF 110).
@@ -927,7 +963,14 @@ the image of the simultaneous normalizer in \(N(T)(K)/Z(T)(K)\) to
   \(N(T)(K)\cap N(S_K)(K)\) inside \(N(T)(K)/Z(T)(K)\). The two point
   quotient comparisons at \(\operatorname{Spec}K\) express compatibility
   with the class of each simultaneous normalizer point.
-  [Statement](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientStatement.md)
+  `relativeWeylQuotient` proves the proposition (P). Centralizing \(T\)
+  implies centralizing \(S_K\), which gives the kernel inclusion for
+  descent to the image. The normalizer factorization gives
+  surjectivity, and the connected-test comparison identifies the
+  codomain with the ground-field Weyl group. When \(T\) is a split
+  maximal torus, its Weyl group is the absolute Weyl group.
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientProof.md)
 
 **I3. Relative root groups from absolute root groups.**
 Borel–Tits 1965, §§3.8(ii), 3.13(b) and 5.2, printed pp.76, 79 and 96

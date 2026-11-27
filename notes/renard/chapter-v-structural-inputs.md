@@ -84,6 +84,37 @@ Here \(C_A,C_A^+,C_A^{++}\) and \(\widetilde C_0^+\) retain Renard's
 definitions from V.2.5 and V.3.21–V.3.23. Their construction and comparison with
 the actual character lattice are not hidden inside S19–S23.
 
+## The common special compact and basis for S19–S23
+
+`Langlands.BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence`
+proves `JointSpecialCompactBasisExistenceStatement` for every nonarchimedean
+local field of either characteristic, connected reductive group, maximal split
+torus and generic cocharacter. One apartment and one special vertex give the
+subgroup \(K_0=G(F)^1\cap\operatorname{Stab}(x)\) in both V.5.1 and V.5.2,
+with the stabilizer taken in the building at the image of the apartment
+vertex (printed pp. 122–123, PDF pp. 128–129). The proof constructs the
+actual represented torus centralizer and its character comparison and
+shares these between the ambient and Levi Cartan clauses.
+[Statement](../../Langlands/BruhatTits/SpecialCompact/JointBasisStatement.md)
+[Proof](../../Langlands/BruhatTits/SpecialCompact/JointBasisProof.md)
+
+| Row | Conclusion at the common vertex |
+| --- | --- |
+| S19 | `SpecialCompactProperties` gives compact-open maximality, actual Weyl representatives and the parabolic factorization. `Iwasawa.ParabolicPointProductFamily` gives both product orders for actual parabolics. `SpecialCompactRenardComparison` identifies the double cosets with the dominant lattice image in the centralizer norm quotient. It gives finite positive product covers and uses the chamber-compatible-transversal hypothesis for the rectangular section. `SpecialLeviInheritance`, the Levi Iwasawa family and `SpecialCompactStandardLeviCompatibility` give the corresponding properties for the preimage of this same \(K_0\) in each actual standard Levi. |
+| S20 | `SimultaneousStandardBasisAt` gives a single identity-neighborhood basis of compact open subgroups contained in and normal under this \(K_0\). |
+| S21 | Each basis member has the three-factor Iwahori decomposition for every standard parabolic, with the Levi normalization and both weak-chamber contractions for the compatible split component. |
+| S22 | Each strict-chamber element gives the two expanding unions. For a compact subset of either radical, the corresponding expanding containments hold uniformly in a sufficiently small epsilon chamber. |
+| S23 | The contracting powers give bases in both radicals, with the uniform compact-open cofinality clauses for the epsilon chambers. |
+
+`Langlands.Geometry.Building.bruhatTitsAvailability` supplies the valid
+corrected Kaletha–Prasad assignment. At any special vertex of valid
+assigned data, `availableSimultaneousStandardBasis` gives the compact
+properties, Levi inheritance and basis for each generic cocharacter.
+These declarations let consumers use either the existential common
+witness or a supplied valid assignment with a specified vertex.
+[Availability proof](../../Langlands/Geometry/Building/BruhatTitsAvailabilityProof.md)
+[Basis proof](../../Langlands/BruhatTits/SpecialCompact/AvailableBasisProof.md)
+
 ## Definitions and deductions that remain to be implemented or proved
 
 These entries prevent the external ledger from absorbing the book's arguments.
@@ -151,7 +182,7 @@ declaration scope, rather than a new acceptance or publication audit.
 | [`Langlands.Representation.Geometric.GeneralIntersections`](../../Langlands/Representation/Geometric/GeneralIntersections.md): `Langlands.Geometric.General.intersectionIn`, `intersectionEquivContinuous`, `SixDecomposable` | Constructs actual subgroup intersections and continuous conjugation equivalences. `SixDecomposable` is a predicate expressing six product equalities, not a proof that reductive parabolics satisfy them. |
 | [`Langlands.Representation.Geometric.GeneralCorrectionCharacters`](../../Langlands/Representation/Geometric/GeneralCorrectionCharacters.md): `Langlands.Geometric.General.haarCorrectionCharacter` | Constructs correction characters from the actual Haar moduli of closed subgroups and intersections, with square and open-kernel laws. Supplies no orbit-piece comparison or geometric-lemma proof. |
 | [`Langlands.Representation.Jacquet.Localization`](../../Langlands/Representation/Jacquet/Localization.md): `Langlands.Jacquet.Localization.relations`, `Coinvariants`, `mk`, `action`, `map`, `smoothFunctor` | Constructs the actual quotient by the span of \(\rho(u)v-\theta(u)v\), the normalizing-subgroup action, maps and smoothness descent over a commutative ring, with independent group and carrier universes. This is not an exactness proof. |
-| [`Langlands.Topology.CompactOpen.NeighborhoodBasis`](../../Langlands/Topology/CompactOpen/NeighborhoodBasis.md) and [`Langlands.Topology.Nonarchimedean.Subgroup`](../../Langlands/Topology/Nonarchimedean/Subgroup.md): `Langlands.compactOpenSubgroupBasis`, `Langlands.subgroupNonarchimedean` | Generic proved topology tools. Rational-point instances and the stronger simultaneous contraction properties S20–S23 still need their actual-group adapters. |
+| [`Langlands.Topology.CompactOpen.NeighborhoodBasis`](../../Langlands/Topology/CompactOpen/NeighborhoodBasis.md) and [`Langlands.Topology.Nonarchimedean.Subgroup`](../../Langlands/Topology/Nonarchimedean/Subgroup.md): `Langlands.compactOpenSubgroupBasis`, `Langlands.subgroupNonarchimedean` | Generic topology tools. The common special-vertex theorem above gives the stronger S20–S23 package on connected reductive rational points. |
 
 `Langlands.RootWeightConeDecompositionStatement` is a proposition target, not
 a proof. The block-permutation constructions `Langlands.Geometric.blockWeyl`

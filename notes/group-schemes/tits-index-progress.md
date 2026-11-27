@@ -3,10 +3,10 @@
 The Library's Tits index for a semisimple group over an arbitrary field
 uses its maximal split torus and its absolute based root datum. The
 theorems below give existence and choice independence, identify the
-relative simple roots and split rank, and compute the index of the
-semisimple anisotropic kernel. The existence theorem also supplies the
-index data used in the local rank-one classification. All declarations
-are in `Langlands.GroupScheme`.
+relative simple roots, split rank and integral split cocharacters, and
+compute the index of the semisimple anisotropic kernel. The existence
+theorem also supplies the index data used in the local rank-one
+classification. All declarations are in `Langlands.GroupScheme`.
 
 ## Source and interface
 
@@ -54,6 +54,7 @@ action of each Galois element.
 | `TitsIndexStarInvariantStatement`, `TitsIndexRelativeSimpleRootsStatement` (bundled as `TitsIndexStarRelativeRootsStatement`) | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexStarInvariant`, `titsIndexRelativeSimpleRoots`, `titsIndexStarRelativeRoots` (`Reductive.TitsIndexStarProof`) |
 | `TitsIndexSplitRankStatement` | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexSplitRank` (`Reductive.TitsIndexSplitRankProof`) |
 | `TitsIndexRelativeStructureStatement` | `Reductive.TitsIndexRelativeStatement` | proved: `titsIndexRelativeStructure` (`Reductive.TitsIndexSplitRankProof`); the conjunction of the two rows above |
+| `TitsIndexSplitCocharactersStatement` | `Reductive.TitsIndexSplitCocharactersStatement` | proved: `titsIndexSplitCocharacters` (`Reductive.TitsIndexSplitCocharactersProof`) |
 | `TitsAnisotropicKernelStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | proved: `titsAnisotropicKernel` |
 | `TitsAnisotropicKernelIndexStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | proved: `titsAnisotropicKernelIndex` (`Reductive.TitsIndexAnisotropicKernelIndexProof`) |
 | `TitsAnisotropicKernelStructureStatement` | `Reductive.TitsIndexAnisotropicKernelStatement` | `⟨titsAnisotropicKernel, titsAnisotropicKernelIndex⟩` |
@@ -96,6 +97,20 @@ the absolute Galois action.
 The application `titsIndexExistence k G hG`, both conjunctions in the table
 and the use in `localRankOneClassification_of_indexStatements` below
 type-check with the displayed declarations.
+
+## Recovering the integral split cocharacters
+
+For each index `d` over \(k\), `titsIndexSplitCocharacters k G d`
+identifies the image of \(X_*(S)\) in \(X_*(T_{k_s})\) under composition
+and base change. A cocharacter belongs to that image precisely when its
+pairing vanishes on \(\Delta_0\) and is constant along each Galois star
+orbit of absolute simple roots. Each such cocharacter has a unique lift
+to \(S\). These are the pairings obtained by pulling back equations (1)
+in Tits §2.5.1, printed p.40 (PDF p.45). The proof uses the Weyl
+correction on the zero face to pass from the star action to ordinary
+Galois descent.
+[Statement](../../Langlands/GroupScheme/Reductive/TitsIndexSplitCocharactersStatement.md),
+[proof](../../Langlands/GroupScheme/Reductive/TitsIndexSplitCocharactersProof.md)
 
 ## Route of the existence proof
 

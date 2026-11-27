@@ -14,7 +14,8 @@ thematic families. This note records:
 The original snapshot used Library commit `86ea837f8bbc2362833af96e434e544dd1a892bd`. "Field group" means a group scheme
 over `Spec k` for a field `k : Type u`. The unitary relative-root update uses Library
 commit `7ae0d83b7cb2ad9aaca52ada487b3a5d3314323a`. The field and integral proof update
-uses Library commit `5704217a2667191d63b37f0e85a2da41c15b21d2`.
+uses Library commit `5704217a2667191d63b37f0e85a2da41c15b21d2`. The rational and
+Galois comparisons use Library commit `2f86a99eb5616254ac5b9c399603c9bbbea15f7a`.
 
 **Names and modules.** Each table is written in a namespace `N`, which is
 `Langlands.GroupScheme` unless the section states another one. A Lean name `X` in a table
@@ -224,6 +225,10 @@ The relative-root vocabulary is in `Rational/RelativeRoots` (`relativeRoots`,
 `Rational/StandardParabolic` (`simpleRelativeRoots`, `standardParabolic`, `standardLevi`,
 `standardUnipotent`).
 
+Further field results give the group and flag Bruhat morphisms, the
+comparisons between relative and absolute structure and the descent results
+on the actual lattices. [Rational and Galois comparisons](#rational-and-galois-comparisons-27-november-2026)
+
 ## Algebraic interfaces for later programs
 
 The contract asks for the following exports. Each row lists the Lean exports, their
@@ -325,6 +330,118 @@ with zero errors and warnings.
   realizes the actual root data on all those fibres.
   [Integral statement](../../Langlands/GroupScheme/Reductive/ChevalleyIntegralExistenceStatement.md),
   [integral proof](../../Langlands/GroupScheme/ChevalleyIntegral/Existence.md)
+
+### Rational and Galois comparisons, 27 November 2026
+
+Lean checked the twelve published theorems in this section at their exact
+proposition types at arbitrary universe `u`.
+
+- `splitBruhatRationalPoints` (fam4 D9) sends each Weyl class \([n]\) to
+  \(B(k)nB(k)\) for a Borel pair \((B,T)\) with \(T\) split in a connected
+  reductive group over any field. This is a bijection with the rational
+  double-coset set. `IsBorelPair.bruhatRationalPoints_of_isSepClosed` gives
+  the same result for every Borel pair over a separably closed field.
+  Milne 2017, Proposition 21.1, §21.h and Remark 21.74, printed pp. 424
+  and 446–447 (PDF pp. 440 and 462–463).
+  [Statement](../../Langlands/GroupScheme/Absolute/SplitBruhatRationalPointsStatement.md),
+  [proof](../../Langlands/GroupScheme/Absolute/SplitBruhatRationalPointsProof.md)
+- `rationalBruhatCell` and `rationalBruhatFactorization` (fam5 D12 and
+  D13) use a generic cocharacter of a maximal split torus in a connected
+  reductive group over any field and a rational normalizer point \(n\).
+  With supplied representatives \(P\), \(U\) and \(V\) for the dynamic
+  parabolic, its identity-limit subgroup and the opposite identity-limit
+  subgroup, and with \(U\to G\) closed, multiplication \((a,b)\mapsto anb\)
+  from \((U\cap nVn^{-1})\times P\) is a locally closed immersion with
+  rational image \(P(k)nP(k)\). With the canonical affine representatives,
+  multiplication from \((U\cap nVn^{-1})\times(U\cap nUn^{-1})\) to \(U\)
+  is a scheme isomorphism. All intersections are scheme-theoretic.
+  Milne 2017, §25.27, printed p. 551 (PDF p. 567), and Borel–Tits 1965,
+  §§5.13 and 5.15, printed pp. 99–101 (PDF pp. 46–48).
+  [Group cell statement](../../Langlands/GroupScheme/Rational/BruhatCellStatement.md),
+  [group cell proof](../../Langlands/GroupScheme/Rational/BruhatCellProof.md),
+  [factorization statement](../../Langlands/GroupScheme/Rational/BruhatFactorizationStatement.md),
+  [factorization proof](../../Langlands/GroupScheme/Rational/BruhatFactorizationProof.md)
+- `rationalBruhatFlagCell` uses the same group, torus and cocharacter with
+  a smooth, surjective and quasi-compact quotient \(q:G\to Q\). On every
+  scheme test \(X\), \(q(g)=q(h)\) exactly when \(g^{-1}h\in P(X)\).
+  The maps \(a\mapsto q(an)\) from \(U\cap nVn^{-1}\) are locally closed
+  immersions. Their images on \(k\)-points are the sets \(q(P(k)n)\)
+  and partition \(Q(k)\) by relative Weyl classes. The composition of
+  `smoothSubgroupQuotientExistence` and `parabolicSubgroupQuotientProper`
+  for the canonical affine parabolic supplies a proper \(Q\) with these
+  quotient properties. Milne 2017, 25.9(b) and §25.27 with its Chapter 25
+  erratum, printed pp. 546 and 551 (PDF pp. 562 and 567).
+  [Flag cell statement](../../Langlands/GroupScheme/Rational/BruhatFlagCellStatement.md),
+  [flag cell proof](../../Langlands/GroupScheme/Rational/BruhatFlagCellProof.md),
+  [dynamic flag quotient](../../Langlands/GroupScheme/Dynamic/FlagQuotientProof.md)
+- `infiniteFieldCenterComparison` (fam5 E7) identifies the rational
+  points of the full scheme centre with the centre of the group of
+  rational points for a connected reductive group over an infinite
+  field. Density of the rational points in \(G\) suffices and the
+  statement allows a nonsmooth centre. Milne 2017, Propositions
+  1.92–1.93 and Theorem 17.93(b), printed pp. 33–34 and 382
+  (PDF pp. 49–50 and 398).
+  [Statement](../../Langlands/GroupScheme/Rational/InfiniteFieldCenterComparisonStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/InfiniteFieldCenterComparisonProof.md)
+- `relativeRootAbsoluteRestriction` (fam5 I1) identifies the relative
+  roots of a maximal split torus \(S\) in a connected reductive group with
+  the nonzero restrictions of absolute roots. The comparison uses a
+  maximal torus \(T\) over \(k\) containing \(S\) and any extension
+  \(K/k\) splitting \(T\). It compares the base change of a character
+  of \(S\) with the restriction of an absolute root to \(S_K\).
+  Milne 2017, 25.13 footnote 2
+  and 25.19, printed pp. 548–549 (PDF pp. 564–565).
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeRootAbsoluteRestrictionStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeRootAbsoluteRestrictionProof.md)
+- `relativeWeylQuotient` (fam5 I2) uses a maximal \(K\)-split torus \(T\)
+  of \(G_K\) containing \(S_K\). The image of their simultaneous normalizer
+  on \(K\)-points in the point Weyl group of \(T\) surjects onto the
+  relative Weyl group of \(S\) over \(k\). The homomorphism agrees with
+  restriction on simultaneous normalizer points under the point quotient
+  comparisons. Borel–Tits 1965, Corollary 5.5, printed p. 97 (PDF p. 44).
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientProof.md)
+- `relativeRootGroupAbsoluteGeneration` and
+  `relativeRootGroupExactGeneration` (fam5 I3) use the tori and splitting
+  extension of the root restriction theorem. The base change of the
+  relative root group of \(a\) is the smallest closed subgroup containing
+  the absolute root groups whose roots restrict to positive integral
+  multiples of \(a_K\), as subgroup functors on all scheme tests over
+  \(K\). When \(2a\) is absent, generators restricting exactly to \(a_K\)
+  suffice. Borel–Tits 1965, §§3.8(ii), 3.13(b) and 5.2, printed
+  pp. 76, 79 and 96 (PDF pp. 23, 26 and 43), and Milne 2017, §25.19,
+  printed p. 549 (PDF p. 565).
+  [Positive-multiple statement](../../Langlands/GroupScheme/Rational/RelativeRootGroupAbsoluteGenerationStatement.md),
+  [positive-multiple proof](../../Langlands/GroupScheme/Rational/RelativeRootGroupAbsoluteGenerationProof.md),
+  [exact-restriction statement](../../Langlands/GroupScheme/Rational/RelativeRootGroupExactGenerationStatement.md),
+  [exact-restriction proof](../../Langlands/GroupScheme/Rational/RelativeRootGroupExactGenerationProof.md)
+- `quasiSplitStarCriterion` (fam6 B6) applies to a quasi-split field
+  group with affine, locally finite type structure map. For every choice
+  of Galois pinning data over the separable closure, a split maximal torus
+  exists over the ground field exactly when the star action on the full
+  based root datum is trivial, including its action on the central
+  character directions. Milne 2017, Definition 19.22, Proposition
+  25.28(a), Example 25.37 and Theorem 12.23, printed pp. 402, 552, 557 and
+  240 (PDF pp. 418, 568, 573 and 256).
+  [Statement](../../Langlands/GroupScheme/Reductive/QuasiSplitStarCriterionStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/QuasiSplitStarCriterionProof.md)
+- `titsIndexSplitCocharacters` takes Tits index data of a semisimple
+  group over any field with affine, locally finite type structure
+  map. A cocharacter of the maximal torus over the separable closure
+  comes by base change from a unique cocharacter of the chosen maximal
+  split torus if and only if its pairings vanish on simple roots that
+  restrict to zero on that torus and are constant on star orbits. Tits
+  1966, §2.5.1, equations (1), printed p. 40 (PDF p. 45).
+  [Statement](../../Langlands/GroupScheme/Reductive/TitsIndexSplitCocharactersStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/TitsIndexSplitCocharactersProof.md)
+- `torusAbsoluteCharacterEquivalence` (fam2 D7) identifies the opposite
+  category of tori over any field with finite free integral modules with
+  continuous absolute Galois action for the discrete topology. The
+  functor takes the actual character lattice over the separable closure
+  and maps a homomorphism by pullback. Milne 2017, §12.g and Theorem
+  12.23, printed pp. 239–240 (PDF pp. 255–256).
+  [Statement](../../Langlands/GroupScheme/Torus/AbsoluteCharacterEquivalenceStatement.md),
+  [proof](../../Langlands/GroupScheme/Torus/AbsoluteCharacterEquivalenceProof.md)
 
 ## Remaining limitations
 

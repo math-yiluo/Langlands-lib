@@ -18,7 +18,8 @@ Row A9 records results checked on 18 November 2026. A10 was checked
 at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
 Rows A11, B4 and B5 use the declarations at Library commit
 `66a181ec9cda271c1ff0dcf555f386b52dc687c7`. Row B6 uses the declarations
-at `83410f0ef589431fd290293765b33c3a3adc2ac7`.
+at `83410f0ef589431fd290293765b33c3a3adc2ac7`. Row A12 uses the
+declarations at `db940683e1d682d84831e8365720f1c79b5c9b0c`.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
 are relative to `Langlands/GroupScheme/` in that commit. "Field group" means a group
@@ -259,6 +260,27 @@ SHA-256 `962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4`.
   [Statement](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelStatement.md),
   [anisotropy proof](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelProof.md),
   [index proof](../../Langlands/GroupScheme/Reductive/TitsIndexAnisotropicKernelIndexProof.md)
+
+**A12. Integral cocharacters of the maximal split torus.** Tits 1966,
+§2.5.1, equations (1), printed p.40 (PDF p.45), describes the split
+torus by equations on the containing maximal torus.
+
+- `TitsIndexSplitCocharactersStatement` takes the semisimple field
+  group and actual index data of A11, with affine and locally finite
+  type structure map. A cocharacter of the containing torus over
+  \(k_s\) comes from a unique cocharacter of the chosen maximal split
+  torus over \(k\) if and only if it annihilates the zero-restriction
+  simple roots and has constant integral pairing on each star orbit
+  of absolute simple roots. The map is composition with \(S\to T\)
+  followed by base change.
+- `titsIndexSplitCocharacters` proves the proposition (P). Annihilating
+  the zero-face roots makes the Weyl correction act trivially on the
+  cocharacter. The simple-root pairings determine it by the finite
+  index of the absolute root lattice in the semisimple case. Thus the
+  star equations give ordinary Galois invariance, and descent followed
+  by the largest-split-subtorus factorization gives the unique lift.
+  [Statement](../../Langlands/GroupScheme/Reductive/TitsIndexSplitCocharactersStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/TitsIndexSplitCocharactersProof.md)
 
 ## B. Quasi-split groups and inner forms
 

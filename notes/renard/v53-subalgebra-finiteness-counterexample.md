@@ -11,12 +11,12 @@ des groupes réductifs p-adiques*, French edition dated 9 July 2026, printed pp.
 pp. 130–131. The same example refutes condition (C) of the Markdown of
 [`RenardIwahoriHeckeSubalgebraFinitenessStatement`](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md).
 
-This is not a Lean proof of the negation of
-`Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement`. That statement
-quantifies over a `KPBuildingAssignment` that is available for the group. The example
-refutes it whenever an available assignment exists for the group `G` below. The Library does
-not prove that such an assignment exists. If none exists, the Lean statement is vacuous for
-this `G`. "Scope" below lists the statements this example does not affect.
+`Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` quantifies over an
+available `KPBuildingAssignment`. The Library gives a valid assignment for every
+connected reductive group over a nonarchimedean local field. To derive the Lean negation
+from the example below requires comparing its rational-point group, torus, special
+vertex, subgroup \(K\) and transversal with the data of the statement and formalizing
+the Hecke calculation. [Availability proof](../../Langlands/Geometry/Building/BruhatTitsAvailabilityProof.md)
 
 ## Fields and the norm group
 
@@ -257,9 +257,10 @@ vanishes at `x₁fz`. But `a_{x₁fz}(x₁fz) = vol(K x₁fz K)⁻¹ > 0`, and `
 - **Unaffected: the module form.** The published module-form statement
   [`IwahoriHeckeDecompositionStatement`](../../Langlands/Representation/Hecke/IwahoriHeckeDecompositionStatement.md)
   and its proof `iwahoriHeckeDecomposition` are not affected.
-- **Refuted only in conditional form: `RenardIwahoriHeckeSubalgebraFinitenessStatement`.**
-  The example refutes it under the availability caveat stated at the top. This note
-  does not formalize the argument.
+- **Comparison with `RenardIwahoriHeckeSubalgebraFinitenessStatement`.**
+  The paper example uses the specific torus and special vertex described above.
+  A formal proof would transport those data and the Hecke calculation to the Lean
+  proposition.
 - **Refuted on paper: Renard's printed Lemma.** V.5.3 fixes a compact open `K` contained in
   and normal in `K₀` that admits Iwahori decompositions along the standard parabolics. For
   such `K`, the Lemma is false, even when `K` also has all the V.5.2 (ii)–(iv) properties.
