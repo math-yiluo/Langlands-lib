@@ -17,7 +17,9 @@ ledger for family 5 of the algebraic and reductive group-scheme program. Family 
 
 The original rows describe Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`.
 Rows D12, D13 and the quotient-group statement in I2 use the declarations at
-`83410f0ef589431fd290293765b33c3a3adc2ac7`. All Lean names are in
+`83410f0ef589431fd290293765b33c3a3adc2ac7`. E7 and the exact comparison
+proofs in I1 and I3 use the declarations at
+`7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. All Lean names are in
 `Langlands.GroupScheme` unless a namespace is shown. Module paths are relative to
 `Langlands/GroupScheme/`.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`. "Connected
@@ -119,7 +121,7 @@ The author re-read every locator below in the original source for this note, on 
   `g` and an isomorphism `e` of sources with `i ≫ (G.innerIso g).hom = e.hom ≫ i'`.
 - **Field hypotheses.** Unless a row says otherwise, a statement quantifies over every field
   `k : Type u`, of any characteristic, finite or infinite, perfect or not, with no
-  valuation or topology. The rows with an extra field hypothesis are: C8 (`[Infinite k]`),
+  valuation or topology. The rows with an extra field hypothesis are C8 and E7 (`[Infinite k]`),
   E6 (`k` a nonarchimedean local field), H2 (`[Finite k]`), H3 (the dimension-one norm
   criterion) and the examples H5 (a quadratic extension with a nontrivial automorphism).
   `RelativeRoot.QuotientActionComparisonStatement` (row G1) is stated over an arbitrary
@@ -687,13 +689,28 @@ centralize `H(k')`.
   Hypotheses: `F` a **nonarchimedean local field** (`ValuativeRel`, `TopologicalSpace`,
   `IsNonarchimedeanLocalField`); `M` connected reductive. Conclusion: the `F`-points of the
   scheme centre of `M` equal the centre of the abstract group `M(F)`.
-- Scope: the statement is not asserted over other fields. The published proof follows the
-  shape of Milne 1.93, with density of `M(F)` obtained from the local field (an implicit
-  function argument), not from unirationality. Milne, Theorem 17.93, printed p.382
-  (PDF 398), gives density of `G(k)` for a connected reductive `G` over any infinite field;
-  combined with 1.93 that would give the comparison over every infinite field, but no such
-  statement or proof is in the Library.
+- The proof uses the density of `M(F)` from the local field through an implicit
+  function argument. E7 gives the infinite-field comparison.
 - Status P: `rationalCenterComparison` (`Rational/RationalCenterComparisonProof`).
+
+**E7. Rational points of the centre over an infinite field.**
+Milne 2017, Propositions 1.92–1.93, printed pp.33–34 (PDF pp.49–50), with
+\(H=G\) and \(k'=k\), give the centre comparison once \(G(k)\) is dense.
+Theorem 17.93(b), printed p.382 (PDF p.398), supplies density for
+connected reductive groups over infinite fields. The source is
+`milne-2017-algebraic-groups`, SHA-256
+`899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
+
+- `InfiniteFieldCenterComparisonStatement` assumes an infinite field \(k\)
+  and connected reductive \(G\) over \(k\). It gives the equality of
+  `schemeCenterPoints G` and `Subgroup.center (rationalPoints G)` as
+  subgroups of \(G(k)\).
+- `infiniteFieldCenterComparison` proves the exact proposition (P).
+  The proof first identifies the two translations by a central rational
+  point using density, reducedness of \(G\) and separatedness. Evaluating
+  their equality on every test gives the all-test centrality assertion.
+  [Statement](../../Langlands/GroupScheme/Rational/InfiniteFieldCenterComparisonStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/InfiniteFieldCenterComparisonProof.md)
 
 ## F. Smooth connected affine groups (Conrad–Gabber–Prasad, Appendix C.2)
 
@@ -879,14 +896,19 @@ nontrivial restrictions to `S` of the roots of `(G, T)_{k^s}`.
   a split torus; `f : T ⟶ M` and `j : M ⟶ G`; a character `α` of `T`. Conclusion: `α` is a
   root of `f ≫ j` (a relative root when `f ≫ j` is a maximal split torus) if and only if
   `α ≠ 0` and some root `β` of `j_K` satisfies `f_K ≫ β = α_K`.
+  The same module derives C3's negation stability in
+  `relativeRootNegationStatement_of_rootDatum_fieldExtension_maximalTorus`.
 - D: `exists_maximalTorus_extension_of_finiteType` (`Rational/MaximalTorusFiniteType`): for
   `G` affine and locally of finite type over a field, every closed torus factors through a
   maximal torus. With a field over which that maximal torus splits (the `IsTorus` notion of
   family 2), this supplies the `M` and `K` of the previous theorem.
-- Scope: this is a theorem with hypotheses, not a closed proposition; no Lean statement
-  packages Milne's assertion as one proposition. Its consequence
-  `relativeRootNegationStatement_of_rootDatum_fieldExtension_maximalTorus` (same module)
-  derives C3's negation stability from it.
+- `RelativeRootAbsoluteRestrictionStatement` packages the equivalence for a
+  connected reductive \(G\), a maximal \(k\)-split torus \(S\), a maximal
+  torus \(T\) containing \(S\), and any field extension \(K/k\) splitting
+  \(T\). `relativeRootAbsoluteRestriction` specializes the preceding weight
+  theorem to prove the exact proposition (P).
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeRootAbsoluteRestrictionStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeRootAbsoluteRestrictionProof.md)
 
 **I2. The relative Weyl group as a restriction of absolute Weyl elements.** Source:
 Borel–Tits, Corollaire 5.5, printed p.97 (PDF p.44). For an extension
@@ -907,42 +929,40 @@ the image of the simultaneous normalizer in \(N(T)(K)/Z(T)(K)\) to
   with the class of each simultaneous normalizer point.
   [Statement](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientStatement.md)
 
-**I3. Relative root groups from absolute root groups.** Source: Milne 2017, 25.19, printed
-p.549 (PDF 565): the subgroup of `G_{k^s}` generated by the root groups `U_β` with
-`β|_S = α` is defined over `k`; it is the root group `U_α`.
-- The relative root groups themselves are constructed and characterized over `k` (G1). A
-  statement comparing them with absolute root groups after a field extension has status M.
+**I3. Relative root groups from absolute root groups.**
+Borel–Tits 1965, §§3.8(ii), 3.13(b) and 5.2, printed pp.76, 79 and 96
+(PDF pp.23, 26 and 43), use the roots restricting to positive integral
+multiples of the given relative root. Milne 2017, §25.19, printed p.549
+(PDF p.565), uses roots restricting exactly to it. The registered
+Borel–Tits source `borel-tits-1965-groupes-reductifs` has SHA-256
+`ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad`.
+The Milne source is the one cited in E7.
 
-## Summary and remaining obligations
+- `RelativeRootGroupAbsoluteGenerationStatement`, with the same
+  field and torus hypotheses as I1, makes \((U_{(a)})_K\) the smallest
+  closed subgroup of \(G_K\) containing the absolute root groups whose
+  roots restrict to positive integral multiples of \(a_K\). The
+  containment and minimality clauses are subgroup-functor inequalities
+  on every scheme test over \(K\). `relativeRootGroupAbsoluteGeneration`
+  proves the exact proposition (P).
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeRootGroupAbsoluteGenerationStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeRootGroupAbsoluteGenerationProof.md)
+- `RelativeRootGroupExactGenerationStatement` gives generation by roots
+  restricting exactly to \(a_K\) if \(2a\) is absent. The proof
+  `relativeRootGroupExactGeneration` uses I1 and the relative root-system
+  multiple bound to identify the two generating families (P). The
+  characteristic-two example exhibits a proper subgroup generated by
+  exact restrictions when the doubled root occurs.
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeRootGroupExactGenerationStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeRootGroupExactGenerationProof.md),
+  [counterexample](../errata/milne-relative-root-groups-characteristic-two.md)
 
-The counts and obligations below describe the original snapshot. Later coverage
-records D7, D8 and H3, exact proofs for the nine composite targets, and the
-scope and exact proofs of I1–I3.
-[Milestone ledger](ledger-milestones-interfaces.md#status-changes-since-the-family-ledgers),
-[rational structure coverage](rational-structure-coverage-2026-11-13.md),
-[relative and absolute coverage](rational-absolute-coverage-2026-11-13.md).
+## Later coverage
 
-Counted by the Lean statements named above, 79 have published proofs (P). Nine have a
-composite from published results and no published wrapper theorem (C): the conjunctions
-`RelativeRankStatement`, `RelativeCentralDirectionsStatement`,
-`RelativeRoot.RootSubgroupStructureStatement` and `RelativeRoot.RootProductStatement`; the
-projections `ParabolicRootPresentationIndependenceStatement` and
-`ParabolicRootPresentationIsoStatement`; the weakening
-`ParabolicIntersectionSplitTorusStatement`; and the source theorems
-`TitsStandardParabolicStatement` (D7) and
-`RepresentedParabolicDoubleCosetStatement` (D8). One row is open (O):
-Steinberg's theorem `DimensionLEOneQuasiSplitStatement` (H3). Two source
-assertions have no Lean statement (M): the relative/absolute Weyl comparison (I2) and the
-relative/absolute root group comparison (I3). The root
-comparison I1 is available as a published theorem with hypotheses (D).
-
-Remaining obligations of this family:
-
-1. Proofs for D7 and D8 (now in the Library; see the rational structure coverage note).
-2. A proof of Steinberg's theorem (H3) (now in the Library, as `dimensionLEOneQuasiSplit`).
-3. Named wrapper theorems for the C rows. These need no new
-   mathematics.
-4. Statements for I2 and I3, and a closed proposition for I1.
-5. The centre comparison of E6 is stated and proved only over nonarchimedean local fields.
-   The Library has no statement of it over other fields; this ledger records that scope and
-   claims nothing beyond it.
+The named proofs for the original composite targets include D7 and D8,
+the rank and central-direction conjunctions, the root-subgroup and
+ordered-product conjunctions, the two parabolic presentation projections
+and the common split torus in the intersection of two parabolics.
+`dimensionLEOneQuasiSplit` proves the Steinberg assertion in H3.
+[Rational structure coverage](rational-structure-coverage-2026-11-13.md),
+[milestone ledger](ledger-milestones-interfaces.md#status-changes-since-the-family-ledgers)

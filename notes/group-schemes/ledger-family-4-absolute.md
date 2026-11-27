@@ -10,7 +10,8 @@ published proofs for C13, E3 and the first two interfaces of F. Its
 records the exact independent proofs for C11 and the third interface of F.
 
 The additional field comparisons in A6, A10, A11, B7 and D8 are recorded at
-Library commit `cf95b60a0d1a76782b35d915d189d581090e1c62`.
+Library commit `cf95b60a0d1a76782b35d915d189d581090e1c62`. D9 uses the
+declarations at `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`.
 
 This note, dated 10 November 2026, is the source-to-declaration
 ledger for family 4 of the algebraic and reductive group-scheme program. Family 4 covers:
@@ -577,6 +578,28 @@ Corollary 5.2.8, printed pp.155–156 (PDF 155–156).
   [Statement](../../Langlands/GroupScheme/Rational/ParabolicNormalizerStatement.md)
   [Proof](../../Langlands/GroupScheme/Rational/ParabolicNormalizerProof.md)
 
+**D9. Bruhat double cosets of a Borel pair with split maximal torus.**
+Milne 2017, Proposition 21.1, §21.h and Remark 21.74, printed pp.424 and
+446–447 (PDF pp.440 and 462–463), identify the Weyl group and give the
+disjoint Borel double cosets of a split reductive group. The source is
+`milne-2017-algebraic-groups`, SHA-256
+`899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
+
+- `SplitBruhatRationalPointsStatement` takes a connected reductive \(G\)
+  over any field \(k\) and a Borel pair \((B,T)\) with \(T\) split. It gives
+  an equivalence between `relativeWeylGroup t` and the double-coset set
+  \(B(k)\backslash G(k)/B(k)\), specified by \([n]\mapsto B(k)nB(k)\)
+  for every rational normalizer point. The denominator of the Weyl
+  quotient is the image of \(T(k)\) by `maximalTorusCentralizer`.
+- `splitBruhatRationalPoints` proves the exact proposition (P).
+  A regular cocharacter represents \(B\) by its dynamic parabolic.
+  The rational Bruhat equivalence for that parabolic then gives the
+  stated equivalence. `IsBorelPair.bruhatRationalPoints_of_isSepClosed`
+  supplies the same conclusion for every Borel pair over a separably
+  closed field by splitting its torus.
+  [Statement](../../Langlands/GroupScheme/Absolute/SplitBruhatRationalPointsStatement.md),
+  [proof](../../Langlands/GroupScheme/Absolute/SplitBruhatRationalPointsProof.md)
+
 ## E. The determinant of `Ad` on `Lie U(χ)`
 
 In E1–E3, `P`, `M`, `U` are arbitrary closed subgroups representing `P(χ)`, `Z(χ)` and
@@ -662,6 +685,6 @@ equivariance on all tests and an isomorphism at the terminal stage.
   the torus-centralizer Borel theorem.
 - D8 gives the all-test normalizer equality for every parabolic of a connected
   reductive group over a field, including parabolics in non-quasi-split groups.
-- Scope differences for the originally cited statements occur in B7
-  (algebraically closed, no comparison of subgroup and ambient Lie line)
-  and D7 (covering).
+- The split Borel-pair proof in D9 gives covering and separation of the
+  rational double cosets, including over separably closed fields.
+- The subgroup realization in B7 is over algebraically closed fields.

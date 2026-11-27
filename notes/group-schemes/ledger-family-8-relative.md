@@ -1,7 +1,9 @@
 # Group-scheme ledger, family 8: relative structure over general bases
 
-For the dynamic statements and their proofs, see [the dynamic update](dynamic-relative-progress.md).
-It updates rows D2 and F1–F2; the labels below describe the original snapshot.
+Rows B6, B9, C4, D1–D2 and F1–F3 include the declarations at Library
+commit `186f3b2ccb3bfee3f9da8d4478ad38d207e354fa`. The dynamic update
+describes the field and general-base proof routes.
+[Dynamic subgroups](dynamic-relative-progress.md)
 
 This note, dated 10 November 2026, is the source-to-declaration
 ledger for family 8 of the algebraic and reductive group-scheme program. Family 8 covers:
@@ -15,7 +17,8 @@ ledger for family 8 of the algebraic and reductive group-scheme program. Family 
 - descent, and the general-base dynamic constructions, including smoothness over a ring and
   the scheme-level decomposition `P(λ) ≅ U(λ) × Z(λ)`.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. Lean names are in `Langlands.GroupScheme` unless a
+The original snapshot is Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`.
+Lean names are in `Langlands.GroupScheme` unless a
 namespace is shown. Module paths are relative to `Langlands/GroupScheme/` unless they start
 with `Langlands/`.
 
@@ -26,7 +29,7 @@ are listed in the published family-7 ledger
 [ledger-family-7-split-classification.md](ledger-family-7-split-classification.md) and are
 not repeated here. No row asserts a global choice of a split maximal torus or of a root
 datum over an arbitrary base: such data are supplied, or exist over local or strictly
-henselian local rings, as each row states.
+henselian local rings or on étale charts, as each row states.
 
 ## Status codes and evidence
 
@@ -36,11 +39,11 @@ hypotheses, a status and the evidence.
 - **D (definition or internal result).** A published construction, or a published theorem
   that is not a closed proposition (for instance a theorem with hypotheses). The evidence is
   its module path. 
-- **P (published proof).** The Library at the commit above contains a theorem whose type is
-  exactly the statement. The evidence is that theorem and its module path. Every P row was
-  also type-checked as `example : S := proof`, with no errors or warnings, and
-  `#print axioms` reported only `propext`, `Classical.choice` and `Quot.sound`. No further
-  proof work is needed.
+- **P (published proof).** The Library at the commit applicable to the row
+  contains the named theorem at the exact proposition. The evidence is the
+  theorem and its module path. The original and refreshed proof entries were
+  checked against their propositions, and the axiom checks reported only
+  `propext`, `Classical.choice` and `Quot.sound`.
 - **C (composite, not published).** No published theorem has the statement as its type, but
   a projection out of a published conjunction has it. The author type-checked the
   projection in the same private module. What is missing is a named wrapper theorem, not
@@ -55,8 +58,10 @@ The label "published" means: in the Library.
 
 Source locators use these registered sources, cited by source id:
 
-- `conrad-2014-reductive-group-schemes`: B. Conrad, *Reductive group schemes* (2014).
-  Printed page = PDF page.
+- `conrad-2014-reductive-group-schemes` is B. Conrad, *Reductive group
+  schemes* (2014), SHA-256
+  `1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a`.
+  Printed and PDF pages agree.
 - SGA 3, Exposé VI_B, Gille–Polo recomposed edition of 13 October 2024, retained in the
   project literature; PDF pages are given.
 - SGA 3, Exposé XI, Gille–Polo provisional recomposition of December 2008, file
@@ -68,8 +73,8 @@ Source locators use these registered sources, cited by source id:
 - `conrad-gabber-prasad-2015-pseudo-reductive`: B. Conrad, O. Gabber and G. Prasad,
   *Pseudo-reductive groups*, 2nd edition (2015). PDF page = printed page + 26.
 
-The author re-read every locator below in the original source for this note, on 10 November
-2026, and checked that the cited item is on the cited page.
+The original source locators were checked against the retained editions on
+10 November 2026. The later entries use the same editions.
 
 ## A. Definitions and general-base constructions
 
@@ -102,10 +107,8 @@ All rows are D.
   2014, Theorem 4.1.7, pp.112–113, the representability part. Smoothness over a ring and the
   scheme-level decomposition over any base are rows F1 and F2 below. Transport and fpqc
   reflection of the dynamic subgroups are recorded in the published note
-  [transport-dynamic-progress.md](transport-dynamic-progress.md). That note lists dynamic
-  smoothness only over fields and calls unrestricted-base smoothness remaining; it does not
-  mention `dynamicSmooth_ring`, which proves smoothness over every affine base (F1). Over a
-  non-affine base the remaining-work entry of that note still applies.
+  [transport-dynamic-progress.md](transport-dynamic-progress.md).
+  F1 gives representability and smoothness over arbitrary base schemes.
 
 ## B. Fibrewise criteria, identity components and normalizers
 
@@ -165,7 +168,12 @@ All rows are D.
   `i : P ⟶ G` closed and parabolic after every base change to a field, the normalizer of
   `range i` is `range i`. Applying it to the published proofs gives the assertion for every
   such `i`.
-- Status M for a closed proposition stating this.
+- `RelativeParabolicSelfNormalizerStatement` states this over every
+  commutative ring with the same smooth closed subgroup and field-valued
+  parabolicity hypotheses. `relativeParabolicSelfNormalizer` proves the
+  exact proposition (P).
+  [Statement](../../Langlands/GroupScheme/RelativeParabolicNormalizerStatement.md),
+  [proof](../../Langlands/GroupScheme/RelativeParabolicNormalizerProof.md)
 
 **B7. Proper ambient schemes for self-normalizing subgroups.** Source: Conrad 2014, Theorem
 2.3.6(1), pp.72–74, with Proposition 2.1.6, pp.61–62.
@@ -187,6 +195,30 @@ Proposition 5.2.3, p.152.
   exactly the cosets of `P` on every test scheme.
 - Status P: `Langlands.Global.IntegralIwasawaFamily.relativeParabolicQuotient`
   (`Langlands/Global/IntegralIwasawaFamilyReduction`).
+
+**B9. Relative parabolic inclusions and their moduli.** Conrad 2014,
+Proposition 5.2.3, pp.152–153, gives closedness and the étale-local
+dynamic description. Corollary 5.2.9, pp.156–157, gives the smooth
+proper scheme of parabolic subgroups.
+
+- For a reductive \(G\) and a relative parabolic \(i:P\to G\) over any
+  scheme \(S\), `relativeParabolicClosed` proves
+  `RelativeParabolicClosedStatement` (P). The theorem
+  `relativeParabolicEtaleLocalDynamic` proves
+  `RelativeParabolicEtaleLocalDynamicStatement` (P), supplying on each
+  member of an étale cover a cocharacter whose dynamic parabolic is
+  represented by the pullback of \(i\).
+  [Closedness statement](../../Langlands/GroupScheme/RelativeLevi/ParabolicClosedStatement.md),
+  [dynamic statement](../../Langlands/GroupScheme/RelativeLevi/ParabolicLocalDynamicStatement.md),
+  [proofs](../../Langlands/GroupScheme/RelativeLevi/ParabolicClosedProof.md)
+- `relativeParabolicScheme` proves `RelativeParabolicSchemeStatement`
+  (P). For a reductive \(G\) over any scheme, it gives a smooth proper
+  \(S\)-scheme with a universal relative parabolic of the pulled-back
+  group. Every relative parabolic over a test scheme is the pullback
+  along a unique morphism to this scheme, with equality of subgroup
+  images on all tests.
+  [Statement](../../Langlands/GroupScheme/RelativeLevi/ParabolicSchemeStatement.md),
+  [proof](../../Langlands/GroupScheme/RelativeLevi/ParabolicSchemeProof.md)
 
 ## C. Relative tori, maximal tori over local bases, and Hom schemes
 
@@ -213,10 +245,24 @@ pp.290–291.
   fibre. Conclusion: it is maximal on every residue-field fibre.
 - Status P: `localClosedFibreMaximalPropagation` (same module).
 
-**C4. Étale-local existence and conjugacy of maximal tori.** Source: Conrad 2014, Theorem
-3.2.6, p.94, and Corollary 3.2.7, p.95, over a general base.
-- Status M for these étale-local statements over a general base; C2 is their strictly
-  henselian consequence.
+**C4. Étale-local existence and conjugacy of maximal tori.**
+Conrad 2014, Corollary 3.2.7, p.95, gives existence for reductive groups.
+Theorem 3.2.6, p.94, assumes that maximal tori in the geometric fibre
+identity components are their own centralizers. Its proof on pp.94–95
+gives the conjugacy construction for supplied maximal tori of a smooth
+affine group.
+- `EtaleLocalMaximalTorusExistenceStatement` gives an étale cover of an
+  arbitrary base of a reductive group, with an actual closed relative
+  torus maximal on every residue fibre over each chart. Status P via
+  `etaleLocalMaximalTorusExistence`.
+  [Statement](../../Langlands/GroupScheme/Torus/EtaleLocalMaximalExistenceStatement.md),
+  [proof](../../Langlands/GroupScheme/Torus/EtaleLocalMaximalExistenceProof.md)
+- `EtaleLocalMaximalTorusConjugacyStatement` takes a smooth affine ambient
+  group and two closed relative tori maximal on every residue fibre.
+  On each member of an étale cover it gives a point conjugating the two
+  subgroup images on all tests. Status P via `etaleLocalMaximalTorusConjugacy`.
+  [Statement](../../Langlands/GroupScheme/Torus/EtaleLocalMaximalConjugacyStatement.md),
+  [proof](../../Langlands/GroupScheme/Torus/EtaleLocalMaximalConjugacyProof.md)
 
 **C5. Hom schemes and the scheme of subtori.** Source: SGA 3 XI, Théorème 4.1 and Corollaire
 4.2, PDF p.20.
@@ -244,24 +290,37 @@ pp.290–291.
 
 ## D. Local splitting, root data and the isomorphism theorem
 
-In D1–D5 the base is `Spec R` for a **local** ring `R`, and the split torus
-`i : 𝔾_m^I ⟶ G` is **supplied**: a closed subgroup that is a maximal torus on every
-residue-field fibre.
+The fibrewise root datum over a local ring in D1 and the local split assertions
+in D2–D4 use supplied split maximal tori. Their inclusions are closed
+and maximal on every residue-field fibre. D5 takes two reductive groups
+over a strictly henselian local domain and an isomorphism of their generic fibres.
 
 **D1. Root data of a split reductive group over a local ring.** Source: Conrad 2014,
 Definition 5.1.1, p.136, and Proposition 5.1.6, p.138, with Definition 3.2.1, p.91.
 - Lean: `LocalSplitFibrewiseRootDatumExistenceStatement` (`Reductive/LocalSplitRootDatumExistenceStatement`).
   Hypotheses: as above, `G` reductive with affine structure map. Conclusion: one root datum on
   `ℤ^I` that is the root datum of every fibre (`IsFibrewiseRootDatumOf`).
-- Scope: no étale cover and no existence of the torus appear; Conrad's Lemma 5.1.3, pp.136–137,
-  that every reductive group scheme splits étale-locally, has status M, as do the root spaces
-  as line bundles in Definition 5.1.1.
 - Status P: `localSplitFibrewiseRootDatumExistenceProof`
   (`Reductive/LocalSplitRootDatumExistenceProof`).
+- `EtaleLocalSplitReductiveStatement` gives the splitting in Conrad,
+  Lemma 5.1.3, pp.136–137. Each point of the base of a reductive group admits
+  an étale affine neighbourhood with a closed coordinate split maximal
+  torus, one actual root datum on all field fibres and free rank-one
+  exponent-weight modules for its roots. Status P via `etaleLocalSplitReductive`.
+  [Statement](../../Langlands/GroupScheme/Reductive/EtaleLocalSplitStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/EtaleLocalSplitProof.md)
+- For a reductive group over any base with a supplied fibrewise maximal
+  coordinate split torus and global coordinate root datum,
+  `CoordinateRootDatum.rootLineBundle` constructs the actual root-weight
+  line bundle. Its pullback to every affine test is the sheaf of the
+  corresponding exponent-weight module. `CoordinateRootDatum.rootFrame_hom_eq`
+  gives coherence under further affine base change.
+  [Construction](../../Langlands/GroupScheme/Reductive/RootWeightLineBundles.md)
 
 **D2. Root groups, Weyl elements and the big cell.** Source: Conrad 2014, Theorem 4.1.4,
-p.110, Corollary 5.1.9, pp.140–141, and Theorem 5.1.13, p.143. The base ring is local and
-**reduced**.
+p.110, Corollary 5.1.9, pp.140–141, and Theorem 5.1.13, p.143.
+The local split results for root groups, Weyl normalization and the big cell
+take a **reduced local ring**.
 - `LocalSplitRootGroupStatement` and `LocalSplitSimpleRootGroupStatement`
   (`Reductive/LocalSplitCell`, `Reductive/LocalSplitReducedIsomorphismReduction`): root group
   parametrizations `𝔾_a → G` for all roots (respectively the simple roots and their negatives)
@@ -271,11 +330,19 @@ p.110, Corollary 5.1.9, pp.140–141, and Theorem 5.1.13, p.143. The base ring i
 - `LocalSplitCell.LocalWeylNormalizationStatement` (`Reductive/LocalWeylNormalizationStatement`):
   every root parametrization of a simple root has an opposite partner giving the Weyl point.
   Status P: `LocalSplitCell.localWeylNormalization` (`Reductive/LocalWeylNormalizationUnconditionalProof`).
-- `LocalSplitBigCellStatement` (`Reductive/LocalSplitCell`): the cell map built from the
-  negative and positive root groups and the torus is an open immersion. Status P:
-  `localSplitBigCell` (`Reductive/LocalSplitBigCellProof`).
-- The relative open cell `U(−λ) × P(λ) → G` of Conrad 2014, Theorem 4.1.7(4), p.113, for a
-  general cocharacter over a general base, has status M.
+- `LocalSplitBigCellStatement` (`Reductive/LocalSplitCell`) takes a
+  supplied fibrewise root datum, a base, root parametrizations and
+  enumerations of its positive and negative roots. The ordered product
+  of the negative root groups, the torus and the positive root groups
+  maps to \(G\) by an open immersion. Status P via `localSplitBigCell`
+  (`Reductive/LocalSplitBigCellProof`).
+- `DynamicBaseOppositeCellStatement` gives the relative open immersion
+  \(U(-\lambda)\times_S P(\lambda)\to G\) of Conrad 2014, Theorem 4.1.7(4),
+  pp.113–114, over any base. It takes a smooth affine group \(G\) and
+  supplied representatives for the two functors. Status P via
+  `dynamicBaseOppositeCell`.
+  [Statement](../../Langlands/GroupScheme/Dynamic/BaseOppositeCellStatement.md),
+  [proof](../../Langlands/GroupScheme/Dynamic/BaseOppositeCellProof.md)
 
 **D3. The isomorphism theorem over a reduced local ring.** Source: Conrad 2014, Theorem
 6.1.17, p.197, and §6.2: Theorem 6.2.1, p.198, Theorem 6.2.4, p.201, and Corollary 6.2.7,
@@ -364,8 +431,12 @@ group over a ring with an arbitrary `G_m`-action, and the paragraph after Exampl
 p.114, which says that the theorem adapts to any base scheme. The Library's dynamic
 subgroups are those of the conjugation action through a cocharacter.
 
-**F1. Dynamic subgroups of a smooth affine group over a ring are smooth.** Source: Conrad
-2014, Theorem 4.1.7(4), p.113, the smoothness assertion.
+**F1. Representability, smoothness, fibres and Lie weights of dynamic subgroups.**
+Conrad 2014, Theorem 4.1.7(1) and (2), pp.112–113, gives representability
+and connectedness. Part (4), p.113, assumes a smooth ambient group and
+gives smoothness and the Lie description in that setting. The paragraph
+after Example 4.1.9, p.114, extends the theorem to arbitrary bases.
+
 - D: `dynamicSmooth_ring` (`Dynamic/SmoothOverRing`). Hypotheses: a commutative ring
   `R : Type u`; `G` over `Spec R` with smooth and affine structure map; a cocharacter `χ`;
   any `j : H ⟶ G`. Conclusion: if `j` represents `P(χ)`, `Z(χ)` or `U(χ)` (in the sense of
@@ -373,12 +444,39 @@ subgroups are those of the conjugation action through a cocharacter.
   explicit arguments, not a proposition declaration. No noetherian or finiteness hypothesis
   on `R` is imposed. Together with the affine representability of section A, every smooth
   affine `G` over an affine base has smooth closed dynamic subgroups.
-- Scope: the base is affine. The author's content search found no Lean statement of the
-  smoothness of the dynamic subgroups over a non-affine base scheme, nor of the
-  representability of `P(λ)`, `Z(λ)`, `U(λ)` over a non-affine base; status M. Over a ring,
-  the open cell of Theorem 4.1.7(4) is the M item of D2, and the connectedness of fibres
-  (Theorem 4.1.7(2)) and the Lie algebra description (Theorem 4.1.7(4)) have no Lean
-  statement either; status M. The field cases of all these assertions belong to family 4.
+- `dynamicBaseRepresentability` proves `DynamicBaseRepresentabilityStatement`
+  (P). An affine locally finitely presented \(G\) over any base has
+  locally finitely presented closed representatives for its three
+  dynamic subgroup functors on all tests.
+  [Statement](../../Langlands/GroupScheme/Dynamic/BaseRepresentabilityStatement.md),
+  [proof](../../Langlands/GroupScheme/Dynamic/BaseRepresentabilityProof.md)
+- `dynamicBaseSmoothConnected` proves `DynamicBaseSmoothConnectedStatement`
+  (P). For smooth affine \(G\) over any base, every such representative
+  is smooth. The fibres of \(U(\lambda)\) are geometrically connected.
+  So are those of \(P(\lambda)\) and \(Z(\lambda)\) when the fibres of
+  \(G\) are geometrically connected.
+  [Statement](../../Langlands/GroupScheme/Dynamic/BaseSmoothConnectedStatement.md),
+  [proof](../../Langlands/GroupScheme/Dynamic/BaseSmoothConnectedProof.md)
+- `dynamicBaseConnected` proves `DynamicBaseConnectedStatement` with
+  the same connectedness conclusions for affine locally finitely
+  presented \(G\) and supplied representatives (P).
+  `dynamicBaseUnipotentFibres` proves `DynamicBaseUnipotentFibresStatement`
+  for affine locally finite-type \(G\) and a supplied representative of
+  \(U(\lambda)\), giving unipotence after every field-valued base change (P).
+  The unipotence assertion uses Conrad 2014, p.114, and CGP 2015,
+  Lemma 2.1.5, printed pp.49–51 (PDF pp.75–77).
+  [Connectedness proof](../../Langlands/GroupScheme/Dynamic/BaseConnectedProof.md),
+  [unipotence proof](../../Langlands/GroupScheme/Dynamic/BaseUnipotentFibresProof.md)
+- `dynamicRingLie` proves `DynamicRingLieStatement` (P). Over any
+  commutative ring, for an affine locally finitely presented \(G\), the
+  actual dual-number Lie points lying in \(Z(\lambda)\), \(P(\lambda)\)
+  and \(U(\lambda)\) are the weight-zero, nonnegative and positive
+  weight submodules, respectively. The source in this generality is
+  CGP 2015, Proposition 2.1.8(1), printed p.53 (PDF p.79), in
+  `conrad-gabber-prasad-2015-pseudo-reductive`, SHA-256
+  `1b77af44c90211db9a3efa50896a3722f4fd2df332b7ce2ec52202eb243e7f54`.
+  [Statement](../../Langlands/GroupScheme/Dynamic/RingLieStatement.md),
+  [proof](../../Langlands/GroupScheme/Dynamic/RingLieProof.md)
 
 **F2. The scheme-level decomposition `P(λ) ≅ U(λ) × Z(λ)` over any base.** Source: Conrad
 2014, Theorem 4.1.7(3), p.113: multiplication `Z(λ) ⋉ U(λ) → P(λ)` is an isomorphism; and
@@ -392,7 +490,8 @@ morphism.
   `0` is a homomorphism `P ⟶ Z` with the inclusion `Z ⟶ P` as a section; its kernel,
   composed with `P ⟶ G`, represents `U(χ)`; and multiplication `U ×_S Z ⟶ P` is an
   isomorphism of schemes over `S`. Representability is a hypothesis; section A supplies it
-  for `G` with affine underlying scheme over an affine base.
+  for `G` with affine underlying scheme over an affine base, and F1
+  supplies it for affine locally finitely presented `G` over any base.
 - On points, the same decomposition over every test scheme is
   `Dynamic.isComplement'_unipotent_centralizer` (section A).
 - `GeneralLinear.DynamicStatement` (`Dynamic/GeneralLinearStatement`): for `GL_n` over every
@@ -400,60 +499,38 @@ morphism.
   block parabolic, block Levi and block unipotent subgroup functors, with the limit map and,
   on the points over every test scheme, `U(λ)` normal in `P(λ)` with complement `Z(λ)`.
   Status P: `GeneralLinear.dynamicStatement` (`Dynamic/GeneralLinearProof`). Its component
-  `GeneralLinear.DiagonalCocharacterLeviDecompositionStatement` (the decomposition on
-  points) is status C: `GeneralLinear.dynamicStatement.2.2.2.1`. A named wrapper only.
+  `GeneralLinear.DiagonalCocharacterLeviDecompositionStatement` (the
+  decomposition on points) is P by `GeneralLinear.diagonalCocharacterLeviDecomposition`.
+  [Proof](../../Langlands/GroupScheme/Dynamic/GeneralLinearDiagonalCocharacterLeviDecompositionProof.md)
 
-**F3. Relative Levi subgroups.** Sources: Conrad 2014, Corollary 5.2.5, p.153 (the
-unipotent radical `R_u(P)` of a parabolic subgroup of a reductive group scheme over any
-base); Definition 5.4.2, p.174 (a Levi subgroup of `P` is a smooth closed `S`-subgroup `L`
-with `L ⋉ R_u(P) → P` an isomorphism; the functor `Lev(P)`; `Z_G(λ)` is a Levi subgroup of
-`P_G(λ)`); Proposition 5.4.5, p.177 (each maximal torus of `P` lies in a unique Levi
-subgroup); Corollary 5.4.6, p.178 (`Lev(P)` is represented by an `R_u(P)`-torsor; any two
-Levi `S`-subgroups are conjugate by a unique point of `R_u(P)(S)`; a Levi subgroup is its
-own normalizer in `P`); Corollary 5.4.8, p.179 (over an affine base `S` a Levi
-`S`-subgroup exists, and `H^1(S_et, L) → H^1(S_et, P)` is bijective).
-- Status M for all of these. The Library has no definition of the unipotent radical of a
-  parabolic subgroup scheme over a general base, of a Levi subgroup of such a parabolic, or
-  of the functor `Lev(P)`, and no statement of the existence, torsor, conjugacy or
-  uniqueness assertions above. The Library's `IsRationalLeviSubgroup` (`Rational/LeviSubgroup`)
-  is defined over a field only; its rows are in family 5. Existence is local on the base in
-  general and global over an affine base (Corollary 5.4.8); no row asserts more.
-- What exists over a general base is the dynamic case: for a cocharacter `λ` with
-  represented dynamic subgroups, F2 gives `P(λ) ≅ U(λ) × Z(λ)` as schemes. The Library does
-  not identify `U(λ)` with a relative `R_u(P(λ))`, since the latter is not defined.
+**F3. Relative Levi subgroups.** Conrad 2014, Definition 5.4.2, p.174,
+defines a Levi subgroup as a smooth closed subgroup whose multiplication
+with the relative unipotent radical gives the semidirect product.
+`IsRelativeUnipotentRadical` requires a smooth closed normal subgroup with
+the unipotent radical on each geometric fibre. `IsRelativeLeviSubgroup`
+uses the actual multiplication morphism of schemes.
+`RelativeLevi.moduliFunctor P` has as values the subgroup images of Levi
+inclusions over the test scheme and restricts them by base change.
+The conjugation action is that of the actual radical.
+[Predicates](../../Langlands/GroupScheme/RelativeLevi/Basic.md),
+[moduli functor](../../Langlands/GroupScheme/RelativeLevi/ModuliFunctor.md)
 
-## Summary and remaining obligations
+The following propositions concern a reductive group and a relative
+parabolic over an arbitrary scheme, with an affine-base hypothesis
+where indicated. Each linked theorem proves the exact named proposition (P).
 
-Counted by the Lean statements named above, 29 have published proofs (P), including
-`GeneralLinear.DynamicStatement` (F2) and the two parts of finite Galois descent (E1). Six
-have a composite and no wrapper theorem (C): the three components of
-`RelativeIdentityComponent.SmoothStructureStatement`, `GeneralLinear.IsReductiveStatement`,
-`IsSplitTorus.IsReductiveStatement` and
-`GeneralLinear.DiagonalCocharacterLeviDecompositionStatement` (F2). Four statements are open
-(O): `HomScheme.TorusChart.EtaleSplitStatement`, `LocalSplitIsomorphismTheoremStatement` and
-`LocalSplitReductiveGeometricIsoStatement`, and
-`StrictHenselianGenericIsoStatement`. Rows F1 and F2 are D: published theorems
-with hypotheses, not proposition declarations.
+| Source and assertion | Proposition and proof |
+| --- | --- |
+| Corollary 5.2.5, p.153. There is a relative unipotent radical with a unique all-test subgroup image in \(P\). Given the radical, the fppf quotient of \(P\) by it is reductive and every surjective homomorphism from \(P\) to a reductive group factors through that quotient uniquely. | `RelativeUnipotentRadicalStatement` and `RelativeParabolicReductiveQuotientStatement`. [`relativeUnipotentRadical`](../../Langlands/GroupScheme/RelativeLevi/UnipotentRadicalProof.md), [`relativeParabolicReductiveQuotient`](../../Langlands/GroupScheme/RelativeLevi/ReductiveQuotientProof.md) |
+| Example 5.2.2, p.151, and Definition 5.4.2, p.174. For a cocharacter of a reductive group and representatives of its three dynamic functors, \(P(\lambda)\) is relative parabolic. The factorizations of \(U(\lambda)\) and \(Z(\lambda)\) through \(P(\lambda)\) are a relative radical and a relative Levi, respectively. | `DynamicRelativeLeviStatement`. [`dynamicRelativeLevi`](../../Langlands/GroupScheme/RelativeLevi/DynamicProof.md) |
+| Theorem 5.4.3, pp.174–175. Over an affine base the supplied relative radical has a finite closed normal series with vector-bundle additive fppf quotients. | `RelativeUnipotentRadicalFiltrationStatement`. [`relativeUnipotentRadicalFiltration`](../../Langlands/GroupScheme/RelativeUnipotent/RadicalFiltrationProof.md) |
+| Proposition 5.4.5, p.177. A supplied closed relative torus that is maximal in each residue fibre of \(P\) is contained in a unique Levi subgroup image. | `RelativeTorusLeviStatement`. [`relativeTorusLevi`](../../Langlands/GroupScheme/RelativeLevi/TorusLeviProof.md) |
+| Corollary 5.4.6, p.178. For a supplied relative radical, there is an actual fpqc torsor representing Levi subgroup images, with the conjugation action. Any two supplied Levi subgroups are conjugate by a unique global point of the supplied radical. A Levi is its own all-test normalizer in \(P\). | `RelativeLeviTorsorStatement`, `RelativeLeviConjugacyStatement` and `RelativeLeviSelfNormalizerStatement`. [`relativeLeviTorsor`](../../Langlands/GroupScheme/RelativeLevi/TorsorProof.md), [`relativeLeviConjugacy`](../../Langlands/GroupScheme/RelativeLevi/ConjugacyProof.md), [`relativeLeviSelfNormalizer`](../../Langlands/GroupScheme/RelativeLevi/SelfNormalizerProof.md) |
+| Corollary 5.4.8, p.179, existence clause. Over an affine base there is a relative Levi. The proof takes a section of the torsor using the finite vector-bundle series of the radical. | `RelativeLeviAffineExistenceStatement`. [`relativeLeviAffineExistence`](../../Langlands/GroupScheme/RelativeLevi/AffineExistenceProof.md) |
 
-Source assertions without a closed Lean statement (M):
+Corollary 5.4.8 also gives the bijection
+\(H^1(S_{\mathrm{et}},L)\to H^1(S_{\mathrm{et}},P)\). The linked Lean
+proposition covers the existence clause.
 
-1. Parabolic subgroups of reductive group schemes are self-normalizing (B6; Conrad 5.2.8).
-   A published theorem with hypotheses gives it.
-2. Étale-local existence and conjugacy of maximal tori over a general base (C4; Conrad
-   3.2.6–3.2.7).
-3. Étale-local splitting of reductive group schemes (D1; Conrad Lemma 5.1.3) and the root
-   spaces as line bundles (Conrad Definition 5.1.1).
-4. The relative open cell for a general cocharacter over a general base (D2; Conrad 4.1.7(4)).
-5. The remaining general-base parts of Conrad Theorem 4.1.7 (F1): connectedness of fibres
-   and the Lie algebra description over a ring, and representability and smoothness of the
-   dynamic subgroups over a non-affine base.
-6. Relative Levi subgroups (F3; Conrad 5.2.5, 5.4.2, 5.4.5, 5.4.6, 5.4.8): the unipotent
-   radical of a parabolic subgroup scheme, the definition of Levi subgroups and of `Lev(P)`,
-   uniqueness given a maximal torus, the torsor and conjugacy statement, and existence over
-   an affine base. These need definitions before statements.
-
-The wrapper theorems for the C rows need no new mathematics. Of the four open statements, the
-Library now proves `LocalSplitIsomorphismTheoremStatement` (`localSplitIsomorphismTheorem`),
-`LocalSplitReductiveGeometricIsoStatement` (`localSplitReductiveGeometricIso`) and
-`StrictHenselianGenericIsoStatement` (`strictHenselianGenericIso`), all under `Reductive/`; this
-note records no proof of `HomScheme.TorusChart.EtaleSplitStatement`.
+The rational Levi results over a field are in family 5.
+[Rational parabolics and Levis](ledger-family-5-rational.md#b-rational-parabolics-minimal-parabolics-and-rational-levi-subgroups)
