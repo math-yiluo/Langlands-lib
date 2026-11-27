@@ -212,10 +212,9 @@ private theorem contMDiff_compactSection (z₁ z₂ : ℂ) (f : G m → ℂ) (g 
     exact contMDiffAt_const.congr_of_eventuallyEq (he.mono fun v hv =>
       Function.notMem_support.mp fun hv' => hv (subset_tsupport _ hv'))
 
-private theorem compactSection_of_split (z₁ z₂ : ℂ) (f : G m → ℂ) (g : G n → ℂ)
-    (φ : X m n → ℂ) (u : G (m + n)) (a : G m) (b : G n) (C : X n m) (Y : X m n)
+private theorem pivots_eq_of_split (u : G (m + n)) (a : G m) (b : G n) (C : X n m) (Y : X m n)
     (hu : split u.val = Matrix.fromBlocks a.val (a.val * Y) C (C * Y + b.val)) :
-    compactSection z₁ z₂ f g φ u = detWeight z₁ a.val * detWeight z₂ b.val * f a * g b * φ Y := by
+    lead u.val = a.val ∧ rectangle u.val = Y ∧ schur u.val = b.val := by
   have hA : lead u.val = a.val := by simp only [lead, hu, Matrix.toBlocks_fromBlocks₁₁]
   have hY : rectangle u.val = Y := by
     rw [rectangle, hA]
@@ -225,11 +224,63 @@ private theorem compactSection_of_split (z₁ z₂ : ℂ) (f : G m → ℂ) (g :
   have hS : schur u.val = b.val := by
     simp only [schur, hY, tail, lower, hu, Matrix.toBlocks_fromBlocks₂₂,
       Matrix.toBlocks_fromBlocks₂₁, add_sub_cancel_left]
+  exact ⟨hA, hY, hS⟩
+
+private theorem compactSection_of_split (z₁ z₂ : ℂ) (f : G m → ℂ) (g : G n → ℂ)
+    (φ : X m n → ℂ) (u : G (m + n)) (a : G m) (b : G n) (C : X n m) (Y : X m n)
+    (hu : split u.val = Matrix.fromBlocks a.val (a.val * Y) C (C * Y + b.val)) :
+    compactSection z₁ z₂ f g φ u = detWeight z₁ a.val * detWeight z₂ b.val * f a * g b * φ Y := by
+  obtain ⟨hA, hY, hS⟩ := pivots_eq_of_split u a b C Y hu
   have hC : u ∈ parabolicCell m n := by
     change (lead u.val).det ≠ 0
     rw [hA]
     exact (determinant a).ne_zero
   rw [compactSection, ite_eq_left hC, sectionFormula, hA, hS, hY, unitsExtension_val, unitsExtension_val]
+
+private theorem preimage_tsupport_unitsExtension {d : ℕ} (f : G d → ℂ) :
+    Units.val ⁻¹' tsupport (unitsExtension f) = tsupport f := by
+  unfold tsupport
+  rw [Units.isOpenEmbedding_val.isOpenMap.preimage_closure_eq_closure_preimage
+    Units.continuous_val]
+  congr 1
+  ext v
+  simp only [Set.mem_preimage, Function.mem_support, unitsExtension_val]
+
+/-- At a point of the topological support in the pivot chart, both Levi arguments belong
+to the topological supports of their input functions. -/
+theorem mem_tsupport_levi_of_compactSection {z₁ z₂ : ℂ} {f : G m → ℂ} {g : G n → ℂ}
+    {φ : X m n → ℂ} {u : G (m + n)} {a : G m} {b : G n} {C : X n m} {Y : X m n}
+    (hu : u ∈ tsupport (compactSection z₁ z₂ f g φ))
+    (hblocks : split u.val = Matrix.fromBlocks a.val (a.val * Y) C (C * Y + b.val)) :
+    a ∈ tsupport f ∧ b ∈ tsupport g := by
+  obtain ⟨hA, _, hS⟩ := pivots_eq_of_split u a b C Y hblocks
+  have hU : IsUnit (lead u.val) := hA ▸ a.isUnit
+  have hLead : ContinuousAt (fun v : G (m + n) => lead v.val) u :=
+    (contDiff_lead.continuous.comp Units.continuous_val).continuousAt
+  have hSchur : ContinuousAt (fun v : G (m + n) => schur v.val) u :=
+    (contDiff_tail.contDiffAt.sub (contDiffAt_matrix_mul contDiff_lower.contDiffAt
+      (contDiffAt_rectangle u.val hU))).continuousAt.comp Units.continuous_val.continuousAt
+  have h (v : G (m + n)) (hv : v ∈ Function.support (compactSection z₁ z₂ f g φ)) :
+      lead v.val ∈ Function.support (unitsExtension f) ∧
+      schur v.val ∈ Function.support (unitsExtension g) := by
+    have hc : v ∈ parabolicCell m n := by
+      by_contra hn
+      exact hv (by simp only [compactSection, ite_eq_right hn])
+    constructor <;> intro hz <;> exact hv (by
+      simp only [compactSection, ite_eq_left hc, sectionFormula, hz, mul_zero, zero_mul])
+  constructor
+  · rw [← preimage_tsupport_unitsExtension]
+    change a.val ∈ closure (Function.support (unitsExtension f))
+    rw [← hA]
+    refine closure_mono ?_ (mem_closure_image (x := u) (f := fun v : G (m + n) => lead v.val) hLead hu)
+    rintro _ ⟨v, hv, rfl⟩
+    exact (h v hv).1
+  · rw [← preimage_tsupport_unitsExtension]
+    change b.val ∈ closure (Function.support (unitsExtension g))
+    rw [← hS]
+    refine closure_mono ?_ (mem_closure_image (x := u) (f := fun v : G (m + n) => schur v.val) hSchur hu)
+    rintro _ ⟨v, hv, rfl⟩
+    exact (h v hv).2
 
 /-- A smooth product of Levi sections and a compact smooth rectangle kernel gives a genuine
 smooth section supported in the open real parabolic cell. -/

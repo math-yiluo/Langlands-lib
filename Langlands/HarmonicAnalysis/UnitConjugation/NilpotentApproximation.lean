@@ -86,11 +86,16 @@ variable {X : Type*} [TopologicalSpace X]
 /-- On a compact set in `X`, points of a continuous map that are close to a small
 scalar multiple of a conjugate from a fixed compact set must lie in any specified
 open neighborhood of the nilpotent preimage. -/
-def NilpotentApproximationStatement (p : X → R) (K V : Set X) (ω : Set R) : Prop :=
+def UniformNilpotentNeighborhoodEstimate (p : X → R) (K V : Set X) (ω : Set R) : Prop :=
   Continuous p → IsCompact K → IsOpen V → IsCompact ω →
   (∀ x ∈ K, IsNilpotent (p x) → x ∈ V) →
   ∃ ε : ℝ, 0 < ε ∧ ∀ (c : F) (x : X), x ∈ K → ∀ (g : Rˣ) (a : R), a ∈ ω →
     ‖c‖ < ε → ‖c • conjugationHomeomorph g a - p x‖ < ε → x ∈ V
+
+/-- The uniform nilpotent-neighborhood estimate over a complete field and a finite-dimensional algebra. -/
+def NilpotentApproximationStatement [CompleteSpace F] [FiniteDimensional F R]
+    (p : X → R) (K V : Set X) (ω : Set R) : Prop :=
+  UniformNilpotentNeighborhoodEstimate (F := F) p K V ω
 
 /-- Separate nonnilpotent points of the compact set from zero in the coefficient
 comparison, and make the separation uniform by the tube lemma. -/

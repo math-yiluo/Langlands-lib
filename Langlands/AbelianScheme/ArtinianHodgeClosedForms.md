@@ -1,0 +1,5 @@
+# Closed relative one-forms in the degree-one Hodge sequence
+
+A finite frame of the relative differential sheaf over the local base identifies compatible Čech one-forms with tuples of compatible functions. Those function cochains come from unique scalars on the base. The module of compatible one-forms is thus the finite free module of scalar tuples indexed by the frame.
+
+To check closedness on the supplied cover, the proof extends a scalar tuple to the doubled cover consisting of the given charts and their images under inversion. This one-form is odd because its coordinates are constant and inversion negates the frame. Its exterior derivative is Čech compatible and therefore even. Naturality also makes the derivative odd. It vanishes since the base is a rational algebra, and restricting the cochain to the original charts proves closedness there. This proves the finite free left term used in the degree-one sequence of Lan's revised thesis (14 March 2021), §2.1.6, p. 135, equations (2.1.6.5) and (2.1.6.6).

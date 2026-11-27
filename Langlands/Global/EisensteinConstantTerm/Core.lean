@@ -154,7 +154,7 @@ theorem normalizedHaarMeasure_isMulLeftInvariant (U : SubgroupFunctor G)
 
 /-- Removing the conjugation by `gq = q(x₀) ∈ Q(F)` and unfolding the sum over representatives
 `ρ'` of `(V(F) ∩ wP(F)w⁻¹) \ V(F)`: lower integrals, and integrals under finiteness. -/
-theorem unfold_conj (hN : (SubgroupFunctor.range iV).IsNormal)
+theorem unfold_conj_of_measurable (hN : (SubgroupFunctor.range iV).IsNormal)
     [CompactSpace (AdelicSubgroupPoints.RationalQuotient F G (SubgroupFunctor.range (iV ≫ q)))]
     (wv : AdelicGroupPoints F G) (x₀ : RationalGroupPoints F Q) (gq : AdelicGroupPoints F G)
     (hgq : map F Q G q (rational F Q x₀) = gq) {Jν : Type*} [Countable Jν]
@@ -162,7 +162,7 @@ theorem unfold_conj (hN : (SubgroupFunctor.range iV).IsNormal)
     (hρΓ : ∀ ν, ρ' ν ∈ AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)))
     (hρ : ∀ δ ∈ AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)),
       ∃! ν, δ * (ρ' ν)⁻¹ ∈ stabilizerRationalSubgroup F p (iV ≫ q) wv)
-    {Φ : AdelicGroupPoints F G → ℂ} (hΦc : Continuous Φ)
+    {Φ : AdelicGroupPoints F G → ℂ} (hΦm : Measurable Φ)
     (hΦP : ∀ z ∈ rationalImage F p, ∀ x, Φ (z * x) = Φ x) (g : AdelicGroupPoints F G) :
     (∫⁻ x, ‖Φ (wv⁻¹ * ((Quotient.out x : AdelicSubgroupPoints.adelicPoints F G
         (SubgroupFunctor.range (iV ≫ q))) : AdelicGroupPoints F G) * (gq * g))‖ₑ
@@ -213,7 +213,7 @@ theorem unfold_conj (hN : (SubgroupFunctor.range iV).IsNormal)
   set f : AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q)) → ℂ :=
     fun v => Φ (wv⁻¹ * (v : AdelicGroupPoints F G) * (gq * g)) with hfdef
   have hfm : Measurable f :=
-    (hΦc.comp ((continuous_const.mul continuous_subtype_val).mul continuous_const)).measurable
+    hΦm.comp ((continuous_const.mul continuous_subtype_val).mul continuous_const).measurable
   have hf : ∀ (l : stabilizerRationalSubgroup F p (iV ≫ q) wv)
       (x : AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q))),
       f ((l : AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q))) * x) =
@@ -261,6 +261,40 @@ theorem unfold_conj (hN : (SubgroupFunctor.range iV).IsNormal)
     funext v
     exact tsum_congr fun ν => by rw [hkey]
 
+/-- Unfolding the rational orbit of a continuous kernel. -/
+theorem unfold_conj (hN : (SubgroupFunctor.range iV).IsNormal)
+    [CompactSpace (AdelicSubgroupPoints.RationalQuotient F G (SubgroupFunctor.range (iV ≫ q)))]
+    (wv : AdelicGroupPoints F G) (x₀ : RationalGroupPoints F Q) (gq : AdelicGroupPoints F G)
+    (hgq : map F Q G q (rational F Q x₀) = gq) {Jν : Type*} [Countable Jν]
+    (ρ' : Jν → AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q)))
+    (hρΓ : ∀ ν, ρ' ν ∈ AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)))
+    (hρ : ∀ δ ∈ AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)),
+      ∃! ν, δ * (ρ' ν)⁻¹ ∈ stabilizerRationalSubgroup F p (iV ≫ q) wv)
+    {Φ : AdelicGroupPoints F G → ℂ} (hΦc : Continuous Φ)
+    (hΦP : ∀ z ∈ rationalImage F p, ∀ x, Φ (z * x) = Φ x) (g : AdelicGroupPoints F G) :
+    (∫⁻ x, ‖Φ (wv⁻¹ * ((Quotient.out x : AdelicSubgroupPoints.adelicPoints F G
+        (SubgroupFunctor.range (iV ≫ q))) : AdelicGroupPoints F G) * (gq * g))‖ₑ
+        ∂stabilizerMeasure F p (iV ≫ q) wv =
+      ∫⁻ v in LeftCosetSpace.fundamentalDomain
+          (AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)))
+          (AdelicSubgroupPoints.isDiscrete_rationalSubgroup F G _),
+        ∑' ν, ‖Φ (wv⁻¹ * (ρ' ν : AdelicGroupPoints F G) * gq * ((v : AdelicGroupPoints F G) * g))‖ₑ
+        ∂AdelicSubgroupPoints.normalizedHaarMeasure F G (SubgroupFunctor.range (iV ≫ q))) ∧
+    ((∫⁻ v in LeftCosetSpace.fundamentalDomain
+          (AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)))
+          (AdelicSubgroupPoints.isDiscrete_rationalSubgroup F G _),
+        ∑' ν, ‖Φ (wv⁻¹ * (ρ' ν : AdelicGroupPoints F G) * gq * ((v : AdelicGroupPoints F G) * g))‖ₑ
+        ∂AdelicSubgroupPoints.normalizedHaarMeasure F G (SubgroupFunctor.range (iV ≫ q))) ≠ ∞ →
+      ∫ x, Φ (wv⁻¹ * ((Quotient.out x : AdelicSubgroupPoints.adelicPoints F G
+          (SubgroupFunctor.range (iV ≫ q))) : AdelicGroupPoints F G) * (gq * g))
+          ∂stabilizerMeasure F p (iV ≫ q) wv =
+        ∫ v in LeftCosetSpace.fundamentalDomain
+            (AdelicSubgroupPoints.rationalSubgroup F G (SubgroupFunctor.range (iV ≫ q)))
+            (AdelicSubgroupPoints.isDiscrete_rationalSubgroup F G _),
+          ∑' ν, Φ (wv⁻¹ * (ρ' ν : AdelicGroupPoints F G) * gq * ((v : AdelicGroupPoints F G) * g))
+          ∂AdelicSubgroupPoints.normalizedHaarMeasure F G (SubgroupFunctor.range (iV ≫ q))) :=
+  unfold_conj_of_measurable hN wv x₀ gq hgq ρ' hρΓ hρ hΦc.measurable hΦP g
+
 end Unfold
 
 section Main
@@ -275,13 +309,13 @@ theorem countable_rationalSubgroup_ambient : Countable (rationalSubgroup F G) :=
   LeftCosetSpace.countable_of_isDiscrete _ (AdelicGroupPoints.isDiscrete_rationalSubgroup F G)
 
 omit [IsAffine P.X.left] [IsClosedImmersion p.hom.hom.left] in
-/-- **The constant-term computation.** For `Φ` continuous and left `P(F)`-invariant whose
+/-- **The constant-term computation.** For `Φ` measurable and left `P(F)`-invariant whose
 series of absolute values is bounded on `V(𝔸) g`, and an identification `hB` of the unfolded
 integrals over `(V(F) ∩ w_iP(F)w_i⁻¹) \ V(𝔸)` with given numbers `R i y` (with side conditions
 `Int i y`), the constant term along `V` of `x ↦ ∑_{γ ∈ P(F) \ G(F)} Φ(γ x)` at `g` is
 `∑_i ∑_{c ∈ Q'_i \ Q(F)} R i (γ_c g)`, every `Int i (γ_c g)` holds and the inner sums are
 summable. -/
-theorem constantTerm_series_eq {I : Type*} [Fintype I]
+theorem constantTerm_series_eq_of_measurable {I : Type*} [Fintype I]
     {w : I → (Over.mk (𝟙 (Spec (CommRingCat.of F))) ⟶ G.X)}
     (hw : IsDoubleCosetRepresentatives F q p w)
     (Q' : I → Subgroup (AdelicGroupPoints F G))
@@ -289,7 +323,7 @@ theorem constantTerm_series_eq {I : Type*} [Fintype I]
       (MulAut.conj (innerAdelicPoint F G (w i))).toMonoidHom) ⊔ rationalImage F (iV ≫ q))
     (hN : (SubgroupFunctor.range iV).IsNormal)
     [CompactSpace (AdelicSubgroupPoints.RationalQuotient F G (SubgroupFunctor.range (iV ≫ q)))]
-    {Φ : AdelicGroupPoints F G → ℂ} (hΦc : Continuous Φ)
+    {Φ : AdelicGroupPoints F G → ℂ} (hΦm : Measurable Φ)
     (hΦP : ∀ z ∈ rationalImage F p, ∀ x, Φ (z * x) = Φ x)
     (g : AdelicGroupPoints F G) (B₀ : ℝ≥0∞) (hB₀ : B₀ ≠ ∞)
     (hS : ∀ v : AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q)),
@@ -384,18 +418,18 @@ theorem constantTerm_series_eq {I : Type*} [Fintype I]
       AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q)) → ℂ :=
     fun j v => ∑' ν, Φ ((wv j.1)⁻¹ * (ρ' j.1 ν : AdelicGroupPoints F G) * gq j *
       ((v : AdelicGroupPoints F G) * g))
-  have hterm_cont : ∀ (j : OuterIndex Qr Q') (ν : InnerCosets Pm Vr (wv j.1)),
-      Continuous fun v : AdelicSubgroupPoints.adelicPoints F G
+  have hterm_meas : ∀ (j : OuterIndex Qr Q') (ν : InnerCosets Pm Vr (wv j.1)),
+      Measurable fun v : AdelicSubgroupPoints.adelicPoints F G
         (SubgroupFunctor.range (iV ≫ q)) =>
         Φ ((wv j.1)⁻¹ * (ρ' j.1 ν : AdelicGroupPoints F G) * gq j *
           ((v : AdelicGroupPoints F G) * g)) := fun j ν =>
-    hΦc.comp (continuous_const.mul (continuous_subtype_val.mul continuous_const))
+    hΦm.comp (continuous_const.mul (continuous_subtype_val.mul continuous_const)).measurable
   have hLm : ∀ j, Measurable (Lfun j) := fun j =>
-    Measurable.tsum fun ν => (hterm_cont j ν).measurable.enorm
+    Measurable.tsum fun ν => (hterm_meas j ν).enorm
   have hGm : ∀ j, Measurable (Gfun j) := fun j =>
-    Measurable.tsum fun ν => (hterm_cont j ν).measurable
-  have hUC := fun j : OuterIndex Qr Q' => unfold_conj hN (wv j.1) (hx₀ j).choose (gq j)
-    (hx₀ j).choose_spec (ρ' j.1) (hρΓ j.1) (hρ j.1) hΦc hΦP g
+    Measurable.tsum fun ν => hterm_meas j ν
+  have hUC := fun j : OuterIndex Qr Q' => unfold_conj_of_measurable hN (wv j.1) (hx₀ j).choose (gq j)
+    (hx₀ j).choose_spec (ρ' j.1) (hρΓ j.1) (hρ j.1) hΦm hΦP g
   -- decomposition of the series of absolute values
   have hdecL : ∀ v : AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q)),
       ∑' c : ParabolicRationalCosets F p,
@@ -447,7 +481,7 @@ theorem constantTerm_series_eq {I : Type*} [Fintype I]
         Φ (((c.out : rationalSubgroup F G) : AdelicGroupPoints F G) *
           ((v : AdelicGroupPoints F G) * g)) :=
     Measurable.tsum fun c =>
-      (hΦc.comp (continuous_const.mul (continuous_subtype_val.mul continuous_const))).measurable
+      hΦm.comp (continuous_const.mul (continuous_subtype_val.mul continuous_const)).measurable
   have hEinv : ∀ (δ : Γ) (v : AdelicSubgroupPoints.adelicPoints F G
       (SubgroupFunctor.range (iV ≫ q))),
       ∑' c : ParabolicRationalCosets F p,
@@ -503,6 +537,42 @@ theorem constantTerm_series_eq {I : Type*} [Fintype I]
     (ne_top_of_le_ne_top hLfin (ENNReal.tsum_le_tsum fun j =>
       lintegral_mono fun v => enorm_tsum_le_tsum_enorm))]
   rw [← tsum_congr fun j => (hBj j).2, hsumm.tsum_sigma, tsum_fintype]
+
+omit [IsAffine P.X.left] [IsClosedImmersion p.hom.hom.left] in
+/-- The Bruhat expansion of the constant term of a continuous kernel series. -/
+theorem constantTerm_series_eq {I : Type*} [Fintype I]
+    {w : I → (Over.mk (𝟙 (Spec (CommRingCat.of F))) ⟶ G.X)}
+    (hw : IsDoubleCosetRepresentatives F q p w)
+    (Q' : I → Subgroup (AdelicGroupPoints F G))
+    (hQ' : ∀ i, Q' i = (rationalImage F q ⊓ (rationalImage F p).map
+      (MulAut.conj (innerAdelicPoint F G (w i))).toMonoidHom) ⊔ rationalImage F (iV ≫ q))
+    (hN : (SubgroupFunctor.range iV).IsNormal)
+    [CompactSpace (AdelicSubgroupPoints.RationalQuotient F G (SubgroupFunctor.range (iV ≫ q)))]
+    {Φ : AdelicGroupPoints F G → ℂ} (hΦc : Continuous Φ)
+    (hΦP : ∀ z ∈ rationalImage F p, ∀ x, Φ (z * x) = Φ x)
+    (g : AdelicGroupPoints F G) (B₀ : ℝ≥0∞) (hB₀ : B₀ ≠ ∞)
+    (hS : ∀ v : AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q)),
+      ∑' c : ParabolicRationalCosets F p,
+        ‖Φ (((c.out : rationalSubgroup F G) : AdelicGroupPoints F G) *
+          ((v : AdelicGroupPoints F G) * g))‖ₑ ≤ B₀)
+    (R : I → AdelicGroupPoints F G → ℂ) (Int : I → AdelicGroupPoints F G → Prop)
+    (hB : ∀ i y, ∫⁻ x, ‖Φ ((innerAdelicPoint F G (w i))⁻¹ *
+        ((Quotient.out x : AdelicSubgroupPoints.adelicPoints F G
+          (SubgroupFunctor.range (iV ≫ q))) : AdelicGroupPoints F G) * y)‖ₑ
+        ∂stabilizerMeasure F p (iV ≫ q) (innerAdelicPoint F G (w i)) < ∞ →
+      Int i y ∧ R i y = ∫ x, Φ ((innerAdelicPoint F G (w i))⁻¹ *
+        ((Quotient.out x : AdelicSubgroupPoints.adelicPoints F G
+          (SubgroupFunctor.range (iV ≫ q))) : AdelicGroupPoints F G) * y)
+        ∂stabilizerMeasure F p (iV ≫ q) (innerAdelicPoint F G (w i))) :
+    (∀ i (c : OuterCosets (rationalImage F q) (Q' i)),
+      Int i (((c.out : rationalImage F q) : AdelicGroupPoints F G) * g)) ∧
+    (∀ i, Summable fun c : OuterCosets (rationalImage F q) (Q' i) =>
+      R i (((c.out : rationalImage F q) : AdelicGroupPoints F G) * g)) ∧
+    subgroupConstantTerm F (iV ≫ q) (fun x => ∑' c : ParabolicRationalCosets F p,
+        Φ (((c.out : rationalSubgroup F G) : AdelicGroupPoints F G) * x)) g =
+      ∑ i, ∑' c : OuterCosets (rationalImage F q) (Q' i),
+        R i (((c.out : rationalImage F q) : AdelicGroupPoints F G) * g) :=
+  constantTerm_series_eq_of_measurable hw Q' hQ' hN hΦc.measurable hΦP g B₀ hB₀ hS R Int hB
 
 end Main
 

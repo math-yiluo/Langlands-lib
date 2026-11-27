@@ -29,3 +29,5 @@ I.2.17, pp. 37–39, using the adapted Casimir and elliptic estimate from the Li
 rational-invariant forms. The registered source `moeglin-waldspurger-1995-spectral-decomposition`
 contains `05.2_pp_18_40_Automorphic_forms_growth_constant_terms.pdf`, SHA-256
 `296dcb3e7170bb0c2689cf0c79136a43cd86976df2b4c51f027cf9365f7fe988`.
+
+`exists_elliptic_functionInfiniteSlices` isolates the common word equation. Multiplying the monic annihilating polynomial by the variable gives positive order, including for the zero family.

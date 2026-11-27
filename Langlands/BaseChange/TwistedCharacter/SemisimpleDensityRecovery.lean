@@ -143,10 +143,11 @@ variable {F R H : Type*} [NontriviallyNormedField F] [ProperSpace F]
   [compactH : LocallyCompactSpace H] [disconnectedH : TotallyDisconnectedSpace H]
   [countableH : SecondCountableTopology H] [MeasurableSpace H] [borelH : BorelSpace H]
 
-include compactR disconnectedR countableR compactH disconnectedH countableH borelH in
 /-- A density at zero of the extended slice distribution yields a density at the center
 of the original distribution. The ambient coordinate map embeds the units as a clopen chart. -/
-def SemisimpleDensityRecoveryStatement (α : R ≃ₐ[F] R) {j : Rˣ → H} (hj : IsOpenEmbedding j)
+def SemisimpleDensityRecoveryStatement [LocallyCompactSpace R] [TotallyDisconnectedSpace R]
+    [SecondCountableTopology R] [LocallyCompactSpace H] [TotallyDisconnectedSpace H]
+    [SecondCountableTopology H] [BorelSpace H] (α : R ≃ₐ[F] R) {j : Rˣ → H} (hj : IsOpenEmbedding j)
     (ν : Measure H) [IsFiniteMeasureOnCompacts ν] [ν.IsOpenPosMeasure] [(ν.comap j).IsHaarMeasure]
     [MeasurableSpace (adjointFixedAlgebra α)] [BorelSpace (adjointFixedAlgebra α)]
     (ρ : Measure (adjointFixedAlgebra α)) [ρ.IsAddHaarMeasure]

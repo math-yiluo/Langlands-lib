@@ -45,11 +45,11 @@ total mass of `V(F) \ V(𝔸)`. The unfolding results below assume that `V(F) \ 
 
 ## Removing the conjugation and unfolding (`section Unfold`)
 
-`unfold_conj` takes the following data:
+`unfold_conj_of_measurable` takes the following data:
 
 - `γ = q(x₀)` with `x₀ ∈ Q(F)`, a point `w ∈ G(𝔸)`;
 - representatives `ρ'` of `(V(F) ∩ wP(F)w⁻¹) \ V(F)` inside `V(𝔸)`;
-- a continuous left `P(F)`-invariant `Φ`, and `g ∈ G(𝔸)`.
+- a measurable left `P(F)`-invariant `Φ`, and `g ∈ G(𝔸)`.
 
 Let `s` be the chosen fundamental domain of `V(F)`. The lemma proves
 
@@ -69,12 +69,12 @@ for `stabilizerMeasure`. When this is finite, it proves the same identity for th
 
 ## The computation (`section Main`)
 
-`constantTerm_series_eq` takes the following data:
+`constantTerm_series_eq_of_measurable` takes the following data:
 
 - `IsDoubleCosetRepresentatives F q p w` for a finite family `w`;
 - subgroups `Q'_i = (Q(F) ∩ w_iP(F)w_i⁻¹) ⊔ V(F)`;
 - `V` normal in `Q`, with `V(F) \ V(𝔸)` compact;
-- a continuous left `P(F)`-invariant `Φ`, a point `g`, and a bound
+- a measurable left `P(F)`-invariant `Φ`, a point `g`, and a bound
   `∑'_{c ∈ P(F) \ G(F)} ‖Φ(c̄ v g)‖ₑ ≤ B₀ < ∞` for all `v ∈ V(𝔸)`;
 - numbers `R i y` and propositions `Int i y`, together with `hB`: whenever
   `∫⁻ ‖Φ(w_i⁻¹ x̄ y)‖ₑ` over `(V(F) ∩ w_iP(F)w_i⁻¹) \ V(𝔸)` is finite, `Int i y` holds and
@@ -94,8 +94,8 @@ Proof:
   sum without norms.
 - By `tsum_out_eq_tsum_bruhat` and `ENNReal.tsum_sigma'`,
   `∑'_{c ∈ P(F) \ G(F)} ‖Φ(c̄ v g)‖ₑ = ∑'_j L_j(v) ≤ B₀`. Hence `∑'_j ∫⁻_s L_j ≤ B₀ μ_V(s) < ∞`.
-- `unfold_conj` identifies `∫⁻_s L_j` with the lower integral in `hB`, so `hB` applies. With
-  `unfold_conj` again it gives `Int` and `R i (γ_c g) = ∫_s G_j`. Then
+- `unfold_conj_of_measurable` identifies `∫⁻_s L_j` with the lower integral in `hB`, so `hB` applies. With
+  `unfold_conj_of_measurable` again it gives `Int` and `R i (γ_c g) = ∫_s G_j`. Then
   `‖R i (γ_c g)‖ₑ ≤ ∫⁻_s L_j`, which gives summability over `j` and, by `Summable.sigma_factor`,
   over each `c`.
 - For the constant term:
@@ -105,6 +105,9 @@ Proof:
     reindexing and `Summable.tsum_sigma`).
   - `integral_tsum` exchanges the integral with the sum over `j`, dominated by `∑'_j ∫⁻_s L_j`.
   - `Summable.tsum_sigma` and `tsum_fintype` split the sum over `j` into `∑_i ∑'_c`.
+
+The continuous versions `unfold_conj` and `constantTerm_series_eq` follow by measurability of
+continuous kernels.
 
 ## Provenance
 

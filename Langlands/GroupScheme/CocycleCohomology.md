@@ -40,3 +40,5 @@ The provenance is internal: this is the orbit relation of the already published
 `Cocycle.isTrivial_refine_iff` from triviality to a pair of cocycles.
 The implementation imports `CocycleRelativeTrivialization`, which imports
 `CocycleRefinement` and `TorsorCocycle`. All universes are arbitrary.
+
+`isTrivial_of_section` gives a trivialization of a cocycle when its cover has a section.

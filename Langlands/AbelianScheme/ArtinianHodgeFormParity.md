@@ -1,0 +1,5 @@
+# Inversion signs on relative form cochains
+
+Inversion pulls each vector in the global relative differential frame back to its negative. Thus the frame coordinates of a pulled-back one-form are the negatives of the pulled-back functions. The vectors obtained by wedging pairs of frame vectors are fixed, by multilinearity. These calculations take place on the actual intersections of the supplied cover, with a chart assignment compatible with inversion.
+
+A compatible degree-zero family of two-forms has compatible function coordinates in the wedge frame. Each such function comes from the base by the global-function theorem for abelian schemes, so inversion fixes the family. The exterior derivative of an odd one-form cochain is odd by naturality. When the derivative is Čech compatible, it is also even, so it vanishes over a rational base. This is used in constructing the degree-one Hodge sequence from Lan's equations (2.1.6.5) and (2.1.6.6) in §2.1.6, p. 135 of his revised thesis (14 March 2021).

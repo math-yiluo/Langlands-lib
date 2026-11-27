@@ -269,7 +269,7 @@ private abbrev forgetToModules : CommAlgCat.{u} R ⥤ ModuleCat.{u} R :=
   forget₂ (CommAlgCat R) (AlgCat R) ⋙ forget₂ (AlgCat R) (ModuleCat R)
 
 /-- A map semilinear over an `R`-algebra homomorphism is linear over `R`. -/
-private def restrictBase {A B M N : Type u} [CommRing A] [CommRing B] [Algebra R A]
+def restrictBase {A B M N : Type u} [CommRing A] [CommRing B] [Algebra R A]
     [Algebra R B] [AddCommGroup M] [AddCommGroup N] [Module A M] [Module B N]
     [Module R M] [Module R N] [IsScalarTower R A M] [IsScalarTower R B N]
     (f : A →ₐ[R] B) (g : M →ₛₗ[f.toRingHom] N) : M →ₗ[R] N where

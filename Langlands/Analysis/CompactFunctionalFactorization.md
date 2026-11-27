@@ -1,0 +1,5 @@
+# One-direction factorization of compactly supported functionals
+
+The one-variable Dixmier–Malliavin identity applies to the scalar curve obtained by evaluating a bounded functional on the compact restriction of a translated solution. A common compact norm bounds every derivative on the interval, with a constant for each order. The derivative functionals extend to that compact by Hahn–Banach. Their norm-summable linear combination represents the infinite derivative series. Translation by the one-parameter subgroup identifies the derivatives at each point with derivatives at zero of the translated input, so the identity expresses the original functional as two smooth averages. This is a local form of the one-direction argument in Dixmier and Malliavin, *Factorisations de fonctions et de vecteurs indéfiniment différentiables* (1978), Lemme 2.5 and §3.3.
+
+The registered source is `dixmier-malliavin-1978-factorisations`, retained English translation, SHA-256 `b9ae377268ddfe90468dfcf21d08ee57df6a40496ba3c57276795a8ebbf5f07f`.

@@ -1,0 +1,5 @@
+# Smooth kernels from compactly bounded functionals
+
+The one-direction factorization iterates along a basis of the exponential Lie algebra of a closed linear realization. Coordinates of the second kind and their smooth Haar density turn each product average into integration against a smooth compact group kernel. A compact functional applied to the translates of such a kernel is smooth by the compact restriction calculus. Two function-valued Bochner integrals agree after evaluation at each point of the compact domain, by right invariance of Haar. Commuting the compact functional with those integrals then proves the desired integral identity. Applying this construction to evaluation on the singleton identity gives the reproducer. The factorization follows the use of exponential coordinates in Dixmier and Malliavin (1978), §3.
+
+The registered source is `dixmier-malliavin-1978-factorisations`, retained English translation, SHA-256 `b9ae377268ddfe90468dfcf21d08ee57df6a40496ba3c57276795a8ebbf5f07f`.

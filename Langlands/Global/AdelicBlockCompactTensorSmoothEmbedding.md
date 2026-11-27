@@ -1,0 +1,7 @@
+# Smooth embeddings from compact tensor evaluations
+
+`compactTensorSmoothEmbedding` constructs one linear map into the scalar sections with an open finite stabilizer, smooth archimedean slices, and finite-dimensional infinite compact orbit span. Its inputs are finite and infinite evaluations, a linear coefficient pairing, the normalized finite and compact parabolic laws, right translation in each factor, and local smooth scalar extensions of the pure compact evaluations. The finite representation is smooth and the infinite representation is compact-finite. Both families of compact evaluations separate vectors, and the coefficient pairing is injective.
+
+The finite intertwiner supplies the open stabilizer condition. The infinite compact intertwiner uses the same scalar map, and `smoothCompactTensorSectionIntertwiner` restricts its image to the sections satisfying the other two conditions. The finite translation law follows by forgetting to the finite-smooth sections. Injectivity follows by forgetting to the full scalar sections and applying `compactTensorSectionMap_injective`. The normalized coefficient at a pair of compact arguments is the coefficient pairing applied after tensoring the two evaluations.
+
+The construction uses the normalized compact picture of Getz–Hahn (2024), §10.1, printed pp. 270–271 (PDF pp. 282–283), `getz-hahn-2024-automorphic-representations`, SHA-256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.

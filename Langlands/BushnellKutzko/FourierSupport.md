@@ -21,6 +21,11 @@
 - `rectangularPairing_eq_trace`: for square matrices, `⟨z, x⟩ = tr(z xᵀ)`.
 - `trace_mul_sub_eq_one_of_rectangularFourierIntegral_ne_zero`: if the Fourier integral of
   `twistedIndicator ψ P b'` is nonzero at `x`, then `ψ(tr(z (xᵀ - b'))) = 1` for every `z ∈ P`.
+- `rectangularFourierIntegral_twistedIndicator_of_trace_eq_one`: if `P` is a measurable set and
+  `ψ(tr(z (xᵀ - b'))) = 1` for all `z ∈ P`, the Fourier integral of `twistedIndicator ψ P b'` at
+  `x` equals `μ.real P · ψ(tr x)`, where `μ = RankinSelberg.rectangularMeasure ν N N` and
+  `μ.real P = (μ P).toReal`. This is the Haar volume of `P` when `μ P` is finite, and `0` when
+  `μ P = ∞`.
 - `LatticeChain.matrixFiltration 𝓛 k` (definition): for a nonarchimedean local field `K` and a
   lattice chain `𝓛` in `K^N`, the additive subgroup of matrices `y` with `Matrix.toLin' y ∈ 𝔓^k(𝓛)`
   (`LatticeChain.endFiltration`). `mem_matrixFiltration` unfolds membership.
@@ -54,6 +59,12 @@ sides are Bochner integrals, possibly zero).
 
 For the Fourier support, if `ψ(tr(z (xᵀ - b'))) ≠ 1` for some `z ∈ P`, then
 `ψ(-tr(b' z)) ψ(⟨z, x⟩) = ψ(tr(z xᵀ) - tr(z b')) ≠ 1` and the first lemma forces `Φ̂(x) = 0`.
+
+For the value where the phase is trivial, substitute `y = 1 + z` using translation
+invariance. The integrand on `P` is `ψ(tr x)` because
+`ψ(-tr(b' z)) ψ(tr(z xᵀ)) = 1`, and it vanishes outside `P`. Since `P` is measurable,
+`integral_indicator_const` gives the integral of the constant times the indicator as
+`μ.real P · ψ(tr x)`.
 
 For the lattice form, apply `mem_endFiltration_one_sub_of_forall` to `y = toLin'(c⁻¹ (xᵀ - b'))`
 and the character `t ↦ ψ(c t)`. For `z ∈ 𝔓^k(𝓛)`, its matrix `Z` lies in `matrixFiltration 𝓛 k`

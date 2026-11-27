@@ -1,0 +1,5 @@
+# Algebra of rational operator continuations
+
+`RationalOperatorContinuationData.restrict` keeps a continuation on a smaller domain and `ofFamilyEq` uses it for an equal operator family. `inversion` substitutes inverse characters in the numerator and denominator. `fixedMaps` precomposes and postcomposes by fixed linear maps. `composePolynomial` permits the source map to vary polynomially on the whole parameter space. `regularRatio` multiplies the numerator and denominator by the two entries of a regular-function fraction. The clearing identities use the corresponding linear-map and scalar operations, and the new denominators are nonzero on the indicated domains.
+
+`RationalOperatorPolePresentation.fixedMaps` and `composePolynomial` apply the same source and target maps to both operator numerators. `regularRatio` combines a pole presentation with a `RankOneScalarPolePresentation`. It multiplies their factored denominators, applies the scalar numerator to the operator numerator, and combines the two global cross identities. The unitary factorization is carried by `RationalUnitaryPoleFactorization.mul`.

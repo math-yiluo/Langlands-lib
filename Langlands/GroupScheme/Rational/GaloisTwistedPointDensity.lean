@@ -5,8 +5,7 @@ import Langlands.GroupScheme.Rational.ConnectedGroupUnirationalityReduction
 import Langlands.GroupScheme.Rational.GaloisCocycleStronglyRegular
 import Langlands.GroupScheme.Rational.GeometricPointHom
 import Langlands.GroupScheme.Reductive.FieldExtensionProof
-import Langlands.GroupScheme.Reductive.SemisimpleFieldReflectionProof
-import Langlands.GroupScheme.Reductive.FiniteProducts
+import Langlands.GroupScheme.Reductive.AffineWeilConnectedReductive
 import Langlands.GroupScheme.Torus.TorusUnirationalityProof
 
 /-! # Density of twisted Galois values -/
@@ -186,13 +185,13 @@ private theorem dense_of_surjective_twistMap
 
 section Split
 
-variable [IsGalois K M] [IsAlgClosed M]
+variable [IsGalois K M]
 
 private abbrev factors := AffineWeil.embeddingFactor K M M (geometricGroup K M G)
 
 private theorem embeddingEvaluation_bijective :
     Function.Bijective (embeddingEvaluation K M M) :=
-  embeddingEvaluationStatement K M M (fun _ => IsAlgClosed.splits _)
+  embeddingEvaluationStatement K M M (Normal.splits (inferInstance : Normal K M))
 
 private def restrictionProductIso :
     (baseChange (b K M)).obj (restriction K M G) ≅ GroupScheme.pi (factors K M G) :=
@@ -214,13 +213,8 @@ set_option backward.isDefEq.respectTransparency false in
 private theorem restriction_hasDenseRationalPoints [Infinite K]
     (hH : IsConnectedReductive (geometricGroup K M G)) :
     HasDenseRationalPoints K (restriction K M G).X := by
-  have hprod : IsConnectedReductive (GroupScheme.pi (factors K M G)) :=
-    isConnectedReductive_pi_of_isAlgClosed (factors K M G)
-      (fun τ => IsConnectedReductive.of_iso (coefficientIso K M G τ) hH)
-  have hext : IsConnectedReductive ((baseChange (b K M)).obj (restriction K M G)) :=
-    IsConnectedReductive.of_iso (restrictionProductIso K M G) hprod
   have hW : IsConnectedReductive (restriction K M G) :=
-    IsConnectedReductive.of_fieldExtension hext
+    AffineWeil.isConnectedReductive_restriction K M _ hH
   exact IsUnirational.hasDenseRationalPoints
     (ConnectedUnirationality.infinite_reductive_isUnirational torusUnirationality _ hW)
 
@@ -232,10 +226,16 @@ open GaloisTwistedPointDensity in
 set_option backward.isDefEq.respectTransparency false in
 set_option maxRecDepth 4000 in
 set_option maxHeartbeats 500000 in
-/-- The geometric Weil restriction has two independent coordinates for a
+/-- The scalar-extended Weil restriction has two independent coordinates for a
 nonidentity automorphism, so twisted values of its ground-field points are dense. -/
-theorem galoisTwistedPointDensity : GaloisTwistedPointDensityStatement.{u} := by
-  intro K M _ _ _ _ _ _ _ G hG σ hσ y
+theorem galoisTwistedPointDensity_of_isGalois
+    (K M : Type u) [Field K] [Infinite K] [Field M] [Algebra K M]
+    [FiniteDimensional K M] [IsGalois K M]
+    (G : GroupScheme (Spec (CommRingCat.of K))) (hG : IsConnectedReductive G)
+    (σ : M ≃ₐ[K] M) (hσ : σ ≠ 1) (y : ringTest K M ⟶ G.X) :
+    Dense (⋃ f : (ringTest K M ⟶ G.X),
+      Set.range ((baseChangeBasePointsEquiv (algebraBaseMap K M) G).symm
+        (f⁻¹ * y * (ringTestMap K σ.toAlgHom ≫ f))).left) := by
   let H := geometricGroup K M G
   have hH : IsConnectedReductive H := connectedReductiveFieldExtensionStatement K M G hG
   let : IsAffineHom H.X.hom := hH.isAffineHom
@@ -252,6 +252,11 @@ theorem galoisTwistedPointDensity : GaloisTwistedPointDensityStatement.{u} := by
     (twistMap_surjective (factors K M G) (restrictionProductIso K M G)
       (coefficientIso K M G) (coefficientProjection K M G)
       (coefficientProjection_eq_pi K M G) hneq _)
+
+/-- The original density proposition over algebraically closed coefficients. -/
+theorem galoisTwistedPointDensity : GaloisTwistedPointDensityStatement.{u} := by
+  intro K M _ _ _ _ _ _ _ G hG σ hσ y
+  exact galoisTwistedPointDensity_of_isGalois K M G hG σ hσ y
 
 set_option backward.isDefEq.respectTransparency false in
 /-- The dense twisted values meet the open whose points have maximal torus centralizers. -/

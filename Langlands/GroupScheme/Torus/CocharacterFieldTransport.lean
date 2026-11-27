@@ -118,6 +118,14 @@ theorem galoisRepresentation_scalarExtension (hT : IsSplitTorus (TM).toGrp)
     hχ, latticePairing_galoisRepresentation, latticePairing_congr]
 
 
+theorem groupHom_towerIsoOf_inv {S U V : Scheme.{u}} (b' : U ⟶ S) (j' : V ⟶ U)
+    (T' : CommGroupScheme S) (c' : V ⟶ S) (hc' : j' ≫ b' = c') :
+    CommGroupScheme.groupHom (towerIsoOf b' j' T' c' hc').inv =
+      (groupTowerIsoOf b' j' c' hc' T'.toGrp).inv := by
+  subst c'
+  rw [towerIsoOf, groupTowerIsoOf, eqToIso_refl, eqToIso_refl, Iso.refl_trans, Iso.refl_trans]
+  rfl
+
 end cocharacterLattice
 
 /-- On split tori, cocharacter extension is bijective and intertwines compatible

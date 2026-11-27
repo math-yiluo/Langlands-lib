@@ -21,3 +21,5 @@ also proves that equality of the distributions attached to two bounded
 inducing functionals implies equality of the functionals. A complex matrix test
 is the sum of its real part and \(i\) times its imaginary part, so equality on
 real tests suffices. This is an internal input to smooth Whittaker uniqueness.
+
+`exists_averageMap_compactCutoff` gives the original witness before scalar normalization. The cutoff is nonnegative and equals one on the orthogonal subgroup, and its matrix test has topological support in the image of the topological support of the inducing function. This follows by taking the compact support of the cutoff product before extension from the group.

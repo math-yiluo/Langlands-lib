@@ -75,7 +75,7 @@ private abbrev relativeEndFiltration (i j : ℤ) : Submodule 𝒪[F] (𝓛.endFi
 private abbrev endFiltrationQuotient (i j : ℤ) :=
   (𝓛.endFiltration i) ⧸ relativeEndFiltration 𝓛 i j
 
-private theorem finite_endFiltrationQuotient (i j : ℤ) (hij : i ≤ j) :
+theorem finite_endFiltrationQuotient (i j : ℤ) (hij : i ≤ j) :
     Finite (endFiltrationQuotient 𝓛 i j) := by
   obtain ⟨π, hπ⟩ := IsDiscreteValuationRing.exists_irreducible 𝒪[F]
   have hshift (a : ℤ) : 𝓂[F] • 𝓛.endFiltration a = 𝓛.endFiltration (a + 𝓛.period) := by

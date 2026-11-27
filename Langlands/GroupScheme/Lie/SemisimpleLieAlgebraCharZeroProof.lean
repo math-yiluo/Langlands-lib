@@ -23,7 +23,7 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 
 /-- Nilpotence of the action of the bracket with the radical descends from an algebraic
 closure. The scalar extension of the radical is solvable by the derived-series formula. -/
-private theorem isNilpotent_toEnd_of_mem_bracket_radical {k : Type u} [Field k] [CharZero k]
+theorem isNilpotent_toEnd_of_mem_bracket_radical {k : Type u} [Field k] [CharZero k]
     {L : Type v} [LieRing L] [LieAlgebra k L] [FiniteDimensional k L]
     {V : Type w} [AddCommGroup V] [Module k V] [FiniteDimensional k V]
     [LieRingModule L V] [LieModule k L V]
@@ -120,7 +120,7 @@ private theorem center_eq_bot_of_hasFiniteCenter (hcenter : HasFiniteCenter G) :
 
 /-- The faithful tangent representation of a reductive group kills `⁅L, rad L⁆`:
 its image is a normalized family of nilpotent endomorphisms. -/
-private theorem radical_le_center_of_hasTrivialUnipotentRadical
+theorem radical_le_center_of_hasTrivialUnipotentRadical
     (hrad : HasTrivialUnipotentRadical G) :
     radical k (Additive (lieKernel G k)) ≤ LieAlgebra.center k (Additive (lieKernel G k)) := by
   let L := Additive (lieKernel G k)

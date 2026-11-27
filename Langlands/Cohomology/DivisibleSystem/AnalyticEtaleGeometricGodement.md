@@ -1,0 +1,7 @@
+# Godement resolution systems from geometric points of the analytic étale site
+
+A complete algebraically closed extension field realizing the underlying points of an analytic space also realizes the points of each étale object over it. The pointed étale lifting theorem gives a lift with the prescribed underlying point. The actual site fibers then jointly detect morphisms of module sheaves. `etaleGeometricGodementPointFamily` chooses such a family using the common point field construction. Its coefficient universe contains the point fibers and its proof of joint faithfulness uses the ordinary analytic étale topology.
+
+For an $\ell$-divisible system of locally discrete module sheaves, `etaleGeometricGodementResolutionSystem` constructs the termwise Godement resolution. Its exact functor is the actual locally discrete Godement functor, with the proved finite-limit and finite-colimit instances. Joint faithfulness gives the monic coaugmentation. Each level is exact in positive degrees. The local action system still uses the admissible-refinement hypothesis of the category of étale $G$-sheaves, and the module assumes the group is small in the coefficient universe.
+
+The point family and Godement construction are from Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*, §1.5 p. 10. The use of exactness to form resolution systems is Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §2, p. 304, Facts 3–4 and Lemma 2.2. Acyclicity for compactly supported sections is a further input to Harris's cohomology calculation.

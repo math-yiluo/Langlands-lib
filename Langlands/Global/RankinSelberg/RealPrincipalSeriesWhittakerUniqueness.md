@@ -30,3 +30,13 @@ returns the proportionality of the inducing forms.
 
 This is an internal comparison theorem for real Whittaker realizations in
 the Rankin–Selberg proof.
+
+`realPrincipalSeriesWhittakerOrbitFormula` also identifies the restriction of a single nonzero form composed with Borel averaging. On each complex test supported in the longest cell, its value is a fixed nonzero multiple of the left Haar integral on the Borel and upper-unipotent product. The integrand is the inverse inducing weight, the Borel modular character, the right Whittaker character and the test at `b w₀ u⁻¹`. The modular factor comes from the covariance of the right-Haar Borel average. The nonzero restriction proved by Bruhat descent lets the free-orbit formula identify the scalar.
+
+This derived formula gives the character-principal-series comparison on the
+full longest cell. The corresponding two-block calculation evaluates a
+Casselman section by integrating over the upper-right matrix rectangle.
+See the proof of Proposition 14.1, pp. 103–104 of the author-posted edition of
+[H. Jacquet, *Archimedean Rankin–Selberg Integrals* (2009)](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf#page=103).
+The registered source is `jacquet-2009-archimedean-rankin-selberg`, SHA-256
+`7a11766eadf25fb7452ce7faa193469791796f572fc654c8fe90a8608bb46afe`.

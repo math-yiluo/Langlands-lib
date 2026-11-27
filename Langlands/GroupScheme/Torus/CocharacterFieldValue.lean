@@ -59,14 +59,6 @@ private theorem cocharacterValue_left
     ((Gm.algebraPointsEquiv (R := CommRingCat.of E) M).symm a ≫ ν.hom.hom)).left = _
   simp only [Lie.affineBaseChangeEquiv_left, Over.comp_left, Category.assoc]
 
-private theorem groupHom_towerIsoOf_inv {S U V : Scheme.{u}} (b' : U ⟶ S) (j' : V ⟶ U)
-    (T' : CommGroupScheme S) (c' : V ⟶ S) (hc' : j' ≫ b' = c') :
-    CommGroupScheme.groupHom (towerIsoOf b' j' T' c' hc').inv =
-      (groupTowerIsoOf b' j' c' hc' T'.toGrp).inv := by
-  subst c'
-  rw [towerIsoOf, groupTowerIsoOf, eqToIso_refl, eqToIso_refl, Iso.refl_trans, Iso.refl_trans]
-  rfl
-
 private theorem groupHom_congr_towerIso_symm
     (ν : cocharacterLattice ((CommGroupScheme.baseChange j).obj TE)) :
     CommGroupScheme.groupHom (cocharacterLattice.congr (iso).symm ν) =

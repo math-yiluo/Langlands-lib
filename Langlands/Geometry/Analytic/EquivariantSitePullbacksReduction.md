@@ -82,3 +82,18 @@ The five analytic statements in the two conditional proofs are premises,
 not results of this module. The pullback witnesses are certified in the
 underlying analytic category; passage to limiting cones in the sites and
 application to restriction are separate steps.
+
+## Hausdorff form of the quasi-étale reduction
+
+The premises of `equivariantQuasiEtalePullbacks_of_stability` are the
+general statements of the module `QuasiEtaleStabilityStatement`, without
+Hausdorff hypotheses. The proof only
+applies them to arrows whose relevant objects are Hausdorff: the spaces of
+`G`-spaces, and the pullback vertex. The module
+`EquivariantSitePullbacksHausdorffReduction` therefore restates the reduction
+on the Hausdorff forms of the module `QuasiEtaleHausdorffStabilityStatement`
+(`equivariantQuasiEtalePullbacksHausdorffReduction`). The module
+`EquivariantQuasiEtalePullbacksProof` proves
+`EquivariantQuasiEtalePullbacksStatement` itself, without premises
+(`equivariantQuasiEtalePullbacks`), with the construction
+`exists_equivariantSitePullback_of_isPullback` of this module.

@@ -1,0 +1,7 @@
+# Surjectivity onto the first function cohomology
+
+The proof uses the finite cover obtained by adjoining to the supplied charts their images under inversion. On this cover the positive sign function complex is exact in degree one, so every function class can be represented by an odd function cocycle \(a\). The cochain \(da\) is odd by naturality. Its coordinates in the relative one-form frame are even because inversion negates the frame, and they are Čech cocycles because \(a\) is. Exactness of the even function complex gives a primitive for each coordinate. Combining the primitives gives a one-form cochain \(b_0\) with \(\partial b_0 = da\).
+
+The odd projection of \(b_0\) still satisfies \(\partial b = da\). Then \(d b\) is Čech compatible since \(\partial(d b) = d(da) = 0\). Compatibility makes it even, while the odd sign of \(b\) makes it odd. It follows that \((a,b)\) is a cocycle for the signed total differential of the relative de Rham complex.
+
+For a class on the supplied cover, the canonical comparison with first structure-sheaf cohomology gives the corresponding class on the doubled cover. The proof restricts the cochains \((a,b)\) to the original charts, using pullback naturality of the Čech and exterior differentials. This restriction induces the pullback by the scheme identity on structure-sheaf cohomology, so the restricted total class projects to the given class. This is the surjection in the degree-one Hodge sequence of Lan's revised thesis (14 March 2021), §2.1.6, p. 135, equations (2.1.6.5) and (2.1.6.6).

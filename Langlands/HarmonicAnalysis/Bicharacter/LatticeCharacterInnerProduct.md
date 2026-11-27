@@ -1,0 +1,7 @@
+# Inner products of finite sums of lattice characters
+
+For a self-dual bicharacter `e` on a topological abelian group with the Borel σ-algebra and additive Haar measure, consider two finite sums of characters `e(x,aᵢ)` and `e(x,bⱼ)` on a compact open additive subgroup `L`. `LatticeCharacterInnerProductStatement` states that the inner product of the two sums, each multiplied by a nonzero scalar, is nonzero exactly when some difference `aᵢ − bⱼ` lies in the annihilator of `L`. The theorem `latticeCharacterInnerProduct` proves this criterion.
+
+The proof uses symmetry and unitarity to turn the product of a character and a conjugated character into the character at their frequency difference. The subgroup Fourier formula integrates this character to the volume of `L` when the difference annihilates `L`, and to zero otherwise. If `c` scales the first sum and `d` scales the second, the integral is `c * conj d` times the positive Haar volume of `L` times the number of matching pairs. The count is nonzero exactly when a pair exists.
+
+This is the additive character orthogonality calculation in Clozel, *Characters of non-connected, reductive p-adic groups*, Canadian Journal of Mathematics 39 (1987), §3.6, proof of Lemma 9, printed p. 158. In those coordinates `L` is the intersection of the two lattices in the fixed algebra, and the frequencies from the ambient algebra enter through their orthogonal projections.

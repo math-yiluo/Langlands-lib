@@ -103,7 +103,7 @@ local notation "A" => AdelicGroupPoints F G
 
 omit [IsAffineHom G.X.hom] in
 /-- Inversion preserves archimedean Haar for a connected reductive group. -/
-private theorem infiniteHaarInvInvariant (hG : IsConnectedReductive G) :
+theorem infiniteHaarInvInvariant_of_connectedReductive (hG : IsConnectedReductive G) :
     (Measure.haar : Measure AInf).IsInvInvariant := by
   let haarAd : Measure A := Measure.haar
   have : haarAd.IsMulRightInvariant := adelicHaarUnimodularity.2 F G hG
@@ -228,7 +228,7 @@ theorem adelicReproducingKernel : AdelicReproducingKernelStatement := by
     exists_elliptic_slice_annihilator adelicAdaptedCasimir F G Kinf hsmooth hcalc hG
       hK.isMaximalCompact_comap_ofInfinite f hk hz
   let μInf : Measure (InfiniteAdelicGroupPoints F G) := Measure.haar
-  have : μInf.IsInvInvariant := infiniteHaarInvInvariant F G hG
+  have : μInf.IsInvInvariant := infiniteHaarInvInvariant_of_connectedReductive F G hG
   obtain ⟨V, C, hV, hC, hest⟩ := exists_lieWord_l2_evaluation μInf hr X Ptop Plow htop hlow hsym
   let S := wordSolutions (H := InfiniteAdelicGroupPoints F G) X (Ptop + Plow)
   have hc (u : InfiniteAdelicGroupPoints F G → ℂ) (hu : u ∈ S) : Continuous u :=

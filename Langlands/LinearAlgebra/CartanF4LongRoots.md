@@ -1,0 +1,9 @@
+# The long roots and coroot lattice of F₄
+
+`IsLong` selects a root that pairs with some root by the ordered entries `(-2, -1)`. A root datum equivalence preserves this test. In type F₄ the simple roots numbered `0` and `1` satisfy it. The canonical positive form gives the two other simple roots the smallest squared length, so they cannot occur on the `-2` side of such a pair. Simple reflections preserve the test and preserve the condition that the last two simple-root coefficients are even. Induction by simple reflections gives `root_mem_longRootLattice_iff`.
+
+Write `α₀`, …, `α₃` for the simple roots in `CartanMatrix.F₄` order, `βᵢ` for their coroots, and `sᵢ` for their reflections. The simple long roots in `CartanMatrix.D 4` order are `α₁`, `α₀`, `s₂α₁`, and `s₃s₂α₁`. Their coroots are `β₁`, `β₀`, `β₁ + β₂`, and `β₁ + β₂ + β₃`. Successive differences recover the remaining simple coroots, giving `span_simpleLongCoroot`. The analogous differences of the roots recover `2α₂` and `2α₃`, giving `span_simpleLongRoot` by the parity condition. Pairing with the four coroots proves linear independence.
+
+`exists_base_D4_of_spanning` makes a D₄ base from a linearly independent family with the D₄ Cartan matrix that spans the root and coroot lattices. `isIrreducible_of_D4_base` proves irreducibility over the rationals. A nonzero subspace invariant under every reflection contains a simple root because the simple coroots span. Its containment then propagates through the central vertex to every simple root.
+
+The coordinate calculation derives the long-root assertion used in Platonov–Rapinchuk, *Algebraic Groups and Number Theory* (1994), §6.8, printed p. 371, referring to Bourbaki's type F₄ table. The registered copy is `platonov-rapinchuk-1994-algebraic-groups-number-theory`, SHA-256 `c333b953ca0ace6306663f648cd853a75da55023bf873e0ef2688d997216717f`.

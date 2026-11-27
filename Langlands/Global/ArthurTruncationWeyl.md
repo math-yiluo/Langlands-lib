@@ -1,0 +1,7 @@
+# Fundamental weights and Weyl displacement
+
+`fundamentalWeight` is the real fundamental weight in the relative root span supplied by `relativeFundamentalWeight`. Its evaluation agrees with the full `ArthurRelative.weight` on every height. The proof checks simple-coroot coordinates and vanishing on the central directions. The same decomposition gives `pair_rootSpan_eq_sum_fullWeights` for every real character in the relative root span.
+
+A simple reflection changes the weight by the corresponding simple root when its label equals the weight label, and fixes it otherwise. Along a reduced Coxeter expression, `fundamentalWeight_displacement` adds the positive roots contributed by those steps. A positive relative root is a nonzero nonnegative integral combination of simple roots. Thus every contributed root evaluates strictly above the common nonnegative lower bound for the simple roots. An element outside the Weyl subgroup of the maximal parabolic omitting the given label has such a step. Within that subgroup, `fundamentalWeight_fixed_of_mem_maximalWeyl` proves exact equality.
+
+`fundamentalWeight_weyl_coroot_sign` uses the Weyl-invariant inner product to compute signs after transporting the weight, using the inverse-translated roots. On positive roots the value is nonnegative, and it is zero if the root pairs to zero with the standard cocharacter of a Levi omitting the weight label. These are derived forms of the Weyl inequalities used in Arthur, *A trace formula for reductive groups II* (1980), Lemma 1.1, pp. 90–91.

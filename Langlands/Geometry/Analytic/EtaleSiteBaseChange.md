@@ -1,0 +1,7 @@
+# Base change on analytic small étale sites
+
+For a morphism of analytic spaces \(f\colon X\to Y\), `baseChange` sends each étale test object \(U\to Y\) to the actual analytic pullback \(U\times_Y X\to X\). This uses stability and existence of pullbacks along analytic étale morphisms. Projection to \(U\) is natural, and its naturality squares are Cartesian. The functor preserves coverings by point lifting in the pullback squares. Its image squares furnish the pullbacks used in the proof of continuity on the ordinary étale sites.
+
+`baseChangeDirectImage` evaluates a sheaf over \(X\) on the base changed test objects. For étale \(f\), postcomposition of the structure map is adjoint to base change on the sites. This adjunction induces `postcomposeEtaleAdjunction` between restriction and direct image of sheaves. For an arbitrary \(f\), `baseChangeInverseImage` is sheafified left Kan extension, subject to existence of that Kan extension and weak sheafification in the coefficient category. It is left adjoint to direct image.
+
+The analytic sites, their covering rule and the induced morphism of sites \(X_{\mathrm{ét}}\to Y_{\mathrm{ét}}\) come from Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), §4.1, p. 82. The base-change stability of étale morphisms is Corollary 3.3.8, p. 63. The pullback, point-lifting and precomposition arguments use the existing analytic morphism and sheaf constructions.

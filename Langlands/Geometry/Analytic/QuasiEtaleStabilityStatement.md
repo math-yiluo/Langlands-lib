@@ -72,6 +72,50 @@ Library, étale composition is the instance in `LocalizedEtaleComposition`.
 `EtaleBaseChangeStatement`, proved in `EtalePointwiseLifting.LocalizedStability`,
 `LocalizedEtalePullbackProof` and `EtaleBaseChangeProof`.
 
+## Hausdorff versions and the general case
+
+The module `QuasiEtaleHausdorffStabilityStatement` states the three
+properties under Hausdorff hypotheses: `QuasiEtaleHausdorffCompStatement`
+(Hausdorff `A` and `B`), `QuasiEtaleHausdorffBaseChangeStatement` (Hausdorff
+source of the quasi-étale leg) and `QuasiEtaleHausdorffOverMorphismStatement`
+(Hausdorff middle object). The Library has:
+
+- base change for a Hausdorff source, `quasiEtaleHausdorffBaseChange`
+  (module `QuasiEtaleHausdorffBaseChangeProof`);
+- the over-morphism property for a Hausdorff middle object,
+  `quasiEtaleHausdorffOverMorphism` (module
+  `QuasiEtaleHausdorffOverMorphismProof`);
+- composition for Hausdorff `A` and `B` from the premise
+  `EtaleDomainQuasiEtaleStatement`, a proposition stated without proof in
+  the module `QuasiEtaleCompPrerequisites`:
+  `quasiEtaleHausdorffCompReduction` (module
+  `QuasiEtaleHausdorffCompReduction`).
+
+The module `EquivariantSitePullbacksHausdorffReduction` derives
+`EquivariantQuasiEtalePullbacksStatement` from the three Hausdorff
+statements (`equivariantQuasiEtalePullbacksHausdorffReduction`); with the
+results above, that route rests only on `EtaleDomainQuasiEtaleStatement`.
+The Library also proves `EquivariantQuasiEtalePullbacksStatement` without
+premises (`equivariantQuasiEtalePullbacks`, module
+`EquivariantQuasiEtalePullbacksProof`), by a route that avoids the general
+composition statement.
+
+The statements of this module, without Hausdorff hypotheses, are not proved
+in this file. The Library's reductions to them
+(`quasiEtaleBaseChange_of_localDomainFactorizations`,
+`quasiEtaleOverMorphism_of_localDomainFactorizations`,
+`quasiEtaleCompReduction`) assume the pointed form of the quasi-étale
+condition, `QuasiEtaleLocalDomainFactorizationsStatement`, for arbitrary
+sources. That proposition holds for a Hausdorff source
+(`hasLocalDomainEtaleFactorizations_of_quasiEtale`). For a non-Hausdorff
+source, a chart missing a point can accumulate at it, as in the doubled disc
+described in the Markdown of `QuasiEtaleLocalDomainFactorizationsStatement`.
+That Markdown also records a proof of the general case in the literature,
+Ducros, *Families of Berkovich spaces*, Lemma 5.4.11, which rests on
+Ducros's Theorem 5.4.6 and on the theory of finite étale germs, Berkovich
+1993, Theorem 3.4.1. It explains as well what a direct gluing of étale
+envelopes would require beyond Theorem 3.4.1.
+
 ## Use
 
 The three statements are the quasi-étale stability properties that a site

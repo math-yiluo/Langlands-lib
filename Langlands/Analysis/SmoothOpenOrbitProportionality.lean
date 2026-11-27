@@ -237,18 +237,18 @@ private theorem transfer_test_integral
     rw [hψ, map_smul, smul_eq_mul, hT p⁻¹ η (φ p) hφ]
 
 include he μ in
-/-- On a free open orbit, any two continuous covariant test functionals with
-the same character are proportional as soon as the first one is nonzero. -/
-theorem exists_proportional_of_covariance
+/-- A nonzero continuous covariant functional on a free open orbit is a nonzero
+multiple of the character-weighted Haar integral along that orbit. -/
+theorem exists_ne_zero_smul_orbitIntegral_of_covariance
     (hR : Continuous (fun p : H => LinearMap.toContinuousLinearMap (R p)))
-    (χ : H →* ℂ) (hχ : Continuous χ) (T₁ T₂ : 𝓓(Ω, ℂ) →L[ℂ] ℂ)
-    (h₁ : IsCovariant R χ T₁) (h₂ : IsCovariant R χ T₂) (hT₁ : T₁ ≠ 0) :
-    ∃ d : ℂ, ∀ f, T₂ f = d * T₁ f := by
+    (χ : H →* ℂ) (hχ : Continuous χ) (T : 𝓓(Ω, ℂ) →L[ℂ] ℂ)
+    (hT : IsCovariant R χ T) (hne : T ≠ 0) :
+    ∃ c : ℂ, c ≠ 0 ∧ ∀ f : 𝓓(Ω, ℂ), T f = c * ∫ p, χ p⁻¹ * f (R p x₀) ∂μ := by
   classical
   obtain ⟨ρ, c, hρ, hρS, hρΩ, hc, hNorm⟩ := exists_normalized_cutoff R e x₀ he μ hR
-  obtain ⟨f₀, hf₀⟩ : ∃ f₀, T₁ f₀ ≠ 0 := by
+  obtain ⟨f₀, hf₀⟩ : ∃ f₀, T f₀ ≠ 0 := by
     by_contra! h
-    exact hT₁ (ContinuousLinearMap.ext fun f => h f)
+    exact hne (ContinuousLinearMap.ext fun f => h f)
   have hcC : (c : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hc.ne'
   obtain ⟨g₀, hg₀, hT₀⟩ := transfer_test_integral R e x₀ he μ hR χ hχ f₀ hρ hρS hρΩ hNorm
   have hvalue {f : 𝓓(Ω, ℂ)} {g : 𝓓(Ω, ℂ)}
@@ -268,11 +268,11 @@ theorem exists_proportional_of_covariance
       by_cases hx : x ∈ Ω
       · simp only [hvalue hg₀ x hx, hz, smul_zero, mul_zero]
       · exact g₀.zero_on_compl hx
-    have h := hT₀ T₁ h₁
+    have h := hT₀ T hT
     rw [hg, map_zero] at h
     exact (mul_ne_zero hcC hf₀) h.symm
-  refine ⟨T₂ f₀ / T₁ f₀, fun f => ?_⟩
-  obtain ⟨g, hg, hT⟩ := transfer_test_integral R e x₀ he μ hR χ hχ f hρ hρS hρΩ hNorm
+  refine ⟨T f₀ / orbitIntegral R μ χ f₀ x₀, div_ne_zero hf₀ hF₀, fun f => ?_⟩
+  obtain ⟨g, hg, hAvg⟩ := transfer_test_integral R e x₀ he μ hR χ hχ f hρ hρS hρΩ hNorm
   let z := orbitIntegral R μ χ f x₀ / orbitIntegral R μ χ f₀ x₀
   have hG : g = z • g₀ := by
     ext x
@@ -284,12 +284,29 @@ theorem exists_proportional_of_covariance
     · have hgz : g x = 0 := g.zero_on_compl hx
       have hg₀z : g₀ x = 0 := g₀.zero_on_compl hx
       rw [hgz, hg₀z, mul_zero]
-  have hTF (T : 𝓓(Ω, ℂ) →L[ℂ] ℂ) (hCov : IsCovariant R χ T) : T f = z * T f₀ := by
+  have hTF : T f = z * T f₀ := by
     apply mul_left_cancel₀ hcC
-    rw [← hT T hCov, hG, map_smul, smul_eq_mul, hT₀ T hCov]
+    rw [← hAvg T hT, hG, map_smul, smul_eq_mul, hT₀ T hT]
     ring
-  rw [hTF T₁ h₁, hTF T₂ h₂]
-  field_simp [hf₀]
+  change T f = (T f₀ / orbitIntegral R μ χ f₀ x₀) * orbitIntegral R μ χ f x₀
+  rw [hTF]
+  unfold z
+  ring
+
+include he μ in
+/-- On a free open orbit, two continuous covariant test functionals with the same character
+are proportional when the first one is nonzero. -/
+theorem exists_proportional_of_covariance
+    (hR : Continuous (fun p : H => LinearMap.toContinuousLinearMap (R p)))
+    (χ : H →* ℂ) (hχ : Continuous χ) (T₁ T₂ : 𝓓(Ω, ℂ) →L[ℂ] ℂ)
+    (h₁ : IsCovariant R χ T₁) (h₂ : IsCovariant R χ T₂) (hT₁ : T₁ ≠ 0) :
+    ∃ d : ℂ, ∀ f, T₂ f = d * T₁ f := by
+  by_cases hT₂ : T₂ = 0
+  · exact ⟨0, fun f => by rw [hT₂, zero_apply, zero_mul]⟩
+  obtain ⟨c₁, hc₁, hF₁⟩ := exists_ne_zero_smul_orbitIntegral_of_covariance R e x₀ he μ hR χ hχ T₁ h₁ hT₁
+  obtain ⟨c₂, _, hF₂⟩ := exists_ne_zero_smul_orbitIntegral_of_covariance R e x₀ he μ hR χ hχ T₂ h₂ hT₂
+  refine ⟨c₂ / c₁, fun f => ?_⟩
+  rw [hF₂, hF₁, ← mul_assoc, div_mul_cancel₀ _ hc₁]
 
 /-- A continuous linear action with a free open orbit has at most one
 covariant continuous functional on the tests of that orbit, up to scale. -/

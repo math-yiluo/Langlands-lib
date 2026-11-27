@@ -232,7 +232,7 @@ private abbrev unnormalizedEigenspace (lam : ComplexCharacterParameter F (𝓕.P
   jointGenEigenspace (𝓕.splitComponentRepresentation J)
     (fun b : 𝓕.positiveSplitComponent J => parameterPower F (𝓕.P J) lam b.val)
 
-private theorem iSupIndep_unnormalizedEigenspace :
+theorem iSupIndep_unnormalizedCharacterEigenspace :
     iSupIndep (𝓕.unnormalizedEigenspace J) := by
   let r : ParabolicRootPresentation (𝓕.p J) (𝓕.l J) (𝓕.a J) :=
     ⟨⟨𝓕.T, 𝓕.i, 𝓕.ν, J.val, 𝓕.f J⟩, 𝓕.isCompatible J⟩
@@ -250,7 +250,7 @@ theorem eq_zero_of_sum_eq_zero_of_hasUnnormalizedExponent
     (hz : ∑ lam ∈ s, c lam = 0) :
     ∀ lam ∈ s, c lam = 0 := by
   exact (iSupIndep_iff_finsetSum_eq_zero_imp_eq_zero _).mp
-    (𝓕.iSupIndep_unnormalizedEigenspace J) s c
+    (𝓕.iSupIndep_unnormalizedCharacterEigenspace J) s c
     (fun lam hlam => 𝓕.mem_jointGenEigenspace_of_hasUnnormalizedExponent J (hc lam hlam)) hz
 
 /-- An error supported in nonleading exponents leaves the leading sums equal. -/
@@ -283,7 +283,7 @@ theorem leadingSum_eq_of_nonleading_difference
       ∑ lam ∈ support, pad v f lam = ∑ lam ∈ v, f lam := by
     simp only [pad, Finset.sum_ite_mem, Finset.inter_eq_right.mpr hv]
   have hEq := (iSupIndep_iff_finsetSum_eq_imp_eq _).mp
-    (𝓕.iSupIndep_unnormalizedEigenspace J) support (pad s c) (fun lam => pad t d lam + pad u b lam)
+    (𝓕.iSupIndep_unnormalizedCharacterEigenspace J) support (pad s c) (fun lam => pad t d lam + pad u b lam)
     (fun lam _ => ⟨hmem s c hc lam, Submodule.add_mem _
       (hmem t d hd lam) (hmem u b (fun x hx => (hb x hx).1) lam)⟩)
     (by simpa only [Finset.sum_add_distrib, hsum s hs, hsum t ht, hsum u hu] using heq)

@@ -109,7 +109,8 @@ private theorem inducingCharacter_one (u : U) :
   rw [← positionBorelCharacter_diagonalUnipotent s e 1 u, h, positionBorelCharacter_unipotent,
     Units.val_one]
 
-private theorem section_left_borel (F : P) (b : B) (g : G) :
+/-- The scalar section transforms under the actual upper Borel character. -/
+theorem section_left_borel (F : P) (b : B) (g : G) :
     (F : G → ℂ) (b.val * g) = (χ b : ℂ) * (F : G → ℂ) g := by
   obtain ⟨⟨d, u⟩, rfl⟩ := (torusUnipotentHomeomorph (r := r)).surjective b
   have hb : torusUnipotentHomeomorph (d, u) = unipotentInBorel u * diagonalUnipotentInBorel d (1 : U) := by
@@ -124,9 +125,13 @@ private theorem section_left_borel (F : P) (b : B) (g : G) :
   rw [hu]
   simpa only [Subgroup.coe_one, mul_one] using F.property.2 d 1 g
 
-/-- Each smooth inducing section can be produced by averaging one compact matrix test. -/
-theorem averageMap_surjective : Function.Surjective (averageMap s e) := by
-  intro F
+/-- A nonnegative compact cutoff of an inducing function has Borel average a positive scalar
+multiple of that function and retains its support on the group. -/
+theorem exists_averageMap_compactCutoff (F : P) :
+    ∃ (κ : G → ℝ) (Z : ℝ) (f : TestC), 0 < Z ∧ 0 ≤ κ ∧
+      (∀ k ∈ unitaryCompact ℝ (r + 1), κ k = 1) ∧
+      averageMap s e f = (Z : ℂ) • F ∧ (∀ g : G, f g.val = (κ g : ℂ) * F.val g) ∧
+      tsupport f ⊆ Units.val '' tsupport F.val := by
   obtain ⟨κ, hκ, hκS, hκNonneg, hκOne, hκRight⟩ := exists_rightUnitaryCutoff (r := r)
   let w : B → ℝ := fun b => κ b.val
   have hw : Continuous w := hκ.continuous.comp continuous_subtype_val
@@ -172,6 +177,23 @@ theorem averageMap_surjective : Function.Surjective (averageMap s e) := by
       (Z : ℂ) * (F : G → ℂ) (Iwasawa.diagonalUnits d * u.val * k)
     rw [(averageMap s e f).property.2 d u k, F.property.2 d u k, hEq k hk]
     ring
+  have hκK (k : G) (hk : k ∈ unitaryCompact ℝ (r + 1)) : κ k = 1 := by
+    simpa only [one_mul, hκOne] using hκRight 1 k hk
+  refine ⟨κ, Z, f, hZ, hκNonneg, hκK, hAvg, hf, ?_⟩
+  have hsub : support f ⊆ Units.val '' tsupport L := by
+    intro X hX
+    obtain ⟨g, rfl⟩ := f.tsupport_subset (subset_tsupport f hX)
+    refine ⟨g, subset_tsupport L ?_, rfl⟩
+    change L g ≠ 0
+    rw [show L g = f g.val from (hf g).symm]
+    exact hX
+  exact (closure_minimal hsub (hLS.image Units.continuous_val).isClosed).trans
+    (image_mono tsupport_mul_subset_right)
+
+/-- Each smooth inducing section can be produced by averaging one compact matrix test. -/
+theorem averageMap_surjective : Function.Surjective (averageMap s e) := by
+  intro F
+  obtain ⟨κ, Z, f, hZ, _, _, hAvg, _, _⟩ := exists_averageMap_compactCutoff s e F
   refine ⟨(Z : ℂ)⁻¹ • f, ?_⟩
   rw [map_smul, hAvg, smul_smul, inv_mul_cancel₀ (Complex.ofReal_ne_zero.mpr hZ.ne'), one_smul]
 

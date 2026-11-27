@@ -95,9 +95,9 @@ theorem measurableSet_ord_det_eq (j : ℤ) :
 polynomials `1`, unit `c` and exponent `a`. Let `Φ` be a matrix test function whose Fourier
 transform vanishes at every `g ∈ GL_{n+1}(K)` with `ord(det g) < j₀`, and let `f` be a bi-smooth
 coefficient of `σ` whose shifted zeta integral against `Φ` has the constant rational value `r`.
-Then the integral of `Φ̂(g) f(g^{-T})` over the shell `ord(det g) = -a` is
-`c r (q^{-1} q^{-n/2})^a`. -/
-theorem setIntegral_ord_det_eq_of_functionalEquation
+The integral of `Φ̂(g) f(g^{-T})` over the shell `ord(det g) = j` is
+`c r (q^{-1} q^{-n/2})^a` when `j = -a` and zero for every other `j`. -/
+theorem setIntegral_ord_det_of_monomial_functionalEquation
     (ψ : UnitaryAdditiveCharacter K.Carrier) (ν : AdditiveHaarMeasure K.Carrier)
     (σ : Representation ℂ (GeneralLinear (n + 1) K.Carrier) V) (c : ℂˣ) (a : ℤ)
     (hFE : GodementJacquet.Padic.NormalizedMatrixFunctionalEquationData K ψ ν σ 1 1 c a)
@@ -108,14 +108,16 @@ theorem setIntegral_ord_det_eq_of_functionalEquation
     (f : GodementJacquet.biSmoothMatrixCoefficients σ) (r : ℂ)
     (hR : GodementJacquet.HasShiftedRationalValue K.canonicalTopologicalData.residueCardinality
       (RankinSelberg.normalizedAbsoluteValue K.canonicalTopologicalData)
-      (RankinSelberg.generalLinearHaar K.Carrier n) Φ f.val (RatFunc.C r)) :
+      (RankinSelberg.generalLinearHaar K.Carrier n) Φ f.val (RatFunc.C r)) (j : ℤ) :
     ∫ g in {g : GeneralLinear (n + 1) K.Carrier |
-        K.canonicalTopologicalData.ord (Matrix.det g.val) = -a},
+        K.canonicalTopologicalData.ord (Matrix.det g.val) = j},
         rectangularFourierIntegral ψ ν Φ g.val * GodementJacquet.coefficientIota f.val g
           ∂(RankinSelberg.generalLinearHaar K.Carrier n) =
-      (c : ℂ) * r * (spectralPoint K.canonicalTopologicalData.residueCardinality 1 *
-        spectralPoint K.canonicalTopologicalData.residueCardinality
-          (GodementJacquet.jpssShift n)) ^ a := by
+      if j = -a then
+        (c : ℂ) * r * (spectralPoint K.canonicalTopologicalData.residueCardinality 1 *
+          spectralPoint K.canonicalTopologicalData.residueCardinality
+            (GodementJacquet.jpssShift n)) ^ a
+      else 0 := by
   classical
   set T := K.canonicalTopologicalData with hT
   set q := T.residueCardinality with hq_def
@@ -192,34 +194,66 @@ theorem setIntegral_ord_det_eq_of_functionalEquation
     simp only [D, ord]
     omega
   have hshell := RankinSelberg.HighlyRamified.shell_integral_eq_of_const μ D hq hD Ψ (j₀ + a)
-    hsupp' s₀ hint ((c : ℂ) * r * spectralPoint q 1 ^ a) a₁ hval 0
-  simp only [↓reduceIte] at hshell
+    hsupp' s₀ hint ((c : ℂ) * r * spectralPoint q 1 ^ a) a₁ hval (j + a)
   -- identify the shell and the weight on it
-  have hset : {g | D g = 0} = {g : GeneralLinear (n + 1) K.Carrier |
-      T.ord (Matrix.det g.val) = -a} := by
+  have hset : {g | D g = j + a} = {g : GeneralLinear (n + 1) K.Carrier |
+      T.ord (Matrix.det g.val) = j} := by
     ext g
     simp only [Set.mem_ofPred_eq, D, ord]
     omega
   have hXne : spectralPoint q (GodementJacquet.jpssShift n) ≠ 0 :=
     RankinSelberg.spectralPoint_ne_zero_of_pos hq0 _
-  have hcongr : ∫ g in {g : GeneralLinear (n + 1) K.Carrier | T.ord (Matrix.det g.val) = -a},
-      Ψ g ∂μ = (∫ g in {g : GeneralLinear (n + 1) K.Carrier | T.ord (Matrix.det g.val) = -a},
+  have hcongr : ∫ g in {g : GeneralLinear (n + 1) K.Carrier | T.ord (Matrix.det g.val) = j},
+      Ψ g ∂μ = (∫ g in {g : GeneralLinear (n + 1) K.Carrier | T.ord (Matrix.det g.val) = j},
         rectangularFourierIntegral ψ ν Φ g.val * GodementJacquet.coefficientIota f.val g ∂μ) *
-          spectralPoint q (GodementJacquet.jpssShift n) ^ (-a) := by
+          spectralPoint q (GodementJacquet.jpssShift n) ^ j := by
     rw [← integral_mul_const]
-    refine setIntegral_congr_fun (measurableSet_ord_det_eq K (-a)) fun g hg => ?_
-    have hg' : T.ord (Matrix.det g.val) = -a := hg
+    refine setIntegral_congr_fun (measurableSet_ord_det_eq K j) fun g hg => ?_
+    have hg' : T.ord (Matrix.det g.val) = j := hg
     simp only [Ψ, abv]
     rw [RankinSelberg.normalizedDeterminantWeight_eq_spectralPoint_zpow T g, hg', hHat]
   rw [hset, hcongr] at hshell
-  set I := ∫ g in {g : GeneralLinear (n + 1) K.Carrier | T.ord (Matrix.det g.val) = -a},
+  set I := ∫ g in {g : GeneralLinear (n + 1) K.Carrier | T.ord (Matrix.det g.val) = j},
     rectangularFourierIntegral ψ ν Φ g.val * GodementJacquet.coefficientIota f.val g ∂μ
-  calc I = I * spectralPoint q (GodementJacquet.jpssShift n) ^ (-a) *
-        spectralPoint q (GodementJacquet.jpssShift n) ^ a := by
-          rw [mul_assoc, ← zpow_add₀ hXne, neg_add_cancel, zpow_zero, mul_one]
-    _ = (c : ℂ) * r * spectralPoint q 1 ^ a *
-        spectralPoint q (GodementJacquet.jpssShift n) ^ a := by rw [hshell]
-    _ = _ := by rw [mul_zpow]; ring
+  by_cases hj : j = -a
+  · have hDzero : j + a = 0 := by omega
+    rw [hDzero, ite_eq_left rfl] at hshell
+    rw [ite_eq_left hj]
+    calc
+      I = I * spectralPoint q (GodementJacquet.jpssShift n) ^ j *
+          spectralPoint q (GodementJacquet.jpssShift n) ^ a := by
+          rw [mul_assoc, ← zpow_add₀ hXne, hDzero, zpow_zero, mul_one]
+      _ = (c : ℂ) * r * spectralPoint q 1 ^ a *
+          spectralPoint q (GodementJacquet.jpssShift n) ^ a := by rw [hshell]
+      _ = _ := by rw [mul_zpow]; ring
+  · have hDne : j + a ≠ 0 := by omega
+    rw [ite_eq_right hDne] at hshell
+    rw [ite_eq_right hj]
+    exact (mul_eq_zero.mp hshell).resolve_right (zpow_ne_zero j hXne)
+
+/-- The shell of order `-a` in the monomial functional equation has integral
+`c r (q^{-1} q^{-n/2})^a`. -/
+theorem setIntegral_ord_det_eq_of_functionalEquation
+    (ψ : UnitaryAdditiveCharacter K.Carrier) (ν : AdditiveHaarMeasure K.Carrier)
+    (σ : Representation ℂ (GeneralLinear (n + 1) K.Carrier) V) (c : ℂˣ) (a : ℤ)
+    (hFE : GodementJacquet.Padic.NormalizedMatrixFunctionalEquationData K ψ ν σ 1 1 c a)
+    (Φ : GodementJacquet.MatrixTestFunction n K.Carrier) (j₀ : ℤ)
+    (hsupp : ∀ g : GeneralLinear (n + 1) K.Carrier,
+      rectangularFourierIntegral ψ ν Φ g.val ≠ 0 →
+        j₀ ≤ K.canonicalTopologicalData.ord (Matrix.det g.val))
+    (f : GodementJacquet.biSmoothMatrixCoefficients σ) (r : ℂ)
+    (hR : GodementJacquet.HasShiftedRationalValue K.canonicalTopologicalData.residueCardinality
+      (RankinSelberg.normalizedAbsoluteValue K.canonicalTopologicalData)
+      (RankinSelberg.generalLinearHaar K.Carrier n) Φ f.val (RatFunc.C r)) :
+    ∫ g in {g : GeneralLinear (n + 1) K.Carrier |
+        K.canonicalTopologicalData.ord (Matrix.det g.val) = -a},
+        rectangularFourierIntegral ψ ν Φ g.val * GodementJacquet.coefficientIota f.val g
+          ∂(RankinSelberg.generalLinearHaar K.Carrier n) =
+      (c : ℂ) * r * (spectralPoint K.canonicalTopologicalData.residueCardinality 1 *
+        spectralPoint K.canonicalTopologicalData.residueCardinality
+          (GodementJacquet.jpssShift n)) ^ a := by
+  simpa using setIntegral_ord_det_of_monomial_functionalEquation K ψ ν σ c a hFE
+    Φ j₀ hsupp f r hR (-a)
 
 /-- **Nonvanishing on the shell.** Under the hypotheses of
 `setIntegral_ord_det_eq_of_functionalEquation`, if `r ≠ 0` then some `g` with

@@ -1,0 +1,5 @@
+# Positivity at the Bruhat integration points
+
+`pair_fundamentalWeight_parabolicRational_mul` says that a full weight indexed outside a standard parabolic is invariant under rational left translation by that parabolic. The proof uses the coroot-span description of the change in height.
+
+`exists_regular_weylPositivity` takes the uniform Weyl height comparison for the finitely many chosen inverse lifts. It takes the sum of the nonnegative error constants as a regularity bound. If the inverse Weyl element lies outside the Weyl group of the maximal parabolic associated to the weight, the positive displacement across the regular parameter exceeds that error. If it belongs to that Weyl group, the weight is fixed and the normalizing lift belongs to the maximal parabolic. Rational covariance there and minimal radical invariance give equality of the weight evaluations. Thus strict positivity of the original evaluation ensures strict positivity of the transported evaluation at the integration point. This is the arbitrary-compact version of the support implication used in Arthur (1980), Lemma 1.1, p. 91.

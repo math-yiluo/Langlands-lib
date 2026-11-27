@@ -1,0 +1,5 @@
+# Rational invariance and the fixed point of truncation
+
+Conjugation by a principal rational point of a parabolic preserves its radical lattice. It preserves the normalized radical quotient measure by uniqueness of the invariant probability. Applying that measure-preserving substitution to a rational-invariant function proves the covariance of its constant term. The algebraic cutoff has the same covariance. `truncation_rational_mul` then reindexes each sum over rational cosets by right multiplication in the ambient rational group.
+
+`truncation_eq_self_of_constantTerm_vanishing` isolates the full-group term of the truncation. A nonzero cutoff for a proper parabolic would supply at least one strictly positive full weight, so the assumed vanishing makes each proper-parabolic kernel zero. The full-group radical has trivial constant-term action, the cutoff is one, and the rational coset quotient is a singleton. This is the fixed-point argument in Arthur, *An introduction to the trace formula* (2005), Proposition 13.1(b), p. 69. The proof is evaluated at each adelic point.

@@ -133,4 +133,14 @@ theorem Cohomologous.baseChange {ξ ζ : Cocycle G U} (h : ξ.Cohomologous ζ)
   simp only [g, MulEquiv.apply_symm_apply, ← Category.assoc]
   exact hf _ _
 
+/-- A section of the cover trivializes its cocycle. -/
+theorem isTrivial_of_section {S : Scheme.{u}} {G : GroupScheme S} {U : Over S}
+    (c : Cocycle G U) (s : Over.mk (𝟙 S) ⟶ U) : c.IsTrivial := by
+  let q : U ⟶ Over.mk (𝟙 S) := Over.homMk U.hom
+  refine ⟨c.toFun (𝟙 U) (q ≫ s), fun {Z} x y => ?_⟩
+  have hq : x ≫ q = y ≫ q := Over.OverMorphism.ext ((Over.w x).trans (Over.w y).symm)
+  rw [← c.naturality, ← c.naturality]
+  simp only [Category.comp_id, ← Category.assoc, hq]
+  exact eq_mul_inv_of_mul_eq (c.cocycle x y (y ≫ q ≫ s)).symm
+
 end Langlands.GroupScheme.Cocycle

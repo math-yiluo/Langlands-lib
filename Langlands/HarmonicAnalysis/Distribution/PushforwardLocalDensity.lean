@@ -133,11 +133,11 @@ section Local
 variable [hausdorffX : T2Space X] [compactX : LocallyCompactSpace X]
   [disconnectedX : TotallyDisconnectedSpace X] [μ.IsOpenPosMeasure] [SigmaFinite ν]
 
-include hausdorffX compactX disconnectedX hausdorffY compactY disconnectedY countableY
-  borelX borelY in
 /-- If the pullback of a distribution by test pushforward has a locally integrable
  density near a point, the original distribution has a local density near its image. -/
-def PushforwardLocalDensityStatement (μ : Measure X) [IsFiniteMeasureOnCompacts μ] [μ.IsOpenPosMeasure]
+def PushforwardLocalDensityStatement [T2Space X] [LocallyCompactSpace X]
+    [TotallyDisconnectedSpace X] [BorelSpace X] [T2Space Y] [LocallyCompactSpace Y]
+    [TotallyDisconnectedSpace Y] [SecondCountableTopology Y] [BorelSpace Y] (μ : Measure X) [IsFiniteMeasureOnCompacts μ] [μ.IsOpenPosMeasure]
     (ν : Measure Y) [IsFiniteMeasureOnCompacts ν] [ν.IsOpenPosMeasure] [SigmaFinite ν] (p : X → Y)
     (P : SchwartzBruhat X →ₗ[ℂ] SchwartzBruhat Y) (D : Distribution Y)
     (U : Set X) (x : X) : Prop :=

@@ -48,6 +48,38 @@ theorem matrixRealization_eq {N : ℕ} (ρ : GroupScheme.MatrixRepresentation G 
         (CommAlgCat.of F (InfiniteAdeleRing F)) (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom
         (x ≫ ρ.hom.hom) := rfl
 
+/-- A closed matrix representation realizes the archimedean group with any specified
+smooth atlas coming from the given smooth relative dimension. -/
+theorem isClosedLinearRealization_matrixRealization_of_smooth [IsAffine G.X.left]
+    {d N : ℕ} (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+    (ρ : GroupScheme.MatrixRepresentation G (Fin N)) (hρ : GroupScheme.IsClosedSubgroup ρ) :
+    letI := fun v : InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
+    letI := smoothChartedSpace F G hsmooth
+    LinearLieGroup.IsClosedLinearRealization 𝓘(ℝ, smoothModel F d)
+      (matrixRealization F G ρ) := by
+  let := fun v : InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
+  let := smoothChartedSpace F G hsmooth
+  have : T2Space (InfiniteAdeleRing F) :=
+    inferInstanceAs (T2Space ((v : InfinitePlace F) → v.Completion))
+  refine ⟨?_, ?_, ?_⟩
+  · exact (archimedeanGLCoordinates F N).toHomeomorph.isClosedEmbedding.comp
+      (ρ.isClosedEmbedding_affineMatrix (CommAlgCat.of F (InfiniteAdeleRing F)) hρ)
+  · have hid := (contMDiff_iff_coordinateSmooth F G
+      𝓘(ℝ, smoothModel F d) hsmooth id).1 contMDiff_id
+    have h3 := (GroupScheme.GeneralLinear.coordinateSmooth_iff_contMDiff (Fin N)
+      (CommRingCat.of F) (CommAlgCat.of F (InfiniteAdeleRing F))
+      (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom
+      𝓘(ℝ, smoothModel F d) _).1 (hid.postcomp ρ.hom.hom)
+    exact Units.contMDiff_val.comp h3
+  · intro m p hp
+    apply (contMDiff_iff_coordinateSmooth F G 𝓘(ℝ, Fin m → ℝ) hsmooth p).2
+    apply ρ.coordinateSmooth_of_postcomp hρ (CommAlgCat.of F (InfiniteAdeleRing F))
+      (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom
+    apply (GroupScheme.GeneralLinear.coordinateSmooth_iff_contMDiff (Fin N)
+      (CommRingCat.of F) (CommAlgCat.of F (InfiniteAdeleRing F))
+      (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom 𝓘(ℝ, Fin m → ℝ) _).2
+    exact LinearLieGroup.contMDiff_units_of_contDiff_val _ hp
+
 /-- For a connected reductive `G` and a closed matrix representation `ρ`, `matrixRealization F G ρ`
 is a closed linear realization of `G(F_∞)` with the Library's reductive atlas: a closed embedding
 (`isClosedEmbedding_affineMatrix`), smooth by the coordinate-smooth criterion of the atlas, and
@@ -60,28 +92,7 @@ theorem isClosedLinearRealization_matrixRealization
     LinearLieGroup.IsClosedLinearRealization 𝓘(ℝ, smoothModel F hG.smoothDimension)
       (matrixRealization F G ρ) := by
   let := hG.affineScheme
-  let := fun v : InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
-  let := reductiveChartedSpace F G hG
-  have : T2Space (InfiniteAdeleRing F) :=
-    inferInstanceAs (T2Space ((v : InfinitePlace F) → v.Completion))
-  refine ⟨?_, ?_, ?_⟩
-  · exact (archimedeanGLCoordinates F N).toHomeomorph.isClosedEmbedding.comp
-      (ρ.isClosedEmbedding_affineMatrix (CommAlgCat.of F (InfiniteAdeleRing F)) hρ)
-  · have hid := (reductive_contMDiff_iff_coordinateSmooth F G hG
-      𝓘(ℝ, smoothModel F hG.smoothDimension) id).1 contMDiff_id
-    have h3 := (GroupScheme.GeneralLinear.coordinateSmooth_iff_contMDiff (Fin N)
-      (CommRingCat.of F) (CommAlgCat.of F (InfiniteAdeleRing F))
-      (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom
-      𝓘(ℝ, smoothModel F hG.smoothDimension) _).1 (hid.postcomp ρ.hom.hom)
-    exact Units.contMDiff_val.comp h3
-  · intro m p hp
-    rw [reductive_contMDiff_iff_coordinateSmooth F G hG]
-    apply ρ.coordinateSmooth_of_postcomp hρ (CommAlgCat.of F (InfiniteAdeleRing F))
-      (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom
-    apply (GroupScheme.GeneralLinear.coordinateSmooth_iff_contMDiff (Fin N)
-      (CommRingCat.of F) (CommAlgCat.of F (InfiniteAdeleRing F))
-      (InfiniteAdeleRing.ringEquiv_mixedSpace F).toRingHom 𝓘(ℝ, Fin m → ℝ) _).2
-    exact LinearLieGroup.contMDiff_units_of_contDiff_val _ hp
+  exact isClosedLinearRealization_matrixRealization_of_smooth F G hG.smoothDimension_spec ρ hρ
 
 /-- **The archimedean points of a reductive group have a closed linear realization**:
 `G(F_∞)`, with the Library's atlas `reductiveChartedSpace`, admits a closed linear realization in

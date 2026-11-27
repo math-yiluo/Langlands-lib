@@ -1,0 +1,11 @@
+# Centralizer units acting on simple characters
+
+`SimpleCharacterMixedJCommutator` records the finite-depth mixed-unit calculation of Bushnell–Kutzko (1993), (3.2.8), printed pp. 102–103 (PDF pp. 114–115). `SimpleStratum.relativeCommutatorLaws_of_mixedJ` derives the inputs needed for pairing evaluation from this calculation and the subgroup properties. The determinant and normalization arguments use (3.2.1)(b), (3.2.2)(ii), and (3.2.3), printed pp. 98–99 (PDF pp. 110–111). The registered source `bushnell-kutzko-1993-admissible-dual-gln` has SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`.
+
+Fix a nonarchimedean local field `F`, a simple `[𝔄,n,0,β]` with finite critical depth `r = −k₀(β,𝔄)`, and a defining sequence starting at `β`. The base character `ψ` is trivial on `𝔭_F` and nontrivial on `𝒪_F`. Take `θ ∈ C(𝔄,i,β)` with `⌊r/2⌋ ≤ i < r`. The bounds from (3.2.6), printed p. 100 (PDF p. 112), are `k,l ≥ 1`, `i+1 ≤ k+l`, and `r+1 ≤ k+2l`.
+
+The unit `x` satisfies `x−1 ∈ 𝔓^k` and `a_β(x−1) ∈ 𝔓^(k−r)`. This is membership of `x−1` in the mixed adjoint lattice at `(k,−r)`, which equals the source's `𝔔_β^k 𝔑_{−r}(β)` by fractional centralizer transport. The unit `y` belongs to `J^l`. Then `xyx⁻¹y⁻¹` lies in `H^(i+1)` and its value under `θ` is `ψ(tr((x⁻¹βx−β)(y−1)))`. The character and both groups use the supplied defining sequence.
+
+`relativeEndUnitEquiv` lifts centralizer units to relative endomorphism units. The relative determinant is invariant under conjugation and sends commutators to one. The factorization property therefore gives the same identities for the character on its relative domain. For a terminal element, relative units normalize the character on the high part by trace invariance and on the relative part by determinant invariance. The relative product formula combines the two parts. For a nonterminal element the definition of the character gives normalization by the relative order normalizer.
+
+Restriction to the higher index in the recursion retains the determinant factorization, the normalization property, and the same next character. A relative first argument has zero adjoint image, so the mixed formula at that index evaluates the commutator to one. The terminal case uses the direct filtered trace expansion with a commuting first argument.

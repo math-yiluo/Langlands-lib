@@ -23,7 +23,8 @@ every irreducible supercuspidal representation of rank at least two.
 - `continuous_ord_det`: `g ↦ ord(det g)` is continuous on `GL_{n+1}(K)` (with the discrete
   topology on `ℤ`).
 - `measurableSet_ord_det_eq`: each determinant shell `{g | ord(det g) = j}` is measurable.
-- `setIntegral_ord_det_eq_of_functionalEquation` (the shell identity): assume the
+- `setIntegral_ord_det_of_monomial_functionalEquation` gives the integral on every
+  determinant shell. Assume the
   functional-equation data above; let `Φ` be a `GodementJacquet.MatrixTestFunction n K.Carrier`
   such that `ord(det g) ≥ j₀` whenever the Fourier transform
   `rectangularFourierIntegral ψ ν Φ` is nonzero at the matrix of `g ∈ GL_{n+1}(K)`; let `f` be an
@@ -31,17 +32,19 @@ every irreducible supercuspidal representation of rank at least two.
   `GodementJacquet.HasShiftedRationalValue` holds for `Φ`, `f` and the constant rational function
   `r` (with the residue cardinality, the normalized absolute value and `generalLinearHaar`). Then
 
-  `∫_{ord(det g) = -a} Φ̂(g) f^ι(g) dg = c r (q^{-1} q^{-n/2})^a`,
+  `∫_{ord(det g) = j} Φ̂(g) f^ι(g) dg = if j = -a then c r (q^{-1} q^{-n/2})^a else 0`,
 
   where `Φ̂ = rectangularFourierIntegral ψ ν Φ` and `f^ι = GodementJacquet.coefficientIota f`
   (the coefficient `g ↦ f(g^{-T})`).
+- `setIntegral_ord_det_eq_of_functionalEquation` evaluates the shell of order `-a` by
+  specializing the identity.
 - `exists_ord_det_eq_of_functionalEquation`: under the same hypotheses, if `r ≠ 0` then some
   `g ∈ GL_{n+1}(K)` has `ord(det g) = -a`, `Φ̂(g) ≠ 0` and `f^ι(g) ≠ 0`.
 
 ## Provenance
 
-The shell identity is an internal step in the determinant-shell proof of T2. It extracts a
-single coefficient of the dual zeta integral using the Library theorem
+The shell identity is an internal step in the determinant-shell proof of T2. It extracts the
+coefficients of the dual zeta integral using the Library theorem
 `RankinSelberg.HighlyRamified.shell_integral_eq_of_const`
 (module `Langlands.Representation.RankinSelberg.HighlyRamified.ShellExpansion`).
 
@@ -60,10 +63,11 @@ Write `Ψ(g) = Φ̂(g) f^ι(g) |det g|^{n/2}` and `D(g) = ord(det g) + a`. By th
 on a right half-plane. Integrability at one real point comes from the convergence part of
 `HasShiftedRationalValue` for the dual side. The fibres of `D` are measurable shells
 (`measurableSet_ord_det_eq`), and `Ψ(g) ≠ 0` forces `D(g) ≥ j₀ + a` by the support hypothesis.
-`shell_integral_eq_of_const` then gives `∫_{D = 0} Ψ = c r (q^{-1})^a`. On the shell
-`D = 0`, that is `ord(det g) = -a`, the weight `|det g|^{n/2}` is the constant `(q^{-n/2})^{-a}`
-(`RankinSelberg.normalizedDeterminantWeight_eq_spectralPoint_zpow`); dividing by it gives the
-identity.
+`shell_integral_eq_of_const` gives `∫_{D = j + a} Ψ = c r (q^{-1})^a` when `j + a = 0`
+and zero otherwise. On this shell `ord(det g) = j`, so the weight `|det g|^{n/2}` is the
+nonzero constant `(q^{-n/2})^j` by
+`RankinSelberg.normalizedDeterminantWeight_eq_spectralPoint_zpow`. Dividing by that
+constant proves the identity on each shell.
 
 For `exists_ord_det_eq_of_functionalEquation`: the right side is nonzero (`c` is a unit, `r ≠ 0`,
 and `q^{-t} ≠ 0`). If the integrand vanished at every point of the shell, the integral would be

@@ -41,7 +41,8 @@ local notation:max "D" ds:max => DerivativeSmoothVectors I (R ds)
 /-- The boundary character of the actual upper rectangle in the right group coordinates. -/
 def transversePhase (a : ℝˣ) (Y : X) : ℂ := (realScaledCharacter a).complex (Y (Fin.last m) 0)
 
-private theorem contDiff_transversePhase (a : ℝˣ) : ContDiff ℝ ∞ (transversePhase (m := m) (p := p) a) := by
+/-- The transverse phase is smooth in the real rectangle coordinates. -/
+theorem contDiff_transversePhase (a : ℝˣ) : ContDiff ℝ ∞ (transversePhase (m := m) (p := p) a) := by
   change ContDiff ℝ ∞ (fun Y : X => (realScaledCharacter a).complex (Y (Fin.last m) 0))
   simp only [UnitaryAdditiveCharacter.complex_apply, realScaledCharacter_apply, Real.fourierChar_apply]
   have h : ContDiff ℝ ∞ (fun Y : X => Y (Fin.last m) 0) :=
@@ -49,7 +50,7 @@ private theorem contDiff_transversePhase (a : ℝˣ) : ContDiff ℝ ∞ (transve
   exact ((Complex.ofRealCLM.contDiff.comp (contDiff_const.mul (contDiff_const.mul h))).mul
     contDiff_const).cexp
 
-private theorem transversePhase_zero (a : ℝˣ) : transversePhase (m := m) (p := p) a 0 = 1 := by
+theorem transversePhase_zero (a : ℝˣ) : transversePhase (m := m) (p := p) a 0 = 1 := by
   simp [transversePhase]
 
 private theorem transversePhase_add (a : ℝˣ) (Y Z : X) :
@@ -94,7 +95,8 @@ theorem exists_transverseMoment_eq_one (a : ℝˣ) : ∃ φ : Test, transverseMo
   simp only [mul_assoc, hpair, mul_one, integral_const_mul, integral_complex_ofReal]
   exact inv_mul_cancel₀ hc
 
-private theorem whittakerCharacter_intertwiningUnipotent (a : ℝˣ) (Z : X) :
+/-- The Whittaker character restricts to the transverse phase on the exchanged rectangle. -/
+theorem whittakerCharacter_intertwiningUnipotent (a : ℝˣ) (Z : X) :
     realWhittakerCharacter a (intertwiningUnipotent (p + 1) (m + 1) ℝ Z) = transversePhase a Z := by
   exact congrArg (realScaledCharacter a).complex
     (Langlands.Shahidi.sum_superdiagonal_intertwiningUnipotent p m Z)

@@ -1,0 +1,5 @@
+# Maximal-parabolic line characters and full weights
+
+The Chevalley line whose stabilizer is the maximal standard parabolic omitting a simple root is preserved by the minimal parabolic. The Library's maximal-parabolic line dominance theorem gives strict pairing with the omitted coroot and invariance under the other simple reflections. Hence the line character minus the corresponding positive multiple of the full fundamental weight annihilates every simple coroot. The standard Levi decomposition identifies that annihilator with restrictions of real rational characters of the ambient group.
+
+On Iwasawa heights, evaluation of such a restricted ambient character agrees with the ambient logarithmic character. It is unchanged by the rational Weyl lift and by the unipotent factor, by the product formula and triviality of rational characters on the latter. These internal consequences of maximal-parabolic line dominance reduce the Weyl height inequality to the comparison of the two line-character logarithms.

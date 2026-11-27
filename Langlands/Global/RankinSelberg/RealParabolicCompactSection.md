@@ -12,4 +12,11 @@ The complex powers use the positive real logarithm. The topological support of t
 
 On that cell the rectangle and the second Levi coordinate are recovered as \(Y=A^{-1}B\) and \(S=D-CY\). Block elimination gives \(\det u=\det A\,\det S\), so the two factor functions and their determinant weights are smooth there. For compact rectangle support \(K\), the set of matrices admitting \(B=AY\) for some \(Y\in K\) is closed in the group. It is the projection of a closed set along a compact factor. At every point of this closed set, the same determinant identity forces \(A\) to be invertible. The section vanishes on the open complement of that set, which contains the singular-pivot locus.
 
+`mem_tsupport_levi_of_compactSection` also controls the two Levi arguments at
+a point of the section's topological support in the pivot chart. At points
+of nonzero section value the two Levi inputs are nonzero. Continuity of the
+pivots at the given point places each pivot in the closure of the
+corresponding support. The open embedding of the general linear group into
+its matrix space identifies these closures on the invertible locus.
+
 This is the compact rectangle case of the open-cell section construction used in Jacquet, *Archimedean Rankin–Selberg Integrals*, §13.2, pp. 100–103, and Proposition 14.1, pp. 103–104 in the author-posted edition. The normalized lower-parabolic exponents are \(z_1=-n/2\) and \(z_2=m/2\). The statement concerns scalar smoothness, the values on the cell and the support condition. The representation covariance and split Whittaker evaluation are further properties of the induced section.

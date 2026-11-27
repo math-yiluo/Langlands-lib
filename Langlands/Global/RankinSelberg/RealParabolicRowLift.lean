@@ -2,6 +2,7 @@ import Langlands.Global.RankinSelberg.RealGodementRowFourierInversion
 import Langlands.Global.RankinSelberg.RealGodementFourierCovariance
 import Langlands.Global.RankinSelberg.RealGodementGaussianPolynomial
 import Langlands.Global.RankinSelberg.ComplexGodementColumnProduct
+import Langlands.Analysis.SchwartzScaledCutoff
 
 /-! # The real parabolic Fourier moment on the leading block -/
 
@@ -49,6 +50,34 @@ private theorem splitColumns_boundary (y : Row) : splitColumns (boundaryFrequenc
     change (if j.succ = 0 then y i else 0) = 0
     simp
 
+private def boundaryLinear : Row →L[ℝ] Rect :=
+  splitColumns.symm.toContinuousLinearMap.comp (ContinuousLinearMap.inl ℝ Row Tail)
+
+private theorem boundaryLinear_apply (y : Row) :
+    boundaryLinear (p := p) y = boundaryFrequency y := by
+  change splitColumns.symm (y, 0) = boundaryFrequency y
+  rw [← splitColumns_boundary y, ContinuousLinearEquiv.symm_apply_apply]
+
+private theorem boundaryLinear_injective : Function.Injective (boundaryLinear (r := r) (p := p)) := by
+  intro y z h
+  rw [boundaryLinear_apply, boundaryLinear_apply] at h
+  funext i
+  simpa [boundaryFrequency] using
+    congrArg (fun A : Rect => A i (0 : Fin (p + 1))) h
+
+/-- The negative rectangular Fourier transform restricted to the boundary row frequencies. -/
+def rowFourierProfile (a : ℝˣ) : 𝓢(Rect, ℂ) →L[ℂ] 𝓢(Row, ℂ) :=
+  let E := rectangularCoordinates (r := r + 1) (s := p + 1)
+  (SchwartzMap.compCLMOfAntilipschitz ℂ boundaryLinear.hasTemperateGrowth
+    (boundaryLinear.toLinearMap.injective_iff_antilipschitz.mp boundaryLinear_injective).choose_spec.2).comp
+    ((SchwartzMap.compCLMOfContinuousLinearEquiv ℂ E.symm).comp
+      ((scaledEuclideanFourierCLM (-a)).comp (SchwartzMap.compCLMOfContinuousLinearEquiv ℂ E)))
+
+theorem rowFourierProfile_apply (a : ℝˣ) (Φ : 𝓢(Rect, ℂ)) (y : Row) :
+    rowFourierProfile a Φ y = realRectangularSchwartzFourier (-a) Φ (boundaryFrequency y) := by
+  change realRectangularSchwartzFourier (-a) Φ (boundaryLinear y) = _
+  rw [boundaryLinear_apply]
+
 private def extendRow (f : 𝓢(Row, ℂ)) : 𝓢(Rect, ℂ) :=
   SchwartzMap.compCLMOfContinuousLinearEquiv ℂ splitColumns
     (ComplexGodementColumnProduct.schwartzProd (ContinuousLinearMap.fst ℝ Row Tail)
@@ -81,6 +110,23 @@ private theorem rectangularFourier_neg_comp (a : ℝˣ) (f : 𝓢(Rect, ℂ)) :
   change f (c (c.symm X)) = f X
   rw [ContinuousLinearEquiv.apply_symm_apply]
 
+theorem rowFourierProfile_surjective (a : ℝˣ) : Function.Surjective (rowFourierProfile (r := r) (p := p) a) := by
+  intro f
+  refine ⟨realRectangularSchwartzFourier a (extendRow f), ?_⟩
+  ext y
+  rw [rowFourierProfile_apply, rectangularFourier_neg_comp, extendRow_boundary]
+
+/-- Profiles of compactly supported rectangle tests are dense in the full row Schwartz space. -/
+def RealParabolicCompactRowProfileDensityStatement : Prop :=
+  ∀ (m n : ℕ) (a : ℝˣ),
+    Dense (rowFourierProfile (r := m) (p := n) a ''
+      {Φ | HasCompactSupport (Φ : Matrix (Fin (m + 1)) (Fin (n + 1)) ℝ → ℂ)})
+
+theorem realParabolicCompactRowProfileDensity : RealParabolicCompactRowProfileDensityStatement := by
+  intro m n a
+  exact (rowFourierProfile_surjective (r := m) (p := n) a).denseRange.dense_image
+    (rowFourierProfile a).continuous Langlands.Analysis.dense_hasCompactSupport_schwartz
+
 private def lastBasisRow : Row := Pi.single (Fin.last r) 1
 
 private theorem pairing_boundary (Y : Rect) :
@@ -99,21 +145,13 @@ negative boundary phase for the Whittaker character at scale `a`. -/
 def parabolicMomentKernel (a : ℝˣ) (Φ : 𝓢(Rect, ℂ)) (g : G) (Y : Rect) : ℂ :=
   Φ ((g⁻¹).val * Y) * (realScaledCharacter (-a)).complex (Y (Fin.last r) 0)
 
-/-- The rectangle profile can realize any Schwartz function of the last row of
-`g`. The Jacobian is one factor of `|det g|` for each column. -/
-def RealParabolicRowLiftStatement : Prop :=
-  ∀ (r p : ℕ) (a : ℝˣ) (f : 𝓢((Fin (r + 1) → ℝ), ℂ)),
-    ∃ Φ : 𝓢(Matrix (Fin (r + 1)) (Fin (p + 1)) ℝ, ℂ),
-      ∀ g : Langlands.GeneralLinear (r + 1) ℝ,
-        let μ := Langlands.RankinSelberg.rectangularMeasure (realSelfDualMeasure a) (r + 1) (p + 1)
-        Integrable (parabolicMomentKernel a Φ g) μ ∧
-          (∫ Y, parabolicMomentKernel a Φ g Y ∂μ) =
-            ((|g.val.det| ^ (p + 1) : ℝ) : ℂ) * f (fun i => g.val (Fin.last r) i)
-
-theorem realParabolicRowLift : RealParabolicRowLiftStatement := by
-  intro r p a f
-  let Φ := realRectangularSchwartzFourier a (extendRow (p := p) f)
-  refine ⟨Φ, fun g => ?_⟩
+/-- The translated compact or Schwartz rectangle moment is the row profile
+at the last row, with one absolute determinant factor per column. -/
+theorem parabolicMomentKernel_integral (a : ℝˣ) (Φ : 𝓢(Rect, ℂ)) (g : G) :
+    let μ := Langlands.RankinSelberg.rectangularMeasure (realSelfDualMeasure a) (r + 1) (p + 1)
+    Integrable (parabolicMomentKernel a Φ g) μ ∧
+      (∫ Y, parabolicMomentKernel a Φ g Y ∂μ) =
+        ((|g.val.det| ^ (p + 1) : ℝ) : ℂ) * rowFourierProfile a Φ (fun i => g.val (Fin.last r) i) := by
   let μ := Langlands.RankinSelberg.rectangularMeasure (realSelfDualMeasure a) (r + 1) (p + 1)
   change Integrable (parabolicMomentKernel a Φ g) μ ∧ _
   let ν := (realSelfDualMeasure a).measure
@@ -146,11 +184,27 @@ theorem realParabolicRowLift : RealParabolicRowLiftStatement := by
         realRectangularSchwartzFourier (-a) Ψ (boundaryFrequency lastBasisRow) := by
       rw [realRectangularSchwartzFourier_apply, rectangularFourierIntegral]
       simp only [Langlands.RankinSelberg.rectangularMeasure, hμ, μ, hKernel, pairing_boundary]
-    _ = ((|g.val.det| ^ (p + 1) : ℝ) : ℂ) * f (fun i => g.val (Fin.last r) i) := by
+    _ = ((|g.val.det| ^ (p + 1) : ℝ) : ℂ) * rowFourierProfile a Φ (fun i => g.val (Fin.last r) i) := by
       rw [show Ψ = RealGodement.rectangularTranslate g⁻¹ (1 : Langlands.GeneralLinear (p + 1) ℝ) Φ from rfl,
-        realGodementFourierCovariance]
+        realGodementFourierCovariance, rowFourierProfile_apply]
       simp only [Units.val_one, Matrix.det_one, abs_one, one_pow, mul_one, hDet,
         abs_inv, inv_pow, inv_inv, GeneralLinear.inverseTranspose_coe, inv_one, Matrix.transpose_one,
-        Matrix.mul_one, transpose_mul_boundary, Φ, rectangularFourier_neg_comp, extendRow_boundary]
+        Matrix.mul_one, transpose_mul_boundary]
+
+/-- The rectangle profile can realize any Schwartz function of the last row of
+`g`. The Jacobian is one factor of `|det g|` for each column. -/
+def RealParabolicRowLiftStatement : Prop :=
+  ∀ (r p : ℕ) (a : ℝˣ) (f : 𝓢((Fin (r + 1) → ℝ), ℂ)),
+    ∃ Φ : 𝓢(Matrix (Fin (r + 1)) (Fin (p + 1)) ℝ, ℂ),
+      ∀ g : Langlands.GeneralLinear (r + 1) ℝ,
+        let μ := Langlands.RankinSelberg.rectangularMeasure (realSelfDualMeasure a) (r + 1) (p + 1)
+        Integrable (parabolicMomentKernel a Φ g) μ ∧
+          (∫ Y, parabolicMomentKernel a Φ g Y ∂μ) =
+            ((|g.val.det| ^ (p + 1) : ℝ) : ℂ) * f (fun i => g.val (Fin.last r) i)
+
+theorem realParabolicRowLift : RealParabolicRowLiftStatement := by
+  intro r p a f
+  obtain ⟨Φ, hΦ⟩ := rowFourierProfile_surjective (r := r) (p := p) a f
+  exact ⟨Φ, fun g => by simpa only [hΦ] using parabolicMomentKernel_integral a Φ g⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealParabolicRowLift

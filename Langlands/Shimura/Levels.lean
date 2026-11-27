@@ -1,3 +1,4 @@
+import Mathlib.Topology.Algebra.Group.Quotient
 import Mathlib.Topology.Algebra.OpenSubgroup
 import Mathlib.Topology.Category.TopCat.Basic
 import Mathlib.Algebra.Group.End
@@ -20,6 +21,17 @@ namespace CompactOpenLevel
 variable {G : Type v} [Group G] [TopologicalSpace G]
 
 abbrev subgroup (K : CompactOpenLevel G) : Subgroup G := K.openSubgroup.toSubgroup
+
+/-- A compact level meets only finitely many cosets of a conjugated open level. -/
+theorem cosetImage_finite
+    {J : Type*} [Group J] [TopologicalSpace J] [IsTopologicalGroup J]
+    (U V : CompactOpenLevel J) (g : J) :
+    ((fun u : J => (QuotientGroup.mk (u * g) : J ⧸ V.subgroup)) ''
+      (U.subgroup : Set J)).Finite := by
+  let : DiscreteTopology (J ⧸ V.subgroup) :=
+    QuotientGroup.discreteTopology V.openSubgroup.isOpen
+  exact (U.isCompact.image (QuotientGroup.continuous_mk.comp
+    (continuous_id.mul continuous_const))).finite_of_discrete
 
 /-- A right-translation arrow, with the precise conjugation condition needed
 to descend from source level to target level. -/

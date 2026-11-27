@@ -38,3 +38,5 @@ Library's manifold structure, have a closed linear realization in the sense of
 This is the global version of the place-by-place criterion `contMDiff_iff_realizationMatrix` of
 `Langlands/Global/InfinitePlaceRealizationSmooth`. With it the Dixmier–Malliavin theorem
 (`Langlands/Representation/Archimedean/DixmierMalliavin`) applies to `G(F_∞)`.
+
+`isClosedLinearRealization_matrixRealization_of_smooth` uses the atlas of the supplied smooth relative dimension. The mixed regular-coordinate criterion proves both smoothness clauses, and the reductive version specializes this result to the canonical dimension.

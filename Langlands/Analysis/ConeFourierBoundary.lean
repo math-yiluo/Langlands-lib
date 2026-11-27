@@ -43,7 +43,7 @@ private def fourierKernel (x y : ι → ℝ) : ℂ :=
 def orthantFourierTest (ν : Measure (ι → ℝ)) (f : (ι → ℝ) → ℂ) (x : ι → ℝ) : ℂ :=
   ∫ y, fourierKernel x y * f y ∂ν
 
-private theorem measurableSet_orientedOrthant (d : ι → ℝ) :
+theorem measurableSet_orientedOrthant (d : ι → ℝ) :
     MeasurableSet (orientedOrthant d) := by
   refine MeasurableSet.univ_pi fun i => ?_
   unfold orientedHalfLine
@@ -85,7 +85,7 @@ private theorem halfLine_laplace (d t y : ℝ) (ht : 0 < t) (hd : d ≠ 0) :
     rw [integral_exp_mul_complex_Iic hn]
     simp [div_eq_mul_inv]
 
-private theorem orthant_laplace (d : ι → ℝ) (t : ℝ) (y : ι → ℝ)
+theorem orthant_laplace (d : ι → ℝ) (t : ℝ) (y : ι → ℝ)
     (hd : ∀ i, d i ≠ 0) (ht : 0 < t) :
     let kernel (x : ι → ℝ) :=
       Complex.exp (∑ i, -(shiftedParameter (d i) t (y i)) * (x i : ℂ))

@@ -7,12 +7,16 @@ automorphism `σ`. For any point `y` of `G` over `M`, the values
 `f⁻¹ y σ(f)` as `f` varies over the `M`-points are Zariski dense in
 the scalar extension of `G` to `M`.
 
+`galoisTwistedPointDensity_of_isGalois` proves the density for every
+finite Galois `M/K`. Normality splits the tensor product over `M`,
+and the finite separable Weil restriction theorem gives connected
+reductivity over `K`.
+
 Take the affine Weil restriction of that scalar extension. Over `M`
-it is the product indexed by the embeddings of `M` over `K`. The
-factors are connected reductive, so the Weil restriction is connected
-reductive by field-extension reflection. Unirationality and the
-infinitude of `K` give density of its ground-field points. Extending
-these sections to `M` preserves their density.
+it is the product indexed by the embeddings of `M` over `K`.
+Unirationality and the infinitude of `K` give density of the
+Weil restriction's ground-field points. Extending these sections
+to `M` preserves their density.
 
 On the geometric Weil restriction, use the inverse of the identity
 coordinate, multiplication by the constant point `y`, and the

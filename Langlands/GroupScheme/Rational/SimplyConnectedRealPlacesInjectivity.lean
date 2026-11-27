@@ -17,15 +17,6 @@ open scoped CategoryTheory.MonObj TensorProduct
 
 namespace Langlands.GroupScheme
 
-private theorem isTrivial_of_section {S : Scheme.{u}} {G : GroupScheme S} {U : Over S}
-    (c : Cocycle G U) (s : Over.mk (𝟙 S) ⟶ U) : c.IsTrivial := by
-  let q : U ⟶ Over.mk (𝟙 S) := Over.homMk U.hom
-  refine ⟨c.toFun (𝟙 U) (q ≫ s), fun {Z} x y => ?_⟩
-  have hq : x ≫ q = y ≫ q := Over.OverMorphism.ext ((Over.w x).trans (Over.w y).symm)
-  rw [← c.naturality, ← c.naturality]
-  simp only [Category.comp_id, ← Category.assoc, hq]
-  exact eq_mul_inv_of_mul_eq (c.cocycle x y (y ≫ q ≫ s)).symm
-
 private theorem cohomologous_of_isTrivial {S : Scheme.{u}} {G : GroupScheme S} {U : Over S}
     {c d : Cocycle G U} (hc : c.IsTrivial) (hd : d.IsTrivial) : c.Cohomologous d := by
   obtain ⟨f, hf⟩ := hc
@@ -60,7 +51,7 @@ private theorem isTrivial_pullback_of_isAlgClosed [IsAlgClosed K]
   let P : Over (Spec (CommRingCat.of K)) := Over.mk (𝟙 _)
   let p : (Over.map b).obj P ⟶ ringTest F K := Over.homMk (𝟙 _) (by simp [P, b, ringTest])
   let e : L →ₐ[F] K := IsAlgClosed.lift
-  exact isTrivial_of_section c ((Over.mapPullbackAdj b).homEquiv _ _ (p ≫ ringTestMap F e))
+  exact Cocycle.isTrivial_of_section c ((Over.mapPullbackAdj b).homEquiv _ _ (p ≫ ringTestMap F e))
 
 /-- A cocycle on the pulled-back cover of a finite field extension becomes trivial if all
 cocycles on finite separable field covers of the new base vanish. A residue field of the

@@ -21,16 +21,6 @@ open Langlands.GroupScheme.Tate (Index)
 
 namespace Langlands.Shimura.PEL.HarrisPolarizedWeilLevel
 
-private theorem compactOpen_cosetImage_finite
-    {J : Type*} [Group J] [TopologicalSpace J] [IsTopologicalGroup J]
-    (U V : CompactOpenLevel J) (g : J) :
-    ((fun u : J => (QuotientGroup.mk (u * g) : J ⧸ V.subgroup)) ''
-      (U.subgroup : Set J)).Finite := by
-  let : DiscreteTopology (J ⧸ V.subgroup) :=
-    QuotientGroup.discreteTopology V.openSubgroup.isOpen
-  exact (U.isCompact.image (QuotientGroup.continuous_mk.comp
-    (continuous_id.mul continuous_const))).finite_of_discrete
-
 open NumberField _root_.Algebra
 
 variable {E F A : Type}
@@ -126,7 +116,7 @@ theorem harrisIntegralCMFrameOrbit_finite_of_fixed
       D C P B W lam T a compatibility h s hs htor hu eta U).mp heta
   obtain ⟨xi, rfl⟩ := Quotient.exists_rep q
   let g : G := (coord eta).symm xi
-  apply ((compactOpen_cosetImage_finite U V g).image (cosetEquiv eta V)).subset
+  apply ((CompactOpenLevel.cosetImage_finite U V g).image (cosetEquiv eta V)).subset
   rintro _ ⟨gamma, rfl⟩
   refine ⟨QuotientGroup.mk (rho eta gamma * g),
     ⟨rho eta gamma, hrange gamma, rfl⟩, ?_⟩

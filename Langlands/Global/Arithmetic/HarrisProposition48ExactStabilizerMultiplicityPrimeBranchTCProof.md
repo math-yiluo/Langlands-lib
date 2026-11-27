@@ -51,14 +51,14 @@ through their proofs in the Library:
 | 5 | `Proposition48PrimeInductionStagesStatement` | `proposition48PrimeInductionStages` (`HarrisProposition48PrimeInductionStagesProof`) |
 | 6 | `Proposition48InducedParameterRegularAlgebraicStatement` | `proposition48InducedParameterRegularAlgebraic` (`HarrisProposition48InducedParameterRegularAlgebraicProof`) |
 | 7 | `WeakInductionConjugateInverseSelfDualTCStatement` | `weakInductionConjugateInverseSelfDualTC` (`HarrisWeakInductionConjugateSelfDualTCProof`) |
-| 8 | `ArithmeticComapUnitaryCentralCharacterStatement` | `Langlands.Automorphic.arithmeticComapUnitaryCentralCharacter` (`Langlands.Automorphic.ArithmeticComapUnitaryCentralCharacterProof`) |
-| 9 | `ArithmeticComapSupercuspidalComponentStatement` | `Langlands.Automorphic.arithmeticComapSupercuspidalComponent` (`Langlands.Automorphic.ArithmeticComapSupercuspidalComponentProof`) |
+| 8 | `Langlands.Automorphic.ArithmeticComapUnitaryCentralCharacterStatement` | `Langlands.Automorphic.arithmeticComapUnitaryCentralCharacter` (`Langlands.Automorphic.ArithmeticComapUnitaryCentralCharacterProof`) |
+| 9 | `Langlands.Automorphic.ArithmeticComapSupercuspidalComponentStatement` | `Langlands.Automorphic.arithmeticComapSupercuspidalComponent` (`Langlands.Automorphic.ArithmeticComapSupercuspidalComponentProof`) |
 | 10 | `ConjugateSelfDualUnitaryCentralCharacterStatement` | `conjugateSelfDualUnitaryCentralCharacter` (`HarrisConjugateSelfDualUnitaryCentralCharacterProof`) |
 | 11 | `ConjugateSelfDualSupercuspidalConjPlaceStatement` | `conjugateSelfDualSupercuspidalConjPlace` (`HarrisConjugateSelfDualSupercuspidalConjPlaceProof`) |
 | 12 | `SplitPlaceNeConjPlaceStatement` | `splitPlaceNeConjPlace` (`HarrisSplitPlaceNeConjPlaceProof`) |
 
-Modules without a prefix are in `Langlands.Global.Arithmetic`, and declarations
-without a prefix are in `Langlands.Global.Harris`. Lean fixes their universe
+In the table, modules without a prefix are in `Langlands.Global.Arithmetic`, and
+declarations without a prefix are in `Langlands.Global.Harris`. Lean fixes their universe
 parameters by unification: the number fields of a `Proposition48Problem` are in
 `Type`, so the field universes are `0`, while the local-field universe is `uF` and
 the carrier universe is `uV`.
@@ -87,10 +87,13 @@ exact-stabilizer validity, the prime step, the orbit cardinality,
 `HasDistinctMackeyComponents` and the child of the trivial double coset. In
 outline:
 
-- Interfaces 1 and 3 transport the child's untwisted cuspidal solution to a
-  Mackey constituent `T₀` over `D`. The constituent is unitary, by interfaces 10
-  and 8, and supercuspidal at the places of `D` above `Q.Ps.v` and its complex
-  conjugate, by interfaces 9 and 11.
+- Interface 1 gives `D ≤ Q.conjugateField 1` and describes the Mackey double
+  cosets as the fibres of restriction to `D`. Interface 3 transports the untwisted
+  cuspidal solution of the child of the trivial double coset to a Mackey
+  constituent `T₀` over `D`. Interfaces 10 and 8 give `T₀` a unitary central
+  character (`HasUnitaryCentralCharacter`), the precise input that B2, B4 and
+  restricted B7(2) use. Interfaces 9 and 11 make `T₀` supercuspidal at the places
+  of `D` above `Q.Ps.v` and its complex conjugate.
 - Interface 2 and `HasDistinctMackeyComponents` show that no nontrivial element of
   `Gal(D/Q.E)` fixes the class of `T₀`, so B2 gives a weak induction `Π` of `T₀`
   over `Q.E`.
@@ -106,8 +109,14 @@ Theorem 1.2 with multiplicity, `Proposition48IsobaricInvarianceTCStatement`, B3 
 the hypothesis `Q.IsSpaced` are introduced and not used. In Harris's proof,
 Theorem 1.2 enters the singleton case, through the argument of his Lemma 1.6, and
 not the prime orbit. In Henniart's §§5.9–5.10 the theorem with multiplicity enters
-only the descent case. `Q.IsSpaced` is the hypothesis under which the target states
-that theorem, so the prime branch does not need it.
+only the descent case. The theorem with multiplicity is an outer premise of the
+target, quantified over its own fields and representations before `Q` is
+introduced, while `Q.IsSpaced` restricts the branch datum `Q`: it requires even real
+degree of `Q.E` and weights of `Q.ξ` at distance at least two above every
+archimedean place of `Q.E`. These conditions accommodate the field and
+highest-weight hypotheses of the theorem with multiplicity in the descent argument.
+The prime-orbit proof is independent of both the multiplicity premise and
+`Q.IsSpaced`.
 
 ## Sources
 

@@ -188,22 +188,23 @@ theorem plotSmoothEnvelopingAction_wordHom {n : ℕ} (X : Fin n → E)
       map_smul, map_smul, LinearMap.smul_apply]
     rfl
 
-variable {N : ℕ} (rho : Langlands.GroupScheme.MatrixRepresentation G (Fin N))
-
-include hcalc in
-/-- A smooth scalar function with the compact and center finiteness of an
-automorphic form has one growth exponent for all archimedean derivatives.
-The estimate uses only these right actions and applies on any inducing quotient. -/
-theorem exists_uniformGrowth_functionInfiniteSlices (hN : 0 < N)
+/-- Compact and center finiteness give a single positive-order elliptic equation on all the
+infinite slices of a scalar adelic function. -/
+theorem exists_elliptic_functionInfiniteSlices
     (hG : Langlands.GroupScheme.IsConnectedReductive G) (K : Subgroup H)
     (hK : Langlands.CompactIwasawa.IsMaximalCompact K) (φ : Points → ℂ)
     (hs : ∀ b, functionInfiniteSlice F G φ b ∈ S)
     (hKφ : IsInfiniteSubgroupFiniteFunction F G K φ)
-    (hZφ : IsCenterFiniteFunction F G hsmooth hcalc φ)
-    (hgrowth : HasModerateGrowthFunction F G rho φ) :
-    ∃ e : ℝ, 0 ≤ e ∧ ∀ a : U, ∃ C : ℝ, 0 ≤ C ∧ ∀ b x,
-      ‖(plotSmoothEnvelopingAction F G hsmooth hcalc a ⟨functionInfiniteSlice F G φ b, hs b⟩).val x‖ ≤
-        C * adelicHeight F G rho (AdelicGroupPoints.pair F G x b) ^ e := by
+    (hZφ : IsCenterFiniteFunction F G hsmooth hcalc φ) :
+    letI := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
+    letI := smoothChartedSpace F G hsmooth
+    letI := smoothLieGroup F G hsmooth
+    ∃ (n r : ℕ) (X : Fin n → E) (Ptop Plow : MonoidAlgebra ℂ (FreeMonoid (Fin n))),
+      Submodule.span ℝ (Set.range X) = ⊤ ∧ 0 < r ∧
+      (∀ w ∈ Ptop.coeff.support, w.length = r) ∧
+      (∀ w ∈ Plow.coeff.support, w.length < r) ∧
+      (∀ ξ : GroupLieAlgebra IH H →ₗ[ℝ] ℝ, ξ ≠ 0 → lieWordSymbol X ξ Ptop ≠ 0) ∧
+      ∀ b x, lieWordAction X (Ptop + Plow) (functionInfiniteSlice F G φ b) x = 0 := by
   classical
   let := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
   let := smoothChartedSpace F G hsmooth
@@ -277,11 +278,19 @@ theorem exists_uniformGrowth_functionInfiniteSlices (hN : 0 < N)
   have hcomm (z : Z) : Commute (ρZ z) T := by
     change A z.val * A QK = A QK * A z.val
     rw [← map_mul, ← map_mul, Subalgebra.mem_center_iff.mp z.property QK]
-  obtain ⟨p, hpmonic, hpzero⟩ := exists_monic_aeval_sum_eq_zero ρZ f T zΩ hTfin hzfin hcomm
+  obtain ⟨p₀, hp₀monic, hp₀zero⟩ := exists_monic_aeval_sum_eq_zero ρZ f T zΩ hTfin hzfin hcomm
   have hΩ : ρZ zΩ + T = A QG := by
     change A (QG - QK) + A QK = A QG
     rw [map_sub, sub_add_cancel]
-  rw [hΩ] at hpzero
+  rw [hΩ] at hp₀zero
+  let p := Polynomial.X * p₀
+  have hpmonic := Polynomial.monic_X.mul hp₀monic
+  have hpzero : Polynomial.aeval (A QG) p f = 0 := by
+    rw [show p = Polynomial.X * p₀ from rfl, map_mul, Module.End.mul_apply, hp₀zero, map_zero]
+  have hpdeg : 0 < p.natDegree := by
+    change 0 < (Polynomial.X * p₀).natDegree
+    rw [Polynomial.natDegree_mul Polynomial.X_ne_zero hp₀monic.ne_zero, Polynomial.natDegree_X]
+    omega
   let Sq : MonoidAlgebra ℂ (FreeMonoid (Fin n)) :=
     ∑ i, MonoidAlgebra.single (FreeMonoid.of i * FreeMonoid.of i) 1
   have hSq : wordHom F G hsmooth X Sq = QG := by
@@ -330,10 +339,40 @@ theorem exists_uniformGrowth_functionInfiniteSlices (hN : 0 < N)
       Finset.sum_pos' (fun j _ => sq_nonneg _) ⟨i, Finset.mem_univ _, by positivity⟩
     rw [show Ptop = Sq ^ m from rfl, map_pow, hval]
     exact pow_ne_zero _ (by exact_mod_cast hpos.ne')
+  refine ⟨n, 2 * m, X, Ptop, Plow, hspan, by dsimp [m]; omega, htop, hlow, hsym, ?_⟩
+  intro b x
+  have heq := congrArg (fun v : V => (v b).val x) hkill
+  change (plotSmoothEnvelopingAction F G hsmooth hcalc
+    (wordHom F G hsmooth X (Ptop + Plow)) (f b)).val x = 0 at heq
+  rw [plotSmoothEnvelopingAction_wordHom] at heq
+  exact heq
+
+variable {N : ℕ} (rho : Langlands.GroupScheme.MatrixRepresentation G (Fin N))
+
+include hcalc in
+/-- A smooth scalar function with the compact and center finiteness of an
+automorphic form has one growth exponent for all archimedean derivatives.
+The estimate uses only these right actions and applies on any inducing quotient. -/
+theorem exists_uniformGrowth_functionInfiniteSlices (hN : 0 < N)
+    (hG : Langlands.GroupScheme.IsConnectedReductive G) (K : Subgroup H)
+    (hK : Langlands.CompactIwasawa.IsMaximalCompact K) (φ : Points → ℂ)
+    (hs : ∀ b, functionInfiniteSlice F G φ b ∈ S)
+    (hKφ : IsInfiniteSubgroupFiniteFunction F G K φ)
+    (hZφ : IsCenterFiniteFunction F G hsmooth hcalc φ)
+    (hgrowth : HasModerateGrowthFunction F G rho φ) :
+    ∃ e : ℝ, 0 ≤ e ∧ ∀ a : U, ∃ C : ℝ, 0 ≤ C ∧ ∀ b x,
+      ‖(plotSmoothEnvelopingAction F G hsmooth hcalc a ⟨functionInfiniteSlice F G φ b, hs b⟩).val x‖ ≤
+        C * adelicHeight F G rho (AdelicGroupPoints.pair F G x b) ^ e := by
+  let := fun v : NumberField.InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
+  let := smoothChartedSpace F G hsmooth
+  let := smoothLieGroup F G hsmooth
+  let f : V := fun b => ⟨functionInfiniteSlice F G φ b, hs b⟩
+  obtain ⟨n, r, X, Ptop, Plow, hspan, _, htop, hlow, hsym, hkill⟩ :=
+    exists_elliptic_functionInfiniteSlices F G hsmooth hcalc hG K hK φ hs hKφ hZφ
   obtain ⟨e, he, hg⟩ := HasModerateGrowthFunction.exists_compact_mul_le_height hgrowth
   refine ⟨e, he, fun a => ?_⟩
   obtain ⟨Q, rfl⟩ := wordHom_surjective F G hsmooth X hspan a
-  obtain ⟨C, M, hC, hM, hest⟩ := lieGroupEllipticInteriorEstimate.{u, u} E H n (2 * m)
+  obtain ⟨C, M, hC, hM, hest⟩ := lieGroupEllipticInteriorEstimate.{u, u} E H n r
     X Ptop Plow htop hlow hsym Q
   obtain ⟨B₀, hB₀, hbound⟩ := hg (AdelicGroupPoints.ofInfinite F G '' C)
     (hC.image (AdelicGroupPoints.ofInfinite F G).continuous)
@@ -343,8 +382,8 @@ theorem exists_uniformGrowth_functionInfiniteSlices (hN : 0 < N)
     ((isPlotSmooth_iff_contMDiff F G hsmooth _).mp (f b).property).comp
       (contMDiff_const.mul contMDiff_id)
   have heqn (y : H) : lieWordAction X (Ptop + Plow) ψ y = 0 := by
-    rw [lieWordAction_leftTranslation, ← plotSmoothEnvelopingAction_wordHom F G hsmooth hcalc]
-    exact congrArg (fun v : V => (v b).val (x * y)) hkill
+    rw [lieWordAction_leftTranslation]
+    exact hkill b (x * y)
   have hy (y : H) (hy : y ∈ C) : ‖ψ y‖ ≤
       B₀ * adelicHeight F G rho (AdelicGroupPoints.pair F G x b) ^ e := by
     simpa only [ψ, f, functionInfiniteSlice, AdelicGroupPoints.ofInfinite_eq_pair,

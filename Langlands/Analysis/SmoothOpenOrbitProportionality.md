@@ -29,3 +29,5 @@ nonzero fixes the ratio for every other test.
 This is an internal generalization of the compact-family averaging argument
 in `LongestBruhatCellInvariance`, applied to the free orbit of the whole Borel
 and the upper unipotent on the real reversal cell.
+
+`exists_ne_zero_smul_orbitIntegral_of_covariance` gives the scalar relative to the explicit character-weighted Haar integral evaluated at the base point. The cutoff comparison expresses each test value as the ratio of its orbit integral to that of one test of nonzero functional value, times that test value. The same comparison proves that the denominator is nonzero. Applying this formula to two nonzero functionals proves their proportionality.

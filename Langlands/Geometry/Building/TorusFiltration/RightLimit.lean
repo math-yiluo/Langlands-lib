@@ -30,7 +30,7 @@ private theorem floor_add_shallow (q : Set.Iio (1 : ℝ≥0)) (n : ℕ) :
     Nat.lt_one_iff.mp ((Nat.floor_lt_one zero_le).mpr q.property)
   rw [Nat.floor_add_natCast zero_le, hq, zero_add]
 
-private theorem exists_depthParts (r : ℝ≥0) :
+theorem exists_depthParts (r : ℝ≥0) :
     ∃ (q : Set.Iio (1 : ℝ≥0)) (n : ℕ), (q : ℝ≥0) + n = r :=
   ⟨⟨r - ↑⌊r⌋₊, Set.mem_Iio.mpr
     ((tsub_lt_iff_right (Nat.floor_le (show 0 ≤ r from zero_le))).mpr

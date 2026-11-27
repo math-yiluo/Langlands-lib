@@ -1,0 +1,9 @@
+# Signed auxiliary c-integrals on the compact product charts
+
+`cFactorDualConvergence` uses `normalizedDualTwistEquiv` and `cFactorConverges_iff_of_equiv` to transport convergence of the negative integral at the smooth dual of a twist. Its inverse parameter acts on the smooth dual of the original inducing representation. The comparison uses the quotient measure of the same auxiliary standard integral.
+
+`cCompactSourceChart` is `normalizedCompactProductChart` at the trivial parameter. `cCompactTargetMap` first identifies the lower pullback of the smooth dual with the smooth dual of the lower pullback by `contragredientPullbackIso` and `compactInductionPictureEquiv`. It then applies the lower product chart and multiplies by the inverse of `RationalDynamicSource.gammaReal` for the positive outer parabolic at the original compact subgroup. The compact pictures use the ambient standard and lower Iwasawa factorizations. `cCompactTargetMap_tmul` gives its value on pure tensors.
+
+`cFactorPlus_on_lift` cancels the compact restriction with extension on the original normalized induced function. `cFactorMinus_on_lift` uses `cFactor_natural` to pass to the inverse twist before taking the lower restriction. The two lower coefficients have equal evaluations as linear functionals, because the pullback and dual-twist comparisons preserve the underlying functional and `twistPullbackEquiv` preserves the vector. Extensionality of compact functions then gives equality of the lower compact sections.
+
+These identities use the two normalized partial integrals in Waldspurger, *La formule de Plancherel pour les groupes p-adiques, d’après Harish-Chandra*, proof of V.1.1, printed p. 289, and the fixed compact realizations of IV.1, printed pp. 276–277. The source is registered as `waldspurger-2003-plancherel`, SHA-256 `4b6a6162cd0b3863703fb2f65d1698f926caf813114917f2084c16e38f2e30f7`.

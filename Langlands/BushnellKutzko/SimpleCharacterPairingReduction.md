@@ -1,0 +1,7 @@
+# Descent of the simple-character commutator form
+
+`simpleCharacterPairing_of_relativeCommutatorLaws` reduces `SimpleCharacterPairingStatement` to the lattice and subgroup properties and the relative character laws used in the equal-depth commutator calculation. This is a derivation of Bushnell–Kutzko (1993), (3.4.1), printed pp. 115–116 (PDF pp. 127–128), source `bushnell-kutzko-1993-admissible-dual-gln`, SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`.
+
+The subgroup properties give `H ≤ J` and commutator containment. The equal-depth formula identifies the commutator evaluation with the additive adjoint character test. The positive-depth membership theorems identify `H` and `J` membership with membership of the difference from one in the respective lattice layers. The unit-filtration theorem lifts each element of the `J` layer to a representative, so the additive radical computation applies to all tests and identifies the radical inside `J` with `H`. Applying `exists_quotientCommutatorPairing` gives normality and constructs both homomorphisms on the quotient of the actual units. The theorem uses the original commutator witness in its evaluation clause.
+
+`simpleCharacterPairing_of_mixedJ` derives the relative laws from the mixed commutator calculation of (3.2.8) together with the subgroup properties. Its three premises are `SimpleStratumLatticePropertiesStatement`, `SimpleStratumGroupPropertiesStatement`, and `SimpleCharacterMixedJCommutator`.

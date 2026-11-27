@@ -64,3 +64,5 @@ The module does not depend on other project definitions. The generic topology
 does not require continuity of the `Gamma` action; no separation, local
 triviality, manifold structure or local-system theorem is inferred from that
 quotient topology.
+
+`CompactOpenLevel.cosetImage_finite` gives finiteness of the image of `U` under the coset map `u ↦ u g V` for compact open levels `U` and `V`.

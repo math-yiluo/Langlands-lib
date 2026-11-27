@@ -261,6 +261,35 @@ private theorem cellFunctional_ne_zero (a : ℝˣ) (ℓ : P →ₗ[ℂ] ℂ)
   ext1 f
   rfl
 
+/-- On tests supported in the longest cell, a nonzero covariant form composed with Borel
+averaging is a nonzero scalar times the inducing-weighted Whittaker orbit integral. -/
+def RealPrincipalSeriesWhittakerOrbitFormulaStatement : Prop :=
+  ∀ (a : ℝˣ) (ℓ : P →ₗ[ℂ] ℂ), RealPrincipalSeries.HasCompactDerivativeBound r ds ℓ →
+    IsWhittakerFunctional s e a ℓ → ℓ ≠ 0 → ∃ c : ℂ, c ≠ 0 ∧ ∀ f : 𝓓(O, ℂ),
+      ℓ (averageMap s e (TestFunction.monoCLM ℂ f)) = c *
+        ∫ p : H, inverseWeight χ p.1 * ((modularCharacter p.1 : ℝ) : ℂ) *
+          realWhittakerCharacter a p.2.val * f (p.1.val * W * (p.2⁻¹).val).val
+          ∂(Measure.haar : Measure H)
+
+set_option maxHeartbeats 600000 in
+theorem realPrincipalSeriesWhittakerOrbitFormula : RealPrincipalSeriesWhittakerOrbitFormulaStatement s e := by
+  intro a ℓ hb hψ hne
+  obtain ⟨c, hc, h⟩ := exists_ne_zero_smul_orbitIntegral_of_covariance matrixAction orbitHomeomorph (W).val
+    orbitHomeomorph_val (Measure.haar : Measure H) continuous_matrixAction
+    (covarianceCharacter s e a) (continuous_covarianceCharacter s e a) (cellFunctional s e ℓ hb)
+    (cellFunctional_covariant s e a ℓ hb hψ) (cellFunctional_ne_zero s e a ℓ hb hψ hne)
+  refine ⟨c, hc, fun f => ?_⟩
+  change cellFunctional s e ℓ hb f = _
+  rw [h]
+  congr 1
+  apply integral_congr_ae
+  filter_upwards with p
+  have hmat : matrixAction p (W).val = (p.1.val * W * (p.2⁻¹).val).val := rfl
+  rw [hmat]
+  change ((χ p.1⁻¹ : ℂˣ) : ℂ) * ((modularCharacter (p.1⁻¹)⁻¹ : ℝ) : ℂ) *
+    realWhittakerCharacter a ((p.2⁻¹)⁻¹).val * _ = _
+  simp only [inv_inv, map_inv, inverseWeight]
+
 /-- A nonzero bounded Whittaker functional on the real character principal
 series determines every bounded functional with the same character up to scalar. -/
 theorem exists_smul_of_whittakerFunctional (a : ℝˣ) (ℓ₁ ℓ₂ : P →ₗ[ℂ] ℂ)

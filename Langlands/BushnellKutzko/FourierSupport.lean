@@ -18,6 +18,11 @@ trace duality `LatticeChain.mem_endFiltration_one_sub_of_forall` turns this into
 `c⁻¹ (xᵀ - b') ∈ 𝔓^{1-k}(𝓛)` whenever `ψ(c ·)` is nontrivial on `𝔬_K`
 (`LatticeChain.toLin'_mem_endFiltration_of_rectangularFourierIntegral_ne_zero`).
 
+For measurable `P`, if `ψ(tr(z (xᵀ - b'))) = 1` for every `z ∈ P`, translating the indicator to `P`
+gives the Fourier value `μ.real P · ψ(tr x)` for the product Haar measure `μ`
+(`rectangularFourierIntegral_twistedIndicator_of_trace_eq_one`). Here
+`μ.real P = (μ P).toReal` is the Haar volume of `P` when it is finite, and `0` when `μ P = ∞`.
+
 This belongs to the analytic part of the proof of T2 (see `ConductorFormula`): it bounds the
 support of the Fourier transform of the test function attached to a stratum contained in a
 representation.
@@ -138,6 +143,49 @@ theorem trace_mul_sub_eq_one_of_rectangularFourierIntegral_ne_zero
   rw [Matrix.mul_sub, Matrix.trace_sub] at hne
   rwa [← AddChar.map_add_eq_mul, rectangularPairing_eq_trace, Matrix.trace_mul_comm b' z,
     neg_add_eq_sub]
+
+/-- For a measurable subgroup `P` on which the phase `ψ(tr(z (xᵀ - b')))` is trivial, the
+Fourier integral is `μ.real P · ψ(tr x)` for the product Haar measure `μ`, that is,
+`(μ P).toReal` times the trace character of the translation by the identity matrix. -/
+theorem rectangularFourierIntegral_twistedIndicator_of_trace_eq_one
+    (ψ : UnitaryAdditiveCharacter K) (ν : AdditiveHaarMeasure K) [SigmaFinite ν.measure]
+    (P : AddSubgroup (Matrix (Fin N) (Fin N) K))
+    (hP : MeasurableSet (P : Set (Matrix (Fin N) (Fin N) K)))
+    (b' x : Matrix (Fin N) (Fin N) K)
+    (h : ∀ z ∈ P, ψ.complex (z * (x.transpose - b')).trace = 1) :
+    rectangularFourierIntegral ψ ν (twistedIndicator ψ P b') x =
+      ((RankinSelberg.rectangularMeasure ν N N).real (P : Set _) : ℂ) *
+        ψ.complex x.trace := by
+  classical
+  let μ := RankinSelberg.rectangularMeasure ν N N
+  have : μ.IsAddLeftInvariant := inferInstanceAs
+    (Measure.pi (fun _ : Fin N => Measure.pi (fun _ : Fin N => ν.measure))).IsAddLeftInvariant
+  have : MeasurableAdd (Matrix (Fin N) (Fin N) K) :=
+    inferInstanceAs (MeasurableAdd (Fin N → Fin N → K))
+  calc
+    rectangularFourierIntegral ψ ν (twistedIndicator ψ P b') x =
+        ∫ z, twistedIndicator ψ P b' (1 + z) *
+          ψ.complex (rectangularPairing (1 + z) x) ∂μ :=
+      (integral_add_left_eq_self (μ := μ)
+        (fun y => twistedIndicator ψ P b' y * ψ.complex (rectangularPairing y x)) 1).symm
+    _ = ∫ z, (P : Set _).indicator (fun _ => ψ.complex x.trace) z ∂μ := by
+      apply integral_congr_ae
+      filter_upwards [] with z
+      have hsub : 1 + z - 1 = z := by abel
+      by_cases hz : z ∈ P
+      · have hphase : ψ.complex (-(b' * z).trace) *
+            ψ.complex (z * x.transpose).trace = 1 := by
+          rw [← AddChar.map_add_eq_mul, Matrix.trace_mul_comm b' z, neg_add_eq_sub,
+            ← Matrix.trace_sub, ← Matrix.mul_sub]
+          exact h z hz
+        rw [twistedIndicator_apply_of_mem ψ P b' (by simpa only [hsub] using hz), hsub,
+          Set.indicator_of_mem hz, rectangularPairing_add_left, AddChar.map_add_eq_mul,
+          rectangularPairing_eq_trace, Matrix.one_mul, Matrix.trace_transpose,
+          rectangularPairing_eq_trace, mul_left_comm, hphase, mul_one]
+      · rw [twistedIndicator_apply_of_not_mem ψ P b' (by simpa only [hsub] using hz),
+          Set.indicator_of_notMem hz, zero_mul]
+    _ = _ := by
+      rw [integral_indicator_const _ hP, Complex.real_smul]
 
 end TwistedIndicator
 

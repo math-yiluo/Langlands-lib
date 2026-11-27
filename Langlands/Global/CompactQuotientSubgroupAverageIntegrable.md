@@ -1,0 +1,5 @@
+# Integrable compact subgroup averages
+
+`integral_compactSubgroupAverage_of_integrable` extends the continuous compact subgroup averaging identity to strongly measurable integrable functions. The outer quotient probability is assumed to be the pushforward of a finite measure on the group. The inner quotient is compact with a probability measure, and the conjugation condition of `compactSubgroupAverage` gives independence from the outer representative.
+
+On the product of the group and inner quotient, the fiber evaluation sends `(x,[n])` to `[j(n)x]`. This map is continuous. Compare its pushforward of the product measure with the outer probability on compactly supported continuous real tests. Fubini and `integral_compactSubgroupAverage_real` give equality on those tests. Both measures are finite and regular on the compact outer quotient, so they are equal. Pullback under this map now gives an integrable product function for any input of the asserted class, and Fubini proves the result. This is a measure-theoretic consequence of the Library's continuous identity in `CompactQuotientSubgroupAverage`.

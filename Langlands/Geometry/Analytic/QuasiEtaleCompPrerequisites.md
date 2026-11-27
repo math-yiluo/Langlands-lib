@@ -110,6 +110,24 @@ proof of composition has to invoke the premises or go through them.
   a domain inclusion and `f`, so it is quasi-étale. Then apply the Library's
   Hausdorff case and transport the domains back to the source of `f`.
 
+## Hausdorff sources
+
+For Hausdorff `A` and `B`, composition needs only statement 1. The module
+`QuasiEtaleHausdorffStabilityStatement` states this case as
+`QuasiEtaleHausdorffCompStatement`. The module
+`QuasiEtaleHausdorffCompReductionStatement` states the implication
+`EtaleDomainQuasiEtaleStatement K → QuasiEtaleHausdorffCompStatement K` as
+`QuasiEtaleHausdorffCompReductionStatement K`, and
+`quasiEtaleHausdorffCompReduction` (module `QuasiEtaleHausdorffCompReduction`)
+proves it. There `QuasiEtaleLocalDomainFactorizationsStatement` is not
+needed. The Library proves it for Hausdorff sources
+(`hasLocalDomainEtaleFactorizations_of_quasiEtale`), and the étale envelopes
+of the factorizations can be shrunk to Hausdorff open subsets
+(`HasLocalDomainEtaleFactorizations.exists_t2Space_envelopes`), since every
+space of the Library is locally Hausdorff (the field `locallyHausdorff` of
+`IndexedAffinoidAtlas`). Statement 1 stays a premise: this module does not
+prove it.
+
 ## Use
 
 The companion module `QuasiEtaleCompReduction` proves statement 2 as

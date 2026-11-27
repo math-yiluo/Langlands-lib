@@ -10,6 +10,7 @@ SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`:
 the proof of (3.5.9), printed p. 122 (PDF p. 134); Lemma (2.4.11), printed
 pp. 72–73 (PDF pp. 84–85); the refinement theorem (2.2.8), printed p. 56 (PDF
 p. 68); Proposition (2.2.1) and the Remark before it, printed p. 51 (PDF p. 63);
+the definition (1.5.5) of pure and simple strata, printed p. 43 (PDF p. 55);
 the exact sequence (1.4.10), printed p. 38 (PDF p. 50); and the duality (1.1.4)–(1.1.6),
 printed p. 22 (PDF p. 34).
 
@@ -28,11 +29,17 @@ and both `y` and `tyt⁻¹` lie in `U^m(𝔅_β)`. The conclusion is a simple st
 On printed p. 122, BK derive from this hypothesis that `s(b) ∈ F[β] + 𝔔^{1−m}` by
 (2.4.11), where `s` is a tame corestriction relative to `F[β]/F` and
 `𝔔 = 𝔓 ∩ B_β`, and then obtain the new stratum from (2.2.8). The statement
-covers every `b ∈ 𝔓^{−m}`, including those with zero derived coset (for example
-`b = 0`), where (2.2.8) does not apply because it needs `v_𝔄(b) = −m`; that case
-is handled by the conjugation of (2.2.1). Simplicity of `[𝔄,n,m,β']` at index `m`
-(and not only of `[𝔄,n,m−1,β']`) comes from part (ii) of (2.2.8), the formula
-`k₀(β',𝔄) = max{k₀(β,𝔄), k₀(c,𝔅)}`, with a scalar `c`.
+covers every `b ∈ 𝔓^{−m}`, including those whose derived coset
+`s(b) + 𝔔^{1−m}` is zero. Such `b` include `b = 0`, but may also have valuation
+`v_𝔄(b) = −m`. Theorem (2.2.8) does not apply to them: it needs a simple stratum
+`[𝔅,m,m−1,c]` with `c` in the derived coset, whereas every element of the zero
+coset lies in `𝔔^{1−m}` and a pure stratum of level `m` requires an element of
+valuation exactly `−m` ((1.5.5), printed p. 43). The conjugation argument of
+(2.2.1) handles this case, whatever the valuation of `b`. For a nonzero derived
+coset, the scalar representative and `b` both have valuation `−m`, and
+simplicity of `[𝔄,n,m,β']` at index `m` (and not only of `[𝔄,n,m−1,β']`) comes
+from part (ii) of (2.2.8), the formula `k₀(β',𝔄) = max{k₀(β,𝔄), k₀(c,𝔅)}`, with
+a scalar `c`.
 
 ## The proof
 
