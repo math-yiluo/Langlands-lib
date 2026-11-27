@@ -17,7 +17,8 @@ A6, D9 and F3 from commit `e449cde988d4e97ab280b8d4d11262887ccc26e0`.
 Row A9 records results checked on 18 November 2026. A10 was checked
 at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
 Rows A11, B4 and B5 use the declarations at Library commit
-`66a181ec9cda271c1ff0dcf555f386b52dc687c7`.
+`66a181ec9cda271c1ff0dcf555f386b52dc687c7`. Row B6 uses the declarations
+at `83410f0ef589431fd290293765b33c3a3adc2ac7`.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
 are relative to `Langlands/GroupScheme/` in that commit. "Field group" means a group
@@ -333,6 +334,28 @@ as B4. The proposition applies over semilocal affine bases.
   [Field inner-form data](../../Langlands/GroupScheme/Rational/QuasiSplitInnerForm.md),
   [relative Borel comparison](../../Langlands/GroupScheme/RelativeLevi/HenselianBorelReduction.md),
   [discrepancy symmetry](../../Langlands/GroupScheme/Rational/InnerDiscrepancySymmetry.md)
+
+**B6. Splitting of a quasi-split group from the absolute star action.**
+The criterion combines Milne 2017, §25.c and Proposition 25.28(a),
+printed pp.551–552 (PDF pp.567–568), and Example 25.37, printed p.557
+(PDF p.573), with the character descent of §12.g and Theorem 12.23,
+printed pp.239–240 (PDF pp.255–256). Definition 19.22, printed p.402
+(PDF p.418), takes splittability to mean existence of a split maximal
+torus.
+
+- `QuasiSplitStarCriterionStatement` takes a quasi-split group \(G\) over
+  any field \(k\) with affine, locally finite type structure map. For
+  every `GaloisPinningData k (SeparableClosure k) G`, a split maximal
+  torus exists over \(k\) exactly when every Galois element acts trivially
+  by the star action on the full based root datum. This includes the
+  central character directions.
+- `quasiSplitStarCriterion` proves the exact proposition (P). Split
+  pinning and independence of the star action give the forward direction.
+  For the converse the torus of a rational Borel has ordinary action
+  equal to the star action. Character descent makes that torus split
+  and reflection along the separable closure gives its maximality.
+  [Statement](../../Langlands/GroupScheme/Reductive/QuasiSplitStarCriterionStatement.md),
+  [proof](../../Langlands/GroupScheme/Reductive/QuasiSplitStarCriterionProof.md)
 
 ## C. Centres and adjoint groups
 

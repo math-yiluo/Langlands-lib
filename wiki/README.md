@@ -59,6 +59,8 @@ results are its Lean declarations.
 
 - [Relative root groups in characteristic two: exact-root generation and positive multiples](../notes/errata/milne-relative-root-groups-characteristic-two.md) — A paper quaternionic type-C₃ counterexample to the standard-group interpretation of Milne's exact-root generators, with maximal tori, all-test matrices, a quadratic-form obstruction and an exact dimension calculation for the generated subgroup.
 
+- [Milne 25.27: mixed relative positions after scalar extension](../notes/errata/milne-25-27-geometric-bruhat-coverage.md) — The two real relative Bruhat cells of the Weil restriction of GL₂ cover the real flag points and omit mixed flag positions after extension to ℂ.
+
 - [Milne 16.62–16.63: a torus can have no fixed tangents without definite weights](../notes/errata/milne-torus-definiteness-luna-maps.md) — An opposite-weight action on the additive plane refuting strict definiteness and the universal Luna-isomorphism claim, with the stable complement, source locations and unaffected clauses.
 
 - [Group schemes: published transport, dynamics and fpqc reflection](../notes/group-schemes/transport-dynamic-progress.md) — Eight verified transport constructions and three exact dynamic/central proofs, with their hypotheses, the checks made and the Library commits at which they first appeared, and the remaining thematic obligations.

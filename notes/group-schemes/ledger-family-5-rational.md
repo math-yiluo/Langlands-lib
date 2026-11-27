@@ -15,8 +15,11 @@ ledger for family 5 of the algebraic and reductive group-scheme program. Family 
 - relative root subgroups;
 - how non-split, non-quasi-split and anisotropic groups are retained.
 
-It describes Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`. All Lean names are in `Langlands.GroupScheme` unless
-a namespace is shown. Module paths are relative to `Langlands/GroupScheme/` in that commit.
+The original rows describe Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`.
+Rows D12, D13 and the quotient-group statement in I2 use the declarations at
+`83410f0ef589431fd290293765b33c3a3adc2ac7`. All Lean names are in
+`Langlands.GroupScheme` unless a namespace is shown. Module paths are relative to
+`Langlands/GroupScheme/`.
 "Field group" means a group scheme over `Spec k` for a field `k : Type u`. "Connected
 reductive" means `IsConnectedReductive` (`Reductive/Basic`): smooth, affine structure map,
 connected, and trivial unipotent radical after base change to an algebraic closure.
@@ -573,6 +576,46 @@ and V.3.14, printed p.113 (PDF 119). The formulation over every field is derived
 - `ParabolicRootPresentationIndependenceStatement` and `ParabolicRootPresentationIsoStatement`:
   status C, the projections `parabolicRootPresentation.2.1` and `parabolicRootPresentation.2.2`.
 
+**D12. Locally closed multiplication for a rational Bruhat double coset.**
+Milne 2017, §25.27, printed p.551 (PDF 567), gives the multiplication
+parametrization with parabolic factor \(P\). The Chapter 25 erratum cited in
+D1 specifies that \(P\) is minimal and that its split torus is maximal.
+Borel–Tits 5.15, printed pp.100–101 (PDF pp.47–48), gives the related
+multiplication with a unipotent factor on the right.
+
+- `RationalBruhatCellStatement` takes a connected reductive \(G\) over any
+  field \(k\), a maximal split torus and a generic cocharacter \(\chi\).
+  It uses supplied representatives of \(P=P(\chi)\), \(U=U(\chi)\) and
+  \(V=U(\chi^{-1})\), with \(U\to G\) closed. For each rational normalizer
+  point \(n\), multiplication \((a,b)\mapsto anb\) from
+  \((U\cap nVn^{-1})\times P\) into \(G\) is a locally closed immersion.
+  Its image on \(k\)-points is \(P(k)nP(k)\).
+- `rationalBruhatCell` proves the exact proposition (P). The immersion
+  is the closed restriction of the translated opposite open cell. The
+  rational image follows from the Levi decomposition and the rational
+  unipotent factorization at \(n\).
+  [Statement](../../Langlands/GroupScheme/Rational/BruhatCellStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/BruhatCellProof.md)
+
+**D13. The two unipotent factors of a rational Bruhat cell.**
+Borel–Tits 5.13(1)–(2), printed p.99 (PDF p.46), identifies the factors
+as intersections. The proof of 5.15, equation (1), printed p.100 (PDF
+p.47), multiplies the opposite intersection first. Milne 2017, §25.27,
+printed p.551 (PDF p.567), describes the product of varieties.
+
+- `RationalBruhatFactorizationStatement` takes a connected reductive
+  \(G\) over any field \(k\), a generic cocharacter of a maximal split torus
+  and a rational normalizer point \(n\). With the canonical affine
+  representatives of \(U\) and \(V\) from D12, multiplication
+  \((U\cap nVn^{-1})\times(U\cap nUn^{-1})\to U\) is an isomorphism of
+  schemes over \(k\).
+- `rationalBruhatFactorization` proves the exact proposition (P). The
+  proof lifts each orbit extension through the opposite open cell and
+  uses the uniqueness of the two factors on every test scheme. Yoneda
+  gives the scheme isomorphism.
+  [Statement](../../Langlands/GroupScheme/Rational/BruhatFactorizationStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/BruhatFactorizationProof.md)
+
 ## E. Split components, rational characters and the centre
 
 **E1. The split component.** Source: Renard V.2.1, printed p.104 (PDF 110).
@@ -846,11 +889,23 @@ nontrivial restrictions to `S` of the roots of `(G, T)_{k^s}`.
   derives C3's negation stability from it.
 
 **I2. The relative Weyl group as a restriction of absolute Weyl elements.** Source:
-Borel–Tits, Corollaire 5.5, printed p.97 (PDF 44): for a maximal torus `T` split over an
-extension `K` and containing `S`, `N(S) = N(S, T) · Z(S)` with `N(S, T) = N(S) ∩ N(T)`, so
-the relative Weyl group is the restriction to `S` of `N(S, T)/Z(T)`.
-- Status M: the Library has no statement comparing `relativeWeylGroup` with the Weyl
-  group of a maximal torus after a field extension.
+Borel–Tits, Corollaire 5.5, printed p.97 (PDF p.44). For an extension
+\(K/k\), take \(S\) maximal \(k\)-split and \(T\) maximal \(K\)-split
+with \(S_K\subseteq T\). Restriction to \(S_K\) gives a surjection from
+the image of the simultaneous normalizer in \(N(T)(K)/Z(T)(K)\) to
+\(N(S)(k)/Z(S)(k)\).
+
+- `relativeWeylAbsoluteRestriction` gives the normalizer factorization
+  and the action comparison. The two tori and the extension have the
+  hypotheses just stated, with \(G\) connected reductive.
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeWeylAbsoluteRestrictionStatement.md),
+  [proof](../../Langlands/GroupScheme/Rational/RelativeWeylAbsoluteRestrictionProof.md)
+- `RelativeWeylQuotientStatement` expresses the quotient-group assertion
+  for the same data. It takes the image of
+  \(N(T)(K)\cap N(S_K)(K)\) inside \(N(T)(K)/Z(T)(K)\). The two point
+  quotient comparisons at \(\operatorname{Spec}K\) express compatibility
+  with the class of each simultaneous normalizer point.
+  [Statement](../../Langlands/GroupScheme/Rational/RelativeWeylQuotientStatement.md)
 
 **I3. Relative root groups from absolute root groups.** Source: Milne 2017, 25.19, printed
 p.549 (PDF 565): the subgroup of `G_{k^s}` generated by the root groups `U_β` with
