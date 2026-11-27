@@ -1,137 +1,42 @@
-# KP Bundles A–F: source ledger and construction boundaries
+# KP Bundles A–F source ledger and construction boundaries
 
-This source ledger covers Bundle A, initial Bundle B targets and Bundles
-C–F of the standing KP program, the formalization of Kaletha–Prasad in
-`Langlands/Geometry/Building/` and `Langlands/BruhatTits/`. It records
-mathematical source targets and their verified formal status. Both parts
-of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for
-nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have
-published proofs, recorded below in five of the fifty-four rows. The
-separately verified metric fixed-point aggregate assembles six published
-component proofs and adds no source row. The separately verified finite
-separable-unramified prerequisite is recorded below without adding a KP
-source row. Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of
-Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem
-5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary
-7.4.9 have published conditional formalizations: they are proved on
-supplied building data, whose general construction is open. Theorem
-5.2.1 with corrected (5.2.2), Theorem 5.3.4 and corrected Proposition
-13.5.2 are proved on available Bruhat–Tits data in the sense of
-corrected Definition 4.1.26, which is equally conditional. Section
-13.2.6 is proved for supplied integral models and reductive quotients,
-together with its inflation and compact-induction consumer; the
-congruence-basis premise of its local-field corollary is proved, and an
-intertwining and double-coset theorem for compact induction is proved
-and specialized to its depth-zero compact inductions. On the same
-supplied data with finite residue field, the reductive quotient has
-finitely many points; over a Henselian base their number is the index of
-the radical preimage in the integral points, and over a local field the
-radical preimage is a compact open subgroup of the rational points.
-Standard models of the split groups `G_m`, `G_m^I`, `GL_N`, `Sp_{2l}`
-and `SL_n` over the integers of a nonarchimedean local field give actual
-instances of these data, with proved reductive quotients and indices;
-they are not identified with parahoric models at a building point.
-Norm-one tori of finite separable extensions are further instances when
-a finite free integral form with smooth norm-one kernel and field
-special fibre is supplied; an unramified quadratic instance exists over
-every local field; a ramified quadratic norm-one torus has a component
-subgroup of index 2; the standard Iwahori subgroup of `GL_N` has the
-expected indices and torus quotient, and it and the preimage of the
-upper unipotent group are the integral points and radical preimage of
-actual model and quotient data, with the diagonal torus as reductive
-quotient; the general depth-zero theory recovers `I/I^+ ≅ (𝓀ˣ)^N` and
-the index from these data and proves `I` and `I^+` compact open; the
-model map from the Iwahori model to the standard `GL_N` model has a
-smooth connected unipotent special-fibre kernel and a Borel
-special-fibre image, the integral matrices reducing into that image form
-`I`, and the principal congruence subgroup lies in `I^+`, as KP Theorem
-8.4.19 and Corollary 8.4.12 predict for the standard alcove and its
-hyperspecial vertex. Corrected Theorem 7.8.1 and the `G(F)^0` branch of
-Theorem 7.5.3 have published statements on supplied building data, and
-part (4) of Theorem 7.8.1 is proved; six of the seven inputs of the
-published reduction to the `G(F)^0` branch of Theorem 7.5.3 are proved.
-Proposition 13.2.5 is proved on supplied data: its opening sentence at
-finite depths and parts (1)–(6), part (3) with indivisible-root blocks,
-parts (5) and (6) at positive depth for the parabolic subgroups
-containing the split torus, and parts (1), (2) and (4) with an extra
-double-root premise that their source proofs use. For every supplied
-building datum satisfying the apartment axioms, a filtration meeting all
-these premises exists (Lemma 9.8.1). An unformalized paper
-counterexample shows that the supplied-filtration statements of parts
-(1), (2) and (4) without that premise are false. Theorem 13.5.1 has a
-partial published statement of part (1) on supplied data: under one of
-KP's three alternatives, with the component isomorphisms for the
-centralizer and each root block and a double-root commutator premise
-assumed, `P_{x,r}/P_{x,s}` is isomorphic to `g_{x,r}/g_{x,s}` as an
-abstract group. Section 9.2.1 (a Galois-fixed point of a stable
-apartment) is proved for supplied Galois-stable apartment data.
-Proposition 9.3.4 and its integral-model statement are proved for
-nonarchimedean local fields. Theorem 9.6.5 has a published statement and
-a proved reduction to five statements, four of which, including its
-descent input, are proved; the fifth supplies the apartment axioms of
-the descended building data. Lemma 9.8.1 is proved on supplied data: for
-every supplied parahoric building datum satisfying the apartment axioms,
-both existence statements are proved, through published proofs of the
-group properties of the Moy–Prasad groups over the maximal unramified
-extension and of a comparison of the building data with that extension.
-Lemma 11.5.2, Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have
-published statements for the rational Kottwitz map selected by its
-characterizing property, the chamber clause of Corollary 11.7.5 on
-supplied building data. Lemma 11.5.2 is proved. Published theorems and
-proofs reduce Proposition 11.5.4 and both corollaries to the
-zero-descent statement (KP Proposition 9.3.24) alone; the
-twisted-chamber statement that the corollaries also use is proved.
-Corrected Definition 4.1.26 has a published definition, the corrected
-Definition 4.1.26 part of Theorem 9.2.7 a published existence statement,
-reduced by two proved implications to four focused statements, and
-Definition 6.6.1 a partial published definition. Theorems 8.3.2, 8.3.13,
-8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements
-on supplied building data, for models over the integers of the maximal
-unramified extension or, for facets, over the integers of a
-nonarchimedean local field. The unramified model statement of Theorems
-8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 are proved: for all
-supplied data, the model of `G(K)^1_Ω` of Theorem 8.3.2 and its relative
-identity component with points `G(K)^0_Ω` exist, and connected
-generation (KP Lemma A.4.26) is proved; the descended model-axiom
-statement remains unproved. For Corollary 8.4.12, the Axiom 4.1.22(7)
-inclusion is proved, and so is a description of the radical preimage for
-nonempty subsets of one facet: it is generated by the positive root
-groups and a torus factor that is not identified with KP's. For Theorem
-8.4.19, the kernel, common-torus and parabolic-order statements are
-proved, the parabolic-image statement follows from published proofs that
-no published declaration composes, and the root-group kernel lemma (KP
-Lemma C.5.3) is proved. Sections 13.3.1 and 13.3.4 are proved for
-supplied integral models: the Lie algebra of a smooth model is a lattice
-in the Lie algebra of its generic fibre, and the integral points of a
-model preserve its Lie lattice under the adjoint action; the congruence
-and parahoric models of KP are not constructed. Section 13.3.2 is proved
-for supplied integral-model and reductive-quotient data:
-`g_{x,0}/g_{x,0+} ≅ Lie(Gred_x)` for an intrinsically defined
-`g_{x,0+}`, which equals the Lie lattice of a supplied model under
-hypotheses standing for Proposition 8.5.18 and Section 13.2.6. Section
-13.3.3 has a partial published definition: `g_{x,r}` is the span of
-supplied lattices `z_r` and `u_psi`; on these lattices the Section
-13.3.1 row also records the extension to real depths under a periodicity
-hypothesis and the dual lattices. On supplied lattices the
-rational-point graded actions and conditional quotient actions, the
-opposite-depth residue pairing with its surjectivity and kernel
-criteria, the resulting residue-field graded duality, bounded finiteness
-of jump depths, a sufficient criterion for real-depth left continuity
-and a split-torus regression are published. Definitions 13.4.1 and
-13.4.2 give rational and optimal points, with no existence theorem
-recorded here. Proposition 13.7.4 has a partial published statement of
-part (1) for points of one apartment and supplied Lie lattices: if `X`
-lies in `g_{x,r}` and the translate `X + g_{x,r+}` meets `g_{y,s}` for
-some `s > r`, the translate contains an element that a cocharacter
-contracts to zero (Definition 13.6.5). The other nine rows retain empty
-formal-status and evidence fields. The remaining Bundle B targets still
-require public ledger entries. Source audits and Lean files outside the
-Library do not count as evidence here.
+This ledger connects the Library's Bruhat–Tits constructions and statements
+with Kaletha–Prasad, *Bruhat–Tits Theory: A New Approach* (2023), and the
+authors' corrections of 1 November 2024. Its dated sections record earlier
+Library snapshots. The structured rows for Theorem 9.2.7, Section 13.2.6
+and Proposition 13.5.2 include the results checked at Library commit
+`2f86a99eb5616254ac5b9c399603c9bbbea15f7a`. The rows for Proposition
+A.5.19 and Lemma A.5.13(4) describe the congruence–Lie map and its exact
+proposition targets at that same commit.
 
-The statuses in this note are those of the Library commits it names. The
-section "Present status of the statements called open" at the end gives
-the present status of each statement that the note calls open, unproved
-or conditional.
+`bruhatTitsCompletionCertificate` constructs one assignment for connected
+reductive groups over nonarchimedean local fields of either characteristic
+in universe `u`. This assignment satisfies the ten axioms of corrected
+Definition 4.1.26 and unramified descent in Axiom 4.1.27, with UR 3 stated
+as equality with the set of nonconstant upper affine-root restrictions.
+The reduction transports the inter-group comparisons of Axioms 4.1.1 and
+4.1.17 to the descended assignment along equivariant building
+equivalences.
+
+`depthZeroConsumer` applies to every facet of this assignment by
+`IsAvailableFor.groupAxioms`. It gives the compact open parahoric, its
+radical kernel, surjective reduction to finite reductive points, the
+quotient equivalence, inflation and smooth compact induction. For
+finite-dimensional complex inducing representations it identifies the
+space of intertwiners with the equivariant kernels supported on finitely
+many double cosets. `availableMaximalProP` applies to the same assignment
+by `IsValid.isAvailableFor`. It gives the four facet conclusions of
+corrected Proposition 13.5.2, with maximality and normalizers taken in
+\(G(F)^0\).
+
+The integral-model modules construct `congruenceLieHom` and
+`congruenceLieQuotientHom` for \(0<n\le m\le 2n\) by reducing to a
+square-zero kernel and identifying that kernel with the corresponding
+Lie-lattice quotient. Their companion propositions state the kernel,
+Henselian surjectivity, model functoriality, adjoint equivariance and
+maximal-unramified compatibility, and the Lie-lattice formula for the
+actual congruence models. Theorem 13.5.1 has separate centralizer, root
+block and torus comparisons with the real-depth filtrations.
 
 ## Refresh of 8 November 2026
 
@@ -1362,10 +1267,10 @@ in Theorem 4.2.10 matters: the closed union is a union of **facet closures**.
 The OCR text alone drops that overbar. The theorem does not require the building
 to be locally finite; that is only the first case in its proof.
 
-The Chapter 4 targets are consequences of specified building axioms. They do
-not supply a general reductive-group building construction. The program still
-requires the descended construction and every corrected axiom in its
-Theorem 9.2.7 certificate. None of the source-only rows below closes that boundary.
+The Chapter 4 targets use specified building axioms. Theorem 9.2.7 supplies
+these axioms for the descended assignment in the nonarchimedean local-field
+scope of the Library's completion certificate. The following paragraphs
+record the original scope and source checks of the ledger's extensions.
 
 For the initial Bundle B extension, the original-source audit also covered book
 PDF pages 188–197, 266–267, 280–292, 307, 353–360 and 393–399, and
@@ -1442,21 +1347,17 @@ and construction gates open.
 ## Structured ledger
 
 The JSON block is the structured ledger. Each row has the same fields.
-`lean_declarations`, `modules`, `publication_commits` and
-`axiom_reports` stay empty until their exact results have been verified.
-`publication_commits` lists the Library commits in which the
-declarations of a row first appeared, and `axiom_reports` the
-declaration inspections, with the date and the Library commit of each.
-The rows record the state of the Library at the commits they name; the
-section "Present status of the statements called open" at the end of
-this note gives the present status of the statements that they call
-open, unproved or conditional. Conditional code will remain
-`conditional` until its missing instance is constructed.
+`lean_declarations` and `modules` name verified declarations and their
+modules. `publication_commits` records the Library commits where the
+listed results appeared. `axiom_reports` records declaration inspections.
+The formal status of a row refers to its stated Lean scope. Earlier rows
+record results at the commits they name. The historical proof inventory at
+the end records the status at an earlier Library snapshot.
 
 ```json
 {
   "schema_version": 1,
-  "coverage": "Bundle A named targets, Bundle B targets (corrected Definition 4.1.26, Theorem 7.5.3, Theorem 9.2.7 and the Chapter 9 descent inputs Section 9.2.1, Proposition 9.3.4, Theorem 9.6.5 and Lemma 9.8.1), Bundle C decompositions and narrow component/Kottwitz interfaces, Bundle D parahoric models, maximal reductive quotients and depth-zero reduction with Chapter 9 descent, Bundle E group/Lie/dual filtrations, all three comparison alternatives, corrected pro-p ambient group and later degeneracy/instability targets, and Bundle F corrected finite-action fixed loci, tame building and integral-model descent, and embeddings from adapted data with their strict-Henselian and general-k existence boundaries. Remaining Bundle B items still need public rows. Both parts of Theorem 1.1.15, Corollary 1.1.19, Proposition 1.1.20 and, for nonarchimedean local fields, Proposition 9.3.4 and Lemma 11.5.2 have verified published proofs; Propositions 4.2.7, 4.2.24 and 4.4.4, both assertions of Theorem 4.2.10, Corollary 4.2.14, corrected Corollary 4.4.5, Theorem 5.3.3, replaced Lemma 5.3.5, Lemma 6.7.1, Section 6.7.2 and Corollary 7.4.9 have published conditional formalizations on supplied building data, Theorems 5.2.1 and 5.3.4 and corrected Proposition 13.5.2 have them on available data, and Section 13.2.6 on supplied integral models and reductive quotients, with a proved intertwining and double-coset theorem, specialized to depth zero, for its compact-induction consumer, finitely many quotient points over a finite residue field and a compact open radical preimage over a local field, and regression instances from the standard models of split G_m, G_m^I, GL_N, Sp_{2l} and SL_n over a local field, from norm-one tori with supplied finite free integral forms having smooth norm-one kernel and field special fibre (with an unramified quadratic instance over every local field), an index-two component subgroup for a ramified quadratic norm-one torus and the standard Iwahori subgroup of GL_N, with actual model and reductive-quotient data from the Iwahori order, to which the general depth-zero quotient, index and compact-open theorems apply; corrected Theorem 7.8.1, whose part (4) is proved, and the G(F)^0 branch of Theorem 7.5.3, six of the seven inputs of whose published reduction are proved, have published statements on supplied building data; corrected Definition 4.1.26 has a published definition; Section 9.2.1 is proved for supplied Galois-stable apartment data and Lemma 9.8.1 for supplied building data satisfying the apartment axioms; Theorem 9.6.5 has a published statement and a proved reduction to five statements, four of them proved, including its descent input; Proposition 11.5.4 and Corollaries 11.7.5 and 11.7.6 have published statements for the selected rational Kottwitz map, reduced by published theorems and proofs to the zero-descent statement (KP Proposition 9.3.24) alone, the twisted-chamber statement that the two corollaries also use being proved, Proposition 13.2.5 a published statement of its opening sentence at finite depths and of parts (1)–(6) on supplied data, part (3) with indivisible-root blocks, parts (5) and (6) at positive depth for parabolics containing the split torus, and parts (1), (2) and (4) also with a double-root premise, all proved on supplied data except the supplied-filtration parts (1), (2) and (4) without that premise, which an unformalized paper counterexample refutes (a filtration meeting all filtration premises of the proved parts exists for every supplied building datum satisfying the apartment axioms), Theorem 13.5.1 a partial published statement of part (1) on supplied data with the component isomorphisms for the centralizer and the root blocks and a double-root commutator premise assumed, Proposition 13.7.4 a partial published statement of part (1) for points of one apartment on supplied Lie lattices, the corrected Definition 4.1.26 part of Theorem 9.2.7 a published existence statement, reduced by two proved implications to four focused statements, and Definition 6.6.1 a partial published definition; Theorems 8.3.2, 8.3.13, 8.4.10 and 8.4.19 and Corollary 8.4.12 have partial published statements on supplied building data, the unramified model statement of Theorems 8.3.2 and 8.3.13 and the statement of Theorem 8.4.10 proved, with connected generation (KP Lemma A.4.26) proved, the Corollary 8.4.12 inclusion and its radical-preimage generation with an unidentified torus factor proved, and the kernel, common-torus and parabolic-order statements of Theorem 8.4.19 proved and its parabolic-image statement following from published proofs, with its root-group kernel lemma (KP Lemma C.5.3) proved and its kernel, parabolic-image and reduction-preimage clauses and the Corollary 8.4.12 inclusion proved for GL_N at the standard alcove and its hyperspecial vertex; the Lie lattice of a supplied integral model is proved to be a lattice when the model is smooth (Section 13.3.1) and to be preserved by the integral points of the model (Section 13.3.4); for supplied integral-model and reductive-quotient data, g_{x,0}/g_{x,0+} is proved isomorphic to Lie(Gred_x) for an intrinsic g_{x,0+}, which equals the Lie lattice of a supplied model under hypotheses standing for Proposition 8.5.18 and Section 13.2.6 (Section 13.3.2); the span description of g_{x,r} has a partial published definition on supplied lattices (Section 13.3.3), on which the real-depth extension under a periodicity hypothesis and the dual lattices g^*_{x,r} are defined (Section 13.3.1); on supplied data the strict graded Lie and dual actions of rational points and conditional quotient actions (Section 13.3.4), opposite-depth residue pairing with separate surjectivity and kernel hypotheses, the resulting residue-field graded duality with finiteness and stabilizer equivariance, bounded finiteness of jump depths and a sufficient left-continuity criterion (Section 13.3.1) and a split-torus regression (Section 13.3.3) are published; rational and optimal points are defined (Definitions 13.4.1–13.4.2), without an optimal-point existence theorem or Lemma 13.4.4 recorded here; the other nine rows remain source-only. The building construction and release gates remain open.",
+  "coverage": "Named targets from Bundles A–F cover metric geometry, availability and unramified descent, decompositions and components, parahoric models and depth-zero reduction, congruence–Lie maps and filtrations, and tame descent and embeddings. The rows for Theorem 9.2.7, Section 13.2.6 and Proposition 13.5.2 record the completion certificate and its facet consequences over nonarchimedean local fields. Rows for Proposition A.5.19 and Lemma A.5.13(4) record the integral-model construction and proposition targets at the same Library pin. The other rows record the scopes and Library commits specified in their evidence fields.",
   "status_convention": "A null formal_status means no verified Lean declaration of this target is recorded. Non-null values are definition, statement, proved or conditional.",
   "rows": [
     {
@@ -2193,7 +2094,7 @@ open, unproved or conditional. Conditional code will remain
         "k is discretely valued with omega(k^times)=Z and Henselian valuation ring o; its residue field is perfect. G is any connected reductive k-group. No global splitness, quasi-splitness, tame splitting or finite-residue hypothesis is imposed.",
         "K is the maximal unramified extension in a fixed separable closure, O its valuation ring, and Gamma=Gal(K/k). Corollary 2.3.8 makes G_K quasi-split; its building and models are the actual Chapter 6–8 constructions, not assumed general existence data.",
         "B is B(G_K)^Gamma with the restricted metric. Apartments are Gamma-fixed apartments attached to special k-tori of 9.2.2. Facets are intersections with Gamma-stable K-facets as in 9.2.4. Models are the smooth affine o-models descended in 9.2.5, with their relative identity components.",
-        "Recorded Lean scope (corrected Definition 4.1.26 part only): the published, unproved BruhatTitsAvailabilityStatement is ∃ 𝔅 : KPBuildingAssignment.{u}, 𝔅.IsValid. It asserts that one assignment of KPBuildingDatum to every connected reductive G over every nonarchimedean local field F in universe u satisfies all ten corrected axioms of the Definition 4.1.26 row, including the comparisons of 4.1.1 and 4.1.17 between the data assigned to different groups and fields. It differs from the source in four ways: it uses the corrected ten-axiom list rather than the seven printed in the theorem; Axiom 4.1.27 is not part of it; it asserts existence of some data rather than availability for the descended construction B(G_K)^Gamma, its apartments, facets and models; and the source's Henselian discretely valued fields with perfect residue field are specialized to nonarchimedean local fields. The building, apartment, chamber and facet assertions of the theorem have no separate Lean declaration. The status statement of this row covers only this part, which is not the program's certificate."
+        "Lean scope. For each universe u the assignment covers all nonarchimedean local fields F of either characteristic in u and all connected reductive group schemes over Spec F. The same KPBuildingAssignment is valid for corrected Definition 4.1.26 and satisfies KPBuildingDatum.SatisfiesUnramifiedDescent on each assigned datum. UR 3 identifies the set of lower affine roots with the set of nonconstant restrictions of upper affine roots. The other descent clauses compare the reduced building, apartments and models."
       ],
       "conclusion": "B with these apartments and polysimplices is a building whose apartments correspond bijectively to maximal k-split tori. Chambers and facets are fixed parts of Gamma-chambers and Gamma-facets, and G(k) acts by polysimplicial isometries. For the program's certificate, the constructed geometry and descended models must satisfy every axiom of corrected Definition 4.1.26 and Axiom 4.1.27, using the source assembly and the explicitly derived completion routes below.",
       "lean_declarations": [
@@ -2201,7 +2102,13 @@ open, unproved or conditional. Conditional code will remain
         "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionStatement",
         "Langlands.Geometry.Building.GroupAxiomsExistenceReductionStatement",
         "Langlands.Geometry.Building.bruhatTitsAvailabilityReduction",
-        "Langlands.Geometry.Building.groupAxiomsExistenceReduction"
+        "Langlands.Geometry.Building.groupAxiomsExistenceReduction",
+        "Langlands.Geometry.Building.bruhatTitsAvailability",
+        "Langlands.Geometry.Building.KPBuildingDatum.SatisfiesUnramifiedDescent",
+        "Langlands.Geometry.Building.unramifiedDescentOfGroupAxioms",
+        "Langlands.Geometry.Building.BruhatTitsCompletionCertificateStatement",
+        "Langlands.Geometry.Building.bruhatTitsCompletionCertificateReduction",
+        "Langlands.Geometry.Building.bruhatTitsCompletionCertificate"
       ],
       "modules": [
         "Langlands.Geometry.Building.BruhatTitsAvailabilityStatement",
@@ -2209,7 +2116,13 @@ open, unproved or conditional. Conditional code will remain
         "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionStatement",
         "Langlands.Geometry.Building.GroupAxiomsExistenceReductionStatement",
         "Langlands.Geometry.Building.BruhatTitsAvailabilityReductionProof",
-        "Langlands.Geometry.Building.GroupAxiomsExistenceReduction"
+        "Langlands.Geometry.Building.GroupAxiomsExistenceReduction",
+        "Langlands.Geometry.Building.BruhatTitsAvailabilityProof",
+        "Langlands.Geometry.Building.FullValidity.UnramifiedDescent",
+        "Langlands.Geometry.Building.UnramifiedDescentOfGroupAxiomsProof",
+        "Langlands.Geometry.Building.BruhatTitsCompletionCertificateStatement",
+        "Langlands.Geometry.Building.BruhatTitsCompletionCertificateReductionStatement",
+        "Langlands.Geometry.Building.BruhatTitsCompletionCertificateProof"
       ],
       "dependencies": [
         "Quasi-split Chapter 6–8 building and actual integral models; Corollary 2.3.8; descent Fact 2.10.16; special k-tori Proposition 9.3.4",
@@ -2217,16 +2130,19 @@ open, unproved or conditional. Conditional code will remain
         "Axiom-by-axiom source map in Section 9.5, expanded below; for 4.1.16 use Sections 9.6 and 7.3–7.4 with corrected every-point Corollary 4.4.5",
         "For 4.1.17, Proposition 7.9.5 and transport of the descended construction under all covering field/group isomorphisms; a Gamma action alone is not the full axiom",
         "G(k)^0=G(K)^0 intersect G(k) (9.3.24) and the G(k)^1 intersection identity; model base change and root compatibility for Axiom 4.1.27",
-        "Published partial target, not the certificate: Langlands.Geometry.Building.RootValuationBuildingConstructionStatement (module of the same name) asks, for every nonarchimedean local field F and connected reductive G/F, for constructed P : ParahoricBuildingData G, realization and splitting with only the five Section 4.2 axiom witnesses (one-group 4.1.1, 4.1.2, 4.1.4, 4.1.6, 4.1.9) on the existing valuation quotient. Together with metricRealization it would make the Proposition 4.2.7 and Theorem 4.2.10 rows unconditional; it does not supply 4.1.8, 4.1.16, 4.1.17, 4.1.20, 4.1.22, 4.1.27 or the 4.1.1 comparison clauses.",
-        "Open proof obligation: BruhatTitsAvailabilityStatement. Its proof is split into the focused statements of the next entry; RootValuationBuildingConstructionStatement covers only the five Section 4.2 axioms above. Published statements with the hypothesis 𝔅.IsAvailableFor F G hG or 𝔅.IsValid are conditional on it. Among them are AvailableCartanStatement (Theorem 5.2.1 row, proved by availableCartan) and AvailableIwasawaStatement (Theorem 5.3.4 row, proved by availableIwasawa), and two Renard-sourced statements: Langlands.Plancherel.RenardCartan.AvailableRenardCartanStatement and Langlands.BruhatTits.SpecialCompact.AvailableSimultaneousStandardBasisStatement. Three more statements are in Langlands.BruhatTits.SpecialCompact, first in Library commit e449cde988d4e97ab280b8d4d11262887ccc26e0: ValidAssignmentTorusRebasingStatement and AvailableSpecialLeviCompactStatement assume 𝔅.IsValid, and AvailableSpecialVertexExistenceStatement assumes 𝔅.IsAvailableFor F G hG. All three are proved. validAssignmentTorusRebasing (module Langlands.BruhatTits.SpecialCompact.ValidTorusRebasingProof, first published in Library commit 47820896f9935b0f378578d8609dc6e7ee353c79) proves ValidAssignmentTorusRebasingStatement by applying rebaseAssignmentFromDatumTransport to the proved kpBuildingDatumTransportStatement; it was checked by a Lake build against the exact target, with the statement and its inputs unchanged, and a declaration inspection did not complete. availableSpecialVertexExistence (module Langlands.BruhatTits.SpecialCompact.AvailableSpecialVertexProof, present in Library commit 529b851ca9671cd9807187e571a5ea50ea7dd328) proves AvailableSpecialVertexExistenceStatement: Axiom 4.1.6 (AS 3) of available data makes the apartment roots an affine root system, IsAffineRootSystemWithRankZero.exists_isSpecialPoint (module Langlands.Geometry.Building.SpecialPointExistence) gives a special point and AffineRootSystem.isVertex_of_isSpecialPoint shows that it is a vertex; a Lean inspection on 2026-11-12 at Library commit 24a49431 reports kind theorem and only propext, Classical.choice and Quot.sound. availableSpecialLeviCompact (module Langlands.BruhatTits.SpecialCompact.AvailableSpecialLeviCompactProof, present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd) proves AvailableSpecialLeviCompactStatement; a Lean inspection on 2026-11-13 at Library commit ed924aef reports kind theorem and only propext, Classical.choice and Quot.sound. All three proved theorems keep the premise 𝔅.IsValid or 𝔅.IsAvailableFor F G hG, and none of these theorems proves that available data exist. The published reduction jointBasisReduction (module Langlands.BruhatTits.SpecialCompact.JointBasisReductionProof, present in Library commit ed924aef; an inspection on 2026-11-13, same axioms) proves JointBasisReductionStatement: the existence of a valid assignment together with six conditional statements implies JointSpecialCompactBasisExistenceStatement, which places the special compact properties, standard-Levi inheritance, the ambient and Levi Iwasawa products, the Cartan comparisons and the simultaneous Renard basis at one apartment class and one point. Five of the six are proved (ValidAssignmentTorusRebasingStatement, AvailableSpecialVertexExistenceStatement, AvailableIwasawaStatement, AvailableSpecialLeviCompactStatement and AvailableSimultaneousStandardBasisStatement); AvailableRenardCartanStatement is not. availableSimultaneousStandardBasis (module Langlands.BruhatTits.SpecialCompact.AvailableBasisProof, first in Library commit 51e4d8972659f1ffcf0ca89e8eee9540a30b52d3) proves AvailableSimultaneousStandardBasisStatement. Its only building premise is 𝔅.IsValid. For every generic cocharacter ν and every special vertex x of the apartment of the datum it gives the three conjuncts SpecialCompactProperties, SpecialLeviInheritance and SimultaneousStandardBasisAt for the special compact subgroup at x. The first two come from availableSpecialCompactProperties_of_omegaCompatibleApartment and availableSpecialLeviInheritance_of_omegaCompatibleApartment, the third from CongruenceGL.available_simultaneousStandardBasisAt through IsValid.isAvailableFor; a Lean inspection on 2026-11-13 at Library commit 0f84a0d8 reports kind theorem and only propext, Classical.choice and Quot.sound.",
-        "Decomposition (KP 4.1.28 assigns the axioms to Chapters 6–8). Six published statements of this program, first in Library commit 58a91d4ff65b8d6dcb8aa417bfc63399feb8b4af, split availability. KPBuildingAssignment.isAvailableFor_iff separates IsAvailableFor into KPBuildingDatum.SatisfiesGroupAxioms, the comparison clauses of Axiom 4.1.1 and Axiom 4.1.17. Accordingly GroupAxiomsExistenceStatement (every connected reductive G over every nonarchimedean local field has some KPBuildingDatum satisfying the clauses of the ten axioms that concern G alone), BuildingComparisonAxiomStatement (the comparison clauses of Axiom 4.1.1 for all supplied valuation-building data) and IsomorphismCompatibilityAxiomStatement (Axiom 4.1.17 for all supplied data) are intended to give BruhatTitsAvailabilityStatement. The two comparison statements are proved: buildingComparisonAxiom (module BuildingComparisonAxiomProof) and isomorphismCompatibilityAxiom (module IsomorphismCompatibilityAxiomProof), both present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd; Lean inspections on 2026-11-13 report kind theorem and only propext, Classical.choice and Quot.sound. BruhatTitsAvailabilityStatement therefore waits only on GroupAxiomsExistenceStatement, by the proved implication BruhatTitsAvailabilityReductionStatement described below. GroupAxiomsExistenceStatement is in turn intended to follow from RootValuationBuildingConstructionStatement together with RootGroupActionAxiomStatement (Axiom 4.1.8(2),(3)), IwahoriDecompositionAxiomStatement (Axiom 4.1.16) and IntegralModelAxiomsStatement (Axioms 4.1.20 and 4.1.22). Both implications are published statements of this program, first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547. BruhatTitsAvailabilityReductionStatement (module of the same name) is GroupAxiomsExistenceStatement → BruhatTitsAvailabilityStatement. GroupAxiomsExistenceReductionStatement (module of the same name) is RootValuationBuildingConstructionStatement → RootGroupActionAxiomStatement → IwahoriDecompositionAxiomStatement → IntegralModelAxiomsStatement → GroupAxiomsExistenceStatement. Both implications are proved, and both proofs are present in Library commit 730bd1f25b056b8106a2697e003c1ef1733a6b30. The theorem bruhatTitsAvailabilityReduction (module Langlands.Geometry.Building.BruhatTitsAvailabilityReductionProof) proves BruhatTitsAvailabilityReductionStatement. It chooses a datum for each group with Classical.choose and takes the comparison clauses from buildingComparisonAxiom and isomorphismCompatibilityAxiom through KPBuildingAssignment.isAvailableFor_iff. The theorem groupAxiomsExistenceReduction (module Langlands.Geometry.Building.GroupAxiomsExistenceReduction) proves GroupAxiomsExistenceReductionStatement. It builds SatisfiesGroupAxioms field by field and obtains Axiom 4.1.8 from KPBuildingDatum.satisfiesRootGroupActionAxiom_iff. So BruhatTitsAvailabilityStatement follows from RootValuationBuildingConstructionStatement, RootGroupActionAxiomStatement, IwahoriDecompositionAxiomStatement and IntegralModelAxiomsStatement, none of which is proved. The published reduction rootValuationBuildingConstructionReduction (module RootValuationBuildingConstructionReduction) derives RootValuationBuildingConstructionStatement from ValuationApartmentAxiomsExistenceStatement (KP Theorem 9.6.5), ActualApartmentSplittingStatement, AffineIwahoriTitsStatement and AffineIwahoriTitsBuildingStatement. Through ParahoricBuildingData.fiveAxioms_of_statements the last three also give ChapterSevenBuildingAxiomsStatement (published by this program, first in Library commit 8c11c93f98b439395e0e7da779c98bb27e24bd6d): for supplied ParahoricBuildingData satisfying V 7 and AS 2–AS 5, a polysimplicial realization and a splitting with the other six predicates of the corrected opening of Section 4.2. Two of the four inputs of rootValuationBuildingConstructionReduction are proved: actualApartmentSplitting (module Langlands.Geometry.Building.ActualApartmentSplittingProof, first published in Library commit 8401ccd1f8b9caa18ded91cbfb9c1a31f423ecfd) proves ActualApartmentSplittingStatement, and affineIwahoriTitsBuilding (module Langlands.Geometry.Building.AffineIwahoriTitsBuildingProof, first published in Library commit cd03c1042f631409e39a0b2a833ed70c0ad78d55) proves AffineIwahoriTitsBuildingStatement. Lean inspections on 2026-11-12 at Library commit 14c08c22 report kind theorem and only propext, Classical.choice and Quot.sound. ValuationApartmentAxiomsExistenceStatement and AffineIwahoriTitsStatement remain unproved, so RootValuationBuildingConstructionStatement and ChapterSevenBuildingAxiomsStatement remain open.",
-        "Chapter 9 descent rows: Section 9.2.1, Proposition 9.3.4 and Theorem 9.6.5 record the published statements of the unramified-descent route to ValuationApartmentAxiomsExistenceStatement, including the proved reduction valuationApartmentAxiomsExistenceReduction; Lemma 9.8.1 records the existence statement for the §9.8 filtration of Z(k)."
+        "The theorem bruhatTitsAvailability, first in Library commit af4ce7d54ba8e700648f7583ea70946256e67a46, supplies a valid KPBuildingAssignment. The availability and group-axiom reductions separate the single-group axioms from extension and isomorphism comparisons.",
+        "The theorem unramifiedDescentOfGroupAxioms, first in Library commit 99e4a586253ae0b5bad1472a73c984acb1a6b033, replaces each single-group datum with a group-valid datum satisfying unramified descent. An equivariant equivalence of reduced buildings over the identity on rational points compares the original datum with its replacement.",
+        "The theorem bruhatTitsCompletionCertificateReduction assembles these replacements. The theorem KPBuildingAssignment.ofData_isValid transports the Axiom 4.1.1 extension comparisons and the Axiom 4.1.17 covering-isomorphism comparisons along the building equivalences. The theorem bruhatTitsCompletionCertificate applies that reduction to the two existence theorems.",
+        "The set-equality formulation of UR 3 and the obstruction to the printed quantifier over every upper derivative are described in Langlands/Geometry/Building/FullValidity/UnramifiedDescent.md."
       ],
-      "consumer_or_regression": "Release 1 general-instance certificate, then actual parahoric reduction, inflation and compact induction. Check anisotropic and torus reduced/enlarged factors, a multipliable root and a nontrivial component example. A Gamma-chamber or Gamma-vertex need not be a K-chamber or K-vertex.",
-      "formal_status": "statement",
+      "consumer_or_regression": "The descended assignment supplies the premises of depthZeroConsumer and availableMaximalProP for the same data at every facet. The regression statements compare the assigned buildings with the reduced and enlarged factors for tori, the GL₂ tree, the parahorics and component data of GLₙ, and the building of SU₃ with a multipliable root.",
+      "formal_status": "proved",
       "publication_commits": [
         "230ec08a058832bd6941fa887c30897e4826429b",
-        "cfedefb680f317b0ea5d351023e1c9dd886b2547"
+        "cfedefb680f317b0ea5d351023e1c9dd886b2547",
+        "af4ce7d54ba8e700648f7583ea70946256e67a46",
+        "99e4a586253ae0b5bad1472a73c984acb1a6b033",
+        "db940683e1d682d84831e8365720f1c79b5c9b0c"
       ],
       "axiom_reports": [
         {
@@ -2253,6 +2169,11 @@ open, unproved or conditional. Conditional code will remain
           "declaration": "Langlands.Geometry.Building.groupAxiomsExistenceReduction",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection on 2026-11-13 of the module as first published in Library commit 730bd1f2; kind theorem, proving GroupAxiomsExistenceReductionStatement."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.bruhatTitsCompletionCertificate",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Declaration inspection on 2026-11-27 at Library commit 2f86a99eb5616254ac5b9c399603c9bbbea15f7a. The theorem has universe parameter u and type BruhatTitsCompletionCertificateStatement.{u}."
         }
       ],
       "external_code": []
@@ -4913,6 +4834,7 @@ open, unproved or conditional. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation, Henselian integer ring o and perfect residue field f; G is connected reductive over k. K is a maximal unramified extension, O its integer ring, fbar its algebraically closed residue field, and Gamma=Gal(K/k)=Gal(fbar/f). Perfect residue is the corrected hypothesis of Section 8.3 and subsequent sections, not merely quasi-splitness of G_K.",
         "x is a point of the actual descended building over k, with connected parahoric model G^0_x over o, special fibre H_x and maximal reductive quotient Gred_x. Put P_{x,0}=G^0_x(o). The Chapter 13 torus filtration is functorial and admissible with 7.2(1),(2). No finite-residue assumption is required for this depth-zero assertion.",
+        "Lean facet scope. F is a nonarchimedean local field of either characteristic, G is connected reductive over F, and x is a facet of a KPBuildingDatum D with D.SatisfiesGroupAxioms. Its parahoric, radical and represented connected reductive quotient come from the facet datum. Theorem bruhatTitsCompletionCertificate supplies such a group-valid datum for every F and G in this scope. The supplied-model lemmas below retain their own model, lifting and quotient hypotheses. The linear kernel correspondence takes finite-dimensional complex inducing representations.",
         "Recorded Lean scope: the published modules Langlands.BruhatTits.IntegralModels.DepthZeroReduction (first in Library commit 7047367a78583edbe335517824e30403414aa3f0) and Langlands.BruhatTits.IntegralModels.DepthZeroInduction (first in Library commit 7103f5282c4897716543f227940fdb2a0e12e70e) work over a domain R in universe u with fraction field K and a group scheme G over Spec K, with supplied D : RelativeComponentModelData R K G and Q : SpecialFibreQuotientData D. The smooth model D.neutral with connected fibres plays the role of G^0_x, Q.quotient that of Gred_x and Q.projection that of the quotient map; nothing identifies D.neutral with the actual parahoric model or D.neutral.integralPoints with P_{x,0}. The premises hrad : IsUnipotentRadical Q.radicalInclusion and hQ (Q.projection is the represented fppf quotient by that radical) are the first two conjuncts of Q.IsReductiveQuotient; reductivity of the quotient is not used. For a local domain R, ker_parahoricReduction hQ identifies the kernel of parahoricReduction : G^0(R) → Q.quotient(f) with Q.positivePoints.subgroupOf D.neutral.integralPoints, the radical preimage G(K)^{0+} of Axiom 4.1.22(7) inside G^0(R). For a Henselian local domain R with perfect residue field, parahoricReduction_surjective hrad hQ gives surjectivity and depthZeroQuotientEquiv hrad hQ is the induced group isomorphism from G^0(R) modulo that kernel onto Q.quotient(f). The integer rings of k and of K in the source are both such bases, so the source's assertion over K is the same declaration at another base; no instance is supplied. DepthZeroInduction adds the consumer test: inflation of a representation of Q.quotient(f) to G^0(R), the bijection between G^0(R)-maps from an inflation and Q.quotient(f)-maps into kernel invariants, and, for a topological-group structure on G(K) in which G^0(R) and its level-one congruence subgroup are open, compact induction from G^0(R) with Frobenius reciprocity (depthZeroInductionHomEquiv). For a nonarchimedean local field F, R = 𝒪[F] is proved Henselian and localFieldDepthZeroInductionHomEquiv, for affine G locally of finite type with rationalPointTopology, takes those openness premises from LocalFieldIntegralModel.CongruenceNeighborhoodBasisStatement. That statement is proved: congruenceNeighborhoodBasis_proof (module Langlands.GroupScheme.IntegralModel.CongruenceNeighborhoodBasisProof, first published in Library commit ba77b83f98d4cbe92842b4645577633e0541fdab) applies to every integral model over 𝒪[F] of an affine G, so localFieldDepthZeroInductionHomEquiv congruenceNeighborhoodBasis_proof needs only the supplied D, Q, hrad and hQ, and the first conjunct of congruenceNeighborhoodBasis_proof F G D.neutral says that D.neutral.integralPoints is compact in rationalPointTopology. The module Langlands.BruhatTits.IntegralModels.FiniteReductiveQuotient (first in Library commit cfedefb680f317b0ea5d351023e1c9dd886b2547) assumes a finite residue field. GroupScheme.finite_rationalPoints says that an affine group scheme locally of finite type over a finite commutative ring has finitely many points. For a local domain R and Q.quotient locally of finite type, finite_quotientPoints gives Finite (rationalPoints Q.quotient), as does IsConnectedReductive Q.quotient alone (finite_quotientPoints_of_isConnectedReductive); finiteQuotientGroup packages these points as a FiniteGrp, and positivePoints_subgroupOf_finiteIndex hQ says that Q.positivePoints.subgroupOf D.neutral.integralPoints has finite index. For a Henselian local domain, index_positivePoints_subgroupOf hrad hQ says that this index equals Nat.card (rationalPoints Q.quotient), and localField_index_positivePoints_subgroupOf is the case R = 𝒪[F]. For affine G locally of finite type with rationalPointTopology, localField_isOpen_ker_parahoricReduction says that the kernel of parahoricReduction is open in D.neutral.integralPoints. The module Langlands.BruhatTits.IntegralModels.DepthZeroCompactOpen (first in the same commit) proves, over a local domain, congruenceSubgroup_le_positivePoints (D.neutral.congruenceSubgroup ≤ Q.positivePoints) and positivePoints_subgroupOf_normal hQ. Over 𝒪[F], with G affine and locally of finite type and rationalPointTopology, localField_isOpen_positivePoints and localField_isCompact_positivePoints say that Q.positivePoints is open and compact in G(F) without hrad or hQ, localFieldPositiveOpenSubgroup bundles it as an OpenSubgroup, and RelativeComponentModelData.localFieldIntegralOpenSubgroup bundles D.neutral.integralPoints for affine G. The cokernel description of Gred_x is not formalized. The module Langlands.Representation.Induction.OpenIntertwiningStatement (first published in Library commit 79de65ce5fcd6dc5f182612988e1b529d49a63b4) states, for a subgroup H of a topological group G and representations of H over a commutative ring, CompactInductionIntertwiningStatement, the conjunction of three propositions. CompactInductionKernelStatement: for open H, the maps c-Ind_H^G A → c-Ind_H^G B between smooth representations correspond bijectively to intertwining kernels Φ : G → Hom(A, B) (IsIntertwiningKernel: Φ(hgh') = τ(h) ∘ Φ(g) ∘ σ(h'), and for each vector v only finitely many right cosets Hg have Φ(g)v ≠ 0), via Φ(g)v = T(unitFunction v)(g). CompactInductionDoubleCosetStatement: for compact open H, smooth σ and double-coset representatives s, restriction to the representatives is a bijection from intertwining kernels onto local intertwiner families (IsLocalIntertwinerFamily: φ(q) intertwines σ with h ↦ τ(s(q) h s(q)⁻¹) on H ∩ s(q)⁻¹ H s(q), and for each v only finitely many q have φ(q)v ≠ 0). CompactInductionFiniteTypeKernelStatement: for compact open H and finitely generated σ, the intertwining kernels are the covariant functions whose support meets finitely many double cosets HgH. With H = D.neutral.integralPoints and A, B two inflations Q.inflationSmoothRep, these describe the maps between the depth-zero compact inductions of DepthZeroInduction. Each conjunct is proved: Langlands.Induction.compactInductionKernel (module Langlands.Representation.Induction.OpenIntertwiningKernelProof), compactInductionDoubleCoset (module Langlands.Representation.Induction.OpenIntertwiningDoubleCosetProof) and compactInductionFiniteTypeKernel (module Langlands.Representation.Induction.OpenIntertwiningFiniteTypeProof), all first published in Library commit 730bd1f25b056b8106a2697e003c1ef1733a6b30; no separate theorem proves the conjunction. The module Langlands.BruhatTits.IntegralModels.DepthZeroIntertwining (first published in Library commit 73b1430a339b037d27e9096762b0400adb4fbd19) specializes them to H = D.neutral.integralPoints and two inflations, for a local domain R and a topological-group structure on G(K) in which H and the level-one congruence subgroup are open. depthZeroInductionKernelEquiv identifies the maps between the depth-zero compact inductions of σ and τ with the intertwining kernels of their inflations. For compact H and supplied double-coset representatives s, depthZeroInductionDoubleCosetEquiv identifies them with local intertwiner families on H\\G(K)/H. For σ on a finite k-module, depthZeroInductionKernel_finite_doubleCosetSupport says that the kernel of every such map is supported on finitely many double cosets. Over a nonarchimedean local field with G affine and rationalPointTopology, RelativeComponentModelData.localField_isOpen_congruenceSubgroup proves the congruence premise; for G also locally of finite type, localFieldDepthZeroInductionDoubleCosetEquiv and localField_depthZeroInductionKernel_finite_doubleCosetSupport need only the supplied D and Q. None of these uses hrad, hQ or a Henselian base. The double-coset representatives are supplied: no Bruhat or Iwahori decomposition of H\\G(K)/H, no Hecke-algebra multiplication and nothing about irreducibility or supercuspidality is stated.",
         "Recorded regression instances (split groups with their standard models; no building point): five published modules construct actual, not supplied, D and Q over R = 𝒪[F] for a nonarchimedean local field F whose residue field f has q elements. In each, D.full = D.neutral is a standard smooth model with connected fibres, obtained from the published criterion relativeComponentData_of_reductive_localField, the radical is the trivial subgroup, Q.quotient is the special fibre itself with the identity projection, and Q.IsReductiveQuotient is proved, so the theorems of the Recorded Lean scope apply with hrad and hQ discharged. (1) Langlands.BruhatTits.IntegralModels.MultiplicativeDepthZero (first published in Library commit 85c2fe719cf62e96f22aaf4ca03961c5814d086b): multiplicativeModelData on the published model IntegralModel.multiplicative, multiplicativeQuotientData and multiplicativeQuotientData_isReductiveQuotient; mem_multiplicative_positivePoints describes the radical preimage as the images of the units of 𝒪[F] with residue 1, that is 1 + 𝔪; multiplicative_index_positivePoints_subgroupOf gives index q − 1 in the integral points, and multiplicative_index_positivePoints_subgroupOf_eq_one gives index 1 when q = 2. (2) Langlands.BruhatTits.IntegralModels.SplitTorusDepthZero (first published in Library commit 85c2fe719cf62e96f22aaf4ca03961c5814d086b): for a finite index type I, Langlands.GroupScheme.IntegralModel.splitTorusModel is the split torus G_m^I over a domain, as a model of the split torus over its fraction field; splitTorusModelData, splitTorusQuotientData and splitTorusQuotientData_isReductiveQuotient are as in (1); mem_splitTorus_positivePoints gives (1 + 𝔪)^I and splitTorus_index_positivePoints_subgroupOf gives index (q − 1)^|I|. (3) Langlands.BruhatTits.IntegralModels.GeneralLinearDepthZero (first published in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46): for any D, SpecialFibreQuotientData.identityQuotient D is the quotient data with trivial radical and identity projection; identityQuotient_isReductiveQuotient proves that it is a reductive quotient when the neutral special fibre is connected reductive, and identityQuotient_positivePoints identifies its radical preimage with D.neutral.congruenceSubgroup, the image of the kernel of reduction. generalLinearModelData on the standard model GL_{N,𝒪[F]}, generalLinearQuotientData (the identity quotient) and generalLinearQuotientData_isReductiveQuotient; generalLinear_index_positivePoints_subgroupOf_eq_prod gives index ∏_{i<N} (q^N − q^i), the order of GL_N(f). For N = n + 1, generalLinear_integralPoints_map_eq_integralSubgroup and generalLinear_positivePoints_map_eq_principalLevelSubgroup map the integral points and the radical preimage onto the Library's concrete Conductor.integralSubgroup 𝒪[F] n and Conductor.principalLevelSubgroup F n 1, and generalLinear_principalLevelSubgroup_relIndex gives their relative index |GL_{n+1}(f)|. (4) Langlands.BruhatTits.IntegralModels.SymplecticDepthZero (first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3): symplecticModelData on the standard model Sp_{2l,𝒪[F]} (Langlands.GroupScheme.SymplecticMatrix.standardIntegralModel), symplecticQuotientData (the identity quotient) and symplecticQuotientData_isReductiveQuotient; symplectic_index_positivePoints_subgroupOf gives index |Sp_{2l}(f)|, and mem_symplectic_positivePoints_iff_generalLinear says that a point lies in the radical preimage exactly when its matrix in GL_{l⊕l}(F) is the image of an element of GL_{l⊕l}(𝒪[F]) with residue 1. (5) Langlands.BruhatTits.IntegralModels.SpecialLinearDepthZero (first published in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3): specialLinearModelData on the standard model SL_{n,𝒪[F]} (Langlands.GroupScheme.SpecialLinear.standardIntegralModel) for a nonempty finite index type n, specialLinearQuotientData (the identity quotient) and specialLinearQuotientData_isReductiveQuotient; specialLinear_index_positivePoints_subgroupOf_mul says that for n = Fin N the index times q − 1 is ∏_{i<N} (q^N − q^i), and specialLinear_positivePoints_eq_comap_principalLevelSubgroup identifies the radical preimage for n = Fin (m + 1) with the preimage of Conductor.principalLevelSubgroup F m 1. Each index theorem is derived from localField_index_positivePoints_subgroupOf (FiniteReductiveQuotient) through an identification of the residue-field points of the special fibre. Non-claims: no building and no point x appear. Nothing identifies these standard models with KP's G^0_x at a hyperspecial vertex (for G split over K, Proposition 8.4.14, printed p.306 / PDF p.337, says that G^0_x is reductive exactly when x is a hyperspecial vertex), D.neutral.integralPoints with P_{x,0}, or the radical preimage with P_{x,0+}; agreement with KP's values holds only through the explicit descriptions above. Every radical here is trivial, and every group is split.",
         "Recorded regression instances, second entry (non-split tori and the standard Iwahori subgroup of GL_N; no building point). F is a nonarchimedean local field whose residue field f = 𝓀[F] has q elements. (6) Langlands.BruhatTits.IntegralModels.NormOneTorusDepthZero (first published in Library commit e5365902d74534dbf1622c06e695dffdc128d723): for a finite separable field extension E/F and supplied integral data, namely a finite free 𝒪[F]-algebra B with eF : F ⊗[𝒪[F]] B ≃ₐ[F] E, a field k' with eκ : 𝓀[F] ⊗[𝒪[F]] B ≃ₐ[𝓀[F]] k' and hB stating that the norm-one kernel normOne 𝒪[F] B is smooth, normOneModel is that kernel R¹_{B/𝒪[F]} G_m as an integral model of the norm-one torus G = R¹_{E/F} G_m. normOneModelData (with D.full = D.neutral) and normOneQuotientData (the identity quotient) are actual D and Q, and normOneQuotientData_isReductiveQuotient proves Q.IsReductiveQuotient, the special fibre being the norm-one torus of k'/f. normOneQuotientData_positivePoints identifies the radical preimage with the congruence subgroup. normOne_index_positivePoints_subgroupOf gives its index in the integral points as the number of norm-one units of k', normOne_index_positivePoints_subgroupOf_mul says that this index times q − 1 is q^n − 1 for n = [k' : f], and normOne_index_positivePoints_subgroupOf_of_finrank_eq_two gives q + 1 for n = 2. normOne_isAnisotropic proves that G is anisotropic over F. WeilGm.normOne_smooth_of_decomposition proves hB when B becomes a finite nonempty product of copies of A' after a faithfully flat base change 𝒪[F] → A'. The module constructs no B. (7) Langlands.BruhatTits.IntegralModels.QuadraticNormOneDepthZero (first published in Library commit b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a): UnramifiedQuadraticData F packages b, c ∈ 𝒪[F] such that b^2 − 4c is a unit and the reduction of X^2 + bX + c is irreducible over f. For such D, B = 𝒪[F][X]/(X^2 + bX + c) and E = F[X]/(X^2 + bX + c); UnramifiedQuadraticData.smooth proves hB through the splitting B ⊗[𝒪[F]] B ≃ B × B, and D.modelData, D.quotientData and D.quotientData_isReductiveQuotient are the instances of (6). D.index_positivePoints_subgroupOf gives index q + 1 and D.isAnisotropic proves anisotropy. UnramifiedQuadraticData.nonempty says that such data exist for every F, and exists_unramifiedQuadraticNormOne combines these: every nonarchimedean local field has an anisotropic norm-one torus with smooth model data, reductive identity quotient and depth-zero index q + 1. (8) Langlands.BruhatTits.IntegralModels.NormOneTraceSmoothness (first published in Library commit b3a1bdaf15715f16a43643513b7cbb6cbb58ef3a): HasTraceOne A B says that some element of B has trace 1 over A, and hasTraceOne_of_isUnit_finrank gives one (the inverse of the rank) when the rank of a finite free B is a unit of A. WeilGm.normOne_smooth_of_hasTraceOne proves that the norm-one kernel normOne A B is smooth over a noetherian ring A for every finite free A-algebra B with HasTraceOne A B. This gives hB for B that are not étale over 𝒪[F]. It gives only hB, not eκ: to apply (6), the special fibre 𝓀[F] ⊗[𝒪[F]] B must still be shown to be a field k'. (9) Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriComparison (first published in Library commit c40a01345b2f4172fa41e07ff31644b40e695003): on the standard model of (3), write K for (generalLinearModelData F N).neutral.integralPoints and K^+ for the radical preimage (generalLinearQuotientData F N).positivePoints. generalLinearReductionPreimage H is the preimage in K of a subgroup H of GL_N(f), as a subgroup of GL_N(F); the preimage of ⊤ is K, that of ⊥ is K^+, and relative indices are those in GL_N(f). generalLinearIwahoriPoints I and generalLinearIwahoriPositivePoints I^+ are the preimages of the upper triangular and upper unipotent groups of GL_N(f), so K^+ ≤ I^+ ≤ I ≤ K. generalLinearIwahoriPoints_relIndex gives [K : I] = [GL_N(f) : B(f)], generalLinearIwahoriPoints_relIndex_mul gives q^(N choose 2) (q − 1)^N [K : I] = ∏_{i<N} (q^N − q^i), generalLinearIwahoriPoints_relIndex_two gives [K : I] = q + 1 for N = 2, generalLinearIwahoriPositivePoints_relIndex gives [I : I^+] = (q − 1)^N, positivePoints_relIndex_generalLinearIwahoriPositivePoints gives [I^+ : K^+] = q^(N choose 2), and generalLinearIwahoriQuotientEquiv identifies I/I^+ with the diagonal torus (GL_1(f))^N. generalLinearIwahoriPoints_lt_integralPoints says that I < K for N ≥ 2, and generalLinearIwahoriPoints_of_le_one that I = K for N ≤ 1. The KP comparison values are Theorem 8.4.19(3) (printed p.309 / PDF p.340: the preimage of a parabolic of the special fibre is the parahoric of the larger facet) and Theorem 8.4.10(2) (printed p.305 / PDF p.336: for a chamber no affine root vanishes, so the maximal reductive quotient is a torus); KP state them over the maximal unramified extension, and the Lean statements are over F with its finite residue field. Model data for I are recorded in (11); nothing identifies I with P_{x,0} for x in a chamber or I^+ with P_{x,0+}. (10) Langlands.BruhatTits.IntegralModels.RamifiedQuadraticNormOne (first published in Library commit af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e): RamifiedQuadraticData F is an irreducible element ϖ of 𝒪[F] (a uniformizer) together with the hypothesis that 2 is a unit of 𝒪[F], and RamifiedQuadraticData.nonempty_iff says that such data exist exactly when 2 is a unit. For such D, B = 𝒪[F][X]/(X^2 − ϖ) and E = F[X]/(X^2 − ϖ), and D.isAnisotropic proves that T = R¹_{E/F} G_m is anisotropic. D.smooth proves that the norm-one kernel of B is smooth, through (8). Its special fibre is disconnected: D.specialFibreSign sends a point x + yα of the special fibre (α^2 = 0, x^2 = 1) to x ∈ f^×, and index_ker_specialFibreSign gives its kernel index 2. D.componentPoints, the integral points whose reduction has sign 1, has relative index 2 in the integral points (relIndex_componentPoints) and contains the congruence subgroup (congruenceSubgroup_le_componentPoints). D.integralPoints_eq_top says that every point of T(F) is integral, and D.index_componentPoints gives index 2 in T(F). The module constructs no D or Q of the Recorded Lean scope; relativeComponentData_of_reductive_localField does not apply, the special fibre being disconnected. The comparison with corrected Remark 2.5.15 (corrections PDF pp.24–25: T(k)_0 ⊂ T(k)_1 = T(k) has index 2 for ramified ℓ/k, and T(k)_0 = (1 + p_ℓ) ∩ ℓ^1 when ℓ/k is tamely ramified) holds only through these values: componentPoints consists of the norm-one elements of 1 + α𝒪[F][α], and no Lean declaration identifies 𝒪[F][α] with the ring of integers of E or componentPoints with KP's T(F)_0. (11) Model data for I. Langlands.GroupScheme.FiniteFreeAlgebraUnits (first published in Library commit 7f5b5f04a855fc0b4671393213c87415a6ee2aaf): for R : CommRingCat and an R-algebra A, possibly noncommutative, with a finite basis b, FiniteFreeAlgebraUnits.groupScheme b is the affine group scheme over Spec R whose T-points are (Γ(T) ⊗[R] A)ˣ (pointsEquiv). It is smooth (smooth) with geometrically connected fibres; baseChangeIso compares its base change along R → R' with the unit group scheme of the base-changed basis, and generalLinearIso identifies the case A = M_N(R) with GL_N. Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriModel (first published in Library commit aeb3911c4e1bf6e3a2f653e874e4ebc422d2a61a): for a domain R with fraction field K, an R-algebra A with a finite basis and an injective φ : A →ₐ[R] M_N(K) such that every matrix has a nonzero multiple in its image, FiniteFreeAlgebraUnits.orderModel is this group scheme as an integral model of GL_N over K, with integral points φ(Aˣ) (mem_orderModel_integralPoints); orderModelData is D with D.full = D.neutral. iwahoriOrder F N is the 𝒪[F]-subalgebra of M_N(𝒪[F]) of matrices whose strictly lower entries lie in the maximal ideal. iwahoriModel F N is its order model, smooth (iwahoriModel_isSmooth), with integral points I (iwahoriModel_integralPoints); for iwahoriModelData, iwahoriModelData_neutralPoints gives D.neutral.integralPoints = I, and iwahoriModelData_neutralPoints_lt says that for N ≥ 2 this is a proper subgroup of the neutral integral points of the hyperspecial generalLinearModelData of (3). Langlands.GroupScheme.FiniteFreeAlgebraUnitsQuotient (first published in Library commit 4abbe7aabd9c92005d91c9d5bba86b879e928bb3): FiniteFreeAlgebraUnits.map is the homomorphism of unit group schemes induced by an algebra map f. Over a field, isFppfQuotient_map_of_section shows that it is an fppf quotient by its kernel when f has an algebra section, through SectionQuotient.isFppfQuotient_of_section for split homomorphisms. Langlands.GroupScheme.FiniteFreeAlgebraUnipotentUnits (first published in Library commit fab9caeae532b7a65e67e702bcab72d3194371ae): for an algebra map π : A →ₐ[R] B and a basis of A adapted to π whose kernel part spans a nilpotent ideal J, UnipotentPart.groupScheme is the smooth group scheme 1 + J with geometrically connected fibres, and kernelIso identifies it with the kernel of the unit-group map of π. Over a field, UnipotentPart.isUnipotent proves that it is unipotent when the basis of J carries weights at least 1 that add under multiplication, and UnipotentPart.isUnipotentRadical says that if moreover π has an algebra section and the unit group of B is a torus, then 1 + J is a unipotent radical and the unit-group map of π is an fppf quotient by it; isTorus_pi proves that the unit group of k^N is a torus. Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriQuotient (first published in Library commit 0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18): specialFibreIso identifies the special fibre of iwahoriModelData F N with the unit group scheme of 𝓀[F] ⊗[𝒪[F]] iwahoriOrder F N. iwahoriQuotientData is Q with radical 1 + J, for J spanned by the off-diagonal scaled matrix units (specialRadical_isUnipotentRadical), and quotient the diagonal split torus, the unit group of 𝓀[F]^N. iwahoriQuotientData_isReductiveQuotient proves Q.IsReductiveQuotient, and iwahoriQuotientData_positivePoints proves Q.positivePoints = generalLinearIwahoriPositivePoints F N, the group I^+ of (9). So the pair I^+ ≤ I of (9) is the pair of radical preimage and neutral integral points of actual D and Q, which for N ≥ 2 differ from the hyperspecial data of (3), with reductive quotient a torus, as KP Theorem 8.4.10(2) gives at a chamber. Nothing identifies iwahoriModelData with KP's G^0_x for x in a chamber. (12) Depth-zero theory for I. Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriDepthZero (first published in Library commit b3dcc8cc4c93f1140c6b34374f589ccc637a1a22) applies the general depth-zero results of the Recorded Lean scope to D = iwahoriModelData F N and Q = iwahoriQuotientData F N of (11). iwahoriModelData_integralPoints gives D.neutral.integralPoints = I. diagTorusPointsEquiv identifies the residue-field points of the quotient, the diagonal torus diagTorus F N, with (𝓀[F]ˣ)^N, and card_diagTorus_rationalPoints counts (q − 1)^N of them. singletonLevi_parahoricReduction says that on I the general reduction Q.parahoricReduction, read through singletonLevi as a Levi element of the singleton block shape, is the group-level projection generalLinearIwahoriDiagonal of (9), the diagonal of the residue matrix. iwahoriDepthZeroQuotientEquiv is the general depthZeroQuotientEquiv for D and Q followed by diagTorusPointsEquiv: I modulo the kernel of Q.parahoricReduction is (𝓀[F]ˣ)^N, and iwahoriQuotientData_ker_parahoricReduction identifies that kernel with I^+. iwahori_index_positivePoints_subgroupOf obtains [I : I^+] = (q − 1)^N from the general index theorem localField_index_positivePoints_subgroupOf, the value that (9) computes by finite group theory. isOpen_generalLinearIwahoriPoints, isCompact_generalLinearIwahoriPoints, isOpen_generalLinearIwahoriPositivePoints and isCompact_generalLinearIwahoriPositivePoints prove that I and I^+ are compact open in GL_N(F) with its canonical topology, from the general theorems for neutral integral points (isOpen_integralPoints_localField, isCompact_integralPoints_localField) and radical preimages (localField_isOpen_positivePoints, localField_isCompact_positivePoints). Non-claims: no building and no point x appear. Nothing identifies these models with KP's G^0_x, or their points with P_{x,0}, P_{x,0+} or the torus subgroups T(k)_1 and T(k)_0 of Proposition 2.5.8 and Definition 2.5.13; agreement with KP holds only through the explicit values above."
@@ -5061,7 +4983,9 @@ open, unproved or conditional. Conditional code will remain
         "Langlands.BruhatTits.IntegralModels.isOpen_generalLinearIwahoriPoints",
         "Langlands.BruhatTits.IntegralModels.isCompact_generalLinearIwahoriPoints",
         "Langlands.BruhatTits.IntegralModels.isOpen_generalLinearIwahoriPositivePoints",
-        "Langlands.BruhatTits.IntegralModels.isCompact_generalLinearIwahoriPositivePoints"
+        "Langlands.BruhatTits.IntegralModels.isCompact_generalLinearIwahoriPositivePoints",
+        "Langlands.Geometry.Building.DepthZeroConsumerStatement",
+        "Langlands.Geometry.Building.depthZeroConsumer"
       ],
       "modules": [
         "Langlands.BruhatTits.IntegralModels.DepthZeroReduction",
@@ -5088,7 +5012,9 @@ open, unproved or conditional. Conditional code will remain
         "Langlands.GroupScheme.FiniteFreeAlgebraUnitsQuotient",
         "Langlands.GroupScheme.FiniteFreeAlgebraUnipotentUnits",
         "Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriQuotient",
-        "Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriDepthZero"
+        "Langlands.BruhatTits.IntegralModels.GeneralLinearIwahoriDepthZero",
+        "Langlands.Geometry.Building.DepthZero.Statement",
+        "Langlands.Geometry.Building.DepthZero.Proof"
       ],
       "dependencies": [
         "Theorems 8.3.2 and 8.3.13 construct the actual models; Sections 9.2.5–9.2.6 descend them and identify integral points",
@@ -5098,10 +5024,10 @@ open, unproved or conditional. Conditional code will remain
         "Section 13.2.2 separates facet-dependent 0 and 0+ from positive-depth variation, and 13.2.3 uses 9.8.3(2) for the Gamma-invariant group comparison",
         "Recorded Lean route: surjectivity composes the Henselian lifting theorem IntegralModel.reduction_surjective for the smooth model (the role of 8.1.3) with projectionPoints_surjective. Over a perfect residue field the latter uses a scheme section of the projection, obtained from the published perfectFieldUnipotentSplit and splitUnipotentAffineTorsorStatement, instead of the Galois cohomology of Lemma 2.4.2 and Proposition 2.4.3 (printed p.84 / PDF p.115). The kernel is the radical preimage by construction. Its identification with the Moy–Prasad group P_{x,0+} (Corollary 8.4.12, printed p.306 / PDF p.337, and Section 9.5) and the construction of the actual models, radical and quotient (Theorems 8.3.2 and 8.3.13, Sections 9.2.5–9.2.6) are not formalized.",
         "Intertwining source (outside KP): M.-F. Vignéras, Représentations ℓ-modulaires d'un groupe réductif p-adique avec ℓ ≠ p (1996), literature ID provided-74667a7cddb3bdafff85f01c658605ce7d929f6da73950d79457c46bcd761dd4, SHA-256 4d2daeee16515f994dfb04157915179b55b30d5bf2f874a16f13e7cb6fa7d657, I.8.5 at printed pp.67–68 / PDF pp.85–86, with I.8.1–I.8.2 at printed pp.64–65 / PDF pp.82–83 and the proof of I.8.3 at printed p.66 / PDF p.84. I.8.5 identifies Hom(ind_{G,K} σ, ind_{G,H} π), for open K and σ of finite type, with the covariant functions supported on finitely many double cosets HgK. The kernel statement drops finite type and compactness and uses the per-vector support condition of the source's proof; the double-coset statement parametrizes kernels by their values at double-coset representatives, as in the proof of I.8.3, with per-vector finiteness, a form derived for this unit; the finite-type statement recovers I.8.5 a) for compact open H. Only the case K = H is stated; compactness of H replaces compactness modulo the centre.",
-        "Open obligations before unconditional use: construct D and Q with hrad and hQ for the actual parahoric model of a point of the actual descended building; prove Corollary 8.4.12. The premise CongruenceNeighborhoodBasisStatement of the local-field corollary is proved (congruenceNeighborhoodBasis_proof); a Lean inspection on 2026-11-12 at Library commit c5b9c2cf, where the module is byte-identical to commit ba77b83f, reports kind theorem and only propext, Classical.choice and Quot.sound. The intertwining statements CompactInductionKernelStatement, CompactInductionDoubleCosetStatement and CompactInductionFiniteTypeKernelStatement are proved; CompactInductionIntertwiningStatement is their conjunction."
+        "The theorem Langlands.Geometry.Building.depthZeroConsumer proves DepthZeroConsumerStatement. It uses the neutral facet model and its quotient, with the model point topology and the perfect finite residue field. It identifies the parahoric with the zero-fixer, proves compact openness, and gives the normal compact open kernel, the surjective reduction and the quotient equivalence respecting representatives. Inflation and compact induction use that reduction, and the linear kernel map is injective with image the equivariant functions of finite double-coset support. The completion certificate supplies the group axioms through IsAvailableFor.groupAxioms."
       ],
-      "consumer_or_regression": "For a nonarchimedean local field, separately prove finiteness of Gred_x(f) from finite residue and finite type, and compactness/openness from the actual model topology. Inflate a finite-quotient representation through this map and prove the quotient factorization, then compactly induce and prove a double-coset or intertwining theorem. This source row supplies no positive-depth acceptance. Recorded progress: inflation, its factorization through kernel invariants, compact induction and Frobenius reciprocity are formalized on supplied data in DepthZeroInduction (see the Recorded Lean scope). For a nonarchimedean local field, compactness and openness of D.neutral.integralPoints and of its congruence subgroups are proved for every supplied model of an affine G (congruenceNeighborhoodBasis_proof), and the intertwining and double-coset description of maps between compact inductions is proved (the three conjuncts of CompactInductionIntertwiningStatement) and specialized to the depth-zero compact inductions (DepthZeroIntertwining); over a nonarchimedean local field the specialization needs only the supplied D and Q. For a finite residue field, finiteness of the supplied quotient's residue-field points and the index formula [D.neutral.integralPoints : radical preimage] = |Q.quotient(f)| over a Henselian base are proved (FiniteReductiveQuotient), and over a nonarchimedean local field the radical preimage is proved compact and open in G(F) (DepthZeroCompactOpen). The identification of D.neutral.integralPoints and of the radical preimage with the actual P_{x,0} and P_{x,0+} remains open. Recorded regression instances: the standard models of the split groups G_m, G_m^I, GL_N, Sp_{2l} and SL_n over the integers of a nonarchimedean local field give actual D and Q satisfying Q.IsReductiveQuotient (see the Recorded regression instances entry). The radical preimage has index q − 1 in the integral points for G_m (index 1 when q = 2), (q − 1)^|I| for G_m^I, ∏_{i<N} (q^N − q^i) = |GL_N(f)| for GL_N and |Sp_{2l}(f)| for Sp_{2l}, and for SL_N the index times q − 1 is ∏_{i<N} (q^N − q^i). For GL_{n+1} the integral points and the radical preimage are carried onto the Library's Conductor.integralSubgroup 𝒪[F] n and Conductor.principalLevelSubgroup F n 1, with relative index |GL_{n+1}(f)|. These instances do not identify the models with KP's G^0_x. Recorded non-split regression instances (see the second Recorded regression instances entry): the norm-one torus R¹_{E/F} G_m of a finite separable extension with a supplied finite free integral form B, whose norm-one kernel is smooth and whose special fibre 𝓀[F] ⊗[𝒪[F]] B is a field k', gives actual D and Q, with index the number of norm-one units of k', and unramified quadratic data with index q + 1 exist over every nonarchimedean local field (exists_unramifiedQuadraticNormOne). For GL_N, the preimages I and I^+ in GL_N(𝒪[F]) of the upper triangular and upper unipotent groups satisfy [I : I^+] = (q − 1)^N and [I^+ : K^+] = q^(N choose 2), and I/I^+ is the diagonal torus (GL_1(f))^N; I is proper in GL_N(𝒪[F]) for N ≥ 2. The unit group of the standard Iwahori order is a smooth model of GL_N with actual D and Q: its integral points are I, the reductive quotient of its special fibre is the diagonal torus and the radical preimage is I^+. Applied to these D and Q, the general depth-zero theory gives I/I^+ ≅ (𝓀[F]ˣ)^N, agreeing with the residue diagonal, the index (q − 1)^N, and compact openness of I and I^+. For the ramified quadratic norm-one torus in odd residue characteristic, the smooth norm-one model has a disconnected special fibre, every F-point is integral and the points reducing into the identity component have index 2; no D or Q is constructed for it. Regression instances for a multipliable root and the identification of any of these subgroups with KP's P_{x,0}, P_{x,0+} or T(k)_0 remain open.",
-      "formal_status": "conditional",
+      "consumer_or_regression": "The facet consumer handles finite reductive points, smooth inflation and compact induction, and finite-dimensional intertwiners. Its GL_N vertex and chamber targets compare the facet quotients with the standard integral model and the Iwahori model respectively. The stated Lean proof covers the local-field rational-point and representation conclusions. The source also describes the group-scheme cokernel and the rational-point comparison over K.",
+      "formal_status": "proved",
       "publication_commits": [
         "7047367a78583edbe335517824e30403414aa3f0",
         "7103f5282c4897716543f227940fdb2a0e12e70e",
@@ -5121,7 +5047,8 @@ open, unproved or conditional. Conditional code will remain
         "4abbe7aabd9c92005d91c9d5bba86b879e928bb3",
         "fab9caeae532b7a65e67e702bcab72d3194371ae",
         "0b7bb3fdbe6e0386b666b6b099a3bc9cd3ad7e18",
-        "b3dcc8cc4c93f1140c6b34374f589ccc637a1a22"
+        "b3dcc8cc4c93f1140c6b34374f589ccc637a1a22",
+        "be45b656851f6de76d62d52bac606a01769d968c"
       ],
       "axiom_reports": [
         {
@@ -5838,6 +5765,11 @@ open, unproved or conditional. Conditional code will remain
           "declaration": "Langlands.BruhatTits.IntegralModels.isCompact_generalLinearIwahoriPositivePoints",
           "axioms": ["propext", "Classical.choice", "Quot.sound"],
           "scope": "Successful local declaration inspection on 2026-11-15 at Library commit b3dcc8cc; kind theorem; that commit first published the module."
+        },
+        {
+          "declaration": "Langlands.Geometry.Building.depthZeroConsumer",
+          "axioms": ["propext", "Classical.choice", "Quot.sound"],
+          "scope": "Declaration inspection on 2026-11-27 at Library commit 2f86a99eb5616254ac5b9c399603c9bbbea15f7a. The theorem has universe parameter u and type DepthZeroConsumerStatement.{u}."
         }
       ],
       "external_code": []
@@ -6832,6 +6764,76 @@ open, unproved or conditional. Conditional code will remain
       "external_code": []
     },
     {
+      "source_item": "Lemma A.5.13(4)",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.636–637 / PDF pp.667–668, Lemma A.5.13(4)"
+      },
+      "erratum": null,
+      "hypotheses": [
+        "The source uses an affine integral model over the discretely valued base o. In Lean the base R is a discrete valuation ring with fraction field K, M is an integral model of an affine group scheme over K, ϖ is an irreducible element of R and n is a natural number."
+      ],
+      "conclusion": "The Lie lattice of the actual congruence group scheme M.congruenceModel hϖ n is 𝔪ⁿ times M.lieLattice in the generic Lie module. The statement includes level zero.",
+      "lean_declarations": [
+        "Langlands.GroupScheme.IntegralModel.CongruenceModelLieLatticeStatement",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLiePropertiesStatement"
+      ],
+      "modules": [
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieStatements"
+      ],
+      "dependencies": [
+        "The dilatation construction supplies the actual congruence model. On dual numbers the source calculates the Lie functor as the kernel of reduction modulo 𝔪ⁿ and identifies it with the corresponding scaled lattice."
+      ],
+      "consumer_or_regression": "This formula identifies the target Lie lattices when the group filtration comes from the congruence models, including the base lattice at level zero.",
+      "formal_status": "statement",
+      "publication_commits": [
+        "db940683e1d682d84831e8365720f1c79b5c9b0c"
+      ],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
+      "source_item": "Proposition A.5.19",
+      "source": {
+        "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
+        "content_sha256": "05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732",
+        "locator": "printed pp.641–643 / PDF pp.672–674, part (3) and Remark A.5.20"
+      },
+      "erratum": null,
+      "hypotheses": [
+        "In part (3), G is a smooth affine group scheme over the valuation ring o, R is a flat o-algebra and 0 < n ≤ m ≤ 2n. Surjectivity uses the local Henselian hypothesis with maximal ideal 𝔪R.",
+        "The Lean construction takes a commutative local domain R with fraction field K and a smooth affine integral model M of an affine group scheme over K. It uses powers of the maximal ideal of R at positive levels n ≤ m ≤ 2n. The surjectivity statement takes a Henselian local R. The unramified comparison uses the integers of a nonarchimedean local field and those of the separable inertia fixed field."
+      ],
+      "conclusion": "The homomorphism on the level-n congruence subgroup takes values in the additive group of 𝔪ⁿL/𝔪ᵐL, where L is the integral Lie lattice. The construction induces a map on the quotient by level m. The companion propositions state injectivity, Henselian surjectivity, model functoriality, integral conjugation equivariance and compatibility with maximal unramified extension. The scheme isomorphism and Weil restriction comparison of parts (1) and (2) have their own scope.",
+      "lean_declarations": [
+        "Langlands.GroupScheme.IntegralModel.congruenceLieHom",
+        "Langlands.GroupScheme.IntegralModel.congruenceLieQuotientHom",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieInjectivityStatement",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieSurjectivityStatement",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieFunctorialityStatement",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieAdjointEquivarianceStatement",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieUnramifiedCompatibilityStatement"
+      ],
+      "modules": [
+        "Langlands.GroupScheme.IntegralModel.LieLatticeBaseChange",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLie",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieStatements",
+        "Langlands.GroupScheme.IntegralModel.CongruenceLieUnramified"
+      ],
+      "dependencies": [
+        "The coefficient ideal 𝔪ⁿ/𝔪ᵐ in R/𝔪ᵐ is square-zero by m ≤ 2n. Reduction takes the level-n subgroup to the square-zero kernel, where the augmentation derivation lands in the tensor of this ideal with the integral Lie module. Smoothness gives flatness of the Lie module for the comparison with the Lie-lattice quotient. Remark A.5.20 explains this direct construction.",
+        "The surjectivity target uses Henselian lifting of residue-ring points. For the maximal unramified comparison, GenericLie.baseChange extends tangent points and IntegralModel.baseChange_mem_lieLattice proves preservation of the lattice. The coefficient map preserves powers of the maximal ideals."
+      ],
+      "consumer_or_regression": "The congruence–Lie map provides the integral-model comparison for the torus and parahoric maps in Appendix B and Theorem 13.5.1. Comparison there also requires identifying the particular models and their depths.",
+      "formal_status": "statement",
+      "publication_commits": [
+        "db940683e1d682d84831e8365720f1c79b5c9b0c"
+      ],
+      "axiom_reports": [],
+      "external_code": []
+    },
+    {
       "source_item": "Theorem 13.5.1",
       "source": {
         "literature_id": "kaletha-prasad-2023-bruhat-tits-new-approach",
@@ -6924,7 +6926,7 @@ open, unproved or conditional. Conditional code will remain
       "hypotheses": [
         "k has a normalized discrete valuation omega(k^times)=Z, Henselian integer ring o, maximal ideal m and perfect residue field f. G is a connected reductive k-group. K is a maximal unramified extension, O its integer ring and Gamma=Gal(K/k). x belongs to the actual descended building B(G). No splitness, tameness, finite-residue or perfect-k hypothesis is imposed unless separately stated.",
         "Additionally k is a local field: complete with finite residue field f of characteristic p. Use the actual parahoric subgroups, positive-depth filtrations and the point topology of G(k). Maximality and the normalizer below are taken in G(k)^0.",
-        "Recorded Lean scope: Langlands.BruhatTits.MaximalProP.AvailableMaximalProPStatement (module Langlands.BruhatTits.MaximalProP.AvailableStatement) quantifies over every nonarchimedean local field F of either characteristic in universe u, every connected reductive group scheme G over Spec F and every KPBuildingAssignment 𝔅 with 𝔅.IsAvailableFor F G hG, and asserts MaximalProPConclusions (𝔅.datum F G hG). The four conclusions are stated for facets of B(G) rather than points: P_{x,0+} is facetPositiveSubgroup D Fa for the facet Fa containing x, the points of the integral sections of the neutral facet model whose reduction lies in the residue-field points of the supplied radical of its special fibre (Axiom 4.1.22(7), Corollary 8.4.12), and P_{x,0} for a chamber is facetZeroFixer D C, the pointwise fixer of C in G(F)^0 = D.base.zeroSubgroup. With the point topology of G(F) and p = ringChar of the residue field: (1) every facetPositiveSubgroup lies in G(F)^0 and is open and pro-p; (2) it satisfies IsMaximalOpenProPIn p G(F)^0 (maximal among open pro-p subgroups of G(F) contained in G(F)^0) exactly when the facet is a chamber; (3) every such maximal subgroup is facetPositiveSubgroup D C for a chamber C; (4) for a chamber C, the normalizer of facetPositiveSubgroup D C intersected with G(F)^0 equals facetZeroFixer D C. This is the corrected ambient group G(k)^0 of both parts. The only premise is availability; existence of available data is BruhatTitsAvailabilityStatement (Theorem 9.2.7 row), which is unproved. The theorem availableMaximalProP (module Langlands.BruhatTits.MaximalProP.AvailableProof) proves AvailableMaximalProPStatement at arbitrary universe u; it first appeared in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3. The row's conditional status refers to AvailableMaximalProPStatement, proved under IsAvailableFor."
+        "Recorded Lean scope: Langlands.BruhatTits.MaximalProP.AvailableMaximalProPStatement (module Langlands.BruhatTits.MaximalProP.AvailableStatement) quantifies over every nonarchimedean local field F of either characteristic in universe u, every connected reductive group scheme G over Spec F and every KPBuildingAssignment 𝔅 with 𝔅.IsAvailableFor F G hG, and asserts MaximalProPConclusions (𝔅.datum F G hG). The four conclusions are stated for facets of B(G) rather than points: P_{x,0+} is facetPositiveSubgroup D Fa for the facet Fa containing x, the points of the integral sections of the neutral facet model whose reduction lies in the residue-field points of the supplied radical of its special fibre (Axiom 4.1.22(7), Corollary 8.4.12), and P_{x,0} for a chamber is facetZeroFixer D C, the pointwise fixer of C in G(F)^0 = D.base.zeroSubgroup. With the point topology of G(F) and p = ringChar of the residue field: (1) every facetPositiveSubgroup lies in G(F)^0 and is open and pro-p; (2) it satisfies IsMaximalOpenProPIn p G(F)^0 (maximal among open pro-p subgroups of G(F) contained in G(F)^0) exactly when the facet is a chamber; (3) every such maximal subgroup is facetPositiveSubgroup D C for a chamber C; (4) for a chamber C, the normalizer of facetPositiveSubgroup D C intersected with G(F)^0 equals facetZeroFixer D C. This is the corrected ambient group G(k)^0 of both parts. The theorem availableMaximalProP proves AvailableMaximalProPStatement at arbitrary universe u. The completion certificate supplies IsAvailableFor on its own assignment, which gives all four facet conclusions for each F and G in the stated scope."
       ],
       "conclusion": "For every x, P_{x,0+} is an open pro-p subgroup of G(k)^0. It is maximal among open pro-p subgroups there exactly when x lies in a chamber, equivalently P_{x,0} is Iwahori. Every maximal open pro-p subgroup of G(k)^0 is P_{x,0+} for an Iwahori P_{x,0}, and its normalizer in G(k)^0 is P_{x,0}. Neither the maximality claim nor the normalizer identity is extended to the full G(k).",
       "lean_declarations": [
@@ -6933,25 +6935,27 @@ open, unproved or conditional. Conditional code will remain
         "Langlands.BruhatTits.MaximalProP.IsMaximalOpenProPIn",
         "Langlands.BruhatTits.MaximalProP.facetPositiveSubgroup",
         "Langlands.BruhatTits.MaximalProP.facetZeroFixer",
-        "Langlands.BruhatTits.MaximalProP.availableMaximalProP"
+        "Langlands.BruhatTits.MaximalProP.availableMaximalProP",
+        "Langlands.Geometry.Building.bruhatTitsCompletionCertificate"
       ],
       "modules": [
         "Langlands.BruhatTits.MaximalProP.AvailableStatement",
-        "Langlands.BruhatTits.MaximalProP.AvailableProof"
+        "Langlands.BruhatTits.MaximalProP.AvailableProof",
+        "Langlands.Geometry.Building.BruhatTitsCompletionCertificateProof"
       ],
       "dependencies": [
-        "Proof: the theorem availableMaximalProP (module Langlands.BruhatTits.MaximalProP.AvailableProof, first in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) proves AvailableMaximalProPStatement. Its Markdown describes the route. IsAvailableFor.groupAxioms gives the single-group axioms D.SatisfiesGroupAxioms of the available datum, and maximalProPConclusions_of_groupAxioms derives the four conclusions from them. The classification theorems of the module AvailableClassification give clauses (1)–(3) from the proved local-model pro-p result, the facet quotient comparisons and the finite-field Sylow and Borel theorems. For clause (4) the proof chooses an apartment chamber from a regular point of the affine reflection arrangement and a generic cocharacter of the maximal split torus. isProP_chamber_unipotent_factor gives the pro-p property of the two unipotent factors, for the cocharacter and its negative, and the Iwahori factorization with the split Tits-system normalizer theorem gives the normalizer identity at that chamber. chamber_normalizer_eq_of_one_apartment_chamber transports the identity to every chamber by conjugation inside G(F)^0. A Lean inspection on 2026-11-14 at Library commit 410c7947 reports kind theorem, a type that is exactly AvailableMaximalProPStatement.{u}, and only propext, Classical.choice and Quot.sound. The statement is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd. Since its premise is 𝔅.IsAvailableFor F G hG, the proof yields corrected 13.5.2 for every G only together with BruhatTitsAvailabilityStatement, which is unproved (Theorem 9.2.7 row).",
-        "Intermediate statements of this proof (on 13 November 2026 none was proved): FacetReductiveComparisonStatement (module Langlands.BruhatTits.MaximalProP.FacetReductiveComparisonStatement, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), the chamber, Borel and radical-preimage comparisons under the single-group Bruhat–Tits axioms; LocalFieldPositiveProPStatement (module Langlands.BruhatTits.IntegralModels.PositiveProPStatement, Library commit 73b1430a339b037d27e9096762b0400adb4fbd19), that the radical preimage of a supplied smooth neutral model with connected fibres is pro-p; FiniteFieldSylowBorelStatement and FiniteFieldNormalSylowTorusStatement (modules Langlands.GroupScheme.Rational.FiniteFieldSylowBorelStatement and Langlands.GroupScheme.Rational.FiniteFieldNormalSylowStatement, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), on maximal p-subgroups of the rational points of a connected reductive group over a finite field; and BoundedOpenNormalizerStatement (module Langlands.BruhatTits.RationalPoints.BoundedOpenNormalizerStatement, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), the local-field case of KP Proposition 2.2.16. The modules Langlands.BruhatTits.MaximalProP.AvailableFacetInputs and Langlands.BruhatTits.MaximalProP.AvailableNormalizerQuotient prove consequences that take some of these statements as hypotheses. At Library commit 410c7947 four of the five were proved. The theorems Langlands.GroupScheme.finiteFieldSylowBorel and Langlands.GroupScheme.finiteFieldNormalSylowTorus (module Langlands.GroupScheme.Rational.FiniteFieldBorelSylow, first in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46) prove FiniteFieldSylowBorelStatement and FiniteFieldNormalSylowTorusStatement; a Lean inspection on 2026-11-14 at Library commit 410c7947 reports kind theorem, a type that is exactly FiniteFieldSylowBorelStatement.{u}, and only propext, Classical.choice and Quot.sound, and an inspection reports the same for FiniteFieldNormalSylowTorusStatement.{u}. The theorem Langlands.BruhatTits.IntegralModels.localFieldPositiveProP (module Langlands.BruhatTits.IntegralModels.PositiveProP, first in Library commit 85c2fe719cf62e96f22aaf4ca03961c5814d086b) proves LocalFieldPositiveProPStatement; an inspection reports the same. The theorem Langlands.BruhatTits.MaximalProP.facetReductiveComparisonStatement (module Langlands.BruhatTits.MaximalProP.FacetRadicalPreimage, first in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46) proves FacetReductiveComparisonStatement; an inspection reports the same. Follow-up (twenty-second update, Library commit 58ad0f79): the fifth intermediate statement, BoundedOpenNormalizerStatement, is proved as well. The theorem Langlands.BruhatTits.RationalPoints.boundedOpenNormalizer (module Langlands.BruhatTits.RationalPoints.BoundedOpenNormalizerProof, first in Library commit af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e) proves BoundedOpenNormalizerStatement; a Lean inspection on 2026-11-14 at Library commit 58ad0f79 reports kind theorem, a type that is exactly BoundedOpenNormalizerStatement.{u}, and only propext, Classical.choice and Quot.sound. availableMaximalProP takes no premise beyond availability, so this proof does not change the conditional status of this row. Each module cited in this entry with a first commit is byte-identical between that commit and Library commit 58ad0f79.",
+        "Proof: the theorem availableMaximalProP (module Langlands.BruhatTits.MaximalProP.AvailableProof, first in Library commit 410c79471b79f65a02fb0f6070da7f2800793ff3) proves AvailableMaximalProPStatement. Its Markdown describes the route. IsAvailableFor.groupAxioms gives the single-group axioms D.SatisfiesGroupAxioms of the available datum, and maximalProPConclusions_of_groupAxioms derives the four conclusions from them. The classification theorems of the module AvailableClassification give clauses (1)–(3) from the proved local-model pro-p result, the facet quotient comparisons and the finite-field Sylow and Borel theorems. For clause (4) the proof chooses an apartment chamber from a regular point of the affine reflection arrangement and a generic cocharacter of the maximal split torus. isProP_chamber_unipotent_factor gives the pro-p property of the two unipotent factors, for the cocharacter and its negative, and the Iwahori factorization with the split Tits-system normalizer theorem gives the normalizer identity at that chamber. chamber_normalizer_eq_of_one_apartment_chamber transports the identity to every chamber by conjugation inside G(F)^0. A Lean inspection on 2026-11-14 at Library commit 410c7947 reports kind theorem, a type that is exactly AvailableMaximalProPStatement.{u}, and only propext, Classical.choice and Quot.sound. The statement is present in Library commit ed924aef420de137b4cbaa3b063a3618afcd73fd. The completion certificate yields B.IsValid for the same assignment B that satisfies unramified descent. For a connected reductive G, availableMaximalProP F G hG B hB.isAvailableFor, with the affineness instance from hG.isAffineHom, gives MaximalProPConclusions (B.datum F G hG). This application has been checked in Lean.",
+        "Intermediate statements of this proof (on 13 November 2026 none was proved): FacetReductiveComparisonStatement (module Langlands.BruhatTits.MaximalProP.FacetReductiveComparisonStatement, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), the chamber, Borel and radical-preimage comparisons under the single-group Bruhat–Tits axioms; LocalFieldPositiveProPStatement (module Langlands.BruhatTits.IntegralModels.PositiveProPStatement, Library commit 73b1430a339b037d27e9096762b0400adb4fbd19), that the radical preimage of a supplied smooth neutral model with connected fibres is pro-p; FiniteFieldSylowBorelStatement and FiniteFieldNormalSylowTorusStatement (modules Langlands.GroupScheme.Rational.FiniteFieldSylowBorelStatement and Langlands.GroupScheme.Rational.FiniteFieldNormalSylowStatement, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), on maximal p-subgroups of the rational points of a connected reductive group over a finite field; and BoundedOpenNormalizerStatement (module Langlands.BruhatTits.RationalPoints.BoundedOpenNormalizerStatement, Library commit 7f43c3c930ff92f76dae6589da1678ad729017e5), the local-field case of KP Proposition 2.2.16. The modules Langlands.BruhatTits.MaximalProP.AvailableFacetInputs and Langlands.BruhatTits.MaximalProP.AvailableNormalizerQuotient prove consequences that take some of these statements as hypotheses. At Library commit 410c7947 four of the five were proved. The theorems Langlands.GroupScheme.finiteFieldSylowBorel and Langlands.GroupScheme.finiteFieldNormalSylowTorus (module Langlands.GroupScheme.Rational.FiniteFieldBorelSylow, first in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46) prove FiniteFieldSylowBorelStatement and FiniteFieldNormalSylowTorusStatement; a Lean inspection on 2026-11-14 at Library commit 410c7947 reports kind theorem, a type that is exactly FiniteFieldSylowBorelStatement.{u}, and only propext, Classical.choice and Quot.sound, and an inspection reports the same for FiniteFieldNormalSylowTorusStatement.{u}. The theorem Langlands.BruhatTits.IntegralModels.localFieldPositiveProP (module Langlands.BruhatTits.IntegralModels.PositiveProP, first in Library commit 85c2fe719cf62e96f22aaf4ca03961c5814d086b) proves LocalFieldPositiveProPStatement; an inspection reports the same. The theorem Langlands.BruhatTits.MaximalProP.facetReductiveComparisonStatement (module Langlands.BruhatTits.MaximalProP.FacetRadicalPreimage, first in Library commit db8d6b3d466f2fd453a4df4624ce6c90db8eed46) proves FacetReductiveComparisonStatement; an inspection reports the same. Follow-up (twenty-second update, Library commit 58ad0f79): the fifth intermediate statement, BoundedOpenNormalizerStatement, is proved as well. The theorem Langlands.BruhatTits.RationalPoints.boundedOpenNormalizer (module Langlands.BruhatTits.RationalPoints.BoundedOpenNormalizerProof, first in Library commit af5d652c2f2ff5b35b4ce4dbbf7cbec8bbf3e99e) proves BoundedOpenNormalizerStatement; a Lean inspection on 2026-11-14 at Library commit 58ad0f79 reports kind theorem, a type that is exactly BoundedOpenNormalizerStatement.{u}, and only propext, Classical.choice and Quot.sound. Each module cited in this entry with a first commit is byte-identical between that commit and Library commit 58ad0f79.",
         "Actual model point topology and local compactness turn bounded open subgroups into compact ones. Realize P_{x,0+} as the inverse limit of its finite p-group filtration quotients, using 13.5.1 for their steps",
         "Fixed points 4.2.14, type preservation 1.5.13(3), the actual reduction and incident-facet/parabolic correspondence 8.4.19 with Chapter 9 descent; finite-field p-subgroup structure and the Iwahori-Tits system in G(k)^0",
-        "The normalizer argument uses 2.2.16 and 6.3.21",
-        "Release 1 constructions, the corrected Theorem 9.2.7 certificate and the inflation/compact-induction consumer remain prerequisites for positive-depth implementation. A source row supplies no release or formal acceptance."
+        "The normalizer argument uses 2.2.16 and 6.3.21"
       ],
       "consumer_or_regression": "Check the exact ambient group in both maximality and normalization, including a case with nontrivial component or length-zero data. An abstract pro-p predicate does not supply the compactness, inverse limit or building fixed-point proof.",
-      "formal_status": "conditional",
+      "formal_status": "proved",
       "publication_commits": [
         "ed924aef420de137b4cbaa3b063a3618afcd73fd",
-        "410c79471b79f65a02fb0f6070da7f2800793ff3"
+        "410c79471b79f65a02fb0f6070da7f2800793ff3",
+        "db940683e1d682d84831e8365720f1c79b5c9b0c"
       ],
       "axiom_reports": [
         {
@@ -7250,11 +7254,10 @@ open, unproved or conditional. Conditional code will remain
 
 ## Bundle B: the complete certificate and its source map
 
-The corrected Definition 4.1.26 is the ten-axiom target. The following table
-records the source assembly of §9.5 and the extra routes needed to retain its
-full corrected scope. It is a source-derived proof plan, not a Lean proof,
-axiom report or claim of acceptance. In particular, the shorter printed list
-in Theorem 9.2.7 does not reduce the program's certificate.
+The following table maps the ten axioms of corrected Definition 4.1.26
+and the descent axiom to the source assembly in §9.5 and its supporting
+results. Theorem `bruhatTitsCompletionCertificate` certifies these
+conclusions in the nonarchimedean local-field scope of the structured row.
 
 | Certificate item | Source route and boundary |
 | --- | --- |
@@ -7265,10 +7268,10 @@ in Theorem 9.2.7 does not reduce the program's certificate.
 | 4.1.8 | Proposition 9.4.3 and Lemmas 9.4.6, 9.4.21. Part (2) retains a nonempty bounded subset. |
 | 4.1.9 | Propositions 9.3.24–9.3.25, with the corrected restricted-building argument for 9.3.25. |
 | 4.1.16 | The derived route through 9.6.5–9.6.6, corrected 4.4.5, 7.3.12 and 7.4.9, explained below; no separate paragraph for this axiom appears in the printed §9.5. |
-| 4.1.17 | Proposition 7.9.5 has the scope of all covering field/group isomorphisms. Section 9.5 invokes it for the Gamma action. The full certificate must also transport the descended fixed loci, apartments and models under every such pair, not merely construct that one action. |
+| 4.1.17 | Each valued-field isomorphism and covering group isomorphism induce an equivariant isomorphism of reduced buildings. Proposition 7.9.5 gives this compatibility in the Chapter 7 construction, and §9.5 invokes it for the Gamma action. |
 | 4.1.20 | Actual model descent in 9.2.5 and the integral-point identities in §9.5. Use 9.3.24 for the G(k)^0 intersection law; G(k)^1 has its own law. |
 | 4.1.22 | Parts (1), (2), (7) descend geometrically; (7) uses perfect residue to descend the unipotent radical. Parts (3), (5) use facet correspondence and 9.4.31; (4) is 9.3.3; (6) is 9.4.23. |
-| 4.1.27 | Fixed-locus and base-change constructions in §9.2, special tori from 9.3.4, and affine-root compatibility from 9.4.28. Retain all four clauses, including both integral-model intersection identities. |
+| 4.1.27 | Fixed-locus and base-change constructions in §9.2, special tori from 9.3.4, and affine-root compatibility from 9.4.28. UR 4 gives the maximal-unramified base-change isomorphisms for both the full and neutral models and both fixer intersection identities. |
 
 Chapter 7 cannot supply a general existence theorem merely from a valuation
 hypothesis. The corrections at PDF page 33 add **AS5 of Axiom 4.1.6** to its
@@ -7314,9 +7317,7 @@ factor.
 The correction at PDF page 39 adds a further genuine metric dependency:
 a bounded Gamma-stable subgroup of G(K) has a Gamma-fixed fixed point.
 The argument uses closed convex fixed loci, the bounded closed convex hull
-and Theorem 1.1.15. This does not permit a fixed point to be included as
-input in place of constructing it. No formal certificate or general-instance
-acceptance is recorded here.
+and Theorem 1.1.15. The fixed point is constructed from these metric inputs.
 
 The printed display of Lemma 9.6.3 (book PDF page 397) uses the same
 depth r for every non-divisible root b of (G_K, T_K) that restricts to a
@@ -7987,15 +7988,15 @@ and smooth model descent of the minimal congruent filtration belong to
 this dependency boundary.
 
 The published `MoyPrasadIsomorphismStatement` (Theorem 13.5.1 row)
-keeps the three alternatives as the hypothesis `MoyPrasadAlternative`.
-The Library has neither the minimal congruent filtration nor KP's Lie
-lattices, so the statement takes a supplied filtration of `Z(F)` and
-supplied Lie lattices and assumes the isomorphisms for the centralizer
-and for each root block that KP's proof derives from B.6.9, B.10.16,
-B.10.17, C.5.1 and A.5.19. It also assumes the double-root commutator
-premise, without which `P_{x,r}/P_{x,s}` need not be abelian for
-supplied filtrations. Unramified compatibility, equivariance and
-parts (2) and (3) are not stated.
+states the abstract quotient isomorphism in part (1) over the base
+field. It assumes `MoyPrasadAlternative`, a supplied centralizer
+filtration and Lie lattices, and the isomorphisms for the centralizer
+and each nondivisible root block. It retains the filtration axioms and
+double-root commutator premise. At the Library pin,
+`minimalCongruentPoints` defines the torus point filtration at finite
+nonnegative depths, and `minimalCongruentCongruence` proves its
+congruence shift. Specializing the supplied-data statement requires
+the corresponding component isomorphisms on the chosen filtrations.
 
 ### The ambient group in corrected Proposition 13.5.2
 
@@ -8015,8 +8016,9 @@ group throughout, for every available `KPBuildingAssignment`
 commit `410c7947`) proves it. It proves the normalizer identity at one
 apartment chamber from the Iwahori factorization and the split
 Tits-system normalizer theorem, and transports it to every chamber by
-conjugation in `G(F)^0`. Existence of available data,
-`BruhatTitsAvailabilityStatement`, is unproved (Theorem 9.2.7 row).
+conjugation in `G(F)^0`. The validity clause of
+`bruhatTitsCompletionCertificate` supplies availability for its descended
+assignment, so `availableMaximalProP` applies on that assignment.
 
 ### Later degeneracy and instability
 
@@ -8552,12 +8554,12 @@ uses the maximal unramified extension inside a separable closure; the
 November 2024 corrections retain that setup. This is a local-field
 prerequisite for the torus norm and descent work.
 
-Residue algebraic closure, value-group discreteness, the DVR structure
-and Henselian arithmetic of the infinite fixed field remain the separate
-proof obligation `SeparableUnramifiedArithmeticStatement`. The finite
-theorem assumes no completeness or local compactness of that infinite
-field. Torus norm-choice independence, the actual descended building and
-the full corrected Theorem 9.2.7 certificate remain open.
+The complementary theorem `separableUnramifiedArithmetic` proves residue
+algebraic closure, value-group discreteness, the DVR structure and
+Henselian arithmetic of the infinite fixed field. The finite theorem
+applies without completeness or local compactness of that infinite
+field. The descended building and its axioms enter through
+`bruhatTitsCompletionCertificate`, as recorded in the Theorem 9.2.7 row.
 
 ## Verified chamber and Iwahori–Weyl statements
 
@@ -8641,54 +8643,77 @@ published in Library commit `d39b5aee822fe2ad1aadf07861ebd9a4c2df62a8`;
 the Theorem 5.2.1 row records it.
 
 A separate compile checked both statement modules and their companion
-modules without errors or warnings. Compiling the statements does not
-prove these targets, construct the supplied data, establish a full
-corrected Definition 4.1.26 certificate, or close the Theorem 9.2.7
-descent gate. The depth-zero release and its representation consumers
-remain open.
+modules without errors or warnings. The local-field assignment used
+to apply the results on available data comes from
+`bruhatTitsCompletionCertificate`. The Section 13.2.6 row gives the
+depth-zero representation consumer on that assignment.
 
-## Trust and release accounting
+## Building and model regression statements
 
-The Lean environment is Lean 4.34.0, Mathlib
-`5ed2965256430c3649e86755f9576b54eca72435`. No external project is
-adopted by this note. The nineteenth update records in the
-`external_code` field of the Theorem 8.3.2 row the `SubHopf` helper used
-by the proof of `finiteIndexEnlargement`, adapted from Anthropic FLT
-commit `6e837e75355538c7f80bab5b956861e86c4eacc2` under the Apache
-License 2.0; it is reused through code already in the Library, not
-adopted by this note. The roadmap's external pins remain survey leads.
-Any adoption still requires a focused compile in the Library, a mathematical and
-dependency audit, and its exact pin and licence. The theorem-level axiom
-inspections in the verified-proof sections above concern published
-metric proofs and their aggregate. The 8 November 2026 refresh and its
-later updates add declaration inspections to the rows it updates. For a
-Prop-valued statement or a definition, such a report covers only the
-elaborated declaration; it is not evidence that the target is proved.
+`GeneralLinearTreeStatement` states the tree property for the reduced
+building of `GL₂` and its identification with lattice classes.
+`DepthZero.GeneralLinearStatement` states the vertex and chamber model
+comparisons, their reductive quotients and the vertex stabilizer comparison
+for `GLₙ`. `GeneralLinearLengthZeroStatement` states the extended
+Iwahori–Weyl component description for the chain rotation of `GLₙ`.
+These comparisons connect the group-valid building data to the integral
+lattice and Iwahori models.
+[Tree](../../Langlands/Geometry/Building/GeneralLinearTreeStatement.md)
+[Parahorics and quotients](../../Langlands/Geometry/Building/DepthZero/GeneralLinearStatement.md)
+[Length zero](../../Langlands/Geometry/Building/GeneralLinearLengthZeroStatement.md)
 
-Bundle A is open. Bundles B–F, the general constructed instance, the
-depth-zero and positive-depth consumers, regression examples, GL
-comparisons and Renard bridges are also open. The split-group depth-zero
-regression instances and the `GL_{n+1}` congruence-subgroup comparisons
-recorded by the seventeenth update are partial progress and do not close
-these obligations. The non-split torus and `GL_N` Iwahori regressions
-recorded by the twenty-first update are likewise partial. This source
-ledger neither narrows those obligations nor claims that the proposed
-Chapter V structural interfaces have already been published in the
-Renard program.
+`KPTorusRegressionStatement` distinguishes the reduced point from the
+enlarged central directions, and specifies the parahoric and component
+comparisons for split tori and unramified and ramified quadratic norm-one
+tori. `SU3Regression.ComponentData` states the equality of the full,
+zero and one subgroups and the triviality of the length-zero part for the
+quasi-split special unitary group of a separable quadratic extension.
+`SU3Regression.RootsAndBuilding` states its multipliable-root and affine-root
+descriptions, tree incidence and depth-zero quotients in both ramification
+cases.
+[Tori](../../Langlands/Geometry/Building/KPTorusRegressionStatement.md)
+[Unitary component data](../../Langlands/Geometry/Building/SU3Regression/ComponentData.md)
+[Unitary roots and building](../../Langlands/Geometry/Building/SU3Regression/RootsAndBuilding.md)
 
-## Present status of the statements called open
+These modules state the comparisons on building data. The completion
+certificate supplies group-valid data in their field scope. The comparisons
+are separate propositions, with the explicit integral-model proofs recorded
+where they enter the Section 13.2.6 row.
 
-The rows and updates above give the state of the Library at the commits
-they name. For each statement that they call open, unproved or
-conditional at some commit, the table gives its present status: the
-theorem that proves it, a theorem that derives it from further
-statements, or neither. The statuses were found by searching the Library
-for theorems whose type is the statement, with a direct search of the
-uses of the statements found unproved. Of the 143 statements, 107 are
-proved, 14 are not proved but are derived from, or equivalent to,
-further statements, and 22 have no proof.
+## Trust and scope of the proofs
 
-| Statement | Present status |
+At Library commit `2f86a99eb5616254ac5b9c399603c9bbbea15f7a` the Lean
+4.35.0 environment uses Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679`.
+Declaration inspection of `bruhatTitsCompletionCertificate` and
+`depthZeroConsumer` reports `propext`, `Classical.choice` and `Quot.sound`.
+The checked application of `availableMaximalProP` uses the certificate's
+own assignment. The theorem-level inspections concern the named proofs.
+An inspection of a Prop-valued definition covers the elaboration of its
+statement.
+
+The Theorem 8.3.2 row records the provenance of the `SubHopf` helper used
+by `finiteIndexEnlargement`. It was adapted from Anthropic FLT commit
+`6e837e75355538c7f80bab5b956861e86c4eacc2` under the Apache License 2.0
+and enters through the Library dependency. The metric and declaration
+inspections in earlier sections use the environments recorded with those
+checks.
+
+The certificate and the facet consumer give the general local-field
+construction and the depth-zero conclusions stated above. The
+real-depth quotient comparisons of Theorem 13.5.1, tame descent and
+embedding theorems, and explicit regression and representation comparisons
+have their own hypotheses and proof targets.
+
+## Historical proof inventory before the completion certificate
+
+The 143 entries below record a Library snapshot before the
+completion-certificate proof at commit `db940683e1d682d84831e8365720f1c79b5c9b0c`.
+The inventory was compiled by searching theorem types and the uses of the
+statement declarations. It found 107 exact proofs, 14 reductions to further
+statements, and 22 entries without a proof. The updated source rows above
+record the certificate and facet results at the later pin.
+
+| Statement | Status at the earlier snapshot |
 | --- | --- |
 | `ActualApartmentSplittingStatement` | proved by `actualApartmentSplitting` (`Langlands/Geometry/Building/ActualApartmentSplittingProof.lean`) |
 | `AffineIwahoriTitsBuildingStatement` | proved by `affineIwahoriTitsBuilding` (`Langlands/Geometry/Building/AffineIwahoriTitsBuildingProof.lean`) |
