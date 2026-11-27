@@ -23,7 +23,7 @@ variable {K : Type uF} [Field K] [ValuativeRel K] [TopologicalSpace K]
 
 set_option maxHeartbeats 600000 in
 /-- The coset part of BK93 (2.4.11), in two-sided difference form. -/
-private theorem central_of_coset_intertwines (C : LatticeChain 𝒪[K] K V) (m : ℤ)
+theorem exists_algebraMap_sub_mem_of_coset_intertwined (C : LatticeChain 𝒪[K] K V) (m : ℤ)
     (b : Module.End K V)
     (h : ∀ g : (Module.End K V)ˣ, ∃ p ∈ C.endFiltration m, ∃ q ∈ C.endFiltration m,
       (g : Module.End K V) * b - b * g = (g : Module.End K V) * p + q * g) :
@@ -321,7 +321,7 @@ theorem simpleStratumCorestrictionCongruence : SimpleStratumCorestrictionCongrue
     change (s z).restrictScalars F ∈ S.chain.endFiltration (1 - T.r) at hi
     intro i v hv
     exact (hC _ _).mpr (hi i v ((hC _ _).mp hv))
-  obtain ⟨δ, hδ⟩ := central_of_coset_intertwines C (1 - T.r) (s (S.b - T.b))
+  obtain ⟨δ, hδ⟩ := exists_algebraMap_sub_mem_of_coset_intertwined C (1 - T.r) (s (S.b - T.b))
     (corestriction_coset_intertwines S T hT hST β rfl s C (fun {_} hz => hmap hz))
   refine ⟨δ, ?_⟩
   rw [subfieldEmbedding_eq_restrictScalars, ← hr]

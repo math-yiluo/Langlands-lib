@@ -1,0 +1,13 @@
+# Intertwining and normalizer of a simple character
+
+`simpleCharacterIntertwining` proves `SimpleCharacterIntertwiningStatement` with the field and vector-space universes independent. For a scalar parameter the relative determinant gives intertwining by every ambient unit, and the ambient congruence-group normalizer gives the second equality with the singleton outer factor.
+
+For finite critical depth, the proof first uses the lattice and subgroup properties of the simple stratum. The commutator calculation gives the trace ratio on mixed units. Invariance under J follows from the defining twist in the high range and the relative and deeper decomposition below the cutoff. The cutoff dual formula identifies the trace dual of the H layer as the adjoint image of cutoff J plus the complementary filtration step.
+
+For character indices `m ≥ ⌊r/2⌋` at finite critical depth `r`, the terminal trace formula or the ratio for the successor character identifies self-intertwining with formal intertwining of the dual lattice coset. Conjugation by cutoff J reduces this formal problem to the ordinary stratum coset. Its formal intertwining theorem and the fractional shift give the required outer factors. For `m < ⌊r/2⌋`, forward restriction to character index `⌊r/2⌋` gives the upper bound. The overlap factors into its relative and deeper parts, and determinant invariance and the cutoff formula give the lower bound. The forward restrictions follow from the defining sequence and its defining character conditions.
+
+For the normalizer, the outer subgroup preserves the character domain and belongs to the computed intertwining set. The domain-preserving part of the middle centralizer is the relative order normalizer, since a centralizer unit preserving the domain preserves its intersection with the centralizer, the relative congruence group. Fractional centralizer multiplication and cutoff J normalization show that this relative order normalizer normalizes the outer subgroup. The normalizer is their product.
+
+`simpleCharacterCovariance` proves `SimpleCharacterCovarianceStatement` by using the intertwining formula at character index `m` to supply centralizer intertwining. With the outer factors evaluated at the independently supplied index `t`, the trace ratio on the character overlap follows from the mixed and J commutator calculation.
+
+The source is Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), (3.3.2), (3.3.9) and (3.3.17), printed pp. 105, 108 and 112. The source ID is `bushnell-kutzko-1993-admissible-dual-gln`, with SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`. PDF pages are the printed pages plus twelve.

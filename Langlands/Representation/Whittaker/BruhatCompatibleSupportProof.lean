@@ -1,3 +1,4 @@
+import Langlands.HarmonicAnalysis.Distribution.ClopenCutoff
 import Langlands.Representation.Whittaker.BruhatCompatibleSupportStatement
 import Langlands.Representation.Whittaker.BruhatFiberCharacterCovarianceProof
 import Langlands.HarmonicAnalysis.Distribution.CharacterAverageSurjectiveProof
@@ -28,22 +29,6 @@ namespace BruhatCompatibleSupport
 section Cutoff
 
 variable {X : Type*} [TopologicalSpace X]
-
-/-- The product of a test function with the indicator function of a clopen set. -/
-def clopenCutoff {V : Set X} (hV : IsClopen V) (f : SchwartzBruhat X) : SchwartzBruhat X :=
-  ⟨fun x => LocallyConstant.charFn ℂ hV x * f x,
-    (LocallyConstant.charFn ℂ hV).isLocallyConstant.comp₂ f.locallyConstant (· * ·),
-    f.hasCompactSupport.mul_left⟩
-
-theorem clopenCutoff_apply_of_mem {V : Set X} (hV : IsClopen V) (f : SchwartzBruhat X)
-    {x : X} (hx : x ∈ V) : clopenCutoff hV f x = f x := by
-  change V.indicator (fun _ => (1 : ℂ)) x * f x = f x
-  rw [Set.indicator_of_mem hx, one_mul]
-
-theorem clopenCutoff_apply_of_notMem {V : Set X} (hV : IsClopen V) (f : SchwartzBruhat X)
-    {x : X} (hx : x ∉ V) : clopenCutoff hV f x = 0 := by
-  change V.indicator (fun _ => (1 : ℂ)) x * f x = 0
-  rw [Set.indicator_of_notMem hx, zero_mul]
 
 /-- Local-to-global vanishing for an algebraic distribution: if every point where `f` is
 nonzero lies in a clopen set `V` such that `τ` kills every test function whose nonzero

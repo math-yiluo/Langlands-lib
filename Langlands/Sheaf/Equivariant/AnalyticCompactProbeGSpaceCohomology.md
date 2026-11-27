@@ -1,0 +1,7 @@
+# Compactly supported cohomology of continuous Hausdorff analytic actions
+
+A Hausdorff analytic space with a continuous action supplies its compact-probe local action refinements. `compactProbeGSpaceCompactCohomology` and `compactProbeGSpaceCompactComplex` apply the compactly supported smooth sections functor and its right derived constructions with geometric points over one chosen common point field. The ground field is complete and ultrametric. The coefficient ring is commutative in universe `max u (v + 1) uL`, and the acting topological group is small in that universe. The cohomology lies in the actual category of smooth representations of the group, with a chosen derived category for the complex. `compactProbeGSpaceCompactHomologyIso` identifies its degreewise version with the homology of the bounded below complex.
+
+The same functor applies to an inverse diagram of module sheaves. `compactProbeGSpaceCompactCoefficientSystem` retains every coefficient level and transition by composition, including the corresponding maps in the derived category. Taking a derived inverse limit is a further operation.
+
+The construction is a compact-probe version of the smooth compactly supported cohomology of Berkovich, *Étale equivariant sheaves on p-adic analytic spaces*, §1.5, and the coefficient diagrams used by Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §2, pp. 304–306. It uses the compact-probe topology for the quasi-étale rule.

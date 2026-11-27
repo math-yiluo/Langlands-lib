@@ -7,3 +7,6 @@ For each finite set \(P\) of characters, the actual Harish-Chandra component of 
 The evaluation is the finite alternating sum of the continuous linear constant-term evaluations. The archimedean slice derivative operators act linearly on the smooth function submodule, so the same holds for each derivative word and the sum. The normalized constant-term growth estimates therefore combine with the original Fréchet seminorm bounds. Containment in each parabolic gives rational minimal-parabolic normalizer invariance, and reverse containment of radicals gives the adelic unipotent invariance term by term. Cuspidality follows from the published alternating-sum identity.
 
 This proves the uniform-family regularity needed for the boundary compactness step of Bernstein–Lapid, §7.4, pp. 216–217, for the Harish-Chandra components of §7.3, pp. 214–215.
+
+`adelicIteratedDirectionalValue_finsetSum` gives this linearity for any
+finite weighted sum of functions with smooth archimedean slices.

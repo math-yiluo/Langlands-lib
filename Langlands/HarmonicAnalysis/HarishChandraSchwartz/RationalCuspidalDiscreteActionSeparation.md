@@ -39,3 +39,10 @@ In the source proof, `φ` is the reconstruction residual. Applying this
 step to that residual requires its cuspidality and the conversion from
 its group-index Fourier components to zero discrete-series actions.
 [Waldspurger (2003), VIII.5, printed p. 332](https://doi.org/10.1017/S1474748003000082)
+
+`RationalCuspidalDiscreteActionSeparationOfWeightsStatement` and
+`rationalCuspidalDiscreteActionSeparationOfWeights` require the same
+central and ambient estimates and finite projected levels for a general
+matrix height. The weight-based upper inclusion supplies the coefficient
+span used in the same annihilator argument. The closed-height
+implication is its specialization.

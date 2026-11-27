@@ -1,0 +1,5 @@
+# Naturality of a V.1 auxiliary c-integral
+
+The two coefficient equivalences `cFactorConjugateInducingEquiv` and `cFactorLowerInducingEquiv` use the same underlying linear map as the original inducing equivalence. The first takes it through conjugation by the inverse lift, and the second through the pullback to the lower Levi. `cFactorConverges_iff_of_equiv` applies `domain_eq_top_iff_equiv` to the conjugated equivalence with the quotient measure of the actual auxiliary integral.
+
+`cFactor_natural` compares the two actual factors from Waldspurger (2003), V.1, printed pp. 288–289. Applying the inducing equivalence commutes pointwise with the normalized left translation and with conversion to Levi normalization. `fullSourceIntertwiner_natural` then gives the comparison in the actual normalized quotient integral. `factorRestriction_eval` evaluates its output at the embedded lower point and multiplies by the inverse outer half character. The inducing linear map commutes with this fixed scalar, so the lower sections agree pointwise.

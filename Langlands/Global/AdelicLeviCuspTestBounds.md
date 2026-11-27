@@ -6,23 +6,26 @@ representative \(m\) of each norm-one rational Levi class. The bound
 may depend on the nonnegative real exponent \(r\). The height is
 computed after mapping the Levi into the ambient adelic group.
 
-For an actual Levi cusp form with maximal infinite Levi compact,
 `IsLeviCuspForm.hasWeightedLeviTestBound` applies rapid decay on the
-norm-one quotient to the restricted representation. Evaluation of the
-restricted representation at a Levi point has the same height as
-evaluation of the ambient representation at its image. A natural power
-of this height bounds the requested real power because the height is
-at least one.
+norm-one quotient to an actual Levi cusp form with maximal infinite
+Levi compact. The theorem assumes a closed matrix embedding \(\rho\)
+into \(\mathrm{GL}_N\) with \(N>0\). Evaluation of the restricted
+representation at a Levi point has the same height as evaluation of
+the ambient representation at its image. The positivity of \(N\)
+gives \(H_\rho \ge 1\), so a natural power of this height bounds the
+requested real power.
 
-`HasWeightedLeviTestBound.compactPairingMajorant` uses the same Levi
+`HasWeightedLeviTestBound.compactPairingMajorant` uses rational
+invariance to evaluate the integrand at the same chosen Levi
 representative throughout the prescribed compact set of right
 translations. Submultiplicativity separates the height of the Levi
 point from the bounded height of those translations. The weighted
 bound therefore gives a constant majorant, integrable by finite volume
 of the norm-one Levi quotient. For continuous moderate input invariant
-under the rational Levi, `leviPairing_rightConvolution_of_cuspForm`
-now computes the absolutely convergent pairing of the convolution as
-the convolution of the scalar pairings.
+under the rational Levi and a continuous compactly supported kernel,
+`leviPairing_rightConvolution_of_cuspForm` computes the absolutely
+convergent pairing of the convolution as the convolution of the
+scalar pairings. Under the same kernel hypotheses,
 `InCuspidalAnnihilator.rightConvolution_of_moderate` applies this
 identity to all cusp tests at the specified infinite compact.
 

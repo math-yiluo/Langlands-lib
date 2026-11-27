@@ -11,7 +11,7 @@ does not choose a particular corestriction or add a hypothesis on `E/F`.
 
 ## A scalar in an intertwined coset
 
-`central_of_coset_intertwines` implements the coset conclusion of (2.4.11)
+`exists_algebraMap_sub_mem_of_coset_intertwined` implements the coset conclusion of (2.4.11)
 (printed p. 72, with proof on pp. 77–78; PDF pp. 84, 89–90) in splitting-basis
 coordinates. For a local field `K` and a lattice chain `C`, it assumes that
 for every unit `g` of `End_K(V)` there are `p, q ∈ C.endFiltration m` with
@@ -70,7 +70,7 @@ The proof equips `E` with its finite-extension local-field structure and
 uses `relativeLatticeChain` on the common chain. The last clause of
 `tameCorestriction` places the images of `P¹⁻ʳ` at step `1 − r` of this
 relative chain: its lattices have the same carriers as the common
-chain. Applying `central_of_coset_intertwines` in `End_E(V)` produces
+chain. Applying `exists_algebraMap_sub_mem_of_coset_intertwined` in `End_E(V)` produces
 `δ : E`. Restricting scalars identifies its scalar action with
 `subfieldEmbedding` and gives the required ambient congruence.
 

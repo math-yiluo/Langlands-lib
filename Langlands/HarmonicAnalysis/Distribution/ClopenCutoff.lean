@@ -98,3 +98,27 @@ theorem clopenCutoff_spec (hC : IsClopen C) (hCU : C ⊆ U) (T : Distribution U)
 end Distribution
 
 end Langlands.HarmonicAnalysis
+
+namespace Langlands.Whittaker.BruhatCompatibleSupport
+
+open Langlands.HarmonicAnalysis
+
+variable {X : Type*} [TopologicalSpace X]
+
+/-- The product of a test function with the indicator function of a clopen set. -/
+def clopenCutoff {V : Set X} (hV : IsClopen V) (f : SchwartzBruhat X) : SchwartzBruhat X :=
+  ⟨fun x => LocallyConstant.charFn ℂ hV x * f x,
+    (LocallyConstant.charFn ℂ hV).isLocallyConstant.comp₂ f.locallyConstant (· * ·),
+    f.hasCompactSupport.mul_left⟩
+
+theorem clopenCutoff_apply_of_mem {V : Set X} (hV : IsClopen V) (f : SchwartzBruhat X)
+    {x : X} (hx : x ∈ V) : clopenCutoff hV f x = f x := by
+  change V.indicator (fun _ => (1 : ℂ)) x * f x = f x
+  rw [Set.indicator_of_mem hx, one_mul]
+
+theorem clopenCutoff_apply_of_notMem {V : Set X} (hV : IsClopen V) (f : SchwartzBruhat X)
+    {x : X} (hx : x ∉ V) : clopenCutoff hV f x = 0 := by
+  change V.indicator (fun _ => (1 : ℂ)) x * f x = 0
+  rw [Set.indicator_of_notMem hx, zero_mul]
+
+end Langlands.Whittaker.BruhatCompatibleSupport

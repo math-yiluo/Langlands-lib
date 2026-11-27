@@ -97,7 +97,8 @@ theorem SimpleCharacterCore.restriction_agrees_on_core
   simpa only [htriv] using he'
 
 omit [TopologicalSpace F] [IsNonarchimedeanLocalField F] in
-private theorem one_mem_simpleCharacterIntertwiningFactor (S : Stratum 𝒪[F] F V)
+/-- The identity belongs to the outer factor of the intertwining formula. -/
+theorem one_mem_simpleCharacterIntertwiningFactor (S : Stratum 𝒪[F] F V)
     (q : S.DefiningSequenceChoice) (k : ℕ) : 1 ∈ simpleCharacterIntertwiningFactor S q k := by
   classical
   unfold simpleCharacterIntertwiningFactor

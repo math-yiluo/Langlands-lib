@@ -1,0 +1,5 @@
+# The character parameter of a V.1 auxiliary integral
+
+Waldspurger, *La formule de Plancherel pour les groupes p-adiques* (2003), V.1, printed pp. 288–289, forms the auxiliary integrals on the conjugate of the original Levi. The target parameter scheme of either auxiliary integral is the centralizer of its auxiliary cocharacter. `factorParameterIso` identifies that scheme with the original standard Levi scheme by conjugation by the inverse normalizer lift. It uses `SubgroupFunctor.IsRepresentedBy.isoOfComap` and the equality of the auxiliary centralizer with the conjugated standard Levi.
+
+`factorParameterIso_points` verifies the induced map on rational points against the continuous conjugation equivalence used by `conjugateRep`. `factorParameterTransport_apply` compares evaluation of the transported character with evaluation at the inverse-conjugate Levi point. Consequently `factorConjugateTwistEquiv` identifies the conjugate of an original twist and the twist of the conjugate representation. The coefficient map is the identity on the original complex carrier, independently of the field and carrier universes.

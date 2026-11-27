@@ -43,7 +43,8 @@ local notation "aG" => positiveMap F G 𝓕.T 𝓕.i T₀ rT
 local notation "height" => adelicHeight F G rho
 
 omit [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom] in
-private theorem exists_compact_factors_height_bound (hN : 0 < N)
+/-- Compact left and right factors multiply the matrix height by at most a fixed constant. -/
+theorem exists_compact_factors_height_bound (hN : 0 < N)
     (Ω K : Set A) (hΩ : IsCompact Ω) (hK : IsCompact K) :
     ∃ C : ℝ, 1 ≤ C ∧
       ∀ p ∈ Ω, ∀ a : A, ∀ k ∈ K, height (p * a * k) ≤ C * height a := by

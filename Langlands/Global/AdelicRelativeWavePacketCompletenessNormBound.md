@@ -1,0 +1,9 @@
+# Relative completeness from full completeness and the packet norm bound
+
+`RelativeWavePacketCompletenessFromNormBoundStatement` takes `WavePacketCompletenessStatement` and `BoundedWavePacketNormBoundStatement`. The conclusion is `RelativeWavePacketCompletenessStatement` for the standard relative packets on `[G]`.
+
+`wavePacketSquareIntegrability_of_normBound` specializes the norm bound to the smooth packet. The union of its finitely many coefficient supports is compact, and the image of this union under the imaginary-coordinate map is in the supplied holomorphy domain. The Levi retraction comes from the presented Levi. `iwasawaCompatibleMeasureExistence` supplies the Haar measure on the Levi, and `BoundedWavePacket.exists_weight` supplies a weight of integral one. `localWavePacketNormBound_of_bounded` then yields `MemLp` for the full packet with the rational quotient Haar measure.
+
+`relativeWavePacketCompleteness_of_normBound` supplies this square integrability to the split-centre transfer. It specializes full completeness to the prescribed standard family by `standardWavePacketCompleteness_of_full`. Regular-parameter existence gives the ambient shift for the continued Eisenstein series used by the transfer.
+
+Lapid's *On Arthur's asymptotic inner product formula of truncated Eisenstein series*, Lemma 10 and (19), p. 329 (PDF p. 338), gives the bound for compactly supported bounded measurable coefficient families with regular Eisenstein series on their support. Delorme's *On the spectral theorem of Langlands*, Theorem 7.9, pp. 33–35, gives full-quotient completeness and uses the split of spectral parameters into relative and ambient factors on p. 35. The Lean implication uses the square-integrability consequence of Lapid's bound in the split-centre transfer. [Delorme 2023](https://doi.org/10.1016/j.aim.2023.109107)

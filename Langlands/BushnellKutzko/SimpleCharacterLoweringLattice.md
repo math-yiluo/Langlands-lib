@@ -1,8 +1,9 @@
 # Adjoint preimages in `𝔍` and the group `J^m` from intertwining
 
 This module proves two facts about a simple stratum `[𝔄,n,r₀,β]` over a
-nonarchimedean local field `F`, with critical depth `r = −k₀(β,𝔄)` (the Lean
-`finiteCriticalDepth`, which takes the value `n` when `β` is scalar). The lattice
+nonarchimedean local field `F`. Throughout, `r = finiteCriticalDepth L n β`: this
+is `−k₀(β,𝔄)` when `β` is not scalar, and the level `n` when `β` is scalar (where
+BK93 (1.4.6) sets `k₀ = −∞`). The lattice
 `𝔍(β,𝔄)` and the groups `J^m(β,𝔄)`, `H^m(β,𝔄)` are those of `simpleJLattice`,
 `simpleJGroup` and `simpleHGroup`, computed from a defining sequence.
 

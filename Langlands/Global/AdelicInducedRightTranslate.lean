@@ -31,7 +31,8 @@ def IsIwasawaCompact.inducedRightTranslate (hK : IsIwasawaCompact p K)
     (φ : AdelicGroupPoints F G → ℂ) (g : AdelicGroupPoints F G) : ℂ :=
   hK.heightPower (-lam) g * hK.parameterTwist φ lam (g * y)
 
-private theorem heightPower_neg_mul (hK : IsIwasawaCompact p K)
+/-- The height powers for opposite parameters multiply to one. -/
+theorem IsIwasawaCompact.heightPower_neg_mul (hK : IsIwasawaCompact p K)
     (lam : ComplexCharacterParameter F P) (g : AdelicGroupPoints F G) :
     hK.heightPower (-lam) g * hK.heightPower lam g = 1 := by
   simp [IsIwasawaCompact.heightPower, ← Complex.exp_add]
@@ -43,14 +44,14 @@ theorem IsIwasawaCompact.parameterTwist_inducedRightTranslate (hK : IsIwasawaCom
     hK.parameterTwist (hK.inducedRightTranslate lam y φ) lam g =
       hK.parameterTwist φ lam (g * y) := by
   rw [IsIwasawaCompact.parameterTwist, IsIwasawaCompact.inducedRightTranslate,
-    mul_right_comm (hK.heightPower (-lam) g), heightPower_neg_mul, one_mul]
+    mul_right_comm (hK.heightPower (-lam) g), IsIwasawaCompact.heightPower_neg_mul, one_mul]
 
 @[simp] theorem IsIwasawaCompact.inducedRightTranslate_one (hK : IsIwasawaCompact p K)
     (lam : ComplexCharacterParameter F P) (φ : AdelicGroupPoints F G → ℂ) :
     hK.inducedRightTranslate lam 1 φ = φ := by
   funext g
   rw [IsIwasawaCompact.inducedRightTranslate, mul_one, IsIwasawaCompact.parameterTwist,
-    mul_left_comm, heightPower_neg_mul, mul_one]
+    mul_left_comm, IsIwasawaCompact.heightPower_neg_mul, mul_one]
 
 /-- Apply right translation by `z` first to the function, then by `y`. -/
 theorem IsIwasawaCompact.inducedRightTranslate_mul (hK : IsIwasawaCompact p K)
@@ -72,7 +73,7 @@ theorem IsIwasawaCompact.inducedRightTranslate_of_mem
   have hpow : hK.heightPower lam (g * y) = hK.heightPower lam g := by
     rw [IsIwasawaCompact.heightPower, IsIwasawaCompact.heightPower, hK.height_mul_right g hy]
   rw [IsIwasawaCompact.inducedRightTranslate, IsIwasawaCompact.parameterTwist, hpow,
-    mul_left_comm, heightPower_neg_mul, mul_one]
+    mul_left_comm, IsIwasawaCompact.heightPower_neg_mul, mul_one]
 
 /-- Right equivariance of the defining Eisenstein sum, by equality of each summand. -/
 theorem IsIwasawaCompact.eisensteinSeries_inducedRightTranslate (hK : IsIwasawaCompact p K)
@@ -117,7 +118,7 @@ theorem IsIwasawaCompact.intertwiningOperator_inducedRightTranslate
   simp only [IsIwasawaCompact.intertwiningOperator, hK.intertwiningIntegral_inducedRightTranslate,
     IsIwasawaCompact.inducedRightTranslate, IsIwasawaCompact.parameterTwist]
   rw [mul_right_comm (hK'.heightPower (-weylParameter l c π' lam) (g * y)),
-    heightPower_neg_mul, one_mul]
+    IsIwasawaCompact.heightPower_neg_mul, one_mul]
 
 end Intertwining
 

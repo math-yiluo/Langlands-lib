@@ -2,7 +2,11 @@
 
 `StandardWavePacketCompletenessStatement` uses full imaginary parameters on the rational quotient `G(F) \ G(𝔸)`. It fixes a minimal parabolic `p₀` with an Iwasawa compact `K` and tests every `IsParabolicWavePacket` of every presented parabolic above `p₀`. A square-integrable function pairing to zero with those tests is zero almost everywhere for `rationalQuotientHaarMeasure`.
 
-`relativeWavePacketCompleteness_of_standard` proves `RelativeWavePacketCompletenessTransferStatement`. The implication takes `StandardWavePacketCompletenessStatement`, `WavePacketRapidDecayStatement` and `EisensteinContinuationAmbientShiftStatement.{0}` and concludes the published `RelativeWavePacketCompletenessStatement`. The proof uses rapid decay at exponent zero to obtain square integrability of each full test. The ambient shift is used at imaginary parameters in the supplied holomorphy domain of each continuation.
+`WavePacketSquareIntegrabilityStatement` asserts that every `IsWavePacket` representative is in `L²` for `rationalQuotientHaarMeasure`, with the same group, compact, matrix and minimal-parabolic hypotheses as `WavePacketRapidDecayStatement`.
+
+`relativeWavePacketCompleteness_of_standard_of_squareIntegrable` takes `StandardWavePacketCompletenessStatement`, `WavePacketSquareIntegrabilityStatement` and `EisensteinContinuationAmbientShiftStatement.{0}` and concludes `RelativeWavePacketCompletenessStatement`. The ambient shift is used at imaginary parameters in the supplied holomorphy domain of each continuation.
+
+`relativeWavePacketCompleteness_of_standard` proves `RelativeWavePacketCompletenessTransferStatement`. It obtains square integrability from `WavePacketRapidDecayStatement` at exponent zero by `wavePacketSquareIntegrability_of_rapidDecay`.
 
 ## Proof
 
@@ -22,6 +26,6 @@ Each full packet used by the standard completeness premise therefore pairs to ze
 
 ## Provenance
 
-Delorme, *On the spectral theorem of Langlands* (2023), Theorem 6.1 and Lemma 6.2, p. 22, use the full packets of standard parabolics in the isometric image. Theorem 7.9, pp. 33–35, gives surjectivity on the rational quotient. Its proof on p. 35 splits the relative and ambient spectral parameters and uses Fourier analysis in the ambient direction. Proposition 5.4 on p. 20 gives the decay input. The Lean proof uses the split parameters to average full packets against a central indicator and works with the supplied full completeness and decay propositions. [Delorme 2023](https://doi.org/10.1016/j.aim.2023.109107)
+Delorme, *On the spectral theorem of Langlands* (2023), Theorem 6.1 and Lemma 6.2, p. 22, use the full packets of standard parabolics in the isometric image. Theorem 7.9, pp. 33–35, gives surjectivity on the rational quotient. Its proof on p. 35 splits the relative and ambient spectral parameters and uses Fourier analysis in the ambient direction. Proposition 5.4 on p. 20 gives the decay used to deduce square integrability. The Lean proof uses the split parameters to average full packets against a central indicator. [Delorme 2023](https://doi.org/10.1016/j.aim.2023.109107)
 
 Getz–Hahn, *An introduction to automorphic representations* (2024), §2.6, Lemma 2.6.2 and (2.19)–(2.22), pp. 68–69 (PDF pp. 85–86), give the split-centre and norm-one quotient descriptions. Section 10.5, (10.21)–(10.24) and Theorem 10.5.1, pp. 281–282 (PDF pp. 293–294), uses relative parameters and `[G]`. The conclusion of the Lean implication is the density statement in this normalization, with the exact packet and presentation hypotheses of `RelativeWavePacketCompletenessStatement`. [Getz–Hahn 2024](https://doi.org/10.1007/978-3-031-41153-3)

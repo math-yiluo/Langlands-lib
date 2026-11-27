@@ -16,7 +16,7 @@ open ConcordanceLocalization SigmaLiftCharacterIdentity
 
 namespace SigmaLiftCharacterIdentity
 
-private lemma characteristic_integral_ne_zero {X : Type*} [TopologicalSpace X] [T2Space X]
+lemma characteristic_integral_ne_zero {X : Type*} [TopologicalSpace X] [T2Space X]
     [MeasurableSpace X] [BorelSpace X] (μ : Measure X) [IsFiniteMeasureOnCompacts μ]
     [μ.IsOpenPosMeasure] {K : Set X} (hK : IsClopen K) (hcK : IsCompact K)
     (hne : K.Nonempty) : (∫ x, Hecke.TestFunction.characteristic hK hcK x ∂μ) ≠ 0 := by

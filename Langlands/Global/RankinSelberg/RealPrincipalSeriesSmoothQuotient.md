@@ -11,7 +11,7 @@ extended map intertwines the full group by the compact and Lie identities,
 and the algebraic tail surjection provides each compact-finite preimage.
 For a zero-weight block the two underlying standard function spaces agree.
 Their smooth identification preserves the compact profiles of every derivative
-and the right translation of every function. List induction composes the maps.
+and the right translation of every function. `SmoothStandardQuotient.exists_preserving_function_of_eq` gives the pointwise identity of the reconstructed scalar functions, along with equivariance and the compact-finite preimages. List induction composes the maps.
 
 The companion `exists_whittakerEvaluation_ascendingExpand` pulls back a given
 continuous Whittaker evaluation by composing it with this intertwiner. It

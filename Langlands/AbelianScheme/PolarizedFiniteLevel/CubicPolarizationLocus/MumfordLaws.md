@@ -1,0 +1,5 @@
+# The ordinary Mumford map under normalization and pullback
+
+`lineBundleMumford` uses the chosen inverses in `normalizedBundle` and the published homomorphism property of the Mumford map over a quasi-separated base. The Poincaré class at two test points is the class of the normalized bundle at their product divided by its classes at each point. This formula gives independence of evaluation choices and dependence only on the normalized class. Taking tensor powers in this formula and using Poincaré bilinearity proves the power law for the Mumford homomorphism.
+
+For change of base the proof transports the two evaluation isomorphisms and pulls back the three tensor factors of the Mumford bundle along the map of the self-products. The resulting isomorphism agrees, after forgetting rigidification, with the pullback of the Poincaré family under the canonical dual comparison. The classifier property then identifies the actual homomorphisms. This argument works when both bases are quasi-separated.

@@ -1,0 +1,7 @@
+# Topological properness of finite scheme maps after analytification
+
+Let the ground field be complete and nonarchimedean with nontrivial norm. A finite map of finitely presented affine coordinate algebras induces a topologically proper map of the polynomial-locus analytifications. Each target point has a neighborhood given by the range of an original compact chart. The finite-chart theorem identifies its inverse image with a single compact chart. An ultrafilter over such a target neighborhood therefore has a limit in the inverse image, giving properness.
+
+For a finite morphism of schemes locally of finite type with separated target over the field, the inverse image of each target affine open is affine. The center map identifies this open after analytification with the full inverse image of the target analytic open. Its coordinate map is finite, so the same compact neighborhoods have compact inverse images in these affine opens and hence in the full analytification. The underlying space of the target analytification is Hausdorff by separatedness. `analytificationCompactPreimage` is the resulting order-preserving inverse image on the compact supports of the two analytic spaces.
+
+This is the topological properness implication for finite maps in Berkovich, *Spectral theory and analytic geometry over non-Archimedean fields* (1990), Proposition 3.4.7(3)–(4), pp. 66–67. The proof here uses the existing finite Banach chart construction.

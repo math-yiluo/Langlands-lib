@@ -171,24 +171,62 @@ private theorem compact_profile_leviRestriction
 
 end Parabolic
 
-/-- Arithmetic Harish-Chandra finiteness and finite transfer of enveloping centers imply
-the parabolic finiteness statement. -/
-def ParabolicHarishChandraFinitenessReductionStatement : Prop :=
-  ArithmeticHarishChandraFinitenessStatement.{u} →
-    ParabolicLeviCenterRestrictionStatement.{u} →
-      ParabolicHarishChandraFinitenessStatement.{u}
+/-- The rational adelic finiteness bound specialized to a single group. -/
+def RationalHarishChandraFinitenessFor
+    (F : Type u) [Field F] [NumberField F]
+    (G : GroupScheme (Spec (CommRingCat.of F))) [IsAffine G.X.left] : Prop :=
+  IsConnectedReductive G →
+    ∀ {N d : ℕ} (ρ : MatrixRepresentation G (Fin N)), IsClosedSubgroup ρ →
+    ∀ (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+      (hcalc : AdelicDifferentialCommutator F G hsmooth)
+      (L : OpenSubgroup (FiniteAdelicGroupPoints F G))
+      (H : Subgroup (InfiniteAdelicGroupPoints F G)), IsMaximalCompact H →
+    ∀ (J : Ideal (AdelicEnvelopingCenter F G hsmooth)),
+      Module.Finite ℂ (AdelicEnvelopingCenter F G hsmooth ⧸ J.restrictScalars ℂ) →
+    ∀ (E : Submodule ℂ (H → ℂ)), FiniteDimensional ℂ E →
+      FiniteDimensional ℂ (Submodule.span ℂ {f : AdelicGroupPoints F G → ℂ |
+        IsLeftInvariantUnder F G (rationalSubgroup F G) f ∧ IsAdelicSmoothFunction F G f ∧
+        HasModerateGrowthFunction F G ρ f ∧
+        (∀ b ∈ L, ∀ g, f (g * ofFinite F G b) = f g) ∧
+        (∀ z ∈ J, ∀ b : FiniteAdelicGroupPoints F G,
+          ∀ hf : functionInfiniteSlice F G f b ∈ InfinitePlotSmoothFunctions F G,
+            plotSmoothCenterAction F G hsmooth hcalc z ⟨functionInfiniteSlice F G f b, hf⟩ = 0) ∧
+        ∀ g, (fun k : H => f (g * ofInfinite F G k)) ∈ E})
 
 set_option maxHeartbeats 1000000 in
-theorem parabolicHarishChandraFiniteness_of_arithmetic_and_center :
-    ParabolicHarishChandraFinitenessReductionStatement.{u} := by
+/-- At a fixed parabolic, the rational adelic finiteness bound is needed only for its Levi. -/
+theorem parabolicHarishChandraFiniteness_of_rational_at_levi
+    (hCenter : ParabolicLeviCenterRestrictionStatement.{u})
+    (F : Type u) [Field F] [NumberField F]
+    (G Q M V : GroupScheme (Spec (CommRingCat.of F)))
+    [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+    [IsAffine Q.X.left] [IsAffine M.X.left]
+    (q : Q ⟶ G) [IsClosedImmersion q.hom.hom.left] (iV : V ⟶ Q) (l : M ⟶ Q)
+    (hG : IsConnectedReductive G) (hq : IsParabolicSubgroup q)
+    (hV : LeviSubgroup.IsGeometricUnipotentRadical iV) (hl : IsRationalLeviSubgroup l)
+    (hmul : IsIso (subgroupMultiplication l iV))
+    (hRational : RationalHarishChandraFinitenessFor F M)
+    (K : Subgroup (AdelicGroupPoints F G)) (hKmax : IsMaximalCompactSubgroup F G K)
+    (hK : IsIwasawaCompact q K)
+    {N d : ℕ} (ρ : MatrixRepresentation G (Fin N))
+    (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+    (hcalc : AdelicDifferentialCommutator F G hsmooth) (hρ : IsClosedSubgroup ρ)
+    (J : Ideal (AdelicEnvelopingCenter F G hsmooth))
+    (hJ : Module.Finite ℂ (AdelicEnvelopingCenter F G hsmooth ⧸ J.restrictScalars ℂ))
+    (L : Subgroup (FiniteAdelicGroupPoints F G))
+    (hL : IsOpen (L : Set (FiniteAdelicGroupPoints F G)))
+    (E : Submodule ℂ (K.comap (ofInfinite F G).toMonoidHom → ℂ)) (hE : FiniteDimensional ℂ E) :
+    FiniteDimensional ℂ (Submodule.span ℂ {f : AdelicGroupPoints F G → ℂ |
+      IsAutomorphicFunctionOn F G hsmooth hcalc (parabolicQuotientSubgroup F q iV l)
+          (K.comap (ofInfinite F G).toMonoidHom) ρ f ∧
+      (∀ b ∈ L, ∀ g, f (g * ofFinite F G b) = f g) ∧
+      (∀ z ∈ J, ∀ b : FiniteAdelicGroupPoints F G,
+        ∀ hf : functionInfiniteSlice F G f b ∈ InfinitePlotSmoothFunctions F G,
+          plotSmoothCenterAction F G hsmooth hcalc z ⟨functionInfiniteSlice F G f b, hf⟩ = 0) ∧
+      ∀ g, (fun k : K.comap (ofInfinite F G).toMonoidHom => f (g * ofInfinite F G k)) ∈ E}) := by
   classical
-  intro hArch hCenter
-  have hRational := rationalHarishChandraFiniteness_of_arithmetic hArch
-  intro F _ _ G Q M V _ _ _ _ q _ iV l hG hq hV hl hmul K hKmax hK N d ρ hsmooth hcalc hρ
-    J hJ L hL E hE
   let : IsIso (subgroupMultiplication l iV) := hmul
   let : IsAffineHom M.X.hom := hl.isConnectedReductive.isAffineHom
-  let : IsAffine M.X.left := isAffine_of_isAffineHom M.X.hom
   let : IsClosedImmersion iV.hom.hom.left := hV.1.isClosedSubgroup
   let : IsAffine V.X.left := isAffine_of_isAffineHom iV.hom.hom.left
   let hsM := hl.isConnectedReductive.smoothDimension_spec
@@ -222,7 +260,7 @@ theorem parabolicHarishChandraFiniteness_of_arithmetic_and_center :
       (IsTopologicalGroup.continuous_conj b⁻¹).comp (M.continuous_affinePointsTarget _ (l ≫ q)))⟩
   let ρM := ρ.restrict (l ≫ q)
   have hρM : IsClosedSubgroup ρM := (hl.isClosedSubgroup.comp hq.isClosedSubgroup).comp hρ
-  refine ⟨_, hRational F M hl.isConnectedReductive ρM hρM hsM hcM LM H hH I hI E' hE', ?_⟩
+  refine ⟨_, hRational hl.isConnectedReductive ρM hρM hsM hcM LM H hH I hI E' hE', ?_⟩
   intro f hf
   let fM := translatedLeviRestriction (q := q) l t f
   have hLevel (bM : FiniteAdelicGroupPoints F M) (hbM : bM ∈ LM)
@@ -283,5 +321,23 @@ theorem parabolicHarishChandraFiniteness_of_arithmetic_and_center :
     rw [ofInfinite_eq_pair, pair_mul, one_mul]
   rw [← hpoint]
   exact hf.1.1 _ hy _
+
+/-- Arithmetic Harish-Chandra finiteness and finite transfer of enveloping centers imply
+the parabolic finiteness statement. -/
+def ParabolicHarishChandraFinitenessReductionStatement : Prop :=
+  ArithmeticHarishChandraFinitenessStatement.{u} →
+    ParabolicLeviCenterRestrictionStatement.{u} →
+      ParabolicHarishChandraFinitenessStatement.{u}
+
+theorem parabolicHarishChandraFiniteness_of_arithmetic_and_center :
+    ParabolicHarishChandraFinitenessReductionStatement.{u} := by
+  intro hArch hCenter
+  have hRational := rationalHarishChandraFiniteness_of_arithmetic hArch
+  intro F _ _ G Q M V _ _ _ _ q _ iV l hG hq hV hl hmul K hKmax hK N d ρ hsmooth hcalc hρ
+    J hJ L hL E hE
+  let : IsAffineHom M.X.hom := hl.isConnectedReductive.isAffineHom
+  let : IsAffine M.X.left := isAffine_of_isAffineHom M.X.hom
+  exact parabolicHarishChandraFiniteness_of_rational_at_levi hCenter F G Q M V q iV l
+    hG hq hV hl hmul (hRational F M) K hKmax hK ρ hsmooth hcalc hρ J hJ L hL E hE
 
 end Langlands.Automorphic.GroupSchemeFunctions

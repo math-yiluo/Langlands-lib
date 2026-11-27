@@ -145,9 +145,9 @@ theorem finiteCriticalDepth_le_level {S : Stratum 𝒪[F] F V} (q : S.DefiningSe
     · rw [finiteCriticalDepth_of_eq' S.chain S.n _ _ h]
     · simp [finiteCriticalDepth, simpleCriticalDepth, h]
 
-/-- **Adjoint preimages in `𝔍`.** If `2k` is at most the critical depth `r = −k₀(β,𝔄)`,
-every `x ∈ 𝔄` with `βx − xβ ∈ 𝔓^{−k}` lies in the lattice `𝔍(β,𝔄)` computed from any
-defining sequence. -/
+/-- **Adjoint preimages in `𝔍`.** Let `r = finiteCriticalDepth L n β`, which is `−k₀(β,𝔄)`
+for nonscalar `β` and the level `n` for scalar `β`. If `2k ≤ r`, every `x ∈ 𝔄` with
+`βx − xβ ∈ 𝔓^{−k}` lies in the lattice `𝔍(β,𝔄)` computed from any defining sequence. -/
 theorem adjointLattice_le_simpleJLattice (S : Stratum 𝒪[F] F V)
     (q : S.DefiningSequenceChoice) (k : ℕ)
     (hk : 2 * (k : ℤ) ≤ finiteCriticalDepth S.chain S.n S.b) :
@@ -205,7 +205,8 @@ private theorem centralizerLattice_le_simpleJLattice (L : LatticeChain 𝒪[F] F
   intro x hx
   cases tail <;> exact Submodule.mem_sup.mpr ⟨x, hx, 0, zero_mem _, add_zero _⟩
 
-/-- At depths with `2m ≤ r`, the outer factor of the self-intertwining formula of a
+/-- At depths with `2m ≤ r = finiteCriticalDepth L n β` (which is `−k₀(β,𝔄)`, as `β` is
+nonscalar here), the outer factor of the self-intertwining formula of a
 nonscalar simple character is the group `J^t`, `t = ⌊(r+1)/2⌋`: the product
 `𝔔^{r−m} 𝔑_{−r}` lies in `𝔍^t` (the Remark after BK93 (3.3.2)). -/
 theorem simpleCharacterIntertwiningFactor_eq_simpleJLayer (S : Stratum 𝒪[F] F V)
@@ -242,7 +243,8 @@ theorem simpleCharacterIntertwiningFactor_eq_simpleJLayer (S : Stratum 𝒪[F] F
   rw [sup_eq_right.mpr hN]
 
 /-- **The group `J^m` from intertwining.** Let `[𝔄,n,0,β]` be simple, `1 ≤ m < n` and
-`2m ≤ r = −k₀(β,𝔄)`. For every `χ ∈ C(𝔄,m,β)`, the group `J^m(β,𝔄)` is the set of elements of
+`2m ≤ r = finiteCriticalDepth L n β`, which is `−k₀(β,𝔄)` for nonscalar `β` and `n` for
+scalar `β`. For every `χ ∈ C(𝔄,m,β)`, the group `J^m(β,𝔄)` is the set of elements of
 `U^m(𝔄)` that intertwine `χ`. This uses the exact carriers and product formula of
 `SimpleStratumGroupPropertiesStatement` and the intertwining formula of
 `SimpleCharacterIntertwiningStatement`. -/

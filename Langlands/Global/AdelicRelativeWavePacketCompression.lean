@@ -618,18 +618,36 @@ def StandardWavePacketCompletenessStatement : Prop :=
           ∫ y, f y * conj (Θ y.out) ∂rationalQuotientHaarMeasure F G = 0) →
       f =ᵐ[rationalQuotientHaarMeasure F G] 0
 
-/-- Completeness for the standard family on the full quotient, square integrability of full
-packets, and the imaginary ambient shift imply completeness on the canonical quotient. -/
-def RelativeWavePacketCompletenessTransferStatement : Prop :=
-  StandardWavePacketCompletenessStatement → WavePacketRapidDecayStatement →
-    EisensteinContinuationAmbientShiftStatement.{0} → RelativeWavePacketCompletenessStatement
+/-- Full packets are square integrable for the rational quotient Haar measure. -/
+def WavePacketSquareIntegrabilityStatement : Prop :=
+  ∀ (F : Type) [Field F] [NumberField F] (G : GroupScheme (Spec (CommRingCat.of F)))
+    [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom],
+    IsConnectedReductive G →
+    ∀ (K : Subgroup (AdelicGroupPoints F G)) {N d : ℕ}
+      (rho : MatrixRepresentation G (Fin N)) (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+      (hcalc : AdelicDifferentialCommutator F G hsmooth),
+      IsMaximalCompactSubgroup F G K → IsClosedSubgroup rho →
+    (∃ (P₀ : GroupScheme (Spec (CommRingCat.of F))) (_ : IsAffine P₀.X.left) (p₀ : P₀ ⟶ G)
+      (_ : IsClosedImmersion p₀.hom.hom.left),
+      IsMinimalParabolicSubgroup p₀ ∧ IsIwasawaCompact p₀ K) →
+    ∀ Θ : AdelicGroupPoints F G → ℂ, IsWavePacket F G K rho hsmooth hcalc Θ →
+      MemLp (fun y : RationalQuotient F G => Θ y.out) 2 (rationalQuotientHaarMeasure F G)
+
+/-- Exponent zero in the rapid decay estimate gives square integrability. -/
+theorem wavePacketSquareIntegrability_of_rapidDecay (hDecay : WavePacketRapidDecayStatement) :
+    WavePacketSquareIntegrabilityStatement := by
+  intro F _ _ G _ _ _ hG K N d rho hsmooth hcalc hKmax hrho hminData Θ hΘ
+  simpa only [pow_zero, mul_one, rationalQuotientHaarMeasure,
+    LeftCosetSpace.haarQuotientMeasure] using
+    hDecay F G hG K rho hsmooth hcalc hKmax hrho hminData Θ hΘ 0
 
 set_option maxHeartbeats 1400000 in
 /-- Transfer completeness by lifting the orthogonal function with the indicator of a central
 set of positive finite measure. The central integral of every full test is one relative test. -/
-theorem relativeWavePacketCompleteness_of_standard : RelativeWavePacketCompletenessTransferStatement := by
-  intro hFull hDecay hShift F _ _ G _ _ _ hG K N d rho hsmooth hcalc hKmax hrho
-    P₀ _ p₀ hp₀ hmin hK₀ f hf hOrth
+theorem relativeWavePacketCompleteness_of_standard_of_squareIntegrable
+    (hFull : StandardWavePacketCompletenessStatement) (hSquare : WavePacketSquareIntegrabilityStatement)
+    (hShift : EisensteinContinuationAmbientShiftStatement.{0}) : RelativeWavePacketCompletenessStatement := by
+  intro F _ _ G _ _ _ hG K N d rho hsmooth hcalc hKmax hrho P₀ _ p₀ hp₀ hmin hK₀ f hf hOrth
   let Z := canonicalTorus F G
   let i := canonicalComponent F G
   have hZ := (isSplitComponent_canonicalComponent F G).isCentralSplitTorus
@@ -671,9 +689,8 @@ theorem relativeWavePacketCompleteness_of_standard : RelativeWavePacketCompleten
       exact ⟨P, M, U, A, inferInstance, inferInstance, inferInstance, inferInstance, p, hp, iU, l,
         hUp, a, r, inferInstance, inferInstance, inferInstance, hA, hT, hU, hK, n, eP, k, v, c, E, D,
         hv, hc, hD, hE, hreg, hΘ⟩
-    have hL : MemLp (fun y : RationalQuotient F G => Θ y.out) 2 muFull := by
-      simpa only [pow_zero, mul_one, muFull, rationalQuotientHaarMeasure,
-        LeftCosetSpace.haarQuotientMeasure] using hDecay F G hG K rho hsmooth hcalc hKmax hrho hminData Θ hΘ 0
+    have hL : MemLp (fun y : RationalQuotient F G => Θ y.out) 2 muFull :=
+      hSquare F G hG K rho hsmooth hcalc hKmax hrho hminData Θ hΘ
     let w (q : intrinsicSubgroup F Z × CanonicalQuotient F G) : ℂ := Θ ((eQ q).out)
     have hw : MemLp w 2 (muA.prod muY) := hL.comp_measurePreserving hQ
     obtain ⟨Ψ, hΨ, hrepr⟩ := exists_relativeWavePacket_centreIntegral r hK hA hT hShift hG hU
@@ -693,5 +710,17 @@ theorem relativeWavePacketCompleteness_of_standard : RelativeWavePacketCompleten
     filter_upwards [hQ.quasiMeasurePreserving.ae_eq_comp hFullZero] with q hq
     simpa only [fFull, Function.comp_apply, MeasurableEquiv.symm_apply_apply, Pi.zero_apply] using hq
   exact ae_eq_zero_of_indicator_snd hS hSf hSne hProdZero
+
+/-- Completeness for the standard family on the full quotient, rapid decay of full packets,
+and the imaginary ambient shift imply completeness on the canonical quotient. -/
+def RelativeWavePacketCompletenessTransferStatement : Prop :=
+  StandardWavePacketCompletenessStatement → WavePacketRapidDecayStatement →
+    EisensteinContinuationAmbientShiftStatement.{0} → RelativeWavePacketCompletenessStatement
+
+/-- Transfer completeness using the square integrability consequence of rapid decay. -/
+theorem relativeWavePacketCompleteness_of_standard : RelativeWavePacketCompletenessTransferStatement :=
+  fun hFull hDecay =>
+    relativeWavePacketCompleteness_of_standard_of_squareIntegrable hFull
+      (wavePacketSquareIntegrability_of_rapidDecay hDecay)
 
 end Langlands.Global

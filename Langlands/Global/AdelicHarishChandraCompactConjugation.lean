@@ -104,7 +104,8 @@ theorem isInfiniteSubgroupFiniteFunction_comp_infiniteConjugation
   change h (B x * ofInfinite F G k'.val) = h (B (x * ofInfinite F G k.val))
   rw [map_mul, infiniteConjugation_ofInfinite]
 
-private theorem comap_ofInfinite_conjugate (K : Subgroup A) :
+/-- Taking the infinite part commutes with conjugation by an inverse infinite point. -/
+theorem comap_ofInfinite_conjugate (K : Subgroup A) :
     (K.map (B).toMonoidHom).comap (ofInfinite F G).toMonoidHom =
       (K.comap (ofInfinite F G).toMonoidHom).map (MulAut.conj a⁻¹).toMonoidHom := by
   ext k

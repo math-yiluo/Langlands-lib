@@ -6,9 +6,11 @@ connected reductive affine locally finite-type group over a number field
 with a specified smooth relative dimension, a closed matrix representation
 of positive size and a subgroup at infinity. The central morphism from a
 specified finite split torus has injective rational-character restriction
-with finite-index image. The full cusp space uses the parabolic-dynamic
-assertion and right invariance of the norm-one Haar measure. Suppose
-archimedean conjugation fixes the center of the complex enveloping algebra. If a smooth compact adelic convolution
+with finite-index image. The parabolic-dynamic assertion specifies the
+radical family for the full cuspidal space. The integrated right action
+uses right invariance of the norm-one Haar measure. Suppose archimedean
+conjugation fixes the center of the complex enveloping algebra. If a smooth
+compact adelic convolution
 acts compactly on the full cuspidal Hilbert space and commutes with that
 subgroup, each vector in an eigenspace for a nonzero eigenvalue has a
 continuous representative on the positive rational quotient. Its adelic

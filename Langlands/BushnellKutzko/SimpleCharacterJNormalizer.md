@@ -1,0 +1,3 @@
+# Invariance under J
+
+`simpleJ_le_characterNormalizerSubgroup` proves the J invariance of BK93 (3.3.1), printed p. 104. The high-depth proof uses induction along the defining sequence. The deep J group is the same for both parameters at the current cutoff, and it is contained in the successor's full J group. The perturbation twist is invariant by the complementary-depth trace estimate. The terminal case uses that estimate with the terminal coefficient. For the low-depth relative factor, the mixed and J commutator at the restricted character has value one since the relative unit commutes with the parameter. The deeper factor uses the high-depth case. The relative units and cutoff J then generate the full J group.

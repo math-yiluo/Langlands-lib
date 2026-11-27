@@ -17,8 +17,9 @@ positive projection unchanged because the positive factor is central. The
 norm-one projection of a conjugate is the conjugate of the norm-one
 projection. The preimage of the subgroup intersection is therefore
 contained in the product of a fixed compact set in the positive factor
-and a finite set of principal points. The Library's rational conjugate
-count bounds the second factor by the stated height power. The finite mass
+and a finite set of principal points. The theorem
+`Langlands.Global.adelicRationalConjugateCounting` bounds the second factor
+by the stated height power. The finite mass
 of the first factor gives the constant in the estimate.
 
 This is a bound for the subgroup mass entering pointwise convolution on

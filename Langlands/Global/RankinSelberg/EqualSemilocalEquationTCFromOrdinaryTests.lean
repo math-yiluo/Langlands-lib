@@ -68,7 +68,7 @@ theorem equalSemilocalEquationTCFromOrdinaryTests :
   exact equalSemilocalReductionTC (equalSemilocalFactorizationTC_of_factorizationTC
     complexPlaceFunctionalEquation.2 hFact archimedeanCentralSign)
 
-private theorem complexWhittakerRestrictionOnto :
+theorem complexWhittakerRestrictionOnto :
     ComplexPlaceWhittakerRestrictionOntoStatement.{u} := by
   classical
   intro F _ _ _ ψ hψ r T w a ha d hd W

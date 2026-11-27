@@ -2,13 +2,16 @@ import Langlands.Global.RankinSelberg.RealGodementOpenCellModel
 import Langlands.Global.RankinSelberg.RealLowestWeightFourier
 import Langlands.Global.RankinSelberg.RealRankZeroLocal
 import Langlands.Representation.Archimedean.RealStandardNontrivialProof
+import Langlands.Global.RankinSelberg.RealDiscreteReciprocalFourier
+import Langlands.Global.RankinSelberg.RealExactCharacterWhittakerUniqueness
+import Langlands.Global.RankinSelberg.RealEqualDualConvergence
 
 /-! # The real rank-two discrete block on the diagonal -/
 
 noncomputable section
 
 open Complex Matrix MeasureTheory
-open scoped FourierTransform Matrix Matrix.Norms.Operator
+open scoped FourierTransform Matrix Matrix.Norms.Operator ENNReal NNReal
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -188,18 +191,20 @@ private theorem unipotentCoordinate_val (x : ℝ) : (unipotentCoordinate x).val.
   · exact UpperUnipotent.entry_eq_zero (unipotentCoordinate x) (i := 1) (j := 0) (by decide)
   · exact UpperUnipotent.entry_diag (unipotentCoordinate x) 1
 
+private theorem unipotentCoordinate_measurePreserving_at (a : ℝˣ) :
+    MeasurePreserving unipotentCoordinate (realSelfDualMeasure a).measure (upperStepHaar 1 a) := by
+  have hμ := (measurePreserving_funUnique (realSelfDualMeasure a).measure (UpperEntryPair 2)).symm
+  have hE : MeasurePreserving (upperEntryCoordinates 2 (K := ℝ)).symm
+      (upperEntryProductMeasure (realSelfDualMeasure a) 2) (upperStepHaar 1 a) :=
+    ⟨(upperEntryCoordinates 2 (K := ℝ)).symm.continuous.measurable, rfl⟩
+  exact hE.comp hμ
+
 private theorem unipotentCoordinate_measurePreserving :
     MeasurePreserving unipotentCoordinate volume (upperStepHaar 1 (-1)) := by
   have hV : (realSelfDualMeasure (-1)).measure = (volume : Measure ℝ) := by
-    simp [realSelfDualMeasure, realScaledMeasure, realStandardMeasure, Langlands.HarmonicAnalysis.AdditiveHaarMeasure.scale]
-  have hμ := (measurePreserving_funUnique (realSelfDualMeasure (-1)).measure (UpperEntryPair 2)).symm
-  have hE : MeasurePreserving (upperEntryCoordinates 2 (K := ℝ)).symm
-      (upperEntryProductMeasure (realSelfDualMeasure (-1)) 2) (upperStepHaar 1 (-1)) :=
-    ⟨(upperEntryCoordinates 2 (K := ℝ)).symm.continuous.measurable, rfl⟩
-  have h := hE.comp hμ
-  rw [hV] at h
-  exact h
-
+    simp [realSelfDualMeasure, realScaledMeasure, realStandardMeasure,
+      Langlands.HarmonicAnalysis.AdditiveHaarMeasure.scale]
+  simpa only [hV] using unipotentCoordinate_measurePreserving_at (-1)
 
 /-- The rank-one units embedded as the first diagonal entry of the larger group. -/
 def diagonalPoint (a : ℝˣ) : G :=
@@ -225,17 +230,22 @@ private theorem openCellPoint_val (a : ℝˣ) (x : ℝ) :
   ext i j
   fin_cases i <;> fin_cases j <;> simp [Matrix.mul_apply, Fin.sum_univ_two]
 
-private theorem unipotentCoordinate_phase (x : ℝ) :
-    (Langlands.Whittaker.standardCharacter (realScaledCharacter (-1)) 1 (unipotentCoordinate x) : ℂ) =
-      exp (((-2 * Real.pi * x : ℝ) : ℂ) * I) := by
-  have h := unipotentCoordinate_entry x
+private theorem unipotentCoordinate_phase_at (a : ℝˣ) (x : ℝ) :
+    (Langlands.Whittaker.standardCharacter (realScaledCharacter a) 1 (unipotentCoordinate x) : ℂ) =
+      exp (((2 * Real.pi * x * (a : ℝ) : ℝ) : ℂ) * I) := by
   rw [Langlands.Whittaker.standardCharacter_apply, Fin.sum_univ_one]
-  change (realScaledCharacter (-1)).complex ((unipotentCoordinate x).val.val 0 1) = _
-  rw [h, Langlands.HarmonicAnalysis.UnitaryAdditiveCharacter.complex_apply,
+  change (realScaledCharacter a).complex ((unipotentCoordinate x).val.val 0 1) = _
+  rw [unipotentCoordinate_entry, Langlands.HarmonicAnalysis.UnitaryAdditiveCharacter.complex_apply,
     realScaledCharacter_apply, Real.fourierChar_apply]
   congr 1
   push_cast
   ring
+
+private theorem unipotentCoordinate_phase (x : ℝ) :
+    (Langlands.Whittaker.standardCharacter (realScaledCharacter (-1)) 1 (unipotentCoordinate x) : ℂ) =
+      exp (((-2 * Real.pi * x : ℝ) : ℂ) * I) := by
+  simpa only [Units.val_neg, Units.val_one, mul_neg, mul_one, neg_mul] using
+    unipotentCoordinate_phase_at (-1) x
 
 /-- The lowest compact-type coefficient in the ordinary real discrete-block model. -/
 def discreteCoefficient (d : ComplexCharacterData) : G → ℂ :=
@@ -257,16 +267,19 @@ theorem diagonalConstant_ne_zero (d : ComplexCharacterData) : diagonalConstant d
   exact mul_ne_zero (pow_ne_zero _ (mul_ne_zero two_ne_zero I_ne_zero))
     (div_ne_zero (pow_ne_zero _ hπ) hn)
 
+private theorem discrete_strictlyDominant (d : ComplexCharacterData) (hd : d.weight ≠ 0) :
+    IsStrictlyDominant (realPositionExponent [.induced d]) 1 := by
+  intro j hj
+  have hj0 : j = 0 := by omega
+  subst j
+  have hn : 0 < |(d.weight : ℝ)| := abs_pos.mpr (by exact_mod_cast hd)
+  simp only [realPositionExponent, add_re, sub_re]
+  norm_num [Complex.div_re]
+  linarith
+
 theorem discreteCoefficient_mem (d : ComplexCharacterData) (hd : d.weight ≠ 0) :
     discreteCoefficient d ∈ realWhittakerModel 1 [.induced d] 1 := by
-  have hDom : IsStrictlyDominant (realPositionExponent [.induced d]) 1 := by
-    intro j hj
-    have hj0 : j = 0 := by omega
-    subst j
-    have hn : 0 < |(d.weight : ℝ)| := abs_pos.mpr (by exact_mod_cast hd)
-    simp only [realPositionExponent, add_re, sub_re]
-    norm_num [Complex.div_re]
-    linarith
+  have hDom := discrete_strictlyDominant d hd
   let f : Automorphic.realStandardKFinite 2 [.induced d] := ⟨blockTest d, blockTest_mem d⟩
   have h := realGodementOpenCellModel 1 [.induced d] (-1) hDom f
   apply RealUniformWhittaker.model_le_model
@@ -326,5 +339,432 @@ theorem realDiscreteRankTwoWhittaker : RealDiscreteRankTwoWhittakerStatement := 
       (neg_pos.mpr (lt_of_le_of_ne (le_of_not_gt ha) a.ne_zero)) (by ring)]
     have hn : d.weight.natAbs ≠ 0 := (Int.natAbs_pos.mpr hd).ne'
     simp [RealLowestWeightFourier.positiveExpPower, zero_pow hn]
+
+/-! ## The bound for all compact-finite vectors -/
+
+open RealDiscreteReciprocalFourier
+open RealBlockFourierFinite RealBlockRotation RealBlockDerivative
+open RealIwasawa
+open scoped FourierTransform
+
+local notation "K₂" => unitaryCompact ℝ 2
+local notation "V(" d ")" => Automorphic.realStandardKFinite 2 [RealBlock.induced d]
+local notation "E(" d ")" => GramFormula.shiftedExponent 2 (realPositionExponent [RealBlock.induced d])
+
+private theorem standard_torus_unipotent (d : ComplexCharacterData) (f : V(d))
+    (y : Fin 2 → ℝ) (u : Langlands.GeneralLinear.upperUnipotent 2 ℝ) (g : G) :
+    f.val (torus y * u.val * g) = Complex.exp (∑ i, E(d) i * (y i : ℂ)) * f.val g := by
+  have h := isExpEquivariant_of_mem_principalSeries
+    (τ := fun i : Fin 2 => realPositionExponent [.induced d] i)
+    (fun i x => InductionStages.realPositionCharacter_exp [.induced d] i x) f.2.1.1 y u g
+  have hE : Langlands.Archimedean.matrixExpUnit 2 (Matrix.diagonal y) = torus y := by
+    rw [RealPrincipalSeriesDuality.matrixExpUnit_diagonal]
+    exact Units.ext rfl
+  rw [hE] at h
+  have he : (fun i : Fin 2 => realPositionExponent [.induced d] i +
+      (((2 : ℕ) : ℂ) - 1) / 2 - ((i : ℕ) : ℂ)) = E(d) := by
+    funext i
+    unfold GramFormula.shiftedExponent
+    ring
+  rw [← he]
+  exact h
+
+private theorem blockRotation_weyl_arctan_val (x : ℝ) :
+    (blockRotation 2 0 (Real.arctan x) * weylLong 2 ℝ).val =
+      polarCompact 1 1 x (Real.sqrt (1 + x ^ 2)) := by
+  rw [Units.val_mul, weylLong_two_val, blockRotation_val_eq (by decide : 0 + 1 < 2)]
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rotMatrix, blockProj, rotationGenerator_eq (by decide : 0 + 1 < 2), ia, ib, polarCompact,
+      Matrix.mul_apply, Matrix.single_apply, Matrix.one_apply, Fin.sum_univ_two,
+      Real.sin_arctan, Real.cos_arctan, neg_div]
+
+private theorem rankTwo_openCell_factor (x : ℝ) :
+    weylLong 2 ℝ * (unipotentCoordinate x).val =
+      torus ![-Real.log (Real.sqrt (1 + x ^ 2)), Real.log (Real.sqrt (1 + x ^ 2))] *
+        (unipotentCoordinate x).val * (blockRotation 2 0 (Real.arctan x) * weylLong 2 ℝ) := by
+  let ρ := Real.sqrt (1 + x ^ 2)
+  have hρ : 0 < ρ := Real.sqrt_pos.2 (by positivity)
+  apply Units.ext
+  rw [Units.val_mul, weylLong_two_val, unipotentCoordinate_val,
+    Units.val_mul, Units.val_mul, torus_val, blockRotation_weyl_arctan_val, unipotentCoordinate_val]
+  have hB : Matrix.diagonal (fun i => Real.exp ((![-Real.log ρ, Real.log ρ] : Fin 2 → ℝ) i)) *
+      (!![1, x; 0, 1] : Mat) = polarUpper 1 x ρ := by
+    ext i j
+    rw [Matrix.diagonal_mul]
+    fin_cases i <;> fin_cases j <;>
+      simp [polarUpper, Real.exp_neg, Real.exp_log hρ, div_eq_mul_inv, mul_comm]
+  have hsq : ρ ^ 2 = 1 ^ 2 + x ^ 2 := by
+    simpa [ρ] using Real.sq_sqrt (show 0 ≤ 1 + x ^ 2 by positivity)
+  rw [hB, polarUpper_mul_compact 1 1 x ρ hρ.ne' hsq]
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [Matrix.mul_apply, Fin.sum_univ_two]
+
+/-- On the Jacquet cell `w₂n(x)`, the inducing vector separates into a radial factor
+and a compact rotation profile. -/
+private theorem discreteOpenCell_eq_angular (d : ComplexCharacterData) (f : V(d)) (x : ℝ) (g : G) :
+    f.val (weylLong 2 ℝ * (unipotentCoordinate x).val * g) =
+      ((Real.sqrt (1 + x ^ 2) : ℝ) : ℂ)⁻¹ ^ (d.weight.natAbs + 1) *
+        f.val (blockRotation 2 0 (Real.arctan x) * (weylLong 2 ℝ * g)) := by
+  let ρ := Real.sqrt (1 + x ^ 2)
+  have hρ : 0 < ρ := Real.sqrt_pos.2 (by positivity)
+  have he : weylLong 2 ℝ * (unipotentCoordinate x).val * g =
+      torus ![-Real.log ρ, Real.log ρ] * (unipotentCoordinate x).val *
+        (blockRotation 2 0 (Real.arctan x) * (weylLong 2 ℝ * g)) := by
+    rw [rankTwo_openCell_factor]
+    simp only [ρ, mul_assoc]
+  rw [he, standard_torus_unipotent, Fin.sum_univ_two, shiftedExponent_induced_zero, shiftedExponent_induced_one]
+  change Complex.exp ((d.exponent + ((d.weight.natAbs + 1 : ℕ) : ℂ) / 2) * (↑(-Real.log ρ)) +
+    (d.exponent - ((d.weight.natAbs + 1 : ℕ) : ℂ) / 2) * ↑(Real.log ρ)) * _ = _
+  have h : (d.exponent + ((d.weight.natAbs + 1 : ℕ) : ℂ) / 2) * (↑(-Real.log ρ)) +
+      (d.exponent - ((d.weight.natAbs + 1 : ℕ) : ℂ) / 2) * ↑(Real.log ρ) =
+      (-(d.weight.natAbs + 1 : ℕ) : ℂ) * (Real.log ρ : ℂ) := by
+    push_cast
+    ring
+  rw [h, Complex.ofReal_log hρ.le, mul_comm (-(d.weight.natAbs + 1 : ℕ) : ℂ), ← Complex.cpow_def_of_ne_zero
+    (Complex.ofReal_ne_zero.mpr hρ.ne'), Complex.cpow_neg, Complex.cpow_natCast, inv_pow]
+
+private def permitted (k : ℕ) (j : ℤ) : Prop :=
+  ∃ m : ℕ, j = ((k + 1 + 2 * m : ℕ) : ℤ) ∨ j = -((k + 1 + 2 * m : ℕ) : ℤ)
+
+private theorem permitted_of_coeff_ne_zero (d : ComplexCharacterData) (f : V(d))
+    {j : ℤ} {g : G} (hj : blockFourierCoefficient 2 0 j f.val g ≠ 0) :
+    permitted d.weight.natAbs j := by
+  have h := f.2.1.2 0 d rfl j
+  have hweight' : |d.weight| ≤ |j| := le_of_not_gt fun hlt => hj (h hlt g)
+  have hweight : (d.weight.natAbs : ℤ) ≤ |j| := by simpa only [Int.abs_eq_natAbs d.weight] using hweight'
+  have hparity : Even (j - ((d.weight.natAbs : ℤ) + 1)) := by
+    by_contra! he
+    apply hj
+    have hpar : (-1 : ℂ) ^ ((d.weight.natAbs : ℤ) + 1) =
+        realPositionCharacter [.induced d] 0 (-1) * realPositionCharacter [.induced d] 1 (-1) := by
+      change _ = realInducedFirstCharacter d (-1) * realInducedSecondCharacter d (-1)
+      rw [InductionStages.realInducedFirstCharacter_neg_one, InductionStages.realInducedSecondCharacter_neg_one,
+        mul_one]
+      norm_cast
+    exact RealBlockJacquet.blockFourierCoefficient_eq_zero_of_not_even (by decide : 0 + 1 < 2) hpar f he g
+  obtain ⟨l, hl⟩ := hparity
+  by_cases hsign : 0 ≤ j
+  · rw [abs_of_nonneg hsign] at hweight
+    have hl₀ : 0 ≤ l := by omega
+    refine ⟨l.toNat, Or.inl ?_⟩
+    simp only [Nat.cast_add, Nat.cast_mul, Nat.cast_one, Nat.cast_ofNat, Int.toNat_of_nonneg hl₀]
+    omega
+  · rw [abs_of_neg (lt_of_not_ge hsign)] at hweight
+    have hl₀ : 0 ≤ -(d.weight.natAbs : ℤ) - 1 - l := by omega
+    refine ⟨(-(d.weight.natAbs : ℤ) - 1 - l).toNat, Or.inr ?_⟩
+    simp only [Nat.cast_add, Nat.cast_mul, Nat.cast_one, Nat.cast_ofNat, Int.toNat_of_nonneg hl₀]
+    omega
+
+private theorem norm_blockCoeff_le (f : G → ℂ) {A : ℝ}
+    (hA : ∀ k ∈ K₂, ‖f k‖ ≤ A) (j : ℤ) {g : G} (hg : g ∈ K₂) :
+    ‖blockFourierCoefficient 2 0 j f g‖ ≤ 2 * Real.pi * A := by
+  rw [blockFourierCoefficient_eq_coeff, coeff]
+  apply (intervalIntegral.norm_integral_le_of_norm_le_const (C := A) ?_).trans
+  · rw [sub_zero, abs_of_nonneg (by positivity), mul_comm]
+  · intro θ _
+    have hφ : ‖Complex.exp (-((j : ℂ) * (θ : ℂ) * Complex.I))‖ = 1 := by
+      simp [Complex.norm_exp, Complex.mul_re, Complex.mul_im]
+    rw [norm_mul, hφ, mul_one]
+    exact hA _ ((unitaryCompact ℝ 2).mul_mem (blockRotation_mem_unitaryCompact _ _ _) hg)
+
+private def cellProfile (f : G → ℂ) (g : G) (x : ℝ) : ℂ :=
+  f (weylLong 2 ℝ * (unipotentCoordinate x).val * g)
+
+private theorem discrete_fourier_profile_bound (d : ComplexCharacterData) (hd : d.weight ≠ 0) (f : V(d)) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ g ∈ K₂, ∀ s : ℝ,
+      ‖𝓕 (cellProfile f.val g) s‖ ≤ C * |s| ^ ((d.weight.natAbs : ℝ) / 2) := by
+  classical
+  let w := weylLong 2 ℝ
+  let k := d.weight.natAbs
+  let η := (k : ℝ) / 2
+  have hk : k ≠ 0 := (Int.natAbs_pos.mpr hd).ne'
+  have hη : 0 ≤ η := by dsimp [η]; positivity
+  have hηk : η ≤ k := by dsimp [η]; exact half_le_self (Nat.cast_nonneg _)
+  have hw : w ∈ K₂ := RealEqualDualConvergence.weylLong_mem_unitary (r := 1)
+  have hFc : Continuous f.val := f.2.1.1.1.continuous
+  obtain ⟨D, _, hD⟩ := exists_eq_sum_blockFourierCoefficient (by decide : 0 + 1 < 2) hFc f.2.2
+  obtain ⟨A, hA⟩ := exists_bound_unitaryCompact hFc
+  let I := Finset.Icc (-(D : ℤ)) D
+  let J := I.filter (permitted k)
+  have hKern (j : J) : Integrable (angularKernel k j.val) ∧ ∃ B : ℝ, 0 ≤ B ∧
+      ∀ s : ℝ, ‖𝓕 (angularKernel k j.val) s‖ ≤ B * |s| ^ η :=
+    realDiscreteAngularFourierBound k hk j.val (Finset.mem_filter.mp j.2).2 η hη hηk
+  choose B hB hBF using fun j : J => (hKern j).2
+  have hSumBound : 0 ≤ ∑ j : J, B j := Finset.sum_nonneg fun j _ => hB j
+  refine ⟨max A 0 * (∑ j : J, B j), mul_nonneg (le_max_right _ _) hSumBound, fun g hg s => ?_⟩
+  let coeff (j : ℤ) := (2 * (Real.pi : ℂ))⁻¹ * blockFourierCoefficient 2 0 j f.val (w * g)
+  have hcoeff (j : ℤ) : ‖coeff j‖ ≤ max A 0 := by
+    have h := norm_blockCoeff_le f.val (A := max A 0) (fun q hq => (hA q hq).trans (le_max_left _ _)) j
+      ((unitaryCompact ℝ 2).mul_mem hw hg)
+    change ‖(2 * (Real.pi : ℂ))⁻¹ * _‖ ≤ _
+    rw [norm_mul, norm_inv, norm_mul, Complex.norm_ofNat, Complex.norm_of_nonneg Real.pi_pos.le]
+    exact (inv_mul_le_iff₀ (by positivity)).2 h
+  have hEq : cellProfile f.val g = fun x => ∑ j : J, coeff j.val * angularKernel k j.val x := by
+    funext x
+    change f.val (w * (unipotentCoordinate x).val * g) = _
+    rw [discreteOpenCell_eq_angular]
+    rw [hD (w * g) ((unitaryCompact ℝ 2).mul_mem hw hg)]
+    rw [← show (∑ j ∈ J, coeff j * angularKernel k j x) =
+      ∑ j : J, coeff j.val * angularKernel k j.val x by
+        exact (Finset.sum_coe_sort J (fun j => coeff j * angularKernel k j x)).symm]
+    unfold angularKernel coeff
+    have hSum : (∑ j ∈ I, blockFourierCoefficient 2 0 j f.val (w * g) * expMode j (Real.arctan x)) =
+        ∑ j ∈ J, blockFourierCoefficient 2 0 j f.val (w * g) * expMode j (Real.arctan x) := by
+      symm
+      apply Finset.sum_subset (Finset.filter_subset _ _)
+      intro j hj hnj
+      have hnot : ¬ permitted k j := fun hyes => hnj (Finset.mem_filter.mpr ⟨hj, hyes⟩)
+      have h0 : blockFourierCoefficient 2 0 j f.val (w * g) = 0 := by
+        by_contra h0
+        exact hnot (permitted_of_coeff_ne_zero d f h0)
+      rw [h0, zero_mul]
+    rw [hSum, Finset.mul_sum, Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro j hj
+    ring
+  have hFourier : 𝓕 (cellProfile f.val g) s = ∑ j : J, coeff j.val * 𝓕 (angularKernel k j.val) s := by
+    rw [hEq]
+    simp only [Real.fourier_real_eq_integral_exp_smul, smul_eq_mul, Finset.mul_sum]
+    rw [integral_finsetSum]
+    · apply Finset.sum_congr rfl
+      intro j _
+      rw [← integral_const_mul]
+      congr 1
+      funext x
+      ring
+    · intro j _
+      have hInt := (hKern j).1.const_mul (coeff j.val)
+      apply (Real.fourierIntegral_convergent_iff (E := ℂ) (μ := volume) s).2 at hInt
+      simpa only [Circle.smul_def, Real.fourierChar_apply, smul_eq_mul, Real.inner_apply,
+        mul_neg, neg_mul, mul_assoc] using hInt
+  rw [hFourier]
+  calc
+    _ ≤ ∑ j : J, ‖coeff j.val * 𝓕 (angularKernel k j.val) s‖ := norm_sum_le _ _
+    _ ≤ ∑ j : J, (max A 0 * B j) * |s| ^ η := by
+      apply Finset.sum_le_sum
+      intro j _
+      rw [norm_mul, mul_assoc]
+      exact mul_le_mul (hcoeff j.val) (hBF j s) (norm_nonneg _) (le_max_right _ _)
+    _ = _ := by simp only [Finset.sum_mul, Finset.mul_sum, η, k]
+
+private theorem additiveJacquetIntegral_eq_fourier (a : ℝˣ) (f : G → ℂ) (g : G) :
+    additiveJacquetIntegral a f g =
+      (((NNReal.sqrt ‖(a : ℝ)‖₊ : NNReal) : ℝ) : ℂ) * 𝓕 (cellProfile f g) (-(a : ℝ)) := by
+  rw [additiveJacquetIntegral,
+    ← (unipotentCoordinate_measurePreserving_at a).integral_comp unipotentCoordinate.measurableEmbedding]
+  simp only [additiveJacquetKernel, unipotentCoordinate_phase_at]
+  change (∫ x : ℝ, cellProfile f g x * exp (↑(2 * Real.pi * x * (a : ℝ)) * I)
+      ∂((NNReal.sqrt ‖(a : ℝ)‖₊ : ℝ≥0∞) • volume)) = _
+  rw [integral_smul_measure, ENNReal.coe_toReal, Complex.real_smul, Real.fourier_real_eq_integral_exp_smul]
+  congr 1
+  apply integral_congr_ae
+  refine ae_of_all _ fun x => ?_
+  change cellProfile f g x * exp (↑(2 * Real.pi * x * (a : ℝ)) * I) =
+    exp (↑(-2 * Real.pi * x * -(a : ℝ)) * I) * cellProfile f g x
+  rw [show -2 * Real.pi * x * -(a : ℝ) = 2 * Real.pi * x * (a : ℝ) from by ring, mul_comm]
+
+private theorem torus_shear_rankTwo (y : Fin 2 → ℝ) (x : ℝ) (g : G) :
+    weylLong 2 ℝ * (unipotentCoordinate (Real.exp (y 0 - y 1) * x)).val * (torus y * g) =
+      torus ![y 1, y 0] * (weylLong 2 ℝ * (unipotentCoordinate x).val * g) := by
+  rw [← mul_assoc (weylLong 2 ℝ * _ ) (torus y) g, ← mul_assoc (torus _) _ g]
+  congr 1
+  apply Units.ext
+  simp only [Units.val_mul, weylLong_two_val, unipotentCoordinate_val, torus_val]
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_apply, Matrix.diagonal_apply, Real.exp_sub]
+  field_simp
+
+private theorem cellProfile_fourier_torus (d : ComplexCharacterData) (f : V(d)) (y : Fin 2 → ℝ)
+    (g : G) (q : ℝ) :
+    𝓕 (cellProfile f.val (torus y * g)) q =
+      (Real.exp (y 0 - y 1) : ℂ) *
+        exp (E(d) 0 * (y 1 : ℂ) + E(d) 1 * (y 0 : ℂ)) *
+        𝓕 (cellProfile f.val g) (Real.exp (y 0 - y 1) * q) := by
+  let t := Real.exp (y 0 - y 1)
+  have ht : 0 < t := Real.exp_pos _
+  let b := exp (E(d) 0 * (y 1 : ℂ) + E(d) 1 * (y 0 : ℂ))
+  have hOne (h : G) : f.val (torus ![y 1, y 0] * h) = b * f.val h := by
+    have hEq := standard_torus_unipotent d f ![y 1, y 0] 1 h
+    simpa only [OneMemClass.coe_one, mul_one, Fin.sum_univ_two,
+      Matrix.cons_val_zero, Matrix.cons_val_one, b] using hEq
+  have hFunction (x : ℝ) : cellProfile f.val (torus y * g) x = b * cellProfile f.val g (t⁻¹ * x) := by
+    have he := torus_shear_rankTwo y (t⁻¹ * x) g
+    have hc : t * (t⁻¹ * x) = x := mul_inv_cancel_left₀ ht.ne' x
+    change weylLong 2 ℝ * (unipotentCoordinate (t * (t⁻¹ * x))).val * (torus y * g) = _ at he
+    rw [hc] at he
+    exact congrArg f.val he |>.trans (hOne _)
+  simp only [Real.fourier_real_eq_integral_exp_smul, smul_eq_mul]
+  let Q (x : ℝ) := exp (↑(-2 * Real.pi * x * (t * q)) * I) * cellProfile f.val g x
+  have h (x : ℝ) : exp (↑(-2 * Real.pi * x * q) * I) * cellProfile f.val (torus y * g) x =
+      b * Q (t⁻¹ * x) := by
+    have he : -2 * Real.pi * (t⁻¹ * x) * (t * q) = -2 * Real.pi * x * q := by
+      field_simp [show t ≠ 0 from ht.ne']
+    rw [hFunction]
+    dsimp only [Q]
+    rw [he]
+    ring
+  simp_rw [h]
+  rw [integral_const_mul]
+  change b * (∫ x : ℝ, Q (t⁻¹ * x)) = (t : ℂ) * b * ∫ x : ℝ, Q x
+  rw [Measure.integral_comp_inv_mul_left, abs_of_pos ht, Complex.real_smul]
+  ring
+
+private theorem norm_torus_spherical_multiplier (d : ComplexCharacterData) (y : Fin 2 → ℝ) :
+    ‖exp (E(d) 0 * (y 1 : ℂ) + E(d) 1 * (y 0 : ℂ))‖ =
+      Real.exp (d.exponent.re * (y 0 + y 1) - ((d.weight.natAbs : ℝ) + 1) / 2 * (y 0 - y 1)) := by
+  rw [Complex.norm_exp, shiftedExponent_induced_zero, shiftedExponent_induced_one]
+  congr 1
+  simp [Complex.mul_re]
+  ring
+
+/-- Absolute size of the Jacquet coefficient of any compact-finite vector in a single
+real nonzero-weight induced block, after extracting the central twist. -/
+def RealDiscreteOpenCellBoundStatement : Prop :=
+  ∀ (d : ComplexCharacterData), d.weight ≠ 0 → ∀ (a : ℝˣ) (f : V(d)),
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Fin 2 → ℝ) (k : K₂),
+      ‖additiveJacquetIntegral a f.val (torus y * k.val)‖ ≤
+        C * Real.exp ((y 0 - y 1) / 2 + d.exponent.re * (y 0 + y 1))
+
+theorem realDiscreteOpenCellBound : RealDiscreteOpenCellBoundStatement := by
+  intro d hd a f
+  obtain ⟨C, hC, hb⟩ := discrete_fourier_profile_bound d hd f
+  let c : ℝ := (NNReal.sqrt ‖(a : ℝ)‖₊ : ℝ)
+  let η := (d.weight.natAbs : ℝ) / 2
+  have hc : 0 ≤ c := NNReal.coe_nonneg _
+  let A := c * C * |(a : ℝ)| ^ η
+  have hA : 0 ≤ A := mul_nonneg (mul_nonneg hc hC) (Real.rpow_nonneg (abs_nonneg _) _)
+  refine ⟨A, hA, fun y k => ?_⟩
+  let b := y 0 - y 1
+  let u := d.exponent.re * (y 0 + y 1)
+  let t := Real.exp b
+  have ht : 0 < t := Real.exp_pos _
+  rw [additiveJacquetIntegral_eq_fourier, cellProfile_fourier_torus, norm_mul, norm_mul, norm_mul,
+    Complex.norm_real, Real.norm_of_nonneg hc, Complex.norm_real, Real.norm_of_nonneg ht.le,
+    norm_torus_spherical_multiplier]
+  change c * (t * Real.exp (u - ((d.weight.natAbs : ℝ) + 1) / 2 * b) *
+    ‖𝓕 (cellProfile f.val k.val) (t * -(a : ℝ))‖) ≤ _
+  calc
+    _ ≤ c * (t * Real.exp (u - ((d.weight.natAbs : ℝ) + 1) / 2 * b) *
+        (C * |t * -(a : ℝ)| ^ η)) := by
+      gcongr
+      exact hb k.val k.property _
+    _ = A * Real.exp (b / 2 + u) := by
+      rw [abs_mul, abs_neg, abs_of_pos ht, Real.mul_rpow ht.le (abs_nonneg _)]
+      dsimp only [t, A]
+      rw [← Real.exp_mul]
+      calc
+        _ = (c * C * |(a : ℝ)| ^ η) * (Real.exp b * Real.exp (u - ((d.weight.natAbs : ℝ) + 1) / 2 * b) *
+          Real.exp (b * η)) := by ring
+        _ = _ := by
+          rw [← Real.exp_add, ← Real.exp_add]
+          congr 2
+          dsimp [η]
+          ring
+
+private theorem blockTest_fourier_nonzero (d : ComplexCharacterData) (hd : d.weight ≠ 0)
+    (s : ℝˣ) (b : ℝ) (hs : (s : ℝ) = b) (hb : b = 1 ∨ b = -1) (q : ℝ) (hq : 0 < b * q) :
+    𝓕 (cellProfile (blockTest d) (diagonalPoint s)) q ≠ 0 := by
+  let n := d.weight.natAbs
+  have hn : n ≠ 0 := (Int.natAbs_pos.mpr hd).ne'
+  let A := (2 * Complex.I) ^ (n + 1)
+  let f (x : ℝ) : ℂ := (1 - (x : ℂ) * Complex.I)⁻¹ ^ (n + 1)
+  have hCell : cellProfile (blockTest d) (diagonalPoint s) = fun x => A * f (b * x) := by
+    funext x
+    have he := blockTest_openCell d b 1 x hb one_pos _
+      ((openCellPoint_val s x).trans (by rw [hs, mul_one]))
+    change cellProfile (blockTest d) (diagonalPoint s) x = _ at he
+    simpa only [Complex.ofReal_one, one_cpow, mul_one, Complex.ofReal_mul, n, A, f] using he
+  have hF : 𝓕 f = RealLowestWeightFourier.positiveExpPower 1 n := by
+    simpa only [Complex.ofReal_one, f] using (RealLowestWeightFourier.realLowestWeightFourier 1 one_pos n hn).2
+  have hReflection : 𝓕 (fun x => f (b * x)) q = 𝓕 f (b * q) := by
+    rcases hb with rfl | rfl
+    · simp only [one_mul]
+    · simp only [neg_mul, one_mul]
+      rw [← Real.fourierInv_eq_fourier_comp_neg, Real.fourierInv_eq_fourier_neg]
+  have hScale : 𝓕 (fun x => A * f (b * x)) q = A * 𝓕 (fun x => f (b * x)) q := by
+    simp only [Real.fourier_real_eq_integral_exp_smul, smul_eq_mul]
+    have h (x : ℝ) : exp (↑(-2 * Real.pi * x * q) * I) * (A * f (b * x)) =
+        A * (exp (↑(-2 * Real.pi * x * q) * I) * f (b * x)) := by ring
+    simp_rw [h, integral_const_mul]
+  rw [hCell, hScale, hReflection, hF, RealLowestWeightFourier.positiveExpPower, max_eq_left hq.le]
+  apply mul_ne_zero
+  · exact pow_ne_zero _ (mul_ne_zero two_ne_zero Complex.I_ne_zero)
+  · apply mul_ne_zero
+    · apply mul_ne_zero
+      · exact div_ne_zero (pow_ne_zero _ (mul_ne_zero two_ne_zero
+          (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero))) (by exact_mod_cast Nat.factorial_ne_zero n)
+      · exact pow_ne_zero _ (Complex.ofReal_ne_zero.mpr hq.ne')
+    · exact Complex.exp_ne_zero _
+
+private theorem additiveJacquetUniformLinear_discrete_ne_zero (d : ComplexCharacterData)
+    (hd : d.weight ≠ 0) (a : ℝˣ) :
+    additiveJacquetUniformLinear a (discrete_strictlyDominant d hd) ≠ 0 := by
+  let f : V(d) := ⟨blockTest d, blockTest_mem d⟩
+  have hnonzero : ∃ g : G, additiveJacquetIntegral a f.val g ≠ 0 := by
+    let q : ℝ := -(a : ℝ)
+    have hqat : q ≠ 0 := neg_ne_zero.mpr a.ne_zero
+    have hq : ∃ (s : ℝˣ) (b : ℝ), (s : ℝ) = b ∧ (b = 1 ∨ b = -1) ∧ 0 < b * q := by
+      rcases lt_or_gt_of_ne hqat with hneg | hpos
+      · exact ⟨-1, -1, by simp, Or.inr rfl, by simpa using neg_pos.mpr hneg⟩
+      · exact ⟨1, 1, by simp, Or.inl rfl, by simpa using hpos⟩
+    obtain ⟨s, b, hs, hb, hpos⟩ := hq
+    refine ⟨diagonalPoint s, ?_⟩
+    rw [additiveJacquetIntegral_eq_fourier]
+    exact mul_ne_zero (Complex.ofReal_ne_zero.mpr (NNReal.coe_ne_zero.mpr
+      (NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)).ne'))
+      (blockTest_fourier_nonzero d hd s b hs hb q hpos)
+  obtain ⟨g, hg⟩ := hnonzero
+  intro h
+  apply hg
+  rw [← additiveJacquetUniformLinear_apply a (discrete_strictlyDominant d hd) f, h]
+  rfl
+
+private theorem discrete_whittaker_eq_jacquetRange (d : ComplexCharacterData) (hd : d.weight ≠ 0)
+    (a : ℝˣ) :
+    realWhittakerModel 1 [.induced d] (-a) =
+      LinearMap.range (additiveJacquetUniformLinear a (discrete_strictlyDominant d hd)) := by
+  let ds := [RealBlock.induced d]
+  have hr : realRank ds = 2 := rfl
+  let C := additiveJacquetUniformLinear a (discrete_strictlyDominant d hd)
+  have hC : IsRealWhittakerIntertwiner 1 ds (-a) C :=
+    (isRealUniformWhittakerIntertwiner_additiveJacquetUniformLinear a (discrete_strictlyDominant d hd)).1
+  have hC₀ : C ≠ 0 := additiveJacquetUniformLinear_discrete_ne_zero d hd a
+  obtain ⟨T, hTs, hT⟩ := RealPrincipalSeries.surjectiveIntertwiner_ascendingExpand 2 ds hr
+  have hCt₀ : C.comp T ≠ 0 := by
+    intro he
+    apply hC₀
+    ext1 f
+    obtain ⟨v, rfl⟩ := hTs f
+    exact LinearMap.congr_fun he v
+  have hIncl : LinearMap.range C ≤ realWhittakerModel 1 ds (-a) :=
+    le_iSup_of_le C (le_iSup_of_le hC le_rfl)
+  apply le_antisymm ?_ hIncl
+  refine iSup_le fun B => iSup_le fun hB => ?_
+  obtain ⟨c, hc⟩ := RealPrincipalSeries.realExactCharacterWhittakerUniqueness 1
+    (RealPrincipalSeries.ascendingCharacters ds) ((RealPrincipalSeries.realRank_ascendingExpand ds).trans hr)
+    (-a) (B.comp T) (C.comp T) (RealPrincipalSeries.isRealWhittakerIntertwiner_pullback hT hB)
+    (RealPrincipalSeries.isRealWhittakerIntertwiner_pullback hT hC) hCt₀
+  rintro W ⟨f, rfl⟩
+  obtain ⟨v, rfl⟩ := hTs f
+  exact ⟨c • T v, (C.map_smul c (T v)).trans (LinearMap.congr_fun hc v).symm⟩
+
+/-- The exact Whittaker coefficient model of a single real nonzero-weight induced block
+has a half-modulus bound with the real determinant twist extracted. -/
+def RealDiscreteWhittakerBoundStatement : Prop :=
+  ∀ (d : ComplexCharacterData), d.weight ≠ 0 → ∀ (a : ℝˣ) (W : G → ℂ),
+    W ∈ realWhittakerModel 1 [.induced d] a →
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Fin 2 → ℝ) (k : K₂),
+      ‖W (torus y * k.val)‖ ≤ C * Real.exp ((y 0 - y 1) / 2 + d.exponent.re * (y 0 + y 1))
+
+theorem realDiscreteWhittakerBound : RealDiscreteWhittakerBoundStatement := by
+  intro d hd a W hW
+  have h := discrete_whittaker_eq_jacquetRange d hd (-a)
+  rw [neg_neg] at h
+  rw [h] at hW
+  obtain ⟨f, rfl⟩ := hW
+  rw [additiveJacquetUniformLinear_apply]
+  exact realDiscreteOpenCellBound d hd (-a) f
 
 end Langlands.Global.RankinSelbergGlobal.RealDiscreteRankTwoWhittaker

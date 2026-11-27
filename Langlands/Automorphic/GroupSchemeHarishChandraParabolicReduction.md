@@ -1,17 +1,18 @@
 # Parabolic Harish-Chandra finiteness from arithmetic finiteness and a center map
 
-`parabolicHarishChandraFiniteness_of_arithmetic_and_center` proves
-`ParabolicHarishChandraFinitenessReductionStatement`. Given
-`ArithmeticHarishChandraFinitenessStatement` and
-`ParabolicLeviCenterRestrictionStatement`, its conclusion is the published
-`ParabolicHarishChandraFinitenessStatement` at universe `u`.
+`RationalHarishChandraFinitenessFor F M` specializes
+`RationalHarishChandraFinitenessStatement` to the group \(M\) over \(F\).
+It gives a finite-dimensional bound for smooth moderate-growth rational
+automorphic functions on \(M(\mathbb A)\) at each fixed open finite level,
+cofinite center ideal and finite-dimensional space of compact profiles.
 
-The theorem first uses `rationalHarishChandraFiniteness_of_arithmetic` to
-obtain the finiteness bound on the full adelic rational quotient of each
-connected reductive Levi. It then applies the finite sampling theorem
-`finiteDimensional_span_of_leviRestrictions`. For a finite translate \(b\)
-and an infinite compact translate \(a\), it places the Levi restrictions in
-one fixed space of rational automorphic functions on the Levi.
+For the given parabolic and Levi \(M\),
+`parabolicHarishChandraFiniteness_of_rational_at_levi` uses this bound on
+\(M\) together with `ParabolicLeviCenterRestrictionStatement`. It applies
+the finite sampling theorem `finiteDimensional_span_of_leviRestrictions`.
+For a finite translate \(b\) and an infinite compact translate \(a\), it
+places the Levi restrictions in one fixed space of rational automorphic
+functions on \(M\).
 
 - Rational Levi invariance comes from the definition of the ambient
   parabolic quotient subgroup. The finite level is the inverse image of
@@ -37,8 +38,14 @@ one fixed space of rational automorphic functions on the Levi.
 The rational finiteness bound applies with this Levi level, compact profile
 space and ideal. The sampling theorem recovers the original functions from
 finitely many such restriction spaces and proves the required dimension
-bound. The two finiteness and center comparison propositions are premises of
-this implication.
+bound.
+
+`parabolicHarishChandraFiniteness_of_arithmetic_and_center` obtains the
+required bound on each Levi using
+`rationalHarishChandraFiniteness_of_arithmetic`. It proves
+`ParabolicHarishChandraFinitenessReductionStatement`, the implication from
+arithmetic finiteness and finite center restriction to
+`ParabolicHarishChandraFinitenessStatement` at universe `u`.
 
 This is the reduction by Levi restriction of Mœglin–Waldspurger,
 *Spectral Decomposition and Eisenstein Series* (1995), I.2.17, printed

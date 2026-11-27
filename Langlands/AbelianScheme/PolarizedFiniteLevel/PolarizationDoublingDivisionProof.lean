@@ -40,7 +40,8 @@ private theorem isIsogeny_nsmul_id (A : AbelianScheme S) {k : ℕ} (hk : 0 < k) 
   exact GroupScheme.multiplicationIsogeny S A.toGrp A.smooth A.proper
     A.geometricallyConnected (k : ℤ) (Nat.cast_ne_zero.mpr hk.ne')
 
-private theorem nsmul_hom_injective {k : ℕ} (hk : 0 < k) :
+/-- Positive integral multiplication is injective on abelian-scheme homomorphisms. -/
+theorem nsmul_hom_injective {k : ℕ} (hk : 0 < k) :
     Function.Injective (fun f : A ⟶ B => k • f) := by
   intro f g h
   have hf : (k • 𝟙 A) ≫ f = (k • 𝟙 A) ≫ g := by

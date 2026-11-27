@@ -38,3 +38,10 @@ VIII.4.2 target (`RationalCuspidalDiscreteCoefficientStatement`,
 estimates and the finite projected-level input are not proved here. The finite-level input can be supplied by a local VIII.4.1
 rank step; the proposition introduces no same-rank reconstruction or
 VIII.1 spectral-finiteness premise.
+
+`RationalCuspidalDiscreteUpperEstimateOfWeightsStatement` and
+`rationalCuspidalDiscreteUpperEstimateOfWeights` give the upper inclusion
+for any matrix height with the displayed central and ambient weight
+estimates. The proof applies the same translation and central integral
+argument to these weights. The version with a closed matrix embedding
+follows by specialization.

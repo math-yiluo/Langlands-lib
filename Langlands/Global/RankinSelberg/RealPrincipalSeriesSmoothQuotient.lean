@@ -67,10 +67,14 @@ protected theorem trans {ds es fs : List RealBlock}
 protected theorem refl (r : ℕ) (ds : List RealBlock) : SmoothStandardQuotient r ds ds :=
   ⟨ContinuousLinearMap.id ℂ _, fun _ _ => rfl, fun f => ⟨f, rfl⟩⟩
 
+set_option maxHeartbeats 500000 in
 /-- Equal underlying standard spaces give a continuous identification of
 all compact derivative coordinates and all translates. -/
-protected theorem of_eq {ds es : List RealBlock} (he : S ds = S es) :
-    SmoothStandardQuotient r ds es := by
+theorem exists_preserving_function_of_eq {ds es : List RealBlock} (he : S ds = S es) :
+    ∃ T : D ds →L[ℂ] D es,
+      (∀ g v, T (act ds g v) = act es g (T v)) ∧
+      (∀ f : V es, ∃ f' : V ds, T (compactFiniteEquiv ds f').val = (compactFiniteEquiv es f).val) ∧
+      ∀ v, ((derivativeEquiv es).symm (T v)).val = ((derivativeEquiv ds).symm v).val := by
   let e := Submodule.inclusion he.le
   let T : D ds →ₗ[ℂ] D es := (derivativeEquiv es).toLinearMap.comp
     (e.comp (derivativeEquiv ds).symm.toLinearMap)
@@ -99,7 +103,7 @@ protected theorem of_eq {ds es : List RealBlock} (he : S ds = S es) :
     change Continuous (fun v => (coord es (T v) Xs).val)
     simp_rw [hcoord]
     exact continuous_subtype_val.comp (derivativeCLM I (R ds) Xs).continuous
-  refine ⟨⟨T, hc⟩, fun g v => ?_, fun f => ?_⟩
+  refine ⟨⟨T, hc⟩, fun g v => ?_, fun f => ?_, fun v => ?_⟩
   · obtain ⟨f, rfl⟩ := (derivativeEquiv ds).surjective v
     change T (act ds g (derivativeEquiv ds f)) = act es g (T (derivativeEquiv ds f))
     rw [← derivativeEquiv_translate, hT, hT, ← derivativeEquiv_translate]
@@ -110,6 +114,14 @@ protected theorem of_eq {ds es : List RealBlock} (he : S ds = S es) :
     change T (derivativeEquiv ds _) = derivativeEquiv es _
     rw [hT]
     rfl
+  · change ((derivativeEquiv es).symm (derivativeEquiv es (e ((derivativeEquiv ds).symm v)))).val = _
+    rw [LinearEquiv.symm_apply_apply]
+    rfl
+
+protected theorem of_eq {ds es : List RealBlock} (he : S ds = S es) :
+    SmoothStandardQuotient r ds es := by
+  obtain ⟨T, hG, hpre, _⟩ := exists_preserving_function_of_eq he
+  exact ⟨T, hG, hpre⟩
 
 end SmoothStandardQuotient
 

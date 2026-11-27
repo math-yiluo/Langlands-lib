@@ -217,27 +217,33 @@ private theorem neg_half_modulus_le (y : Y) :
       exact le_abs_self _
     _ ≤ _ := mul_le_mul_of_nonneg_right h (abs_nonneg _)
 
-private theorem canonical_tempered_character_bound (a : ℝˣ) {p : L} {φ : U → ℂ}
-    (hφ : IsCompactProfile p φ) (z : P) (hz : ∀ i, (z i).re = 0) (ε : ℝ) (hε : 0 < ε) :
+/-- A continued Jacquet coefficient with uniform half-modulus estimates on nearby
+vertical segments has the tempered estimate at the center of the parameter disk. -/
+theorem canonicalTemperedBound_of_rightBoundary (a : ℝˣ) {p : L} {φ : U → ℂ}
+    (hφ : IsCompactProfile p φ) (q : ℂ → P) (hq : Differentiable ℂ q) {D : ℝ} (hD : 0 ≤ D)
+    (hBoundary : ∀ δ ∈ Ioo (0 : ℝ) 1, ∃ A : ℝ, 0 ≤ A ∧ ∀ t : ℂ, t.re = δ → |t.im| ≤ 1 →
+      ∀ (y : Y) (k : K), ‖canonicalJacquetFamily a hφ (q t) (torus y * k.val)‖ ≤
+        A * Real.exp (torusModularLog (r + 1) y / 2 + D * δ * ∑ i, |y i|))
+    (ε : ℝ) (hε : 0 < ε) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Y) (k : K),
-      ‖canonicalJacquetFamily a hφ z (torus y * k.val)‖ ≤
+      ‖canonicalJacquetFamily a hφ (q 0) (torus y * k.val)‖ ≤
         C * Real.exp (torusModularLog (r + 1) y / 2 + ε * ∑ i, |y i|) := by
   let W := canonicalJacquetFamily a hφ
-  let E := deform z '' closedBall (0 : ℂ) 2
-  have hE : IsCompact E := (isCompact_closedBall _ _).image (differentiable_deform z).continuous
+  let E := q '' closedBall (0 : ℂ) 2
+  have hE : IsCompact E := (isCompact_closedBall _ _).image hq.continuous
   have hW := canonicalJacquetFamily_properties a hφ
   obtain ⟨N₀, hN⟩ := exists_uniform_derivativeGrowth hW.2.1 hE (subset_univ E)
   obtain ⟨C, hC, hCbound⟩ := hN []
   let S (x : Y × K) : ℝ := ∑ i, |x.1 i|
   let m (y : Y) : ℝ := torusModularLog (r + 1) y / 2
   let F (t : ℂ) (x : Y × K) : ℂ :=
-    (Real.exp (-m x.1) : ℂ) * W (deform z t) (torus x.1 * x.2.val)
+    (Real.exp (-m x.1) : ℂ) * W (q t) (torus x.1 * x.2.val)
   have hF (x : Y × K) : Differentiable ℂ (fun t => F t x) :=
-    ((hW.2.2.1 [] _).comp (differentiable_deform z)).const_mul _
+    ((hW.2.2.1 [] _).comp hq).const_mul _
   have hS (x : Y × K) : 0 ≤ S x := Finset.sum_nonneg fun _ _ => abs_nonneg _
   have hNorm (t : ℂ) (x : Y × K) :
-      ‖F t x‖ = Real.exp (-m x.1) * ‖W (deform z t) (torus x.1 * x.2.val)‖ := by
-    change ‖(Real.exp (-m x.1) : ℂ) * W (deform z t) (torus x.1 * x.2.val)‖ = _
+      ‖F t x‖ = Real.exp (-m x.1) * ‖W (q t) (torus x.1 * x.2.val)‖ := by
+    change ‖(Real.exp (-m x.1) : ℂ) * W (q t) (torus x.1 * x.2.val)‖ = _
     rw [norm_mul, Complex.norm_real, Real.norm_of_nonneg (Real.exp_pos _).le]
   let C₀ := C * (2 * ((r : ℝ) + 1) ^ 2) ^ N₀
   have hC₀ : 0 ≤ C₀ := by dsimp [C₀]; positivity
@@ -245,8 +251,8 @@ private theorem canonical_tempered_character_bound (a : ℝˣ) {p : L} {φ : U �
   have hM : 0 ≤ M := by dsimp [M]; positivity
   have hDisk (t : ℂ) (ht : t ∈ closedBall (0 : ℂ) 2) (x : Y × K) :
       ‖F t x‖ ≤ C₀ * Real.exp (M * S x) := by
-    have htE : deform z t ∈ E := mem_image_of_mem _ ht
-    have h := hCbound (deform z t) htE (torus x.1 * x.2.val)
+    have htE : q t ∈ E := mem_image_of_mem _ ht
+    have h := hCbound (q t) htE (torus x.1 * x.2.val)
     have hh := RealWhittakerGauge.realMatrixHeight_torus_mul_pow_le x.1 x.2 N₀
     rw [hNorm]
     calc
@@ -271,29 +277,40 @@ private theorem canonical_tempered_character_bound (a : ℝˣ) {p : L} {φ : U �
           _ = _ := by ring
   have hLine (δ : ℝ) (hδ : δ ∈ Ioo (0 : ℝ) 1) :
       ∃ A : ℝ, 0 ≤ A ∧ ∀ t : ℂ, t.re = δ → |t.im| ≤ 1 → ∀ x : Y × K,
-        ‖F t x‖ ≤ A * Real.exp ((r : ℝ) * δ * S x) := by
-    obtain ⟨A, hA, h⟩ := canonical_bound_dominant_line a hφ z hz hδ.1
-    refine ⟨A, hA, fun t ht _ x => ?_⟩
+        ‖F t x‖ ≤ A * Real.exp (D * δ * S x) := by
+    obtain ⟨A, hA, h⟩ := hBoundary δ hδ
+    refine ⟨A, hA, fun t ht hi x => ?_⟩
     rw [hNorm]
     calc
-      _ ≤ Real.exp (-m x.1) * (A * Real.exp (m x.1 + (r : ℝ) * δ * S x)) :=
-        mul_le_mul_of_nonneg_left (h t ht x.1 x.2) (Real.exp_pos _).le
+      _ ≤ Real.exp (-m x.1) * (A * Real.exp (m x.1 + D * δ * S x)) :=
+        mul_le_mul_of_nonneg_left (h t ht hi x.1 x.2) (Real.exp_pos _).le
       _ = _ := by
         rw [mul_left_comm, ← Real.exp_add]
         congr 2
         ring
   obtain ⟨B, hB, h⟩ := smallExponentialAtZero_of_rightBoundary hS hF hC₀ hM
-    (Nat.cast_nonneg r) hDisk hLine ε hε
-  have hz₀ : deform z 0 = z := by ext i; simp [deform]
+    hD hDisk hLine ε hε
   refine ⟨B, hB, fun y k => ?_⟩
   have hb := h (y, k)
-  rw [hNorm, hz₀] at hb
+  rw [hNorm] at hb
   have hh := mul_le_mul_of_nonneg_left hb (Real.exp_pos (m y)).le
-  change Real.exp (m y) * (Real.exp (-m y) * ‖W z (torus y * k.val)‖) ≤
+  change Real.exp (m y) * (Real.exp (-m y) * ‖W (q 0) (torus y * k.val)‖) ≤
     Real.exp (m y) * (B * Real.exp (ε * S (y, k))) at hh
   rw [← mul_assoc, ← Real.exp_add, add_neg_cancel, Real.exp_zero, one_mul,
     mul_left_comm, ← Real.exp_add] at hh
   exact hh
+
+private theorem canonical_tempered_character_bound (a : ℝˣ) {p : L} {φ : U → ℂ}
+    (hφ : IsCompactProfile p φ) (z : P) (hz : ∀ i, (z i).re = 0) (ε : ℝ) (hε : 0 < ε) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Y) (k : K),
+      ‖canonicalJacquetFamily a hφ z (torus y * k.val)‖ ≤
+        C * Real.exp (torusModularLog (r + 1) y / 2 + ε * ∑ i, |y i|) := by
+  have hzero : deform z 0 = z := by ext i; simp [deform]
+  rw [← hzero]
+  refine canonicalTemperedBound_of_rightBoundary a hφ (deform z) (differentiable_deform z)
+    (Nat.cast_nonneg r) (fun δ hδ => ?_) ε hε
+  obtain ⟨A, hA, hb⟩ := canonical_bound_dominant_line a hφ z hz hδ.1
+  exact ⟨A, hA, fun t ht _ => hb t ht⟩
 
 /-- Every exact Whittaker coefficient of a real character list with imaginary exponents
 satisfies the tempered half-modulus estimate. -/

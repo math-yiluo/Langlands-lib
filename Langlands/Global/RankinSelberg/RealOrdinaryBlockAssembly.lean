@@ -191,16 +191,12 @@ private theorem normalizations_of_ascending {ds es : List RealBlock} {b : ℝˣ}
   rw [mul_comm (L.denominator s) (Z s), mul_assoc, mul_inv_cancel₀ hd₀, mul_one]
 
 private theorem regular_and_gauge {r : ℕ} {ds : List RealBlock} {z : ℂ} {a : ℝˣ}
-    {W : G r → ℂ} (hBound : ∀ i : ℕ, 0 < i → RealTemperedWhittakerBoundAtRank i)
+    {W : G r → ℂ} (hBound : RealTemperedWhittakerBoundAtRank r)
     (hr : realRank ds = r + 1) (hz : z.re = 0) (hW : W ∈ realWhittakerModel r (deformBlocks ds z) a) :
     W ∈ RealLocalWhittaker.regularFunctions r a ∧ HasTemperedGauge W := by
   have hR := realLocalWhittakerRegularity r (deformBlocks ds z) a W hW
-  have hB : RealTemperedWhittakerBoundAtRank r := by
-    cases r with
-    | zero => exact realTemperedWhittakerBoundAtRank_zero
-    | succ r => exact hBound (r + 1) (Nat.succ_pos _)
   exact ⟨hR [], hasTemperedGauge_of_derivativeBound hR
-    (hasTemperedDerivativeBound_of_model hB ((realRank_deformBlocks ds z).trans hr)
+    (hasTemperedDerivativeBound_of_model hBound ((realRank_deformBlocks ds z).trans hr)
       (realBlockExponent_deformBlocks hz) hW)⟩
 
 private theorem normalization_at_one (ds es : List RealBlock) (b : ℝˣ) (c : ℝ≥0) (hc : 0 < c)
@@ -240,77 +236,109 @@ def RealOrdinaryBlockAssemblyOnImaginaryAxisStatement : Prop :=
     RealOrdinaryNormalizedContinuationStatement
 
 set_option maxHeartbeats 1200000 in
+/-- The unequal-rank block normalization uses the scalar tempered estimates only at
+its two ranks, with character growth at the same pair of ranks. -/
+theorem realOrdinaryUnequalBlockAssembly {r t : ℕ} (h : t < r)
+    (hUnequal : RealLocalUnequalCharacterGrowthAtRanks r t h)
+    (hBoundr : RealTemperedWhittakerBoundAtRank r) (hBoundt : RealTemperedWhittakerBoundAtRank t)
+    {ds es : List RealBlock} (hr : realRank ds = r + 1) (ht : realRank es = t + 1)
+    (a : ℝˣ) (D : RealQuotientMeasureData t)
+    {W : G r → ℂ} {V : G t → ℂ}
+    (hFamily : HasRealOrdinaryHolomorphicTestFamilyOn {z : ℂ | z.re = 0} ds es a
+      (fun U U' => realUnequalIntegral h D U U') W V) :
+    Nonempty (OrdinaryIntegralNormalization (realUnequalIntegral h D W V)
+      (fun s => ((realPairLFactor ds es).denominator s)⁻¹)) := by
+  obtain ⟨U, U', σ, hU, hU', hAscending, hModel, hHol⟩ := hFamily
+  let c := NNReal.sqrt ‖(a : ℝ)‖₊
+  have hc : 0 < c := NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)
+  let sign := (determinant ds (-1) : ℂ) ^ (t + 1) * (determinant es (-1) : ℂ)
+  have hSign : sign ≠ 0 := mul_ne_zero (pow_ne_zero _ (Units.ne_zero _)) (Units.ne_zero _)
+  let Z (u : ℂ × ℂ) := realUnequalIntegral h D (U u.1) (U' u.1) u.2
+  let Zd (u : ℂ × ℂ) := realUnequalDualIntegral h a D (U u.1) (U' u.1) u.2
+  have hSlice (z : ℂ) (hz : z ∈ ball 0 3) :
+      PositionNormalization (deformBlocks ds z) (deformBlocks es z) (fun s => Z (z, s)) ∧
+      BlockPackage (deformBlocks ds z) (deformBlocks es z) (-a) c hc sign
+        (fun s => Z (z, s)) (fun s => Zd (z, s)) := by
+    have hd := (realRank_deformBlocks ds z).trans hr
+    have he := (realRank_deformBlocks es z).trans ht
+    have hN := hUnequal (ascendingExpand (deformBlocks ds z)) (ascendingExpand (deformBlocks es z))
+      ⟨_, rfl⟩ ⟨_, rfl⟩ ((realRank_ascendingExpand _).trans hd) ((realRank_ascendingExpand _).trans he)
+      a D (U z) (U' z) (hAscending z hz).1 (hAscending z hz).2
+    rw [RealPrincipalSeries.determinant_ascendingExpand, RealPrincipalSeries.determinant_ascendingExpand,
+      determinant_deformBlocks, determinant_deformBlocks] at hN
+    exact normalizations_of_ascending hN
+  change Nonempty (OrdinaryIntegralNormalization (realUnequalIntegral h D (W : G r → ℂ) V)
+    (fun s => ((realPairLFactor ds es).denominator s)⁻¹))
+  rw [← hU, ← hU']
+  refine normalization_at_one ds es (-a) c hc sign hSign Z Zd σ hHol
+    (fun z hz => (hSlice z hz).1) ?_
+  intro z hz him
+  obtain ⟨hW, hWg⟩ := regular_and_gauge hBoundr hr him (hModel z ⟨hz, him⟩).1
+  obtain ⟨hV, hVg⟩ := regular_and_gauge hBoundt ht him (hModel z ⟨hz, him⟩).2
+  exact ⟨(realTemperedOrdinaryConvergence.1 r t h D a _ _ hW hV hWg hVg).2,
+    (realTemperedBlockConvergence r t h D a _ _ hW hV hWg hVg).2, (hSlice z hz).2⟩
+
+set_option maxHeartbeats 1200000 in
+/-- The equal-rank block normalization uses character growth and the scalar tempered
+estimate at its rank. -/
+theorem realOrdinaryEqualBlockAssembly {r : ℕ}
+    (hEqual : RealLocalEqualCharacterGrowthAtRank r) (hBound : RealTemperedWhittakerBoundAtRank r)
+    {ds es : List RealBlock} (hr : realRank ds = r + 1) (ht : realRank es = r + 1)
+    (a : ℝˣ) (D : RealQuotientMeasureData r) (Φ : SchwartzMap (Fin (r + 1) → ℝ) ℂ)
+    {W V : G r → ℂ}
+    (hFamily : HasRealOrdinaryHolomorphicTestFamilyOn {z : ℂ | z.re = 0} ds es a
+      (fun U U' => realEqualIntegral D U U' Φ) W V) :
+    Nonempty (OrdinaryIntegralNormalization (realEqualIntegral D W V Φ)
+      (fun s => ((realPairLFactor ds es).denominator s)⁻¹)) := by
+  obtain ⟨U, U', σ, hU, hU', hAscending, hModel, hHol⟩ := hFamily
+  let c := NNReal.sqrt ‖(a : ℝ)‖₊
+  have hc : 0 < c := NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)
+  let sign := (determinant ds (-1) : ℂ) ^ r
+  have hSign : sign ≠ 0 := pow_ne_zero _ (Units.ne_zero _)
+  let Z (u : ℂ × ℂ) := realEqualIntegral D (U u.1) (U' u.1) Φ u.2
+  let Zd (u : ℂ × ℂ) := realEqualDualIntegral (-a) D (U u.1) (U' u.1) Φ u.2
+  have hSlice (z : ℂ) (hz : z ∈ ball 0 3) :
+      PositionNormalization (deformBlocks ds z) (deformBlocks es z) (fun s => Z (z, s)) ∧
+      BlockPackage (deformBlocks ds z) (deformBlocks es z) (-a) c hc sign
+        (fun s => Z (z, s)) (fun s => Zd (z, s)) := by
+    have hd := (realRank_deformBlocks ds z).trans hr
+    have he := (realRank_deformBlocks es z).trans ht
+    have hN := hEqual (ascendingExpand (deformBlocks ds z)) (ascendingExpand (deformBlocks es z))
+      ⟨_, rfl⟩ ⟨_, rfl⟩ ((realRank_ascendingExpand _).trans hd) ((realRank_ascendingExpand _).trans he)
+      a D (U z) (U' z) Φ (hAscending z hz).1 (hAscending z hz).2
+    rw [RealPrincipalSeries.determinant_ascendingExpand, determinant_deformBlocks] at hN
+    exact normalizations_of_ascending hN
+  change Nonempty (OrdinaryIntegralNormalization (realEqualIntegral D (W : G r → ℂ) V Φ)
+    (fun s => ((realPairLFactor ds es).denominator s)⁻¹))
+  rw [← hU, ← hU']
+  refine normalization_at_one ds es (-a) c hc sign hSign Z Zd σ hHol
+    (fun z hz => (hSlice z hz).1) ?_
+  intro z hz him
+  obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z ⟨hz, him⟩).1
+  obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z ⟨hz, him⟩).2
+  exact ⟨(realTemperedOrdinaryConvergence.2 r D a (-a) _ _ Φ hW hV hWg hVg).2.1,
+    (realTemperedOrdinaryConvergence.2 r D a (-a) _ _ Φ hW hV hWg hVg).2.2, (hSlice z hz).2⟩
+
+set_option maxHeartbeats 1200000 in
 theorem realOrdinaryBlockAssemblyOnImaginaryAxis :
     RealOrdinaryBlockAssemblyOnImaginaryAxisStatement := by
   intro hUnequal hEqual hBound hFamilies
+  have hAll (r : ℕ) : RealTemperedWhittakerBoundAtRank r := by
+    cases r with
+    | zero => exact realTemperedWhittakerBoundAtRank_zero
+    | succ r => exact hBound (r + 1) (Nat.succ_pos r)
   constructor
   · rintro r t h ds es hr ht a D ⟨W, V⟩
-    obtain ⟨U, U', σ, hU, hU', hAscending, hModel, hHol⟩ := hFamilies.1 r t h ds es hr ht a D W V W.2 V.2
-    let c := NNReal.sqrt ‖(a : ℝ)‖₊
-    have hc : 0 < c := NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)
-    let sign := (determinant ds (-1) : ℂ) ^ (t + 1) * (determinant es (-1) : ℂ)
-    have hSign : sign ≠ 0 := mul_ne_zero (pow_ne_zero _ (Units.ne_zero _)) (Units.ne_zero _)
-    let Z (u : ℂ × ℂ) := realUnequalIntegral h D (U u.1) (U' u.1) u.2
-    let Zd (u : ℂ × ℂ) := realUnequalDualIntegral h a D (U u.1) (U' u.1) u.2
-    have hSlice (z : ℂ) (hz : z ∈ ball 0 3) :
-        PositionNormalization (deformBlocks ds z) (deformBlocks es z) (fun s => Z (z, s)) ∧
-        BlockPackage (deformBlocks ds z) (deformBlocks es z) (-a) c hc sign
-          (fun s => Z (z, s)) (fun s => Zd (z, s)) := by
-      have hd := (realRank_deformBlocks ds z).trans hr
-      have he := (realRank_deformBlocks es z).trans ht
-      have hN := hUnequal r t h (ascendingExpand (deformBlocks ds z)) (ascendingExpand (deformBlocks es z))
-        ⟨_, rfl⟩ ⟨_, rfl⟩ ((realRank_ascendingExpand _).trans hd) ((realRank_ascendingExpand _).trans he)
-        a D (U z) (U' z) (hAscending z hz).1 (hAscending z hz).2
-      rw [RealPrincipalSeries.determinant_ascendingExpand, RealPrincipalSeries.determinant_ascendingExpand,
-        determinant_deformBlocks, determinant_deformBlocks] at hN
-      exact normalizations_of_ascending hN
-    change Nonempty (OrdinaryIntegralNormalization (realUnequalIntegral h D (W : G r → ℂ) V)
-      (fun s => ((realPairLFactor ds es).denominator s)⁻¹))
-    rw [← hU, ← hU']
-    refine normalization_at_one ds es (-a) c hc sign hSign Z Zd σ hHol
-      (fun z hz => (hSlice z hz).1) ?_
-    intro z hz him
-    obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z ⟨hz, him⟩).1
-    obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z ⟨hz, him⟩).2
-    exact ⟨(realTemperedOrdinaryConvergence.1 r t h D a _ _ hW hV hWg hVg).2,
-      (realTemperedBlockConvergence r t h D a _ _ hW hV hWg hVg).2, (hSlice z hz).2⟩
+    exact realOrdinaryUnequalBlockAssembly h (hUnequal r t h) (hAll r) (hAll t) hr ht a D
+      (hFamilies.1 r t h ds es hr ht a D W V W.2 V.2)
   · intro r
     cases r with
     | zero =>
       exact fun ds es hr ht a D => (rankOneOrdinaryNormalizedTests.1 ds es hr ht a D).1
     | succ k =>
       rintro ds es hr ht a D ⟨W, V, Φ⟩
-      let r := k + 1
-      have hp : 0 < r := Nat.succ_pos k
-      obtain ⟨U, U', σ, hU, hU', hAscending, hModel, hHol⟩ :=
-        hFamilies.2 r hp ds es hr ht a D W V Φ W.2 V.2
-      let c := NNReal.sqrt ‖(a : ℝ)‖₊
-      have hc : 0 < c := NNReal.sqrt_pos.mpr (nnnorm_pos.mpr a.ne_zero)
-      let sign := (determinant ds (-1) : ℂ) ^ r
-      have hSign : sign ≠ 0 := pow_ne_zero _ (Units.ne_zero _)
-      let Z (u : ℂ × ℂ) := realEqualIntegral D (U u.1) (U' u.1) Φ u.2
-      let Zd (u : ℂ × ℂ) := realEqualDualIntegral (-a) D (U u.1) (U' u.1) Φ u.2
-      have hSlice (z : ℂ) (hz : z ∈ ball 0 3) :
-          PositionNormalization (deformBlocks ds z) (deformBlocks es z) (fun s => Z (z, s)) ∧
-          BlockPackage (deformBlocks ds z) (deformBlocks es z) (-a) c hc sign
-            (fun s => Z (z, s)) (fun s => Zd (z, s)) := by
-        have hd := (realRank_deformBlocks ds z).trans hr
-        have he := (realRank_deformBlocks es z).trans ht
-        have hN := hEqual r hp (ascendingExpand (deformBlocks ds z)) (ascendingExpand (deformBlocks es z))
-          ⟨_, rfl⟩ ⟨_, rfl⟩ ((realRank_ascendingExpand _).trans hd) ((realRank_ascendingExpand _).trans he)
-          a D (U z) (U' z) Φ (hAscending z hz).1 (hAscending z hz).2
-        rw [RealPrincipalSeries.determinant_ascendingExpand, determinant_deformBlocks] at hN
-        exact normalizations_of_ascending hN
-      change Nonempty (OrdinaryIntegralNormalization (realEqualIntegral D (W : G r → ℂ) V Φ)
-        (fun s => ((realPairLFactor ds es).denominator s)⁻¹))
-      rw [← hU, ← hU']
-      refine normalization_at_one ds es (-a) c hc sign hSign Z Zd σ hHol
-        (fun z hz => (hSlice z hz).1) ?_
-      intro z hz him
-      obtain ⟨hW, hWg⟩ := regular_and_gauge hBound hr him (hModel z ⟨hz, him⟩).1
-      obtain ⟨hV, hVg⟩ := regular_and_gauge hBound ht him (hModel z ⟨hz, him⟩).2
-      exact ⟨(realTemperedOrdinaryConvergence.2 r D a (-a) _ _ Φ hW hV hWg hVg).2.1,
-        (realTemperedOrdinaryConvergence.2 r D a (-a) _ _ Φ hW hV hWg hVg).2.2, (hSlice z hz).2⟩
+      exact realOrdinaryEqualBlockAssembly (hEqual (k + 1) (Nat.succ_pos k)) (hAll (k + 1)) hr ht a D Φ
+        (hFamilies.2 (k + 1) (Nat.succ_pos k) ds es hr ht a D W V Φ W.2 V.2)
 
 /-- The real ordinary continuation follows from normalized growth for character pairs,
 the tempered scalar Whittaker bound, and the holomorphic deformation of the exact tests. -/

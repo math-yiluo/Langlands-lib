@@ -86,6 +86,14 @@ private theorem tail_parity_of_positions (d : ComplexCharacterData) :
   change ((d.weight.natAbs % 2 + 1) % 2 + 0) % 2 = (d.weight.natAbs + 1) % 2
   omega
 
+private theorem ascendingPositions_weight_zero (d : ComplexCharacterData) (hw : d.weight = 0) :
+    (ascendingPositions (.induced d)).map RealBlock.character = realBlockExpand (.induced d) := by
+  simp only [ascendingPositions, realBlockExpand, hw, ite_true, List.map_cons, List.map_nil,
+    high, low, RealInducedCharacter.ca, RealInducedCharacter.cb,
+    RealInducedCharacter.aExp, RealInducedCharacter.bExp, highParity, Int.natAbs_zero,
+    Nat.cast_zero, zero_div, add_zero, sub_zero]
+  rfl
+
 open RealCompactProbeBounds (CompactBound)
 open RealCompactDifferences (CompactDifferenceBound iteratedDifference)
 
@@ -155,14 +163,6 @@ protected theorem of_eq {n : ℕ} {ds es : List RealBlock}
     exact hf k
 
 end CompactlySplitStandardQuotient
-
-private theorem ascendingPositions_weight_zero (d : ComplexCharacterData) (hw : d.weight = 0) :
-    (ascendingPositions (.induced d)).map RealBlock.character = realBlockExpand (.induced d) := by
-  simp only [ascendingPositions, realBlockExpand, hw, ite_true, List.map_cons, List.map_nil,
-    high, low, RealInducedCharacter.ca, RealInducedCharacter.cb,
-    RealInducedCharacter.aExp, RealInducedCharacter.bExp, highParity, Int.natAbs_zero,
-    Nat.cast_zero, zero_div, add_zero, sub_zero]
-  rfl
 
 private theorem compactlySplitStandardQuotient_ascendingPositions (n : ℕ) (pre post : List RealBlock)
     (b : RealBlock) (hr : realRank (pre ++ b :: post) = n) :

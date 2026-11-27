@@ -35,7 +35,7 @@ local notation "IC" => 𝓘(ℝ, ℂ)
 
 /-- A real right-orbit derivative word acts linearly on finite sums of functions
 that are smooth on each archimedean slice. -/
-private theorem adelicIteratedDirectionalValue_finsetSum
+theorem adelicIteratedDirectionalValue_finsetSum
     {J : Type w} (s : List W) (t : Finset J) (c : J → ℂ) (f : J → A → ℂ) :
     letI := fun v : InfinitePlace F => InfinitePlaceGroupPoints.completionRCLike F v
     letI := smoothChartedSpace F G hG

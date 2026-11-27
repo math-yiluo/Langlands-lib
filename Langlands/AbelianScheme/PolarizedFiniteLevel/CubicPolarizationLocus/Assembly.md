@@ -1,0 +1,7 @@
+# Cubic polarization locus from geometric polarization division
+
+`cubicPolarizationLocus_of_fieldDivision` proves `CubicPolarizationLocusStatement` from `AlgebraicallyClosedFieldPolarizationDivisionStatement`, in every universe and with arbitrary locally noetherian test schemes.
+
+The closed divisibility locus of the ordinary Mumford map of the embedding bundle gives a unique homomorphism on that locus whose sixfold multiple is the changed Mumford map. The embedding bundle is geometrically ample, so the geometric recognition criterion gives a polarization there. Its cubic diagonal bundle gives a second closed equation by agreement up to a twist from the base. The prescribed degree is imposed by the open locus of the rank at the identity. The pullback of the closed and open loci gives the asserted immersion. Both factorization directions use the actual dual and cubic comparisons, and successive base changes are identified by their canonical isomorphism. A compatible polarization on a test is the unique divisor by six of the changed Mumford map, so its degree is the degree of the universal polarization after pullback.
+
+The construction follows Mumford, Fogarty and Kirwan, *Geometric Invariant Theory*, 3rd ed. (1994), Proposition 6.11 and Proposition 7.3 step (V), printed pp. 121–123 and 133–134 (PDF pp. 134–136 and 146–147). The registered source is `provided-ec58cb66687d0d54d9e39b6ec21281b651fe3a6d039f9b5d099c79791671233f`, SHA-256 `3eed7c31fd64936e20a41d85c85ebaeebc3f2631b01f561417b85bdf33b1af16`.

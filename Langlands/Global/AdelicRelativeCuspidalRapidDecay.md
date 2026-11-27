@@ -21,3 +21,6 @@ on the specified region.
 The proof uses the largest of zero and the log norms for roots in \(J\). A maximum of zero gives a bounded height and uses the order-zero estimate. A maximizing root in \(J\) has a vanishing maximal-parabolic constant term by relative cuspidality. Its iterated estimate bounds the function using finitely many derivative words on enlarged compact right factors. The simple-root lower bounds and the bounded complementary log coordinates bound the torus height exponentially in the maximizing log norm. The derivative order is chosen to absorb this exponential growth and the requested power of height. The finite set of roots gives a uniform constant.
 
 This proves the relative decay estimate used in the Hilbert–Schmidt argument of Bernstein–Lapid, §7.4, p. 217, on the specified regions with bounded complementary log coordinates.
+
+`exists_compact_factors_height_bound` bounds the change of height under
+left and right factors in fixed compact sets by a constant multiplier.

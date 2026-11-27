@@ -16,9 +16,13 @@ characters give equality of standard modules by the weight-zero
 expansion. Character blocks are kept. Induction on the list composes
 these surjections.
 
-`compactlySplitStandardQuotient_ascendingExpand` supplies a compact-equivariant
-section with a uniform bound on compact values. By `compactDifferenceBound_of_compactBound`,
-the section satisfies the same bound at each compact difference order.
+`compactlySplitStandardQuotient_ascendingExpand` also gives a
+compact-equivariant linear section for the surjection. On a nonzero-weight
+pair the inverse tail multiplier has square-summable coefficients, giving
+a bound on the compact supremum of the lifted vector. The bound survives
+composition of the sections. Compact equivariance gives the same estimate
+at each order of compact differences by
+`compactDifferenceBound_of_compactBound`.
 
 `isRealWhittakerIntertwiner_pullback` proves that precomposition with
 a standard-module intertwiner preserves the exact coefficient map.

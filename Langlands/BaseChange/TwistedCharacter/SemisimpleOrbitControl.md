@@ -1,0 +1,7 @@
+# Uniform transverse control for semisimple descent
+
+For a semisimple algebra automorphism `α` of a finite-dimensional normed algebra over a complete nontrivially normed field, the fixed algebra has an `α`-stable complement. `fixedUnitAdjoint α m` is the action `x ↦ m α(x) m⁻¹` for a unit `m` in the fixed algebra. `SemisimpleTransverseEstimateStatement` supplies a continuous linear projection `p` onto the fixed algebra, with `p α = p`, and a constant `C ≥ 0` such that `‖x − p x‖ ≤ C ‖m α(x) m⁻¹ − x‖` for all `x` and all `m` in a neighborhood of the identity.
+
+The proof projects the displacement onto the complement. At the identity its restriction to the complement is `α − 1`, which is invertible because the complement has no fixed vector. The displacement map varies continuously in operator norm. Composing the projected map with the inverse at the identity gives an operator within `1/2` of the identity near that point. The triangle inequality then bounds the norm of a complementary vector by twice the norm of its image under this composite. The fixed part contributes zero after projection, since the full displacement preserves the fixed algebra.
+
+This provides the uniform transverse estimate near the identity used in Clozel, *Characters of non-connected, reductive p-adic groups*, Canadian Journal of Mathematics 39 (1987), §3.6, condition (2) on the lattice in the centralizer, printed p. 159. The argument uses the complementary projection of the displacement and gives a bound directly in terms of the norm of the full displacement.

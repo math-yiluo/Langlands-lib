@@ -1,0 +1,7 @@
+# Real block Fourier multipliers on smooth slices
+
+`realSmoothBlockFourierMultiplier` extends a recurrent, polynomially bounded block symbol to a continuous map between the genuine smooth real standard carriers. It preserves the original compact-finite Frobenius map, intertwines the full real group action, and multiplies each block Fourier coefficient by the same symbol at every group element.
+
+The empty-word coordinate reconstructs the scalar standard function from its compact profile. Evaluating that profile at the rotated group argument is jointly continuous, so the Fourier integral on the fixed compact interval is continuous in the original vector. Density extends the compact-finite coefficient formula to all smooth vectors at the identity. The full group intertwining then transports the formula to any group element by right translation.
+
+`smoothBlockFourierMultiplier_slice` compares two such operators with the same symbol in a small rank and in an ambient rank. The normalized Levi slice of the ambient result equals the local operator applied to the slice at each ambient group element. The slice Fourier formula turns the local coefficient into the ambient one at the shifted block position, multiplied by the fixed slice factor. The operator symbols therefore give identical coefficients on the two sides. Fourier uniqueness on the rotation circle yields equality of the sliced functions. This derives a smooth version of the compact slice calculation in `RealTailKernelInStages` from `RealBlockSmoothExtension` and `RealInductionStagesSlice`.

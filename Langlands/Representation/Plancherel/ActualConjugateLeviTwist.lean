@@ -42,7 +42,7 @@ section PullbackTwist
 
 variable {M N : Type u} [Group M] [Group N] [TopologicalSpace M] [TopologicalSpace N]
 
-private def pullbackTwistEquiv (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M)
+def pullbackTwistEquiv (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M)
     (α : M →* ℂˣ) (β : N →* ℂˣ)
     (hα : IsOpen (α.ker : Set M)) (hβ : IsOpen (β.ker : Set N))
     (h : ∀ m, β m = α (e m)) :
@@ -55,7 +55,7 @@ private def pullbackTwistEquiv (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M
       (β m : ℂ) • A.representation (e m) v
     rw [h]
 
-private theorem pullbackTwistEquiv_linear_heq (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M)
+theorem pullbackTwistEquiv_linear_heq (e : N ≃ₜ* M) (A : SmoothRep.{0, u, uV} ℂ M)
     (α : M →* ℂˣ) (β : N →* ℂˣ)
     (hα : IsOpen (α.ker : Set M)) (hβ : IsOpen (β.ker : Set N))
     (h : ∀ m, β m = α (e m)) :

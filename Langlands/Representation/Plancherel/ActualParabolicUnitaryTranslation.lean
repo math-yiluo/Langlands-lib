@@ -77,21 +77,39 @@ theorem unitaryParameter_conjugation (z : Xu) :
     unitaryParameter χg (zg z) = conjugateParameter χ g (unitaryParameter χ z) :=
   restrict_unitary_inclusion (parameterConjugationIso χ g) z
 
+/-- The literal Levi character of the transported unitary point is the literal
+Levi character of the original unitary point after inverse conjugation. -/
+theorem unitaryParameter_conjugation_apply (z : Xu) (m : levi χg) :
+    (parameterTransport χg (unitaryParameter χg (zg z))).val m =
+      (parameterTransport χ (unitaryParameter χ z)).val ((leviConjugation χ g).symm m) := by
+  rw [unitaryParameter_conjugation]
+  exact conjugateParameter_apply χ g _ m
+
 variable (A : SmoothRep.{0, u, uV} ℂ (levi χ))
 
 set_option hygiene false in
 local notation "Ag" => conjugateRepresentation χ g A
 
-/-- The same-carrier conjugate-twist comparison at the transported unitary point. -/
+/-- The same-carrier conjugate-twist comparison at the transported unitary
+point: the identity linear map of the carrier of `A`, which intertwines because
+the two literal Levi characters agree pointwise
+(`unitaryParameter_conjugation_apply`). -/
 def unitaryTwistEquiv (z : Xu) :
     (conjugateRepresentation χ g (twistObject χ (unitaryParameter χ z) A)).representation.Equiv
       (twistObject χg (unitaryParameter χg (zg z)) Ag).representation :=
-  Eq.rec (motive := fun w _ =>
-      (conjugateRepresentation χ g
-        (twistObject χ (unitaryParameter χ z) A)).representation.Equiv
-        (twistObject χg w Ag).representation)
-    (conjugateTwistEquiv χ g (unitaryParameter χ z) A)
-    (unitaryParameter_conjugation χ g z).symm
+  pullbackTwistEquiv (leviConjugation χ g).symm A
+    (parameterTransport χ (unitaryParameter χ z)).val.toMonoidHom
+    (parameterTransport χg (unitaryParameter χg (zg z))).val.toMonoidHom
+    (unramifiedCharacter_isOpen_ker _ _) (unramifiedCharacter_isOpen_ker _ _)
+    (unitaryParameter_conjugation_apply χ g z)
+
+/-- The unitary conjugate-twist comparison is the identity linear map of the
+carrier of `A`. -/
+theorem unitaryTwistEquiv_linear_heq (z : Xu) :
+    HEq (unitaryTwistEquiv χ g A z).toLinearEquiv (LinearEquiv.refl ℂ A) := by
+  delta unitaryTwistEquiv
+  exact pullbackTwistEquiv_linear_heq (leviConjugation χ g).symm A _ _ _ _
+    (unitaryParameter_conjugation_apply χ g z)
 
 variable (K K' : OpenSubgroup (RationalPoint F G.X))
   (hKK' : RationalDynamicSource.conjugateCompact g K = K')
@@ -103,15 +121,47 @@ variable (K K' : OpenSubgroup (RationalPoint F G.X))
 set_option hygiene false in
 local notation "Pg" => conjugatePresentation χ g K K' hKK' P
 
+set_option hygiene false in
+local notation "D₀" => commonDecomposition χ P.cocharacter P.centralizer_eq
+set_option hygiene false in
+local notation "Dg" => commonDecomposition χg (Pg).cocharacter (Pg).centralizer_eq
+set_option hygiene false in
+local notation "hc₀" => radical_isClosed P.cocharacter
+set_option hygiene false in
+local notation "hcg" => radical_isClosed (Pg).cocharacter
+set_option hygiene false in
+local notation "hd₀" => DynamicOppositeCanonicalScalar.radical_unimodular P.cocharacter hG
+set_option hygiene false in
+local notation "hdg" => DynamicOppositeCanonicalScalar.radical_unimodular (Pg).cocharacter hG
+
 /-- Restrict the actual source-to-conjugate-source translation to the full
-unitary subgroup, with the target expressed at its own unitary parameter. -/
+unitary subgroup, with the target expressed at its own unitary parameter: the
+actual product left translation by `g` of the source coefficient fiber,
+followed by the same-Levi transport along `unitaryTwistEquiv`. -/
 def unitaryTranslation (z : Xu) :
-    (fiber χ A K P z).representation.Equiv (fiber χg Ag K' Pg (zg z)).representation :=
-  Eq.rec (motive := fun w _ =>
-      (fiber χ A K P z).representation.Equiv
-        (coefficientFiber χg (Pg).cocharacter (Pg).centralizer_eq Ag w).representation)
-    (translatedCoefficient χ g K K' hKK' P hG A hK hK' (unitaryParameter χ z))
-    (unitaryParameter_conjugation χ g z).symm
+    (fiber χ A K P z).representation.Equiv (fiber χg Ag K' Pg (zg z)).representation := by
+  letI := quotientCompact K hK P.cocharacter P.iwasawa
+  letI := quotientCompact K' hK' (Pg).cocharacter (Pg).iwasawa
+  exact (CoefficientConjugation.leviCoefficientLeftTranslation D₀ Dg g
+    (DynamicCoefficientConjugation.parabolic_mem_conjugation P.cocharacter g)
+    (DynamicCoefficientConjugation.levi_mem_conjugation χ g)
+    (DynamicCoefficientConjugation.radical_mem_conjugation P.cocharacter g)
+    hc₀ hcg hd₀ hdg (twistObject χ (unitaryParameter χ z) A)).trans
+      (ActualConjugateLeviTensor.coefficientCongr Dg hcg hdg (unitaryTwistEquiv χ g A z))
+
+/-- The unitary translation is the actual product left translation followed by
+the transport along the unitary conjugate-twist comparison. -/
+theorem unitaryTranslation_eq (z : Xu) :
+    letI := quotientCompact K hK P.cocharacter P.iwasawa
+    letI := quotientCompact K' hK' (Pg).cocharacter (Pg).iwasawa
+    unitaryTranslation χ g A K K' hKK' P hG hK hK' z =
+      (CoefficientConjugation.leviCoefficientLeftTranslation D₀ Dg g
+        (DynamicCoefficientConjugation.parabolic_mem_conjugation P.cocharacter g)
+        (DynamicCoefficientConjugation.levi_mem_conjugation χ g)
+        (DynamicCoefficientConjugation.radical_mem_conjugation P.cocharacter g)
+        hc₀ hcg hd₀ hdg (twistObject χ (unitaryParameter χ z) A)).trans
+        (ActualConjugateLeviTensor.coefficientCongr Dg hcg hdg (unitaryTwistEquiv χ g A z)) :=
+  rfl
 
 variable (Q : ParabolicPresentation χg K')
 
