@@ -22,8 +22,10 @@ simple), let `𝓛_E` be the `𝔬_E`-lattice chain of `𝔅 = 𝔄 ∩ End_E(F^
 field of `𝔬_E`. Write `J = J(β, 𝔄)` (`simpleJ`) and `J^1 = J^1(β, 𝔄)` (`simpleJGroup … 1`).
 The map `ι : U(𝔅) → J` is the identification `LatticeChain.relativeUnitFiltrationEquiv` of the
 units of `𝓛_E` with the `E`-linear part of `U(𝔄)`, followed by the inclusion
-`relativeUnitFiltration_le_simpleJ` into `J`; and `J` acts on `π` through
-`Matrix.GeneralLinearGroup.toLin` (the map `toGL`). Suppose:
+`relativeUnitFiltration_le_simpleJ` into `J`; and `J` acts on `π` through the map `toGL`: the
+inclusion of the subgroup `J` into `Aut_F(F^N)` followed by
+`Matrix.GeneralLinearGroup.toLin.symm`, which sends an automorphism to its matrix in
+`GL_N(F)`. Suppose:
 
 1. `θ ∈ C(𝔄, 0, β)` (`simpleCharacters ψF S.chain S.n S.b q.tail 0`);
 2. `η` is a representation of `J^1` on `ℂ^{dη}` lying over `θ`

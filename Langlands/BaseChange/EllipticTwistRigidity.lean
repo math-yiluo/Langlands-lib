@@ -1,3 +1,4 @@
+import Langlands.Representation.Character.WeightedTest
 import Langlands.BaseChange.EllipticDiscreteTraceSeparationStatement
 import Langlands.BaseChange.CyclicNormDeterminant
 import Langlands.BaseChange.OrbitalIntegral
@@ -98,37 +99,6 @@ variable {G : Type*} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
   [MeasurableSpace G] [BorelSpace G]
   {V : Type*} [AddCommGroup V] [Module ℂ V]
 
-private def weightedTest (χ : G →* ℂˣ)
-    (hloc : IsLocallyConstant fun g : G => (χ g : ℂ)) (f : SchwartzBruhat G) :
-    SchwartzBruhat G :=
-  ⟨fun g => (χ g : ℂ) * f g, hloc.comp₂ f.locallyConstant (· * ·), f.hasCompactSupport.mul_left⟩
-
-private theorem distribution_twist_weightedTest (μ : Measure G) [μ.IsHaarMeasure]
-    (ρ : Representation ℂ G V) (hρ : IsAdmissible ρ) (χ : G →* ℂˣ)
-    (hloc : IsLocallyConstant fun g : G => (χ g : ℂ))
-    (htwist : IsAdmissible (twist χ ρ)) (f : SchwartzBruhat G) :
-    Character.distribution μ (twist χ ρ) htwist f =
-      Character.distribution μ ρ hρ (weightedTest χ hloc f) := by
-  rw [Character.distribution_apply, Character.distribution_apply]
-  apply congrArg FiniteRankEnd.trace
-  apply Subtype.ext
-  simp only [Character.finiteRankIntegratedAction_coe]
-  ext x
-  rw [Hecke.integratedAction_apply, Hecke.integratedAction_apply]
-  congr 1
-  ext g
-  simp only [Hecke.actionIntegrand_apply]
-  change f g • ((χ g : ℂ) • ρ g x) = ((χ g : ℂ) * f g) • ρ g x
-  rw [smul_smul, mul_comm (f g) (χ g : ℂ)]
-
-private theorem distribution_eq_of_equiv (μ : Measure G) [μ.IsHaarMeasure]
-    {V' : Type*} [AddCommGroup V'] [Module ℂ V']
-    {ρ : Representation ℂ G V} {ρ' : Representation ℂ G V'}
-    (hρ : IsAdmissible ρ) (hρ' : IsAdmissible ρ') (e : ρ.Equiv ρ') :
-    Character.distribution μ ρ hρ = Character.distribution μ ρ' hρ' :=
-  Character.distribution_eq_of_equivariant μ ρ hρ ρ' hρ' e.toLinearEquiv
-    (fun g x => DFunLike.congr_fun (e.isIntertwining' g) x)
-
 private theorem unitary_of_finite_character {Q : Type*} [Group Q] [Finite Q]
     (χ : Q →* ℂˣ) (x : Q) : ‖(χ x : ℂ)‖ = 1 := by
   have hpow : ‖(χ x : ℂ)‖ ^ orderOf x = 1 := by
@@ -176,17 +146,17 @@ private theorem sum_distribution_twists
   let := charFintype (A := Q)
   have hterm (χ : Q →* ℂˣ) :
       Character.distribution μ (twist (χ.comp d) ρ) (htwist χ) f =
-        Character.distribution μ ρ hρ (weightedTest (χ.comp d) (hloc χ) f) :=
-    distribution_twist_weightedTest μ ρ hρ (χ.comp d) (hloc χ) (htwist χ) f
+        Character.distribution μ ρ hρ (Character.weightedTest (χ.comp d) (hloc χ) f) :=
+    Character.distribution_twist_weightedTest μ ρ hρ (χ.comp d) (hloc χ) (htwist χ) f
   simp_rw [hterm]
   rw [← map_sum]
-  have hsum : (∑ χ : Q →* ℂˣ, weightedTest (χ.comp d) (hloc χ) f) =
+  have hsum : (∑ χ : Q →* ℂˣ, Character.weightedTest (χ.comp d) (hloc χ) f) =
       (Nat.card Q : ℂ) • ConcordanceLocalization.cutoff hc f := by
     apply Subtype.ext
     funext g
     let ev : SchwartzBruhat G →ₗ[ℂ] ℂ :=
       (LinearMap.proj g).comp (schwartzBruhatSubmodule G).subtype
-    change ev (∑ χ : Q →* ℂˣ, weightedTest (χ.comp d) (hloc χ) f) =
+    change ev (∑ χ : Q →* ℂˣ, Character.weightedTest (χ.comp d) (hloc χ) f) =
       (Nat.card Q : ℂ) * ConcordanceLocalization.cutoff hc f g
     rw [map_sum, ConcordanceLocalization.cutoff_apply]
     change (∑ χ : Q →* ℂˣ, (χ (d g) : ℂ) * f g) =
@@ -304,7 +274,7 @@ theorem ellipticTwistRigidity_of_separation
           apply Finset.sum_congr rfl
           intro χ hχ
           let e := (Finset.mem_filter.mp hχ).2.some
-          exact DFunLike.congr_fun (distribution_eq_of_equiv μ hπ' (h₂ χ) e).symm f
+          exact DFunLike.congr_fun (Character.distribution_eq_of_equiv μ hπ' (h₂ χ) e).symm f
         _ = _ := by rw [Finset.sum_const, nsmul_eq_mul]
     have h := Finset.sum_filter_add_sum_filter_not Finset.univ p (fun χ => tr₂ χ f)
     change (∑ χ ∈ S, tr₂ χ f) + (∑ χ ∈ Finset.univ.filter (fun χ => ¬ p χ), tr₂ χ f) =
@@ -323,7 +293,7 @@ theorem ellipticTwistRigidity_of_separation
     (isAdmissible_iff_of_equiv (universeLiftEquiv (T₂ j.val))).mp (h₂ j.val)
   have hright₂ (f : SchwartzBruhat (GeneralLinear n F)) (j : D₂) :
       Character.distribution μ (reps₂ j) (hr₂ j) f = tr₂ j.val f :=
-    DFunLike.congr_fun (distribution_eq_of_equiv μ (h₂ j.val) (hr₂ j)
+    DFunLike.congr_fun (Character.distribution_eq_of_equiv μ (h₂ j.val) (hr₂ j)
       (universeLiftEquiv (T₂ j.val))).symm f
   have hir₂ (j : D₂) : (reps₂ j).IsIrreducible :=
     (isIrreducible_iff_of_equiv (universeLiftEquiv (T₂ j.val))).mp (hi₂ j.val)
@@ -385,11 +355,11 @@ theorem ellipticTwistRigidity_of_separation
     have h := hsplit f hf
     have hleft (χ : D) :
         Character.distribution μ (reps (.inl χ)) (hr (.inl χ)) f = tr₁ χ f :=
-      DFunLike.congr_fun (distribution_eq_of_equiv μ (h₁ χ) (hr (.inl χ))
+      DFunLike.congr_fun (Character.distribution_eq_of_equiv μ (h₁ χ) (hr (.inl χ))
         (universeLiftEquiv (T₁ χ))).symm f
     have hright (χ : D₂) :
         Character.distribution μ (reps (.inr χ)) (hr (.inr χ)) f = tr₂ χ.val f :=
-      DFunLike.congr_fun (distribution_eq_of_equiv μ (h₂ χ.val) (hr (.inr χ))
+      DFunLike.congr_fun (Character.distribution_eq_of_equiv μ (h₂ χ.val) (hr (.inr χ))
         (universeLiftEquiv (T₂ χ.val))).symm f
     rw [Fintype.sum_sum_type]
     simp only [coef, Sum.elim_inl, Sum.elim_inr, hleft, hright, ← Finset.mul_sum]

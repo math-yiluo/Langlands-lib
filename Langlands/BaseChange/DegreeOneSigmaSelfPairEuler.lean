@@ -98,7 +98,7 @@ section Dual
 variable {G H : Type*} [Group G] [Group H] [TopologicalSpace G] [TopologicalSpace H]
   [IsTopologicalGroup G] [IsTopologicalGroup H] {V : Type uV} [AddCommGroup V] [Module ℂ V]
 
-private def smoothContragredientCompEquiv
+def smoothContragredientCompEquiv
     (ρ : Representation ℂ H V) (e : G ≃ₜ* H) :
     (smoothContragredient (ρ.comp e.toMonoidHom)).Equiv ((smoothContragredient ρ).comp e.toMonoidHom) := by
   have hs : smoothVectors (Representation.dual (ρ.comp e.toMonoidHom)) = smoothVectors ρ.dual :=

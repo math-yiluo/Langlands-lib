@@ -123,7 +123,9 @@ def DefiningSequenceChoice.prepend {S T : Stratum 𝒪[F] F V} (hS : S.IsSimple)
     (q.prepend hS hT h₀ hDer).tail = T.b :: q.tail := by
   simp [DefiningSequenceChoice.prepend, DefiningSequenceChoice.tail, List.ofFn_succ, h₀]
 
-private def terminalChoice (S : Stratum 𝒪[F] F V) (hS : S.IsSimple)
+/-- The defining sequence `([𝔄, n, r, β])` of length one of a simple stratum whose critical
+exponent is `-n` or `-∞` (BK93 (2.4.2), printed p. 66: no further approximation is needed). -/
+def terminalDefiningSequence (S : Stratum 𝒪[F] F V) (hS : S.IsSimple)
     (h : criticalExponent S.chain S.b = ((-S.n : ℤ) : WithBot ℤ) ∨
       criticalExponent S.chain S.b = ⊥) : S.DefiningSequenceChoice :=
   ⟨0, fun _ => S, ⟨hS.1, fun _ => ⟨rfl, rfl, hS⟩, rfl, rfl,
@@ -150,7 +152,7 @@ theorem exists_exact_definingSequenceChoice (hApprox : PureStratumSimpleApproxim
     intro S hd hS
     by_cases hstop : criticalExponent S.chain S.b = ((-S.n : ℤ) : WithBot ℤ) ∨
         criticalExponent S.chain S.b = ⊥
-    · exact ⟨terminalChoice S hS hstop, rfl, fun _ => rfl⟩
+    · exact ⟨terminalDefiningSequence S hS hstop, rfl, fun _ => rfl⟩
     obtain ⟨k, hk⟩ : ∃ k : ℤ, criticalExponent S.chain S.b = (k : WithBot ℤ) := by
       cases h : criticalExponent S.chain S.b with
       | bot => exact (hstop (.inr h)).elim

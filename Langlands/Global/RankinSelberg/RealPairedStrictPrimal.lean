@@ -194,3 +194,25 @@ theorem realPairedStrictPrimal : RealPairedStrictPrimalStatement n E R := by
   exact realPairedStrictPrimalAt n E R 0 1 (by decide)
 
 end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+variable (n : Fin 2 → ℕ) (E : Fin 2 → Type*)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((n i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedStrictPrimalAtBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedStrictPrimalAtStatement n E R
+
+theorem realPairedStrictPrimalAtBanach [∀ i, CompleteSpace (E i)] : RealPairedStrictPrimalAtBanachStatement n E R :=
+  realPairedStrictPrimalAt n E R
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedStrictPrimalBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedStrictPrimalStatement n E R
+
+theorem realPairedStrictPrimalBanach [∀ i, CompleteSpace (E i)] : RealPairedStrictPrimalBanachStatement n E R :=
+  realPairedStrictPrimal n E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising

@@ -38,8 +38,10 @@ appropriate common upper levels of a Hecke correspondence are given.
 - Milne, *Étale Cohomology* (1980), V.1, Lemma 1.12 and proof,
   printed pp. 168–169. Registered ID `milne-1980-etale-cohomology`,
   SHA-256 `0a2f02682f82db8385e4dc6c77c7113900b11d6c313f34f8b354a3a9a391d232`.
-- Faltings, *p-adic Hodge theory* (1988), III §4(b), Theorem 4.1
-  and the preceding discussion of functoriality, printed p. 298,
-  with the twist convention of §1(b)–(c). Registered ID
+- Faltings, *p-adic Hodge theory* (1988), §1(b), printed p. 255,
+  for the natural proper smooth comparison and its form-degree twist,
+  and the final paragraph of III §4(a), printed p. 298, for pullback
+  along maps of generic fibres. Theorem 4.1 is in III §4(c), p. 298.
+  Registered ID
   `provided-1991b7d5032d5fe94ca932ccbeccf293bafd80aa29a350ed2fda545cf46b9440`, SHA-256
   `2eb8b02f9e3e7662e1e79229488ee7e98240e23f221f1c9aaa7bec79cf329024`.

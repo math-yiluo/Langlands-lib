@@ -1,0 +1,5 @@
+# Frobenius maps in a consecutive block slice
+
+Let `ds` and `es` be two real block lists of rank `r`. Given Frobenius data for an adjacent rotation at position `p` from `ds` to `es`, `IsBlockFrobData.inStages` extends the data to the lists `pre ++ ds ++ post` and `pre ++ es ++ post`. The multiplier is unchanged and the ambient rotation starts at `realRank pre + p`. The proof translates positions inside the slice by `realRank pre`. Signs, exponents, and induced blocks outside the slice agree because the surrounding lists coincide and the two slices have the same rank.
+
+`realBlockFrobeniusInStages` identifies the linear map of the extended data with `InductionStages.ind` applied to the local map. It uses the local map's compact equivariance to form `ind`. The slice identity `RealAmbientCanonicalCharacterBraid.sliceK_frob` equates the local compact slices. Evaluating at the identity gives the same value at every ambient orthogonal matrix, so the principal-series transformation law gives equality on the full group.

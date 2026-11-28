@@ -288,3 +288,38 @@ theorem realPairedEqualOrdinaryReflection : RealPairedEqualOrdinaryReflectionSta
 end Equal
 
 end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+universe uRep uTest
+
+variable (r t : ℕ) (E : Fin 2 → Type uRep)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((pairRanks r t i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedUnequalOrdinaryReflectionBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedUnequalOrdinaryReflectionStatement.{uRep, uTest} r t E R
+
+theorem realPairedUnequalOrdinaryReflectionBanach [∀ i, CompleteSpace (E i)] : RealPairedUnequalOrdinaryReflectionBanachStatement.{uRep, uTest} r t E R :=
+  realPairedUnequalOrdinaryReflection r t E R
+
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+universe uRep uTest
+
+variable (r : ℕ) (E : Fin 2 → Type uRep)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((pairRanks r r i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedEqualOrdinaryReflectionBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedEqualOrdinaryReflectionStatement.{uRep, uTest} r E R
+
+theorem realPairedEqualOrdinaryReflectionBanach [∀ i, CompleteSpace (E i)] : RealPairedEqualOrdinaryReflectionBanachStatement.{uRep, uTest} r E R :=
+  realPairedEqualOrdinaryReflection r E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising

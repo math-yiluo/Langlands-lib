@@ -20,18 +20,21 @@ conjugation action on the radical. For a dynamic parabolic,
 `normOneParabolicDensity_eq_inverseModulus` identifies this action
 with conjugation by the same point in the ambient group. The adelic
 parabolic modulus theorem identifies its modulus with the character
-norm of the adjoint determinant. Its inverse is the negative modulus
-parameter already used in the full Iwasawa integral. By the Haar
+norm of the adjoint determinant. The inverse determinant norm is the
+parameter power at the negative modulus parameter evaluated on the
+parabolic image of the Levi point. On Delorme's relative split coordinate
+\(X\) this gives \(\exp(-2\rho_Q(X))\). By the Haar
 product theorem for radical-first order and Haar uniqueness,
 `exists_normOneParabolicHaarProduct` fixes the radical Haar factor
 and absorbs the required scalar in the ambient norm-one Levi Haar.
 
-Finally, the Levi retraction and the Levi section preserve principal
-points. The preimage of the principal parabolic under the radical
+The Levi retraction and the Levi section preserve principal
+points and give a split extension of the corresponding discrete subgroups.
+The preimage of the principal parabolic under the radical
 inclusion is precisely the principal radical, by rational point
 lifting through the closed radical immersion.
 `normOneParabolicFundamentalDomain` applies the strict fundamental
-domain theorem for a split lattice. The product of the radical and
+domain theorem for split discrete subgroups. The product of the radical and
 ambient norm-one Levi domains, carried through radical-first
 multiplication, is a fundamental domain for the principal parabolic.
 

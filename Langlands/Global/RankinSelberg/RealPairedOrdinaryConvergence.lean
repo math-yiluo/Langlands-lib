@@ -189,3 +189,18 @@ theorem realPairedOrdinaryConvergence : RealPairedOrdinaryConvergenceStatement n
   exact hConv'
 
 end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+variable (n : Fin 2 → ℕ) (E : Fin 2 → Type*)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((n i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedOrdinaryConvergenceBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedOrdinaryConvergenceStatement n E R
+
+theorem realPairedOrdinaryConvergenceBanach [∀ i, CompleteSpace (E i)] : RealPairedOrdinaryConvergenceBanachStatement n E R :=
+  realPairedOrdinaryConvergence n E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising

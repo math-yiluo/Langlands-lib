@@ -9,30 +9,32 @@ import Langlands.Geometry.Analytic.LocalizedEtaleComposition
 
 noncomputable section
 
-universe u
+universe u v w
 
 namespace Langlands.Analytic.SaturatedAtlasPresentation
 
 open _root_.CategoryTheory Set
 open AffinoidAtlasPresentation PresentedAffinoidAlgebra
 
+attribute [local instance] chartSpectrum_small
+
 variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
-  {A B : SaturatedAtlasPresentation.{u, u, u} K}
+  {A B : SaturatedAtlasPresentation.{u, v, v} K}
 
 /-- The actual localized inclusion of the small spectrum of an atlas chart. -/
-abbrev localizedSmallChart (A : SaturatedAtlasPresentation.{u, u, u} K)
+abbrev localizedSmallChart (A : SaturatedAtlasPresentation.{u, v, v} K)
     (i : A.presentation.atlas.Index) :
     localizationFunctor.obj (A.smallChartSpectrum i) ⟶ localizationFunctor.obj A :=
   localizationFunctor.map (A.smallChartSpectrumInclusion i)
 
 /-- The small spectrum of an atlas chart as the associated analytic domain. -/
-def localizedSmallChartDomainIso (A : SaturatedAtlasPresentation.{u, u, u} K)
+def localizedSmallChartDomainIso (A : SaturatedAtlasPresentation.{u, v, v} K)
     (i : A.presentation.atlas.Index) :
     localizationFunctor.obj (A.smallChartSpectrum i) ≅
       localizationFunctor.obj (A.domain (A.chartDomain i)) :=
   localizationFunctor.mapIso (A.smallChartDomainIso i)
 
-theorem localizedSmallChart_eq_domainInclusion (A : SaturatedAtlasPresentation.{u, u, u} K)
+theorem localizedSmallChart_eq_domainInclusion (A : SaturatedAtlasPresentation.{u, v, v} K)
     (i : A.presentation.atlas.Index) :
     localizedSmallChart A i =
       (A.localizedSmallChartDomainIso i).hom ≫ A.localizedDomainInclusion (A.chartDomain i) :=
@@ -76,7 +78,7 @@ theorem localizedSmallChart_injective (i : A.presentation.atlas.Index) :
 
 /-- A map with image in a chart factors through the chart's small spectrum. -/
 theorem exists_factor_localizedSmallChart
-    {Z : LocalizedCategory.{u, u, u} (K := K)} (a : Z ⟶ localizationFunctor.obj A)
+    {Z : LocalizedCategory.{u, v, v} (K := K)} (a : Z ⟶ localizationFunctor.obj A)
     (i : A.presentation.atlas.Index)
     (ha : ∀ z, localizedSpaceFunctor.map a z ∈ range (A.presentation.atlas.chart i)) :
     ∃ l : Z ⟶ localizationFunctor.obj (A.smallChartSpectrum i),
@@ -91,13 +93,13 @@ theorem localizedSmallChart_comp_map (f : A ⟶ B)
     (i : A.presentation.atlas.Index) (j : B.presentation.atlas.Index)
     (h : f.baseMap '' range (A.presentation.atlas.chart i) ⊆ range (B.presentation.atlas.chart j)) :
     A.localizedSmallChart i ≫ localizationFunctor.map f =
-      SmallAffinoidSpectrum.localizedMapEquiv.{u, u} _ _ (f.pullback i j h) ≫
+      SmallAffinoidSpectrum.localizedMapEquiv.{u, v} _ _ (f.pullback i j h) ≫
         B.localizedSmallChart j := by
   let R := A.presentation.atlas.algebra i
   let S := B.presentation.atlas.algebra j
   let g := f.pullback i j h
   have h₁ := SmallAffinoidSpectrum.chartMap_comp R i (BoundedAlgHom.id K R) f j h
-  have h₂ := SmallAffinoidSpectrum.map_comp_chartMap.{u, u} g j (BoundedAlgHom.id K S)
+  have h₂ := SmallAffinoidSpectrum.map_comp_chartMap.{u, v} g j (BoundedAlgHom.id K S)
   rw [BoundedAlgHom.id_comp] at h₁
   rw [BoundedAlgHom.comp_id] at h₂
   exact (localizationFunctor.map_comp _ _).symm.trans
@@ -105,7 +107,7 @@ theorem localizedSmallChart_comp_map (f : A ⟶ B)
       (localizationFunctor.map_comp _ _))
 
 set_option backward.isDefEq.respectTransparency false in
-theorem localizedSmallChart_domain_comp (A : SaturatedAtlasPresentation.{u, u, u} K)
+theorem localizedSmallChart_domain_comp (A : SaturatedAtlasPresentation.{u, v, v} K)
     (D : A.AnalyticDomain) (i : (A.domain D).presentation.atlas.Index) :
     (A.domain D).localizedSmallChart i ≫ A.localizedDomainInclusion D =
       A.localizedSmallChart i.val := by
@@ -119,20 +121,28 @@ theorem localizedSmallChart_domain_comp (A : SaturatedAtlasPresentation.{u, u, u
     A.presentation.atlas.restriction_id i.val _
   rw [hp] at h
   exact h.trans (congrArg (fun t => t ≫ A.localizedSmallChart i.val)
-    ((congrArg localizationFunctor.map (SmallAffinoidSpectrum.map_id.{u, u}
+    ((congrArg localizationFunctor.map (SmallAffinoidSpectrum.map_id.{u, v}
       (A.presentation.atlas.algebra i.val))).trans (localizationFunctor.map_id _)) |>.trans
         (Category.id_comp _))
 
 section Recognition
 
-variable {P Q : AffinoidAtlasPresentation.{u, u, u} K}
+/-- The spectrum of a recognized chart is small in its ambient space universe. -/
+theorem recognizedChartSpectrum_small {X : Type v} [TopologicalSpace X]
+    {a : IndexedAffinoidAtlas.{u, v, w} K X} (V : a.saturatedAtlas.RecognizedSubset) :
+    Small.{v} (BanachSpectrum V.algebra) :=
+  small_of_injective V.isEmbedding_chart.injective
+
+attribute [local instance] recognizedChartSpectrum_small
+
+variable {P Q : AffinoidAtlasPresentation.{u, v, v} K}
   (g : StrongHom P.saturatedPresentation Q.saturatedPresentation)
 
 set_option backward.isDefEq.respectTransparency false in
 /-- A restriction between recognized charts gives their triangle of inclusions. -/
 theorem localizedSmallChart_restriction
     (V W : P.atlas.saturatedAtlas.RecognizedSubset) (h : V.locus ⊆ W.locus) :
-    SmallAffinoidSpectrum.localizedMapEquiv.{u, u} _ _ (V.restriction W h) ≫
+    SmallAffinoidSpectrum.localizedMapEquiv.{u, v} _ _ (V.restriction W h) ≫
         (ofFullRecognition P).localizedSmallChart W =
       (ofFullRecognition P).localizedSmallChart V := by
   have hi : (𝟙 (ofFullRecognition P) : ofFullRecognition P ⟶ ofFullRecognition P).baseMap ''
@@ -151,8 +161,8 @@ theorem localizedSmallChart_comp_fullRecognition
     (V : P.atlas.saturatedAtlas.RecognizedSubset) (W : Q.atlas.saturatedAtlas.RecognizedSubset)
     (h : g.baseMap '' range V.chart ⊆ range W.chart) :
     (ofFullRecognition P).localizedSmallChart V ≫ g.fullRecognitionLocalizedHom =
-      SmallAffinoidSpectrum.localizedMapEquiv.{u, u} _ _ (g.fullRecognitionPairs.pullback V W h) ≫
-        (ofFullRecognition Q).localizedSmallChart W := by
+      SmallAffinoidSpectrum.localizedMapEquiv.{u, v} W.algebra V.algebra
+        (g.fullRecognitionPairs.pullback V W h) ≫ (ofFullRecognition Q).localizedSmallChart W := by
   let p := g.fullRecognitionPairs
   let hp := g.fullRecognitionPairs_localCondition
   let N := admissibleNet (A := ofFullRecognition P) (B := ofFullRecognition Q) p hp
@@ -167,10 +177,10 @@ theorem localizedSmallChart_comp_fullRecognition
   have hId : a.pullback k V hk = BoundedAlgHom.id K V.algebra := V.restriction_self
   have hChart : N.localizedSmallChart k ≫ localizationFunctor.map a =
       (ofFullRecognition P).localizedSmallChart V :=
-    ha.trans ((congrArg (fun t => SmallAffinoidSpectrum.localizedMapEquiv.{u, u}
+    ha.trans ((congrArg (fun t => SmallAffinoidSpectrum.localizedMapEquiv.{u, v}
       V.algebra V.algebra t ≫ (ofFullRecognition P).localizedSmallChart V) hId).trans
       ((congrArg (fun t => t ≫ (ofFullRecognition P).localizedSmallChart V)
-        ((congrArg localizationFunctor.map (SmallAffinoidSpectrum.map_id.{u, u} V.algebra)).trans
+        ((congrArg localizationFunctor.map (SmallAffinoidSpectrum.map_id.{u, v} V.algebra)).trans
           (localizationFunctor.map_id _))).trans (Category.id_comp _)))
   have hNet : localizationFunctor.map a ≫ g.fullRecognitionLocalizedHom =
       localizationFunctor.map b :=
@@ -190,7 +200,7 @@ theorem localizedSpaceFunctor_map_fullRecognition :
     g.fullRecognitionPairs g.fullRecognitionPairs_localCondition
 
 /-- The canonical comparison from the local-domain enlargement to full recognition. -/
-def fullRecognitionIso (P : AffinoidAtlasPresentation.{u, u, u} K) :
+def fullRecognitionIso (P : AffinoidAtlasPresentation.{u, v, v} K) :
     localizationFunctor.obj (ofSaturation P) ≅ localizationFunctor.obj (ofFullRecognition P) :=
   localizedQuasiIso (StrongHom.localDomainToFullRecognitionHom P)
     P.localDomainToFullRecognition_isQuasiIso
@@ -210,7 +220,7 @@ theorem etale_fullRecognition_iff :
       (((etale (K := K)).cancel_right_of_respectsIso _ (fullRecognitionIso Q).hom).trans
         (etale_localizationFunctor_map_ofSaturation_iff g)))
 
-theorem fullRecognition_comp {R : AffinoidAtlasPresentation.{u, u, u} K}
+theorem fullRecognition_comp {R : AffinoidAtlasPresentation.{u, v, v} K}
     (f : StrongHom Q.saturatedPresentation R.saturatedPresentation) :
     g.fullRecognitionLocalizedHom ≫ f.fullRecognitionLocalizedHom =
       (g.saturatedComp f P.atlas.saturatedAtlas_hasAllLocalDomains
@@ -232,19 +242,20 @@ end Langlands.Analytic.SaturatedAtlasPresentation
 namespace Langlands.Analytic.SaturatedAtlasPresentation
 
 open _root_.CategoryTheory Set
-open PresentedAffinoidAlgebra IndexedAffinoidAtlas SpaceAnalytification
+open PresentedAffinoidAlgebra IndexedAffinoidAtlas
 
-variable {K : Type u} [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
-  {A : SaturatedAtlasPresentation.{u, u, u} K}
+variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
+  {A : SaturatedAtlasPresentation.{u, v, v} K}
 
 set_option backward.isDefEq.respectTransparency false in
 /-- An affinoid spectrum identifying a localized analytic domain recognizes its locus. -/
 theorem exists_recognized_locus_of_affinoid_iso (D : A.AnalyticDomain)
-    (R : PresentedAffinoidAlgebra K)
-    (e : localizationFunctor.obj (A.domain D) ≅ localizedAffinoidSpectrum R) :
+    (R : PresentedAffinoidAlgebra K) [Small.{v} (BanachSpectrum R)]
+    (e : localizationFunctor.obj (A.domain D) ≅
+      localizationFunctor.obj (SmallAffinoidSpectrum.saturated.{u, v} R)) :
     ∃ W : A.presentation.atlas.saturatedAtlas.RecognizedSubset, W.locus = D.carrier := by
-  let S := SmallAffinoidSpectrum.saturated.{u, u} R
-  let i := SmallAffinoidSpectrum.topIndex.{u, u} R
+  let S := SmallAffinoidSpectrum.saturated.{u, v} R
+  let i := SmallAffinoidSpectrum.topIndex.{u, v} R
   let t := localizedTopTargetHomEquiv (A := A.domain D) (B := S) i
     (SmallAffinoidSpectrum.top_contains R)
   let m : A.domain D ⟶ S := t.symm e.hom

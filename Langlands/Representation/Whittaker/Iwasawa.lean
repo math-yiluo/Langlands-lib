@@ -547,6 +547,11 @@ theorem exists_isUniformizingElement (K : Type*) [Field K] [ValuativeRel K]
         WithZero.exp_log hy0]
     exact e.injective key
 
+theorem det_diagonalUnits {m : ℕ} (d : Fin m → Fˣ) :
+    Matrix.GeneralLinearGroup.det (diagonalUnits d) = ∏ i, d i := by
+  ext
+  simp [Matrix.det_diagonal]
+
 end Iwasawa
 
 end Langlands.GeneralLinear

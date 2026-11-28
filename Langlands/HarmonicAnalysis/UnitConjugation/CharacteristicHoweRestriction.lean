@@ -127,3 +127,22 @@ theorem characteristicHoweRestriction (d : F) : CharacteristicHoweRestrictionSta
 end Restriction
 
 end Langlands.HarmonicAnalysis.UnitConjugation
+
+namespace Langlands.HarmonicAnalysis.UnitConjugation
+
+variable {A : Type*} [NormedRing A]
+
+/-- The assertion with the analytic hypotheses on the ambient field and algebra. -/
+def CharacteristicHoweRestrictionCompleteUltrametricStatement (F : Type*) [NontriviallyNormedField F] [NormedAlgebra F A]
+    [FiniteDimensional F A] [CompleteSpace F] [IsUltrametricDist F]
+    [ProperSpace A] [IsUltrametricDist A] (d : F) : Prop :=
+  CharacteristicHoweRestrictionStatement (A := A) F d
+
+variable {F : Type*} [NontriviallyNormedField F] [NormedAlgebra F A]
+  [FiniteDimensional F A] [CompleteSpace F] [IsUltrametricDist F]
+  [ProperSpace A] [IsUltrametricDist A]
+
+theorem characteristicHoweRestrictionCompleteUltrametric (d : F) : CharacteristicHoweRestrictionCompleteUltrametricStatement (A := A) F d :=
+  characteristicHoweRestriction (A := A) d
+
+end Langlands.HarmonicAnalysis.UnitConjugation

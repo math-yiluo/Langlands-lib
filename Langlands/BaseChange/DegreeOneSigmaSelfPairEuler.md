@@ -46,3 +46,5 @@ pp. 60–61 (PDF pp. 74–75), give the characteristic-zero pair formula
 with the determinant-twist convention. The retained copy is registered
 as `arthur-clozel-1989-base-change`, SHA-256
 `c2e47ee562810367ebcacd3f1c242eda40b9e78b271668e36d99ce31001f9a19`.
+
+`smoothContragredientCompEquiv` identifies the smooth dual of a pullback along a topological group isomorphism with the pullback of the smooth dual.

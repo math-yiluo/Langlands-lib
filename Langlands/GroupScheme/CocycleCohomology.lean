@@ -19,6 +19,15 @@ def Cohomologous (ξ ζ : Cocycle G U) : Prop :=
   ∃ f : U ⟶ G.X, ∀ {Z : Over S} (a b : Z ⟶ U),
     ζ.toFun a b = (ξ.twist f).toFun a b
 
+/-- Two trivial cocycles on the same cover are cohomologous. -/
+theorem IsTrivial.cohomologous
+    {ξ ζ : Cocycle G U} (hξ : ξ.IsTrivial) (hζ : ζ.IsTrivial) : ξ.Cohomologous ζ := by
+  obtain ⟨f, hf⟩ := hξ
+  obtain ⟨g, hg⟩ := hζ
+  refine ⟨f * g⁻¹, fun x y => ?_⟩
+  simp only [Cocycle.twist, MonObj.comp_mul, GrpObj.comp_inv, hf, hg]
+  group
+
 /-- The unit cochain gives reflexivity. -/
 theorem Cohomologous.refl (ξ : Cocycle G U) : ξ.Cohomologous ξ := by
   refine ⟨1, fun a b => ?_⟩

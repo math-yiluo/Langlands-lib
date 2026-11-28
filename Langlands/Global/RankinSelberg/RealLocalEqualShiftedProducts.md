@@ -63,3 +63,15 @@ Each `realUnequalIntegrand gap V_j W s` is integrable because `Re s > β_Q ≥ �
 ## Scope
 
 The compact expansion `Σ_j V_j(x) b_j(g)` and the convergence of the matrix integrals `Z_j` are hypotheses here. They are not proved in this module. The identity is proved only in the dominant chamber `Re z > τ`, `Re s > σ`. This module proves no continuation, functional equation or `RealLocalUniformPositiveEqualContinuationStatement`.
+
+## Separation at a prescribed leading abscissa
+
+`RealLocalEqualShiftedProductsWithIntegrabilityStatement` takes a leading
+and a spectral abscissa for joint absolute convergence of the unfolded
+kernel as inputs. The shifted product identity holds past the same
+leading abscissa and on a possibly smaller spectral half-plane, with
+positive leading real part. Positivity ensures that shifting the matrix
+spectral variable by the leading exponent preserves a sufficient lower
+bound on its real part. The proof applies the compact insertion and
+Fubini calculation on this region. The original statement follows by
+choosing the two input abscissas from joint convergence.

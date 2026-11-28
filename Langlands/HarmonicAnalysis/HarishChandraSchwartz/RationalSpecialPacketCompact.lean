@@ -256,6 +256,31 @@ private theorem specialCompactProperties_of_heq
   obtain rfl := eq_of_heq hi
   exact h v hv
 
+omit [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F] in
+private theorem exists_genericCocharacter_heq
+    {M : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom M.X.hom]
+    {SM SM' : CommGroupScheme (Spec (CommRingCat.of F))} (hS : SM' = SM)
+    {i' : SM'.toGrp ⟶ M} {iM : SM.toGrp ⟶ M} (hi : HEq i' iM)
+    (v : cocharacterLattice SM) (hv : IsGenericCocharacter iM v) :
+    ∃ w : cocharacterLattice SM', HEq w v ∧ IsGenericCocharacter i' w := by
+  subst hS
+  obtain rfl := eq_of_heq hi
+  exact ⟨v, HEq.rfl, hv⟩
+
+private theorem isSpecialVertexCompact_of_heq
+    {M : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom M.X.hom]
+    {SM SM' : CommGroupScheme (Spec (CommRingCat.of F))} (hS : SM' = SM)
+    {i' : SM'.toGrp ⟶ M} {iM : SM.toGrp ⟶ M} (hi : HEq i' iM)
+    (hi' : IsMaximalSplitTorus i') (hiM : IsMaximalSplitTorus iM)
+    {v' : cocharacterLattice SM'} {v : cocharacterLattice SM} (hv : HEq v' v)
+    {L : OpenSubgroup (rationalPoints M)}
+    (h : WeakExpansion.IsSpecialVertexCompact v' hi' L) :
+    WeakExpansion.IsSpecialVertexCompact v hiM L := by
+  subst hS
+  obtain rfl := eq_of_heq hi
+  obtain rfl := eq_of_heq hv
+  exact h
+
 set_option maxRecDepth 4096 in
 set_option maxHeartbeats 2200000 in
 private theorem standardLeviTraceProperties
@@ -268,13 +293,16 @@ private theorem standardLeviTraceProperties
     ∀ v : cocharacterLattice V.S, IsGenericCocharacter (Standard.leviTorusHom V.i ξ J) v →
     let L := V.apartment.specialCompactLeviSubgroup ξ J x
     SpecialCompactProperties F (Standard.leviTorusHom V.i ξ J) v L ∧
-      BruhatTits.Iwasawa.ParabolicPointProductFamily (Standard.leviTorusHom V.i ξ J) v L := by
+      BruhatTits.Iwasawa.ParabolicPointProductFamily (Standard.leviTorusHom V.i ξ J) v L ∧
+      ∀ KM : OpenSubgroup (rationalPoints (Standard.leviScheme V.i ξ J)), KM.toSubgroup = L →
+        WeakExpansion.IsSpecialVertexCompact v
+          (Standard.isMaximalSplitTorus_leviTorusHom V.i ξ J V.isMaximalSplitTorus) KM := by
   let : IsAffineHom (Standard.leviScheme V.i ξ J).X.hom := leviScheme_isAffineHom V.i ξ J
   intro v hv
   obtain ⟨B, rfl⟩ := ParahoricBuildingData.exists_toValuationBuildingData_eq V
   let hM := standardLevi_isConnectedReductive B.isConnectedReductive B.i B.isMaximalSplitTorus ξ hξ J hJ
   have hiM := Standard.isMaximalSplitTorus_leviTorusHom B.i ξ J B.isMaximalSplitTorus
-  obtain ⟨BM, hSM, hiBM, hAM, _, hMdata⟩ := exists_specialCompactBuildingDataAt hiM hM
+  obtain ⟨BM, hSM, hiBM, hAM, hBound, hMdata⟩ := exists_specialCompactBuildingDataAt hiM hM
   obtain ⟨xM, hxM, heq⟩ := exists_specialCompactLevi_of_buildingGeometry B hA ξ hξ J hJ x hx hK
     BM.i BM.centralizer BM.apartment BM.isOmegaCompatible hAM.topologyCompatible hSM hiBM
     (fun _ _ y hy => (hMdata y hy).1)
@@ -294,8 +322,15 @@ private theorem standardLeviTraceProperties
     exact ⟨isBoundedOpenMaximal_of_isCompactOpenMaximal BM.isConnectedReductive hMax, hMax, hWeyl,
       hasParabolicFactorization_of_maximal_compact_levis BM.isConnectedReductive BM.i
         BM.isMaximalSplitTorus w hw _ hMax.1 hLowerMax⟩
-  exact ⟨specialCompactProperties_of_heq hSM hiBM L hSpecial v hv,
-    parabolicPointProductFamily_of_heq hSM hiBM L hProduct v hv⟩
+  have hVertex (w : cocharacterLattice BM.S) (hw : IsGenericCocharacter BM.i w)
+      (KM : OpenSubgroup (rationalPoints (Standard.leviScheme B.i ξ J)))
+      (hKM : KM.toSubgroup = L) : WeakExpansion.IsSpecialVertexCompact w BM.isMaximalSplitTorus KM :=
+    ⟨BM.centralizer, BM.apartment, hAM, hBound, xM, hxM, heq.symm ▸ hSpecial w hw,
+      heq.trans hKM.symm⟩
+  refine ⟨specialCompactProperties_of_heq hSM hiBM L hSpecial v hv,
+    parabolicPointProductFamily_of_heq hSM hiBM L hProduct v hv, fun KM hKM => ?_⟩
+  obtain ⟨w, hw, hwgen⟩ := exists_genericCocharacter_heq hSM hiBM v hv
+  exact isSpecialVertexCompact_of_heq hSM hiBM BM.isMaximalSplitTorus hiM hw (hVertex w hwgen KM hKM)
 
 variable [LocallyOfFiniteType G.X.hom]
 
@@ -315,13 +350,27 @@ structure SemistandardLeviCompactTrace (p : SemistandardSpectralIndex i)
   iwasawa : IsIwasawaPair
     (standardParabolicPoints (semistandardLeviSplitTorus p model.represents) v ∅) compact.toSubgroup
 
+variable {hi}
+
+/-- The compact trace is itself the norm-one fixer of a special vertex
+in the apartment of the inherited maximal split torus. -/
+def SemistandardLeviCompactTrace.IsSpecialVertex {p : SemistandardSpectralIndex i}
+    {K : OpenSubgroup (rationalPoints G)} {v : cocharacterLattice S}
+    (s : SemistandardLeviCompactTrace p K v) (hi : IsMaximalSplitTorus i) : Prop :=
+  haveI := s.model.reductive.isAffineHom
+  WeakExpansion.IsSpecialVertexCompact v
+    (isMaximalSplitTorus_semistandardLeviSplitTorus p s.model.represents s.model.closed hi) s.compact
+
+variable (hi)
+
 set_option maxRecDepth 4096 in
 set_option maxHeartbeats 2200000 in
-/-- Realize the inherited special compact for each actual semistandard Levi,
-with the same ambient compact and the original cocharacter. -/
-def semistandardLeviCompactTrace (hG : IsConnectedReductive G) (hν : IsGenericCocharacter i ν)
+/-- The inherited special compact on the actual Levi, together with its
+special vertex witness at the inherited maximal split torus. -/
+def semistandardLeviCompactTraceWithVertex (hG : IsConnectedReductive G)
+    (hν : IsGenericCocharacter i ν)
     (K : OpenSubgroup (rationalPoints G)) (hK : WeakExpansion.IsSpecialVertexCompact ν hi K)
-    (p : SemistandardSpectralIndex i) : SemistandardLeviCompactTrace p K ν := by
+    (p : SemistandardSpectralIndex i) : {s : SemistandardLeviCompactTrace p K ν // s.IsSpecialVertex hi} := by
   apply Classical.choice
   let : Mono i.hom.hom.left := mono_of_isMaximalSplitTorus hi
   obtain ⟨ξ, hξ, J, hJ, hp⟩ := exists_standard_presentation hG hi p
@@ -341,16 +390,34 @@ def semistandardLeviCompactTrace (hG : IsConnectedReductive G) (hν : IsGenericC
   let : IsAffineHom (Standard.leviScheme i ξ J).X.hom := m.reductive.isAffineHom
   have hgen : IsGenericCocharacter iL ν := fun α hα => hν α
     (relativeRoots_subset_of_factor m.represents iL (Standard.leviTorusHom_comp i ξ J) hα)
-  obtain ⟨hL, hProd⟩ := standardLeviTraceProperties V hA ξ hξ J hJ x hx hspecial.2.1 ν hgen
+  obtain ⟨hL, hProd, hVertex⟩ := standardLeviTraceProperties V hA ξ hξ J hJ x hx hspecial.2.1 ν hgen
   change SpecialCompactProperties F iL ν (D.specialCompactLeviSubgroup ξ J x) at hL
   let L : OpenSubgroup (rationalPoints m.scheme) := ⟨D.specialCompactLeviSubgroup ξ J x, hL.2.1.2.1⟩
-  refine ⟨⟨m, L, fun y => ?_, hL.2.1.1, heq ▸ hgen, heq ▸ hL, ?_⟩⟩
-  · change rationalPoints.map (Standard.leviHom i ξ J) y ∈ D.specialCompactSubgroup x ↔
+  have hTrace (y : rationalPoints m.scheme) : y ∈ L ↔ rationalPoints.map m.inclusion y ∈ K := by
+    change rationalPoints.map (Standard.leviHom i ξ J) y ∈ D.specialCompactSubgroup x ↔
       rationalPoints.map m.inclusion y ∈ K
     rw [hKx]
     rfl
-  · rw [heq]
+  have hIwasawa : IsIwasawaPair
+      (standardParabolicPoints (semistandardLeviSplitTorus _ m.represents) ν ∅) L.toSubgroup := by
+    rw [heq]
     exact isIwasawaPair_of_pointProductEqualities (hProd.2.2.1 ∅ (Set.empty_subset _))
+  let s : SemistandardLeviCompactTrace _ K ν :=
+    ⟨m, L, hTrace, hL.2.1.1, heq ▸ hgen, heq ▸ hL, hIwasawa⟩
+  refine ⟨⟨s, ?_⟩⟩
+  change WeakExpansion.IsSpecialVertexCompact ν
+    (isMaximalSplitTorus_semistandardLeviSplitTorus _ m.represents m.closed hi) L
+  exact isSpecialVertexCompact_of_heq rfl heq.symm.heq
+    (Standard.isMaximalSplitTorus_leviTorusHom i ξ J hi)
+    (isMaximalSplitTorus_semistandardLeviSplitTorus _ m.represents m.closed hi) HEq.rfl
+    (hVertex L rfl)
+
+/-- Realize the inherited special compact for each actual semistandard Levi,
+with the same ambient compact and the original cocharacter. -/
+def semistandardLeviCompactTrace (hG : IsConnectedReductive G) (hν : IsGenericCocharacter i ν)
+    (K : OpenSubgroup (rationalPoints G)) (hK : WeakExpansion.IsSpecialVertexCompact ν hi K)
+    (p : SemistandardSpectralIndex i) : SemistandardLeviCompactTrace p K ν :=
+  Classical.choice ⟨(semistandardLeviCompactTraceWithVertex hi ν hG hν K hK p).val⟩
 
 end SemistandardTrace
 

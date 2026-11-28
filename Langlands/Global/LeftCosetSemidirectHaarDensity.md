@@ -1,8 +1,9 @@
 # Haar density for radical-first multiplication
 
-Let \(i\colon N\to H\) be a topological embedding onto the kernel of a continuous
-retraction \(p\colon H\to M\) with a continuous homomorphic section \(j\colon M\to H\). The existing
-`prodHomeomorph` uses \(i(n)j(m)\). Inversion on each group gives the
+Let \(i\colon N\to H\) be a group homomorphism and a topological embedding
+onto the kernel of a continuous group homomorphism \(p\colon H\to M\).
+Let \(j\colon M\to H\) be a continuous group homomorphism with \(p\circ j\)
+the identity. The existing `prodHomeomorph` uses \(i(n)j(m)\). Inversion on each group gives the
 homeomorphism `complementFirstHomeomorph` with value \(j(m)i(n)\).
 
 For the measure identities, give \(N\), \(M\) and \(H\) their Borel measurable

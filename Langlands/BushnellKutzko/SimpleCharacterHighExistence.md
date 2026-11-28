@@ -1,0 +1,5 @@
+# Existence at the high indices
+
+For BK93 (3.2.4), the cutoff calculation identifies the character domain with the absolute unit filtration. The depth bound makes the trace formula a character there. Conjugation by a relative endomorphism unit preserves the trace values whenever both arguments lie in the domain. The proof applies `factorsThroughCentralizerDet_of_relative_intertwining` to the absolute unit filtration. Its pullback is the unit filtration of the relative chain, where the determinant criterion of BK93 (2.4.11) gives the required factorization.
+
+Existence follows by induction over the defining sequence. Below the current critical depth, additivity in the parameter establishes the required twist agreement, and the relative order normalizer preserves the high-index unit group and its trace character. At or above that depth the perturbation has trivial trace character on the domain, as required by the extended notation after (3.2.3). High-index uniqueness identifies the resulting character set with a singleton.

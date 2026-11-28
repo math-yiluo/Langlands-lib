@@ -1,3 +1,4 @@
+import Langlands.Analysis.Local.PeriodicQuotientAutomorphism
 import Langlands.Global.AdelicGroupNormOneFunctorial
 import Langlands.Global.AdelicGroupHaarMeasure
 import Langlands.Global.AdelicSplitCenterSubgroupHaar
@@ -31,56 +32,11 @@ namespace Langlands.TraceFormula.AdelicGroupAutomorphism
 
 open Langlands.Global Langlands.Global.AdelicGroupPoints
 
-section Generic
-
-variable {H : Type*} [Group H] [TopologicalSpace H]
-
-/-- The `k`-fold composite of a continuous multiplicative automorphism. -/
-def iterateEquiv (φ : H ≃ₜ* H) : ℕ → (H ≃ₜ* H)
-  | 0 => ContinuousMulEquiv.refl H
-  | k + 1 => (iterateEquiv φ k).trans φ
-
-theorem iterateEquiv_apply (φ : H ≃ₜ* H) (k : ℕ) (x : H) :
-    iterateEquiv φ k x = φ^[k] x := by
-  induction k with
-  | zero => rfl
-  | succ k ih =>
-    rw [Function.iterate_succ_apply']
-    change φ (iterateEquiv φ k x) = _
-    rw [ih]
-
-variable [MeasurableSpace H] [BorelSpace H] [IsTopologicalGroup H] [LocallyCompactSpace H]
-
-theorem mulEquivHaarChar_iterateEquiv (φ : H ≃ₜ* H) (k : ℕ) :
-    mulEquivHaarChar (iterateEquiv φ k) = mulEquivHaarChar φ ^ k := by
-  induction k with
-  | zero => exact mulEquivHaarChar_refl
-  | succ k ih =>
-    change mulEquivHaarChar ((iterateEquiv φ k).trans φ) = _
-    rw [mulEquivHaarChar_trans, ih, pow_succ]
-
-/-- A continuous automorphism with a positive iterate equal to the identity has Haar
-character `1`. -/
-theorem mulEquivHaarChar_eq_one_of_iterate (φ : H ≃ₜ* H) {m : ℕ} (hm : m ≠ 0)
-    (hφ : ∀ x, φ^[m] x = x) : mulEquivHaarChar φ = 1 := by
-  have h : iterateEquiv φ m = ContinuousMulEquiv.refl H := by
-    ext x
-    rw [iterateEquiv_apply, hφ]
-    rfl
-  have hpow : mulEquivHaarChar φ ^ m = 1 := by
-    rw [← mulEquivHaarChar_iterateEquiv, h, mulEquivHaarChar_refl]
-  exact (pow_eq_one_iff_of_nonneg zero_le hm).mp hpow
-
-/-- Under the hypothesis of `mulEquivHaarChar_eq_one_of_iterate`, the automorphism preserves
-every regular Haar measure. -/
-theorem measurePreserving_of_iterate (φ : H ≃ₜ* H) {m : ℕ} (hm : m ≠ 0)
-    (hφ : ∀ x, φ^[m] x = x) (ρ : Measure H) [ρ.IsHaarMeasure] [ρ.Regular] :
-    MeasurePreserving φ ρ ρ := by
-  refine ⟨φ.continuous.measurable, ?_⟩
-  have h := mulEquivHaarChar_smul_map ρ φ
-  rwa [mulEquivHaarChar_eq_one_of_iterate φ hm hφ, one_smul] at h
-
-end Generic
+alias iterateEquiv := Langlands.QuotientIntegration.iterateEquiv
+alias iterateEquiv_apply := Langlands.QuotientIntegration.iterateEquiv_apply
+alias mulEquivHaarChar_iterateEquiv := Langlands.QuotientIntegration.mulEquivHaarChar_iterateEquiv
+alias mulEquivHaarChar_eq_one_of_iterate := Langlands.QuotientIntegration.mulEquivHaarChar_eq_one_of_iterate
+alias measurePreserving_of_iterate := Langlands.QuotientIntegration.measurePreserving_of_iterate
 
 variable (F : Type u) [Field F] [NumberField F] {G : GroupScheme (Spec (CommRingCat.of F))}
 

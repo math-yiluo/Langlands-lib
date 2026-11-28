@@ -23,6 +23,12 @@ the full-recognition map with the original localized map by conjugation.
 This gives the comparison for étaleness and the composition rule.
 
 This is an internal consequence of the localized chart-domain
-isomorphisms and the actual admissible-net localization.
+isomorphisms and the actual admissible-net localization. The field and
+space universes are independent. Each chart embeds into its ambient space,
+so its spectrum is small in the space universe.
 
-Over a complete nontrivially normed ultrametric field, `exists_recognized_locus_of_affinoid_iso` recognizes the locus of an analytic domain whose localization is isomorphic to an affinoid spectrum. The quasi-isomorphism transports the whole spectrum to the domain, and the domain inclusion transports it into the ambient atlas.
+Over a complete ultrametric normed field,
+`exists_recognized_locus_of_affinoid_iso` recognizes the locus of an analytic
+domain isomorphic to an affinoid spectrum that is small in the space universe.
+The quasi-isomorphism transports the whole spectrum to the domain, and the
+domain inclusion transports it into the ambient atlas.

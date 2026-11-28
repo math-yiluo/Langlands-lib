@@ -22,8 +22,9 @@ variable {V X : Type*} [AddCommGroup V] [Module ℂ V] [UniformSpace V]
   [IsUniformAddGroup V] [ContinuousSMul ℂ V] [SequentialSpace V] [BarrelledSpace ℂ V]
   [MeasurableSpace X]
 
-/-- Linear pointwise continuous integrands with common absolute convergence and holomorphy
-on a right half-plane give continuous evaluations of all their entire normalized values. -/
+/-- A family of continuous linear kernels with common right-half-plane absolute convergence
+and holomorphy has continuous entire normalized evaluations when each integral has an entire
+normalization by the reciprocal of an entire denominator that is nonzero on a right half-plane. -/
 def OrdinaryNormalizationContinuousStatement : Prop :=
   ∀ (μ : Measure X) (K : ℂ → X → V →L[ℂ] ℂ) (L : ReciprocalEntire) (σ : ℝ),
     (∃ b : ℝ, ∀ s : ℂ, b < s.re → L.denominator s ≠ 0) →

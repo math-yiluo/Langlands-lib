@@ -129,3 +129,18 @@ theorem realPairedRankRaisingStep : RealPairedRankRaisingStepStatement n E R := 
     exact ⟨w', fun l q => hw' l q.out⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+variable (n : Fin 2 → ℕ) (E : Fin 2 → Type*)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((n i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedRankRaisingStepBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedRankRaisingStepStatement n E R
+
+theorem realPairedRankRaisingStepBanach [∀ i, CompleteSpace (E i)] : RealPairedRankRaisingStepBanachStatement n E R :=
+  realPairedRankRaisingStep n E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising

@@ -178,3 +178,18 @@ theorem realPairedRankTransfer : RealPairedRankTransferStatement n E R := by
   exact hGoal hr
 
 end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising
+
+variable (n : Fin 2 → ℕ) (E : Fin 2 → Type*)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((n i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedRankTransferBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedRankTransferStatement n E R
+
+theorem realPairedRankTransferBanach [∀ i, CompleteSpace (E i)] : RealPairedRankTransferBanachStatement n E R :=
+  realPairedRankTransfer n E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedRankRaising

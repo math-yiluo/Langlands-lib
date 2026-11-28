@@ -131,7 +131,7 @@ theorem continuous_fullWeight_height (β : simpleRelativeRoots i ν) :
   exact continuous_pair_height hi hK hρ _
 
 include hν in
-private theorem measurable_tauHat_complex (S : Set (characterLattice T)) (Tp : V T) :
+theorem measurable_tauHat_complex (S : Set (characterLattice T)) (Tp : V T) :
     Measurable fun g => (ArthurRelative.tauHat hG hi ν D S (simpleRelativeRoots i ν)
       (height hi hK hρ g - Tp) : ℂ) := by
   classical

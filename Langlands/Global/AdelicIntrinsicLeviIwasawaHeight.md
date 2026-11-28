@@ -1,0 +1,9 @@
+# Iwasawa restriction to a standard Levi
+
+Let the intersection of the ambient Iwasawa compact with the adelic standard Levi be maximal compact in that Levi. The induced compact gives a minimal Iwasawa decomposition of the Levi. The inherited maximal split torus and cocharacter define an intrinsic minimal height, which agrees with the ambient minimal height on all adelic Levi points.
+
+The standard Levi restriction of the root data identifies its minimal parabolic with the intersection of the Levi and the ambient minimal parabolic. Factor an adelic Levi point using the ambient Iwasawa decomposition and regard both factors as points of the larger standard parabolic. The Levi retraction sends its compact factor into the induced compact and its minimal-parabolic factor into the intrinsic minimal parabolic. The positive-torus compatibility also descends to this compact by injectivity of the Levi inclusion.
+
+For the height identity, an intrinsic Iwasawa factorization maps to an ambient one. The logarithm of each ambient minimal-parabolic character agrees with the logarithm of its restriction on the intrinsic parabolic. These two characters restrict to the same character of the common maximal split torus. Surjectivity of ambient character restriction and the perfect split-torus pairing identify the two heights.
+
+With intrinsic rationally covering compact factors, the Levi quotient height region in the shell equals the intrinsic characteristic region at the projected cutoffs. The chamber identity uses the common coroots of the Levi roots. Rational folding at the top parabolic of the intrinsic family identifies the quotient image of the height condition with the quotient image of the intrinsic characteristic height product. This gives the Levi characteristic truncation in Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, following (7.23).

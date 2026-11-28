@@ -30,14 +30,6 @@ set_option backward.isDefEq.respectTransparency false
 variable {k E K : Type u} [Field k] [Field E] [Field K]
   {G : GroupScheme (Spec (CommRingCat.of k))}
 
-/-- The Galois values of the twist `(a, b) ↦ f(a)⁻¹ ξ(a, b) f(b)` of a cocycle. -/
-theorem value_twist [Algebra k K] (ξ : Cocycle G (cover k K)) (f : cover k K ⟶ G.X)
-    (σ : K ≃ₐ[k] K) :
-    value (ξ.twist f) σ = f⁻¹ * value ξ σ * GaloisPoint.conjugate k K G σ f := by
-  change (𝟙 _ ≫ f)⁻¹ * ξ.toFun (𝟙 _) (arrow k K σ) * (arrow k K σ ≫ f) = _
-  rw [Category.id_comp]
-  rfl
-
 variable [Algebra k E] [Algebra k K] [Algebra E K] [IsScalarTower k E K]
   [FiniteDimensional k K] [IsGalois k K] [FiniteDimensional k E] [IsGalois k E]
   [IsAffine G.X.left]

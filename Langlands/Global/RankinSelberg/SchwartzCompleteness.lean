@@ -78,3 +78,17 @@ theorem schwartzCompleteSpace : SchwartzCompleteSpaceStatement E F := by
   simpa only [heq] using hΦ.add_const (u 0)
 
 end Langlands.Global.RankinSelbergGlobal.SchwartzMajorant
+
+namespace Langlands.Global.RankinSelbergGlobal.SchwartzMajorant
+
+variable (E F : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [NormedAddCommGroup F] [NormedSpace ℝ F]
+
+/-- The completeness assertion for a complete codomain. -/
+def SchwartzCompleteSpaceCodomainCompleteStatement [CompleteSpace F] : Prop :=
+  SchwartzCompleteSpaceStatement E F
+
+theorem schwartzCompleteSpaceCodomainComplete [CompleteSpace F] : SchwartzCompleteSpaceCodomainCompleteStatement E F :=
+  schwartzCompleteSpace E F
+
+end Langlands.Global.RankinSelbergGlobal.SchwartzMajorant

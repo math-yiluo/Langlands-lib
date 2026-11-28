@@ -1,0 +1,5 @@
+# Reduction of quasi-split trialitarian vanishing to a cyclic cubic diagram field
+
+`TotallyComplexQuasiSplitCyclicTrialitarianCocycleVanishingStatement` is the cyclic cubic case of quasi-split trialitarian vanishing from Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), §6.8, printed pp. 371–373. The proposition requires even star permutations on top of the D4 Cartan matrix and transitive leaf action. In this case the field trivializing the star action has degree three.
+
+`totallyComplexQuasiSplitTrialitarian_of_cyclic` reduces the full trialitarian vanishing proposition to this cyclic case. If the star action has an odd permutation, the sign kernel gives a quadratic Galois extension. The scalar extension remains totally imaginary and quasi-split, and its transported index has transitive leaf action and even sign. Vanishing over it gives triviality on the full pullback of the original cover by passing through a finite Galois refinement. Since the base field is totally imaginary and the group is simply connected, the original cocycle is locally trivial. The quadratic Hasse kernel then applies to the original cover.

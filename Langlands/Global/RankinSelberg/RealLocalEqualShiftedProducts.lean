@@ -286,26 +286,48 @@ def RealLocalEqualShiftedProductsStatement : Prop :=
       ∫ p, equalUnfoldedKernel (charData e z) Ψ W V s p ∂(D.measure.prod D'.groupHaar) =
         ∑ j, realUnequalIntegral gap D (Vj j) W s * Z j (s + z)
 
+variable (t) in
+/-- If joint integrability is available above a prescribed leading abscissa, the same
+abscissa and positivity of the leading real part suffice for the shifted product identity
+on a right spectral half-plane. -/
+def RealLocalEqualShiftedProductsWithIntegrabilityStatement : Prop :=
+  ∀ (D : RealQuotientMeasureData t) (D' : RealQuotientMeasureData (t + 1))
+    (K : Type) [Group K] [TopologicalSpace K] [IsTopologicalGroup K] [CompactSpace K]
+    [MeasurableSpace K] [BorelSpace K] (ν : Measure K) [IsFiniteMeasure ν]
+    (ι : K →* H), Continuous ι → (∀ k, |(ι k).val.det| = 1) →
+  ∀ (κ : K → ℂ), Continuous κ →
+  ∀ (a : ℝˣ) (e : Fin 2) (ds es : List RealBlock) (W : G → ℂ) (V : H → ℂ),
+    W ∈ realUniformWhittakerModel t ds a → V ∈ realUniformWhittakerModel (t + 1) es (-a) →
+  ∀ (Ψ : 𝓢(Y, ℂ)),
+    (∀ A, ∫ k, κ k * realCompactMatrixTranslate (charData e 0) Ψ (ι k) A ∂ν = Ψ A) →
+  ∀ (c : ℕ) (Vj bj : Fin c → H → ℂ) (Z : Fin c → ℂ → ℂ),
+    (∀ j, Vj j ∈ realUniformWhittakerModel (t + 1) es (-a)) →
+    (∀ x g, (∫ k, κ k * V (x * ι k * g) ∂ν) = ∑ j, Vj j x * bj j g) →
+    (∃ β : ℝ, ∀ w : ℂ, β < w.re → ∀ j,
+      Integrable (fun g => realWeightedMatrixTest (charData e 0) Ψ (w + (m : ℂ) / 2) g * bj j g)
+        D'.groupHaar ∧
+      Z j w = ∫ g, realWeightedMatrixTest (charData e 0) Ψ (w + (m : ℂ) / 2) g * bj j g
+        ∂D'.groupHaar) →
+    ∀ τ σ : ℝ,
+      (∀ z s : ℂ, τ < z.re → σ < s.re →
+        Integrable (equalUnfoldedKernel (charData e z) Ψ W V s) (D.measure.prod D'.groupHaar)) →
+    ∃ σ' : ℝ, ∀ z s : ℂ, τ < z.re → 0 < z.re → σ' < s.re →
+      ∫ p, equalUnfoldedKernel (charData e z) Ψ W V s p ∂(D.measure.prod D'.groupHaar) =
+        ∑ j, realUnequalIntegral gap D (Vj j) W s * Z j (s + z)
+
 set_option maxHeartbeats 1600000 in
-theorem realLocalEqualShiftedProducts : RealLocalEqualShiftedProductsStatement t := by
-  intro D D' K _ _ _ _ _ _ ν _ ι hι hdet κ hκ a e ds es W V hW hV Ψ hΨ c Vj bj Z hVj hExp hZ
+theorem realLocalEqualShiftedProducts_of_integrable :
+    RealLocalEqualShiftedProductsWithIntegrabilityStatement t := by
+  intro D D' K _ _ _ _ _ _ ν _ ι hι hdet κ hκ a e ds es W V hW hV Ψ hΨ c Vj bj Z hVj hExp hZ τ σ hJ
   let := D.unipotentHaar_rightInvariant
   let := D.compatible.regular
   let := D'.groupHaar_isHaar
   obtain ⟨hWreg, hWgrowth⟩ := realUniformWhittakerRegularity t ds a W hW
-  obtain ⟨hVreg, hVgrowth⟩ := realUniformWhittakerRegularity (t + 1) es (-a) V hV
+  obtain ⟨hVreg, -⟩ := realUniformWhittakerRegularity (t + 1) es (-a) V hV
   have hWr : W ∈ regularFunctions t a := hWreg []
   have hVr : V ∈ regularFunctions (t + 1) (-a) := hVreg []
-  have hWc : Continuous W := hWr.2.1.continuous
   have hVc : Continuous V := hVr.2.1.continuous
-  have hWg : RealEqualConvergence.HasGauge W := RealWhittakerGauge.exists_gauge_bound hWreg hWgrowth
-  have hVg : RealEqualConvergence.HasGauge V := RealWhittakerGauge.exists_gauge_bound hVreg hVgrowth
-  have hVu : ∀ (u : U) (g : H), ‖V (u.val * g)‖ = ‖V g‖ := by
-    intro u g
-    rw [hVr.1 u.val u.2 g, norm_mul, RealUnequalPairConvergence.norm_realWhittakerCharacter,
-      one_mul]
   obtain ⟨CV, NV, hCV, hVb⟩ := hVr.2.2
-  obtain ⟨ρ, σ, hJ⟩ := realLocalEqualJointIntegrability D D' W V hWc hVc hWg hVg hVu
   have hVjr (j : Fin c) : Vj j ∈ regularFunctions (t + 1) (-a) :=
     (realUniformWhittakerRegularity (t + 1) es (-a) (Vj j) (hVj j)).1 []
   have hQ (j : Fin c) : ∃ σj : ℝ, ∀ s : ℂ, σj < s.re →
@@ -318,10 +340,9 @@ theorem realLocalEqualShiftedProducts : RealLocalEqualShiftedProductsStatement t
   obtain ⟨βQ, hβQ⟩ := (Set.finite_range σj).bddAbove
   obtain ⟨β, hβ⟩ := hZ
   let σ₀ : ℝ := (t : ℝ) + 2 + 2 * NV - ((t : ℝ) + 1) / 2
-  refine ⟨max ρ 0, max σ (max σ₀ (max β βQ)), ?_⟩
-  intro z s hz hs
-  simp only [max_lt_iff] at hz hs
-  obtain ⟨hzρ, hz0⟩ := hz
+  refine ⟨max σ (max σ₀ (max β βQ)), ?_⟩
+  intro z s hzτ hz0 hs
+  simp only [max_lt_iff] at hs
   obtain ⟨hsσ, hsσ₀, hsβ, hsQ⟩ := hs
   have hm : ((m : ℂ) / 2).re = ((t : ℝ) + 1) / 2 := by
     rw [show ((m : ℂ) / 2) = ((((t : ℝ) + 1) / 2 : ℝ) : ℂ) by push_cast; ring, Complex.ofReal_re]
@@ -334,9 +355,8 @@ theorem realLocalEqualShiftedProducts : RealLocalEqualShiftedProductsStatement t
     simp only [equalUnfoldedKernel, A, F, realWeightedMatrixTest, d₀]
     rw [determinantWeight_charData_shift, show z + (s + (m : ℂ) / 2) = s + z + (m : ℂ) / 2 by ring]
     ring
-  obtain ⟨kJ, CJ, -, hJ'⟩ := hJ z.re s.re (le_of_lt hzρ) hsσ
   have hProd : Integrable (fun x : Q × H => A x.2 * F x.1 x.2) (D.measure.prod D'.groupHaar) :=
-    (hJ' Ψ (charData e z) s rfl rfl).1.congr (ae_of_all _ hker)
+    (hJ z s hzτ hsσ).congr (ae_of_all _ hker)
   have hw : (t : ℝ) + 2 + 2 * NV ≤ d₀.exponent.re + (s + z + (m : ℂ) / 2).re := by
     have h0 : d₀.exponent.re = 0 := Complex.zero_re
     rw [h0, Complex.add_re, Complex.add_re, hm]
@@ -391,5 +411,29 @@ theorem realLocalEqualShiftedProducts : RealLocalEqualShiftedProductsStatement t
       refine Finset.sum_congr rfl fun j _ => ?_
       rw [(hβ (s + z) hsz j).2]
       rfl
+
+set_option maxHeartbeats 1600000 in
+theorem realLocalEqualShiftedProducts : RealLocalEqualShiftedProductsStatement t := by
+  intro D D' K _ _ _ _ _ _ ν _ ι hι hdet κ hκ a e ds es W V hW hV Ψ hΨ c Vj bj Z hVj hExp hZ
+  obtain ⟨hWreg, hWgrowth⟩ := realUniformWhittakerRegularity t ds a W hW
+  obtain ⟨hVreg, hVgrowth⟩ := realUniformWhittakerRegularity (t + 1) es (-a) V hV
+  have hWr : W ∈ regularFunctions t a := hWreg []
+  have hVr : V ∈ regularFunctions (t + 1) (-a) := hVreg []
+  have hWc : Continuous W := hWr.2.1.continuous
+  have hVc : Continuous V := hVr.2.1.continuous
+  have hWg : RealEqualConvergence.HasGauge W := RealWhittakerGauge.exists_gauge_bound hWreg hWgrowth
+  have hVg : RealEqualConvergence.HasGauge V := RealWhittakerGauge.exists_gauge_bound hVreg hVgrowth
+  have hVu : ∀ (u : U) (g : H), ‖V (u.val * g)‖ = ‖V g‖ := by
+    intro u g
+    rw [hVr.1 u.val u.2 g, norm_mul, RealUnequalPairConvergence.norm_realWhittakerCharacter,
+      one_mul]
+  obtain ⟨ρ, σ, hJ⟩ := realLocalEqualJointIntegrability D D' W V hWc hVc hWg hVg hVu
+  have hJ' (z s : ℂ) (hz : ρ < z.re) (hs : σ < s.re) :
+      Integrable (equalUnfoldedKernel (charData e z) Ψ W V s) (D.measure.prod D'.groupHaar) := by
+    obtain ⟨_, _, _, h⟩ := hJ z.re s.re hz.le hs
+    exact (h Ψ (charData e z) s rfl rfl).1
+  obtain ⟨σ', h⟩ := realLocalEqualShiftedProducts_of_integrable D D' K ν ι hι hdet κ hκ a e ds es W V
+    hW hV Ψ hΨ c Vj bj Z hVj hExp hZ ρ σ hJ'
+  exact ⟨max ρ 0, σ', fun z s hz => h z s ((le_max_left _ _).trans_lt hz) ((le_max_right _ _).trans_lt hz)⟩
 
 end Langlands.Global.RankinSelbergGlobal.RealGodement

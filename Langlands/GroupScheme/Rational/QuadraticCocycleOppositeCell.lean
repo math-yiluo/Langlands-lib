@@ -22,11 +22,6 @@ variable {F L : Type u} [Field F] [Field L] [Algebra F L]
 private abbrev CoefficientPoints (G : GroupScheme (Spec (CommRingCat.of F))) :=
   G.affinePoints (CommAlgCat.of F L)
 
-omit [FiniteDimensional F L] [IsGalois F L] in
-private theorem value_one (ξ : Cocycle G (cover F L)) : value ξ 1 = 1 := by
-  unfold value
-  rw [arrow_one, Cocycle.toFun_self]
-
 /-- If a twisted value of a quadratic cocycle lies in the cell with unique
 coordinates `U⁺ × T × σ(U⁺)`, a second twist removes both unipotent
 coordinates. The resulting torus cocycle has exactly the middle value. -/

@@ -185,8 +185,8 @@ def normOneParabolicDensity : L → ℝ≥0∞ :=
     (isEmbedding_normOneRadicalInclusion p iU hU) (continuous_normOneLeviSection p l)
 
 open Langlands.Global.LeftCosetSpace.Semidirect in
-/-- For a dynamic parabolic the density is the published negative modulus parameter
-evaluated on the actual Levi point. -/
+/-- For a dynamic parabolic the inverse modulus is the parameter power at the negative
+modulus parameter evaluated on the parabolic image of the Levi point. -/
 theorem normOneParabolicDensity_eq_inverseModulus
     (hG : IsConnectedReductive G)
     {χ : (Gm (Spec (CommRingCat.of F))).toGrp ⟶ G}
@@ -280,7 +280,7 @@ private theorem projection_mem_principal (q : H) (hq : q ∈ ΓP) : leviProj q �
   exact proj_mem_rationalSubgroup iU l hU hq
 
 include hU in
-/-- The lattice kernel in radical-first coordinates is the actual principal radical. -/
+/-- The inverse image of the principal parabolic under radical inclusion is the principal radical. -/
 theorem normOneRadical_comap_principal : (ΓP).comap radIncl = ΓN := by
   ext u
   rw [Subgroup.mem_comap, mem_relativePrincipal_iff, mem_rationalSubgroup_range_iff]
@@ -306,7 +306,7 @@ theorem normOneRadical_comap_principal : (ΓP).comap radIncl = ΓN := by
 
 open Langlands.Global.LeftCosetSpace.Semidirect in
 /-- A radical-first product of strict fundamental domains is a strict fundamental
-domain for the actual principal parabolic lattice. -/
+domain for the actual principal parabolic subgroup. -/
 theorem normOneParabolicFundamentalDomain (dp : Measure H) :
     IsFundamentalDomain ΓP
       (normOneParabolicCoordinates p iU l hU ''

@@ -342,19 +342,19 @@ namespace Langlands.Global.RepresentationGrowth
 
 open Langlands.GroupScheme AdelicGroupPoints
 
-/-- Every adelic point of a connected reductive group is a central positive point with trivial
-finite component times a norm-one point, and the height of the central factor is polynomially
-bounded by the height of the point. -/
-theorem centralNormOneHeightFactorStatement : CentralNormOneHeightFactorStatement.{u} := by
-  intro F _ _ G _ N rho hG hrho hN
-  have : Smooth G.X.hom := hG.smooth
-  obtain ⟨T, i, hi, E, hE⟩ := PositiveRealTorus.adelicPositiveDecompositionStatement F G hG
-  have hT : IsSplitTorus T.toGrp := hi.1.1.1
-  have : (characterRestrict i).range.FiniteIndex :=
-    characterRestrictionFiniteIndexStatement F G hG T i hi
-  obtain ⟨I, _, ⟨e₀⟩⟩ := hT
+open PositiveRealTorus in
+/-- The positive factor in a supplied split-torus times norm-one factorization has height
+bounded by a polynomial in the height of the product. -/
+theorem exists_adelicHeight_positivePointMap_le (F : Type u) [Field F] [NumberField F]
+    {G : GroupScheme (Spec (CommRingCat.of F))} {N : ℕ} (rho : MatrixRepresentation G (Fin N))
+    (hN : 0 < N) (hrho : IsClosedSubgroup rho)
+    (T : CommGroupScheme (Spec (CommRingCat.of F))) (i : T.toGrp ⟶ G)
+    {I : Type u} [Fintype I] (e₀ : T.toGrp ≅ splitTorus (Spec (CommRingCat.of F)) I)
+    [(characterRestrict i).range.FiniteIndex] :
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ d : ℕ, ∀ (a : intrinsicSubgroup F T) (n : normOneSubgroup F G),
+      adelicHeight F G rho (positivePointMap F G T i a) ≤
+        C * adelicHeight F G rho (positivePointMap F G T i a * (n : AdelicGroupPoints F G)) ^ d := by
   classical
-  let : Fintype I := Fintype.ofFinite I
   obtain ⟨r, ⟨σ⟩⟩ : ∃ r : ℕ, Nonempty (ULift.{u} (Fin r) ≃ I) :=
     ⟨Fintype.card I, ⟨Equiv.ulift.trans (Fintype.equivFin I).symm⟩⟩
   let e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of F)) (ULift.{u} (Fin r)) :=
@@ -367,24 +367,19 @@ theorem centralNormOneHeightFactorStatement : CentralNormOneHeightFactorStatemen
   let Cmax : ℝ := ∑ j, C j
   let emax : ℕ := ∑ j, ea j
   have hCmax0 : 0 ≤ Cmax := Finset.sum_nonneg fun j _ => zero_le_one.trans (hC j)
-  refine ⟨Cb * Cmax ^ (r * kb), emax * r * kb, fun g => ?_⟩
-  set p := E.symm g with hp
-  have hg : g = PositiveRealTorus.positivePointMap F G T i p.1 * p.2 := by
-    rw [← hE, hp, ContinuousMulEquiv.apply_symm_apply]
-  have ha : p.1.val ∈ PositiveRealTorus.subgroup F _ T e := by
+  refine ⟨Cb * Cmax ^ (r * kb), mul_nonneg hCb (pow_nonneg hCmax0 _),
+    emax * r * kb, fun a n => ?_⟩
+  have ha : a.val ∈ PositiveRealTorus.subgroup F _ T e := by
     rw [PositiveRealTorus.subgroup_eq_intrinsicSubgroup]
-    exact p.1.property
+    exact a.property
   obtain ⟨x, hx⟩ := ha
-  refine ⟨PositiveRealTorus.positivePointMap F G T i p.1,
-    PositiveRealTorus.positivePointMap_commute F G T i hi.1.2 p.1,
-    finite_positivePointMap F T i hi.1.1.1 p.1, ?_, ?_⟩
-  · rw [hg, inv_mul_cancel_left]
-    exact p.2.property
+  let g : AdelicGroupPoints F G := positivePointMap F G T i a * (n : AdelicGroupPoints F G)
   set H := adelicHeight F G rho g with hH
   have hH1 : 1 ≤ H := one_le_adelicHeight F G rho hN g
   have hnorm (j : ULift.{u} (Fin r)) :
       characterNorm F G (χ j).toMul g = x j ^ (m * Module.finrank ℚ F) := by
-    rw [hg, map_mul, (mem_normOneSubgroup F G _).mp p.2.property, mul_one,
+    dsimp only [g]
+    rw [map_mul, (mem_normOneSubgroup F G _).mp n.property, mul_one,
       PositiveRealTorus.positivePointMap_apply, ← hx, hχ]
   have hj (j : ULift.{u} (Fin r)) :
       ((max ((x j : ℝ≥0ˣ) : ℝ≥0) (((x j)⁻¹ : ℝ≥0ˣ) : ℝ≥0) : ℝ≥0) : ℝ) ^ (m * Module.finrank ℚ F) ≤
@@ -412,7 +407,7 @@ theorem centralNormOneHeightFactorStatement : CentralNormOneHeightFactorStatemen
         rw [Finset.prod_const, Finset.card_univ, Fintype.card_ulift, Fintype.card_fin]
   have hkb : kb ≤ m * Module.finrank ℚ F * kb := Nat.le_mul_of_pos_left kb (Nat.mul_pos hm hd)
   calc
-    adelicHeight F G rho (PositiveRealTorus.positivePointMap F G T i p.1)
+    adelicHeight F G rho (PositiveRealTorus.positivePointMap F G T i a)
         ≤ Cb * ((positiveSize x : ℝ≥0) : ℝ) ^ kb := by
       rw [PositiveRealTorus.positivePointMap_apply, ← hx]
       exact hb x
@@ -422,5 +417,32 @@ theorem centralNormOneHeightFactorStatement : CentralNormOneHeightFactorStatemen
     _ ≤ Cb * ((Cmax * H ^ emax) ^ r) ^ kb :=
       mul_le_mul_of_nonneg_left (pow_le_pow_left₀ (pow_nonneg hP0 _) hP kb) hCb
     _ = Cb * Cmax ^ (r * kb) * H ^ (emax * r * kb) := by ring
+
+/-- Every adelic point of a connected reductive group is a central positive point with trivial
+finite component times a norm-one point, and the height of the central factor is polynomially
+bounded by the height of the point. -/
+theorem centralNormOneHeightFactorStatement : CentralNormOneHeightFactorStatement.{u} := by
+  intro F _ _ G _ N rho hG hrho hN
+  have : Smooth G.X.hom := hG.smooth
+  obtain ⟨T, i, hi, E, hE⟩ := PositiveRealTorus.adelicPositiveDecompositionStatement F G hG
+  have hT : IsSplitTorus T.toGrp := hi.1.1.1
+  have : (characterRestrict i).range.FiniteIndex :=
+    characterRestrictionFiniteIndexStatement F G hG T i hi
+  obtain ⟨I, _, ⟨e₀⟩⟩ := hT
+  classical
+  let : Fintype I := Fintype.ofFinite I
+  obtain ⟨C, _, d, hBound⟩ := exists_adelicHeight_positivePointMap_le F rho hN hrho T i e₀
+  refine ⟨C, d, fun g => ?_⟩
+  let p := E.symm g
+  have hg : g = PositiveRealTorus.positivePointMap F G T i p.1 * p.2 := by
+    rw [← hE]
+    exact (E.apply_symm_apply g).symm
+  refine ⟨PositiveRealTorus.positivePointMap F G T i p.1,
+    PositiveRealTorus.positivePointMap_commute F G T i hi.1.2 p.1,
+    finite_positivePointMap F T i hi.1.1.1 p.1, ?_, ?_⟩
+  · rw [hg, inv_mul_cancel_left]
+    exact p.2.property
+  · rw [hg]
+    exact hBound p.1 p.2
 
 end Langlands.Global.RepresentationGrowth

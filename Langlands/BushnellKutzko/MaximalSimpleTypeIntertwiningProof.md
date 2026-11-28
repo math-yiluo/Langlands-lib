@@ -1,0 +1,9 @@
+# Intertwining of maximal simple types
+
+`maximalSimpleTypeIntertwining` proves `MaximalSimpleTypeIntertwiningStatement.{uF, uV, uW}`. For a maximal simple type of kind (a), every element of `E^×` normalizes the pair and the intertwining set is `E^× J`. For kind (b) the intertwining set is `F^× J`.
+
+The proof uses `heisenbergRepresentation_of` with `simpleCharacterPairing`, `simpleCharacterIntertwining` and `simpleStratumGroupProperties`. Then `betaExtensionTwist_of` combines the resulting Heisenberg theorem with the simple-stratum lattice and subgroup properties. The three representation-carrier universes in this application are zero because simple type data supply the representations on finite complex coordinate spaces. The field, stratum space and simple-type carrier in the conclusion retain their independent universes.
+
+The theorem `maximalSimpleTypeIntertwining_of_twist` applies the twist to the positive-depth case. The relative period-one calculation uses cuspidality to eliminate Cartan double cosets with unequal exponents and identifies the relative intertwining set with the product of the field units and the relative unit subgroup. The field units normalize `J`, so the resulting double product is `E^× J`. Schur's lemma then gives the isomorphism of the conjugate pair for each field unit. The reduction proves the level-zero clause by `levelZeroSimpleTypeIntertwining`, which makes the corresponding period-one calculation over `F`.
+
+This is the maximal case of Bushnell and Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), Proposition (5.5.11), printed p. 185, with the normalization on p. 200 and the maximal-order specialization on p. 203 (PDF pp. 197, 212 and 215). The registered source `bushnell-kutzko-1993-admissible-dual-gln` has SHA-256 `811693b94c03fcbc2cfe33955bc5a00b0fc0b5645ca343f8cc1a3c6511de9c73`.

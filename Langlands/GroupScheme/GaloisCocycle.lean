@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.CocycleRelativeTrivialization
 import Langlands.GroupScheme.TorsorCocycle
 import Langlands.GroupScheme.GaloisPointDescent
 import Langlands.GroupScheme.Descent.FiniteGaloisTensor
@@ -50,6 +51,18 @@ theorem value_mul (ξ : Cocycle G (cover k L)) (σ τ : L ≃ₐ[k] L) :
   rw [arrow_mul, ξ.cocycle (𝟙 _) (arrow k L σ) (arrow k L σ ≫ arrow k L τ)]
   congr 1
   simpa only [Category.comp_id] using ξ.naturality (arrow k L σ) (𝟙 _) (arrow k L τ)
+
+/-- The value at the identity automorphism is one. -/
+theorem value_one (ξ : Cocycle G (cover k L)) : value ξ 1 = 1 := by
+  unfold value
+  rw [arrow_one, Cocycle.toFun_self]
+
+/-- The Galois values of the twist of a cocycle by a cochain. -/
+theorem value_twist (ξ : Cocycle G (cover k L)) (f : cover k L ⟶ G.X) (σ : L ≃ₐ[k] L) :
+    value (ξ.twist f) σ = f⁻¹ * value ξ σ * GaloisPoint.conjugate k L G σ f := by
+  change (𝟙 _ ≫ f)⁻¹ * ξ.toFun (𝟙 _) (arrow k L σ) * (arrow k L σ ≫ f) = _
+  rw [Category.id_comp]
+  rfl
 
 /-- A cochain's scheme coboundary has the same Galois coboundary convention. -/
 theorem value_coboundary (f : cover k L ⟶ G.X) (σ : L ≃ₐ[k] L) :

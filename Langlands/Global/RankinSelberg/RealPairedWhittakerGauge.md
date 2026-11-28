@@ -1,8 +1,9 @@
 # Toral decay of genuine smooth real Whittaker pairs
 
 `RealPairedWhittakerGaugeStatement` concerns the smooth vectors of the
-completed Banach projective product of two continuous representations of
-positive-rank real general linear groups. A continuous linear scalar form
+completed projective product of two jointly continuous complex Banach
+representations of positive-rank real general linear groups. Each factor
+space is complete. A continuous linear scalar form
 is assumed to transform under the two independent upper unipotent groups
 with the indicated opposite nonzero Whittaker scales. Fix a smooth product
 vector and let one group argument vary over logarithmic torus points times
@@ -36,3 +37,5 @@ The registered source is `jacquet-2009-archimedean-rankin-selberg`, SHA-256
 The single-slot embeddings are smooth in the product units chart, and units
 in distinct slots commute. These properties apply to reflected scalar
 coefficients in either coordinate.
+
+`RealPairedWhittakerGaugeBanachStatement` makes the completeness hypotheses on the two representation spaces explicit.

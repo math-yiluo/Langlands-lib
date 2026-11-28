@@ -103,3 +103,22 @@ theorem characteristicExhaustion (d : F) (δ : ℝ) : CharacteristicExhaustionSt
     (fun _ hK => eventually_subset_characteristicSublevel hK) hCoset
 
 end Langlands.HarmonicAnalysis.UnitConjugation
+
+namespace Langlands.HarmonicAnalysis.UnitConjugation
+
+variable {A : Type*} [NormedRing A]
+
+/-- The assertion with the analytic hypotheses on the ambient field and algebra. -/
+def CharacteristicExhaustionCompleteUltrametricStatement (F : Type*) [NontriviallyNormedField F] [NormedAlgebra F A]
+    [FiniteDimensional F A] [CompleteSpace F] [IsUltrametricDist F]
+    [ProperSpace A] [IsUltrametricDist A] (d : F) (δ : ℝ) : Prop :=
+  CharacteristicExhaustionStatement (A := A) F d δ
+
+variable {F : Type*} [NontriviallyNormedField F] [NormedAlgebra F A]
+  [FiniteDimensional F A] [CompleteSpace F] [IsUltrametricDist F]
+  [ProperSpace A] [IsUltrametricDist A]
+
+theorem characteristicExhaustionCompleteUltrametric (d : F) (δ : ℝ) : CharacteristicExhaustionCompleteUltrametricStatement (A := A) F d δ :=
+  characteristicExhaustion (A := A) d δ
+
+end Langlands.HarmonicAnalysis.UnitConjugation

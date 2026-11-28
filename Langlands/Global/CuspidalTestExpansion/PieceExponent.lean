@@ -1,5 +1,4 @@
-import Langlands.Global.AdelicIntertwiningHaarOffset
-import Langlands.Global.AdelicIntertwiningClosedQuotient
+import Langlands.Global.AdelicIntertwiningStabilizerModulusProof
 import Langlands.Global.AdelicWeylPositiveTransport
 import Langlands.Global.AdelicExponentPolynomialIntegral
 import Langlands.Global.AdelicStandardPositiveLog
@@ -44,43 +43,46 @@ theorem HasPolynomialOrbit.mono {lam : ComplexCharacterParameter F (fam.P J)} {k
   rintro _ ⟨j, hj, ℓ, rfl⟩
   exact ⟨j, hj.trans hkm, ℓ, rfl⟩
 
-set_option maxHeartbeats 1600000 in
-/-- For a Weyl conjugation `n M_{I₁} n⁻¹ = M_J`, there is one target parameter `offset` such that
-the intertwining integral over `(U_J(F) ∩ n U_{I₁}(𝔸) n⁻¹) \ U_J(𝔸)` of the twist `h_λ` of a
-continuous, left `U_{I₁}(𝔸)`-invariant function `h` with unnormalized exponent `ν` along `I₁` and
-polynomial degree at most `k` has unnormalized exponent `n(ν + λ) + offset` along `J`
-(`weylParameter (fam.l I₁) c π (ν + λ) + offset`), again with polynomial degree at most `k`,
-provided the integrands of all positive left translates of `h` are integrable. The proof takes
-as offset the parameter whose power at each point `x_Q` of `𝔄_{P_J}` is the Haar factor of
-conjugation by `x_Q` on `U_J(𝔸)` divided by that of its restriction to the closed adelic
-stabilizer `(U_J ∩ n U_{I₁} n⁻¹)(𝔸)` (`intertwiningHaarOffset`). -/
-theorem exists_offset_hasPolynomialOrbit_intertwiningIntegral
+/-- A Weyl-conjugate intertwining integral preserves polynomial degree. In the raw exponent
+of the integral, the offset is the target half modulus minus the Weyl pullback of the source
+half modulus. The label before adding the target half modulus is therefore the Weyl pullback
+of the source exponent after subtracting the source half modulus and adding the twist. -/
+def IntertwiningPolynomialOrbitTransportStatement
+    (_hW : IsWeylConjugation (fam.p I₁) (fam.l I₁) (fam.p J) (fam.l J) n c)
+    (_hπ : fam.l J ≫ π = 𝟙 (fam.M J)) (hK : IsIwasawaCompact (fam.p I₁) K) : Prop :=
+  ∀ (h : AdelicGroupPoints F G → ℂ), Continuous h →
+    IsLeftInvariantUnder F G (parabolicUnipotentImage F (fam.p I₁) (fam.iU I₁)) h →
+    ∀ (ν lam : ComplexCharacterParameter F (fam.P I₁)) (k : ℕ),
+    fam.HasPolynomialOrbit I₁ ν k h →
+    (∀ b ∈ fam.positiveSplitComponent I₁, ∀ y,
+      Integrable (hK.intertwiningIntegrand (fam.iU I₁) (fam.iU J ≫ fam.p J) n
+          (fam.unnormalizedAction I₁ b h) lam y)
+        (intertwiningMeasure F (fam.p I₁) (fam.iU I₁) (fam.iU J ≫ fam.p J)
+          (innerAdelicPoint F G n))) →
+    fam.HasPolynomialOrbit J (weylParameter (fam.l I₁) c π (ν + lam) +
+        (halfModulusParameter F (fam.P J) -
+          weylParameter (fam.l I₁) c π (halfModulusParameter F (fam.P I₁)))) k
+      (hK.intertwiningIntegral (fam.iU I₁) (fam.iU J ≫ fam.p J) n h lam)
+
+set_option maxHeartbeats 2000000 in
+/-- The closed-stabilizer modulus identifies the offset, and integrating the
+polynomial in the transported logarithm preserves the degree bound. -/
+theorem hasPolynomialOrbit_intertwiningIntegral_halfModulusOffset
     (hW : IsWeylConjugation (fam.p I₁) (fam.l I₁) (fam.p J) (fam.l J) n c)
     (hπ : fam.l J ≫ π = 𝟙 (fam.M J)) (hK : IsIwasawaCompact (fam.p I₁) K) :
-    ∃ offset : ComplexCharacterParameter F (fam.P J),
-      ∀ (h : AdelicGroupPoints F G → ℂ), Continuous h →
-        IsLeftInvariantUnder F G (parabolicUnipotentImage F (fam.p I₁) (fam.iU I₁)) h →
-        ∀ (ν lam : ComplexCharacterParameter F (fam.P I₁)) (k : ℕ),
-        fam.HasPolynomialOrbit I₁ ν k h →
-        (∀ b ∈ fam.positiveSplitComponent I₁, ∀ y,
-          Integrable (hK.intertwiningIntegrand (fam.iU I₁) (fam.iU J ≫ fam.p J) n
-              (fam.unnormalizedAction I₁ b h) lam y)
-            (intertwiningMeasure F (fam.p I₁) (fam.iU I₁) (fam.iU J ≫ fam.p J)
-              (innerAdelicPoint F G n))) →
-        fam.HasPolynomialOrbit J (weylParameter (fam.l I₁) c π (ν + lam) + offset) k
-          (hK.intertwiningIntegral (fam.iU I₁) (fam.iU J ≫ fam.p J) n h lam) := by
+    fam.IntertwiningPolynomialOrbitTransportStatement hW hπ hK := by
   classical
+  intro h hc hinv ν lam k hk hint
+  let offset := halfModulusParameter F (fam.P J) -
+    weylParameter (fam.l I₁) c π (halfModulusParameter F (fam.P I₁))
+  change fam.HasPolynomialOrbit J (weylParameter (fam.l I₁) c π (ν + lam) + offset) k
+    (hK.intertwiningIntegral (fam.iU I₁) (fam.iU J ≫ fam.p J) n h lam)
   have hVr := (fam.isUnipotentRadical J).1
   have hUr := (fam.isUnipotentRadical I₁).1
   have : IsAffineHom (fam.U J).X.hom := IsClosedSubgroup.isAffineHom hVr.isClosedSubgroup
   have : Smooth (fam.U J).X.hom := hVr.smooth
   have : LocallyOfFiniteType (fam.U J).X.hom := inferInstance
-  let r : ParabolicRootPresentation (fam.p J) (fam.l J) (fam.a J) :=
-    ⟨⟨fam.T, fam.i, fam.ν, J.val, fam.f J⟩, fam.isCompatible J⟩
   have hi : IsClosedSubgroup (fam.iU I₁ ≫ fam.p I₁) := fam.closedU I₁
-  obtain ⟨offset, hoff⟩ := intertwiningHaarOffset (iU := fam.iU I₁) (iV := fam.iU J) r hW
-    hUr.isNormal hVr.isNormal hi hVr.isUnipotent
-  refine ⟨offset, fun h hc hinv ν lam k hk hint => ?_⟩
   obtain ⟨hfin, eLog, heLog⟩ := fam.standardPositiveLog I₁
   intro g
   let μ' := intertwiningMeasure F (fam.p I₁) (fam.iU I₁) (fam.iU J ≫ fam.p J)
@@ -133,12 +135,37 @@ theorem exists_offset_hasPolynomialOrbit_intertwiningIntegral
   have hconjI := intertwiningIntegralConjugation (fam.p I₁) (fam.iU I₁) (fam.iU J ≫ fam.p J) n
     hi hVr.smooth hVr.connectedSpace hVr.isUnipotent aG α hα (fun v => rfl) K hK h hc hinv
     hUr.isUnipotent lam g
-  have hratio := hoff tt
+  let m := map F (fam.A J).toGrp (fam.M J) (fam.a J) tt.val
+  have hmQ : xQ = map F (fam.M J) (fam.P J) (fam.l J) m := by
+    dsimp only [xQ, m]
+    rw [positivePointMap_apply, map_comp_apply_of_hom]
+  have hmP : xP = map F (fam.M J) (fam.P I₁) (c ≫ fam.l I₁) m := by
+    dsimp only [xP]
+    rw [hmQ, ← map_comp_apply_of_hom, ← Category.assoc (fam.l J) π, hπ, Category.id_comp]
+  have hpow' (ξ : ComplexCharacterParameter F (fam.P I₁)) :
+      parameterPower F (fam.P J) (weylParameter (fam.l I₁) c π ξ) xQ =
+        parameterPower F (fam.P I₁) ξ xP := hpow ξ
+  have hpowOffset : parameterPower F (fam.P J) offset xQ =
+      parameterPower F (fam.P J) (halfModulusParameter F (fam.P J))
+        (map F (fam.M J) (fam.P J) (fam.l J) m) *
+      parameterPower F (fam.P I₁) (-halfModulusParameter F (fam.P I₁))
+        (map F (fam.M J) (fam.P I₁) (c ≫ fam.l I₁) m) := by
+    dsimp only [offset]
+    rw [sub_eq_add_neg, parameterPower_add, ← map_neg, hpow', hmP, hmQ]
+  have hratio := intertwiningStabilizerModulus F G (fam.P I₁) (fam.M I₁) (fam.U I₁)
+    (fam.P J) (fam.M J) (fam.U J) (fam.p I₁) (fam.iU I₁) (fam.l I₁) (fam.p J)
+    (fam.iU J) (fam.l J) n c fam.connectedReductive (fam.isCompatible I₁).parabolic
+    (fam.isUnipotentRadical I₁) (fam.isCompatible I₁).levi (fam.isCompatible J).parabolic
+    (fam.isUnipotentRadical J) (fam.isCompatible J).levi hW hi hVr.isUnipotent
+    hUr.isNormal hVr.isNormal m
+  have hscale := hratio.trans hpowOffset.symm
+  simp only [← hmQ] at hscale
   obtain ⟨hEq, -, -⟩ := hconjI
   have hxQ : pointMap F (fam.A J).toGrp (fam.P J) (Adeles F) (fam.a J ≫ fam.l J) t = xQ := rfl
   rw [hxQ]
   change hK.intertwiningIntegral (fam.iU I₁) (fam.iU J ≫ fam.p J) n h lam (aG * g) * _ = _
-  rw [hEq, ← hratio]
+  rw [hEq]
+  erw [hscale]
   have hmoved : (fun q => hK.parameterTwist h lam
       ((innerAdelicPoint F G n)⁻¹ * aG * ((Quotient.out q : Vₐ) : AdelicGroupPoints F G) * g)) =
       fun q => parameterPower F (fam.P I₁) (ν + lam) xP *
@@ -168,5 +195,24 @@ theorem exists_offset_hasPolynomialOrbit_intertwiningIntegral
         -(weylParameter (fam.l I₁) c π (ν + lam) + offset) = 0 by abel]
     simp [parameterPower]
   linear_combination (∫ q, f q (L (characterLog F (fam.P J) xQ)) ∂μ') * h2
+
+/-- Existence of a common raw exponent offset for all polynomial orbits of the
+intertwining integral, obtained from the formula in terms of half moduli. -/
+theorem exists_offset_hasPolynomialOrbit_intertwiningIntegral
+    (hW : IsWeylConjugation (fam.p I₁) (fam.l I₁) (fam.p J) (fam.l J) n c)
+    (hπ : fam.l J ≫ π = 𝟙 (fam.M J)) (hK : IsIwasawaCompact (fam.p I₁) K) :
+    ∃ offset : ComplexCharacterParameter F (fam.P J),
+      ∀ (h : AdelicGroupPoints F G → ℂ), Continuous h →
+        IsLeftInvariantUnder F G (parabolicUnipotentImage F (fam.p I₁) (fam.iU I₁)) h →
+        ∀ (ν lam : ComplexCharacterParameter F (fam.P I₁)) (k : ℕ),
+        fam.HasPolynomialOrbit I₁ ν k h →
+        (∀ b ∈ fam.positiveSplitComponent I₁, ∀ y,
+          Integrable (hK.intertwiningIntegrand (fam.iU I₁) (fam.iU J ≫ fam.p J) n
+              (fam.unnormalizedAction I₁ b h) lam y)
+            (intertwiningMeasure F (fam.p I₁) (fam.iU I₁) (fam.iU J ≫ fam.p J)
+              (innerAdelicPoint F G n))) →
+        fam.HasPolynomialOrbit J (weylParameter (fam.l I₁) c π (ν + lam) + offset) k
+          (hK.intertwiningIntegral (fam.iU I₁) (fam.iU J ≫ fam.p J) n h lam) :=
+  ⟨_, fam.hasPolynomialOrbit_intertwiningIntegral_halfModulusOffset hW hπ hK⟩
 
 end Langlands.Global.StandardParabolicFamily

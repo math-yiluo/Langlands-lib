@@ -1,3 +1,4 @@
+import Langlands.FieldTheory.ClosureTransport
 import Langlands.GroupScheme.Dynamic.RealLeviIwasawa
 import Langlands.Global.InfiniteCompletionRCLike
 import Mathlib.Analysis.Complex.Polynomial.Basic
@@ -16,22 +17,7 @@ open scoped CategoryTheory.MonObj Matrix
 
 namespace Langlands.Analytic
 
-/-- Algebraic closure transfers through a ring equivalence even when the
-fields have different universes. -/
-theorem isAlgClosed_of_ringEquiv {A : Type v} [Field A] [IsAlgClosed A]
-    (B : Type u) [Field B] (e : A ≃+* B) : IsAlgClosed B := by
-  apply IsAlgClosed.of_exists_root
-  intro p hmp hp
-  have hpe : (p.map e.symm.toRingHom).degree ≠ 0 := by
-    rw [Polynomial.degree_map]
-    exact ne_of_gt (Polynomial.degree_pos_of_irreducible hp)
-  obtain ⟨x, hx⟩ := IsAlgClosed.exists_root (k := A) (p.map e.symm.toRingHom) hpe
-  refine ⟨e x, ?_⟩
-  rw [Polynomial.IsRoot] at hx
-  apply e.symm.injective
-  rw [map_zero, ← hx]
-  clear hx hpe hp hmp
-  induction p using Polynomial.induction_on <;> simp_all
+alias isAlgClosed_of_ringEquiv := Langlands.FieldTheory.isAlgClosed_of_ringEquiv
 
 /-- A complex coefficient field in any prescribed universe. -/
 @[instance_reducible]

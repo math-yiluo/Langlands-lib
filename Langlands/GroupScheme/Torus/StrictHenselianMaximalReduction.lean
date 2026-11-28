@@ -1,3 +1,4 @@
+import Langlands.FieldTheory.ClosureTransport
 import Langlands.GroupScheme.Torus.LocalMaximalPropagation
 import Langlands.GroupScheme.Torus.RelativeLiftingStatement
 import Langlands.GroupScheme.Torus.StrictHenselianMaximalStatement
@@ -21,21 +22,7 @@ set_option backward.isDefEq.respectTransparency.types false
 
 namespace Langlands.GroupScheme
 
-/-- Separable closedness transfers along a ring isomorphism of fields. -/
-theorem isSepClosed_of_ringEquiv {k K : Type*} [Field k] [Field K] (e : k ≃+* K)
-    [IsSepClosed k] : IsSepClosed K := by
-  apply IsSepClosed.of_exists_root
-  intro p hmon hirr hsep
-  have hdeg : (p.map e.symm.toRingHom).degree ≠ 0 := by
-    rw [Polynomial.degree_map]
-    exact ne_of_gt (Polynomial.degree_pos_of_irreducible hirr)
-  obtain ⟨x, hx⟩ := IsSepClosed.exists_root (p.map e.symm.toRingHom) hdeg hsep.map
-  refine ⟨e x, ?_⟩
-  rw [Polynomial.IsRoot] at hx
-  apply e.symm.injective
-  rw [map_zero, ← hx]
-  clear hx hdeg hirr hsep hmon
-  induction p using Polynomial.induction_on <;> simp_all
+alias isSepClosed_of_ringEquiv := Langlands.FieldTheory.isSepClosed_of_ringEquiv
 
 /-- The scheme-theoretic residue field at the closed point of a local spectrum is
 separably closed when the ring-theoretic residue field is. -/

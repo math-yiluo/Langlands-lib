@@ -110,7 +110,7 @@ private theorem exists_conjugate_geometricMeasures [μG.IsMulLeftInvariant]
   exact ⟨⟨μ, hR, hFin, hPos, ν, νΓ, hν, hνΓ⟩, hvol, hint⟩
 
 omit [IsTopologicalGroup G] [MeasurableSpace G] [BorelSpace G] in
-private theorem exists_orbitPoint_of_twistedOrbitalIntegral_ne_zero
+theorem exists_twistedOrbit_ne_zero_of_twistedOrbitalIntegral_ne_zero
     (ν : Measure (LeftQuotient (twistedCentralizer θ δ))) (f : G → ℂ)
     (hn : twistedOrbitalIntegral θ δ ν f ≠ 0) : ∃ x : G, f (x⁻¹ * δ * θ x) ≠ 0 := by
   by_contra! h
@@ -157,7 +157,7 @@ theorem singleOrbitGeometricTrace [μG.IsMulLeftInvariant] (r₀ : Γ)
   have hZero (j : Fin m) (hj : ¬ P j) : (d j).term f = 0 := by
     have hO : twistedOrbitalIntegral θ (r j : G) (d j).orbital f = 0 := by
       by_contra hn
-      exact hj (hIsolate (r j) (exists_orbitPoint_of_twistedOrbitalIntegral_ne_zero _ f hn)).symm
+      exact hj (hIsolate (r j) (exists_twistedOrbit_ne_zero_of_twistedOrbitalIntegral_ne_zero _ f hn)).symm
     simp only [TwistedGeometricMeasures.term, hO, mul_zero]
   by_cases hO : O₀ = 0
   · have hAll (j : Fin m) : (d j).term f = 0 := by
@@ -169,7 +169,7 @@ theorem singleOrbitGeometricTrace [μG.IsMulLeftInvariant] (r₀ : Γ)
       rw [hsum]
       change 0 = ((d₀.rational Set.univ).toReal : ℂ) * O₀
       rw [hO, mul_zero]⟩
-  · obtain ⟨j, hj⟩ := hCover r₀ (exists_orbitPoint_of_twistedOrbitalIntegral_ne_zero _ f hO)
+  · obtain ⟨j, hj⟩ := hCover r₀ (exists_twistedOrbit_ne_zero_of_twistedOrbitalIntegral_ne_zero _ f hO)
     have hj' : P j := hj.symm
     have hterm : (d j).term f = d₀.term f := by
       simp only [TwistedGeometricMeasures.term, (hd j hj').1, (hd j hj').2, O₀]

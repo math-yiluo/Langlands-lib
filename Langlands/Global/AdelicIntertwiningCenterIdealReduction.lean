@@ -7,12 +7,14 @@ import Langlands.Global.ReductiveInfiniteAdelicManifold
 import Langlands.Automorphic.GroupSchemeActualDifferential
 import Langlands.Global.AdelicIntertwiningConvergenceProof
 
-/-! # A center ideal common to all regular intertwining integrals, from the Levi transfer
+/-! # Transport of center annihilators through normalized Levi restrictions
 
-This module proves `IntertwiningUniformCenterIdealReductionStatement`: the normalized
-Harish-Chandra transfer of `LeviRestrictionCenterTransferStatement` and the Haar factor of
-`IntertwiningStabilizerModulusStatement` imply `IntertwiningUniformCenterIdealStatement`, with the
-annihilator ideal of the inducing function and the threshold of the absolute convergence theorem.
+The analytic lemma transports annihilation of normalized inducing restrictions to normalized
+restrictions of the intertwining integral. Applying it with the normalized Harish-Chandra transfer
+of `LeviRestrictionCenterTransferStatement` and the Haar factor of
+`IntertwiningStabilizerModulusStatement` proves `IntertwiningUniformCenterIdealReductionStatement`.
+In that case the uniform ideal and the regularity threshold come from the inducing function and
+the absolute convergence theorem, respectively.
 -/
 
 noncomputable section
@@ -64,11 +66,11 @@ variable {G P M U Q M' V : GroupScheme (Spec (CommRingCat.of F))}
 
 local notation "Vₐ" => AdelicSubgroupPoints.adelicPoints F G (SubgroupFunctor.range (iV ≫ q))
 
-/-- Given an element `y` of the enveloping algebra of `M'(F_∞)` that realizes a central `z` on the
-normalized Levi restrictions for both parabolics, `z` annihilates every plot-smooth infinite slice
-of `M(w, λ)φ` as soon as it annihilates the slices of `φ` and the intertwining integrand is
-locally uniformly dominated. -/
-theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
+/-- Suppose a Levi operator realizes a central operator on normalized target restrictions and
+annihilates every normalized inducing restriction. Under the stabilizer modulus identity and
+compact-uniform domination, the central operator annihilates every plot-smooth infinite slice
+of the intertwining integral. -/
+theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero_of_levi
     (hK : IsIwasawaCompact p K) (hK' : IsIwasawaCompact q K)
     (hC : IntertwiningStabilizerModulusStatement.{u})
     (hG : IsConnectedReductive G) (hp : IsParabolicSubgroup p)
@@ -83,8 +85,6 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
     (hφ : IsLeftInvariantUnder F G (parabolicQuotientSubgroup F p iU l) φ)
     (hφs : ∀ b, functionInfiniteSlice F G φ b ∈ InfinitePlotSmoothFunctions F G)
     (z : AdelicEnvelopingCenter F G hsmooth)
-    (hz : ∀ b (h : functionInfiniteSlice F G φ b ∈ InfinitePlotSmoothFunctions F G),
-      plotSmoothCenterAction F G hsmooth hcalc z ⟨functionInfiniteSlice F G φ b, h⟩ = 0)
     (y : AdelicEnvelopingAlgebra F M' hsmooth')
     (hy1 : ∀ (f : InfiniteAdelicGroupPoints F G → ℂ) (hf : f ∈ InfinitePlotSmoothFunctions F G),
       (∀ (v : InfiniteAdelicGroupPoints F V) (x : InfiniteAdelicGroupPoints F G),
@@ -99,19 +99,12 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
             (map F M' Q l' (ofInfinite F M' m)) *
             (plotSmoothCenterAction F G hsmooth hcalc z ⟨f, hf⟩ :
               InfiniteAdelicGroupPoints F G → ℂ) (M'.affinePointsTarget (l' ≫ q) Ainf m * g))
-    (hy2 : ∀ (f : InfiniteAdelicGroupPoints F G → ℂ) (hf : f ∈ InfinitePlotSmoothFunctions F G),
-      (∀ (u : InfiniteAdelicGroupPoints F U) (x : InfiniteAdelicGroupPoints F G),
-        f (U.affinePointsTarget (iU ≫ p) Ainf u * x) = f x) →
-      ∀ (g : InfiniteAdelicGroupPoints F G)
-        (h : (fun m => parameterPower F P (-halfModulusParameter F P)
-            (map F M' P (c ≫ l) (ofInfinite F M' m)) *
-            f (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * g)) ∈ InfinitePlotSmoothFunctions F M'),
-        ((plotSmoothEnvelopingAction F M' hsmooth' hcalc' y) ⟨_, h⟩ :
-            InfiniteAdelicGroupPoints F M' → ℂ) =
-          fun m => parameterPower F P (-halfModulusParameter F P)
-            (map F M' P (c ≫ l) (ofInfinite F M' m)) *
-            (plotSmoothCenterAction F G hsmooth hcalc z ⟨f, hf⟩ :
-              InfiniteAdelicGroupPoints F G → ℂ) (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * g))
+    (hkill : ∀ (b : FiniteAdelicGroupPoints F G) (g : InfiniteAdelicGroupPoints F G)
+      (h : (fun m => parameterPower F P (-halfModulusParameter F P)
+        (map F M' P (c ≫ l) (ofInfinite F M' m)) *
+        functionInfiniteSlice F G φ b (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * g)) ∈
+          InfinitePlotSmoothFunctions F M'),
+      plotSmoothEnvelopingAction F M' hsmooth' hcalc' y ⟨_, h⟩ = 0)
     (lam : ComplexCharacterParameter F P)
     (hdom : ∀ C : Set (AdelicGroupPoints F G), IsCompact C →
       ∃ bd : LeftCosetSpace (intertwiningRationalSubgroup F p iU (iV ≫ q)
@@ -123,11 +116,8 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
       InfinitePlotSmoothFunctions F G) :
     plotSmoothCenterAction F G hsmooth hcalc z
       ⟨functionInfiniteSlice F G (hK.intertwiningOperator hK' iU l iV c π' w φ lam) b, h⟩ = 0 := by
-  have hUrad : IsUnipotentRadical iU := hU.1
   have hφU : IsLeftInvariantUnder F G (parabolicUnipotentImage F p iU) φ :=
     fun x hx g => hφ x (Subgroup.mem_sup_left hx) g
-  have : IsClosedImmersion iU.hom.hom.left := hUrad.isClosedSubgroup
-  have : IsAffine U.X.left := isAffine_of_isAffineHom iU.hom.hom.left
   set T := hK.intertwiningOperator hK' iU l iV c π' w φ lam with hTdef
   apply Subtype.ext
   funext a
@@ -225,14 +215,6 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
         hK.heightPower lam ((innerAdelicPoint F G w)⁻¹ * (Quotient.out r : Vₐ).val * pair F G a b)) ∂ν = 0 := by
     intro r
     set hr := (innerAdelicPoint F G w)⁻¹ * (Quotient.out r : Vₐ).val * pair F G a b with hhr
-    have hUinv : ∀ (u : InfiniteAdelicGroupPoints F U) (x : InfiniteAdelicGroupPoints F G),
-        functionInfiniteSlice F G φ (finite F G hr) (U.affinePointsTarget (iU ≫ p) Ainf u * x) =
-          functionInfiniteSlice F G φ (finite F G hr) x := by
-      intro u x
-      change φ (pair F G (U.affinePointsTarget (iU ≫ p) Ainf u * x) (finite F G hr)) =
-        φ (pair F G x (finite F G hr))
-      rw [pair_affinePointsTarget_mul]
-      exact hφU _ ⟨ofInfinite F U u, rfl⟩ _
     have hcompP : (fun m => functionInfiniteSlice F G φ (finite F G hr)
         (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * infinite F G hr)) ∈
           InfinitePlotSmoothFunctions F M' := by
@@ -240,13 +222,7 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
         (infinite F G hr) (hφs (finite F G hr))
       simpa only [one_mul] using this
     have hΦ := mul_mem_infinitePlotSmoothFunctions hδP hcompP
-    have hA2 := hy2 _ (hφs (finite F G hr)) hUinv (infinite F G hr) hΦ
-    rw [hz (finite F G hr) (hφs (finite F G hr))] at hA2
-    have hyzero : ∀ m, ((plotSmoothEnvelopingAction F M' hsmooth' hcalc' y) ⟨_, hΦ⟩ :
-        InfiniteAdelicGroupPoints F M' → ℂ) m = 0 := by
-      intro m
-      rw [hA2]
-      simp
+    have hyzero := hkill (finite F G hr) (infinite F G hr) hΦ
     have hT := hT₀ ⟨_, hΦ⟩ ψ
     have hΦzero : ∫ m, (parameterPower F P (-halfModulusParameter F P)
           (map F M' P (c ≫ l) (ofInfinite F M' m)) *
@@ -254,7 +230,8 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
             (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * infinite F G hr)) * ϑ m ∂ν = 0 :=
       hT.symm.trans (integral_eq_zero_of_ae (Filter.Eventually.of_forall fun x => by
         simp only [Pi.zero_apply]
-        rw [hyzero x, zero_mul]))
+        rw [hyzero]
+        simp only [Submodule.coe_zero, Pi.zero_apply, zero_mul]))
     have hF : ∀ m, (ϑ m * parameterPower F P (-halfModulusParameter F P)
           (map F M' P (c ≫ l) (ofInfinite F M' m))) *
           (φ (map F P G p (map F M' P (c ≫ l) (ofInfinite F M' m)) * hr) *
@@ -302,6 +279,84 @@ theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
     _ = 0 := by
         simp_rw [hfiber]
         simp
+
+/-- Given an element `y` of the enveloping algebra of `M'(F_∞)` that realizes a central `z` on the
+normalized Levi restrictions for both parabolics, `z` annihilates every plot-smooth infinite slice
+of `M(w, λ)φ` as soon as it annihilates the slices of `φ` and the intertwining integrand is
+locally uniformly dominated. -/
+theorem IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero
+    (hK : IsIwasawaCompact p K) (hK' : IsIwasawaCompact q K)
+    (hC : IntertwiningStabilizerModulusStatement.{u})
+    (hG : IsConnectedReductive G) (hp : IsParabolicSubgroup p)
+    (hU : LeviSubgroup.IsGeometricUnipotentRadical iU) (hl : IsRationalLeviSubgroup l)
+    (hq : IsParabolicSubgroup q) (hV : LeviSubgroup.IsGeometricUnipotentRadical iV)
+    (hl' : IsRationalLeviSubgroup l') (hw : IsWeylConjugation p l q l' w c)
+    (hπ : l' ≫ π' = 𝟙 M') {d d' : ℕ} (hsmooth : SmoothOfRelativeDimension d G.X.hom)
+    (hcalc : AdelicDifferentialCommutator F G hsmooth)
+    (hsmooth' : SmoothOfRelativeDimension d' M'.X.hom)
+    (hcalc' : AdelicDifferentialCommutator F M' hsmooth')
+    {φ : AdelicGroupPoints F G → ℂ} (hφc : Continuous φ)
+    (hφ : IsLeftInvariantUnder F G (parabolicQuotientSubgroup F p iU l) φ)
+    (hφs : ∀ b, functionInfiniteSlice F G φ b ∈ InfinitePlotSmoothFunctions F G)
+    (z : AdelicEnvelopingCenter F G hsmooth)
+    (hz : ∀ b (h : functionInfiniteSlice F G φ b ∈ InfinitePlotSmoothFunctions F G),
+      plotSmoothCenterAction F G hsmooth hcalc z ⟨functionInfiniteSlice F G φ b, h⟩ = 0)
+    (y : AdelicEnvelopingAlgebra F M' hsmooth')
+    (hy1 : ∀ (f : InfiniteAdelicGroupPoints F G → ℂ) (hf : f ∈ InfinitePlotSmoothFunctions F G),
+      (∀ (v : InfiniteAdelicGroupPoints F V) (x : InfiniteAdelicGroupPoints F G),
+        f (V.affinePointsTarget (iV ≫ q) Ainf v * x) = f x) →
+      ∀ (g : InfiniteAdelicGroupPoints F G)
+        (h : (fun m => parameterPower F Q (-halfModulusParameter F Q)
+            (map F M' Q l' (ofInfinite F M' m)) * f (M'.affinePointsTarget (l' ≫ q) Ainf m * g)) ∈
+          InfinitePlotSmoothFunctions F M'),
+        ((plotSmoothEnvelopingAction F M' hsmooth' hcalc' y) ⟨_, h⟩ :
+            InfiniteAdelicGroupPoints F M' → ℂ) =
+          fun m => parameterPower F Q (-halfModulusParameter F Q)
+            (map F M' Q l' (ofInfinite F M' m)) *
+            (plotSmoothCenterAction F G hsmooth hcalc z ⟨f, hf⟩ :
+              InfiniteAdelicGroupPoints F G → ℂ) (M'.affinePointsTarget (l' ≫ q) Ainf m * g))
+    (hy2 : ∀ (f : InfiniteAdelicGroupPoints F G → ℂ) (hf : f ∈ InfinitePlotSmoothFunctions F G),
+      (∀ (u : InfiniteAdelicGroupPoints F U) (x : InfiniteAdelicGroupPoints F G),
+        f (U.affinePointsTarget (iU ≫ p) Ainf u * x) = f x) →
+      ∀ (g : InfiniteAdelicGroupPoints F G)
+        (h : (fun m => parameterPower F P (-halfModulusParameter F P)
+            (map F M' P (c ≫ l) (ofInfinite F M' m)) *
+            f (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * g)) ∈ InfinitePlotSmoothFunctions F M'),
+        ((plotSmoothEnvelopingAction F M' hsmooth' hcalc' y) ⟨_, h⟩ :
+            InfiniteAdelicGroupPoints F M' → ℂ) =
+          fun m => parameterPower F P (-halfModulusParameter F P)
+            (map F M' P (c ≫ l) (ofInfinite F M' m)) *
+            (plotSmoothCenterAction F G hsmooth hcalc z ⟨f, hf⟩ :
+              InfiniteAdelicGroupPoints F G → ℂ) (M'.affinePointsTarget (c ≫ l ≫ p) Ainf m * g))
+    (lam : ComplexCharacterParameter F P)
+    (hdom : ∀ C : Set (AdelicGroupPoints F G), IsCompact C →
+      ∃ bd : LeftCosetSpace (intertwiningRationalSubgroup F p iU (iV ≫ q)
+          (innerAdelicPoint F G w)) → ℝ,
+        Integrable bd (intertwiningMeasure F p iU (iV ≫ q) (innerAdelicPoint F G w)) ∧
+        ∀ r, ∀ g ∈ C, ‖hK.intertwiningIntegrand iU (iV ≫ q) w φ lam g r‖ ≤ bd r)
+    (b : FiniteAdelicGroupPoints F G)
+    (h : functionInfiniteSlice F G (hK.intertwiningOperator hK' iU l iV c π' w φ lam) b ∈
+      InfinitePlotSmoothFunctions F G) :
+    plotSmoothCenterAction F G hsmooth hcalc z
+      ⟨functionInfiniteSlice F G (hK.intertwiningOperator hK' iU l iV c π' w φ lam) b, h⟩ = 0 := by
+  refine IsIwasawaCompact.centerAction_intertwiningOperator_eq_zero_of_levi
+    hK hK' hC hG hp hU hl hq hV hl' hw hπ
+    hsmooth hcalc hsmooth' hcalc' hφc hφ hφs z y hy1 ?_ lam hdom b h
+  intro b₀ g h₀
+  have : IsClosedImmersion iU.hom.hom.left := hU.1.isClosedSubgroup
+  have : IsAffine U.X.left := isAffine_of_isAffineHom iU.hom.hom.left
+  have hUinv : ∀ (u : InfiniteAdelicGroupPoints F U) (x : InfiniteAdelicGroupPoints F G),
+      functionInfiniteSlice F G φ b₀ (U.affinePointsTarget (iU ≫ p) Ainf u * x) =
+        functionInfiniteSlice F G φ b₀ x := by
+    intro u x
+    change φ (pair F G (U.affinePointsTarget (iU ≫ p) Ainf u * x) b₀) = φ (pair F G x b₀)
+    rw [pair_affinePointsTarget_mul]
+    exact hφ _ (Subgroup.mem_sup_left ⟨ofInfinite F U u, rfl⟩) _
+  have hA2 := hy2 _ (hφs b₀) hUinv g h₀
+  rw [hz b₀ (hφs b₀)] at hA2
+  apply Subtype.ext
+  exact hA2.trans (funext fun m => by
+    simp only [Submodule.coe_zero, Pi.zero_apply, mul_zero])
 
 /-- `LeviRestrictionCenterTransferStatement` and `IntertwiningStabilizerModulusStatement` imply
 `IntertwiningUniformCenterIdealStatement`: the annihilator ideal of `φ` in the center annihilates

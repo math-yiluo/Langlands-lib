@@ -63,10 +63,7 @@ def torusSection {n : ℕ} (t : Fin (n + 1) → Eˣ) :
     Langlands.GeneralLinear (0 + 1) E × (Fin n → Eˣ) :=
   (Iwasawa.diagonalUnits fun _ => t 0 * ∏ i : Fin n, t i.succ, Fin.tail t)
 
-theorem det_diagonalUnits {m : ℕ} (d : Fin m → Eˣ) :
-    Matrix.GeneralLinearGroup.det (Iwasawa.diagonalUnits d) = ∏ i, d i := by
-  ext
-  simp [Matrix.det_diagonal]
+alias det_diagonalUnits := Iwasawa.det_diagonalUnits
 
 @[simp] theorem torusCoord_torusSection {n : ℕ} (t : Fin (n + 1) → Eˣ) :
     torusCoord n (torusSection t) = t := by

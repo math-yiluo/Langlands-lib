@@ -39,3 +39,5 @@ premise explicit.
 
 The registered source is `jacquet-2009-archimedean-rankin-selberg`, SHA-256
 `7a11766eadf25fb7452ce7faa193469791796f572fc654c8fe90a8608bb46afe`.
+
+`RealPairedRankTransferBanachStatement` makes the completeness hypotheses on the two representation spaces explicit.

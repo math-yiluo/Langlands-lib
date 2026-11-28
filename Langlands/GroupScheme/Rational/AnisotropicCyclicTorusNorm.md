@@ -1,0 +1,3 @@
+# The cocharacter norm of a torus in an anisotropic group
+
+A closed subgroup of an anisotropic group has split rank zero. The integral Galois orbit sum of a cocharacter descends to the ground field. It is zero because every ground-field cocharacter of an affine anisotropic group is trivial. A generator of a cubic Galois group lists its three elements by the zeroth, first and second powers. The resulting three-term form gives the orbit relation used in the anisotropic cyclic trialitarian torus argument of Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), §6.8, printed p. 372.

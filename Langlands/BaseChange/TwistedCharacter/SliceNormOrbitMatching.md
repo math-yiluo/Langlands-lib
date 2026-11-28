@@ -19,7 +19,12 @@ Continuity of \(j\) gives a small radius whose ball maps into the ambient
 exponential convergence ball. Pull the supplied intertwiner back to the
 norm-unit intersection, then use compact Haar inversion to reverse the
 direction of the nonzero intertwiner. Applying `normOrbitIntertwining`
-with the specified adjoint gives the claimed projection. For the fixed
-algebra of a semisimple adjoint, the projection for the trace pairings is
-provided by `fixedTraceProjection`. This is the slice application of
+with the specified adjoint gives the claimed projection. For a semisimple
+adjoint, `semisimpleTransverseEstimate` supplies a continuous projection
+onto its fixed algebra. Once the projection is corestricted to that
+algebra, its identity and invariance properties give the hypotheses of
+`fixedTraceProjection`, which proves adjointness for the ambient regular
+trace form and its restriction. Applying the same additive character on
+both sides of the trace identity yields the required bicharacter identity.
+This is the slice application of
 Clozel's Lemma 9. [Clozel 1987, §3.6, printed p. 158](https://doi.org/10.4153/CJM-1987-008-3)

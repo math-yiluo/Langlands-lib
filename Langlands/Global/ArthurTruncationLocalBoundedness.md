@@ -5,3 +5,5 @@ The normalized radical integral of a measurable rational-invariant function is a
 `finite_cutoff_support_on_compact` upgrades pointwise finiteness to a common finite set of rational cosets for each compact set of arguments. The right increments in each full fundamental weight are bounded on compact sets by the Iwasawa height product formula and compactness of the specified subgroup. Lowering the truncation parameter by a multiple of the generic positive direction accounts for the increments. The resulting support is contained in a single pointwise cutoff support at the identity, which `truncationFiniteness` proves finite.
 
 The sum of the extended norms is bounded on compact sets by the sum of the corresponding finitely many bounds. Rational invariance of the sum and a compact rational cover extend the majorant to an entire radical orbit in `exists_enorm_cutoffSeries_bound_on_radical`. These consequences of the definitions supply the absolute convergence needed to use the geometric-lemma unfolding on Arthur's locally bounded input class.
+
+`Idempotence.measurable_tauHat_complex` gives measurability of the complex-valued weight cutoff in the truncation formula.

@@ -139,3 +139,22 @@ theorem largeCharacteristicCoset (d : F) (δ : ℝ) : LargeCharacteristicCosetSt
   exact ⟨hnorm, mul_left_cancel₀ (fun hn => ha (nnnorm_eq_zero.mp hn)) h⟩
 
 end Langlands.HarmonicAnalysis.UnitConjugation
+
+namespace Langlands.HarmonicAnalysis.UnitConjugation
+
+variable {A : Type*} [NormedRing A]
+
+/-- The assertion with the analytic hypotheses on the ambient field and algebra. -/
+def LargeCharacteristicCosetCompleteUltrametricStatement (F : Type*) [NontriviallyNormedField F] [NormedAlgebra F A]
+    [FiniteDimensional F A] [CompleteSpace F] [IsUltrametricDist F]
+    [ProperSpace A] [IsUltrametricDist A] (d : F) (δ : ℝ) : Prop :=
+  LargeCharacteristicCosetStatement (A := A) F d δ
+
+variable {F : Type*} [NontriviallyNormedField F] [NormedAlgebra F A]
+  [FiniteDimensional F A] [CompleteSpace F] [IsUltrametricDist F]
+  [ProperSpace A] [IsUltrametricDist A]
+
+theorem largeCharacteristicCosetCompleteUltrametric (d : F) (δ : ℝ) : LargeCharacteristicCosetCompleteUltrametricStatement (A := A) F d δ :=
+  largeCharacteristicCoset (A := A) d δ
+
+end Langlands.HarmonicAnalysis.UnitConjugation

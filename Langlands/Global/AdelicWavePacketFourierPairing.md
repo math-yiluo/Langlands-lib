@@ -1,0 +1,9 @@
+# Fourier pairing with normalized spectral measures
+
+`WavePacketFourierPairingStatement` takes a measure-preserving chart from central Lebesgue measure times an s-finite norm-one measure to the full quotient measure. Two measure-preserving spectral charts carry their respective locally finite relative measures times central Lebesgue measure to unscaled Lebesgue measure on the full spectral spaces. Each norm-one family vanishes pointwise off a compact spectral set and is jointly in L² for Lebesgue measure restricted to that set times the norm-one measure. The full family pulls back to the norm-one family multiplied by the positive Fourier phase in the corresponding central coordinates.
+
+The two full packets, formed with `spectralMeasure`, are in L² for the full quotient measure. The norm-one pairing at equal central frequencies is integrable for central Lebesgue measure times the two relative measures. The full pairing is the integral of that equal-frequency pairing multiplied by the normalization factor below. Both pairings conjugate the second family.
+
+`wavePacketFourierPairing` pulls back the full packets by the quotient chart. The transformation law gives the positive Fourier phase, and `compactSpectralPacketPairing` gives square integrability and the equal-frequency integral in ordinary Lebesgue measures. Each normalized spectral integral contributes the scalar `(2π)⁻ⁿ` in dimension `n`. The resulting inner product has factor `(2π)ᵐ / ((2π)ⁿ (2π)ⁿ′)` when the common central frequency has dimension `m`.
+
+This is the Plancherel step in E. Lapid, *On Arthur's asymptotic inner product formula of truncated Eisenstein series*, §8, printed p.328 (volume PDF p.337), `lapid-2011-asymptotic-inner-product-truncated-eisenstein`, SHA-256 `760161175f57a28d2e05de1f5638bc205d33123ae95f67ce4296b4b651fa950b`.

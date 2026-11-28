@@ -44,8 +44,8 @@ norms of a quadratic extension have index two).
 The book states B.51 and B.52 without proof ("Everything in this section can be found in virtually
 any textbook", p. 623) and uses the Hilbert symbol without defining it; the properties above are
 the ones it calls "well-known properties of Hilbert symbol" in the proof of Corollary 3.20 (p. 85).
-The Library defines no Hilbert symbol elsewhere (searched: `hilbertSymbol`, `HilbertSymbol` in the
-Library, NYLL and Mathlib).
+The real and complex cases are described in
+[Archimedean Hilbert symbols](../../KTheory/ArchimedeanHilbertSymbol.md).
 
 ## Literature
 

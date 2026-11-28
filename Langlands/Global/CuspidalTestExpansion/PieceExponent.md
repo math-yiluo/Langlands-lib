@@ -1,63 +1,61 @@
 # Exponents of intertwined generalized eigenfunctions
 
-Module `Langlands.Global.CuspidalTestExpansion.PieceExponent`
-(namespace `Langlands.Global.StandardParabolicFamily`).
+Module `Langlands.Global.CuspidalTestExpansion.PieceExponent` in namespace
+`Langlands.Global.StandardParabolicFamily`.
 
 ## Statements
 
-- `HasPolynomialOrbit.mono`: the polynomial orbit condition `HasPolynomialOrbit J λ k h` (for
-  every `g`, `x ↦ h(x g) x^{-λ}` on `𝔄_{P_J}` is a polynomial of degree `≤ k` in the logarithm `log(x)` (`characterLog`)) implies
-  the same condition for every `m ≥ k`.
-- `exists_offset_hasPolynomialOrbit_intertwiningIntegral`: let `n` be a rational point and
-`c : M_J → M_{I₁}` with `IsWeylConjugation (fam.p I₁) (fam.l I₁) (fam.p J) (fam.l J) n c`
-(so `n M_{I₁} n⁻¹ = M_J`), `π : P_J → M_J` a projection with `fam.l J ≫ π = 𝟙`, and `K` an
-Iwasawa subgroup for `P_{I₁}`. There is one parameter `offset` of `P_J` such that, for every
-continuous `h` on `G(𝔸)` that is left invariant under `U_{I₁}(𝔸)` and has unnormalized exponent
-`ν` along `I₁` with polynomial degree at most `k` (`HasPolynomialOrbit I₁ ν k h`), and every `λ`
-for which the intertwining integrands of all positive split translates of `h` are integrable, the
-intertwining integral
+`IntertwiningPolynomialOrbitTransportStatement` concerns the intertwining integral from
+`P = P_{I₁}` to `Q = P_J` when a rational point `n` conjugates the Levi of `P` onto that of `Q`.
+Write `c : M_J → M_{I₁}` for inverse conjugation, `π : Q → M_J` for the Levi projection, and
+`W = weylParameter (fam.l I₁) c π` for the pullback along `π ≫ c ≫ fam.l I₁`. Take an
+Iwasawa compact subgroup for `P`. The input function `h` on `G(𝔸)` is continuous and left
+`U_{I₁}(𝔸)`-invariant. It satisfies `HasPolynomialOrbit I₁ ν k h`, so the raw shift by a
+positive split point `b`, multiplied by `b^{-ν}`, is polynomial of degree at most `k` in
+`characterLog b` at each base point. The integrability hypothesis is for the intertwining
+integrand of every such left translate of `h`, with twist parameter `λ` and at every base
+point.
 
-`y ↦ ∫_{(U_J(F) ∩ n U_{I₁}(𝔸) n⁻¹) \ U_J(𝔸)} h_λ(n⁻¹ v y) dv`
+Under these hypotheses `hasPolynomialOrbit_intertwiningIntegral_halfModulusOffset` proves
+that the integral of the twist `h_λ`, over
+`(U_J(F) ∩ n U_{I₁}(𝔸) n⁻¹) \ U_J(𝔸)`, has polynomial orbit of degree at most `k` along
+`J` with raw exponent
 
-(`hK.intertwiningIntegral (fam.iU I₁) (fam.iU J ≫ fam.p J) n h λ`) has unnormalized exponent
-`weylParameter (fam.l I₁) c π (ν + λ) + offset` along `J`, with the same degree bound `k`
-(`HasPolynomialOrbit J _ k`). The offset does not depend on `h`, `ν`, `k` or `λ`. The statement
-only asserts that such an offset exists. The proof takes the parameter of `P_J` whose character
-power is the scaling factor of the quotient measure on `H \ U_J(𝔸)`, where
-`H = (U_J ∩ n U_{I₁} n⁻¹)(𝔸)` is the closed adelic stabilizer: for `t ∈ 𝔄_{P_J}` with point
-`x_Q ∈ P_J(𝔸)`, `x_Q^{offset}` is the Haar factor of the conjugation `v ↦ x_Q v x_Q⁻¹` on
-`U_J(𝔸)` divided by the Haar factor of its restriction to `H` (`intertwiningHaarOffset`). This
-factor accounts for the modulus character of `M_J` on the quotient
-`(n U_{I₁} n⁻¹ ∩ U_J)(𝔸) \ U_J(𝔸)`, which Bernstein–Lapid, *Meromorphic continuation of
-Eisenstein series* (2024), use through (6.5), p. 201, to prove (6.4); there the normalization by
-`ρ` absorbs it. The theorem is the exponent bookkeeping behind their §6.10 for the terms of the
-constant term formula (6.17).
+`W(ν + λ) + (ρ_Q − W(ρ_P)) = W(ν − ρ_P + λ) + ρ_Q`,
+
+where `ρ_P` and `ρ_Q` are the Library's `halfModulusParameter`. The offset
+`ρ_Q − W(ρ_P)` witnesses `exists_offset_hasPolynomialOrbit_intertwiningIntegral` and is
+independent of `h`, `ν`, `λ` and `k`. The lemma `HasPolynomialOrbit.mono` enlarges the
+polynomial degree bound by inclusion of the spanning monomials.
 
 ## Proof
 
-`HasPolynomialOrbit.mono` holds because the spanning set of `polynomialFunctions _ k` (products
-of at most `k` linear forms) is contained in that of `polynomialFunctions _ m`.
+Fix a base point `g`. At the representative `z_q = n⁻¹ v_q g` of an integration variable `q`,
+write `h(b z_q) b^{-ν} = Q_q(characterLog b)`. Put
+`f(q,T) = heightPower λ z_q · Q_q(T)`. Each value of `T` is the logarithm of a positive split
+point by `standardPositiveLog`. The integrability hypothesis for its translate gives
+integrability of `q ↦ f(q,T)`. The theorem `exponentPolynomialIntegral` gives a polynomial
+`T ↦ ∫ f(q,T) dq` of degree at most `k`. Its composition with the linear map `L` on logarithms
+induced by `π ≫ c ≫ fam.l I₁` has the same degree bound by `polynomialFunctions_comp_linear`.
 
-The offset is the one supplied by `intertwiningHaarOffset` for the conjugation action of
-`𝔄_{P_J}` on `U_J(𝔸)` and on `H`. Fix `g`. Since `h` has exponent `ν` and degree `≤ k`, for each point `z` of
-the integration domain there is a polynomial `Q_z` of degree `≤ k` with
-`h(b z) b^{-ν} = Q_z(log(b))` on `𝔄_{P_{I₁}}`. Put `f(q, T) = (height power of z_q) · Q_{z_q}(T)`;
-for each `T` this is a positive translate's integrand up to a constant factor, hence integrable,
-so `exponentPolynomialIntegral` shows `T ↦ ∫ f(q, T) dq` is a polynomial of degree `≤ k`.
-Composing with the linear map `L` dual to `π ≫ c ≫ fam.l I₁`
-(`polynomialFunctions_comp_linear`) gives the polynomial for `J`, again of degree `≤ k`.
+For a positive split point `x_Q` in `Q(𝔸)`, `weylPositiveTransport` identifies the transported
+point `x_P` of `P(𝔸)` with `n⁻¹ x_Q n` under the ambient group maps. It identifies its logarithm
+with `L(characterLog x_Q)` and its character powers with the powers at `x_Q` of the pullback
+parameters. The theorem `intertwiningIntegralConjugation` moves the left shift by `x_Q` inside
+the integral, multiplying it by the quotient Haar factor for conjugation on `U_J(𝔸)` and its
+restriction to the closed stabilizer `(U_J ∩ n U_{I₁} n⁻¹)(𝔸)`.
 
-For `t ∈ 𝔄_{P_J}`, let `x_Q` be its point of `P_J(𝔸)` and `x_P` its transport to `P_{I₁}(𝔸)`
-(`weylPositiveTransport`: `x_P = n⁻¹ x_Q n`, logarithms related by `L`, powers related by
-`weylParameter`). Conjugation `α : v ↦ x_Q v x_Q⁻¹` of `U_J(𝔸)` preserves `H`
-(`positiveIntertwiningRadicalAction_mem_stabilizer`), and the change of variables of
-`intertwiningIntegralConjugation` gives
+The point `x_Q` comes from the Levi point `m` obtained by mapping the split torus into `M_J`,
+and `x_P` comes from `c(m)`. At `m`, `intertwiningStabilizerModulus` evaluates the factor as
+`x_Q^{ρ_Q} · x_P^{-ρ_P}`. The power pullback and `parameterPower_add` rewrite this factor as
+`x_Q^{ρ_Q − W(ρ_P)}`. Inside the translated integral, `heightPower_map_mul` and the polynomial
+orbit of `h` give `h_λ(x_P z_q) = x_P^{ν + λ} · f(q,L(characterLog x_Q))`. Multiplying the
+shifted integral by the inverse of the stated raw character value cancels the scalar factors
+and yields the polynomial of degree at most `k` constructed above.
 
-`Int h (x_Q g) = (Δ(α) / Δ(α|_H)) · ∫ h_λ(n⁻¹ x_Q v g) dv = (Δ(α) / Δ(α|_H)) · ∫ h_λ(x_P n⁻¹ v g) dv`,
+## Source
 
-where `Δ` denotes the Haar factor (`mulEquivHaarChar`). By `intertwiningHaarOffset` the factor
-`Δ(α) / Δ(α|_H)` is `x_Q^{offset}`. In the remaining integral,
-`h_λ(x_P z) = x_P^{ν + λ} · f(q, L(log(x_Q)))` for `z = n⁻¹ v_q g` (`heightPower_map_mul`, the
-polynomial `Q_z` and `parameterPower_add`), and `x_P^{ν + λ} = x_Q^{weylParameter (ν + λ)}`.
-Hence `Int h (x_Q g) · x_Q^{-(weylParameter (ν + λ) + offset)} = ∫ f(q, L(log(x_Q))) dq`, the
-polynomial of degree `≤ k` found above.
+Bernstein–Lapid, *On the meromorphic continuation of Eisenstein series* (2024), p. 201,
+(6.4) and (6.5), give the intertwining covariance and identify the modulus on the unipotent
+quotient as `ρ_Q − wρ_P`. The polynomial-orbit statement uses this identity in the raw
+translation convention and carries the source logarithmic polynomial through the integral.

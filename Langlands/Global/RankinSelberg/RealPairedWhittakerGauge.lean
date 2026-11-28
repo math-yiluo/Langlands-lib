@@ -244,3 +244,18 @@ theorem realPairedWhittakerGauge : RealPairedWhittakerGaugeStatement n E R := by
   exact (inv_mul_le_iff₀ hPos).mp hG |>.trans_eq (mul_comm _ _)
 
 end Langlands.Global.RankinSelbergGlobal.RealPairedWhittakerGauge
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPairedWhittakerGauge
+
+variable (n : Fin 2 → ℕ) (E : Fin 2 → Type*)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((n i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPairedWhittakerGaugeBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPairedWhittakerGaugeStatement n E R
+
+theorem realPairedWhittakerGaugeBanach [∀ i, CompleteSpace (E i)] : RealPairedWhittakerGaugeBanachStatement n E R :=
+  realPairedWhittakerGauge n E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPairedWhittakerGauge

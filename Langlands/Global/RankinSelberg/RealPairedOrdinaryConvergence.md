@@ -2,10 +2,12 @@
 
 `RealPairedOrdinaryConvergenceStatement` gives a common right half-plane of
 absolute convergence and holomorphy for padded paired Whittaker coefficients
-on a real unipotent quotient. The scalar form on the genuine smooth product
-representation has opposite Whittaker scales in the two independent groups.
-It is invariant under the common upper unipotents acting by simultaneous
-leading padding. The comparison rank is at most the rank of each group.
+on a real unipotent quotient with a supplied compatible quotient Haar measure.
+Take two jointly continuous representations of positive-rank real general
+linear groups on complex Banach spaces. The complex-linear form is continuous
+on the smooth vectors of their completed projective product in the word-derivative
+topology. It has opposite nonzero Whittaker scales in the two groups and is
+invariant under the common upper unipotents acting by simultaneous leading padding. The comparison rank is at most the rank of each group.
 A Schwartz test of the common last row is allowed at every comparison rank.
 The integral without a row test is covered when at least one of the two
 paddings has a positive identity block. The abscissa is uniform over all
@@ -34,3 +36,5 @@ comparison in Lemma 14.1, pp. 105–107.
 
 The registered source is `jacquet-2009-archimedean-rankin-selberg`, SHA-256
 `7a11766eadf25fb7452ce7faa193469791796f572fc654c8fe90a8608bb46afe`.
+
+`RealPairedOrdinaryConvergenceBanachStatement` makes the completeness hypotheses on the two representation spaces explicit.

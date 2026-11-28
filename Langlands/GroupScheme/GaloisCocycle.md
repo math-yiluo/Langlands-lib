@@ -53,3 +53,5 @@ The provenance is internal: the module derives these comparisons from
 Mathlib's existing degree-one group-cohomology objects and quotient
 criterion. It proves no unconditional cohomology vanishing, torus tensor
 identification, or quasi-splitness theorem.
+
+`value_one` computes the value at the identity automorphism. `value_twist` gives the change in the Galois values under a twist by a cochain.

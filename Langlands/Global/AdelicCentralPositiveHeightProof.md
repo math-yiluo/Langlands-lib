@@ -133,25 +133,26 @@ infinite place and `1` at every finite place.
   Each evaluation is compared place by place: at every finite place the point is the
   image of the identity (`atFinitePlace_intrinsic`).
 
-### The main theorem
+### Height in a supplied factorization
 
-Take `T`, `i` and `E` from the decomposition theorem, and the finite index from the
-character-restriction theorem. Choose a splitting `e₀ : T.toGrp ≅ splitTorus I`,
-renumber `I` as `ULift (Fin r)`, and let `e` be the resulting splitting. Obtain:
+`exists_adelicHeight_positivePointMap_le` takes a split torus `T` with a
+homomorphism `i` to `G` whose character restriction has finite-index range.
+For a positive-size closed embedding it gives a uniform polynomial bound
+for the height of `z = positivePointMap F G T i a` in terms of the height
+of `g = z * n`, for every positive point `a` and every norm-one point `n`.
+Renumber the supplied splitting `e₀ : T.toGrp ≅ splitTorus I` by
+`ULift (Fin r)` to obtain a splitting `e`. The proof uses the following data.
 
-- `Cb, kb` from B;
-- `m` and the characters `χ_j` from C;
+- `Cb, kb` from B.
+- `m` and the characters `χ_j` from C.
 - for each `j`, constants `C_j ≥ 1` and `ea_j` from A for `χ_j`.
 
 Put `Cmax = ∑ C_j` and `emax = ∑ ea_j`. The theorem's constants are
 `c = Cb * Cmax ^ (r * kb)` and `e = emax * r * kb`.
 
-Given `g`, write `E⁻¹ g = (p₁, p₂)` and take `z = positivePointMap p₁`. Then
-`g = z * p₂`. Properties 1–3 come from `positivePointMap_commute`, from D, and from
-`z⁻¹ g = p₂ ∈ normOneSubgroup`. By `subgroup_eq_intrinsicSubgroup`, `p₁ = full x`
-for some coordinates `x`.
+By `subgroup_eq_intrinsicSubgroup`, `a = full x` for some coordinates `x`.
 
-For the height, write `H = adelicHeight rho g ≥ 1`. Since `p₂` is norm one,
+For the height, write `H = adelicHeight rho g ≥ 1`. Since `n` is norm one,
 `characterNorm χ_j g = characterNorm χ_j z = x j ^ (m * [F:ℚ])`. So A gives
 `(x j ^ (m [F:ℚ]))^{±1} ≤ C_j H^{ea_j} ≤ Cmax H^{emax}`, and by `max_inv_pow_le`,
 `max(x j, (x j)⁻¹) ^ (m [F:ℚ]) ≤ Cmax H^{emax}`. Taking the product over `j` gives
@@ -165,6 +166,15 @@ adelicHeight rho z ≤ Cb * positiveSize x ^ kb
 ```
 
 The second step uses `positiveSize x ≥ 1` and `m [F:ℚ] ≥ 1`.
+
+### The main theorem
+
+Take `T`, `i` and `E` from the decomposition theorem and the finite index from
+the character-restriction theorem. Given `g`, write `E⁻¹ g = (p₁, p₂)` and
+take `z = positivePointMap p₁`. Then `g = z * p₂`. Properties 1–3 follow from
+`positivePointMap_commute`, D, and `z⁻¹ * g = p₂ ∈ normOneSubgroup`. The height
+bound follows by applying `exists_adelicHeight_positivePointMap_le` to
+`(p₁, p₂)`.
 
 ## Relation to the statement's sketch
 

@@ -204,3 +204,5 @@ Imports are the published modules
 They are present in Library commit
 `f01c1864161b6d1cdc1d04b1f8d577dfd4e8400f`. Environment: Lean 4.34.0, Mathlib
 `5ed2965256430c3649e86755f9576b54eca72435`.
+
+`Iwasawa.det_diagonalUnits` expresses the determinant of a diagonal matrix as the product of its entries in the unit group.

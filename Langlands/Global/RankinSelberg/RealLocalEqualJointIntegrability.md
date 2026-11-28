@@ -36,3 +36,17 @@ The thresholds are explicit. Let `κ, L` and `κ', L'` be the data of `exists_li
 ## Scope
 
 This module proves only joint absolute convergence, with a seminorm bound, for exponents whose separated character is dominant and with `Re s` beyond a threshold. It does not assume or prove the Whittaker law, unfolding identities, meromorphic continuation or functional equations, and it does not prove `RealLocalUniformPositiveEqualContinuationStatement`. Non-dominant exponents are not covered.
+
+## Uniform abscissas
+
+`RealLocalEqualUniformJointIntegrabilityStatement` fixes the growth
+exponents in the smaller toral bound and the larger simple-root gauge
+before choosing the leading and spectral abscissas. For those exponents,
+the same abscissas apply to all continuous functions with the indicated
+bounds and with invariant absolute value of the larger function under the
+upper unipotent group. The smaller function needs only its toral growth
+bound. The seminorm order and integral bound may depend on the functions
+and the two real parts. In the proof the abscissas use the two exponents
+and the toral densities. The constants of the two function bounds enter
+after that choice. This is a uniform form of the estimates for the
+unfolded kernel of Jacquet, §8.1, equation (8.1).

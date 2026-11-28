@@ -118,3 +118,18 @@ theorem realPaddedWhittakerProduct : RealPaddedWhittakerProductStatement n E R :
   rw [hCov b hu, he, one_mul]
 
 end Langlands.Global.RankinSelbergGlobal.RealPaddedWhittakerProduct
+
+namespace Langlands.Global.RankinSelbergGlobal.RealPaddedWhittakerProduct
+
+variable (n : Fin 2 → ℕ) (E : Fin 2 → Type*)
+  [∀ i, NormedAddCommGroup (E i)] [∀ i, NormedSpace ℂ (E i)]
+  (R : ∀ i, Langlands.GeneralLinear ((n i) + 1) ℝ →* (E i →L[ℂ] E i))
+
+/-- The assertion for representations on complex Banach spaces. -/
+def RealPaddedWhittakerProductBanachStatement [∀ i, CompleteSpace (E i)] : Prop :=
+  RealPaddedWhittakerProductStatement n E R
+
+theorem realPaddedWhittakerProductBanach [∀ i, CompleteSpace (E i)] : RealPaddedWhittakerProductBanachStatement n E R :=
+  realPaddedWhittakerProduct n E R
+
+end Langlands.Global.RankinSelbergGlobal.RealPaddedWhittakerProduct

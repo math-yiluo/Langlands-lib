@@ -1,0 +1,7 @@
+# Section trace for finite Galois coverings on a site
+
+Let `G` be a `GaloisCovering J Γ V' V` on an arbitrary site, with `Γ` a finite group. For a sheaf `F` of modules over a commutative ring `R`, `GaloisCovering.traceSections` gives the `R`-linear map from `F(V')` to `F(V)` whose restriction to `V'` is the sum of the restrictions along the deck arrows. The group and coefficient universes are independent.
+
+The sum is invariant because restricting along another deck arrow permutes the summands by right multiplication in `Γ`. The descent theorem in `Langlands.Cohomology.GaloisCovering` puts the sum in the range of restriction. Restriction is injective, so its linear inverse on that range gives the trace. This derives the trace from the covering sheaf condition and the finite group law. The construction uses the unnormalized sum over all deck elements.
+
+`traceSections_restrict` proves that trace after restriction is multiplication by the order of `Γ`, since each deck term is the original restriction. `traceSections_naturality` proves compatibility with morphisms of coefficient sheaves. `traceSections_map` compares two Galois coverings on the same site with the same group. When the square of covering arrows commutes and the arrow between their sources commutes with deck restrictions, the trace commutes with restriction along the base arrow. Both equations follow after applying the injective restriction and comparing the deck sums term by term.

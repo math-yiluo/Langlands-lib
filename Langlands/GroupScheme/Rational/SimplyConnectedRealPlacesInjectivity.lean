@@ -17,14 +17,6 @@ open scoped CategoryTheory.MonObj TensorProduct
 
 namespace Langlands.GroupScheme
 
-private theorem cohomologous_of_isTrivial {S : Scheme.{u}} {G : GroupScheme S} {U : Over S}
-    {c d : Cocycle G U} (hc : c.IsTrivial) (hd : d.IsTrivial) : c.Cohomologous d := by
-  obtain ⟨f, hf⟩ := hc
-  obtain ⟨g, hg⟩ := hd
-  refine ⟨f * g⁻¹, fun x y => ?_⟩
-  simp only [Cocycle.twist, MonObj.comp_mul, GrpObj.comp_inv, hf, hg]
-  group
-
 private theorem isAlgClosed_of_complexRingEquiv {K : Type u} [Field K]
     (e : K ≃+* ℂ) : IsAlgClosed K := by
   apply IsAlgClosed.of_exists_root
@@ -128,7 +120,7 @@ theorem simplyConnectedRealToAllPlacesComparison :
       let : IsAlgClosed K := isAlgClosed_of_complexRingEquiv
         (InfinitePlace.Completion.ringEquivComplexOfIsComplex
           (InfinitePlace.not_isReal_iff_isComplex.mp hw))
-      exact cohomologous_of_isTrivial
+      exact Cocycle.IsTrivial.cohomologous
         (isTrivial_pullback_of_isAlgClosed (ξ.baseChange b _ r))
         (isTrivial_pullback_of_isAlgClosed (ζ.baseChange b _ r))
   · let K := Langlands.Global.FiniteCompletion F v
@@ -141,7 +133,7 @@ theorem simplyConnectedRealToAllPlacesComparison :
       isSimplyConnectedFieldExtension F K G hG
     let : IsAffineHom ((baseChange b).obj G).X.hom := hGK.isSemisimple.isConnectedReductive.isAffineHom
     have h := localSimplyConnectedCocycleVanishing K ((baseChange b).obj G) hGK
-    exact cohomologous_of_isTrivial
+    exact Cocycle.IsTrivial.cohomologous
       (isTrivial_pullback_of_fieldCovers h (ξ.baseChange b _ r))
       (isTrivial_pullback_of_fieldCovers h (ζ.baseChange b _ r))
 

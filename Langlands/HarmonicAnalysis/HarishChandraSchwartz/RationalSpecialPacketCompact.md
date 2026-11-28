@@ -78,3 +78,12 @@ cocharacter, through the literal factor of the ambient split torus.
 This realizes the compatibility of the compact with the Levi in
 Waldspurger I.1, printed p. 240, used in the nested diagram of III.6
 and VIII.2.1.
+
+`semistandardLeviCompactTraceWithVertex` chooses a trace together with a
+special vertex witness on its Levi model. Its value projection gives the
+underlying compact trace. Its Levi apartment satisfies the apartment
+axioms and has bounded open stabilizers. The vertex is the one given by
+the restriction of the ambient vertex. Transport to the inherited
+maximal split torus identifies the norm-one fixer with the same compact
+trace. The trace can therefore be used as the source compact in the
+next step on a smaller Levi.

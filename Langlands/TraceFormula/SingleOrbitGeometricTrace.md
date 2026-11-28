@@ -29,3 +29,5 @@ This internal step implements the finite sum reduction in
 Arthur–Clozel, Chapter 1, p. 46, and Henniart–Lemaire, I.6.8,
 pp. 49–50 (PDF pp. 57–58), and works with the ordinary or twisted
 geometric expansion in the Library.
+
+`exists_twistedOrbit_ne_zero_of_twistedOrbitalIntegral_ne_zero` gives an orbit representative where the test is nonzero.

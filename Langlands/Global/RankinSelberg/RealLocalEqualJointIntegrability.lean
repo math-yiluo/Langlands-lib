@@ -945,25 +945,28 @@ private theorem lintegral_inner_le {ν : Measure Q} {κ : ℝ≥0} {L : (Fin m �
 
 /-! ### Joint absolute convergence -/
 
-set_option maxHeartbeats 1600000 in
-/-- **Joint absolute convergence of the unfolded kernel.** Let `W` and `V` be
-continuous functions on `GL_(t+1)(ℝ)` and `GL_(t+2)(ℝ)` with gauge estimates, the
-size of `V` invariant under left upper unipotent translation. There are thresholds
-`ρ` for the real part of the separated character and `σ` for the real part of `s`
-such that, for real parts `x₀ ≥ ρ` and `y₀ > σ`, the unfolded kernel is integrable
-for every square Schwartz test, and its absolute integral is bounded by a fixed
-constant times one Schwartz seminorm of the test. Only the order of the seminorm and
-the constant depend on `x₀` and `y₀`; `σ` does not depend on `x₀`. -/
-theorem exists_equalUnfoldedKernel_bound (D : RealQuotientMeasureData t)
-    (D' : RealQuotientMeasureData (t + 1)) {W : G → ℂ} {V : H → ℂ}
-    (hWc : Continuous W) (hVc : Continuous V)
-    (hWg : RealEqualConvergence.HasGauge W) (hVg : RealEqualConvergence.HasGauge V)
-    (hVu : ∀ (u : U) (g : H), ‖V (u.val * g)‖ = ‖V g‖) :
-    ∃ ρ σ : ℝ, ∀ x₀ y₀ : ℝ, ρ ≤ x₀ → σ < y₀ → ∃ (k : ℕ) (C : ℝ), 0 ≤ C ∧
-      ∀ (Ψ : 𝓢(Y, ℂ)) (d : RealCharacterData) (s : ℂ), d.exponent.re = x₀ → s.re = y₀ →
-        Integrable (equalUnfoldedKernel d Ψ W V s) (D.measure.prod D'.groupHaar) ∧
-        ∫ p, ‖equalUnfoldedKernel d Ψ W V s p‖ ∂(D.measure.prod D'.groupHaar) ≤
-          C * (Finset.Iic (k, 0)).sup (fun r : ℕ × ℕ => SchwartzMap.seminorm ℝ r.1 r.2) Ψ := by
+variable (t) in
+/-- The convergence abscissas of the unfolded equal-rank kernel can be chosen from the two
+fixed toral growth exponents and the two quotient data. The constants and Schwartz seminorm
+in the bound can depend on the functions and the real parts of the two parameters. -/
+def RealLocalEqualUniformJointIntegrabilityStatement : Prop :=
+  ∀ (D : RealQuotientMeasureData t) (D' : RealQuotientMeasureData (t + 1)) (NW NV : ℕ),
+    ∃ ρ σ : ℝ, ∀ (W : G → ℂ) (V : H → ℂ), Continuous W → Continuous V →
+      (∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Fin m → ℝ) (k : unitaryCompact ℝ m),
+        ‖W (torus y * (k : G))‖ ≤ C * Real.exp ((NW : ℝ) * ∑ i, |y i|)) →
+      (∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Fin n → ℝ) (k : unitaryCompact ℝ n),
+        ‖V (torus y * (k : H))‖ ≤
+          C * Real.exp (-(M : ℝ) * rootPos y + (NV : ℝ) * ∑ i, |y i|)) →
+      (∀ (u : U) (g : H), ‖V (u.val * g)‖ = ‖V g‖) →
+      ∀ x₀ y₀ : ℝ, ρ ≤ x₀ → σ < y₀ → ∃ (k : ℕ) (C : ℝ), 0 ≤ C ∧
+        ∀ (Ψ : 𝓢(Y, ℂ)) (d : RealCharacterData) (s : ℂ), d.exponent.re = x₀ → s.re = y₀ →
+          Integrable (equalUnfoldedKernel d Ψ W V s) (D.measure.prod D'.groupHaar) ∧
+          ∫ p, ‖equalUnfoldedKernel d Ψ W V s p‖ ∂(D.measure.prod D'.groupHaar) ≤
+            C * (Finset.Iic (k, 0)).sup (fun r : ℕ × ℕ => SchwartzMap.seminorm ℝ r.1 r.2) Ψ
+
+set_option maxHeartbeats 1800000 in
+theorem realLocalEqualUniformJointIntegrability : RealLocalEqualUniformJointIntegrabilityStatement t := by
+  intro D D' NW NV
   let := D.unipotentHaar_rightInvariant
   let := D'.unipotentHaar_rightInvariant
   let := D.groupHaar_isHaar
@@ -975,14 +978,6 @@ theorem exists_equalUnfoldedKernel_bound (D : RealQuotientMeasureData t)
   obtain ⟨κ, L, hκL⟩ := exists_lintegral_alphaQ D.groupHaar D.unipotentHaar D.measure D.compatible
   obtain ⟨κ', L', hκL'⟩ :=
     exists_lintegral_alphaQ D'.groupHaar D'.unipotentHaar D'.measure D'.compatible
-  obtain ⟨NW, hNW⟩ := hWg
-  obtain ⟨CW, hCW, hW₀⟩ := hNW 0
-  have hW : ∀ (η : Fin m → ℝ) (k : unitaryCompact ℝ m),
-      ‖W (torus η * (k : G))‖ ≤ CW * Real.exp ((NW : ℝ) * ∑ i, |η i|) := by
-    intro η k
-    have h := hW₀ η k
-    rwa [Nat.cast_zero, neg_zero, zero_mul, zero_add] at h
-  obtain ⟨NV, hNV⟩ := hVg
   obtain ⟨α, hα⟩ : ∃ α : ℝ, α = ‖L‖ + NW + Fintype.card (UpperEntryPair n) := ⟨_, rfl⟩
   obtain ⟨A, hA⟩ : ∃ A : ℝ, A = NV + α + Fintype.card (UpperEntryPair n) := ⟨_, rfl⟩
   obtain ⟨B, hB⟩ : ∃ B : ℝ, B = (A + ‖L'‖ + 1) * (((t + 1 : ℕ) : ℝ) + 1) := ⟨_, rfl⟩
@@ -992,7 +987,9 @@ theorem exists_equalUnfoldedKernel_bound (D : RealQuotientMeasureData t)
   have hL0 : 0 ≤ ‖L‖ := norm_nonneg _
   have hα0 : 0 ≤ α := by rw [hα]; linarith
   have hA0 : 0 ≤ A := by rw [hA]; linarith
-  refine ⟨α + 1 - ((t : ℝ) + 2) / 2, B + 1 / 2, fun x₀ y₀ hx₀ hy₀ => ?_⟩
+  refine ⟨α + 1 - ((t : ℝ) + 2) / 2, B + 1 / 2, ?_⟩
+  intro W V hWc hVc hWg hNV hVu x₀ y₀ hx₀ hy₀
+  obtain ⟨CW, hCW, hW⟩ := hWg
   obtain ⟨c, hc⟩ : ∃ c : ℝ, c = x₀ + ((t : ℝ) + 2) / 2 := ⟨_, rfl⟩
   obtain ⟨τ, hτ⟩ : ∃ τ : ℝ, τ = y₀ - 1 / 2 := ⟨_, rfl⟩
   have hcα : α + 1 ≤ c := by rw [hc]; linarith
@@ -1173,6 +1170,35 @@ theorem exists_equalUnfoldedKernel_bound (D : RealQuotientMeasureData t)
           (ENNReal.ofReal S * R0).toReal := ENNReal.toReal_mono hfin.ne hbound
       _ = R0.toReal * S := by rw [ENNReal.toReal_mul, ENNReal.toReal_ofReal hS0, mul_comm]
 
+
+/-- **Joint absolute convergence of the unfolded kernel.** Let `W` and `V` be
+continuous functions on `GL_(t+1)(ℝ)` and `GL_(t+2)(ℝ)` with gauge estimates, the
+size of `V` invariant under left upper unipotent translation. There are thresholds
+`ρ` for the real part of the separated character and `σ` for the real part of `s`
+such that, for real parts `x₀ ≥ ρ` and `y₀ > σ`, the unfolded kernel is integrable
+for every square Schwartz test, and its absolute integral is bounded by a fixed
+constant times one Schwartz seminorm of the test. Only the order of the seminorm and
+the constant depend on `x₀` and `y₀`; `σ` does not depend on `x₀`. -/
+theorem exists_equalUnfoldedKernel_bound (D : RealQuotientMeasureData t)
+    (D' : RealQuotientMeasureData (t + 1)) {W : G → ℂ} {V : H → ℂ}
+    (hWc : Continuous W) (hVc : Continuous V)
+    (hWg : RealEqualConvergence.HasGauge W) (hVg : RealEqualConvergence.HasGauge V)
+    (hVu : ∀ (u : U) (g : H), ‖V (u.val * g)‖ = ‖V g‖) :
+    ∃ ρ σ : ℝ, ∀ x₀ y₀ : ℝ, ρ ≤ x₀ → σ < y₀ → ∃ (k : ℕ) (C : ℝ), 0 ≤ C ∧
+      ∀ (Ψ : 𝓢(Y, ℂ)) (d : RealCharacterData) (s : ℂ), d.exponent.re = x₀ → s.re = y₀ →
+        Integrable (equalUnfoldedKernel d Ψ W V s) (D.measure.prod D'.groupHaar) ∧
+        ∫ p, ‖equalUnfoldedKernel d Ψ W V s p‖ ∂(D.measure.prod D'.groupHaar) ≤
+          C * (Finset.Iic (k, 0)).sup (fun r : ℕ × ℕ => SchwartzMap.seminorm ℝ r.1 r.2) Ψ := by
+  obtain ⟨NW, hNW⟩ := hWg
+  obtain ⟨CW, hCW, hW₀⟩ := hNW 0
+  have hW : ∀ (η : Fin m → ℝ) (k : unitaryCompact ℝ m),
+      ‖W (torus η * (k : G))‖ ≤ CW * Real.exp ((NW : ℝ) * ∑ i, |η i|) := by
+    intro η k
+    have h := hW₀ η k
+    rwa [Nat.cast_zero, neg_zero, zero_mul, zero_add] at h
+  obtain ⟨NV, hNV⟩ := hVg
+  obtain ⟨ρ, σ, h⟩ := realLocalEqualUniformJointIntegrability (t := t) D D' NW NV
+  exact ⟨ρ, σ, h W V hWc hVc ⟨CW, hCW, hW⟩ hNV hVu⟩
 
 variable (t) in
 /-- Joint absolute convergence of the unfolded kernel of (8.1) for dominant exponents:

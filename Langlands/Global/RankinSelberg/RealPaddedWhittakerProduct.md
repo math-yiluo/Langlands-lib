@@ -22,10 +22,13 @@ the upper unipotent condition and leaves the sum of the adjacent upper
 entries unchanged. The two resulting characters cancel because their
 additive scales are opposite.
 
-Jacquet defines the paired coefficient from the two Whittaker evaluations in §2, p. 8.
-He uses the coefficient in the padded integrals on p. 105 and applies the compensating
-subgroup on p. 106 in the proof of Lemma 14.1.
-[H. Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), author-posted edition](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf#page=8).
+Jacquet defines the product Whittaker form and its coefficient after
+Theorem 2.3 on p. 8. Proposition 14.3 and Lemma 14.1 on pp. 105–106 use
+that coefficient in the padded integrals and apply simultaneous
+leading-block covariance.
+[H. Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), author-posted edition](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf#page=105).
 
 The registered source is `jacquet-2009-archimedean-rankin-selberg`, SHA-256
 `7a11766eadf25fb7452ce7faa193469791796f572fc654c8fe90a8608bb46afe`.
+
+`RealPaddedWhittakerProductBanachStatement` makes the completeness hypotheses on the two representation spaces explicit.

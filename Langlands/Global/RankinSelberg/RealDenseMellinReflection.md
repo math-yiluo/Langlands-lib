@@ -2,9 +2,12 @@
 
 `RealDenseMellinReflectionStatement` concerns a pair of determinant Mellin
 integrals whose kernels evaluate continuous linear scalar forms on a
-sequential barrelled complex topological vector space. It assumes positive
-measurable determinant scales and a common range of finite moments for the
-two kernels on all source vectors. If the entire real normalized reflection
+sequential barrelled complex topological vector space. Both measures are
+s-finite, and each scalar coefficient for each source vector is almost
+everywhere strongly measurable for its corresponding measure. Both determinant
+scales are positive and measurable. One real threshold works for the absolute
+determinant moments of both kernels for every vector and every real exponent
+at or above that threshold. If the entire real normalized reflection
 with exponential strip growth holds on a set of vectors with dense complex
 span, it holds on the full space, for the same paired factors, additive data
 and nonzero reflection sign.

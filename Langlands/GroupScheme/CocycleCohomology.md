@@ -42,3 +42,5 @@ The implementation imports `CocycleRelativeTrivialization`, which imports
 `CocycleRefinement` and `TorsorCocycle`. All universes are arbitrary.
 
 `isTrivial_of_section` gives a trivialization of a cocycle when its cover has a section.
+
+`IsTrivial.cohomologous` identifies the cohomology classes of two trivial cocycles on a fixed cover.

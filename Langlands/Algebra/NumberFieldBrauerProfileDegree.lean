@@ -1,4 +1,6 @@
 import Langlands.Algebra.NumberFieldRelativeBrauerProfiles
+import Langlands.Algebra.NumberFieldBrauerFiniteSupport
+import Langlands.Algebra.BrauerComparison.PeriodDegree
 import Langlands.Algebra.DivisionSplittingDegree
 import Langlands.Algebra.LocalReducedCharpolyNeighborhood
 import Langlands.ClassFieldTheory.Local.LocalDivisionSplittingDegree
@@ -106,6 +108,37 @@ private theorem exists_splitting_field_of_local_exponent
     exact isSplit_of_isAlgClosed (baseChange w.Completion (baseChange T A))
 
 end NumberFields
+
+/-- The reduced degree of a central division algebra over a totally complex
+number field equals the additive order of its Brauer class. -/
+def NumberFieldTotallyComplexBrauerPeriodIndexStatement : Prop :=
+  ∀ (F D : Type u) [Field F] [NumberField F] [IsTotallyComplex F]
+    [DivisionRing D] [Algebra F D] [FiniteDimensional F D] [Algebra.IsCentral F D],
+    addOrderOf (classOf (divisionAlgebraCSA F D)) = reducedDegree F D
+
+/-- Prescribe local splitting degrees equal to the Brauer period, then use
+divisibility of the degree of a division-algebra splitting field. -/
+theorem numberFieldTotallyComplexBrauerPeriodIndex :
+    NumberFieldTotallyComplexBrauerPeriodIndexStatement.{u} := by
+  intro F D _ _ _ _ _ _ _
+  classical
+  let A := divisionAlgebraCSA F D
+  let n := addOrderOf (classOf A)
+  have hperiod : n ∣ reducedDegree F D := addOrderOf_classOf_dvd_reducedDegree A
+  have hn : 0 < n := Nat.pos_of_dvd_of_pos hperiod (reducedDegree_pos F D)
+  let S := (finite_nonsplitFinitePlaces A).toFinset
+  obtain ⟨T, _, _, _, hT, d, hd, ⟨e⟩⟩ :=
+    exists_splitting_field_of_local_exponent S A hn
+      (fun v _ => by
+        rw [← scalarExtension_classOf, ← map_nsmul, addOrderOf_nsmul_eq_zero, map_zero])
+      (fun v hv => by
+        have hv' : v ∉ nonsplitFinitePlaces A := by
+          simpa only [S, Set.Finite.mem_toFinset] using hv
+        exact Classical.not_not.mp hv')
+  let e' : T ⊗[F] D ≃ₐ[T] Matrix (Fin d) (Fin d) T := e
+  have hD : d ∣ Module.finrank F T := division_splitting_size_dvd_field_degree hd e'
+  rw [matrix_size_eq_reducedDegree F D T d e', hT] at hD
+  exact Nat.dvd_antisymm hperiod hD
 
 /-- Over a totally complex number field, a zero-sum profile killed by `n`
 is realized by a degree-`n` CSA with the specified relative invariants. -/

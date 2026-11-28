@@ -1,0 +1,7 @@
+# The characteristic chamber in the intrinsic standard Levi
+
+Fix maximal split torus embeddings \(i_L\) into the Levi and \(i\) into the ambient group. Assume \(i_L\) followed by the Levi map is \(i\), the common cocharacter is generic for both embeddings, and the intrinsic simple roots are the subset defining the standard Levi. `IntrinsicLeviChamberStatement` identifies the Levi factor of the shell chamber with the intrinsic characteristic chamber at the projected lower and upper cutoffs.
+
+A normalizer point in the Levi maps to an ambient normalizer point with the same action on the entire character lattice. An ambient Weyl-invariant inner product is therefore Weyl invariant for the Levi. The formula for a real coroot in terms of this common inner product identifies the intrinsic and ambient coroots of every shared root. The intrinsic simple coroots span the intrinsic coroot space, so this space equals the ambient span indexed by the Levi simple roots. The intrinsic and ambient Levi weights are dual to these same coroots. By linearity their restrictions to the Levi coroot space coincide.
+
+The two projected cutoffs lie in the Levi coroot space. Substituting the equality of the coroot spaces and weights identifies each root and weight inequality in the two chambers. This is the chamber identification for the Levi term of Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, (7.2) on p. 23 and (7.23) on p. 28.
