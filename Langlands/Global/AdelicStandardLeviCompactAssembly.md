@@ -7,3 +7,5 @@ The published good integral models give local Iwasawa coverage for the fixed rep
 Patch the exceptional local groups using the assumed local existence. The resulting family is uniformly integral and absorbs each adelic point at almost all places. The coordinate assembly gives ambient compactness, maximality and minimal Iwasawa coverage. For each Levi, a regular function lifts to the ambient group because the inclusion is a closed immersion between affine schemes. Thus the inverse-image family is also uniformly integral. Its coordinate subgroup is the adelic inverse image of the ambient compact, and its local compactness and maximality give the same properties adelically.
 
 This is a local-to-global reduction using the published coordinate assembly and good integral models.
+
+`standardLeviCompact_of_coordinateFamily` works with a specified family of local subgroups satisfying `IsStandardLeviCompact` and agreeing with the fixed integral family almost everywhere. It supplies the conclusions on its actual coordinate subgroup. `standardLeviCompactAssembly` obtains such a family by patching the local choices against the integral family.

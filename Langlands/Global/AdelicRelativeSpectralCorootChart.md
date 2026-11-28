@@ -1,0 +1,7 @@
+# Coroot evaluation coordinates on the relative spectral space
+
+The real inducing parameters that annihilate the ambient split component are identified with the real evaluations on the projected simple coroots outside the chosen Levi. These are the frequency coordinates of the regularized term in Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), §2 and §7, (7.8)–(7.12).
+
+The proof transports the actual parabolic character restriction from the canonical standard parabolic. Its image annihilates the Levi coroots. The actual central split component factors through the maximal split torus with cocharacter image the common root kernel, so the relative spectral condition is exactly annihilation of those central directions. Values of the coroot functionals specify a linear combination of the full Arthur weights. That combination vanishes on the selected Levi and on the ambient centre, giving a relative parameter by perfect pairing and restriction. Conversely, a relative parameter with zero values on the projected coroots pairs to zero on the coroot span and on its central complement.
+
+Taking all the relative coroot coordinates equal to one gives `exists_relativeDominantParameter`. This real relative parameter pairs to zero on the Levi simple coroots and to one on each remaining simple coroot. It provides the strictly dominant displacement used to orient the cones of Proposition 7.8.

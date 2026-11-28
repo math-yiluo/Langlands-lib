@@ -5,3 +5,14 @@ Let a jointly continuous complex Banach representation of the real general linea
 Apply `smoothVectorSubgroupFactorization` to the closed exponential subgroup with its left Haar measure. The scalar integrands use the same vectors and compact kernels for every evaluation. `RealRankRaisingHaar` identifies the left measure as a weighted version of the right measure. `RealRankRaisingKernel` absorbs that weight into the Schwartz functions on the row. Their integrands are continuous and compactly supported on the subgroup before transport through its row chart, which proves integrability and the formula in the stated product coordinates.
 
 This is the smooth-vector averaging step of Jacquet, *Archimedean Rankin–Selberg Integrals*, Lemma 14.1, pp. 106–107 in the author-posted edition, expressed for a continuous Banach representation of the ambient matrix group.
+
+`RealRankRaisingMappedSmoothFactorizationStatement` allows the compensating
+matrices to act through a continuous homomorphism from the larger group
+into the units of a finite-dimensional real Banach algebra. A supplied
+real linear map of Lie directions must intertwine the two exponentials.
+The jointly continuous representation acts on a complex Banach space and
+the genuine smooth topology uses the target units group. The same
+compact Schwartz support and coordinate measure apply. Restrict the
+homomorphism and the linear map to the subgroup and its Lie algebra,
+then use `smoothVectorMappedSubgroupFactorization`. The identity map
+recovers the original factorization.

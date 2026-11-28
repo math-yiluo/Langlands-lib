@@ -16,7 +16,7 @@ namespace Langlands.GMFamily
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 variable {R : Finset E} {a a₁ : Submodule ℝ E} {ξ : E}
 
-private def sliceSum (R : Finset E) (a a₁ : Submodule ℝ E) (ξ : E)
+def sliceSum (R : Finset E) (a a₁ : Submodule ℝ E) (ξ : E)
     (c₁ : Finset E → StrongDual ℝ a₁ → ℂ) (Λ : StrongDual ℝ a) : ℂ :=
   ∑ P ∈ parabolics R a₁, c₁ P (extendParam a a₁ Λ) *
     vertexSum (sliceNormal R a a₁ (P := P)) (sliceParameter R Λ) (sliceOffset ξ)

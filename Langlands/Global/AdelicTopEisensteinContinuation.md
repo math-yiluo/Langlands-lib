@@ -1,0 +1,7 @@
+# The Eisenstein term at the full-group parabolic
+
+The full standard parabolic and its Levi both map isomorphically to the ambient group. The unipotent root set for any presentation of this parabolic is empty, so every parameter satisfies the regularity condition. The defining agreement of the continuation with the convergent series identifies it everywhere with the one-term height twist of the inducing form.
+
+Through the parabolic isomorphism, the Iwasawa height power is the ambient character power for the transported parameter. It is multiplicative. The infinite part is a smooth character and its multiplication operator intertwines the enveloping centre with a centre endomorphism. Contracting the inducing function's cofinite annihilator along that endomorphism gives a cofinite annihilator of the twist. The finite character factor is a scalar on each infinite slice. Rational invariance, smoothness, compact finiteness, and moderate growth give the other automorphy conditions.
+
+The full parabolic has trivial modulus, and an inducing form is invariant under the positive split centre by its defining equivariance. At imaginary parameters the twist therefore transforms under the transported unitary character of this centre. Applying the whole-group constant-term identification gives the twist as its own weak constant term. This is the full-group case of the weak terms used in Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, (4.3) and Theorem 7.1.

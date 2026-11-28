@@ -1,0 +1,9 @@
+# Prescribed full local degrees in a cyclic cubic extension
+
+`CyclicCubicPrescribedLocalDegreeStatement` says that for any number field `F` and finite set of its finite places, there is a Galois subextension of the separable closure of `F` of degree three in which every place over the specified set has completion degree three. The prime order of the Galois group makes the extension cyclic.
+
+`cyclicCubicPrescribedLocalDegree` prescribes at each selected place the local character obtained by raising a primitive complex cube root of unity to the local valuation order. One additional place makes the prescription nontrivial even for an empty set. The finite-order prescription theorem gives a global Hecke character killed by six. Its fourth power is killed by three and has the original local components. Artin realization of this character embeds the Galois group into the three roots of unity. The nontrivial local uniformizer value gives degree exactly three.
+
+The prescribed local characters kill integral units, so the selected places are unramified by the Artin unit criterion. A local degree of one would force residue degree one. The identity on the upper residue field would then be arithmetic Frobenius, so the global Artin image of the local uniformizer would be the identity, contrary to its prescribed value. Local degrees divide the global degree, so they equal three. Transport along a field isomorphism realizes the resulting field and the same completion degrees inside the separable closure.
+
+This is the cubic case of the Grunwald–Wang construction in Artin and Tate, *Class Field Theory* (AMS Chelsea, 2009), Chapter X, §2, Theorems 4 and 5, printed pp. 79–80 (PDF pp. 88–89). The cubic splitting argument for inner E₆ in Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), Theorem 6.26, printed p. 354 (PDF p. 364), uses such a choice of local degrees at the support of a Brauer class.

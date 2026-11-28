@@ -1,0 +1,7 @@
+# Characteristic height sets in the rational parabolic quotient
+
+Fix a standard parabolic \(Q\), the minimal Iwasawa compact \(K\), and a set of minimal heights \(W\). The image of \(\Omega_{N_0} M_0(W) K\) in \(Q(F)\backslash G(\mathbb A)^1\) equals the image of all norm-one points with minimal height in \(W\). The identity concerns images because a rational point of \(Q\) can change the minimal height of a representative.
+
+Minimal height is unchanged by right multiplication by \(K\) and by left multiplication by the minimal radical. These invariances give the inclusion from the characteristic product. For the reverse inclusion, factor a norm-one point as \(qk\) by minimal Iwasawa. The image of \(q\) is norm one because \(k\) is. The minimal-parabolic norm-one coordinates express this image as a radical point times a norm-one minimal Levi point and a positive torus point. The positive factor is itself norm one and lies in the minimal Levi, so the latter two factors give a single norm-one Levi point of the required height.
+
+The rational covering of the minimal radical writes its factor as a principal point times a point of \(\Omega_{N_0}\). The morphism from the minimal radical into the actual standard parabolic puts the principal point in \(Q(F)\). Removing it preserves the quotient class and replaces the radical factor by the prescribed compact representative. This is the rational folding in the use of Delorme's (7.1) and the parabolic shell lift for (7.6)–(7.7), *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107.

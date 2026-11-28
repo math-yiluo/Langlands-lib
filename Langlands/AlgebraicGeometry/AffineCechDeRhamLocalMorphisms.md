@@ -26,6 +26,7 @@ open inclusions and applying naturality of the section maps. Assume that for eve
 \(W\) of \(X\) the section map of \(r\) has kernel \(I\,\Gamma(X,W)\). On
 each affine intersection, the pullbacks from two vertices have the same
 image under the section map of \(r\), namely the section map of \(m\).
+The equality with that section map is `LocalPullbacks.ofLocalMorphisms_reduce_sections`.
 Their difference therefore lies in the extended ideal.
 `localMorphisms_congruent` gives the same conclusion for two families of
 local lifts of \(m\). `localMorphisms_congruent_global` compares the local

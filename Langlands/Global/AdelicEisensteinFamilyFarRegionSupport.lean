@@ -32,17 +32,6 @@ variable {F : Type u} [Field F] [NumberField F]
   {fam : StandardParabolicFamily F G} {I J : StandardIndex F G fam.i fam.ν}
   {selected : relativeWeylGroup fam.i}
 
-/-- The concatenation of finitely many lists of competing Weyl exponents. -/
-def sigma {p : ℕ} (data : Fin p → CompetingWeylExponents fam I J selected) :
-    CompetingWeylExponents fam I J selected where
-  size := ∑ v, (data v).size
-  weyl j := (data (finSigmaFinEquiv.symm j).1).weyl (finSigmaFinEquiv.symm j).2
-  linear j := (data (finSigmaFinEquiv.symm j).1).linear (finSigmaFinEquiv.symm j).2
-  offset j := (data (finSigmaFinEquiv.symm j).1).offset (finSigmaFinEquiv.symm j).2
-  competing _ := (data _).competing _
-  positive _ := (data _).positive _
-  ambient _ := (data _).ambient _
-
 theorem sigma_label {p : ℕ} (data : Fin p → CompetingWeylExponents fam I J selected)
     (v : Fin p) (k : Fin (data v).size) (lam : ComplexCharacterParameter F (fam.P I)) :
     (sigma data).label (finSigmaFinEquiv ⟨v, k⟩) lam = (data v).label k lam := by

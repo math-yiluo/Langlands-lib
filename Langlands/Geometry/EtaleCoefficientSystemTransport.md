@@ -1,0 +1,7 @@
+# Étale coefficient systems over a level diagram
+
+Suppose a functor from the level category to the opposite category of schemes has étale transitions. A compatible coefficient diagram indexed by levels and stages places a module sheaf on the small étale site of each pair. The scheme depends only on the level. The coefficient ring and the underlying modules are in the scheme universe. The level and stage categories have independent object and arrow universes.
+
+`CoefficientDiagram.fiber` restricts this diagram to the stages at one level. Each stage arrow uses the coefficient map over the identity of that level and the identity-restriction isomorphism. `CoefficientDiagram.fiberMap` is the natural transformation induced by a level arrow, with restriction of the coefficient sheaves along its scheme arrow. Its components are the coefficient maps at fixed stage. Naturality follows from the two factorizations of a mixed arrow into a stage arrow and a level arrow. The proof uses the unit laws for étale restriction by postcomposition of test objects. Identity and composition of level transports follow from the original coefficient diagram laws at each stage.
+
+This is a categorical consequence of the existing compatible coefficient diagram. The torsion systems on analytic domains in Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §2, pp. 303–305, motivate the construction. Applying it to those systems requires a compatible scheme diagram and a comparison of its coefficient sheaves and transitions with the analytic data.

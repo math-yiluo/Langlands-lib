@@ -1,0 +1,9 @@
+# Product coordinates on the actual characteristic shell
+
+The shell in \(Q(F)\backslash G(\mathbb A)^1\) pulls back under the relative Iwasawa map to the product of the full radical and compact factors, the split height shell, and the inverse image of the intrinsic Levi height region in its rational quotient. The Levi height region is defined using the ambient minimal height of norm-one Levi points, tested against `characteristicLeviChamber` with projected cutoffs.
+
+The height description of the parabolic lift removes the choice of compact representative for the minimal radical. Surjectivity of relative Iwasawa multiplication then identifies the lift with the image of coordinate points whose sum of split and Levi heights lies in the characteristic shell. The real height identity (7.23) and uniqueness of the decomposition along the Levi coroot span separate the split and Levi requirements.
+
+A second representative of an intrinsic Levi rational class is a rational left translate of the first. Making that change in the Iwasawa product conjugates the radical by the rational Levi point, which lies in the parabolic and centralizes the split factor. Thus the condition on the Levi coordinate can be imposed on its quotient class. It is invariant under the induced compact because minimal height is invariant under right multiplication by the ambient compact. The fibre relation for relative parabolic coordinates now gives the exact preimage.
+
+`characteristicRelativeProductMeasure_preserving` substitutes this preimage into the unfolded shell measure and expresses the restrictions on the split and intrinsic Levi factors separately. The inverse parabolic density remains in the split measure. This implements the product restriction in Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, (7.7), (7.20) and (7.23).

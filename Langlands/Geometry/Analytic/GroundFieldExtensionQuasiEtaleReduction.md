@@ -1,0 +1,5 @@
+# Extending quasi-étale factorizations
+
+For the actual localized scalar-extension functor, preservation of étale morphisms implies preservation of quasi-étale morphisms. At an extended source point the inverse images of the finitely many original chart ranges still have a union that is a neighbourhood. They are the ranges of the scalar-extended charts. The comparison for chart-domain objects transports each factorization into an affinoid domain embedding followed by an étale arrow. The comparison of the inclusions supplies the factorization equation. The localized pointwise criterion gives the conclusion on the actual localized arrow.
+
+This implements the local factorization argument for the quasi-étale part of Berkovich, *Vanishing cycles for formal schemes*, §3, Lemma 3.1(i), printed p. 544 (PDF p. 6), *Inventiones Mathematicae* 115 (1994), pp. 539–571. The retained original is `berkovich-1994-vanishing-cycles-formal-schemes`, SHA-256 `f4f7bc00cc46a0a5f72a69d7bbb220bce1d3ed9fd465aeda629f37dfc054bed1`.

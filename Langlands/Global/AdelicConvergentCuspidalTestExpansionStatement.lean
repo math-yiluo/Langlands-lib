@@ -94,4 +94,25 @@ def ConvergentCuspidalTestExpansionStatement : Prop :=
                               n.val phi lam)) g test =
                         ∑ k, fam.leviPairing J (terms k) g test
 
+namespace CompetingWeylExponents
+
+variable {F : Type u} [Field F] [NumberField F]
+  {G : GroupScheme (Spec (CommRingCat.of F))}
+  [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+  {fam : StandardParabolicFamily F G} {I J : StandardIndex F G fam.i fam.ν}
+  {selected : relativeWeylGroup fam.i}
+
+/-- The concatenation of finitely many lists of competing Weyl exponents. -/
+def sigma {p : ℕ} (data : Fin p → CompetingWeylExponents fam I J selected) :
+    CompetingWeylExponents fam I J selected where
+  size := ∑ v, (data v).size
+  weyl j := (data (finSigmaFinEquiv.symm j).1).weyl (finSigmaFinEquiv.symm j).2
+  linear j := (data (finSigmaFinEquiv.symm j).1).linear (finSigmaFinEquiv.symm j).2
+  offset j := (data (finSigmaFinEquiv.symm j).1).offset (finSigmaFinEquiv.symm j).2
+  competing _ := (data _).competing _
+  positive _ := (data _).positive _
+  ambient _ := (data _).ambient _
+
+end CompetingWeylExponents
+
 end Langlands.Global

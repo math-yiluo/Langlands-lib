@@ -148,15 +148,18 @@ def StandardLeviCompactAssemblyStatement : Prop :=
       ∀ J : StandardIndex F G fam.i fam.ν, IsMaximalCompactSubgroup F (fam.M J)
         (K.comap (map F (fam.M J) G (fam.l J ≫ fam.p J)).toMonoidHom)
 
-theorem standardLeviCompactAssembly : fam.StandardLeviCompactAssemblyStatement := by
-  intro hlocal
+/-- A supplied local family which agrees almost everywhere with the integral family
+assembles to one maximal Iwasawa compact with simultaneous Levi maximality. -/
+theorem standardLeviCompact_of_coordinateFamily
+    (Kloc : ∀ v : Place F, Subgroup (PlaceGroupPoints F G v))
+    (hKloc : ∀ v, fam.IsStandardLeviCompact v (Kloc v))
+    (heq : ∀ᶠ v : Place F in cofinite,
+      Kloc v = extendFinite F G (FiniteTypeIntegralFamily.subgroup F G) v) :
+    let K := coordinateSubgroup (fun v => (atPlace F G v).toMonoidHom) Kloc
+    IsParabolicIwasawaCompact F G (fam.P I₀) (fam.p I₀) K ∧
+      ∀ J : StandardIndex F G fam.i fam.ν, IsMaximalCompactSubgroup F (fam.M J)
+        (K.comap (map F (fam.M J) G (fam.l J ≫ fam.p J)).toMonoidHom) := by
   let K₀ := extendFinite F G (FiniteTypeIntegralFamily.subgroup F G)
-  let Kloc := patchFamily fam.IsStandardLeviCompact hlocal K₀
-  have hKloc (v : Place F) : fam.IsStandardLeviCompact v (Kloc v) :=
-    good_patchFamily _ hlocal K₀ v
-  have heq : ∀ᶠ v : Place F in cofinite, Kloc v = K₀ v :=
-    patchFamily_eventually_eq _ hlocal K₀
-      (eventually_place_of_finite F fam.eventually_isStandardLeviCompact_integral)
   have hF := FiniteTypeIntegralFamily.isIntegralIwasawaFamily fam.connectedReductive
     (fam.p I₀) (fam.isCompatible I₀).parabolic
   have hint : IsUniformlyIntegral F G K₀ := hF.2.2
@@ -165,7 +168,7 @@ theorem standardLeviCompactAssembly : fam.StandardLeviCompactAssemblyStatement :
     filter_upwards [heq, eventually_atPlace_mem_of_finite F G (K := K₀) hF.2.1 a] with v hv ha
     rwa [hv]
   let K := coordinateSubgroup (fun v => (atPlace F G v).toMonoidHom) Kloc
-  refine ⟨K, ⟨?_, ?_⟩, ?_⟩
+  refine ⟨⟨?_, ?_⟩, ?_⟩
   · exact compact_maximal_coordinateSubgroup hint'.compactProductLift
       (fun _ _ h => ext_atPlace F G h) (fun v => (atPlace F G v).continuous)
       (fun v => (hKloc v).1.1.1) (fun v => (hKloc v).1.1.2)
@@ -190,6 +193,17 @@ theorem standardLeviCompactAssembly : fam.StandardLeviCompactAssemblyStatement :
     exact compact_maximal_coordinateSubgroup (hint'.comap_of_closedSubgroup j hj).compactProductLift
       (fun _ _ h => ext_atPlace F (fam.M J) h) (fun v => (atPlace F (fam.M J) v).continuous)
       (fun v => ((hKloc v).2 J).1) (fun v => ((hKloc v).2 J).2)
+
+theorem standardLeviCompactAssembly : fam.StandardLeviCompactAssemblyStatement := by
+  intro hlocal
+  let K₀ := extendFinite F G (FiniteTypeIntegralFamily.subgroup F G)
+  let Kloc := patchFamily fam.IsStandardLeviCompact hlocal K₀
+  have hKloc (v : Place F) : fam.IsStandardLeviCompact v (Kloc v) :=
+    good_patchFamily _ hlocal K₀ v
+  have heq : ∀ᶠ v : Place F in cofinite, Kloc v = K₀ v :=
+    patchFamily_eventually_eq _ hlocal K₀
+      (eventually_place_of_finite F fam.eventually_isStandardLeviCompact_integral)
+  exact ⟨_, fam.standardLeviCompact_of_coordinateFamily Kloc hKloc heq⟩
 
 end StandardParabolicFamily
 

@@ -99,7 +99,9 @@ private theorem norm_prod_inverseConjugation_le (g : Aˣ) (s : List A) :
           mul_le_mul (hconj X) ih (norm_prod_nonneg (s.map (inverseConjugationCLM g))) (by positivity)
         _ = _ := by ring
 
-private theorem wordSeminormFamily_representation_le (s : List A) (g : Aˣ) (v : D)
+/-- A bound on the Banach operator at a given unit gives the corresponding bound for an
+individual word of the translated smooth vector. -/
+theorem wordSeminormFamily_representation_le (s : List A) (g : Aˣ) (v : D)
     {C : ℝ} {d : ℕ} (hC : 0 ≤ C) (hg : ‖R g‖ ≤ C * unitHeight g ^ d) :
     wordSeminormFamily 𝓜 R s (representation 𝓜 R g v) ≤
       unitHeight g ^ (d + 2 * s.length) *
@@ -121,36 +123,22 @@ private theorem wordSeminormFamily_representation_le (s : List A) (g : Aˣ) (v :
       exact norm_prod_inverseConjugation_le g s
     _ = _ := by rw [pow_add, pow_mul]; ring
 
-end Units
-
-section GeneralLinear
-
-variable (F : Type*) [RCLike F] (n : ℕ)
-variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
-variable (R : Langlands.GeneralLinear n F →* (E →L[ℂ] E))
-
-local notation "Mat" => Matrix (Fin n) (Fin n) F
-local notation "𝓜" => matrixModel F n
-local notation "D" => DerivativeSmoothVectors 𝓜 R
-
-/-- The action on the genuine smooth-vector topology has moderate growth. For each
-continuous seminorm there is a continuous seminorm and a nonnegative integer exponent
-bounding all translates by a power of the unit height. -/
-theorem exists_seminorm_le_unitHeight_pow (hR : IsContinuousRepresentation R)
+/-- A polynomial bound for the original operator norm gives a polynomial bound on each
+continuous seminorm of the genuine smooth action in terms of another continuous seminorm. -/
+theorem exists_seminorm_le_unitHeight_pow_of_norm_bound
+    {C : ℝ} {d : ℕ} (hC : 0 ≤ C) (hg : ∀ g : Aˣ, ‖R g‖ ≤ C * unitHeight g ^ d)
     (p : Seminorm ℂ D) (hp : Continuous p) :
     ∃ (k : ℕ) (q : Seminorm ℂ D), Continuous q ∧
-      ∀ g : Langlands.GeneralLinear n F, ∀ v : D,
-        p (representation 𝓜 R g v) ≤ unitHeight (A := Mat) g ^ k * q v := by
+      ∀ (g : Aˣ) (v : D), p (representation 𝓜 R g v) ≤ unitHeight g ^ k * q v := by
   classical
-  obtain ⟨C, d, hC, hg⟩ := exists_norm_le_unitHeight_pow F n R hR
   obtain ⟨S, c, -, hpc⟩ := Seminorm.bound_of_continuous
     (withSeminorms_wordSeminormFamily 𝓜 R) p hp
-  let b := Module.finBasis ℝ Mat
+  let b := Module.finBasis ℝ A
   let k := d + 2 * S.sup List.length
-  let weight (s : List Mat) : ℝ≥0 := ⟨C * (s.map (fun X => ‖X‖)).prod,
+  let weight (s : List A) : ℝ≥0 := ⟨C * (s.map (fun X => ‖X‖)).prod,
     mul_nonneg hC (norm_prod_nonneg s)⟩
-  let Q (s : List Mat) : Seminorm ℂ D := weight s • wordOrderSeminorm R b s.length
-  have hQ (s : List Mat) (v : D) : Q s v = (weight s : ℝ) * wordOrderSeminorm R b s.length v := by
+  let Q (s : List A) : Seminorm ℂ D := weight s • wordOrderSeminorm R b s.length
+  have hQ (s : List A) (v : D) : Q s v = (weight s : ℝ) * wordOrderSeminorm R b s.length v := by
     simp only [Q, smul_apply, NNReal.smul_def, smul_eq_mul]
   let q : Seminorm ℂ D := c • ∑ s ∈ S, Q s
   have hq (v : D) : q v = (c : ℝ) * ∑ s ∈ S, Q s v := by
@@ -160,8 +148,8 @@ theorem exists_seminorm_le_unitHeight_pow (hR : IsContinuousRepresentation R)
     simp_rw [hq, hQ]
     exact continuous_const.mul (continuous_finsetSum S fun s _ => continuous_const.mul
       (continuous_wordOrderSeminorm R b s.length))
-  · have hh := one_le_unitHeight (A := Mat) g
-    have hword (s : List Mat) (hs : s ∈ S) :
+  · have hh := one_le_unitHeight (A := A) g
+    have hword (s : List A) (hs : s ∈ S) :
         wordSeminormFamily 𝓜 R s (representation 𝓜 R g v) ≤ unitHeight g ^ k * Q s v := by
       rw [hQ]
       change _ ≤ unitHeight g ^ k *
@@ -185,6 +173,30 @@ theorem exists_seminorm_le_unitHeight_pow (hR : IsContinuousRepresentation R)
       _ ≤ (c : ℝ) * (unitHeight g ^ k * ∑ s ∈ S, Q s v) :=
         mul_le_mul_of_nonneg_left hs c.coe_nonneg
       _ = _ := by rw [hq]; ring
+
+end Units
+
+section GeneralLinear
+
+variable (F : Type*) [RCLike F] (n : ℕ)
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
+variable (R : Langlands.GeneralLinear n F →* (E →L[ℂ] E))
+
+local notation "Mat" => Matrix (Fin n) (Fin n) F
+local notation "𝓜" => matrixModel F n
+local notation "D" => DerivativeSmoothVectors 𝓜 R
+
+/-- The action on the genuine smooth-vector topology has moderate growth. For each
+continuous seminorm there is a continuous seminorm and a nonnegative integer exponent
+bounding all translates by a power of the unit height. -/
+theorem exists_seminorm_le_unitHeight_pow (hR : IsContinuousRepresentation R)
+    (p : Seminorm ℂ D) (hp : Continuous p) :
+    ∃ (k : ℕ) (q : Seminorm ℂ D), Continuous q ∧
+      ∀ g : Langlands.GeneralLinear n F, ∀ v : D,
+        p (representation 𝓜 R g v) ≤ unitHeight (A := Mat) g ^ k * q v := by
+  classical
+  obtain ⟨C, d, hC, hg⟩ := exists_norm_le_unitHeight_pow F n R hR
+  exact exists_seminorm_le_unitHeight_pow_of_norm_bound R hC hg p hp
 
 end GeneralLinear
 

@@ -25,25 +25,6 @@ def NeronOggShafarevichReductionStatement : Prop :=
   StrictHenselianRationalTorsionGoodReductionStatement.{u} →
   NeronOggShafarevichStatement.{u}
 
-/-- A local homomorphism of discrete valuation rings carrying the maximal ideal onto a
-generator of the maximal ideal is injective. -/
-theorem injective_algebraMap_of_map_maximalIdeal {V W : Type u} [CommRing V] [IsDomain V]
-    [IsDiscreteValuationRing V] [CommRing W] [IsDomain W] [IsDiscreteValuationRing W]
-    [Algebra V W] (hmax : (maximalIdeal V).map (algebraMap V W) = maximalIdeal W) :
-    Function.Injective (algebraMap V W) := by
-  rw [injective_iff_map_eq_zero]
-  intro v hv
-  by_contra hv0
-  obtain ⟨ϖ, hϖ⟩ := IsDiscreteValuationRing.exists_irreducible V
-  obtain ⟨n, c, hvc⟩ := IsDiscreteValuationRing.eq_unit_mul_pow_irreducible hv0 hϖ
-  have hϖ0 : algebraMap V W ϖ = 0 := by
-    rw [hvc, map_mul, map_pow] at hv
-    have hc : IsUnit (algebraMap V W (c : V)) := c.isUnit.map _
-    exact pow_eq_zero_iff'.mp ((hc.mul_right_eq_zero).mp hv) |>.1
-  apply IsDiscreteValuationRing.not_a_field W
-  rw [← hmax, hϖ.maximalIdeal_eq, Ideal.map_span, Set.image_singleton, hϖ0,
-    Ideal.span_singleton_eq_bot]
-
 /-- The Néron–Ogg–Shafarevich criterion follows from the two inputs. -/
 theorem neronOggShafarevichReduction : NeronOggShafarevichReductionStatement.{u} := by
   intro hNeron hTors V K _ _ _ _ _ _ B ℓ _ hℓ hyp

@@ -19,7 +19,7 @@ independently normalized Haar measures.
 
 ## Lean proof
 
-The private helper `representationFormalDegree_pullback` uses the same
+The private helper `Langlands.Plancherel.representationFormalDegree_pullback` uses the same
 algebraic functionals on both representations: smoothness is transported by
 `isSmoothVector_dual_comp_continuousMulEquiv_iff`. On a quotient representative
 `x` of the model group, the two Schur integrands agree at `x` and its image

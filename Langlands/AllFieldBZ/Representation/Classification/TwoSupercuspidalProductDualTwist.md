@@ -45,7 +45,9 @@ proof is the original proof with the same replacements, except where listed belo
 
 ## Changes beyond the systematic replacements
 
-The private field-independent determinant lemmas of the original are repeated as private declarations.
+`productCharacterTwist` uses `Langlands.GeneralLinear.determinant_blockParabolic` for the
+determinant of a parabolic element. The private lemma `determinant_leviEmbedding` applies the
+same identity to the image of a Levi element under the section of the Levi projection.
 
 ## Use
 

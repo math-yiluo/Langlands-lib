@@ -1,0 +1,7 @@
+# Compact spectral integrals on the rational adelic quotients
+
+`WavePacketTruncationQuotientStatement` gives the quotient versions of two operations in Lapid's proof of Proposition 2. For a jointly continuous left rational-invariant family that vanishes outside a compact set of spectral parameters, the packet is continuous on the full rational quotient and its truncation is the integral of the truncated spectral family. On the norm-one rational quotient the truncated family is jointly measurable and vanishes outside the same compact set.
+
+The packet on the group is continuous by the compact-support parametric integral theorem and inherits rational invariance by integration. The quotient-map criterion then gives continuity on the full quotient. Pulling the packet back to the group recovers the original integral, so `wavePacketTruncationIntegral` identifies its truncation. On the norm-one subgroup `normOneTruncation_restrict` identifies the two truncation formulas. The restriction inherits joint measurability and rational invariance from the full truncated family. `measurable_out_of_invariant_prod` uses a Borel section of the discrete norm-one rational quotient to give joint measurability there.
+
+This gives the quotient interpretation of the spectral integrals in E. Lapid, *On Arthur's asymptotic inner product formula of truncated Eisenstein series*, §8, printed p.328 (volume PDF p.337), `lapid-2011-asymptotic-inner-product-truncated-eisenstein`, SHA-256 `760161175f57a28d2e05de1f5638bc205d33123ae95f67ce4296b4b651fa950b`.

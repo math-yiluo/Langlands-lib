@@ -44,3 +44,5 @@ when choosing the bump for an adelic application.
 
 These are internal analytic constructions from Mathlib's bump, smooth-series
 and Schwartz-space results. The file asserts no adelic gauge or integral bound.
+
+`exists_schwartz_tsum_with_seminorm` records the bound on every seminorm of the sum by the sum of the corresponding seminorms. The bound follows from the same termwise derivative estimate that gives rapid decrease.

@@ -17,6 +17,7 @@ universe u
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace AlgebraicGeometry
 open Langlands.AlgebraicGeometry.Modules.FormalModuleSystemPresheaves
+open Langlands.AlgebraicGeometry.Modules.CechResolution.AllSeq (inter)
 
 noncomputable section
 
@@ -144,6 +145,24 @@ def localPullbacksOfReduction : LocalPullbacks (f := f) (g := g) I β :=
     (fun i => (chosenAffineLift f I hI m hm i).property.1)
     (fun i => (chosenAffineLift f I hI m hm i).property.2) hβ I
     (fun W hW => (quotientReductionMap_appLE f I W hW).2)
+
+/-- On each tuple intersection the selected local pullback reduces to the
+section map of the prescribed morphism on the reduction. -/
+lemma localPullbacksOfReduction_reduce_sections {p : ℕ} (τ : Fin (p + 1) → U.I₀)
+    (i : Fin (p + 1)) (a : tupleSections g V (β ∘ τ))
+    (e : quotientReductionMap f I ⁻¹ᵁ inter (coverOpens U) τ ≤
+      m ⁻¹ᵁ inter (coverOpens V) (β ∘ τ)) :
+    ((quotientReductionMap f I).appLE (inter (coverOpens U) τ)
+      (quotientReductionMap f I ⁻¹ᵁ inter (coverOpens U) τ) le_rfl).hom
+        ((localPullbacksOfReduction f I hI m hm β hβ).sections τ i a) =
+      (m.appLE (inter (coverOpens V) (β ∘ τ))
+        (quotientReductionMap f I ⁻¹ᵁ inter (coverOpens U) τ) e).hom a := by
+  let : Surjective (quotientReductionMap f I) := quotientReductionMap_surjective f I hI
+  exact LocalPullbacks.ofLocalMorphisms_reduce_sections (quotientReductionMap f I) m β
+    (fun j => (chosenAffineLift f I hI m hm j).val)
+    (fun j => (chosenAffineLift f I hI m hm j).property.1)
+    (fun j => (chosenAffineLift f I hI m hm j).property.2) hβ I
+    (fun W hW => (quotientReductionMap_appLE f I W hW).2) τ i a e
 
 variable [Smooth f] [Finite U.I₀] [IsSeparated g] [Finite V.I₀]
 

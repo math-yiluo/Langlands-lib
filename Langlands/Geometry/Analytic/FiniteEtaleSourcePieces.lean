@@ -8,17 +8,14 @@ import Mathlib.RingTheory.Flat.EquationalCriterion
 
 noncomputable section
 
-universe u
+universe u v w z
 
 namespace Langlands.Analytic.BoundedAlgHom
 
 open PresentedAffinoidAlgebra
 open scoped TensorProduct
 
-variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
-  {A B C : PresentedAffinoidAlgebra K}
-
-private theorem exists_linear_apply_one {R S : Type u} [CommRing R] [CommRing S]
+private theorem exists_linear_apply_one {R : Type v} {S : Type w} [CommRing R] [CommRing S]
     [Algebra R S] [Module.Projective R S] [Module.FaithfullyFlat R S]
     {n : ℕ} (b : Fin n → S)
     (h : Function.Surjective (Fintype.linearCombination R b)) :
@@ -46,6 +43,42 @@ private theorem exists_linear_apply_one {R S : Type u} [CommRing R] [CommRing S]
     rw [hRange]
     exact hI
   exact ⟨l.comp s, hl⟩
+
+/-- A bounded map is finite Banach if its composite with a faithfully flat
+map is finite Banach and the last algebra is projective over the middle one. -/
+theorem IsFiniteBanach.of_faithfullyFlat_comp_of_projective
+    {K : Type u} [NormedField K] {R : Type v} {S : Type w} {T : Type z}
+    [NormedCommRing R] [NormedCommRing S] [NormedCommRing T]
+    [NormedAlgebra K R] [NormedAlgebra K S] [NormedAlgebra K T]
+    {f : BoundedAlgHom K R S} {g : BoundedAlgHom K S T}
+    (hComp : (g.comp f).IsFiniteBanach)
+    (hproj : letI := g.toAlgHom.toRingHom.toAlgebra; Module.Projective S T)
+    (hff : g.toAlgHom.toRingHom.FaithfullyFlat) : f.IsFiniteBanach := by
+  let : Algebra S T := g.toAlgHom.toRingHom.toAlgebra
+  let : Module.Projective S T := hproj
+  let : Module.FaithfullyFlat S T := hff
+  let : Module.Finite S T := hComp.finite.of_comp_finite
+  obtain ⟨m, d, hd⟩ := Module.Finite.exists_fin (R := S) (M := T)
+  obtain ⟨r, hr⟩ := exists_linear_apply_one d
+    ((span_range_eq_top_iff_surjective_fintypeLinearCombination S d).mp hd)
+  have hLinear (a : S) (x : T) : r (g a * x) = a * r x := r.map_smul a x
+  have hRet (y : S) : r (g y) = y := by
+    rw [← mul_one (g y), hLinear, hr, mul_one]
+  obtain ⟨n, b, D, hD, hCoeff⟩ := hComp
+  obtain ⟨L, hL, hBound⟩ := g.bounded
+  refine ⟨n, fun i => r (b i), D * L, mul_pos hD hL, fun y => ?_⟩
+  obtain ⟨c, hc, hn⟩ := hCoeff (g y)
+  refine ⟨c, ?_, ?_⟩
+  · rw [coefficientMap_apply] at hc ⊢
+    simpa only [BoundedAlgHom.comp_apply, map_sum, hLinear, hRet] using
+      congrArg (fun x => r x) hc
+  · calc
+      ‖c‖ ≤ D * ‖g y‖ := hn
+      _ ≤ D * (L * ‖y‖) := mul_le_mul_of_nonneg_left (hBound y) hD.le
+      _ = (D * L) * ‖y‖ := (mul_assoc _ _ _).symm
+
+variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
+  {A B C : PresentedAffinoidAlgebra K}
 
 private theorem exists_bounded_module_retraction (g : BoundedAlgHom K B C)
     (hg : g.IsFiniteBanach) (hff : g.toAlgHom.toRingHom.FaithfullyFlat) :
@@ -102,20 +135,12 @@ theorem IsFiniteBanach.of_faithfullyFlat_comp
     {f : BoundedAlgHom K A B} {g : BoundedAlgHom K B C}
     (hComp : (g.comp f).IsFiniteBanach) (hg : g.IsFiniteBanach)
     (hff : g.toAlgHom.toRingHom.FaithfullyFlat) : f.IsFiniteBanach := by
-  let r := finiteFaithfullyFlatRetraction g hg hff
-  obtain ⟨n, b, D, hD, hCoeff⟩ := hComp
-  obtain ⟨L, hL, hBound⟩ := g.bounded
-  refine ⟨n, fun i => r.val (b i), D * L, mul_pos hD hL, fun y => ?_⟩
-  obtain ⟨c, hc, hn⟩ := hCoeff (g y)
-  refine ⟨c, ?_, ?_⟩
-  · rw [coefficientMap_apply] at hc ⊢
-    have h := congrArg r.val hc
-    change r.val _ = r.val (g y) at h
-    simpa only [BoundedAlgHom.comp_apply, map_sum, r.property.2, r.property.1 y] using h
-  · calc
-      ‖c‖ ≤ D * ‖g y‖ := hn
-      _ ≤ D * (L * ‖y‖) := mul_le_mul_of_nonneg_left (hBound y) hD.le
-      _ = (D * L) * ‖y‖ := (mul_assoc _ _ _).symm
+  let : Algebra B C := g.toAlgHom.toRingHom.toAlgebra
+  let : Module.FaithfullyFlat B C := hff
+  let : Module.Finite B C := hg.finite
+  let : Module.FinitePresentation B C := Module.finitePresentation_of_finite B C
+  exact hComp.of_faithfullyFlat_comp_of_projective
+    Module.Flat.projective_of_finitePresentation hff
 
 /-- Étaleness and Banach finiteness descend when the last algebra map is
 finite étale and surjective on bounded spectra. -/

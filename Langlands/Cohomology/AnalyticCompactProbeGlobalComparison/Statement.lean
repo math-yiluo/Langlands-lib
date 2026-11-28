@@ -1,3 +1,4 @@
+import Langlands.Sheaf.Equivariant.AnalyticCompactProbeInvariantCohomology
 import Langlands.Sheaf.Equivariant.AnalyticCompactProbeGlobalCohomology
 import Langlands.Sheaf.Equivariant.TwistedRepCohomology
 import Langlands.Cohomology.AnalyticGlobalSpectralSequence.Statement
@@ -83,10 +84,7 @@ end Maps
 def restrictedCohomologyRep (q : ℕ) :
     CompactProbeQuasiEtaleGSheaf ρ (ModuleCat.{max u (v + 1) uR} R) ⥤
       Rep.{max u (v + 1) uR} R G :=
-  haveI := twistedCompactProbeQuasiEtale_hasSheafify.{u, v, uR} ρ R
-  haveI := twistedCompactProbeQuasiEtale_enoughInjectives.{u, v, uR} ρ R
-  (compactLiftSystem ρ).discreteSheafInclusion _ _ ⋙
-    sheafGlobalRepDerived (compactProbeQuasiEtaleTopology X) R q
+  compactProbeQuasiEtaleRestrictionCohomologyRep.{u, v, uR} ρ R q
 
 /-- The underlying modules are the ordinary cohomology of the restricted sheaves. -/
 def restrictedCohomologyForgetIso (q : ℕ) :
@@ -94,24 +92,14 @@ def restrictedCohomologyForgetIso (q : ℕ) :
         forget₂ (Rep.{max u (v + 1) uR} R G) (ModuleCat.{max u (v + 1) uR} R) ≅
       compactProbeQuasiEtaleGSheafRestriction.{u, v, uR} ρ R ⋙
         compactProbeQuasiEtaleCohomology.{u, v, uR} X R q :=
-  haveI := compactProbeQuasiEtale_hasSheafify.{u, v, uR} X R
-  haveI := compactProbeQuasiEtale_enoughInjectives.{u, v, uR} X R
-  haveI := twistedCompactProbeQuasiEtale_hasSheafify.{u, v, uR} ρ R
-  haveI := twistedCompactProbeQuasiEtale_enoughInjectives.{u, v, uR} ρ R
-  haveI := DivisibleSystem.Analytic.quasiEtale_hasPointwiseRightKanExtension.{u, v, uR} ρ R
-  haveI := discrete_hasColimitsOfShape.{max u (v + 1) uR} (G := G) R
-  haveI := discrete_hasExactColimitsOfShape.{max u (v + 1) uR} (G := G) R
-  Functor.isoWhiskerLeft ((compactLiftSystem ρ).discreteSheafInclusion _ _)
-    (restrictionGlobalCohomologyIso (compactProbeQuasiEtaleTopology X) R q)
+  compactProbeQuasiEtaleRestrictionCohomologyForgetIso.{u, v, uR} ρ R q
 
 /-- The induced action on the ordinary cohomology of a restricted sheaf. -/
 def restrictedCohomologyAction (q : ℕ)
     (F : CompactProbeQuasiEtaleGSheaf ρ (ModuleCat.{max u (v + 1) uR} R)) :
     Representation R G ((compactProbeQuasiEtaleCohomology.{u, v, uR} X R q).obj
       ((compactProbeQuasiEtaleGSheafRestriction.{u, v, uR} ρ R).obj F)) :=
-  (LinearEquiv.conjAlgEquiv R
-    ((restrictedCohomologyForgetIso.{u, v, uR} ρ R q).app F).toLinearEquiv).toMonoidHom.comp
-    ((restrictedCohomologyRep.{u, v, uR} ρ R q).obj F).ρ
+  compactProbeQuasiEtaleRestrictionCohomologyAction.{u, v, uR} ρ R q F
 
 /-- The right derived functors of invariant global sections. -/
 def invariantCohomology
@@ -119,10 +107,7 @@ def invariantCohomology
     (q : ℕ) :
     CompactProbeQuasiEtaleGSheaf ρ (ModuleCat.{max u (v + 1) uR} R) ⥤
       ModuleCat.{max u (v + 1) uR} R :=
-  haveI := twistedCompactProbeQuasiEtale_hasSheafify.{u, v, uR} ρ R
-  haveI := twistedCompactProbeQuasiEtale_enoughInjectives.{u, v, uR} ρ R
-  exactInvariantGlobalDerived (compactProbeQuasiEtaleTopology X) R
-    ((compactLiftSystem ρ).discreteSheafInclusion _ _) q
+  compactProbeQuasiEtaleGSheafInvariantCohomology.{u, v, uR} ρ R q
 
 /-- The smooth group cohomology spectral sequence in Theorem 1.6.1(ii), for the
 compact-probe topology. The underlying action in the second page is smooth. -/

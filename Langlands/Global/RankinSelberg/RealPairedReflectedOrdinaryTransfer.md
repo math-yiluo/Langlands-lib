@@ -1,0 +1,7 @@
+# Ordinary tests in the span of reflected real rectangular integrals
+
+`RealPairedReflectedOrdinaryTransferStatement` expresses a genuine smooth ordinary integral of the two Weyl inverse-transpose coefficients as a finite sum of the actual reflected rectangular integrals. The comparison holds on a shared right half-plane for every smooth vector, and all integrals there are absolutely convergent. The quotient measure, spectral shift and self-dual rectangular measure are those of the real unequal-rank functional equation.
+
+The action of the larger group is its inverse transpose in the first slot. The derivative of this action on a lower row is the negative transpose of its row matrix, and the independent slot exponential realizes that action. Inverse transposed upper columns and their inverses are affine linear in the column, which gives the required height bound. The two Weyl factors give the opposite-character evaluation for the rectangular row comparison. The fixed right tail Weyl in the reflected kernel is absorbed by an inverse translation of the resulting smooth vectors. The empty rectangle has unit Dirac mass, giving the ordinary integral.
+
+The ordinary and rectangular kernels use equations (2.4)–(2.5) and the functional equation in Theorem 2.1(iii) of Jacquet, *Archimedean Rankin–Selberg integrals* (2009), p. 6. The smooth comparison applies the same kind of compact factorization and row modulation used in §6.1, pp. 36–37. [Author-posted edition](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

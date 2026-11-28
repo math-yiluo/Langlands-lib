@@ -240,6 +240,17 @@ private theorem restrict_expand_ne_zero_aux (r : ℕ) (a : ℝˣ)
       LinearMap.ext fun f => congrArg B (Subtype.ext rfl)
     exact hComp.trans hZero
 
+/-- A nonzero exact coefficient map of the descending expansion remains nonzero after
+restriction to the original compact-finite standard module. -/
+theorem restrict_expand_ne_zero (r : ℕ) (ds : List RealBlock) (hr : realRank ds = r + 1)
+    (a : ℝˣ) (h : V[r + 1, ds] ≤ V[r + 1, expand ds]) (B : Coeff[r, expand ds])
+    (hB : IsRealWhittakerIntertwiner r (expand ds) a B) (hB₀ : B ≠ 0) :
+    B.comp (Submodule.inclusion h) ≠ 0 := by
+  have hDetect : RestrictionDetects r a ds (expand ds) := by
+    simpa only [List.nil_append, List.append_nil] using
+      restrict_expand_ne_zero_aux r a ds [] [] (by simpa using hr)
+  exact hDetect h B hB hB₀
+
 /-- The original exact Whittaker model is the range of any nonzero exact map of the
 descending character expansion restricted to the original standard module. -/
 def RealDescendingWhittakerRangeStatement : Prop :=
@@ -254,10 +265,7 @@ theorem realDescendingWhittakerRange : RealDescendingWhittakerRangeStatement := 
   intro h C hC hC₀
   let C' := C.comp (Submodule.inclusion h)
   have hC' := isRealWhittakerIntertwiner_restrict h hC
-  have hDetect : RestrictionDetects r a ds (expand ds) := by
-    simpa only [List.nil_append, List.append_nil] using
-      restrict_expand_ne_zero_aux r a ds [] [] (by simpa using hr)
-  have hC'₀ : C' ≠ 0 := hDetect h C hC hC₀
+  have hC'₀ : C' ≠ 0 := restrict_expand_ne_zero r ds hr a h C hC hC₀
   obtain ⟨T, hTs, hT⟩ := surjectiveIntertwiner_ascendingExpand (r + 1) ds hr
   have hCT := isRealWhittakerIntertwiner_pullback hT hC'
   have hCT₀ : C'.comp T ≠ 0 := by

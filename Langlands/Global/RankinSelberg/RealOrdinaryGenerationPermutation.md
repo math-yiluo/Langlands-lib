@@ -37,3 +37,11 @@ argument for arbitrary real blocks using the Library's
 `realStandardConstituent_perm` and compact injectivity and
 admissibility results. Source `jacquet-2009-archimedean-rankin-selberg`,
 SHA-256 `7a11766eadf25fb7452ce7faa193469791796f572fc654c8fe90a8608bb46afe`.
+
+`RealOrdinaryPositiveWeightOrderedGenerationReductionStatement` further reduces the generation theorem to Langlands-ordered lists in which every induced block has positive weight. Normalize the two lists by expanding weight-zero blocks into two real characters and conjugating negative-weight characters. This gives the same standard function spaces and the same total ranks. The identity intertwiners preserve irreducibility and identify the Whittaker submodules at every additive scale. Sort the normalized lists as above. Factor normalization and permutation preserve the real pair denominator in both slots, so coverage and the finite-sum conditions transport to the supplied lists with their quotient measures and additive scales.
+
+The real Weil block conventions and the weight-zero case appear in [Jacquet, *Archimedean Rankin–Selberg Integrals*, §16, pp. 109–112](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf#page=109).
+
+`exists_positiveWeight_ordered_model` supplies this presentation for a single irreducible list,
+with equality of its Whittaker submodules for every scale and equality of the pair factor with
+any fixed second list.

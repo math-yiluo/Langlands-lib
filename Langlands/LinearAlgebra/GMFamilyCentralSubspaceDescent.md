@@ -1,0 +1,7 @@
+# Descent for a coarse subspace containing the center
+
+The declarations for the general coarse subspace are in `Langlands.GMFamily.CentralSubspaceDescent`. The shared slice constructions are in [`Langlands.GMFamily`](GMFamiliesDescentProof.md).
+
+`HasLiftVertexSums` specifies the contribution of the affine vertices over each coarse chamber. For a `DescentPosition` and those vertex sums, `cM_induced_eq_descentSum` identifies the induced family value with the sum of the fine family values weighted by the transverse volumes. The proof first expands the coarse family over the affine slices, then groups the fine terms by the transverse Levi spaces. The Levi-flat specialization is given in [same-field Levi descent](GMFamiliesDescentProof.md).
+
+Arthur states the descent identity in *An introduction to the trace formula*, §17, Lemma 17.5, printed pp. 99–100. The retained source is `arthur-ellwood-kottwitz-2005-harmonic-analysis-shimura`, SHA-256 `88ba9a23fa62e2f62f14af7a5a2a8ffb062be29fc4590bf39c60c173add0a8a7`. The affine slice and chamberwise coefficient expansion also appear in Arthur, *The invariant trace formula. I. Local theory*, Proposition 7.1 and Appendix, printed pp. 357 and 381–383. The retained source is `arthur-1988-invariant-trace-formula-I`, SHA-256 `902db792ffe113507165a252b0c1b8c59f78ab8d04def1c5c39b0372362dc3ac`. The Lean proof obtains that coefficient comparison by finite wall cancellation on the Euclidean arrangement.

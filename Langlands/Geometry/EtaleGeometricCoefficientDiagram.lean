@@ -17,30 +17,7 @@ set_option backward.defeqAttrib.useBackward true
 
 variable {X Z : Scheme.{u}} (R : Type u) [CommRing R]
 
-/-- The actual geometric equality comparison is the identity for reflexivity. -/
-@[simp] theorem inverseImageCongr_refl (f : Z ⟶ X) :
-    inverseImageCongr R (rfl : f = f) = Iso.refl _ := by
-  apply Iso.ext
-  apply (conjugateEquiv (inverseImageAdjunction f R)
-    (inverseImageAdjunction f R)).injective
-  rw [conjugate_inverseImageCongr]
-  simp only [Iso.refl_hom, conjugateEquiv_id]
-  apply NatTrans.ext
-  funext F
-  apply Sheaf.hom_ext
-  apply NatTrans.ext
-  funext U
-  have he :
-      (Langlands.Shimura.Coefficients.etaleObjectPullbackCongr
-        (rfl : f = f)).hom.app U.unop = 𝟙 _ := by
-    apply MorphismProperty.Over.Hom.ext
-    change _ = 𝟙 (Limits.pullback U.unop.hom f)
-    apply Limits.pullback.hom_ext <;> simp
-  change F.obj.map
-    ((Langlands.Shimura.Coefficients.etaleObjectPullbackCongr
-      (rfl : f = f)).hom.app U.unop).op = 𝟙 _
-  rw [he]
-  exact F.obj.map_id _
+attribute [simp] inverseImageCongr_refl
 
 end Langlands.Geometry.EtaleInverseImage
 

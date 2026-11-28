@@ -184,6 +184,24 @@ structure TypeE6SplitLeviCocycleFactorization
 attribute [instance] TypeE6SplitLeviCocycleFactorization.isAffine
   TypeE6SplitLeviCocycleFactorization.locallyFiniteType
 
+set_option backward.isDefEq.respectTransparency false in
+/-- Vanishing on the derived group of the supplied Levi trivializes the
+original cocycle on its current finite Galois cover. -/
+theorem TypeE6SplitLeviCocycleFactorization.isTrivial_of_derivedVanishing
+    {G : GroupScheme (Spec (CommRingCat.of F))}
+    {L : Type u} [Field L] [Algebra F L] [FiniteDimensional F L] [IsGalois F L]
+    {ξ : Cocycle G (GaloisCocycle.cover F L)} (p : TypeE6SplitLeviCocycleFactorization ξ)
+    [IsAffineHom G.X.hom]
+    (hvanish : ∀ (M : Type u) [Field M] [Algebra F M] [FiniteDimensional F M] [IsGalois F M]
+        (τ : Cocycle p.derivedGroup (GaloisCocycle.cover F M)), τ.IsTrivial) :
+    ξ.IsTrivial := by
+  let : IsAffineHom p.centralizer.X.hom := p.centralizer_closed.isAffineHom
+  have h := isTrivial_of_split_torus_quotient p.derivedInclusion p.isDerived.1
+    p.quotientMap p.isQuotient p.simplyConnected.isSemisimple.isConnectedReductive.smooth
+    p.quotient_split hvanish p.cocycle
+  exact ((h.map p.inclusion).of_cohomologous
+    (Cocycle.cohomologous_of_toFun_eq fun a b => p.factorization a b)).of_twist
+
 /-- The geometric reduction of type E6 cocycles to a split-line centralizer
 with simply connected derived group of type A5. The factorization may be
 exhibited on a finite Galois refinement of the original cover. -/
@@ -209,17 +227,12 @@ theorem numberFieldTotallyComplexTypeE6Vanishing_of_leviFactorization
     NumberFieldTotallyComplexTypeE6VanishingStatement.{u} := by
   intro F _ _ hF G _ _ d e hsc habs hCartan L _ _ _ _ ξ
   obtain ⟨M, _, _, _, _, _, _, ⟨p⟩⟩ := hlevi F hF G d e hsc habs hCartan L ξ
-  let : IsAffineHom p.centralizer.X.hom := p.centralizer_closed.isAffineHom
-  have h := isTrivial_of_split_torus_quotient p.derivedInclusion p.isDerived.1
-    p.quotientMap p.isQuotient p.simplyConnected.isSemisimple.isConnectedReductive.smooth
-    p.quotient_split (fun _ _ _ _ _ τ =>
-      isTrivial_typeA_of_outerHasse houter hF p.simplyConnected p.absolutelyAlmostSimple
-        p.index (by decide) p.numbering p.cartan_eq τ) p.cocycle
-  have htwist := (h.map p.inclusion).of_cohomologous
-    (Cocycle.cohomologous_of_toFun_eq fun a b => p.factorization a b)
+  have h := p.isTrivial_of_derivedVanishing (fun _ _ _ _ _ τ =>
+    isTrivial_typeA_of_outerHasse houter hF p.simplyConnected p.absolutelyAlmostSimple
+      p.index (by decide) p.numbering p.cartan_eq τ)
   let : IsAffine G.X.left := isAffine_of_isAffineHom G.X.hom
   let : FiniteDimensional L M := Module.Finite.of_restrictScalars_finite F L M
   let : IsGalois L M := IsGalois.tower_top_of_isGalois F L M
-  exact GaloisCocycle.isTrivial_of_refine F L M ξ htwist.of_twist
+  exact GaloisCocycle.isTrivial_of_refine F L M ξ h
 
 end Langlands.GroupScheme

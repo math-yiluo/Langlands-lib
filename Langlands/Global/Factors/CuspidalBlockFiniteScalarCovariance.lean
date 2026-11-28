@@ -19,7 +19,9 @@ namespace Langlands.Global.CuspidalBlockInduction
 open Automorphic FiniteAdelicGL GeneralLinear AdelicBlockParabolic AdelicBlockDeterminantCharacter
 open CuspidalPairFunctionalEquation (HasIrreducibleAdmissibleComponents)
 
-private theorem finiteEvaluation_scalarParabolic
+/-- A linear coefficient pairing carries the finite vector covariance to the
+scalar parabolic law when Levi action agrees with translation of the argument. -/
+theorem finiteEvaluation_scalarParabolic
     {G L P K A W : Type u} [Monoid G] [Monoid L]
     [AddCommGroup A] [Module ℂ A] [AddCommGroup W] [Module ℂ W]
     {ρ : Representation ℂ G A} {τ : Representation ℂ L W}
@@ -78,7 +80,10 @@ private local instance {n : ℕ} (S : OperatorRealization F n) : AddCommGroup S.
   Submodule.addCommGroup _
 private local instance (q : InfinitePlaceFamily.Index F) (i : Fin k) :
     AddCommGroup (InfiniteBlockCoefficient T i q) := Submodule.addCommGroup _
-private theorem groupedFiniteLevi_scalar (d : FiniteLevi F B) (b : Vf) (c : Vi)
+
+/-- The finite Levi action on the first coefficient factor is right
+translation of the paired scalar argument. -/
+theorem groupedFiniteLevi_scalar (d : FiniteLevi F B) (b : Vf) (c : Vi)
     (z : FullLevi F B) :
     value z (groupedFiniteLeviAction D d b ⊗ₜ[ℂ] c) =
       value (z * leviPair F B 1 d) (b ⊗ₜ[ℂ] c) := by

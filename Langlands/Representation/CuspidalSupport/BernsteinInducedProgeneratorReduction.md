@@ -14,8 +14,9 @@ p.209 / PDF p.215) are deduced from it.
 
 This module derives the published `BernsteinInducedProgeneratorStatement`
 (all four conjuncts), `BernsteinBlockHomEquivalenceStatement` and
-`BernsteinBlockJacquetFaithfulStatement` from five Library propositions,
-which stay explicit premises and are not proved here:
+`BernsteinBlockJacquetFaithfulStatement` from three Library propositions.
+The assembly through Renard's finite-type theorem takes two additional
+premises. The individual lemmas use the following inputs.
 
 - `hIndep : RepresentedParabolic.InducedProgeneratorIndependenceStatement.{uF, max uF uV}`,
   the VI.10.1 Proposition and Corollary (independence of `i_P^G(Π_D)` from
@@ -147,8 +148,53 @@ The standard-family lemmas (local instances as in
   `Π_Ω`. The published `SmoothRep.exists_comp_ne_zero_of_projective_subquotients`,
   applied to `f - g`, gives `h`.
 
-The assembly, outside the section, at the binders of the published statements:
+### Finite generation by second adjointness
 
+The private lemma `finite_of_projective_adjoint_image` takes an adjunction
+`L ⊣ R` on smooth representation categories with `L` additive and `R`
+preserving small colimits. Let `P` be finitely generated over its group
+algebra and let `Y = L.obj P` be projective. For each vector `i` of `Y`, take
+the subrepresentation `A i` spanned over the group algebra by `i`. The map
+`q : ⨁ A ⟶ Y` whose components are the inclusions is surjective, since
+each vector lies in its own cyclic subrepresentation. Projectivity gives a
+section `s : Y ⟶ ⨁ A`. Its adjoint transpose is a map
+`P ⟶ ⨁ (R.obj ∘ A)`, via the isomorphism given by coproduct preservation.
+By `SmoothRep.finite_decomposition_hom_directSum` this map is a sum of its
+components over a finite set `T`. Naturality and additivity of the adjunction
+transport that sum back to `s`. Evaluating `s ≫ q = 𝟙 Y` on each vector of
+`Y` shows that the cyclic spans indexed by `T` generate `Y`.
+
+`finite_bernsteinInducedProgenerator_of_secondAdjointness` applies this lemma
+to `P = Π_D`, with `L` represented standard induction and `R` opposite
+Jacquet restriction. `bernsteinStandardSecondAdjunction` takes `hAdj`.
+`leviInductionFunctor_additive` gives additivity, and
+`leviJacquetFunctor_preservesColimits` gives coproduct preservation.
+`finite_rationalNormKernelSummandInduction` gives finite generation of `Π_D`
+from irreducibility of `ρ₀`. The published `jointSpecialCompactBasisExistence`
+gives the joint basis for projectivity of `Π_D`, which transfers to `L.obj Π_D`
+by `projective_bernsteinStandardRepresentedInduction`. Finally
+`moduleFinite_of_smoothRepIso` transports the conclusion to the literal
+standard induction via `bernsteinStandardRepresentedInductionIso`.
+
+Renard obtains this conjunct from VI.7.5. The adjunction argument uses
+projectivity of the particular induced object and finite generation of its
+inducing representation.
+
+### Assembly
+
+The following declarations use the binders of the published statements.
+
+- `bernsteinInducedProgenerator_of_independence`: from `hIndep`, `hAdj` and
+  `hind`, `BernsteinInducedProgeneratorStatement.{uF, uV}`. This uses
+  `finite_bernsteinInducedProgenerator_of_secondAdjointness` and supplies the
+  published `jointSpecialCompactBasisExistence` to the membership, lifting
+  and generator arguments.
+- `bernsteinBlockHomEquivalence_of_independence` and
+  `bernsteinBlockJacquetFaithful_of_independence`: from the same three
+  premises, `BernsteinBlockHomEquivalenceStatement.{uF, uV}` and
+  `BernsteinBlockJacquetFaithfulStatement.{uF, uV}`. These apply
+  `bernsteinBlockHomEquivalence_of_inducedProgenerator` and
+  `bernsteinBlockJacquetFaithful_of_inducedProgenerator`, respectively.
 - `bernsteinInducedProgenerator_of_secondAdjointness`: from `hIndep`, `hAdj`,
   `hJoint`, `hFT` and `hind`, `BernsteinInducedProgeneratorStatement.{uF, uV}`.
   Membership is `bernsteinInducedProgenerator_mem`. The lifting conjunct is the
@@ -199,12 +245,7 @@ above the default (800000, and 1600000 for
 
 ## Scope
 
-This module is a conditional reduction. Its five premises are Library
-propositions that it does not prove; with them as premises, it proves no
-unconditional form of `BernsteinInducedProgeneratorStatement`,
-`BernsteinBlockHomEquivalenceStatement` or
-`BernsteinBlockJacquetFaithfulStatement`. It does not prove the independence
-statement `InducedProgeneratorIndependenceStatement` or the length bound
-`SupercuspidalInductionLengthStatement`. Irreducibility of `ρ₀` is used for
-generation and finite generation; block membership and projectivity use only
-the injectivity of `j`.
+The three conclusions are conditional on the premises listed for their
+assembly. The shorter assembly takes independence, second adjointness and the
+represented VI.5.2. Irreducibility of `ρ₀` is used for generation and finite
+generation. Block membership and projectivity use the injectivity of `j`.

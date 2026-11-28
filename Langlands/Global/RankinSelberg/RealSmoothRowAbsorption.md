@@ -32,3 +32,8 @@ This is the first assertion of Proposition 6.1 in H. Jacquet,
 for real smooth vectors realized in the stated Banach representation.
 Proposition 6.2 uses this assertion with a compactly supported row test
 in the proof of the rank-raising inclusion.
+
+The column height bound is available as `exists_columnHeightBound`.
+The smooth integral and Fourier inversion are supplied by
+`realSmoothRowCharacterAbsorption` after verifying the single-group
+row covariance and the Banach operator growth along the column.

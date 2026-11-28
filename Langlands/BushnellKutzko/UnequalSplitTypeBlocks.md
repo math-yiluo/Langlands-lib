@@ -1,0 +1,9 @@
+# Block data for the corestricted stratum
+
+Let `L` be a lattice chain over the integers of a nonarchimedean local field `F`. Let `E/F` be a finite field extension acting on the space, with `Eˣ` normalizing `L`, and let `s` be a tame corestriction. For `c ∈ P^(−m)`, with `m > 0`, the stratum over the integers of `E` is `[B,m,m−1,s(c)]` on the subfield chain. If it is split and `m` is coprime to the period of that chain, `nonempty_splitBlockData_corestricted` applies the split stratum construction to obtain block data on the subfield chain.
+
+`SplitBlockData.restrict` packages the same endomorphisms as `F`-linear maps in `RestrictedBlockData`. The two nonzero complementary projectors are integral on `L`. The shift and its inverse on the first block lie in depths `1` and `−1`, respectively. Restriction of scalars preserves their corner and inverse identities, and all four maps commute with the action of `E`.
+
+The bimodule laws for `s` show that projecting `c` to its block diagonal leaves `s(c)` unchanged. They also show that the change in the first diagonal block under the shift is killed by `s`. Over `E`, these calculations use the commutation of `s(c)` with the projectors and the shift. For graded injectivity, an `F`-endomorphism `x` commuting with a generator of `E/F` is the restriction of an `E`-linear map. When `x` belongs to the lower corner at depth `m` and `s(cx − xc)` has depth at least one, the lower-corner commutator injection over `E` puts `x` in depth `m + 1`. Here the element `c` can be any lift of the same corestricted stratum element.
+
+These are restriction-of-scalars and bimodule consequences of the block construction and commutator calculation used in Bushnell–Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993), (8.2.3)–(8.2.9), printed pp. 276–278. The first block shift is the one in (8.2.9), and the graded implication uses the injectivity part of (8.2.4)(ii).

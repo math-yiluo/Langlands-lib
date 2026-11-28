@@ -87,6 +87,13 @@ def scalarShift (lam : M →ₗ[ℂ] ℂ) (hlam : ∀ Y Y' : M, lam ⁅Y, Y'⁆ 
     UniversalEnvelopingAlgebra ℂ M →ₐ[ℂ] UniversalEnvelopingAlgebra ℂ M :=
   UniversalEnvelopingAlgebra.lift ℂ (scalarShiftLie lam hlam)
 
+theorem scalarShift_ι (lam : M →ₗ[ℂ] ℂ) (hlam : ∀ Y Y' : M, lam ⁅Y, Y'⁆ = 0) (Y : M) :
+    scalarShift lam hlam (UniversalEnvelopingAlgebra.ι ℂ Y) =
+      UniversalEnvelopingAlgebra.ι ℂ Y + algebraMap ℂ _ (lam Y) := by
+  unfold scalarShift
+  rw [UniversalEnvelopingAlgebra.lift_ι_apply]
+  rfl
+
 end Shift
 
 /-- Independence of the parabolic for the normalized Levi component of central elements

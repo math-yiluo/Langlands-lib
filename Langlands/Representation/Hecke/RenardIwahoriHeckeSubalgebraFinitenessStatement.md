@@ -33,13 +33,15 @@ in the public note
 "Status of the assertion". It is not formalized.
 
 The Lean proposition quantifies over Kaletha–Prasad building assignments
-`𝔅` that are available for `G` (`𝔅.IsAvailableFor F G hG`). The example
-refutes it whenever such an assignment exists for this `U(1,1)`. The Library
-does not prove that one exists; if none exists, the proposition is vacuous
-for this group. So its negation is not proved in Lean. Renard's printed
-Lemma, for an arbitrary `K` as in V.5.3, is a source error, and the Chapter V
-ledger records it. The Lean statement is unchanged from its first
-publication; only this Markdown was corrected.
+`𝔅` that are available for `G` (`𝔅.IsAvailableFor F G hG`).
+`Langlands.Geometry.Building.bruhatTitsAvailability` supplies a valid
+assignment over all nonarchimedean local fields, and
+`KPBuildingAssignment.IsValid.isAvailableFor` applies it to each connected
+reductive group. To turn the paper example into a Lean refutation, one
+must identify its torus, special vertex and subgroup `K` with the
+corresponding Lean data, verify the transversal hypotheses, and transfer
+the convolution and support calculations to `HeckeAlgebra.Corner`.
+[Building availability](../../Geometry/Building/BruhatTitsAvailabilityProof.md)
 
 ## Source and provenance
 
@@ -381,9 +383,11 @@ quadratic extension does not give such a `K`.
   `iwahoriHeckeSubalgebraFiniteness` in
   `IwahoriHeckeSubalgebraFinitenessProof`.
 - The Chapter V ledger records the Lemma as a source error under gap 4.
-- A Lean formalization of the counterexample would need an available
-  building assignment for this `U(1,1)`, which the Library does not provide.
-  It is not attempted here.
+- For a Lean formalization of the counterexample, the available building
+  assignment supplies the structural existence input. The specific torus,
+  vertex, subgroup and transversal require comparison with the Lean data.
+  The convolution and support calculations in the example then give the
+  failure of finite generation.
 
 ## Imports
 

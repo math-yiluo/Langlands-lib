@@ -4,4 +4,6 @@ Fix the cuspidal realizations, their spectral presentations, and the irreducibil
 
 The proof pairs the evaluated finite coefficient with any tensor of the actual infinite coefficients. Scalar evaluation of that pair is linear in the finite coefficient, so the half character factors out. The external finite Levi action is the indexed tensor map of the individual block actions. `groupedCoefficientEquiv_finite` evaluates that tensor map as right translation of the scalar argument by the Levi projection, embedded with identity infinite coordinate. The result is precisely `HasFiniteScalarCovariance` for the evaluation field of the bundle.
 
+`finiteEvaluation_scalarParabolic` gives the linear pairing calculation for a general normalized evaluation bundle. `groupedFiniteLevi_scalar` identifies the translation law for the grouped cuspidal coefficients.
+
 This is the scalar form of the vector covariance of normalized induction in Getz–Hahn (2024), §10.1, printed pp. 270–271 (PDF pp. 282–283), `getz-hahn-2024-automorphic-representations`, SHA-256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`.

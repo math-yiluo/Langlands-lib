@@ -1,0 +1,9 @@
+# Isotropy of types B, C and G₂ over totally complex number fields
+
+`NumberFieldTotallyComplexNonTypeAQuadraticIsotropyStatement` gives positive split rank for affine simply connected absolutely almost-simple groups of types B and C of rank at least two over a totally complex number field. For type G₂ it gives split rank two. The type conditions use the Cartan matrix of the supplied actual Tits index.
+
+A nondegenerate quadratic form of dimension greater than four is isotropic at every finite completion by the local dimension bound. At every infinite completion the field is complex and the dimension is at least two. The number-field quadratic local-to-global theorem supplies an isotropic vector over the ground field.
+
+In type B of rank at least three, apply this to the scalar form of the odd quadratic presentation and use the equality of its Witt index and the group's split rank. Type B₂ uses the type C₂ numbering obtained by reversing the two vertices. In type C, the split model contains its diagonal split torus. In the division model, the alternating subspace of the orthogonal involution is one-dimensional. Taking its coordinate on the antihermitian self-pairing gives a nondegenerate scalar quadratic form of dimension four times the rank. Its isotropic vector has zero antihermitian self-pairing, and the resulting totally isotropic line gives positive split rank. In type G₂, apply quadratic isotropy to the eight-dimensional Cayley norm and use the split-rank theorem for the automorphism group of an isotropic Cayley algebra.
+
+The classical cases use the quadratic and Hermitian isotropy underlying Platonov and Rapinchuk, *Algebraic Groups and Number Theory*, §6.6, Claims 6.1–6.2, p. 343, and Theorem 6.25, pp. 352–353. The G₂ argument uses the Cayley presentation and its isotropic norm criterion. [Chapter 6](https://www.sciencedirect.com/science/article/pii/S0079816908620711)

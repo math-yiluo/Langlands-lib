@@ -1,0 +1,7 @@
+# Descent and trace on analytic étale Galois covers
+
+Let \(p\colon Y\to X\) be a surjective étale map of localized analytic spaces over a complete nonarchimedean normed field, with deck graphs covering and partitioning its analytic self-pullback as in `AnalyticGaloisCover`. Let \(F\) be a sheaf on the ordinary analytic étale site of \(X\) of modules over a commutative ring. The ring and its modules are in a universe at least as large as the site. The space \(Y\) is an object of that site via \(p\). Restriction identifies sections on \(X\) with the invariants of the inverse-deck pullback action on sections over \(Y\).
+
+The analytic deck graphs give a `GaloisCovering` of the ordinary site through `AnalyticGaloisCover.toEtaleSiteCover`. The generic descent theorem for that covering gives a section on the base from every invariant section, and injectivity of restriction gives uniqueness. When the deck group is finite, `traceSections` takes the unnormalized deck sum and applies this descent. Restricting the trace gives the sum. Tracing a restriction multiplies by the order of the deck group. The trace is a natural transformation of section evaluations on sheaves over \(X\).
+
+Berkovich's ordinary analytic étale coverings and sheaf condition are in *Étale cohomology for non-Archimedean analytic spaces* (1993), §4.1, p. 82. The trace and its formula for finite maps of constant rank in §5.4, Theorem 5.4.1, pp. 106–107, motivate the global-section construction for the given Galois cover.

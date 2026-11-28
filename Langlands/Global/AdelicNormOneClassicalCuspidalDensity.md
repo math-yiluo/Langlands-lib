@@ -1,5 +1,23 @@
 # Transfer of classical cuspidal density to the norm-one quotient
 
+`Langlands.Global.positiveQuotientOfNormOneRestriction` restricts a continuous,
+left rational-invariant function to the norm-one group and transports its
+descent along `positiveQuotientHomeomorph`. The resulting continuous function on
+the positive rational quotient agrees with the given function on norm-one
+representatives, by `positiveQuotientOfNormOneRestriction_mk`.
+
+If the original function has zero proper constant terms, any `L²` class
+represented by the transported function belongs to the full cuspidal submodule
+by `mem_fullAEL2CuspidalSubmodule_of_normOneRestriction`. For each proper
+rational parabolic, a dynamic presentation by a rational cocharacter gives a
+geometric representative of the canonical radical. The period over that
+representative equals the canonical normalized period. Every proper radical
+lies in the norm-one group, so the period integrands agree at norm-one
+arguments. The period of the transported function at any adelic argument is
+its period at the norm-one projection. The theorem
+`groupSchemeFullAEL2ContinuousCuspidality` converts this pointwise vanishing to
+membership in full cuspidal `L²`.
+
 `Langlands.Global.adelicNormOneClassicalCuspidalDensity_of_centerConjugation`
 proves `AdelicNormOneClassicalCuspidalDensityReductionStatement`. It derives
 `AdelicNormOneClassicalCuspidalDensityStatement` from triviality of
@@ -12,18 +30,8 @@ with one common open right level at the finite adeles. It has all proper
 periods zero and one common height exponent for its archimedean derivative
 words.
 
-For each proper rational parabolic, a dynamic presentation by a rational
-cocharacter gives a geometric representative of the canonical radical.
-The period over that representative is the canonical normalized period.
-The positive rational quotient is homeomorphic to the norm-one rational
-quotient with exactly the transported Haar measure. On the norm-one group
-the positive-quotient pullback equals the original function. Each
-canonical proper radical lies in that group, so the pointwise periods of
-the positive-quotient representative at norm-one arguments vanish. The
-period at an arbitrary argument is the period at its norm-one projection.
-
 Rapid decay on a finite-translate cover gives a square-integrable class of
-the original restricted function, and the period identities put its
+the original restricted function. The transfer theorem puts its
 transported class in full cuspidal `L²`. The Hilbert density theorem gives
 a continuous positive-quotient representative whose adelic pullback is
 classical, cuspidal and of uniform derivative growth. Measure preservation

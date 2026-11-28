@@ -24,7 +24,7 @@ Vectors are columns: \(F^n\) is `n → F` and a matrix \(g\) acts by
   over `F`. Over a discrete valuation ring this is the usual notion: a finitely
   generated \(\mathcal O_F\)-submodule containing a basis of \(F^n\), which is then
   free of rank \(n\) (Mathlib's `Submodule.IsLattice.free` and
-  `Submodule.IsLattice.rank`).
+  `Submodule.IsLattice.rank_of_pi`).
 - **`ValuationRingLattice.Homothetic L M`**: \(M=aL\) for some
   \(a\in F^\times\) (pointwise scalar multiple of the submodule).
 - **`ValuationRingLattice.homothetySetoid F n`**: homothety as an equivalence

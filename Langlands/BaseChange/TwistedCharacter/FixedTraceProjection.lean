@@ -21,6 +21,13 @@ private theorem leftRegularTrace_map (α : R ≃ₐ[F] R) (x : R) :
     rw [map_mul, α.apply_symm_apply]
   rw [he, LinearMap.trace_conj']
 
+/-- Every algebra automorphism preserves the regular trace pairing. -/
+theorem regularTraceForm_automorphism (α : R ≃ₐ[F] R) (x y : R) :
+    Langlands.Algebra.regularTraceForm F R (α x) (α y) =
+      Langlands.Algebra.regularTraceForm F R x y := by
+  change leftRegularTrace (F := F) (α x * α y) = leftRegularTrace (x * y)
+  rw [← map_mul, leftRegularTrace_map α]
+
 /-- A projection onto the fixed algebra that is constant along `α` is adjoint
 to the inclusion for the ambient and restricted regular trace forms. -/
 def FixedTraceProjectionStatement [FiniteDimensional F R]

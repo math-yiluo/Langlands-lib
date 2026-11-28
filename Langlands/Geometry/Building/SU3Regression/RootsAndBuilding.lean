@@ -2,6 +2,7 @@ import Langlands.GroupScheme.Examples.HermitianRootReductive
 import Langlands.GroupScheme.Examples.HermitianRootSimplyConnected
 import Langlands.Geometry.Building.DepthZero.Definitions
 import Langlands.Geometry.Building.BuildingFacetClosure
+import Langlands.Geometry.Building.GeneralLinearTreeStatement
 
 /-!
 # The quasi-split `SU_3`: relative roots, affine roots, reduced building and depth zero
@@ -23,10 +24,13 @@ with middle index `Unit`: the special unitary group of the Hermitian form
   (KP Corollary 3.2.6).
 * `SU3ReducedBuildingStatement`: incidence numbers of chambers and vertices of the reduced
   building (KP §3.2(f)).
+* `SU3ReducedBuildingTreeStatement` asserts that the chamber vertex graph of the reduced
+  building is a tree (KP §3.2(f)).
 * `SU3DepthZeroQuotientsStatement`: the neutral special fibres and the orders of the finite
   reductive quotients at the two kinds of vertices and at the chambers (KP Corollary 3.2.6,
   Axiom 4.1.22, Proposition 9.4.23, Theorem 9.9.3).
-* `SU3BuildingRegressionStatement`: the conjunction of the four statements.
+* `SU3BuildingRegressionStatement` is the conjunction of the relative-root, affine-root,
+  incidence and depth-zero statements.
 
 All are statements; nothing here proves them.
 -/
@@ -191,6 +195,20 @@ def SU3ReducedBuildingStatement : Prop :=
             D.base.IsChamber C.val ∧ y ∈ D.base.buildingFacetClosure C}.ncard =
             Nat.card 𝓀[F] + 1)
 
+/-- **The tree of `SU_3`** (KP §3.2(f)). For every KP building datum `D` of the quasi-split
+`SU_3` satisfying the group axioms, the `chamberVertexGraph` of its reduced building is a
+tree. This applies to both ramification cases and every residue characteristic. -/
+def SU3ReducedBuildingTreeStatement : Prop :=
+  ∀ (F : Type u) [Field F] [ValuativeRel F] [TopologicalSpace F]
+    [IsNonarchimedeanLocalField F]
+    (E : Type u) [Field E] [Algebra F E] [Algebra.IsQuadraticExtension F E]
+    [Algebra.IsSeparable F E]
+    (H : HermitianRoot.DiagonalForm (SU3Root.fieldInvolution F E) Unit) (w : Unit → Eˣ)
+    (hw : ∀ i, (w i : E) = H.weight i)
+    (D : KPBuildingDatum (HermitianRoot.SchemeModel.groupScheme F E H w hw)),
+    D.SatisfiesGroupAxioms →
+      D.base.toValuationBuildingData.chamberVertexGraph.IsTree
+
 /-- **Depth zero at the two kinds of vertices of `SU_3`** (KP Corollary 3.2.6, Axiom 4.1.22,
 Proposition 9.4.23 and Theorem 9.9.3), with `q = #𝓀[F]`, `𝒢_x` the neutral model of a building
 facet `x` (whose integral points are the parahoric `D.parahoric x`) and `Ḡ_x` the specified
@@ -240,8 +258,8 @@ def SU3DepthZeroQuotientsStatement : Prop :=
         ∀ C : BuildingFacet D.base.toValuationBuildingData, D.base.IsChamber C.val →
           Nat.card (D.reductiveQuotientPoints C) = Nat.card 𝓀[F] - 1)
 
-/-- The `SU_3` regression examples for KP building data: relative roots, affine roots, the
-reduced building and the depth-zero quotients. -/
+/-- The conjunction of the `SU_3` relative-root, affine-root, incidence and depth-zero
+statements for KP building data. -/
 def SU3BuildingRegressionStatement : Prop :=
   SU3RelativeRootsStatement.{u} ∧ SU3AffineRootsStatement.{u} ∧
     SU3ReducedBuildingStatement.{u} ∧ SU3DepthZeroQuotientsStatement.{u}

@@ -20,3 +20,5 @@ in Kaletha and Prasad, *Bruhat–Tits Theory: A New Approach*, Proposition A.5.1
 and Remark A.5.20, pp. 642–643 (PDF pp. 673–674).
 `kaletha-prasad-2023-bruhat-tits-new-approach`, SHA-256
 `05ad9a284a2577b34d1a270228b74dfb28f520561ae7772d8f38dddb78938732`.
+
+The additive map `GenericLie.baseChangeMap` and its integral lattice comparison are defined in [LieLatticeCoefficientExtension](LieLatticeCoefficientExtension.md).

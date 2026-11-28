@@ -511,3 +511,5 @@ predicate in place of the expansion itself, with the decomposition of the first 
 Delorme's extended pairing supplied as part of the relation; the labels `sλ − μ` of (7.12)
 supplied as affine exponent labels, with the generic region of Theorem 7.1 (i) stated on them;
 and the normalization constants `vol`.
+
+`realParameterPairing_splitDual` evaluates a character on a projected vector by restricting the character to the maximal split torus.

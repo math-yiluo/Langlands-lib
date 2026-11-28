@@ -45,7 +45,9 @@ variable {F : Type u} [Field F] [ValuativeRel F] [TopologicalSpace F]
 
 omit [LocallyOfFiniteType G.X.hom] in
 set_option maxHeartbeats 600000 in
-private theorem finite_dynamicSplitQuotient
+/-- The actual dynamic Levi modulo its norm kernel and the transported
+split-center point image is finite. -/
+theorem finite_dynamicSplitQuotient
     (χ : (Gm (Spec (CommRingCat.of F))).toGrp ⟶ G) (hG : IsConnectedReductive G)
     {S : CommGroupScheme (Spec (CommRingCat.of F))}
     (a : S.toGrp ⟶ parameterScheme χ) (ha : IsSplitComponent a)

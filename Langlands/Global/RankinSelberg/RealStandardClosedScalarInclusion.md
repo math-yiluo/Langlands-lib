@@ -1,0 +1,9 @@
+# Closed smooth inclusion from a real standard module to its position series
+
+`RealStandardClosedScalarInclusionStatement` concerns a real standard module whose list of blocks has rank \(n\). Replace each rank-two block by its two position characters, leaving every position character in the same place. The original standard module maps into the resulting scalar principal series. The same inclusion on genuine smooth vectors is a continuous closed embedding, intertwines the full group actions, and preserves the reconstructed functions on the real general linear group.
+
+The proof identifies the inducing characters at every position using `RealBlockPosition`. The scalar series has no low Fourier constraints, so ordinary inclusion of functions induces an isometric injection of their compact Banach carriers. It commutes with translation on the dense smooth compact restrictions, hence on the full Banach carriers. `SmoothIntertwiner.derivativeMap` induces the smooth injection, with the subspace topology by the equality of every derivative coordinate under the original isometric inclusion.
+
+To prove the image closed, reconstruct the smooth scalar function in the position principal series of the original block list. Restriction to the compact subgroup is continuous in the genuine smooth topology because it is the empty-word coordinate composed with the compact orthogonal equivalence. The range consists of the functions whose compact restriction lies in the closed Fourier window of `RealStandardCompactWindow`. Pulling this closed condition back along the reconstruction proves closedness in the genuine smooth topology.
+
+This is the compact-picture inclusion of a standard module in its position principal series. It uses the same position character and Fourier-window description that defines `realStandardModule`.

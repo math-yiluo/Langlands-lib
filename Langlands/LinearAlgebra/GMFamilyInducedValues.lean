@@ -168,6 +168,46 @@ private theorem posSet_wall_adjacent (hR : IsRootSet R) (keep : activeRoots R a 
       (not_lt_of_gt (neg_of_mul_pos_left h₂ hw.le))
   · exact iff_of_true (pos_of_mul_pos_left h₁ hw.le) (pos_of_mul_pos_left h₂ hw.le)
 
+/-- **Galleries avoiding protected walls.** Let `x` and `y` be regular points of `a₁` at which
+every root satisfying `keep` and nonzero on `a₁` has the same sign. If the parameter `μ` vanishes
+on the restriction to `a₁` of every other root that is nonzero on `a₁`, then the family takes the
+same value at `μ` on the chambers of `x` and `y`. -/
+theorem family_eq_of_protected_signs (hR : IsRootSet R)
+    {c₁ : Finset E → StrongDual ℝ a₁ → ℂ} (hc₁ : IsFamily R a₁ c₁) (keep : E → Prop)
+    {x y : E} (hx : IsRegular R a₁ x) (hy : IsRegular R a₁ y)
+    (hprotect : ∀ r ∈ R, restrictedRoot a₁ r ≠ 0 → keep r → 0 < ⟪r, x⟫ * ⟪r, y⟫)
+    (μ : StrongDual ℝ a₁)
+    (hμ : ∀ r ∈ R, restrictedRoot a₁ r ≠ 0 → ¬ keep r → μ (restrictedRoot a₁ r) = 0) :
+    c₁ (posSet R x) μ = c₁ (posSet R y) μ := by
+  let x' : a₁ := ⟨x, hx.1⟩
+  let y' : a₁ := ⟨y, hy.1⟩
+  let f := rootForm (R := R) (a := a₁)
+  let keep' (i : activeRoots R a₁) := keep (i : E)
+  have hprotect' (i : activeRoots R a₁) (hi : keep' i) : 0 < f i x' * f i y' := by
+    change 0 < rootForm i x' * rootForm i y'
+    rw [rootForm_apply, rootForm_apply]
+    exact hprotect _ (Finset.mem_filter.mp i.prop).1 (Finset.mem_filter.mp i.prop).2 hi
+  have hgal := reflTransGen_chamberStep f keep' ((isRegular_iff_rootForm x').mp hx)
+    ((isRegular_iff_rootForm y').mp hy) hprotect'
+  change c₁ (posSet R (x' : E)) μ = c₁ (posSet R (y' : E)) μ
+  have hstep (s t : a₁) (hst : ChamberStep f keep' s t) :
+      c₁ (posSet R (s : E)) μ = c₁ (posSet R (t : E)) μ := by
+    rcases hst with hsame | hwall
+    · rw [posSet_eq_of_sameChamber hsame]
+    · obtain ⟨i, hi, hadj⟩ := posSet_wall_adjacent hR keep' hwall
+      have hs : posSet R (s : E) ∈ parabolics R a₁ := mem_parabolics_iff.mpr
+        ⟨s, (isRegular_iff_rootForm s).mpr hwall.1, rfl⟩
+      have ht : posSet R (t : E) ∈ parabolics R a₁ := mem_parabolics_iff.mpr
+        ⟨t, (isRegular_iff_rootForm t).mpr hwall.2.1, rfl⟩
+      exact hc₁.2 _ hs _ ht _ hadj μ
+        (hμ _ (Finset.mem_filter.mp i.prop).1 (Finset.mem_filter.mp i.prop).2 hi)
+  have hchain (z : a₁) (h : Relation.ReflTransGen (ChamberStep f keep') x' z) :
+      c₁ (posSet R (x' : E)) μ = c₁ (posSet R (z : E)) μ := by
+    induction h with
+    | refl => rfl
+    | tail _ hstep' ih => exact ih.trans (hstep _ _ hstep')
+  exact hchain y' hgal
+
 /-- Two fine chambers extending the same coarse chamber have equal family values at the
     extended parameter. -/
 theorem family_eq_of_coarse_chamber (hR : IsRootSet R) (haa₁ : a ≤ a₁)
@@ -179,44 +219,18 @@ theorem family_eq_of_coarse_chamber (hR : IsRootSet R) (haa₁ : a ≤ a₁)
   obtain ⟨p, hp, rfl⟩ := mem_parabolics_iff.mp hP
   obtain ⟨q₁, hq₁, rfl⟩ := mem_parabolics_iff.mp hP₁
   obtain ⟨q₂, hq₂, rfl⟩ := mem_parabolics_iff.mp hP₂
-  let x : a₁ := ⟨q₁, hq₁.1⟩
-  let y : a₁ := ⟨q₂, hq₂.1⟩
-  let f := rootForm (R := R) (a := a₁)
-  let keep (i : activeRoots R a₁) := restrictedRoot a (i : E) ≠ 0
-  have hprotect (i : activeRoots R a₁) (hi : keep i) : 0 < f i x * f i y := by
-    change 0 < rootForm i x * rootForm i y
-    rw [rootForm_apply, rootForm_apply]
-    have hRmem := (Finset.mem_filter.mp i.prop).1
+  apply family_eq_of_protected_signs hR hc₁ (fun r => restrictedRoot a r ≠ 0) hq₁ hq₂
+  · intro r hRmem _ hi
     rcases lt_or_gt_of_ne (hp.2 _ hRmem hi) with hn | hpos
     · have hneg := (mem_posSet_neg_iff hR).mpr ⟨hRmem, hn⟩
       exact mul_pos_of_neg_of_neg ((mem_posSet_neg_iff hR).mp (h₁ hneg)).2
         ((mem_posSet_neg_iff hR).mp (h₂ hneg)).2
     · have hp' := mem_posSet_iff.mpr ⟨hRmem, hpos⟩
       exact mul_pos (mem_posSet_iff.mp (h₁ hp')).2 (mem_posSet_iff.mp (h₂ hp')).2
-  have hgal := reflTransGen_chamberStep f keep ((isRegular_iff_rootForm x).mp hq₁)
-    ((isRegular_iff_rootForm y).mp hq₂) hprotect
-  change c₁ (posSet R (x : E)) (extendParam a a₁ Λ) = c₁ (posSet R (y : E)) (extendParam a a₁ Λ)
-  have hstep (s t : a₁) (hst : ChamberStep f keep s t) :
-      c₁ (posSet R (s : E)) (extendParam a a₁ Λ) =
-        c₁ (posSet R (t : E)) (extendParam a a₁ Λ) := by
-    rcases hst with hsame | hwall
-    · rw [posSet_eq_of_sameChamber hsame]
-    · obtain ⟨i, hi, hadj⟩ := posSet_wall_adjacent hR keep hwall
-      have hs : posSet R (s : E) ∈ parabolics R a₁ := mem_parabolics_iff.mpr
-        ⟨s, (isRegular_iff_rootForm s).mpr hwall.1, rfl⟩
-      have ht : posSet R (t : E) ∈ parabolics R a₁ := mem_parabolics_iff.mpr
-        ⟨t, (isRegular_iff_rootForm t).mpr hwall.2.1, rfl⟩
-      have hzero : restrictedRoot a (i : E) = 0 := not_ne_iff.mp hi
-      apply hc₁.2 _ hs _ ht _ hadj
-      change Λ (restrictedRoot a (restrictedRoot a₁ (i : E) : E)) = 0
-      rw [restrictedRoot_nested haa₁, hzero, map_zero]
-  have hchain (z : a₁) (h : Relation.ReflTransGen (ChamberStep f keep) x z) :
-      c₁ (posSet R (x : E)) (extendParam a a₁ Λ) =
-        c₁ (posSet R (z : E)) (extendParam a a₁ Λ) := by
-    induction h with
-    | refl => rfl
-    | tail _ hstep' ih => exact ih.trans (hstep _ _ hstep')
-  exact hchain y hgal
+  · intro r _ _ hi
+    have hzero : restrictedRoot a r = 0 := not_ne_iff.mp hi
+    change Λ (restrictedRoot a (restrictedRoot a₁ r : E)) = 0
+    rw [restrictedRoot_nested haa₁, hzero, map_zero]
 
 /-- A fine chamber extending a coarse chamber can be found by a small perturbation in the fine
     space. -/

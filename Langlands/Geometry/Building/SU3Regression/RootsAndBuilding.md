@@ -6,18 +6,20 @@ This module states, without proving them, regression examples for Kaletha–Pras
 data of the quasi-split special unitary group `SU_3` of a separable quadratic extension `E/F`:
 the simplest non-split group, and the simplest one with a multipliable relative root. The
 statements test the Library's general objects (relative roots, affine roots, facets of the
-reduced building, neutral facet models and their reductive quotients) on this group, in the
-unramified and the ramified case and in every residue characteristic, including `2`.
+reduced building, its vertex graph, neutral facet models and their reductive quotients) on
+this group in both ramification cases and in every residue characteristic, including `2`.
 
 | KP | statement (namespace `Langlands.Geometry.Building`) |
 | --- | --- |
 | §2.7 | `SU3RelativeRootsStatement` |
 | Corollary 3.2.6 (affine roots) | `SU3AffineRootsStatement` |
-| §3.2(f) (the tree) | `SU3ReducedBuildingStatement` |
+| §3.2(f) (vertex and chamber incidence) | `SU3ReducedBuildingStatement` |
+| §3.2(f) (the tree) | `SU3ReducedBuildingTreeStatement` |
 | Corollary 3.2.6 (the groups `G_v`), Axiom 4.1.22, Proposition 9.4.23, Theorem 9.9.3 | `SU3DepthZeroQuotientsStatement` |
 
-`SU3BuildingRegressionStatement` is the conjunction of the four statements and adds nothing
-else. The module also contains four auxiliary `Prop`-valued definitions, described below.
+`SU3BuildingRegressionStatement` is the conjunction of the relative-root, affine-root,
+incidence and depth-zero statements. The module also contains four auxiliary `Prop`-valued
+definitions, described below.
 All statements are closed propositions, universe-polymorphic in the universe `u` of `F`.
 
 ## The group and the data
@@ -53,8 +55,9 @@ the apartment `D.base.Apartment` with its affine roots `D.base.affineRoots`
 The premise `D.SatisfiesGroupAxioms` is the standing hypothesis of the setting. The first two
 statements do not need it: the relative roots depend only on the maximal split torus, and the
 affine roots only on the apartment class, which by KP Proposition 6.2.6
-(`omegaCompatibleApartmentUniqueness`) is the unique `ω`-compatible one. The other two
-statements use the building, model and quotient axioms.
+(`omegaCompatibleApartmentUniqueness`) is the unique `ω`-compatible one. The incidence and
+tree statements use the building's facets. The depth-zero statement uses the model and
+quotient axioms as well.
 
 ## Auxiliary definitions
 
@@ -153,9 +156,23 @@ the walls of the apartment are the points `x` with `⟨a, x - x₀⟩ ∈ ½ℤ`
 vertices of the apartment, where both an `a`-wall and a `2a`-wall pass, are those with
 `⟨a, x - x₀⟩ ∈ ℤ`, which form one orbit of the translations by `T(F)` (`ω(a(T(F))) = ℤ`).
 
-**The tree is not stated.** This module does not state that the reduced building is a tree:
-that needs a vertex adjacency graph on the reduced building of general KP data, which this
-module does not define and the statements do not use.
+### `SU3ReducedBuildingTreeStatement` (KP §3.2(f))
+
+For `B = D.base.toValuationBuildingData`, the simple graph `B.chamberVertexGraph` on
+`{y // B.IsVertex y}` is a tree (`SimpleGraph.IsTree`). Two distinct vertices are adjacent
+when both belong to `B.buildingFacetVertices C` for a chamber `C`. This is the same incidence
+relation used above, since `buildingFacetVertices C` consists of the vertices in
+`buildingFacetClosure C`. The graph is defined for general valuation building data in
+[`GeneralLinearTreeStatement`](../GeneralLinearTreeStatement.md).
+
+KP §3.2(f) (printed p. 156) describes the building in both ramification cases as a
+one-dimensional simplicial tree, with chamber closures as edges. To compare with an
+arbitrary `D`, `ValuationBuildingData.exists_isEquivariantBuildingIso_id` identifies
+apartments affinely and carries facets to facets. On each rank-one apartment such a
+comparison preserves point facets, open interval chambers and their endpoints, hence
+it induces an isomorphism of the vertex graphs. The tree statement uses the same
+`D.SatisfiesGroupAxioms` premise and holds for either ramification case without any
+condition on the base point or residue characteristic.
 
 ### `SU3DepthZeroQuotientsStatement` (KP Corollary 3.2.6, Axiom 4.1.22, Proposition 9.4.23, Theorem 9.9.3)
 

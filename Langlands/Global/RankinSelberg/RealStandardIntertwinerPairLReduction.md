@@ -27,3 +27,5 @@ Positive-weight parameter uniqueness applied to this bijection identifies
 the two normalized lists up to permutation. The normalization and permutation
 identities for `realPairLFactor` give the equality of factors in each slot,
 and taking their denominators gives the two equalities of the target.
+
+`isIrreducibleGKModule_of_realStandardModule_eq` gives the irreducibility transport for any two equal real standard function spaces, using the identity-on-functions intertwiner described above.

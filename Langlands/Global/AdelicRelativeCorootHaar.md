@@ -1,0 +1,7 @@
+# Haar measure in the projected simple-coroot coordinates
+
+For a standard parabolic of index \(J\), use the simple coroots outside \(J\) projected along the Levi coroot span onto the split directions of \(J\). The projected vectors form a basis of the relative split coroot space. The coordinate of a relative positive split point in this basis describes both its maximal-torus logarithm and its parabolic logarithm. In the parabolic the corresponding coordinate vectors are precisely `relativeCoroot`, which appears in `UnitaryPairingExpansion.regularizedConeIntegral`.
+
+The proof uses the standard Levi decomposition to span the relative split space by the projected coroots. Each outside fundamental weight vanishes on the Levi coroot span and is dual to the corresponding simple coroot, so the weights recover the coefficients of the projected vectors. All characters of the parabolic restrict into the annihilator of the Levi coroot span. Consequently `splitDual` sends a projected coroot to the same functional as the original coroot. Composing the basis coordinates with the relative positive logarithm gives a topological group isomorphism to the additive real coordinate space.
+
+Pushing any supplied split Haar measure through this isomorphism gives additive Haar measure. Haar uniqueness yields a strictly positive scalar times Lebesgue measure on the coordinate space, also in dimension zero. This gives the scalar in the split integration of Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, (7.7) and (7.9).

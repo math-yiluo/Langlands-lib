@@ -1,3 +1,4 @@
+import Langlands.GroupScheme.IntegralModel.LieLatticeCoefficientExtension
 import Langlands.GroupScheme.IntegralModel.BaseChange
 import Langlands.GroupScheme.IntegralModel.LieLattice
 import Langlands.GroupScheme.Lie.LinearBaseChangeNaturality

@@ -1,0 +1,5 @@
+# Scalar extension of chart refinements
+
+Let an indexed affinoid atlas over a complete non-Archimedean field have a locally refining selection of its charts. Every retained chart in the scalar-extended atlas has the same index and its range is the inverse image of the original range under the scalar-extension projection. The inverse images of the finite relative neighbourhood families therefore give a locally refining selection after extension. Containment of extended chart ranges reflects original containment, so a downward-closed selection remains downward closed. The result gives an actual `RefiningSelection` with the original index predicate.
+
+The proof uses the relative finite neighbourhoods of atlas nets and the scalar-extension projection in Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), §1.1, printed pp. 13–14 (PDF pp. 10–11), and §1.4, printed pp. 29–30 (PDF pp. 26–27). Literature ID `berkovich-1993-etale-cohomology`, SHA-256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.

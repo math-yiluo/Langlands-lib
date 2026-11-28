@@ -40,6 +40,10 @@ All declarations are in the namespace
   `(m + 2md) M`, use `RealIwasawa.alpha_reindex_finCongr`, and the estimates `decay_le` and
   `sum_abs_le` of `RealRectangularIwasawa`.
 
+`rectangular_toralExponent_le` gives the comparison of the two exponents in
+this calculation before applying the exponential function. It also applies
+when the coefficient has a uniform growth allowance in another slot.
+
 ## Elementary estimates
 
 - `coord_le`, `sum_coord_le`: if `A ≥ 0`, `τ ≥ A + 1` and `M ≥ A + τ + 1`, then
@@ -57,45 +61,35 @@ All declarations are in the namespace
   then `exp(E ∘ alphaQ)` is integrable. `integrable_exp_comp_alphaQ_of_le` allows any
   strictly positive coefficient on the sum of absolute values.
 
-## The main theorem
+## The convergence criterion
 
-- `bkernel h V V' (g, x) = V(rect(g, x)) V'(g)`; `continuous_rectangularPoint` uses the Library's
-  `continuous_lowerBlockLocalization` and `reindexContinuous`.
-- `exists_dual_convergence`: let `V` and `V'` be continuous, let `‖V(u g)‖ = ‖V(g)‖` for upper
-  unipotent `u` of `GL_n(ℝ)`, let `bkernel h V V' (u g, x) = bkernel h V V' (g, x)` for upper
-  unipotent `u` of `GL_m(ℝ)`, and let `HasGauge V` and `HasGauge V'` hold. Then for every
-  quotient measure data `D` and every additive Haar measure `ν` there is `σ` such that:
-  1. for `Re s > σ`, `p ↦ blockKernel realNormalizedAbs h V V' s p.1 p.2` is integrable for
-     `D.measure.prod (rectangularMeasure ν d m)`;
-  2. `blockIntegral realNormalizedAbs D.measure ν h V V'` is complex differentiable on
-     `{s : σ < Re s}`.
+`HasRectangularToralBound` bounds the scalar kernel on torus and orthogonal
+coordinates by arbitrary decay in the positive toral coordinates, a fixed
+exponential growth allowance in the absolute coordinates, and the fixed
+integrable rectangular weight `rectDecay`. The lemma
+`hasRectangularToralBound_of_log_bound` obtains this bound from simultaneous
+toral and logarithmic rectangular decay by increasing the decay order.
 
-  Proof:
-  1. The orthogonal coordinate descends to a continuous `kQ` on the quotient. So
-     `sec(q) = torus(alphaQ q) · kQ(q)` is a continuous section, and by the invariance of the
-     kernel `f(q, x) = bkernel(q.out, x) = bkernel(sec q, x)`. In particular `f` is continuous
-     on the product. As in `RealEqualConvergence`, `ℓ(q) = log |det q.out| = ∑_j alphaQ(q)_j`.
-  2. For `τ ≥ A + 1`, `A = N1 + N2 + ‖L‖`, choose
-     `M ≥ A + τ + 1 + 2 N1 (m + d) + 2md`. With `rect_bound` for `V` and the bound of `V'` with
-     no decay,
+`realRectangularToralConvergence` proves a common half-plane of absolute
+convergence and holomorphy for continuous kernels with that bound and left
+upper-unipotent invariance in the group coordinate. The orthogonal coordinate
+descends to a continuous `kQ` on the quotient, and `torus(alphaQ q) · kQ(q)`
+provides continuous representatives for evaluating the invariant kernel.
+The logarithmic determinant is the sum of the toral coordinates. For a
+large real determinant exponent, choose the decay order using `sum_coord_le`.
+The resulting majorant is a product of the integrable toral weight from
+`integrable_exp_comp_alphaQ` and the integrable rectangular weight.
+The spectral integral on the product space is holomorphic by differentiation
+under the integral sign. The real determinant shift translates the
+convergence half-plane.
 
-     `‖f(q, x)‖ exp(τ ℓ(q)) ≤ C exp(E(alphaQ q)) rectDecay(x)`,
-
-     where `E(y) = −M ∑ max(y_j, 0) + (N1 + N2) ∑ |y_j| + τ ∑ y_j` satisfies
-     `L y + E(y) ≤ −∑ |y_j|` by `sum_coord_le`. The factor of `log(1 + S)` left over is at most
-     `exp(−md log(1 + S))`, which `exp_neg_mul_log_le` bounds by `rectDecay`.
-  3. The bound is a product of an integrable function of `q` and an integrable function of `x`,
-     so it is integrable on the product (Mathlib's `Integrable.mul_prod`). With
-     `c = (r − t)/2` and `σ = A + 1 + c`, the block kernel at `s` is
-     `f(p) exp((s − c) ℓ(p.1))`. Its norm is `‖f(p)‖ exp((Re s − c) ℓ(p.1))`, which gives
-     integrability.
-  4. For holomorphy, the inner integral is pulled out:
-     `blockIntegral(s) = ∫ F(q) exp(s ℓ(q)) dq`, with `F(q) = (∫ f(q, x) dx) exp(−c ℓ(q))`.
-     `F` is a.e. strongly measurable (Mathlib's `AEStronglyMeasurable.integral_prod_right'`).
-     For `τ' > σ`, `‖F(q)‖ exp(τ' ℓ(q))` is at most
-     `C exp(E(alphaQ q)) ∫ rectDecay`, by the bound of step 2 with `τ = τ' − c`.
-     `RealConvergenceAnalysis.differentiableOn_integral_cexp_mul` then gives holomorphy. No
-     Fubini theorem is needed.
+`exists_dual_convergence` applies the criterion to the continuous product
+kernel `bkernel h V V' (g, x) = V(rect(g, x)) V'(g)`. It combines `rect_bound`
+for `V` with the gauge of `V'` at decay order zero, then uses the determinant
+shift `(r − t)/2`. Fubini's theorem identifies the product integral on the
+convergence half-plane with the iterated integral `blockIntegral`.
+The quotient measure is sigma finite by regularity and sigma compactness
+of the Iwasawa section, and the rectangular measure is sigma finite.
 
 ## Relation to the literature
 

@@ -175,6 +175,16 @@ def LocalPullbacks.ofLocalMorphisms : LocalPullbacks (f := f) (g := g) I β wher
     exact (reduced_chartSections r m β ℓ hℓ hred hβ τ i a).trans
       (reduced_chartSections r m β ℓ hℓ hred hβ τ j a).symm
 
+/-- Reducing a chart section pullback gives the section map of the prescribed
+reduced morphism on the corresponding intersection. -/
+lemma LocalPullbacks.ofLocalMorphisms_reduce_sections {p : ℕ} (τ : Fin (p + 1) → U.I₀)
+    (i : Fin (p + 1)) (a : tupleSections g V (β ∘ τ))
+    (e : r ⁻¹ᵁ inter (coverOpens U) τ ≤ m ⁻¹ᵁ inter (coverOpens V) (β ∘ τ)) :
+    (r.appLE (inter (coverOpens U) τ) (r ⁻¹ᵁ inter (coverOpens U) τ) le_rfl).hom
+        ((LocalPullbacks.ofLocalMorphisms r m β ℓ hℓ hred hβ I hker).sections τ i a) =
+      (m.appLE (inter (coverOpens V) (β ∘ τ)) (r ⁻¹ᵁ inter (coverOpens U) τ) e).hom a :=
+  reduced_chartSections r m β ℓ hℓ hred hβ τ i a
+
 /-- Any two families lifting the same morphism have congruent section
 pullbacks on each affine overlap. -/
 lemma localMorphisms_congruent

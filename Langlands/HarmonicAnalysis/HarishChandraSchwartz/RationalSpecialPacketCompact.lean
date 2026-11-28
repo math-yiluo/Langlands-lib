@@ -1,4 +1,6 @@
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalWeakExpansionTargets
+import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSemistandardConstantTermEstimate
+import Langlands.GroupScheme.Rational.SemistandardProperLeviRank
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSpecialCompactConstantTermPremises
 import Langlands.BruhatTits.SpecialCompact.AvailableBasisProof
 import Langlands.BruhatTits.SpecialCompact.JointBasisFinalAssembly
@@ -235,5 +237,121 @@ def specialPacketCompact (hG : IsConnectedReductive G) (hν : IsGenericCocharact
 theorem hasSpecialPacketCompact (hG : IsConnectedReductive G)
     (hν : IsGenericCocharacter i ν) : HasSpecialPacketCompact hi ν :=
   ⟨(specialPacketCompact hi ν hG hν).val, (specialPacketCompact hi ν hG hν).property⟩
+
+section SemistandardTrace
+
+open RationalSemistandard
+
+attribute [local instance] rationalWeightsIsAffine rationalWeightsTopology
+
+omit [IsNonarchimedeanLocalField F] in
+private theorem specialCompactProperties_of_heq
+    {M : GroupScheme (Spec (CommRingCat.of F))} [IsAffineHom M.X.hom]
+    {SM SM' : CommGroupScheme (Spec (CommRingCat.of F))} (hS : SM' = SM)
+    {i' : SM'.toGrp ⟶ M} {iM : SM.toGrp ⟶ M} (hi : HEq i' iM)
+    (L : Subgroup (rationalPoints M))
+    (h : ∀ v : cocharacterLattice SM', IsGenericCocharacter i' v → SpecialCompactProperties F i' v L)
+    (v : cocharacterLattice SM) (hv : IsGenericCocharacter iM v) : SpecialCompactProperties F iM v L := by
+  subst hS
+  obtain rfl := eq_of_heq hi
+  exact h v hv
+
+set_option maxRecDepth 4096 in
+set_option maxHeartbeats 2200000 in
+private theorem standardLeviTraceProperties
+    (V : ValuationBuildingData G) (hA : V.SatisfiesApartmentAxioms)
+    (ξ : cocharacterLattice V.S) (hξ : IsGenericCocharacter V.i ξ)
+    (J : Set (characterLattice V.S)) (hJ : J ⊆ simpleRelativeRoots V.i ξ)
+    (x : V.Apartment) (hx : V.apartment.IsSpecialApartmentVertex x)
+    (hK : IsCompactOpenMaximal F (V.apartment.specialCompactSubgroup x)) :
+    haveI := leviScheme_isAffineHom V.i ξ J
+    ∀ v : cocharacterLattice V.S, IsGenericCocharacter (Standard.leviTorusHom V.i ξ J) v →
+    let L := V.apartment.specialCompactLeviSubgroup ξ J x
+    SpecialCompactProperties F (Standard.leviTorusHom V.i ξ J) v L ∧
+      BruhatTits.Iwasawa.ParabolicPointProductFamily (Standard.leviTorusHom V.i ξ J) v L := by
+  let : IsAffineHom (Standard.leviScheme V.i ξ J).X.hom := leviScheme_isAffineHom V.i ξ J
+  intro v hv
+  obtain ⟨B, rfl⟩ := ParahoricBuildingData.exists_toValuationBuildingData_eq V
+  let hM := standardLevi_isConnectedReductive B.isConnectedReductive B.i B.isMaximalSplitTorus ξ hξ J hJ
+  have hiM := Standard.isMaximalSplitTorus_leviTorusHom B.i ξ J B.isMaximalSplitTorus
+  obtain ⟨BM, hSM, hiBM, hAM, _, hMdata⟩ := exists_specialCompactBuildingDataAt hiM hM
+  obtain ⟨xM, hxM, heq⟩ := exists_specialCompactLevi_of_buildingGeometry B hA ξ hξ J hJ x hx hK
+    BM.i BM.centralizer BM.apartment BM.isOmegaCompatible hAM.topologyCompatible hSM hiBM
+    (fun _ _ y hy => (hMdata y hy).1)
+  let L := B.apartment.specialCompactLeviSubgroup ξ J x
+  have hProduct (w : cocharacterLattice BM.S) (hw : IsGenericCocharacter BM.i w) :
+      BruhatTits.Iwasawa.ParabolicPointProductFamily BM.i w L := by
+    dsimp only [L]
+    rw [← heq]
+    exact ((hMdata xM hxM).2 w hw).2.1
+  have hSpecial (w : cocharacterLattice BM.S) (hw : IsGenericCocharacter BM.i w) :
+      SpecialCompactProperties F BM.i w L := by
+    dsimp only [L]
+    rw [← heq]
+    have hMax := (hMdata xM hxM).1
+    have hWeyl := ((hMdata xM hxM).2 w hw).1
+    obtain ⟨hLowerMax, _⟩ := specialPacketLeviProperties BM hAM w hw xM hxM hMax
+    exact ⟨isBoundedOpenMaximal_of_isCompactOpenMaximal BM.isConnectedReductive hMax, hMax, hWeyl,
+      hasParabolicFactorization_of_maximal_compact_levis BM.isConnectedReductive BM.i
+        BM.isMaximalSplitTorus w hw _ hMax.1 hLowerMax⟩
+  exact ⟨specialCompactProperties_of_heq hSM hiBM L hSpecial v hv,
+    parabolicPointProductFamily_of_heq hSM hiBM L hProduct v hv⟩
+
+variable [LocallyOfFiniteType G.X.hom]
+
+local instance traceModelAffine (p : SemistandardSpectralIndex i) (m : LeviModel p) :
+    IsAffineHom m.scheme.X.hom := m.reductive.isAffineHom
+
+/-- A model of the actual semistandard Levi with the trace of the given
+ambient special compact, and its structural properties at the inherited torus. -/
+structure SemistandardLeviCompactTrace (p : SemistandardSpectralIndex i)
+    (K : OpenSubgroup (rationalPoints G)) (v : cocharacterLattice S) where
+  model : LeviModel p
+  compact : OpenSubgroup (rationalPoints model.scheme)
+  trace : ∀ x : rationalPoints model.scheme, x ∈ compact ↔ rationalPoints.map model.inclusion x ∈ K
+  isCompact : IsCompact (compact : Set (rationalPoints model.scheme))
+  generic : IsGenericCocharacter (semistandardLeviSplitTorus p model.represents) v
+  special : SpecialCompactProperties F (semistandardLeviSplitTorus p model.represents) v compact.toSubgroup
+  iwasawa : IsIwasawaPair
+    (standardParabolicPoints (semistandardLeviSplitTorus p model.represents) v ∅) compact.toSubgroup
+
+set_option maxRecDepth 4096 in
+set_option maxHeartbeats 2200000 in
+/-- Realize the inherited special compact for each actual semistandard Levi,
+with the same ambient compact and the original cocharacter. -/
+def semistandardLeviCompactTrace (hG : IsConnectedReductive G) (hν : IsGenericCocharacter i ν)
+    (K : OpenSubgroup (rationalPoints G)) (hK : WeakExpansion.IsSpecialVertexCompact ν hi K)
+    (p : SemistandardSpectralIndex i) : SemistandardLeviCompactTrace p K ν := by
+  apply Classical.choice
+  let : Mono i.hom.hom.left := mono_of_isMaximalSplitTorus hi
+  obtain ⟨ξ, hξ, J, hJ, hp⟩ := exists_standard_presentation hG hi p
+  obtain ⟨C, D, hA, _, x, hx, hspecial, hKx⟩ := hK
+  let V : ValuationBuildingData (F := F) G := ⟨hG, S, i, hi, D, C, hA.omegaCompatible⟩
+  let m : LeviModel (SemistandardSpectralIndex.ofStandard hG hi ξ hξ J hJ) :=
+    ⟨Standard.leviScheme i ξ J, Standard.leviHom i ξ J, Standard.isRepresentedBy_leviHom i ξ J,
+      Standard.isClosedSubgroup_leviHom i ξ J, standardLevi_isConnectedReductive hG i hi ξ hξ J hJ⟩
+  subst p
+  let iL := Standard.leviTorusHom i ξ J
+  have heq : semistandardLeviSplitTorus _ m.represents = iL := by
+    apply Grp.hom_ext
+    have : Mono m.inclusion.hom.hom := m.represents.1
+    apply (cancel_mono m.inclusion.hom.hom).mp
+    rw [← Grp.comp_hom_hom, ← Grp.comp_hom_hom, semistandardLeviSplitTorus_comp]
+    exact congrArg (fun f => f.hom.hom) (Standard.leviTorusHom_comp i ξ J).symm
+  let : IsAffineHom (Standard.leviScheme i ξ J).X.hom := m.reductive.isAffineHom
+  have hgen : IsGenericCocharacter iL ν := fun α hα => hν α
+    (relativeRoots_subset_of_factor m.represents iL (Standard.leviTorusHom_comp i ξ J) hα)
+  obtain ⟨hL, hProd⟩ := standardLeviTraceProperties V hA ξ hξ J hJ x hx hspecial.2.1 ν hgen
+  change SpecialCompactProperties F iL ν (D.specialCompactLeviSubgroup ξ J x) at hL
+  let L : OpenSubgroup (rationalPoints m.scheme) := ⟨D.specialCompactLeviSubgroup ξ J x, hL.2.1.2.1⟩
+  refine ⟨⟨m, L, fun y => ?_, hL.2.1.1, heq ▸ hgen, heq ▸ hL, ?_⟩⟩
+  · change rationalPoints.map (Standard.leviHom i ξ J) y ∈ D.specialCompactSubgroup x ↔
+      rationalPoints.map m.inclusion y ∈ K
+    rw [hKx]
+    rfl
+  · rw [heq]
+    exact isIwasawaPair_of_pointProductEqualities (hProd.2.2.1 ∅ (Set.empty_subset _))
+
+end SemistandardTrace
 
 end Langlands.HarishChandraSchwartz

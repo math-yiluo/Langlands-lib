@@ -13,11 +13,11 @@ namespace Langlands.GMFamily
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 variable {R : Finset E} {a a₁ : Submodule ℝ E} {ξ : E} {P S : Finset E}
 
-private theorem pairing_zero_of_projection_zero {a : Submodule ℝ E} {r p : E}
+theorem pairing_zero_of_projection_zero {a : Submodule ℝ E} {r p : E}
     (rp : restrictedRoot a r = 0) (hp : p ∈ a) : ⟪r, p⟫ = 0 := by
   rw [← inner_restrictedRoot hp, rp, Submodule.coe_zero, inner_zero_left]
 
-private theorem parabolic_subset_rootSet {a : Submodule ℝ E} {T : Finset E}
+theorem parabolic_subset_rootSet {a : Submodule ℝ E} {T : Finset E}
     (hT : T ∈ parabolics R a) : T ⊆ R := Finset.mem_powerset.mp (Finset.mem_filter.mp hT).1
 
 /-- A fine chamber containing the positive set of a coarse regular point has it in its closure. -/
@@ -33,7 +33,7 @@ theorem closure_of_positive_subset (hR : IsRootSet R) {p : E}
   rw [inner_neg_left, neg_pos] at hqn
   exact (not_lt_of_gt hrq) hqn
 
-private theorem coarse_eq_inter_active (hR : IsRootSet R) (hS : S ∈ parabolics R a)
+theorem coarse_eq_inter_active (hR : IsRootSet R) (hS : S ∈ parabolics R a)
     (hP : P ∈ parabolics R a₁) (hSP : S ⊆ P) : S = P ∩ activeRoots R a := by
   obtain ⟨p, hp, rfl⟩ := mem_parabolics_iff.mp hS
   ext r

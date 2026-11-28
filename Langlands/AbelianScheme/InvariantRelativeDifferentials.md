@@ -27,3 +27,12 @@ so this open is the whole base. The proof carries the resulting free
 sheaf isomorphism from the slice site to the whole scheme, pulls it back
 to the abelian scheme, and uses `relativeDifferentialsIsoPullbackCotangent`.
 It gives a finite free frame of the actual differential sheaf.
+
+The local cotangent frame used in this proof is given separately by
+`exists_finiteFreeCotangentAtIdentity`. On the local spectrum a frame
+containing the closed point extends across the whole base because its
+open contains every generization of that point.
+
+`finiteFreeCotangentFrame` selects an actual isomorphism from a finite free
+sheaf to the identity cotangent sheaf, with its finite index type. Pulling
+back this frame gives the corresponding relative differential frame.

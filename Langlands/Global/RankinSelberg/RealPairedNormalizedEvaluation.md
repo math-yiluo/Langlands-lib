@@ -1,0 +1,5 @@
+# Continuous normalized evaluation of real paired ordinary integrals
+
+`realPairedNormalizedEvaluation` assumes entire ordinary normalizations for the supplied family and a reciprocal denominator nonvanishing sufficiently far to the right. With a fixed permitted row, the kernel is a translated continuous scalar evaluation of the genuine smooth vector multiplied by the row and determinant weights. With a fixed joint vector, the kernel is the continuous evaluation of the Schwartz function at the last row multiplied by the remaining factors.
+
+Both source spaces are complete with countable uniformity. The smooth space uses the derivative topology of a continuous Banach representation, and the row uses the Schwartz seminorm topology. Common half-plane convergence and holomorphy give the initial continuous linear integrals. `ordinaryNormalizationContinuous` and uniqueness then give one linear entire family in each variable separately, with continuous evaluation at every spectral point. [Jacquet, *Archimedean Rankin–Selberg Integrals*, §12.3 and §15](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

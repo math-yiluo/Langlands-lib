@@ -53,3 +53,5 @@ only for the Tits index. The torus here is any maximal torus over `k`.
 The constructions use `Classical.choice` for the maximal torus, the root datum and the
 pinning. Independence of these choices, up to the isomorphisms induced by
 `G(k_s)`-conjugation, is the separate `StarActionIndependenceStatement`.
+
+`GaloisPinningData.ofSplittingField` constructs a pinning for a given maximal torus after passage to a splitting field.

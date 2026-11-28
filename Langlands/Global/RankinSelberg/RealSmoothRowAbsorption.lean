@@ -1,8 +1,5 @@
-import Langlands.Global.RankinSelberg.RealGodementRowFourierInversion
+import Langlands.Global.RankinSelberg.RealSmoothRowCharacterAbsorption
 import Langlands.Global.RankinSelberg.RealLocalWhittakerModel
-import Langlands.Representation.Archimedean.SmoothCompactOrbitIntegral
-import Langlands.Representation.Archimedean.SmoothModerateGrowth
-import Langlands.Representation.Archimedean.SmoothAction
 import Langlands.Representation.RankinSelberg.ZeroRowLastRowCutoffProof
 
 /-! # Schwartz row multiplication on real smooth Whittaker coefficients -/
@@ -75,37 +72,10 @@ private theorem unitHeight_column_le (x : X) :
   · exact (norm_add_le _ _).trans hbound
   · exact (norm_sub_le _ _).trans hbound
 
-private theorem integrable_columnOrbitWord (R : G →* (E →L[ℂ] E)) (hR : IsContinuousRepresentation R)
-    (μ : Measure X) [μ.IsAddHaarMeasure] (F : 𝓢(X, ℂ)) (v : D R) (s : List Mat) :
-    Integrable (fun x => derivativeCLM I R s (F x • representation I R (j x) v)) μ := by
-  let p : Seminorm ℂ (D R) := wordSeminormFamily I R s
-  have hp : Continuous p := (derivativeCLM I R s).continuous.norm
-  obtain ⟨k, q, _, hq⟩ := exists_seminorm_le_unitHeight_pow ℝ n R hR p hp
-  let C : ℝ := 1 + ‖(1 : Mat)‖ + ‖columnCLM (r := r) (d := d)‖
-  have hC : 0 ≤ C := by dsimp [C]; positivity
-  have hcont : Continuous (fun x => representation I R (j x) v) :=
-    (continuous_representation_units R hR).comp ((continuous_zeroRowColumnUnipotent r d).prodMk continuous_const)
-  have hB := ((F.integrable (μ := μ)).norm.add (F.integrable_pow_mul μ k)).const_mul (C ^ k * q v)
-  refine hB.mono' ((derivativeCLM I R s).continuous.comp (F.continuous.smul hcont)).aestronglyMeasurable
-    (ae_of_all _ fun x => ?_)
-  rw [map_smul, norm_smul]
-  change ‖F x‖ * p (representation I R (j x) v) ≤ (C ^ k * q v) * (‖F x‖ + ‖x‖ ^ k * ‖F x‖)
-  have hmax : (max 1 ‖x‖) ^ k ≤ 1 + ‖x‖ ^ k := by
-    rcases le_total (1 : ℝ) ‖x‖ with h | h
-    · rw [max_eq_right h]
-      exact le_add_of_nonneg_left zero_le_one
-    · rw [max_eq_left h, one_pow]
-      exact le_add_of_nonneg_right (by positivity)
-  have hheight : unitHeight (j x) ^ k ≤ C ^ k * (1 + ‖x‖ ^ k) := by
-    calc
-      _ ≤ (C * max 1 ‖x‖) ^ k := pow_le_pow_left₀ (zero_le_one.trans (one_le_unitHeight _))
-        (unitHeight_column_le (d := d) x) k
-      _ ≤ _ := by rw [mul_pow]; gcongr
-  calc
-    _ ≤ ‖F x‖ * ((C ^ k * (1 + ‖x‖ ^ k)) * q v) :=
-      mul_le_mul_of_nonneg_left ((hq (j x) v).trans (mul_le_mul_of_nonneg_right hheight (apply_nonneg _ _)))
-        (norm_nonneg _)
-    _ = _ := by ring
+/-- The column unipotents and their inverses grow at most linearly in the column. -/
+theorem exists_columnHeightBound : ∃ K : ℝ, 0 ≤ K ∧ ∀ x : X,
+    unitHeight (j x) ≤ K * max 1 ‖x‖ :=
+  ⟨1 + ‖(1 : Mat)‖ + ‖columnCLM (r := r) (d := d)‖, by positivity, unitHeight_column_le⟩
 
 /-- Multiplying a real smooth Whittaker coefficient by a Schwartz function of
 its leading-block last row is realized by a single smooth vector. -/
@@ -126,45 +96,22 @@ def RealSmoothRowAbsorptionStatement : Prop :=
 theorem realSmoothRowAbsorption : RealSmoothRowAbsorptionStatement.{u} := by
   intro r d E _ _ _ R model V hR a L hL v Φ
   let column := zeroRowColumnUnipotent (F := ℝ) r d
-  let F := RealGodement.realRowSchwartzFourier (r + 1) (-a) Φ
-  let μ := rowMeasure (realSelfDualMeasure a) (r + 1)
-  let : (realSelfDualMeasure a).measure.IsAddHaarMeasure := (realSelfDualMeasure a).isAddHaar
-  let : SigmaFinite (realSelfDualMeasure a).measure := inferInstance
-  let : μ.IsAddHaarMeasure := rowMeasure_isAddHaar _ _
-  obtain ⟨w, _, hw⟩ := smoothWordIntegral R μ hR (fun x => F x • representation model R (column x) v)
-    (integrable_columnOrbitWord R hR μ F v)
-  refine ⟨w, fun g => ?_⟩
-  let b := appendIdentity r (d + 1) g
-  let W := L (representation model R b v)
-  let Lb := L.comp (SmoothAction.derivativeAction model R b)
-  have hpt (x : Fin (r + 1) → ℝ) : Lb (F x • representation model R (column x) v) =
-      (F x * (realScaledCharacter a).complex (∑ i, x i * lastRow g i)) * W := by
-    rw [map_smul, smul_eq_mul]
-    change F x * L (representation model R b (representation model R (column x) v)) = _
-    unfold column b
-    rw [← Module.End.mul_apply, ← map_mul, appendIdentity_mul_zeroRowColumnUnipotent,
-      map_mul, Module.End.mul_apply]
-    let z := g.val *ᵥ x
-    let u : Langlands.GeneralLinear.upperUnipotent (r + (d + 1) + 1) ℝ :=
-      ⟨column z, zeroRowColumnUnipotent_mem_upperUnipotent r d z⟩
-    change F x * L (representation model R u.val (representation model R b v)) = _
-    rw [hL, realWhittakerCharacter, show u.val = zeroRowColumnUnipotent r d z from rfl,
-      zeroRowColumnUnipotent_superdiagonal_sum]
-    have hz : z (Fin.last r) = ∑ i, x i * lastRow g i := by
-      change (∑ i : Fin (r + 1), g.val (Fin.last r) i * x i) = _
-      exact Finset.sum_congr rfl fun i _ => mul_comm (g.val (Fin.last r) i) (x i)
-    rw [hz, mul_assoc]
-  change Lb w = W * Φ (lastRow g)
-  calc
-    Lb w = ∫ x, Lb (F x • representation model R (column x) v) ∂μ := (hw Lb).2
-    _ = ∫ x, (F x * (realScaledCharacter a).complex (∑ i, x i * lastRow g i)) * W ∂μ :=
-      integral_congr_ae (ae_of_all _ hpt)
-    _ = W * realFourierTransform a F (lastRow g) := by
-      rw [integral_mul_const]
-      exact mul_comm _ W
-    _ = W * Φ (lastRow g) := by
-      rw [← RealGodement.realRowSchwartzFourier_apply,
-        show RealGodement.realRowSchwartzFourier (r + 1) a F = Φ by
-          simpa only [neg_neg, F] using RealGodement.realRowSchwartzFourier_neg_comp (r + 1) (-a) Φ]
+  obtain ⟨C, k, hC, hNorm⟩ := exists_norm_le_unitHeight_pow ℝ (r + (d + 1) + 1) R hR
+  refine RealSmoothRowCharacterAbsorption.realSmoothRowCharacterAbsorption R hR (r + 1) a column
+    (continuous_zeroRowColumnUnipotent r d) (exists_columnHeightBound (r := r) (d := d))
+    ⟨C, k, hC, fun x => hNorm (column x)⟩ L (appendIdentity r (d + 1)) lastRow ?_ v Φ
+  intro g x w
+  rw [← Module.End.mul_apply, ← map_mul, appendIdentity_mul_zeroRowColumnUnipotent,
+    map_mul, Module.End.mul_apply]
+  let z := g.val *ᵥ x
+  let u : Langlands.GeneralLinear.upperUnipotent (r + (d + 1) + 1) ℝ :=
+    ⟨column z, zeroRowColumnUnipotent_mem_upperUnipotent r d z⟩
+  change L (representation model R u.val (representation model R (appendIdentity r (d + 1) g) w)) = _
+  rw [hL, realWhittakerCharacter, show u.val = zeroRowColumnUnipotent r d z from rfl,
+    zeroRowColumnUnipotent_superdiagonal_sum]
+  have hz : z (Fin.last r) = ∑ i, x i * lastRow g i := by
+    change (∑ i : Fin (r + 1), g.val (Fin.last r) i * x i) = _
+    exact Finset.sum_congr rfl fun i _ => mul_comm (g.val (Fin.last r) i) (x i)
+  rw [hz]
 
 end Langlands.Global.RankinSelbergGlobal.RealSmoothRowAbsorption

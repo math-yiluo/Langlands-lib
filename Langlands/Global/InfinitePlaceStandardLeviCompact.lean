@@ -142,8 +142,16 @@ def InfinitePlaceStandardLeviCompactStatement : Prop :=
     ∃ K, fam.IsStandardLeviCompact (.inl v) K
 
 set_option maxHeartbeats 1200000 in
-theorem infinitePlaceStandardLeviCompact : InfinitePlaceStandardLeviCompactStatement.{u} := by
-  intro F _ _ G _ _ _ fam v
+/-- The simultaneous compact for the standard Levis can be chosen so that its
+intersection with the minimal parabolic lies in the minimal Levi. -/
+theorem exists_standardLeviCompatibleCompact
+    (F : Type u) [Field F] [NumberField F]
+    (G : GroupScheme (Spec (CommRingCat.of F)))
+    [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+    (fam : StandardParabolicFamily F G) (v : NumberField.InfinitePlace F) :
+    ∃ K, fam.IsStandardLeviCompact (.inl v) K ∧
+      IsLeviCompatibleIwasawaCompact F G (fam.P fam.minimalIndex) (fam.p fam.minimalIndex)
+        (fam.M fam.minimalIndex) (fam.l fam.minimalIndex) v K := by
   let : IsRCLikeNormedField v.Completion := v.completion_isRCLikeNormedField
   let := IsRCLikeNormedField.rclike v.Completion
   let b := Spec.algebraMap F v.Completion
@@ -199,7 +207,7 @@ theorem infinitePlaceStandardLeviCompact : InfinitePlaceStandardLeviCompactState
   let eP := affinePointsBaseChangeMulEquiv F v.Completion v.Completion (fam.P fam.minimalIndex)
   let eM₀ := completionBaseChangeHomeomorph F (fam.M fam.minimalIndex) v
   have hOriginal := hLocal.transport eP.symm eM₀.symm eG.symm (hComm p₀) (hComm j₀)
-  refine ⟨U.map eG.symm.toMonoidHom, ⟨hOriginal.1, hOriginal.2.1⟩, ?_⟩
+  refine ⟨U.map eG.symm.toMonoidHom, ⟨⟨hOriginal.1, hOriginal.2.1⟩, ?_⟩, hOriginal⟩
   intro J
   let j := fam.l J ≫ fam.p J
   let eM := completionBaseChangeHomeomorph F (fam.M J) v
@@ -236,5 +244,10 @@ theorem infinitePlaceStandardLeviCompact : InfinitePlaceStandardLeviCompactState
     ((fam.M J).affinePointsTarget j (CommAlgCat.of F v.Completion)))
   rw [comap_map_eq_of_comm _ _ eM.symm.toMulEquiv eG.symm.toMulEquiv (hComm j)]
   exact hMax.map eM.symm
+
+theorem infinitePlaceStandardLeviCompact : InfinitePlaceStandardLeviCompactStatement.{u} := by
+  intro F _ _ G _ _ _ fam v
+  obtain ⟨K, hK, _⟩ := exists_standardLeviCompatibleCompact F G fam v
+  exact ⟨K, hK⟩
 
 end Langlands.Global.InfinitePlaceGroupPoints

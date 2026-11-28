@@ -15,9 +15,12 @@ for membership in \(U^k(\mathfrak A)\) are open conditions on a unit,
 its inverse and its difference from the identity. Compactness of
 \(U^0(\mathfrak A)\) follows by taking the units of the compact order.
 The recursion for \(\mathfrak J(\beta,\mathfrak A)\) contains a sufficiently
-deep endomorphism filtration step and the identity. Thus the published
-subgroup `simpleJ` contains an open filtration subgroup. It is closed
-by openness and is a subgroup of the compact \(U^0(\mathfrak A)\).
+deep endomorphism filtration step and the identity. For each \(i\geq 0\),
+`isCompact_isOpen_simpleJGroup` uses a depth at least \(i\) to exhibit an
+open filtration subgroup inside \(J^i\). Each \(J^i\) is closed by openness
+and lies in the compact \(U^0(\mathfrak A)\). `simpleJOpenSubgroup` equips
+the same subgroup with its openness proof for restriction of representations.
+The theorem for `simpleJ` takes \(i=0\).
 
 These are topological properties of the groups used in Bushnell and
 Kutzko, *The admissible dual of GL(N) via compact open subgroups* (1993),

@@ -16,32 +16,44 @@ namespace SchwartzMajorant
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G]
 
-/-- Absolute summability in every Schwartz seminorm gives a pointwise series
-which is again a Schwartz function. -/
-theorem exists_schwartz_tsum [CompleteSpace G] (f : ℕ → SchwartzMap E G)
+/-- Absolute summability in every Schwartz seminorm gives a Schwartz sum with
+seminorm at most the sum of the seminorms. -/
+theorem exists_schwartz_tsum_with_seminorm [CompleteSpace G] (f : ℕ → SchwartzMap E G)
     (hf : ∀ k n : ℕ, Summable (fun j => SchwartzMap.seminorm ℝ k n (f j))) :
-    ∃ Φ : SchwartzMap E G, ∀ x, Φ x = ∑' j, f j x := by
+    ∃ Φ : SchwartzMap E G, (∀ x, Φ x = ∑' j, f j x) ∧ ∀ k n : ℕ,
+      SchwartzMap.seminorm ℝ k n Φ ≤ ∑' j, SchwartzMap.seminorm ℝ k n (f j) := by
   have hder : ∀ n j x, ‖iteratedFDeriv ℝ n (f j) x‖ ≤
       SchwartzMap.seminorm ℝ 0 n (f j) :=
     fun n j x => (f j).norm_iteratedFDeriv_le_seminorm ℝ n x
   have hsmooth : ContDiff ℝ ∞ (fun x => ∑' j, f j x) :=
     contDiff_tsum (fun j => (f j).smooth ⊤)
       (fun n _ => hf 0 n) (fun n j x _ => hder n j x)
-  refine ⟨⟨fun x => ∑' j, f j x, hsmooth, ?_⟩, fun _ => rfl⟩
-  intro k n
-  refine ⟨∑' j, SchwartzMap.seminorm ℝ k n (f j), fun x => ?_⟩
-  have hsum : Summable (fun j => ‖iteratedFDeriv ℝ n (f j) x‖) :=
-    Summable.of_nonneg_of_le (fun _ => norm_nonneg _) (hder n · x) (hf 0 n)
-  rw [iteratedFDeriv_tsum_apply (fun j => (f j).smooth ⊤)
-    (fun m _ => hf 0 m) (fun m j y _ => hder m j y) (by exact le_top) x]
-  calc
-    ‖x‖ ^ k * ‖∑' j, iteratedFDeriv ℝ n (f j) x‖ ≤
-        ‖x‖ ^ k * ∑' j, ‖iteratedFDeriv ℝ n (f j) x‖ :=
-      mul_le_mul_of_nonneg_left (norm_tsum_le_tsum_norm hsum) (by positivity)
-    _ = ∑' j, ‖x‖ ^ k * ‖iteratedFDeriv ℝ n (f j) x‖ :=
-      (hsum.tsum_mul_left _).symm
-    _ ≤ _ := (hsum.mul_left _).tsum_le_tsum
-      (fun j => (f j).le_seminorm ℝ k n x) (hf k n)
+  have hbound (k n : ℕ) (x : E) :
+      ‖x‖ ^ k * ‖iteratedFDeriv ℝ n (fun y => ∑' j, f j y) x‖ ≤
+        ∑' j, SchwartzMap.seminorm ℝ k n (f j) := by
+    have hsum : Summable (fun j => ‖iteratedFDeriv ℝ n (f j) x‖) :=
+      Summable.of_nonneg_of_le (fun _ => norm_nonneg _) (hder n · x) (hf 0 n)
+    rw [iteratedFDeriv_tsum_apply (fun j => (f j).smooth ⊤)
+      (fun m _ => hf 0 m) (fun m j y _ => hder m j y) (by exact le_top) x]
+    calc
+      ‖x‖ ^ k * ‖∑' j, iteratedFDeriv ℝ n (f j) x‖ ≤
+          ‖x‖ ^ k * ∑' j, ‖iteratedFDeriv ℝ n (f j) x‖ :=
+        mul_le_mul_of_nonneg_left (norm_tsum_le_tsum_norm hsum) (by positivity)
+      _ = ∑' j, ‖x‖ ^ k * ‖iteratedFDeriv ℝ n (f j) x‖ :=
+        (hsum.tsum_mul_left _).symm
+      _ ≤ _ := (hsum.mul_left _).tsum_le_tsum
+        (fun j => (f j).le_seminorm ℝ k n x) (hf k n)
+  let Φ : SchwartzMap E G := ⟨fun x => ∑' j, f j x, hsmooth, fun k n => ⟨_, hbound k n⟩⟩
+  exact ⟨Φ, fun _ => rfl, fun k n => Φ.seminorm_le_bound ℝ k n
+    (tsum_nonneg fun j => apply_nonneg _ (f j)) (hbound k n)⟩
+
+/-- Absolute summability in every Schwartz seminorm gives a pointwise series
+which is again a Schwartz function. -/
+theorem exists_schwartz_tsum [CompleteSpace G] (f : ℕ → SchwartzMap E G)
+    (hf : ∀ k n : ℕ, Summable (fun j => SchwartzMap.seminorm ℝ k n (f j))) :
+    ∃ Φ : SchwartzMap E G, ∀ x, Φ x = ∑' j, f j x := by
+  obtain ⟨Φ, hΦ, _⟩ := exists_schwartz_tsum_with_seminorm f hf
+  exact ⟨Φ, hΦ⟩
 
 /-- Dilating a Schwartz function by a radius at least one costs at most its
 `k`th power in the seminorm of weight `k`, uniformly in derivative order. -/

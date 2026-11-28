@@ -73,27 +73,11 @@ at `diag(g, 1)` supplies that decay.
 
 - `kernel hp W W' g = W(diag(g, 1)) · W'(g)`; `continuous_kernel` uses the Library's
   `UnequalAnalytic.continuous_padGL`.
-- `exists_convergence`: let `W` and `W'` be continuous, let the kernel be invariant under left
-  multiplication by upper unipotent matrices of `GL_(t+1)(ℝ)`, and let `HasGauge W` and
-  `HasGauge W'` hold. Then the conclusion of the statement holds. Proof:
-  1. As in the equal-rank case, the kernel and `logDet` descend to continuous functions `f`, `ℓ`
-     on `N_(t+1) \ GL_(t+1)(ℝ)`. At a class `q` with toral coordinate `y = alphaQ q` and
-     orthogonal part `k`, `f q` is the kernel at `torus y · k` and `ℓ q = ∑_j y_j`.
-  2. `exists_lintegral_alphaQ` (module `RealIwasawaMeasure`) gives `κ` and a linear form `L` such
-     that integrating against the quotient measure, in the coordinate `alphaQ`, is integrating
-     against `κ exp(L x) dx`.
-  3. Let `N1` be the exponent from `pad_gauge` and `N2` that of `W'`. Put
-     `σ0 = (N1 + N2 + ‖L‖ + 1)(t + 1)`. For `τ > σ0` choose `M ≥ (N1 + N2 + ‖L‖ + 1)(t + 1) + τ(t + 1)`.
-     The bound of `pad_gauge` for this `M`, times the bound of `W'` with no decay, gives
-
-     `‖f q‖ exp(τ ℓ q) ≤ C exp(−M rootPos y + (N1 + N2) ∑|y_j| + τ ∑ y_j − M max(y_t, 0))`.
-
-     The criterion `RealEqualConvergence.integrable_of_toral_bound` then shows that
-     `‖f‖ exp(τ ℓ)` is integrable.
-  4. Put `c = (r − t)/2` and `f' = f · exp(−c ℓ)`. Then the integrand at `s` is
-     `f' · exp(s ℓ)`, and `‖f'‖ exp(τ ℓ) = ‖f‖ exp((τ − c) ℓ)`. So this is integrable for
-     `τ > σ0 + c`. Take `σ = σ0 + c`. Integrability of the integrand follows by comparison.
-     Holomorphy follows from `RealConvergenceAnalysis.differentiableOn_integral_cexp_mul`.
+- `exists_convergence`: use `pad_gauge` for `W` at arbitrary order `M` and the gauge for
+  `W'` at order zero. Their product gives `RealEqualConvergence.HasOrdinaryToralBound`
+  with growth allowance equal to the sum of the two gauge exponents. Apply
+  `RealEqualConvergence.exists_convergence_of_toral_bound` to the continuous invariant
+  product kernel with shift `(r − t)/2`.
 - `exists_convergence_of_regular`: the statement's conclusion under its hypotheses. The empty
   derivative list gives `W ∈ regularFunctions r a` and `W' ∈ regularFunctions t (−a)`.
   Smoothness gives continuity. The two character laws, `padGL_mem_upperUnipotent`,

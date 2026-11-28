@@ -1,0 +1,7 @@
+# Reduced norm under a unitary involution
+
+For a central simple algebra \(B\) over a separable quadratic extension \(E/F\), suppose an \(F\)-linear involution of \(B\) acts on \(E\) by conjugation. The theorem `Langlands.CentralSimple.relativeReducedNorm_involution` shows that the relative reduced norm over each commutative coefficient algebra \(R\) carries the extended involution to conjugation on \(E\otimes_F R\).
+
+The proof extends conjugation to an algebraic closure of \(E\) and chooses a matrix splitting chart there. It constructs a second chart by applying the involution to the original algebra elements, then transposing and applying inverse coefficient conjugation. The two reversals make this map multiplicative. The coefficient calculation makes it linear over the splitting field. The scalar-extended algebra is simple, so the chart map is injective, and equality of dimensions gives surjectivity. After faithfully extending the coefficient algebra, the two matrices are related by transpose and conjugation. The determinant transforms by conjugation because it is invariant under transpose and commutes with change of coefficients.
+
+This identity gives the scalar conjugation on the reduced norm of the product in Prasad and Rapinchuk, *Local-global principles for embedding of fields with involution into simple algebras with involution*, arXiv:0806.0596v5, equation (10), p. 14. Source ID `prasad-rapinchuk-2010-embedding-fields-involution`, SHA-256 `949df4d66b6ff7561ed36de8638a909543a582aa51e2f276e410c6ac624cfa79`.

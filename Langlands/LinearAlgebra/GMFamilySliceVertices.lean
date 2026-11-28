@@ -130,7 +130,7 @@ theorem sliceNormalSpan_le_fine (J : Finset (simpleRoots a₁ P)) : sliceNormalS
   rintro _ ⟨j, rfl⟩
   exact ((j.val : a₁)).prop
 
-private theorem sliceNormalSpan_eq_span_image (J : Finset (simpleRoots a₁ P)) :
+theorem sliceNormalSpan_eq_span_image (J : Finset (simpleRoots a₁ P)) :
     sliceNormalSpan J = span ℝ ((fun b : simpleRoots a₁ P => ((b : a₁) : E)) ''
       (↑J : Set (simpleRoots a₁ P))) := by
   rw [sliceNormalSpan]

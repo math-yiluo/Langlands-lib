@@ -85,6 +85,32 @@ theorem rectangularPoint_eq (h : t < r) (g : Langlands.GeneralLinear (t + 1) ℝ
     (x : Matrix (Fin (r - (t + 1))) (Fin (t + 1)) ℝ) :
     rectangularPoint h g x = GeneralLinear.reindex (finCongr (rect_size h)) (rect g x) := rfl
 
+/-- The real toral gauge exponent is controlled by the positive comparison coordinates
+and the logarithm of the squared rectangular norm. -/
+theorem rectangular_toralExponent_le (h : t < r) (M N : ℕ)
+    (y : Fin (t + 1) → ℝ) (k : unitaryCompact ℝ (t + 1))
+    (x : Matrix (Fin (r - (t + 1))) (Fin (t + 1)) ℝ) :
+    let z := alpha (rectangularPoint h (torus y * k.val) x);
+    -((((t + 1) + 2 * (t + 1) * (r - (t + 1))) * M : ℕ) : ℝ) * rootPos z +
+        (N : ℝ) * ∑ j, |z j| ≤
+      -(M : ℝ) * (∑ j, max (y j) 0 + ((t : ℝ) + 1) * Real.log (1 + frob x) / 2) +
+        (N : ℝ) * (∑ j, |y j| + (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ)) * Real.log (1 + frob x)) := by
+  dsimp only
+  have hα : alpha (rectangularPoint h (torus y * (k : Langlands.GeneralLinear (t + 1) ℝ)) x) =
+      fun i => zc y k x (Fin.cast (rect_size h).symm i) := by
+    rw [rectangularPoint_eq]
+    exact alpha_reindex_finCongr (rect_size h) _
+  rw [hα, rootPos_cast (rect_size h), sum_abs_cast (rect_size h)]
+  have hdec := decay_le y k x
+  have hgr := sum_abs_le y k x
+  have hR := rootPos_nonneg (zc y k x)
+  push_cast at hdec hgr ⊢
+  have hM : (0 : ℝ) ≤ M := Nat.cast_nonneg M
+  have hN0 : (0 : ℝ) ≤ N := Nat.cast_nonneg N
+  have h1 := mul_le_mul_of_nonneg_left hdec hM
+  have h2 := mul_le_mul_of_nonneg_left hgr hN0
+  nlinarith
+
 /-- **The gauge estimate at the rectangular point.** -/
 theorem rect_bound (h : t < r) {V : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
     (hVabs : ∀ u ∈ Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ, ∀ g, ‖V (u * g)‖ = ‖V g‖)
@@ -100,22 +126,8 @@ theorem rect_bound (h : t < r) {V : Langlands.GeneralLinear (r + 1) ℝ → ℂ}
   refine ⟨N, fun M => ?_⟩
   obtain ⟨C, hC, hb⟩ := hN (((t + 1) + 2 * (t + 1) * (r - (t + 1))) * M)
   refine ⟨C, hC, fun y k x => ?_⟩
-  have hα : alpha (rectangularPoint h (torus y * (k : Langlands.GeneralLinear (t + 1) ℝ)) x) =
-      fun i => zc y k x (Fin.cast (rect_size h).symm i) := by
-    rw [rectangularPoint_eq]
-    exact alpha_reindex_finCongr (rect_size h) _
-  refine (hb _).trans ?_
-  rw [hα, rootPos_cast (rect_size h), sum_abs_cast (rect_size h)]
-  refine mul_le_mul_of_nonneg_left (Real.exp_le_exp.mpr ?_) hC
-  have hdec := decay_le y k x
-  have hgr := sum_abs_le y k x
-  have hR := rootPos_nonneg (zc y k x)
-  push_cast at hdec hgr ⊢
-  have hM : (0 : ℝ) ≤ M := Nat.cast_nonneg M
-  have hN0 : (0 : ℝ) ≤ N := Nat.cast_nonneg N
-  have h1 := mul_le_mul_of_nonneg_left hdec hM
-  have h2 := mul_le_mul_of_nonneg_left hgr hN0
-  nlinarith
+  exact (hb _).trans (mul_le_mul_of_nonneg_left
+    (Real.exp_le_exp.mpr (rectangular_toralExponent_le h M N y k x)) hC)
 
 /-! ### Elementary estimates -/
 
@@ -260,6 +272,133 @@ theorem continuous_rectangularPoint (h : t < r) :
     (finCongr (rect_size h))).continuous.comp h1
   exact h2
 
+local notation "G" => fun m : ℕ => Langlands.GeneralLinear (m + 1) ℝ
+local notation "Q" => fun m : ℕ => LeftUnipotentQuotient m ℝ
+local notation "Rect" => fun m d : ℕ => Matrix (Fin d) (Fin (m + 1)) ℝ
+
+/-- The rectangular kernel bound after separating a fixed integrable rectangle weight. -/
+def HasRectangularToralBound {d : ℕ} (A : ℝ) (F : G t × Rect t d → ℂ) : Prop :=
+  ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧
+    ∀ (y : Fin (t + 1) → ℝ) (k : unitaryCompact ℝ (t + 1)) (x : Rect t d),
+      ‖F (torus y * k.val, x)‖ ≤
+        C * Real.exp (-(M : ℝ) * ∑ j, max (y j) 0 + A * ∑ j, |y j|) * rectDecay x
+
+/-- Arbitrarily high joint decay in the positive toral coordinates and the rectangular variable
+supplies the fixed integrable rectangular weight. -/
+theorem hasRectangularToralBound_of_log_bound {d : ℕ} {A B : ℝ} {F : G t × Rect t d → ℂ}
+    (hF : ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧
+      ∀ (y : Fin (t + 1) → ℝ) (k : unitaryCompact ℝ (t + 1)) (x : Rect t d),
+        ‖F (torus y * k.val, x)‖ ≤
+          C * Real.exp (-(M : ℝ) * ∑ j, max (y j) 0 + A * ∑ j, |y j| +
+            (B - (M : ℝ) * ((t : ℝ) + 1) / 2) * Real.log (1 + frob x))) :
+    HasRectangularToralBound A F := by
+  intro M
+  let B' : ℝ := 2 * (B + ((t : ℝ) + 1) * d)
+  let M' : ℕ := M + ⌈B'⌉₊
+  have hM' : (M : ℝ) ≤ M' := by exact_mod_cast Nat.le_add_right M _
+  have hM'' : B' ≤ (M' : ℝ) := (Nat.le_ceil B').trans (by
+    simp only [M', Nat.cast_add]
+    exact le_add_of_nonneg_left (Nat.cast_nonneg M))
+  have hRank : (1 : ℝ) ≤ (t : ℝ) + 1 := le_add_of_nonneg_left (Nat.cast_nonneg t)
+  have hExtra : (M' : ℝ) ≤ (M' : ℝ) * ((t : ℝ) + 1) :=
+    le_mul_of_one_le_right (Nat.cast_nonneg M') hRank
+  obtain ⟨C, hC, H⟩ := hF M'
+  refine ⟨C, hC, fun y k x => (H y k x).trans ?_⟩
+  have hDim : ((t + 1 : ℕ) : ℝ) * d ≤ (M' : ℝ) * ((t : ℝ) + 1) / 2 - B := by
+    dsimp [B'] at hM''
+    push_cast
+    linarith
+  have hx := exp_neg_mul_log_le x hDim
+  have hy : -(M' : ℝ) * ∑ j, max (y j) 0 ≤ -(M : ℝ) * ∑ j, max (y j) 0 :=
+    mul_le_mul_of_nonneg_right (neg_le_neg hM') (Finset.sum_nonneg fun j _ => le_max_right _ _)
+  rw [Real.exp_add, ← mul_assoc, ← neg_sub ((M' : ℝ) * ((t : ℝ) + 1) / 2) B]
+  exact mul_le_mul (mul_le_mul_of_nonneg_left
+    (Real.exp_le_exp.mpr (by linarith only [hy])) hC) hx (Real.exp_nonneg _) (by positivity)
+
+/-- For fixed compatible quotient and rectangular measures, kernels of one fixed toral growth
+exponent with the rectangular decay bound have a common half-plane of absolute convergence
+and holomorphy. The determinant parameter is shifted by the given real number. -/
+def RealRectangularToralConvergenceStatement : Prop :=
+  ∀ (t d : ℕ) (D : RealQuotientMeasureData t) (ν : AdditiveHaarMeasure ℝ) (A c : ℝ), 0 ≤ A →
+    ∃ σ : ℝ, ∀ (F : G t × Rect t d → ℂ), Continuous F →
+      (∀ (u : Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ) g x, F (u.val * g, x) = F (g, x)) →
+      HasRectangularToralBound A F →
+      (∀ s : ℂ, σ < s.re → Integrable (fun p : Q t × Rect t d =>
+        F (p.1.out, p.2) * Complex.exp ((s - c) * (logDet p.1.out : ℂ)))
+        (D.measure.prod (rectangularMeasure ν d (t + 1)))) ∧
+      DifferentiableOn ℂ (fun s : ℂ => ∫ p : Q t × Rect t d,
+        F (p.1.out, p.2) * Complex.exp ((s - c) * (logDet p.1.out : ℂ))
+          ∂(D.measure.prod (rectangularMeasure ν d (t + 1)))) {s | σ < s.re}
+
+set_option maxHeartbeats 1000000 in
+theorem realRectangularToralConvergence : RealRectangularToralConvergenceStatement := by
+  intro t d D ν A c hA
+  have := D.groupHaar_isHaar
+  have := D.unipotentHaar_isHaar
+  have := D.unipotentHaar_rightInvariant
+  obtain ⟨κ, L, hκL⟩ := exists_lintegral_alphaQ D.groupHaar D.unipotentHaar D.measure D.compatible
+  let ρ := rectangularMeasure ν d (t + 1)
+  have hρ : SigmaFinite ρ := sigmaFinite_rect ν _ _
+  let σ₀ := A + ‖L‖ + 1
+  let kQ := descend (Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ) kpart kpart_unipotent_mul
+  have hkQc : Continuous kQ := continuous_kpart.quotient_lift _
+  let sec (q : Q t) : G t := torus (alphaQ q) * (kQ q).val
+  have hsec : Continuous sec :=
+    (continuous_torus.comp continuous_alphaQ).mul (continuous_subtype_val.comp hkQc)
+  refine ⟨σ₀ + c, fun F hF hInv hBound => ?_⟩
+  let f (p : Q t × Rect t d) := F (p.1.out, p.2)
+  have hfsec (q : Q t) (x : Rect t d) : f (q, x) = F (sec q, x) := by
+    have hkout : kpart q.out = kQ q := out_eq_descend kpart kpart_unipotent_mul q
+    change F (q.out, x) = F (torus (alphaQ q) * (kQ q).val, x)
+    rw [← alpha_out q, ← hkout]
+    exact eq_torus_mul_kpart (fun g => F (g, x)) (fun u g => hInv u g x) q.out
+  have hfc : Continuous f := by
+    rw [show f = fun p => F (sec p.1, p.2) from funext fun p => hfsec p.1 p.2]
+    exact hF.comp ((hsec.comp continuous_fst).prodMk continuous_snd)
+  let ℓ (p : Q t × Rect t d) := logDet p.1.out
+  have hℓc : Continuous ℓ := by
+    have he (q : Q t) := out_eq_descend logDet logDet_unipotent_mul q
+    simp_rw [ℓ, he]
+    exact (continuous_descend_real logDet_unipotent_mul continuous_logDet).comp continuous_fst
+  have hℓq (q : Q t) (x : Rect t d) : ℓ (q, x) = ∑ j, alphaQ q j := by
+    rw [← alpha_out q, ← logDet_torus_mul (alpha q.out) (kpart q.out)]
+    exact eq_torus_mul_kpart logDet logDet_unipotent_mul q.out
+  have hint (τ : ℝ) (hτ : σ₀ < τ) :
+      Integrable (fun p => ‖f p‖ * Real.exp (τ * ℓ p)) (D.measure.prod ρ) := by
+    let M : ℕ := ⌈σ₀ + τ⌉₊
+    obtain ⟨C, hC, hb⟩ := hBound M
+    let E (y : Fin (t + 1) → ℝ) := -(M : ℝ) * ∑ j, max (y j) 0 + A * ∑ j, |y j| + τ * ∑ j, y j
+    have hEc : Continuous E := by
+      unfold E
+      fun_prop
+    have hExp (y : Fin (t + 1) → ℝ) : L y + E y ≤ -∑ j, |y j| := by
+      have hM : A + ‖L‖ + τ + 1 ≤ (M : ℝ) :=
+        (show A + ‖L‖ + τ + 1 ≤ σ₀ + τ by dsimp [σ₀]; linarith).trans (Nat.le_ceil _)
+      have hMajor := sum_coord_le y (A := A + ‖L‖) (by positivity) hτ.le hM
+      dsimp only [E]
+      linarith [linear_le L y]
+    have hI := ((integrable_exp_comp_alphaQ hκL hEc hExp).const_mul C).mul_prod (integrable_rectDecay ν d (t + 1))
+    refine hI.mono' ((hfc.norm.mul (Real.continuous_exp.comp (continuous_const.mul hℓc))).aestronglyMeasurable)
+      (ae_of_all _ ?_)
+    rintro ⟨q, x⟩
+    rw [Real.norm_eq_abs, abs_of_nonneg (mul_nonneg (norm_nonneg _) (Real.exp_pos _).le), hfsec, hℓq]
+    refine (mul_le_mul_of_nonneg_right (hb (alphaQ q) (kQ q) x) (Real.exp_pos _).le).trans_eq ?_
+    simp only [E, Real.exp_add]
+    ring
+  let z (s : ℂ) : ℂ := s - c
+  have hre (s : ℂ) (hs : σ₀ + c < s.re) : σ₀ < (z s).re := by
+    change σ₀ < s.re - c
+    linarith
+  refine ⟨fun s hs => ?_, ?_⟩
+  · refine (hint (z s).re (hre s hs)).mono'
+      ((hfc.mul (Complex.continuous_exp.comp (continuous_const.mul
+        (Complex.continuous_ofReal.comp hℓc)))).aestronglyMeasurable) (ae_of_all _ fun p => ?_)
+    show ‖f p * Complex.exp (z s * (ℓ p : ℂ))‖ ≤ ‖f p‖ * Real.exp ((z s).re * ℓ p)
+    rw [norm_mul, norm_cexp_mul_ofReal]
+  · have hHol := differentiableOn_integral_cexp_mul (f := f) (ℓ := ℓ) hfc.aestronglyMeasurable
+      hℓc.aestronglyMeasurable hint
+    exact hHol.comp (differentiable_id.sub_const (c : ℂ)).differentiableOn (fun s hs => hre s hs)
+
 set_option maxHeartbeats 1600000 in
 /-- **Convergence and holomorphy of the real dual block integral.** Let `t < r`, let `V` on
 `GL_(r+1)(ℝ)` and `V'` on `GL_(t+1)(ℝ)` be continuous and satisfy the gauge estimate, let `‖V‖`
@@ -280,218 +419,47 @@ theorem exists_dual_convergence (h : t < r) (D : RealQuotientMeasureData t)
           (D.measure.prod (rectangularMeasure ν (r - (t + 1)) (t + 1)))) ∧
       DifferentiableOn ℂ (blockIntegral realNormalizedAbs D.measure ν h V V')
         {s : ℂ | σ < s.re} := by
-  have := D.groupHaar_isHaar
-  have := D.unipotentHaar_isHaar
-  have := D.unipotentHaar_rightInvariant
-  obtain ⟨κ, L, hκL⟩ :=
-    exists_lintegral_alphaQ D.groupHaar D.unipotentHaar D.measure D.compatible
-  set ρ := rectangularMeasure ν (r - (t + 1)) (t + 1) with hρ
-  have hρσ : SigmaFinite ρ := sigmaFinite_rect ν _ _
   obtain ⟨N1, hN1⟩ := rect_bound h hVabs hgV
   obtain ⟨N2, hN2⟩ := hgV'
   obtain ⟨C2, hC2, hb2⟩ := hN2 0
-  set A : ℝ := (N1 : ℝ) + N2 + ‖L‖ with hA
-  have hA0 : 0 ≤ A := by positivity
-  -- the orthogonal coordinate on the quotient
-  have hkinv : ∀ u : Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ, ∀ g,
-      kpart (u.val * g) = kpart g := fun u g => kpart_unipotent_mul u g
-  set kQ := descend (Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ) kpart hkinv with hkQ
-  have hkQc : Continuous kQ := by
-    rw [hkQ]
-    unfold descend
-    exact continuous_kpart.quotient_lift _
-  have hkout : ∀ q : LeftUnipotentQuotient t ℝ, kpart q.out = kQ q :=
-    fun q => out_eq_descend kpart hkinv q
-  let sec : LeftUnipotentQuotient t ℝ → Langlands.GeneralLinear (t + 1) ℝ :=
-    fun q => torus (alphaQ q) * (kQ q : Langlands.GeneralLinear (t + 1) ℝ)
-  have hsec : Continuous sec :=
-    (continuous_torus.comp continuous_alphaQ).mul (continuous_subtype_val.comp hkQc)
-  -- the kernel on the quotient
-  let f : LeftUnipotentQuotient t ℝ × Matrix (Fin (r - (t + 1))) (Fin (t + 1)) ℝ → ℂ :=
-    fun p => bkernel h V V' (p.1.out, p.2)
-  have hfsec : ∀ p, f p = bkernel h V V' (sec p.1, p.2) := by
-    rintro ⟨q, x⟩
-    have hK : ∀ u : Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ, ∀ g,
-        (fun g => bkernel h V V' (g, x)) (u.val * g) = (fun g => bkernel h V V' (g, x)) g :=
-      fun u g => hinv u.val u.2 g x
-    have := eq_torus_mul_kpart (fun g => bkernel h V V' (g, x)) hK q.out
-    show bkernel h V V' (q.out, x) =
-      bkernel h V V' (torus (alphaQ q) * (kQ q : Langlands.GeneralLinear (t + 1) ℝ), x)
-    rw [← alpha_out q, ← hkout q]
-    exact this
-  have hbkc : Continuous (bkernel h V V') :=
-    (hV.comp (continuous_rectangularPoint h)).mul (hV'.comp continuous_fst)
-  have hfc : Continuous f := by
-    have : f = fun p => bkernel h V V' (sec p.1, p.2) := funext hfsec
-    rw [this]
-    exact hbkc.comp ((hsec.comp continuous_fst).prodMk continuous_snd)
-  have hlinv : ∀ u : Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ, ∀ g,
-      logDet (u.val * g) = logDet g := fun u g => logDet_unipotent_mul u g
-  let ℓ : LeftUnipotentQuotient t ℝ → ℝ := fun q => logDet q.out
-  have hℓc : Continuous ℓ := by
-    have hℓe : ℓ = descend (Langlands.GeneralLinear.upperUnipotent (t + 1) ℝ)
-        logDet hlinv := funext fun q => out_eq_descend _ hlinv q
-    rw [hℓe]
-    exact continuous_descend_real hlinv continuous_logDet
-  have hℓq : ∀ q, ℓ q = ∑ j, alphaQ q j := by
-    intro q
-    rw [← alpha_out q, ← logDet_torus_mul (alpha q.out) (kpart q.out)]
-    exact eq_torus_mul_kpart logDet hlinv q.out
-  -- the main pointwise bound
-  have hbound : ∀ τ : ℝ, A + 1 ≤ τ → ∃ C : ℝ, 0 ≤ C ∧ ∃ E : (Fin (t + 1) → ℝ) → ℝ,
-      Continuous E ∧ (∀ y, L y + E y ≤ -∑ j, |y j|) ∧
-      ∀ q x, ‖f (q, x)‖ * Real.exp (τ * ℓ q) ≤ C * Real.exp (E (alphaQ q)) * rectDecay x := by
-    intro τ hτ
-    set M : ℕ := ⌈A + τ + 1 + 2 * (N1 : ℝ) * (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ)) +
-      2 * ((t : ℝ) + 1) * ((r - (t + 1) : ℕ) : ℝ)⌉₊ with hM
-    have hMle := Nat.le_ceil (A + τ + 1 + 2 * (N1 : ℝ) * (((t : ℝ) + 1) +
-      ((r - (t + 1) : ℕ) : ℝ)) + 2 * ((t : ℝ) + 1) * ((r - (t + 1) : ℕ) : ℝ))
-    rw [← hM] at hMle
-    have hN10 : (0 : ℝ) ≤ N1 := Nat.cast_nonneg N1
-    have hd0 : (0 : ℝ) ≤ ((r - (t + 1) : ℕ) : ℝ) := Nat.cast_nonneg _
-    have ht0 : (0 : ℝ) ≤ t := Nat.cast_nonneg t
+  let A : ℝ := (N1 : ℝ) + N2
+  let B : ℝ := (N1 : ℝ) * (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ))
+  have hA : 0 ≤ A := by positivity
+  have hGauge : HasRectangularToralBound A (bkernel h V V') := by
+    apply hasRectangularToralBound_of_log_bound (B := B)
+    intro M
     obtain ⟨C1, hC1, hb1⟩ := hN1 M
-    refine ⟨C1 * C2, mul_nonneg hC1 hC2, fun y => -(M : ℝ) * ∑ j, max (y j) 0 +
-      ((N1 : ℝ) + N2) * ∑ j, |y j| + τ * ∑ j, y j, ?_, ?_, ?_⟩
-    · have h1 : Continuous fun y : Fin (t + 1) → ℝ => ∑ j, max (y j) 0 :=
-        continuous_finsetSum _ fun j _ => (continuous_apply j).max continuous_const
-      have h2 : Continuous fun y : Fin (t + 1) → ℝ => ∑ j, |y j| :=
-        continuous_finsetSum _ fun j _ => (continuous_apply j).abs
-      have h3 : Continuous fun y : Fin (t + 1) → ℝ => ∑ j, y j :=
-        continuous_finsetSum _ fun j _ => continuous_apply j
-      exact ((continuous_const.mul h1).add (continuous_const.mul h2)).add (continuous_const.mul h3)
-    · intro y
-      have h1 := linear_le L y
-      have h2 := sum_coord_le y hA0 hτ (M := (M : ℝ)) (by nlinarith)
-      rw [hA] at h2
-      nlinarith
-    · intro q x
-      set y := alphaQ q with hy
-      set k := kQ q with hk
-      have hfe : f (q, x) = V (rectangularPoint h (torus y * (k : Langlands.GeneralLinear (t + 1) ℝ)) x) *
-          V' (torus y * (k : Langlands.GeneralLinear (t + 1) ℝ)) := hfsec (q, x)
-      rw [hfe, hℓq q, norm_mul]
-      have h1 := hb1 y k x
-      have h2 := hb2 y k
-      have hκ : (((t + 1 : ℕ) : ℝ)) * ((r - (t + 1) : ℕ) : ℝ) ≤
-          (M : ℝ) * ((t : ℝ) + 1) / 2 -
-            (N1 : ℝ) * (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ)) := by
-        push_cast
-        nlinarith
-      have hx := exp_neg_mul_log_le x hκ
-      have hS := frob_nonneg x
-      set Λ := Real.log (1 + frob x) with hΛ
-      have hexp : Real.exp (-(M : ℝ) * (∑ j, max (y j) 0 + ((t : ℝ) + 1) * Λ / 2) +
-            (N1 : ℝ) * (∑ j, |y j| + (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ)) * Λ)) *
-          Real.exp (-((0 : ℕ) : ℝ) * rootPos y + (N2 : ℝ) * ∑ j, |y j|) *
-          Real.exp (τ * ∑ j, y j) =
-          Real.exp (-(M : ℝ) * ∑ j, max (y j) 0 + ((N1 : ℝ) + N2) * ∑ j, |y j| +
-            τ * ∑ j, y j) *
-          Real.exp (-((M : ℝ) * ((t : ℝ) + 1) / 2 -
-            (N1 : ℝ) * (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ))) * Λ) := by
-        rw [← Real.exp_add, ← Real.exp_add, ← Real.exp_add]
-        congr 1
-        push_cast
-        ring
-      calc
-        ‖V (rectangularPoint h (torus y * (k : Langlands.GeneralLinear (t + 1) ℝ)) x)‖ *
-            ‖V' (torus y * (k : Langlands.GeneralLinear (t + 1) ℝ))‖ *
-            Real.exp (τ * ∑ j, y j) ≤
-            (C1 * Real.exp (-(M : ℝ) * (∑ j, max (y j) 0 + ((t : ℝ) + 1) * Λ / 2) +
-              (N1 : ℝ) * (∑ j, |y j| + (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ)) * Λ))) *
-            (C2 * Real.exp (-((0 : ℕ) : ℝ) * rootPos y + (N2 : ℝ) * ∑ j, |y j|)) *
-            Real.exp (τ * ∑ j, y j) := by
-          gcongr
-        _ = C1 * C2 * (Real.exp (-(M : ℝ) * ∑ j, max (y j) 0 + ((N1 : ℝ) + N2) * ∑ j, |y j| +
-              τ * ∑ j, y j) *
-            Real.exp (-((M : ℝ) * ((t : ℝ) + 1) / 2 -
-              (N1 : ℝ) * (((t : ℝ) + 1) + ((r - (t + 1) : ℕ) : ℝ))) * Λ)) := by
-          rw [← hexp]
-          ring
-        _ ≤ C1 * C2 * (Real.exp (-(M : ℝ) * ∑ j, max (y j) 0 + ((N1 : ℝ) + N2) * ∑ j, |y j| +
-              τ * ∑ j, y j) * rectDecay x) := by
-          gcongr
-        _ = _ := by ring
-  -- integrability of the weighted kernel on the product
-  have hfm : AEStronglyMeasurable f (D.measure.prod ρ) := hfc.aestronglyMeasurable
-  have hintP : ∀ τ : ℝ, A + 1 ≤ τ →
-      Integrable (fun p => ‖f p‖ * Real.exp (τ * ℓ p.1)) (D.measure.prod ρ) := by
-    intro τ hτ
-    obtain ⟨C, hC, E, hE, hEL, hb⟩ := hbound τ hτ
-    have hI := ((integrable_exp_comp_alphaQ hκL hE hEL).const_mul C).mul_prod
-      (integrable_rectDecay ν (r - (t + 1)) (t + 1))
-    refine hI.mono' ((hfc.norm.mul (Real.continuous_exp.comp
-      (continuous_const.mul (hℓc.comp continuous_fst)))).aestronglyMeasurable)
-      (ae_of_all _ fun p => ?_)
-    rw [Real.norm_eq_abs, abs_of_nonneg (mul_nonneg (norm_nonneg _) (Real.exp_pos _).le)]
-    exact hb p.1 p.2
-  set c0 : ℝ := ((r - t : ℕ) : ℝ) / 2 with hc0
-  have hker : ∀ s : ℂ, (fun p : LeftUnipotentQuotient t ℝ ×
-      Matrix (Fin (r - (t + 1))) (Fin (t + 1)) ℝ => blockKernel realNormalizedAbs h V V' s p.1 p.2) =
-      fun p => f p * Complex.exp ((s - ((r - t : ℕ) : ℂ) / 2) * (ℓ p.1 : ℂ)) := by
-    intro s
+    refine ⟨C1 * C2, mul_nonneg hC1 hC2, fun y k x => ?_⟩
+    simp only [bkernel, norm_mul]
+    refine (mul_le_mul (hb1 y k x) (hb2 y k) (norm_nonneg _) (by positivity)).trans_eq ?_
+    rw [show ∀ x y : ℝ, (C1 * x) * (C2 * y) = C1 * C2 * (x * y) by intros; ring, ← Real.exp_add]
+    congr 2
+    simp only [Nat.cast_zero, neg_zero, zero_mul, zero_add, A, B]
+    ring
+  let c : ℝ := ((r - t : ℕ) : ℝ) / 2
+  obtain ⟨σ, hConv⟩ := realRectangularToralConvergence t (r - (t + 1)) D ν A c hA
+  have ⟨hI, hHol⟩ := hConv (bkernel h V V')
+    ((hV.comp (continuous_rectangularPoint h)).mul (hV'.comp continuous_fst))
+    (fun u g x => hinv u.val u.2 g x) hGauge
+  let F (s : ℂ) (p : Q t × Rect t (r - (t + 1))) : ℂ := blockKernel realNormalizedAbs h V V' s p.1 p.2
+  have he (s : ℂ) : F s = fun p =>
+      bkernel h V V' (p.1.out, p.2) * Complex.exp ((s - c) * (logDet p.1.out : ℂ)) := by
+    unfold c
+    push_cast
     rfl
-  have hnormk : ∀ (s : ℂ) p, ‖f p * Complex.exp ((s - ((r - t : ℕ) : ℂ) / 2) * (ℓ p.1 : ℂ))‖ =
-      ‖f p‖ * Real.exp ((s.re - c0) * ℓ p.1) := by
-    intro s p
-    rw [norm_mul, norm_cexp_mul_ofReal, hc0]
-    congr 3
-    simp
-  refine ⟨A + 1 + c0, fun s hs => ?_, ?_⟩
-  · rw [hker s]
-    refine (hintP (s.re - c0) (by linarith)).mono'
-      ((hfc.mul (Complex.continuous_exp.comp (continuous_const.mul
-        (Complex.continuous_ofReal.comp (hℓc.comp continuous_fst))))).aestronglyMeasurable)
-      (ae_of_all _ fun p => ?_)
-    rw [hnormk]
-  · -- the inner integral
-    let F : LeftUnipotentQuotient t ℝ → ℂ := fun q =>
-      (∫ x, f (q, x) ∂ρ) * Complex.exp (-(((r - t : ℕ) : ℂ) / 2) * (ℓ q : ℂ))
-    have hFm0 : AEStronglyMeasurable (fun q => ∫ x, f (q, x) ∂ρ) D.measure :=
-      hfm.integral_prod_right'
-    have hFm : AEStronglyMeasurable F D.measure :=
-      hFm0.mul (Complex.continuous_exp.comp (continuous_const.mul
-        (Complex.continuous_ofReal.comp hℓc))).aestronglyMeasurable
-    have hblock : blockIntegral realNormalizedAbs D.measure ν h V V' =
-        fun s => ∫ q, F q * Complex.exp (s * (ℓ q : ℂ)) ∂D.measure := by
-      funext s
-      show ∫ q, ∫ x, f (q, x) * Complex.exp ((s - ((r - t : ℕ) : ℂ) / 2) * (ℓ q : ℂ)) ∂ρ
-          ∂D.measure = _
-      refine integral_congr_ae (ae_of_all _ fun q => ?_)
-      show ∫ x, f (q, x) * Complex.exp ((s - ((r - t : ℕ) : ℂ) / 2) * (ℓ q : ℂ)) ∂ρ =
-        (∫ x, f (q, x) ∂ρ) * Complex.exp (-(((r - t : ℕ) : ℂ) / 2) * (ℓ q : ℂ)) *
-          Complex.exp (s * (ℓ q : ℂ))
-      rw [integral_mul_const, mul_assoc, ← Complex.exp_add]
-      congr 2
-      ring
-    rw [hblock]
-    refine differentiableOn_integral_cexp_mul hFm hℓc.aestronglyMeasurable fun τ' hτ' => ?_
-    have hτ : A + 1 ≤ τ' - c0 := by linarith
-    obtain ⟨C, hC, E, hE, hEL, hb⟩ := hbound (τ' - c0) hτ
-    set I := ∫ x, rectDecay x ∂ρ with hI
-    have hbd := ((integrable_exp_comp_alphaQ hκL hE hEL).const_mul C).mul_const I
-    refine hbd.mono' ((hFm.norm.mul (Real.continuous_exp.comp
-      (continuous_const.mul hℓc)).aestronglyMeasurable)) (ae_of_all _ fun q => ?_)
-    rw [Real.norm_eq_abs, abs_of_nonneg (mul_nonneg (norm_nonneg _) (Real.exp_pos _).le)]
-    have hnF : ‖F q‖ * Real.exp (τ' * ℓ q) =
-        ‖∫ x, f (q, x) ∂ρ‖ * Real.exp ((τ' - c0) * ℓ q) := by
-      show ‖(∫ x, f (q, x) ∂ρ) * Complex.exp (-(((r - t : ℕ) : ℂ) / 2) * (ℓ q : ℂ))‖ *
-        Real.exp (τ' * ℓ q) = _
-      rw [norm_mul, norm_cexp_mul_ofReal, mul_assoc, ← Real.exp_add, hc0]
-      congr 2
-      simp
-      ring
-    rw [hnF]
-    have hint_x : Integrable (fun x => C * Real.exp (E (alphaQ q)) * rectDecay x) ρ :=
-      (integrable_rectDecay ν (r - (t + 1)) (t + 1)).const_mul _
-    calc
-      ‖∫ x, f (q, x) ∂ρ‖ * Real.exp ((τ' - c0) * ℓ q) ≤
-          (∫ x, ‖f (q, x)‖ ∂ρ) * Real.exp ((τ' - c0) * ℓ q) :=
-        mul_le_mul_of_nonneg_right (norm_integral_le_integral_norm _) (Real.exp_pos _).le
-      _ = ∫ x, ‖f (q, x)‖ * Real.exp ((τ' - c0) * ℓ q) ∂ρ := (integral_mul_const _ _).symm
-      _ ≤ ∫ x, C * Real.exp (E (alphaQ q)) * rectDecay x ∂ρ :=
-        integral_mono_of_nonneg (ae_of_all _ fun x =>
-          mul_nonneg (norm_nonneg _) (Real.exp_pos _).le) hint_x (ae_of_all _ fun x => hb q x)
-      _ = C * Real.exp (E (alphaQ q)) * I := by rw [integral_const_mul]
+  simp_rw [← he] at hI hHol
+  have : SigmaFinite D.measure := by
+    have : SigmaCompactSpace (Q t) := by
+      rw [← isSigmaCompact_univ_iff]
+      have he' := RealIwasawa.alphaQ_preimage (n := t + 1) Set.univ
+      rw [Set.preimage_univ, Set.univ_prod_univ, Set.image_univ] at he'
+      rw [he']
+      exact isSigmaCompact_range RealIwasawa.continuous_mk_torus_mul
+    have := D.unipotentHaar_rightInvariant
+    have := D.compatible.regular
+    infer_instance
+  have := sigmaFinite_rect ν (r - (t + 1)) (t + 1)
+  refine ⟨σ, hI, hHol.congr fun s hs => ?_⟩
+  exact (integral_prod (F s) (hI s hs)).symm
 
 end Langlands.Global.RankinSelbergGlobal.RealUnequalDualConvergence

@@ -146,7 +146,8 @@ private theorem injective_of_irreducible {n : ℕ} {ds es : List RealBlock}
   · exact LinearMap.ker_eq_bot.mp h
   · exact (hT0 (LinearMap.ker_eq_top.mp h)).elim
 
-private theorem irreducible_of_eq_module {n : ℕ} {ds es : List RealBlock}
+/-- Equal standard function spaces give the same irreducibility property. -/
+theorem isIrreducibleGKModule_of_realStandardModule_eq {n : ℕ} {ds es : List RealBlock}
     (hirr : IsIrreducibleGKModule (realStandardRep n ds) (realStandardLie n ds))
     (h : realStandardModule n ds = realStandardModule n es) :
     IsIrreducibleGKModule (realStandardRep n es) (realStandardLie n es) := by
@@ -187,8 +188,8 @@ theorem realStandardIntertwinerPairLReduction : RealStandardIntertwinerPairLRedu
   intro hUnique n ds es hd he hdI heI T hT hT0 xs
   have hdM := realStandardModule_flatMap_normalize n ds
   have heM := realStandardModule_flatMap_normalize n es
-  have hdI' := irreducible_of_eq_module hdI hdM.symm
-  have heI' := irreducible_of_eq_module heI heM.symm
+  have hdI' := isIrreducibleGKModule_of_realStandardModule_eq hdI hdM.symm
+  have heI' := isIrreducibleGKModule_of_realStandardModule_eq heI heM.symm
   have hinj : RealInjectiveIntertwinerExists n ds es :=
     ⟨T, injective_of_irreducible hdI hT hT0, hT⟩
   obtain ⟨S, hSi, hS⟩ := RealInjectiveIntertwinerExists.of_eq hdM.symm heM.symm hinj

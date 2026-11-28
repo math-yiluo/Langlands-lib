@@ -58,3 +58,66 @@ order.
 The Lean statement quantifies over every nonzero `ψ̄`-Whittaker functional
 `ℓ'`. Jacquet uses one such functional (printed page 518). The space of these
 functionals on `I(t)` is one-dimensional, so all choices give the same model.
+
+## Over p-adic fields, and the general case
+
+**Over p-adic fields.** The Library proves the p-adic form of this proposition.
+The published `PadicOrderedUnramifiedCorankOneGenerationStatement`
+([`PadicOrderedUnramifiedCorankOneGenerationStatement`](PadicOrderedUnramifiedCorankOneGenerationStatement.md))
+is this proposition with the field `K.Carrier` of a p-adic field `K` and its canonical
+structures. `Langlands.Conductor.padicOrderedUnramifiedCorankOneGeneration`
+([`PadicOrderedUnramifiedCorankOneGenerationProof`](PadicOrderedUnramifiedCorankOneGenerationProof.md))
+proves it.
+
+**The general case.** JPSS 1983 takes as ground field an arbitrary nonarchimedean local
+field ((0.3), printed page 375), so the gap below is one of the Lean formalization. Over
+an arbitrary nonarchimedean local field `F`, of any characteristic, the Library gives a
+conditional proof of the proposition at `F` from the following three hypotheses at `F`,
+results of JPSS 1983, §§8–9
+(`Conductor.orderedUnramifiedCorankOneGenerationAt_of_premises`, module
+[`OrderedUnramifiedGenerationFromPremises`](OrderedUnramifiedGenerationFromPremises.md);
+`Conductor.orderedUnramifiedCorankOneGeneration_of_premises` for every field at once).
+They are stated in
+`Langlands.AllField.Representation.RankinSelberg.TemperedTypePremisesStatement`:
+
+1. the Langlands classification of generic representations, with the equality of the
+   Whittaker functions of `π` and of its standard module (`GenericStandardModuleStatement`;
+   JPSS 1983, (9.4), printed page 458);
+2. the tempered pole bound (`TemperedPoleBoundStatement`; JPSS 1983, (8.4), printed pages
+   451–452);
+3. the tail divisibility (`InducedTailLFactorAt`; JPSS 1983, (9.3), printed pages
+   455–457).
+
+The fourth input is the product formula of JPSS 1983, (9.4), printed pages 458–462. The
+theorem `Langlands.AllField.RankinSelberg.temperedTypeLPolynomial_product` proves the
+(9.4) product for standard modules from (8.4) and (9.3) over the given field. The theorem
+`Langlands.Conductor.OrderedUnramifiedTemperedType.lPolynomial_principalSeries_eq_prod`
+applies this product to `π × I(x)`, using the Whittaker identification in
+`GenericStandardModuleStatement`. The Library proves the three hypotheses over p-adic
+fields, from its p-adic classification results
+(`Langlands.Representation.RankinSelberg.PadicTemperedTypePremises`). In the Lean
+formalization, the general case lacks the all-field forms of these results and nothing
+else.
+
+As measured on the Library at commit `2cda61ad`, the import closures of the p-adic proofs
+of these results contain about 807 modules that mention the p-adic field and have no
+all-field port, about 150,000 lines in all. Of these:
+
+- the coverage theorem of the classification needs 121;
+- (9.3) needs 124 more;
+- the tempered results behind (8.4) and the genericity of tempered blocks need 532 more;
+- the assembly of (9.4) needs 30 more.
+
+The classification cannot be bypassed by a direct induction on `I(x)`: one that uses
+(9.3), (3.1) and the functional equation, but not the Langlands structure of `π`. Its
+step needs the poles of `L(s + t_1, π)` and of `L(1 - s - t_2, π~)` to be disjoint, and
+this can fail. Take `π = ν^u × ν^(-u) × 1` on `GL_3` with real `u > 1/2` and `u ≠ 1`, so
+that `π` is irreducible and generic and `L(s, π) = ζ_F(s + u) ζ_F(s - u) ζ_F(s)` with
+`ζ_F(s) = (1 - q^(-s))⁻¹`. Here `n = 1` and `I(x) = I(t_1, t_2)` with `x_i = q^(-t_i)`.
+When `t_1 - t_2 = 2u - 1`, which the order `Re t_1 ≥ Re t_2` allows, the point
+`s = u - t_1 = 1 - t_2 - u` is a pole of both, so the direct step does not reach
+`L(s, π × I(x)) = L(s + t_1, π) L(s + t_2, π)`. JPSS 1983, (9.4), printed pages 458–462,
+separates the possible poles after passing to the tempered blocks of the standard module
+of `π`, using the classification, (8.4) and (9.3). Jacquet 2012, printed page 519,
+recalls the resulting generation identity as Lemma 3 and uses cyclicity and symmetry to
+derive Lemma 4.

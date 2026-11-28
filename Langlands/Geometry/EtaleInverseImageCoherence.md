@@ -98,3 +98,5 @@ exactness, comparison with associated torsor coefficients
 or algebraic-closure base change, equivariant and smooth
 sheaf adapters, support and derived comparisons, and Harris
 specialization remain separate obligations.
+
+`inverseImageCongr_refl` computes the equality comparison for reflexivity. `projectionInverseImageIso` gives the inverse-image comparison for a commuting triangle.

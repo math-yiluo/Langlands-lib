@@ -1,0 +1,7 @@
+# Cubic splitting of relative Brauer classes killed by three
+
+`TotallyComplexCubicRelativeBrauerSplittingStatement` takes a totally complex number field `F`, a finite Galois extension `L/F`, and a class in the relative degree-two cohomology of `Lˣ` killed by three. It gives a Galois field `E/F` of degree three in the separable closure and a finite Galois common overfield of `E` and `L`. On that overfield, inflation followed by relative restriction to `E` sends the class to zero.
+
+`totallyComplexCubicRelativeBrauerSplitting` embeds `L` in the separable closure and maps the class to the absolute Brauer group. Its finite-place support is finite. The prescribed local degree theorem gives a cyclic cubic field with local degree three above that support. Total complexness persists over `E`, so the local degree divisibilities imply that the restriction of the absolute Brauer class vanishes. The proof takes the compositum of `E` and the embedded copy of `L`. It compares the relative restriction of the inflated class on that compositum with the absolute restriction. Injectivity of degree-two inflation for relative unit cohomology then gives the asserted relative vanishing.
+
+This is the Brauer restriction step of the inner E₆ argument in Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), Theorem 6.26, printed p. 354 (PDF p. 364). The proof uses the cubic local degree construction and the relative-to-absolute cohomology comparisons.

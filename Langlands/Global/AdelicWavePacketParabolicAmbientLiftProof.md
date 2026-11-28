@@ -66,3 +66,5 @@ packets `Θ_{P,φ}` over `i𝔞_P^*`. The passage between the two, by tensoring 
 ambient parameter whose Fourier transform is the profile, is the one described in the Markdown of
 `Langlands.Global.AdelicSpectralDecompositionReduction`, section
 `RelativeWavePacketOrthogonalityStatement`; this module proves it for the Library's packets.
+
+`relativeWavePacketAmbientLiftPresentation` exposes the pointwise product identity used in the parabolic ambient lift. With the relative coordinates and an ambient profile supplied, the full integral uses the product coordinates and product coefficients, with the original number of summands and the original continuation functions. The identity follows from the ambient shift on each continuation and the factorization of spectral measure. The parabolic lift theorem pairs this identity with smoothness, compact support and the original inducing-form hypotheses.

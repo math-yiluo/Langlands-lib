@@ -36,10 +36,29 @@ The three premises are:
    `Q` as in premise 2, then `R` and `R'` are equivalent. Its Markdown states it in full and
    explains its provenance.
 
-None of the three premises is proved here. Premise 1 is proved in the Library as
-`cuspidalOperatorMultiplicityOne` (module `Langlands.Automorphic.CuspidalOperatorMultiplicityOneProof`).
-Premises 2 and 3 are not proved in the Library; premise 2 follows from the density statement
-`GeneralLinearSummandFormsDenseStatement` by `generalLinearCuspidalSummandRealizationFromDensity`.
+This module proves a conditional implication. The three premises are only hypotheses of the
+main theorem: the module neither proves nor otherwise assumes any of them. The Library proves
+each premise in another module:
+
+- premise 1 as `Langlands.Automorphic.cuspidalOperatorMultiplicityOne` (module
+  `Langlands.Automorphic.CuspidalOperatorMultiplicityOneProof`);
+- premise 2 as `generalLinearCuspidalSummandRealization` (module
+  `Langlands.Automorphic.GeneralLinearCuspidalSummandRealizationProof`), which applies
+  `generalLinearCuspidalSummandRealizationFromDensity` (module
+  `Langlands.Automorphic.GeneralLinearCuspidalSummandRealizationFromDensity`) to the density
+  theorem `generalLinearSummandFormsDense` (module
+  `Langlands.Automorphic.GeneralLinearSummandFormsDenseProof`);
+- premise 3 as `generalLinearCuspidalSummandEquivalence` (module
+  `Langlands.Automorphic.GeneralLinearCuspidalSummandEquivalenceProof`).
+
+The unconditional conclusion is `generalLinearCuspidalMultiplicityOne` (module
+`Langlands.Automorphic.GeneralLinearCuspidalMultiplicityOneProof`), which proves
+`GeneralLinearCuspidalMultiplicityOneStatement` by applying
+`generalLinearCuspidalMultiplicityOne_of_summandEquivalence` to
+`cuspidalOperatorMultiplicityOne`, to
+`generalLinearCuspidalSummandRealizationFromDensity generalLinearSummandFormsDense` (the term
+that defines `generalLinearCuspidalSummandRealization`) and to
+`generalLinearCuspidalSummandEquivalence`.
 
 ## Local instances
 

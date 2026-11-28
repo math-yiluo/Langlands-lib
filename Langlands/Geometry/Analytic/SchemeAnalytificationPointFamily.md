@@ -1,0 +1,7 @@
+# Affine test points of a localized scheme analytification
+
+Let a separated scheme be locally of finite type over a complete nonarchimedean field with nontrivial norm. `schemePointFamily` gives the map of localized analytic spaces for every test point of the scheme with a finite polynomial presentation of its test algebra. Its source is the polynomial-locus model of that presentation, identified by `affineTestIso` with the scheme analytification of the affine spectrum. The target is the glued scheme analytification.
+
+`isAnalytification_schemePointFamily` proves the affine-test predicate for the represented algebraic space. Naturality follows from the affine test comparison and functoriality of scheme analytification. Each affine open gives an étale test point, and the image formula for analytification shows their analytic images cover the space. The scheme functor of points reflects the represented pullback squares, and analytification preserves them. The small-index affine comparison hypothesis supplies preservation of étaleness.
+
+This construction uses the affine gluing of Berkovich, *Spectral theory and analytic geometry over Non-Archimedean fields* (1990), Theorem 3.4.1, proof steps (2)–(3), pp. 63–64. Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Proposition 3.3.11, p. 64, gives preservation of étaleness under analytification. The affine-test formulation combines these properties with the scheme and polynomial-locus functors and the universal property of their pullbacks.

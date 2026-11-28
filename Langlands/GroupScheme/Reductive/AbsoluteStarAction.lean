@@ -27,7 +27,7 @@ variable {k : Type u} [Field k] {G : GroupScheme (Spec (CommRingCat.of k))}
   [IsAffineHom G.X.hom]
 
 /-- Galois pinning data from a maximal torus over `k` and a field over which it splits. -/
-private def ofSplittingField (hG : IsConnectedReductive G)
+def ofSplittingField (hG : IsConnectedReductive G)
     (T : CommGroupScheme (Spec (CommRingCat.of k))) (i : T.toGrp ⟶ G) (hi : IsMaximalTorus i)
     (E : Type u) [Field E] [Algebra k E]
     (hsplit : IsSplitTorus ((CommGroupScheme.baseChange (algebraBaseMap k E)).obj T).toGrp) :

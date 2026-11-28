@@ -1,0 +1,7 @@
+# Compact rectangular row profiles for real Whittaker restrictions
+
+`RealCompactParabolicRowFactorizationStatement` applies to a jointly continuous complex Banach representation of the real general linear group and a continuous Whittaker functional on its genuine smooth carrier. For a strictly smaller leading block and an arbitrary positive transverse width, it writes the restriction of any Whittaker coefficient as a finite sum of restrictions of smooth coefficients times compact rectangle profiles at the last row. The Whittaker character has scale `-a`, and the rectangle profile uses the Fourier phase at that same scale.
+
+The first column of a rectangle gives a square-zero Lie direction in the ambient group. The commuting-direction factorization supplies compact kernels in the rectangle coordinates. Uniqueness of additive Haar measure converts the coordinate measure to the self-dual rectangle measure, with the scalar absorbed in the kernel. Conjugation by a leading block multiplies the first column by that block, so Whittaker covariance reads its pairing with the last row. This integral is the boundary Fourier profile of the same compact kernel.
+
+This form of the converse in Proposition 6.1 uses compact rectangular functions so their profiles can also be realized by compact parabolic lifts in the strict lower-rank case of Proposition 14.3. [Jacquet, *Archimedean Rankin–Selberg Integrals*, pp. 41–42, 104–105](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf#page=41).

@@ -141,22 +141,37 @@ private theorem one_mem_simpleJLattice (L : LatticeChain 𝒪[F] F (Fin n → F)
     simp [adjointMap]
   cases tail <;> exact Submodule.mem_sup_left hone
 
-/-- The published simple-stratum subgroup `J` is open and compact. -/
-theorem isCompact_isOpen_simpleJ (L : LatticeChain 𝒪[F] F (Fin n → F))
-    (m : ℤ) (β : A) (tail : List A) :
-    IsCompact (simpleJ L m β tail : Set Aut) ∧ IsOpen (simpleJ L m β tail : Set Aut) := by
+/-- Each simple-stratum subgroup `J^i` is open and compact. -/
+theorem isCompact_isOpen_simpleJGroup (L : LatticeChain 𝒪[F] F (Fin n → F))
+    (m : ℤ) (β : A) (tail : List A) (i : ℕ) :
+    IsCompact (simpleJGroup L m β tail i : Set Aut) ∧
+      IsOpen (simpleJGroup L m β tail i : Set Aut) := by
   obtain ⟨t, ht⟩ := exists_endFiltration_le_simpleJLattice L m β tail
-  let k := t.toNat
-  have hk : t ≤ (k : ℤ) := by dsimp [k]; omega
-  have hopen : IsOpen (simpleJ L m β tail : Set Aut) := by
+  let k := max i t.toNat
+  have hk : t ≤ (k : ℤ) := by
+    dsimp [k]
+    omega
+  have hopen : IsOpen (simpleJGroup L m β tail i : Set Aut) := by
     refine Subgroup.isOpen_mono (H₁ := L.unitFiltration k) ?_ (isOpen_unitFiltration L k)
     intro g hg
     apply Subgroup.subset_closure
-    refine ⟨L.unitFiltration_antitone (Nat.zero_le k) hg, ?_⟩
+    refine ⟨L.unitFiltration_antitone (le_max_left i t.toNat) hg, ?_⟩
     have hsub := ht (L.endFiltration_antitone hk hg.2.2)
     simpa only [sub_add_cancel] using add_mem hsub (one_mem_simpleJLattice L m β tail)
   exact ⟨(isCompact_unitFiltration_zero L).of_isClosed_subset
-    ((simpleJ L m β tail).isClosed_of_isOpen hopen) (simpleJGroup_le_unitFiltration L m β tail 0),
+    ((simpleJGroup L m β tail i).isClosed_of_isOpen hopen)
+    ((simpleJGroup_le_unitFiltration L m β tail i).trans (L.unitFiltration_antitone (Nat.zero_le i))),
     hopen⟩
+
+/-- The depth-`i` simple-stratum group as an open subgroup for restriction of representations. -/
+def simpleJOpenSubgroup (L : LatticeChain 𝒪[F] F (Fin n → F))
+    (m : ℤ) (β : A) (tail : List A) (i : ℕ) : OpenSubgroup Aut :=
+  ⟨simpleJGroup L m β tail i, (isCompact_isOpen_simpleJGroup L m β tail i).2⟩
+
+/-- The simple-stratum subgroup `J` is open and compact. -/
+theorem isCompact_isOpen_simpleJ (L : LatticeChain 𝒪[F] F (Fin n → F))
+    (m : ℤ) (β : A) (tail : List A) :
+    IsCompact (simpleJ L m β tail : Set Aut) ∧ IsOpen (simpleJ L m β tail : Set Aut) :=
+  isCompact_isOpen_simpleJGroup L m β tail 0
 
 end Langlands.BushnellKutzko

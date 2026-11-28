@@ -1,0 +1,9 @@
+# Cofinite quadratic norms in finite commutative algebras
+
+Let \(A\) be a finite commutative algebra over a number field \(F\), and let \(a\) be a unit of \(A\). The quadratic norm form \(x^2-dy^2\), for \(d\in F^\times\), represents the image of \(a\) in \(F_v\otimes_F A\) at all but finitely many finite places \(v\).
+
+The Artinian quotient by the nilradical is a finite product of residue number fields. For a residue number field, its completions above \(v\) give the factors of its tensor with \(F_v\). The quadratic norm form represents the residue unit at almost every finite place of each residue field by the unramified unit norm theorem and cofinite integrality. The bad places lie above a finite set in \(F\). Componentwise solutions therefore give a solution in the completed tensor of the reduced quotient.
+
+Each residue field is separable over \(F\). Formal smoothness of the finite product lifts the identity of the reduced quotient to a section of the nilradical quotient map. The image of the residue unit under the section differs from the original unit by a factor \(1+n\) with \(n\) nilpotent. A square root of this factor is constructed by improving the approximation \(1+n/2\); its residual error is a multiple of \(n^2\), which strictly lowers the required nilpotence exponent. Multiplying the lifted coordinates by that square root gives the original unit as a value.
+
+The arithmetic ingredient is the cofinite norm observation after Proposition 4.2 of Prasad and Rapinchuk, *Local-global principles for embedding of fields with involution into simple algebras with involution*, arXiv:0806.0596v5, p. 15. Source ID `prasad-rapinchuk-2010-embedding-fields-involution`, SHA-256 `949df4d66b6ff7561ed36de8638a909543a582aa51e2f276e410c6ac624cfa79`. The passage from fields to finite algebras is the reduction above.

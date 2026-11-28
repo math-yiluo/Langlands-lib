@@ -10,8 +10,12 @@ proves that statement, unchanged, from one retained premise:
 `CuspidalSupport.RationalSpecialVertexCompactInputsStatement.{uF}`. Through published
 reductions that premise follows from the joint special-compact basis existence, from
 `BruhatTitsAvailabilityStatement`, and from the Kaletha-Prasad
-`Geometry.Building.GroupAxiomsExistenceStatement`. All three are unproved in the
-Library. The relative root system (`GroupScheme.relativeRootSystem`) and the
+`Geometry.Building.GroupAxiomsExistenceStatement`. All three are proved in the Library,
+by `BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence`,
+`Geometry.Building.bruhatTitsAvailability` and `Geometry.Building.groupAxiomsExistence`;
+the module `Langlands.Representation.Jacquet.StandardIwahoriSubquotientGenerationProof`
+applies `Jacquet.standardIwahoriFixedVectorSubquotientGeneration_of_jointBasis` to the
+first and so proves the statement. The relative root system (`GroupScheme.relativeRootSystem`) and the
 norm-kernel finite restriction (`CuspidalSupport.rationalNormKernelFiniteRestriction`)
 are used as the published theorems, not as premises. Unlike the published
 `Jacquet.standardFixedVectorSubquotientGeneration_of_prerequisites`, this module does

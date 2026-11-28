@@ -32,3 +32,5 @@ Propositions 12.3 and 12.4, pp. 85–86 of the author-posted version. The
 multipliers in the induction are the ones obtained after normalizing the
 inclusions in Proposition 14.3, pp. 104–107. The integral constructions that
 supply the inclusions are premises of this result.
+
+`RealNormalizedPointwiseGenerationInductionStatement` takes a complex subspace of scalar values at each spectral point for each pair of lists. The same three inclusions are imposed at each point with the same primal and reflected multipliers. Under the singleton and exchange hypotheses the scalar values cover the plane. To deduce this from the function-space induction, take the product of the scalar subspaces over the spectral plane. A scalar value at one point is represented by the function supported at that point. The hypotheses and conclusion of the function-space argument then give the pointwise result. This uses the denominator comparison of [Jacquet, *Archimedean Rankin–Selberg Integrals*, §14.3, pp. 107–108](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf#page=107).

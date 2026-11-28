@@ -24,6 +24,18 @@ Theorem 9.7.3, pp. 265–267 (PDF pp. 277–279).
 
 ## Scope
 
-Density is the only remaining input. It is neither proved nor assumed elsewhere in this module.
-Its statement is `GeneralLinearSummandFormsDenseStatement`; the Library does not prove it. This module proves
-neither the converse direction of Theorem 9.7.3 nor any density statement.
+This module proves a conditional implication. Its premise, the density statement
+`GeneralLinearSummandFormsDenseStatement` (module
+`Langlands.Automorphic.GeneralLinearCuspidalSummandRealizationReduction`), is only the
+hypothesis of that implication: the module neither proves nor otherwise assumes it. This module
+proves neither the converse direction of Theorem 9.7.3 nor any density statement.
+
+The Library proves the premise and the conclusion in other modules:
+
+- `generalLinearSummandFormsDense` (module
+  `Langlands.Automorphic.GeneralLinearSummandFormsDenseProof`) proves
+  `GeneralLinearSummandFormsDenseStatement`;
+- `generalLinearCuspidalSummandRealization` (module
+  `Langlands.Automorphic.GeneralLinearCuspidalSummandRealizationProof`) proves
+  `GeneralLinearCuspidalSummandRealizationStatement` unconditionally, by applying
+  `generalLinearCuspidalSummandRealizationFromDensity` to `generalLinearSummandFormsDense`.

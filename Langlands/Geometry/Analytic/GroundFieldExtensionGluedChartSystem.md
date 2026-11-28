@@ -1,0 +1,7 @@
+# Ground field extension of a glued affinoid chart system
+
+For an isometric extension of complete non-Archimedean fields, scalar extend each presented algebra and each bounded restriction of an affinoid chart system. Keep the original index type and subchart relation. The extended restriction represents the inverse image of its original domain under the spectrum projection. To find a common subchart through an extended point, project to the original spectrum and use its subchart meet property. The domain representation lifts the same common subchart to the extended point.
+
+The spectrum projections commute with the bounded restrictions and descend to a continuous surjection of the gluing quotients. Surjectivity is checked in one chosen original chart. The inverse image of an original chart range equals the extended range. If the projected point lies in two chart ranges, equality in the original quotient gives a point in a common subchart. The full inverse-image description of the restriction lifts the extended point to that subchart, giving a representative in the prescribed extended chart.
+
+This construction applies the chartwise extension and gluing in Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), §1.4, printed pp. 29–30 (PDF pp. 26–27), at the level of chart systems with their bounded restriction maps. The retained original is `berkovich-1993-etale-cohomology`, SHA-256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.

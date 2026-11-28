@@ -33,3 +33,5 @@ the quotient subgroup images and of the pulled-back characters.
 
 [Inflation equivalence](IrreducibleQuotientEquiv.md) ·
 [Group transport](../../VirtualRepresentation/Weil/GroupTransport.md)
+
+`trivialityParameters` records the nonnegative filtration parameters where a class is trivial. `IsomorphismClasses.isTrivialOn_of_le` restricts triviality to a subgroup, and `equivOfSameFibers` identifies the targets of two surjections with the same fibers.

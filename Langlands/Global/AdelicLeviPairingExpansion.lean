@@ -24,6 +24,14 @@ local notation "P" => 𝓕.P J
 local notation "M" => 𝓕.M J
 local notation "μ" => normOneRationalQuotientHaarMeasure F M
 
+/-- The norm-one Levi pairings commute with multiplication by a scalar. -/
+theorem leviPairing_const_mul (c : ℂ) (f : AdelicGroupPoints F G → ℂ)
+    (g : AdelicGroupPoints F G) (ψ : AdelicGroupPoints F (𝓕.M J) → ℂ) :
+    𝓕.leviPairing J (fun x => c * f x) g ψ = c * 𝓕.leviPairing J f g ψ := by
+  unfold StandardParabolicFamily.leviPairing StandardParabolicFamily.leviPairingIntegrand
+  simp_rw [mul_assoc]
+  exact MeasureTheory.integral_const_mul c _
+
 section Twist
 
 variable [IsClosedImmersion (𝓕.p J).hom.hom.left] {K : Subgroup (AdelicGroupPoints F G)}

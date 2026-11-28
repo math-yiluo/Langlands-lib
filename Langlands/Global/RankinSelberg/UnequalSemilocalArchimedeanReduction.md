@@ -59,22 +59,25 @@ uses the Library's local gamma factors there.
 
 ## Proof
 
-### The premise at one number field: `factorization_at`
+### The premise at one number field
 
-The theorem `factorization_at` takes three hypotheses:
+`UnequalSemilocalArchimedeanReduction.FactorizationAt F` abbreviates the body of
+`UnequalSemilocalFactorizationStatement` at `F`. Like the original premise, it is
+elaborated with classical decidability (`open Classical in`) for the products over the
+real and complex places.
+
+The theorem `factorization_of_at` takes three hypotheses.
 
 * `hCo : ComplexUnequalFunctionalEquationStatement`;
-* `hFac : UnequalArchimedeanFactorizationStatement`;
+* `hFac : UnequalArchimedeanFactorizationAt F`;
 * `hSign : ArchimedeanCentralSignStatement`.
 
 It also takes a number field `F`, and a function
 `hRe : {v : InfinitePlace F // v.IsReal} → RealUnequalFunctionalEquationStatement`. The
-real-place equation is therefore needed only if `F` has a real place.
-
-Its conclusion is the body of `UnequalSemilocalFactorizationStatement` at `F`, restated
-verbatim. Like the premise, the statement is elaborated with classical decidability
-(`open Classical in`). That is how the products over the real and the complex places get
-their `Fintype` instances.
+real-place equation is therefore needed only if `F` has a real place. Its conclusion is
+`FactorizationAt F`. The fieldwise input is enough because the proof uses the integrated
+factorization only at `F`. The theorem `factorization_at` obtains that input by
+specializing `UnequalArchimedeanFactorizationStatement` to `F`.
 
 The proof introduces all the binders of the premise. It then proceeds as follows.
 

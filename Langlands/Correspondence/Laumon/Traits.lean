@@ -29,6 +29,9 @@ namespace Langlands.Henniart.Laumon
 
 variable (k : Type u) [Field k]
 
+/-- The coordinate `x` of the affine line over `k`. -/
+abbrev lineCoordinate : Γ(affineLine k, ⊤) := AffineSpace.coord (Spec (.of k)) PUnit.unit
+
 attribute [local instance] RatFunc.liftAlgebra in
 /-- Rational functions embedded in Laurent series by expansion at `t = 0`: Mathlib's scoped
 `RatFunc.liftAlgebra`, specialized to the field of Laurent series. -/

@@ -1,0 +1,5 @@
+# Irreducible real standard sublists and nonzero Whittaker models
+
+`realExactBlockWhittakerNonzero` takes the canonical Jacquet map on the descending position characters at the opposite additive scale. The restriction to the original compact-finite standard module stays nonzero by `restrict_expand_ne_zero`. Its range is included in the exact Whittaker model, so `realWhittakerModel_ne_bot_of_rank` gives nonvanishing for every rank-correct list and every nonzero real scale. [Jacquet, *Archimedean Rankin–Selberg Integrals*, §3.4 and Proposition 11.1](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)
+
+`realStandardIrreducibleSublist` uses genericity of the original standard module and the linked Langlands quotient theorem to deduce that the ordered irreducible list has unlinked Mœglin data. Both Langlands order and unlinking pass to a sublist. The latter uses the sublist inclusion after expanding each block into its Mœglin data. Speh's criterion then gives irreducibility at the sublist's rank. [Mœglin, *Representations of GL(n) over the real field*, Theorem 10b, p. 164](https://doi.org/10.1090/pspum/061)

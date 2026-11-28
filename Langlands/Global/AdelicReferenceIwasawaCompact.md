@@ -1,0 +1,7 @@
+# A reference compact for characteristic Eisenstein truncation
+
+`StandardParabolicFamily.ReferenceIwasawaCompactStatement` asserts that a fixed standard parabolic family over a number field has one maximal compact subgroup with Iwasawa coverage for its minimal parabolic and maximal compact inverse images in all standard Levis. The intersection of the compact with the minimal parabolic centralizes the intrinsic positive adelic subgroup of the chosen maximal split torus.
+
+At each infinite place, the diagonal unitary realization gives simultaneous Levi maximality and the minimal parabolic intersection in the same local compact. The finite places use the standard Levi compacts from Bruhat–Tits theory. The local family is chosen to agree with the integral family at all but finitely many places, and its coordinate subgroup gives the adelic coverage and maximality. For positive-torus compatibility, the infinite component of any compact point in the minimal parabolic lies in the minimal Levi, the centralizer of the maximal split torus. The finite components of the positive torus are one.
+
+These are the compact hypotheses of `EisensteinTemperedTruncationEstimateStatement`, the form-level characteristic truncation estimate from Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), §2 and §7. The proof uses the local construction of `AdelicGoodPositionIwasawaCompactProof` and retains the archimedean intersection identity on the same compact used for all Levi subgroups.

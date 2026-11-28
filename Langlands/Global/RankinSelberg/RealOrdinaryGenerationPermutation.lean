@@ -1,4 +1,5 @@
 import Langlands.Global.RankinSelberg.ArchimedeanOrdinaryNormalizedTests
+import Langlands.Global.RankinSelberg.RealStandardIntertwinerPairLReduction
 import Langlands.Representation.Archimedean.RealStandardConstituentPermutation
 import Langlands.Representation.Archimedean.RealSwapSurjectiveProof
 
@@ -312,5 +313,79 @@ theorem realOrdinaryOrderedGenerationReduction : RealOrdinaryOrderedGenerationRe
         ((hdM a).symm ▸ hdV) ((heM (-a)).symm ▸ heV)
     exact equalGeneration_congr (hdM a) (heM (-a))
       (realPairLFactor_perm hd' he').symm hOrdered
+
+/-- Every rank-correct irreducible real standard model has an ordered positive-weight
+presentation with the same exact Whittaker submodules and pair factors. -/
+theorem exists_positiveWeight_ordered_model (r : ℕ) (ds : List RealBlock)
+    (hr : realRank ds = r + 1)
+    (hI : IsIrreducibleGKModule (realStandardRep (r + 1) ds) (realStandardLie (r + 1) ds)) :
+    ∃ es : List RealBlock, realRank es = r + 1 ∧ Langlands.Archimedean.IsRealLanglandsOrdered es ∧
+      (∀ d : ComplexCharacterData, .induced d ∈ es → 0 < d.weight) ∧
+      IsIrreducibleGKModule (realStandardRep (r + 1) es) (realStandardLie (r + 1) es) ∧
+      (∀ a, realWhittakerModel r es a = realWhittakerModel r ds a) ∧
+      ∀ fs, realPairLFactor es fs = realPairLFactor ds fs := by
+  let d₀ := ds.flatMap realBlockNormalize
+  have hm : realStandardModule (r + 1) d₀ = realStandardModule (r + 1) ds :=
+    realStandardModule_flatMap_normalize _ _
+  have h₀ := (realRank_flatMap_normalize ds).trans hr
+  obtain ⟨es, hp, ho⟩ := exists_ordered_perm d₀
+  have hI₀ := isIrreducibleGKModule_of_realStandardModule_eq hI hm.symm
+  obtain ⟨hIe, hWe⟩ := realWhittakerModels_of_perm_irreducible hp h₀ hI₀
+  refine ⟨es, (realRank_perm hp).symm.trans h₀, ho, ?_, hIe, ?_, ?_⟩
+  · intro d hd
+    exact weight_pos_of_mem_flatMap_normalize ((hp.mem_iff).mpr hd)
+  · intro a
+    rw [hWe]
+    exact le_antisymm
+      (realWhittakerModel_le_of_surjective a (RealSurjectiveIntertwinerExists.of_eq hm.symm))
+      (realWhittakerModel_le_of_surjective a (RealSurjectiveIntertwinerExists.of_eq hm))
+  · intro fs
+    exact (realPairLFactor_perm hp.symm (List.Perm.refl _)).trans (realPairLFactor_normalize_left ds fs)
+
+/-- Ordinary real normalized generation for ordered lists whose induced weights are positive. -/
+def RealOrdinaryPositiveWeightOrderedGenerationStatement : Prop :=
+  (∀ (r t : ℕ) (h : t < r) (d e : List RealBlock), realRank d = r + 1 → realRank e = t + 1 →
+    Langlands.Archimedean.IsRealLanglandsOrdered d → Langlands.Archimedean.IsRealLanglandsOrdered e →
+    (∀ b : ComplexCharacterData, .induced b ∈ d → 0 < b.weight) →
+    (∀ b : ComplexCharacterData, .induced b ∈ e → 0 < b.weight) →
+    IsIrreducibleGKModule (realStandardRep (r + 1) d) (realStandardLie (r + 1) d) →
+    IsIrreducibleGKModule (realStandardRep (t + 1) e) (realStandardLie (t + 1) e) →
+    ∀ (a : ℝˣ) (D : RealQuotientMeasureData t),
+      realWhittakerModel r d a ≠ ⊥ → realWhittakerModel t e (-a) ≠ ⊥ →
+      UnequalGeneration h a D (realWhittakerModel r d a) (realWhittakerModel t e (-a)) (realPairLFactor d e)) ∧
+  ∀ (r : ℕ) (d e : List RealBlock), realRank d = r + 1 → realRank e = r + 1 →
+    Langlands.Archimedean.IsRealLanglandsOrdered d → Langlands.Archimedean.IsRealLanglandsOrdered e →
+    (∀ b : ComplexCharacterData, .induced b ∈ d → 0 < b.weight) →
+    (∀ b : ComplexCharacterData, .induced b ∈ e → 0 < b.weight) →
+    IsIrreducibleGKModule (realStandardRep (r + 1) d) (realStandardLie (r + 1) d) →
+    IsIrreducibleGKModule (realStandardRep (r + 1) e) (realStandardLie (r + 1) e) →
+    ∀ (a : ℝˣ) (D : RealQuotientMeasureData r),
+      realWhittakerModel r d a ≠ ⊥ → realWhittakerModel r e (-a) ≠ ⊥ →
+      EqualGeneration a D (realWhittakerModel r d a) (realWhittakerModel r e (-a)) (realPairLFactor d e)
+
+private theorem transfer_pair_factor {d d' e e' : List RealBlock}
+    (hd : ∀ fs, realPairLFactor d' fs = realPairLFactor d fs)
+    (he : ∀ fs, realPairLFactor e' fs = realPairLFactor e fs) :
+    realPairLFactor d' e' = realPairLFactor d e := by
+  rw [hd e', realPairLFactor_comm d e', he d, realPairLFactor_comm e d]
+
+/-- The positive-weight ordered cases suffice for the given real ordinary generation statement. -/
+def RealOrdinaryPositiveWeightOrderedGenerationReductionStatement : Prop :=
+  RealOrdinaryPositiveWeightOrderedGenerationStatement → RealOrdinaryNormalizedGenerationStatement
+
+theorem realOrdinaryPositiveWeightOrderedGenerationReduction :
+    RealOrdinaryPositiveWeightOrderedGenerationReductionStatement := by
+  intro h
+  constructor
+  · intro r t hrt d e hd he hdI heI a D hdV heV
+    obtain ⟨d', hdr, hdo, hdw, hdI', hdM, hdL⟩ := exists_positiveWeight_ordered_model r d hd hdI
+    obtain ⟨e', her, heo, hew, heI', heM, heL⟩ := exists_positiveWeight_ordered_model t e he heI
+    exact unequalGeneration_congr (hdM a) (heM (-a)) (transfer_pair_factor hdL heL)
+      (h.1 r t hrt d' e' hdr her hdo heo hdw hew hdI' heI' a D ((hdM a).symm ▸ hdV) ((heM (-a)).symm ▸ heV))
+  · intro r d e hd he hdI heI a D hdV heV
+    obtain ⟨d', hdr, hdo, hdw, hdI', hdM, hdL⟩ := exists_positiveWeight_ordered_model r d hd hdI
+    obtain ⟨e', her, heo, hew, heI', heM, heL⟩ := exists_positiveWeight_ordered_model r e he heI
+    exact equalGeneration_congr (hdM a) (heM (-a)) (transfer_pair_factor hdL heL)
+      (h.2 r d' e' hdr her hdo heo hdw hew hdI' heI' a D ((hdM a).symm ▸ hdV) ((heM (-a)).symm ▸ heV))
 
 end Langlands.Global.RankinSelbergGlobal

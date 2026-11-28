@@ -1,0 +1,7 @@
+# Orientation of the Weyl terms in the regularized cone limit
+
+Take a real displacement in the open inducing face. Its pairings with the simple coroots of that Levi vanish, and its pairings with the other simple coroots are positive. For a Weyl class carrying the simple roots of a second standard Levi onto those of the inducing Levi, `weylConeSlope` pairs the inverse Weyl translate of this displacement with the simple coroots outside the second Levi.
+
+`WeylConeOrientationStatement` proves that none of these slopes vanish. It also proves that every slope is positive precisely for the identity class at the inducing index. This is the sign criterion in Delorme's use of Proposition 7.8 in the proof of Lemma 7.11, for representatives that carry the indicated Levi simple-root sets. The source Levi adjustment in `AdelicStandardWeylRepresentative` provides such representatives for associated Levi subgroups.
+
+The invariant form converts each transported coroot evaluation into a pairing with the Weyl image of the corresponding root. A positive root with zero pairing belongs to the inducing Levi simple-root span, by induction using nonnegativity on positive roots. The Weyl image of a simple root outside the second Levi cannot belong to this span, by simple-root independence. A right descent of a nonidentity class gives a negative root image. Its simple root lies outside the second Levi, and the corresponding slope cannot be positive. The identity class has the prescribed positive slopes and identifies the two Levi root sets.

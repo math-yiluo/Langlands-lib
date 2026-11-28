@@ -150,7 +150,8 @@ private theorem adjacent_inversion_unlinked {n : ℕ} (pre post : List RealBlock
   rw [realBlockExponent_hermitianDual, realBlockExponent_hermitianDual]
   exact neg_le_neg hxy.le
 
-private theorem unlinked_of_ordered {n : ℕ} {ds : List RealBlock}
+/-- An irreducible generic standard module in Langlands order has unlinked Mœglin data. -/
+theorem realStandard_unlinked_of_ordered {n : ℕ} {ds : List RealBlock}
     (hrank : realRank ds = n) (hord : IsRealLanglandsOrdered ds)
     (hirr : IsIrreducibleGKModule (realStandardRep n ds) (realStandardLie n ds))
     (hgen : IsRealGenericGKModule n (realStandardLie n ds)) : IsRealMoeglinUnlinked ds := by
@@ -175,7 +176,7 @@ theorem exists_realStandard_ordered_unlinked (n : ℕ) (ds : List RealBlock)
       HasRealStandardParameter n (realStandardRep n ds) (realStandardLie n ds) es := by
   classical
   by_cases hord : IsRealLanglandsOrdered ds
-  · exact ⟨ds, .refl _, hord, unlinked_of_ordered hrank hord hirr hgen,
+  · exact ⟨ds, .refl _, hord, realStandard_unlinked_of_ordered hrank hord hirr hgen,
       hrank, LinearMap.id, Function.injective_id, isRealStandardIntertwiner_id n ds⟩
   obtain ⟨pre, x, y, post, hds, hxy⟩ := exists_adjacent_inversion_of_not_ordered hord
   subst ds

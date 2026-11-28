@@ -27,7 +27,8 @@ local notation "H" => CyclicGLSemidirect σ hσ n
 def cyclicAdjointAlgEquiv (s : H) : Matrix (Fin n) (Fin n) E ≃ₐ[F] Matrix (Fin n) (Fin n) E :=
   twistedAdjointAlgEquiv (cyclicPowerHom σ hσ s.right) s.left
 
-private theorem cyclicAdjointAlgEquiv_onUnits (s : H) (g : G) :
+/-- The cyclic adjoint algebra automorphism acts on units by ambient conjugation. -/
+theorem cyclicAdjointAlgEquiv_onUnits (s : H) (g : G) :
     (SemidirectProduct.inl (φ := cyclicGLAction σ hσ n) : G →* H)
       (Units.map (cyclicAdjointAlgEquiv s).toMonoidHom g) = s * SemidirectProduct.inl g * s⁻¹ := by
   let i : G →* H := SemidirectProduct.inl

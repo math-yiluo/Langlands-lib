@@ -1,0 +1,7 @@
+# Étale analytic transition objects of the CM tower
+
+Fix a represented CM tower and a complete extension $K$ of its base. The base-changed schemes give the actual separated algebraic étale objects over any chosen level when the original transporters are étale. Étaleness and surjectivity separately pass to the actual scheme pullbacks. The original algebraic étaleness input is available under the hypotheses of `cmSchemeTower_map_etale_of_dominantCriterion`.
+
+`cmFieldAnalyticEtaleLevels` analytifies the level slice over a chosen coarse level, using the small-index affine étaleness comparison as an explicit input. The objects and arrows are the original transporter analytifications. The two legs of a Hecke span therefore have two such presentations, over their corresponding ends. A transporter that is also surjective on the original schemes becomes surjective on the analytic underlying spaces. `cmFieldAnalyticQuasiEtaleLevels` uses the inclusion into the underlying category of the compact-probe site.
+
+Harris, *Galois properties of cohomological automorphic forms on GL(n)* (1999), §4, pp. 308–309, uses these level spaces on the Shimura side of (4.3). Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), Definition 3.3.4 and §4.1, gives the analytic étale category and covering condition. The functors here realize the actual local level maps. Sheaf pullback and the comparison of coefficient systems require further geometric pullback results.

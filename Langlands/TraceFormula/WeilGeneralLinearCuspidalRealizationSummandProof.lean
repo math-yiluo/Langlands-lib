@@ -18,11 +18,11 @@ open Langlands.Automorphic.GroupSchemeFunctions.WeilCuspidalTransport
 open WeilGeneralLinearCuspidalTransport
 open AdelicGroupAutomorphism
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     IsAffine (GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.left :=
   GeneralLinear.isAffine_groupScheme (Fin n) (CommRingCat.of F)
 
-local instance (F : Type u) [Field F] (n : ℕ) :
+private local instance (F : Type u) [Field F] (n : ℕ) :
     Smooth (GeneralLinear.groupScheme (Fin n) (CommRingCat.of F)).X.hom :=
   GeneralLinear.smoothStatement (Fin n) (CommRingCat.of F)
 

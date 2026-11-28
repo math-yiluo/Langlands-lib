@@ -11,7 +11,8 @@ integrable modulo the point image of a split component of the dynamic
 Levi. The proof specializes the published
 `DynamicCommonLeviIrreducibility.hasOpenIrreducibilityLocus` to the source
 parabolic to select the nonempty open locus. It obtains the finite
-quotient by the norm kernel and split center from the Levi scheme's finite
+quotient by the norm kernel and split center with `finite_dynamicSplitQuotient`.
+This theorem uses the Levi scheme's finite
 split valuation index, via the actual multiplicative homeomorphism from
 the scheme to its point subgroup. The quotient Haar and the supplied
 square-integrability proof

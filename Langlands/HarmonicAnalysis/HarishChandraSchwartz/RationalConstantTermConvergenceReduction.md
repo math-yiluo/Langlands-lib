@@ -30,10 +30,13 @@ II.4.5 on actual points, module `RationalConstantTerm`) and
 This module proves no part of them and no target unconditionally. In the Library,
 `RationalSplitCenterHeightStatement` is proved (`rationalSplitCenterHeight`, module
 `RationalSplitCenterHeightProof`), and target 1 follows as `rationalSchwartzCentralConvergence`
-(module `RationalSchwartzCentralConvergenceProof`). `RationalConstantTermEstimateStatement` and
-`JointSpecialCompactBasisExistenceStatement` are not proved in the Library, which has only
-conditional reductions of them (`rationalConstantTermAnalyticReduction`,
-`BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence_of_remainingInputs`).
+(module `RationalSchwartzCentralConvergenceProof`). `RationalConstantTermEstimateStatement` is
+proved in the Library by `rationalConstantTermEstimate` (module
+`RationalConstantTermEstimateProof`), and `JointSpecialCompactBasisExistenceStatement` by
+`BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence` (module
+`BruhatTits.SpecialCompact.JointBasisProof`). Applying the two theorems below to these proofs gives
+targets 2 and 3; target 2 is proved this way by `rationalSchwartzConstantTermConvergence` (module
+`RationalSchwartzConstantTermConvergenceProof`).
 
 ## The recorded proposition
 

@@ -34,3 +34,13 @@ Surjectivity of the intertwiner keeps its pullback nonzero, and the compact
 and Lie intertwining relations give the Jacquet equations on the source.
 The theorem then matches the position exponents of the two lists up to
 permutation.
+
+`realStandardSubquotientExponent` compares two standard modules with
+a common nonzero compact and Lie subquotient. The Gelfand operators
+act on a standard module by the scalars computed from the evaluation
+at the identity. Restricting the enveloping action to a stable
+subspace and descending it through the surjection applies these same
+scalars to the common subquotient. Equality on a nonzero vector
+therefore matches the Gelfand sums of the two standard modules.
+The same separation theorem matches their position exponents up to
+permutation.

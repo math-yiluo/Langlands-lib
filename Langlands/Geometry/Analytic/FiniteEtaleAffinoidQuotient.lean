@@ -1,3 +1,4 @@
+import Langlands.Geometry.Analytic.FiniteBanachEtaleAffinoidQuotient
 import Langlands.AlgebraicGeometry.FiniteEtale.EqualizerAlgebraProof
 import Langlands.AlgebraicGeometry.FiniteLocallyFreeInvariantRingQuotientProof
 import Langlands.Geometry.Analytic.AffineAnalytificationFiniteCharts

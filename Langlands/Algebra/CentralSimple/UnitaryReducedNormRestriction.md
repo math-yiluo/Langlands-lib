@@ -1,0 +1,5 @@
+# Restriction of reduced norm to a maximal subfield after scalar extension
+
+`Langlands.CentralSimple.reducedNorm_eq_field_norm_tensor` extends the comparison of reduced norm and field norm on a maximal subfield to every commutative coefficient algebra over an infinite field. For a finite basis of the embedded field, the proof forms a tensor whose coordinates are independent polynomial variables. The reduced norm of its image and the determinant norm of the tensor give polynomials. Naturality specializes them to the known field identity at every tuple of base-field coordinates. Equality of polynomials over the infinite field then gives equality at the generic tensor. A second specialization uses the coordinates of the actual tensor over the coefficient algebra.
+
+This determinant comparison justifies the maximal-subfield norm factor in Prasad and Rapinchuk, *Local-global principles for embedding of fields with involution into simple algebras with involution*, arXiv:0806.0596v5, equation (10), p. 14. Source ID `prasad-rapinchuk-2010-embedding-fields-involution`, SHA-256 `949df4d66b6ff7561ed36de8638a909543a582aa51e2f276e410c6ac624cfa79`.

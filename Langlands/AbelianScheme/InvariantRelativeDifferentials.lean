@@ -77,11 +77,11 @@ section LocalBase
 variable {R : Type u} [CommRing R] [IsLocalRing R]
   (B : AbelianScheme (Spec (CommRingCat.of R)))
 
-/-- Over a local affine base the translate of a cotangent frame at the
-identity gives a finite free relative differential sheaf. -/
-theorem exists_finiteFreeRelativeDifferentials :
+/-- Over a local affine base the cotangent sheaf at the identity has a
+finite free frame on the whole spectrum. -/
+theorem exists_finiteFreeCotangentAtIdentity :
     ∃ κ : Type u, Finite κ ∧ Nonempty (
-      SheafOfModules.free (R := B.X.left.ringCatSheaf) κ ≅ relativeDifferentials B.X.hom) := by
+      SheafOfModules.free κ ≅ GroupScheme.cotangentAtIdentity B.toGrp) := by
   let T := Spec (CommRingCat.of R)
   let G : GroupScheme T := B.toGrp
   let M := G.cotangentAtIdentity
@@ -113,15 +113,30 @@ theorem exists_finiteFreeRelativeDifferentials :
   let j := T.topIso.inv
   let : (SheafOfModules.pushforward j.toRingCatSheafHom).IsRightAdjoint :=
     (pullbackPushforwardAdjunction j).isRightAdjoint
-  let : (SheafOfModules.pushforward B.X.hom.toRingCatSheafHom).IsRightAdjoint :=
-    (pullbackPushforwardAdjunction B.X.hom).isRightAdjoint
   let e₂ : SheafOfModules.free (R := T.ringCatSheaf) κ ≅ M :=
     (SheafOfModules.pullbackObjFreeIso j.toRingCatSheafHom κ).symm ≪≫
       (pullback j).mapIso (e₁ ≪≫ (Scheme.Modules.restrictFunctorIsoPullback W.ι).app M) ≪≫
       (pullbackComp j W.ι).app M ≪≫ (pullbackCongr (Scheme.toIso_inv_ι T)).app M ≪≫
       (pullbackId T).app M
-  exact ⟨κ, hf, ⟨(SheafOfModules.pullbackObjFreeIso B.X.hom.toRingCatSheafHom κ).symm ≪≫
-    (pullback B.X.hom).mapIso e₂ ≪≫ (relativeDifferentialsIsoPullbackCotangent B).symm⟩⟩
+  exact ⟨κ, hf, ⟨e₂⟩⟩
+
+/-- A finite free frame of the cotangent sheaf at the identity over a local spectrum. -/
+def finiteFreeCotangentFrame :
+    Σ κ : Type u, Subtype (fun _ : SheafOfModules.free κ ≅ GroupScheme.cotangentAtIdentity B.toGrp =>
+      Finite κ) :=
+  let c := Classical.indefiniteDescription _ (exists_finiteFreeCotangentAtIdentity B)
+  ⟨c.val, ⟨Classical.choice c.property.2, c.property.1⟩⟩
+
+/-- Over a local affine base the translate of a cotangent frame at the
+identity gives a finite free relative differential sheaf. -/
+theorem exists_finiteFreeRelativeDifferentials :
+    ∃ κ : Type u, Finite κ ∧ Nonempty (
+      SheafOfModules.free (R := B.X.left.ringCatSheaf) κ ≅ relativeDifferentials B.X.hom) := by
+  let c := finiteFreeCotangentFrame B
+  let : (SheafOfModules.pushforward B.X.hom.toRingCatSheafHom).IsRightAdjoint :=
+    (pullbackPushforwardAdjunction B.X.hom).isRightAdjoint
+  exact ⟨c.1, c.2.property, ⟨(SheafOfModules.pullbackObjFreeIso B.X.hom.toRingCatSheafHom c.1).symm ≪≫
+    (pullback B.X.hom).mapIso c.2.val ≪≫ (relativeDifferentialsIsoPullbackCotangent B).symm⟩⟩
 
 end LocalBase
 

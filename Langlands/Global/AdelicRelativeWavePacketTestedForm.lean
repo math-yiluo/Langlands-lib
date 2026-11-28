@@ -39,7 +39,9 @@ private theorem integrable_wavePacket_pairing_of_logL2
   rw [map_div₀, map_pow, Complex.conj_ofReal]
   field_simp
 
-private theorem relativePairing_of_lifts
+/-- A relative pairing vanishes when each of its smooth ambient lifts is an
+orthogonal full packet. It suffices to test these lifts of the given relative form. -/
+theorem relativePairing_of_lifted_tests
     {F : Type} [Field F] [NumberField F] {G : GroupScheme (Spec (CommRingCat.of F))}
     [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
     (hG : IsConnectedReductive G) (K : Subgroup (AdelicGroupPoints F G)) {N d : ℕ}
@@ -47,15 +49,15 @@ private theorem relativePairing_of_lifts
     (hcalc : AdelicDifferentialCommutator F G hsmooth) (Φ Θ : AdelicGroupPoints F G → ℂ)
     (hΦ : IsLogSquareIntegrableAutomorphicForm F G K rho hsmooth hcalc Φ)
     (hΘ : IsLeftInvariantUnder F G (canonicalRationalSubgroup F G) Θ)
-    (horth : ∀ Ψ : AdelicGroupPoints F G → ℂ, IsWavePacket F G K rho hsmooth hcalc Ψ →
-      ∫ q : RationalQuotient F G, Φ q.out * starRingEnd ℂ (Ψ q.out)
-        ∂(rationalQuotientHaarMeasure F G) = 0)
     (hdecay : ∀ Ψ : AdelicGroupPoints F G → ℂ, IsWavePacket F G K rho hsmooth hcalc Ψ →
       ∀ m : ℕ, MemLp (fun q : RationalQuotient F G =>
         Ψ q.out * (rationalLogHeight F G rho q : ℂ) ^ m) 2 (rationalQuotientHaarMeasure F G))
     (hlift : ∀ {m : ℕ} (e : (Fin m → ℝ) ≃ₗ[ℝ] RealCharacterParameter F G)
       (b : (Fin m → ℝ) → ℂ), ContDiff ℝ (⊤ : ℕ∞) b → HasCompactSupport b →
-      IsWavePacket F G K rho hsmooth hcalc (fun g => ambientWavePacketProfile e b g * Θ g)) :
+      let Ψ := fun g => ambientWavePacketProfile e b g * Θ g
+      IsWavePacket F G K rho hsmooth hcalc Ψ ∧
+      (∫ q : RationalQuotient F G, Φ q.out * starRingEnd ℂ (Ψ q.out)
+        ∂(rationalQuotientHaarMeasure F G)) = 0) :
     let relativePairing (q : NormOneRationalQuotient F G) :=
       Θ (q.out : normOneSubgroup F G).val * starRingEnd ℂ (Φ (q.out : normOneSubgroup F G).val)
     Integrable relativePairing (normOneRationalQuotientHaarMeasure F G) ∧
@@ -81,11 +83,13 @@ private theorem relativePairing_of_lifts
     rw [hcValue, hbone, mul_one]
     exact Complex.ofReal_ne_zero.mpr hc.ne'
   let Ψ : AdelicGroupPoints F G → ℂ := fun g => ambientWavePacketProfile e b g * Θ g
-  have hΨ : IsWavePacket F G K rho hsmooth hcalc Ψ := hlift e b hb hbc
+  obtain ⟨hΨ, horth⟩ := hlift e b hb hbc
   have hfullInt := integrable_wavePacket_pairing_of_logL2 rho Ψ Φ (hdecay Ψ hΨ logPower) hLog
   have hfullZero : (∫ q : RationalQuotient F G, Ψ q.out * starRingEnd ℂ (Φ q.out)
       ∂(rationalQuotientHaarMeasure F G)) = 0 := by
-    have hconj := congrArg (starRingEnd ℂ) (horth Ψ hΨ)
+    change (∫ q : RationalQuotient F G, Φ q.out * starRingEnd ℂ (Ψ q.out)
+      ∂(rationalQuotientHaarMeasure F G)) = 0 at horth
+    have hconj := congrArg (starRingEnd ℂ) horth
     rw [map_zero, ← integral_conj] at hconj
     simpa only [map_mul, starRingEnd_apply, star_star, mul_comm] using hconj
   have ⟨hInt, hEq⟩ :=
@@ -137,9 +141,10 @@ theorem relativeWavePacketTestedForm_of_lift_descent_decay
     hsmooth hcalc hKmax hrho hMin Φ hΦ horth Θ
   let _ := IsClosedSubgroup.locallyOfFiniteType (j := p) ‹IsClosedImmersion p.hom.hom.left›
   intro hΘ
-  exact relativePairing_of_lifts hG K rho hsmooth hcalc Φ Θ hΦ
-    (hDescent F G P M U A p iU l a r hA hT hG hU K hK rho hsmooth hcalc Θ hΘ).1 horth
-    (hDecay F G hG K rho hsmooth hcalc hKmax hrho hMin) fun e b hb hbc =>
-      hLift F G P M U A p iU l a r hA hT hG hU K hK rho hsmooth hcalc e b hb hbc Θ hΘ
+  refine relativePairing_of_lifted_tests hG K rho hsmooth hcalc Φ Θ hΦ
+    (hDescent F G P M U A p iU l a r hA hT hG hU K hK rho hsmooth hcalc Θ hΘ).1
+    (hDecay F G hG K rho hsmooth hcalc hKmax hrho hMin) fun e b hb hbc => ?_
+  have h := hLift F G P M U A p iU l a r hA hT hG hU K hK rho hsmooth hcalc e b hb hbc Θ hΘ
+  exact ⟨h, horth _ h⟩
 
 end Langlands.Global

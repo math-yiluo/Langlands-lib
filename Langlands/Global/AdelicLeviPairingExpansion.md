@@ -25,3 +25,5 @@ This is a derived part of the comparison between the norm-one pairing in (6.8)
 and the twisted terms in (6.18) in Bernstein–Lapid, *On the meromorphic continuation
 of Eisenstein series*, §§6.2 and 6.10. The finite expansion and integrability premises
 are supplied. The module implements the effect of pairing such terms.
+
+`leviPairing_const_mul` takes a constant scalar outside the normalized Levi pairing.

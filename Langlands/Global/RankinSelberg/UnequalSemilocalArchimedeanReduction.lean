@@ -1,6 +1,7 @@
 import Langlands.Global.RankinSelberg.ArchimedeanSemilocalTheoryStatement
 import Langlands.Global.RankinSelberg.UnequalSemilocalEquationReduction
 import Langlands.Global.RankinSelberg.UnequalSemilocalEquationTCReduction
+import Langlands.Global.RankinSelberg.UnequalFactorizationAtStatement
 
 /-! # The unequal-rank semi-local functional equation from the archimedean theory
 
@@ -82,18 +83,10 @@ theorem sign_identity {c X Y Z LR LC ER EC KR KC NR NC PR PC : ℂ} {r : ℕ}
     (c * ER * EC * KR * KC * PR * PC) * hsg
 
 open Classical in
-/-- **The premise at one number field.** For a number field `F`, the body of
-`UnequalSemilocalFactorizationStatement` at `F` follows from the complex-place unequal-rank
-functional equation, the unequal-rank factorization, the central sign, and the real-place
-unequal-rank functional equation, the last one assumed only when `F` has a real place
-(`hRe` is a function on the real places). Over a totally complex field `hRe` is vacuous. -/
-theorem factorization_at
-    (hCo : ComplexUnequalFunctionalEquationStatement.{u})
-    (hFac : UnequalArchimedeanFactorizationStatement.{u, uQ})
-    (hSign : ArchimedeanCentralSignStatement.{u, uQ})
-    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
-    (hRe : {v : InfinitePlace F // v.IsReal} → RealUnequalFunctionalEquationStatement.{u}) :
-    (∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
+/-- The body of `UnequalSemilocalFactorizationStatement` over the field `F`. -/
+abbrev FactorizationAt (F : Type u) [Field F] [NumberField F]
+    [CompactSpace (AdeleQuotient F)] : Prop :=
+    ∀ (ψ : HarmonicAnalysis.UnitaryAdditiveCharacter (Adeles F)),
       (∀ x : F, ψ (algebraMap F (Adeles F) x) = 1) →
     ∀ (r t : ℕ) (h : t < r) (T Td : Automorphic.CuspidalOperatorRealization F r)
       (T' Td' : Automorphic.CuspidalOperatorRealization F t),
@@ -159,12 +152,24 @@ theorem factorization_at
         ∀ ζ : S → ℂˣ, (∀ v : S, (D v).HasMinusOneScalar (ζ v)) →
           ∀ᶠ s in Filter.codiscrete ℂ,
             (∏ v : S, (ζ v : ℂ) ^ r) * infiniteL s * Binf (1 - s) =
-              infiniteEpsilon s * dualInfiniteL (1 - s) * Ainf s) := by
+              infiniteEpsilon s * dualInfiniteL (1 - s) * Ainf s
+
+open Classical in
+/-- The semi-local premise at `F` from the integrated factorization at `F`, the central
+sign, and the local functional equations. The real-place input is vacuous if `F` is
+totally complex. -/
+theorem factorization_of_at
+    (hCo : ComplexUnequalFunctionalEquationStatement.{u})
+    (hSign : ArchimedeanCentralSignStatement.{u, uQ})
+    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
+    (hFac : UnequalArchimedeanFactorizationAt.{u, uQ} F)
+    (hRe : {v : InfinitePlace F // v.IsReal} → RealUnequalFunctionalEquationStatement.{u}) :
+    FactorizationAt.{u, uQ} F := by
   intro ψ hdiag r t h T Td T' Td' hTd hTd' P P' hI hI' S hPS hP'S hψS aR haR aC haC
     dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC' hdCd hdCd' infiniteL
     dualInfiniteL infiniteEpsilon ψv hψv νv hνv
   -- result 2: vectors, archimedean data, local data and the factorizations
-  obtain ⟨x, x', hx, hx', hrest⟩ := hFac F ψ hdiag r t h T Td T' Td' hTd hTd' P P' hI hI' S
+  obtain ⟨x, x', hx, hx', hrest⟩ := hFac ψ hdiag r t h T Td T' Td' hTd hTd' P P' hI hI' S
     hPS hP'S hψS aR haR aC haC dR dR' dRd dRd' hdR hdR' hdRd hdRd' dC dC' dCd dCd' hdC hdC'
     hdCd hdCd' ψv hψv νv hνv
   obtain ⟨c, WR, WR', DR, WC, WC', DC, σ2, D, hc, hWR, hWR', hWC, hWC', hfacA, hfacB,
@@ -327,6 +332,17 @@ theorem factorization_at
       rw [hsg, one_pow]
     simp only [infiniteL, dualInfiniteL, infiniteEpsilon, Ainf, Binf, Finset.prod_pow]
     exact sign_identity hPR hPC hsgr
+
+/-- The semi-local premise at `F`, using an integrated factorization given over all number
+fields. -/
+theorem factorization_at
+    (hCo : ComplexUnequalFunctionalEquationStatement.{u})
+    (hFac : UnequalArchimedeanFactorizationStatement.{u, uQ})
+    (hSign : ArchimedeanCentralSignStatement.{u, uQ})
+    (F : Type u) [Field F] [NumberField F] [CompactSpace (AdeleQuotient F)]
+    (hRe : {v : InfinitePlace F // v.IsReal} → RealUnequalFunctionalEquationStatement.{u}) :
+    FactorizationAt.{u, uQ} F :=
+  factorization_of_at hCo hSign F (hFac F) hRe
 
 /-- The premise `UnequalSemilocalFactorizationStatement` from the four unequal-rank parts of
 the archimedean theory: the real-place and complex-place functional equations, the

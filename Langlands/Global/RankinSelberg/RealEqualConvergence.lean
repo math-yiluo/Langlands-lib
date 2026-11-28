@@ -323,6 +323,83 @@ theorem realEqualIntegrand_eq (W W' : Langlands.GeneralLinear (r + 1) ℝ → �
       fun q => kernel W W' Φ q.out * Complex.exp (s * (logDet q.out : ℂ)) :=
   rfl
 
+/-- A single scalar kernel has arbitrary toral decay in the positive simple roots and the
+positive part of the last logarithmic coordinate, with fixed growth allowance `A`. -/
+def HasOrdinaryToralBound (A : ℝ) (F : Langlands.GeneralLinear (r + 1) ℝ → ℂ) : Prop :=
+  ∀ M : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ (y : Fin (r + 1) → ℝ) (k : unitaryCompact ℝ (r + 1)),
+    ‖F (torus y * k.val)‖ ≤ C * Real.exp (-(M : ℝ) * rootPos y + A * ∑ j, |y j| -
+      (M : ℝ) * max (y (Fin.last r)) 0)
+
+/-- Absolute convergence and holomorphy on a common right half-plane for left-unipotent
+invariant continuous kernels with the same exponent of toral growth. The real shift `c`
+is subtracted from the spectral parameter in the determinant power. -/
+def RealOrdinaryToralConvergenceStatement : Prop :=
+  ∀ (D : RealQuotientMeasureData r) {A : ℝ}, 0 ≤ A → ∀ (c : ℝ),
+    ∃ σ : ℝ, ∀ (F : Langlands.GeneralLinear (r + 1) ℝ → ℂ), Continuous F →
+      (∀ (u : Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ) g, F (u.val * g) = F g) →
+      HasOrdinaryToralBound A F →
+      (∀ s : ℂ, σ < s.re → Integrable
+        (fun q : LeftUnipotentQuotient r ℝ => F q.out * Complex.exp ((s - c) * (logDet q.out : ℂ)))
+        D.measure) ∧
+      DifferentiableOn ℂ (fun s : ℂ => ∫ q : LeftUnipotentQuotient r ℝ,
+        F q.out * Complex.exp ((s - c) * (logDet q.out : ℂ)) ∂D.measure) {s | σ < s.re}
+
+theorem exists_convergence_of_toral_bound : RealOrdinaryToralConvergenceStatement (r := r) := by
+  intro D A hA c
+  have := D.groupHaar_isHaar
+  have := D.unipotentHaar_isHaar
+  have := D.unipotentHaar_rightInvariant
+  obtain ⟨κ, L, hκL⟩ :=
+    exists_lintegral_alphaQ D.groupHaar D.unipotentHaar D.measure D.compatible
+  let σ₀ : ℝ := (A + ‖L‖ + 1) * ((r : ℝ) + 1)
+  refine ⟨σ₀ + c, fun F hF hInv hGauge => ?_⟩
+  let f : LeftUnipotentQuotient r ℝ → ℂ := fun q => F q.out
+  let ℓ : LeftUnipotentQuotient r ℝ → ℝ := fun q => logDet q.out
+  have hfc : Continuous f := by
+    have he : f = descend (Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ) F hInv :=
+      funext (out_eq_descend F hInv)
+    rw [he]
+    exact continuous_descend hInv hF
+  have hℓc : Continuous ℓ := by
+    have he : ℓ = descend (Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ)
+        logDet logDet_unipotent_mul := funext (out_eq_descend logDet logDet_unipotent_mul)
+    rw [he]
+    exact continuous_descend_real logDet_unipotent_mul continuous_logDet
+  have hℓq (q : LeftUnipotentQuotient r ℝ) : ℓ q = ∑ j, alphaQ q j := by
+    rw [← alpha_out q, ← logDet_torus_mul (alpha q.out) (kpart q.out)]
+    exact eq_torus_mul_kpart logDet logDet_unipotent_mul q.out
+  have hint (t : ℝ) (ht : σ₀ < t) : Integrable (fun q => ‖f q‖ * Real.exp (t * ℓ q)) D.measure := by
+    let M : ℕ := ⌈σ₀ + t * ((r : ℝ) + 1)⌉₊
+    obtain ⟨C, hC, hb⟩ := hGauge M
+    refine integrable_of_toral_bound hκL
+      ((hfc.norm.mul (Real.continuous_exp.comp (continuous_const.mul hℓc))).aestronglyMeasurable)
+      hC hA ht.le (Nat.le_ceil _) (Nat.le_ceil _) fun q => ?_
+    let y := alphaQ q
+    let k := kpart q.out
+    have hfq : f q = F (torus y * k.val) := by
+      change F q.out = F (torus (alphaQ q) * k.val)
+      rw [← alpha_out q]
+      exact eq_torus_mul_kpart F hInv q.out
+    rw [Real.norm_eq_abs, abs_of_nonneg (mul_nonneg (norm_nonneg _) (Real.exp_pos _).le), hfq, hℓq q]
+    refine (mul_le_mul_of_nonneg_right (hb y k) (Real.exp_pos _).le).trans_eq ?_
+    rw [mul_assoc, ← Real.exp_add]
+    congr 2
+    ring
+  let z (s : ℂ) := s - (c : ℂ)
+  have hz (s : ℂ) : (z s).re = s.re - c := by simp [z]
+  have hExp (s : ℂ) : Continuous (fun q => f q * Complex.exp (s * (ℓ q : ℂ))) :=
+    hfc.mul (Complex.continuous_exp.comp (continuous_const.mul (Complex.continuous_ofReal.comp hℓc)))
+  refine ⟨fun s hs => ?_, ?_⟩
+  · have hRe : σ₀ < (z s).re := by rw [hz]; linarith
+    refine (hint (z s).re hRe).mono' (hExp (z s)).aestronglyMeasurable
+      (Filter.Eventually.of_forall fun q => ?_)
+    show ‖f q * Complex.exp (z s * (ℓ q : ℂ))‖ ≤ ‖f q‖ * Real.exp ((z s).re * ℓ q)
+    rw [norm_mul, norm_cexp_mul_ofReal]
+  · have hHol := differentiableOn_integral_cexp_mul (f := f) (ℓ := ℓ)
+      hfc.aestronglyMeasurable hℓc.aestronglyMeasurable hint
+    exact hHol.comp (differentiable_id.sub_const (c : ℂ)).differentiableOn
+      (fun s hs => show σ₀ < (z s).re by rw [hz]; have h : σ₀ + c < s.re := hs; linarith)
+
 /-- **Convergence and holomorphy of the real equal-rank integral.** Let `W`, `W'` be continuous,
 with `W(ug) W'(ug) = W(g) W'(g)` for upper unipotent `u`, both satisfying the gauge estimate,
 and let `Φ` be continuous of rapid decay. Then there is `σ` such that the integrand of
@@ -335,99 +412,29 @@ theorem exists_convergence (D : RealQuotientMeasureData r)
     (hgW : HasGauge W) (hgW' : HasGauge W') (hΦ : HasRapidDecay Φ) :
     ∃ σ : ℝ, (∀ s : ℂ, σ < s.re → Integrable (realEqualIntegrand W W' Φ s) D.measure) ∧
       DifferentiableOn ℂ (realEqualIntegral D W W' Φ) {s : ℂ | σ < s.re} := by
-  have := D.groupHaar_isHaar
-  have := D.unipotentHaar_isHaar
-  have := D.unipotentHaar_rightInvariant
-  obtain ⟨κ, L, hκL⟩ :=
-    exists_lintegral_alphaQ D.groupHaar D.unipotentHaar D.measure D.compatible
   obtain ⟨N1, hN1⟩ := hgW
   obtain ⟨N2, hN2⟩ := hgW'
   obtain ⟨C2, hC2, hb2⟩ := hN2 0
-  have hA0 : (0 : ℝ) ≤ (N1 : ℝ) + N2 := by positivity
-  have hkinv : ∀ h : Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ, ∀ g,
-      kernel W W' Φ (h.val * g) = kernel W W' Φ g := fun h g => kernel_unipotent_mul hinv h g
-  have hlinv : ∀ h : Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ, ∀ g,
-      logDet (h.val * g) = logDet g := fun h g => logDet_unipotent_mul h g
-  let f : LeftUnipotentQuotient r ℝ → ℂ := fun q => kernel W W' Φ q.out
-  let ℓ : LeftUnipotentQuotient r ℝ → ℝ := fun q => logDet q.out
-  have hfc : Continuous f := by
-    have hfe : f = descend (Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ)
-        (kernel W W' Φ) hkinv := funext fun q => out_eq_descend _ hkinv q
-    rw [hfe]
-    exact continuous_descend hkinv (continuous_kernel hW hW' hΦc)
-  have hℓc : Continuous ℓ := by
-    have hℓe : ℓ = descend (Langlands.GeneralLinear.upperUnipotent (r + 1) ℝ)
-        logDet hlinv := funext fun q => out_eq_descend _ hlinv q
-    rw [hℓe]
-    exact continuous_descend_real hlinv continuous_logDet
-  have hfq : ∀ q, f q = kernel W W' Φ
-      (torus (alphaQ q) * (kpart q.out : Langlands.GeneralLinear (r + 1) ℝ)) := by
-    intro q
-    rw [← alpha_out q]
-    exact eq_torus_mul_kpart (kernel W W' Φ) hkinv q.out
-  have hℓq : ∀ q, ℓ q = ∑ j, alphaQ q j := by
-    intro q
-    rw [← alpha_out q, ← logDet_torus_mul (alpha q.out) (kpart q.out)]
-    exact eq_torus_mul_kpart logDet hlinv q.out
-  set σ : ℝ := ((N1 : ℝ) + N2 + ‖L‖ + 1) * ((r : ℝ) + 1) with hσ
-  have hint : ∀ t : ℝ, σ < t →
-      Integrable (fun q => ‖f q‖ * Real.exp (t * ℓ q)) D.measure := by
-    intro t ht
-    set M : ℕ := ⌈((N1 : ℝ) + N2 + ‖L‖ + 1) * ((r : ℝ) + 1) + t * ((r : ℝ) + 1)⌉₊ with hM
+  have hA : (0 : ℝ) ≤ (N1 : ℝ) + N2 := by positivity
+  have hBound : HasOrdinaryToralBound ((N1 : ℝ) + N2) (kernel W W' Φ) := by
+    intro M
     obtain ⟨C1, hC1, hb1⟩ := hN1 M
     obtain ⟨C3, hC3, hb3⟩ := exists_norm_le_exp hΦ (c := (r : ℝ) + 1) (by positivity) M
-    refine integrable_of_toral_bound hκL
-      ((hfc.norm.mul (Real.continuous_exp.comp (continuous_const.mul hℓc))).aestronglyMeasurable)
-      (C := C1 * C2 * C3) (A := (N1 : ℝ) + N2) (t := t) (M := (M : ℝ)) (K := (M : ℝ))
-      (by positivity) hA0 ht.le (Nat.le_ceil _) (Nat.le_ceil _) fun q => ?_
-    set y := alphaQ q with hy
-    set k := kpart q.out with hk
-    set x := torus y * (k : Langlands.GeneralLinear (r + 1) ℝ) with hx
-    have hW1 := hb1 y k
-    have hW2 := hb2 y k
-    have hΦ3 := hb3 (lastRow x) (y (Fin.last r)) (exp_le_mul_norm_lastRow y k)
-    have hker : ‖kernel W W' Φ x‖ ≤
-        (C1 * Real.exp (-(M : ℝ) * rootPos y + (N1 : ℝ) * ∑ j, |y j|)) *
-          (C2 * Real.exp (-((0 : ℕ) : ℝ) * rootPos y + (N2 : ℝ) * ∑ j, |y j|)) *
-          (C3 * Real.exp (-(M : ℝ) * max (y (Fin.last r)) 0)) := by
-      unfold kernel
-      rw [norm_mul, norm_mul]
-      exact mul_le_mul (mul_le_mul hW1 hW2 (norm_nonneg _) (by positivity)) hΦ3
-        (norm_nonneg _) (by positivity)
-    have hexp : Real.exp (-(M : ℝ) * rootPos y + (N1 : ℝ) * ∑ j, |y j|) *
-        Real.exp (-((0 : ℕ) : ℝ) * rootPos y + (N2 : ℝ) * ∑ j, |y j|) *
-        Real.exp (-(M : ℝ) * max (y (Fin.last r)) 0) * Real.exp (t * ∑ j, y j) =
-        Real.exp (-(M : ℝ) * rootPos y + ((N1 : ℝ) + N2) * ∑ j, |y j| + t * ∑ j, y j -
-          (M : ℝ) * max (y (Fin.last r)) 0) := by
-      rw [← Real.exp_add, ← Real.exp_add, ← Real.exp_add]
-      congr 1
-      push_cast
-      ring
-    rw [Real.norm_eq_abs, abs_of_nonneg (mul_nonneg (norm_nonneg _) (Real.exp_pos _).le),
-      hfq q, hℓq q]
-    calc
-      ‖kernel W W' Φ x‖ * Real.exp (t * ∑ j, y j) ≤
-          ((C1 * Real.exp (-(M : ℝ) * rootPos y + (N1 : ℝ) * ∑ j, |y j|)) *
-            (C2 * Real.exp (-((0 : ℕ) : ℝ) * rootPos y + (N2 : ℝ) * ∑ j, |y j|)) *
-            (C3 * Real.exp (-(M : ℝ) * max (y (Fin.last r)) 0))) *
-            Real.exp (t * ∑ j, y j) :=
-        mul_le_mul_of_nonneg_right hker (Real.exp_pos _).le
-      _ = C1 * C2 * C3 * (Real.exp (-(M : ℝ) * rootPos y + (N1 : ℝ) * ∑ j, |y j|) *
-            Real.exp (-((0 : ℕ) : ℝ) * rootPos y + (N2 : ℝ) * ∑ j, |y j|) *
-            Real.exp (-(M : ℝ) * max (y (Fin.last r)) 0) * Real.exp (t * ∑ j, y j)) := by
-        ring
-      _ = _ := by rw [hexp]
-  refine ⟨σ, fun s hs => ?_, ?_⟩
-  · have hmeas : AEStronglyMeasurable (realEqualIntegrand W W' Φ s) D.measure := by
-      rw [realEqualIntegrand_eq]
-      exact (hfc.mul (Complex.continuous_exp.comp (continuous_const.mul
-        (Complex.continuous_ofReal.comp hℓc)))).aestronglyMeasurable
-    refine (hint s.re hs).mono' hmeas (Filter.Eventually.of_forall fun q => ?_)
-    rw [realEqualIntegrand_eq]
-    show ‖f q * Complex.exp (s * (ℓ q : ℂ))‖ ≤ ‖f q‖ * Real.exp (s.re * ℓ q)
-    rw [norm_mul, norm_cexp_mul_ofReal]
-  · exact differentiableOn_integral_cexp_mul (f := f) (ℓ := ℓ) hfc.aestronglyMeasurable
-      hℓc.aestronglyMeasurable hint
+    refine ⟨C1 * C2 * C3, mul_nonneg (mul_nonneg hC1 hC2) hC3, fun y k => ?_⟩
+    have hRow := hb3 _ (y (Fin.last r)) (exp_le_mul_norm_lastRow y k)
+    simp only [kernel, norm_mul]
+    refine (mul_le_mul (mul_le_mul (hb1 y k) (hb2 y k) (norm_nonneg _) (by positivity)) hRow
+      (norm_nonneg _) (by positivity)).trans_eq ?_
+    simp only [Nat.cast_zero, neg_zero, zero_mul, zero_add]
+    rw [show ∀ x y z : ℝ, (C1 * x) * (C2 * y) * (C3 * z) = C1 * C2 * C3 * (x * y * z) by
+      intros; ring, ← Real.exp_add, ← Real.exp_add]
+    congr 2
+    ring
+  obtain ⟨σ, hConv⟩ := exists_convergence_of_toral_bound D hA 0
+  have hConv' := hConv (kernel W W' Φ) (continuous_kernel hW hW' hΦc)
+    (kernel_unipotent_mul hinv) hBound
+  simp only [Complex.ofReal_zero, sub_zero, ← realEqualIntegrand_eq] at hConv'
+  exact ⟨σ, hConv'⟩
 
 /-! ### Functions with uniformly regular derivatives -/
 

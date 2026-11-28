@@ -76,6 +76,71 @@ private theorem mem_normalizedParabolicCuspidalSubrepresentation_of_zeroTerms
 
 end PeriodComparison
 
+section NormOneTransfer
+
+variable {F : Type u} [Field F] [NumberField F]
+  {G : GroupScheme (Spec (CommRingCat.of F))} [IsAffine G.X.left]
+  (T : CommGroupScheme (Spec (CommRingCat.of F))) (i : T.toGrp ⟶ G)
+  (hi : Function.Injective (characterRestrict i)) [(characterRestrict i).range.FiniteIndex]
+  (I : Type u) [Fintype I] (e : T.toGrp ≅ splitTorus (Spec (CommRingCat.of F)) I)
+  (hc : IsCentral i)
+
+local notation "A" => AdelicGroupPoints F G
+local notation "Q" => PositiveRationalQuotient F G T i
+local notation "dq" => positiveRationalQuotientHaarMeasure F G T i
+
+/-- Restrict a continuous rational-invariant function to norm-one points and transport it
+to the positive rational quotient. -/
+def positiveQuotientOfNormOneRestriction {f : A → ℂ} (hf : Continuous f)
+    (hfInv : IsLeftInvariantUnder F G (rationalSubgroup F G) f) : C(Q, ℂ) :=
+  ⟨normOneRationalRestriction f ∘ (positiveQuotientHomeomorph F G T i hi I e hc).symm,
+    (continuous_normOneRationalRestriction hf hfInv).comp
+      (positiveQuotientHomeomorph F G T i hi I e hc).symm.continuous⟩
+
+/-- The transported function agrees with the original function on norm-one points. -/
+@[simp] theorem positiveQuotientOfNormOneRestriction_mk {f : A → ℂ} (hf : Continuous f)
+    (hfInv : IsLeftInvariantUnder F G (rationalSubgroup F G) f) (x : normOneSubgroup F G) :
+    positiveQuotientOfNormOneRestriction T i hi I e hc hf hfInv
+      (LeftCosetSpace.mk (positiveRationalSubgroup F G T i) x.val) = f x.val := by
+  change normOneRationalRestriction f
+    ((positiveQuotientHomeomorph F G T i hi I e hc).symm
+      (LeftCosetSpace.mk (positiveRationalSubgroup F G T i) x.val)) = f x.val
+  rw [← positiveQuotientHomeomorph_mk F G T i hi I e hc x,
+    Homeomorph.symm_apply_apply, normOneRationalRestriction_mk hfInv]
+
+/-- A square-integrable norm-one restriction of a continuous cuspidal function represents a
+class in the full cuspidal Hilbert space. -/
+theorem mem_fullAEL2CuspidalSubmodule_of_normOneRestriction
+    [LocallyOfFiniteType G.X.hom]
+    [(Measure.haar : Measure (normOneSubgroup F G)).IsMulRightInvariant]
+    (hPD : ParabolicDynamicStatement.{u}) (hG : IsConnectedReductive G)
+    {f : A → ℂ} (hf : Continuous f)
+    (hfInv : IsLeftInvariantUnder F G (rationalSubgroup F G) f)
+    (hfCusp : HasZeroProperParabolicConstantTerms f) (v : Lp ℂ 2 dq)
+    (hv : (v : Q → ℂ) =ᵐ[dq] positiveQuotientOfNormOneRestriction T i hi I e hc hf hfInv) :
+    v ∈ fullAEL2CuspidalSubmodule F G hPD hG T i hi I e hc := by
+  let fC : ContinuousRationalFunctions F G := ⟨⟨f, fun a x => hfInv _ ⟨a, rfl⟩ x⟩, hf⟩
+  have hCusp := mem_normalizedParabolicCuspidalSubrepresentation_of_zeroTerms hPD hG fC hfCusp
+  let φ := positiveQuotientOfNormOneRestriction T i hi I e hc hf hfInv
+  apply (groupSchemeFullAEL2ContinuousCuspidality F G hPD hG T i hi I e hc φ v hv).mpr
+  apply (mem_normalizedParabolicCuspidalSubrepresentation_iff F G hPD hG _).mpr
+  intro P a
+  rw [positiveQuotientConstantTerm_normOneProjection F G hPD hG T i hi I e hc]
+  let x := normOneProjection F G T i hi I e hc a
+  have he : properParabolicPositivePeriod F G hPD hG T i P φ x =
+      constantTerm F G (properRationalParabolicRadicals hPD hG P)
+        (properParabolicQuotientMeasure F G hPD hG P) fC x.val := by
+    apply integral_congr_ae (Eventually.of_forall fun z => ?_)
+    obtain ⟨n, rfl⟩ := LeftCosetSpace.mk_surjective
+      (AdelicSubgroupPoints.rationalSubgroup F G (properRationalParabolicRadicals hPD hG P)) z
+    rw [properParabolicPositivePeriodIntegrand_mk, constantTermIntegrand_mk]
+    exact positiveQuotientOfNormOneRestriction_mk T i hi I e hc hf hfInv
+      (properParabolicNormOneInclusion F G hPD hG P n * x)
+  exact he.trans ((mem_normalizedParabolicCuspidalSubrepresentation_iff F G hPD hG fC).mp
+    hCusp P x.val)
+
+end NormOneTransfer
+
 /-- The full cuspidal Hilbert density theorem gives approximation in the
 original norm-one quotient seminorm. -/
 def AdelicNormOneClassicalCuspidalDensityReductionStatement : Prop :=
@@ -102,30 +167,7 @@ theorem adelicNormOneClassicalCuspidalDensity_of_centerConjugation :
   let M := positiveQuotientMeasurableEquiv F G T i hi₀ I e hc
   let S := fullAEL2CuspidalSubmodule F G parabolicDynamic hG T i hi₀ I e hc
   let f₁ := normOneRationalRestriction f
-  let fC : ContinuousRationalFunctions F G := ⟨⟨f, fun a x => hfInv _ ⟨a, rfl⟩ x⟩, hf.1⟩
-  let φ : C(Q, ℂ) := ⟨f₁ ∘ E.symm, (continuous_normOneRationalRestriction hf.1 hfInv).comp E.symm.continuous⟩
-  have hφ_mk (x : normOneSubgroup F G) : φ (q x.val) = f x.val := by
-    change f₁ (E.symm (q x.val)) = _
-    have hx : E (LeftCosetSpace.mk (rationalNormOneSubgroup F G) x) = q x.val := rfl
-    rw [← hx, Homeomorph.symm_apply_apply]
-    exact normOneRationalRestriction_mk hfInv x
-  have hNormCusp := mem_normalizedParabolicCuspidalSubrepresentation_of_zeroTerms parabolicDynamic hG fC hfCusp
-  have hφCusp : positiveQuotientContinuousPullback F G T i φ ∈
-      normalizedParabolicCuspidalSubrepresentation F G parabolicDynamic hG := by
-    apply (mem_normalizedParabolicCuspidalSubrepresentation_iff F G parabolicDynamic hG _).mpr
-    intro P a
-    rw [positiveQuotientConstantTerm_normOneProjection F G parabolicDynamic hG T i hi₀ I e hc]
-    let x := normOneProjection F G T i hi₀ I e hc a
-    have he : properParabolicPositivePeriod F G parabolicDynamic hG T i P φ x =
-        constantTerm F G (properRationalParabolicRadicals parabolicDynamic hG P)
-          (properParabolicQuotientMeasure F G parabolicDynamic hG P) fC x.val := by
-      apply integral_congr_ae (Eventually.of_forall fun z => ?_)
-      obtain ⟨n, rfl⟩ := LeftCosetSpace.mk_surjective
-        (AdelicSubgroupPoints.rationalSubgroup F G (properRationalParabolicRadicals parabolicDynamic hG P)) z
-      rw [properParabolicPositivePeriodIntegrand_mk, constantTermIntegrand_mk]
-      exact hφ_mk (properParabolicNormOneInclusion F G parabolicDynamic hG P n * x)
-    exact he.trans ((mem_normalizedParabolicCuspidalSubrepresentation_iff F G parabolicDynamic hG fC).mp
-      hNormCusp P x.val)
+  let φ := positiveQuotientOfNormOneRestriction T i hi₀ I e hc hf.1 hfInv
   obtain ⟨R, hR, hDer⟩ := hfGrowth
   obtain ⟨C, _, hCover, hDecay⟩ := adelicNormOneCuspidalRapidDecay hsmooth rho hG hN
   obtain ⟨B, _, hB⟩ := hDecay f hf hfInv hfCusp R hR hDer 0
@@ -135,8 +177,8 @@ theorem adelicNormOneClassicalCuspidalDensity_of_centerConjugation :
     hf₁Mem.comp_measurePreserving (measurePreserving_positiveQuotient_symm F G T i hi₀ I e hc)
   let v₀ := hφMem.toLp φ
   have hv₀ : (v₀ : Q → ℂ) =ᵐ[dq] φ := hφMem.coeFn_toLp
-  let v : S := ⟨v₀, (groupSchemeFullAEL2ContinuousCuspidality F G parabolicDynamic hG T i hi₀ I e hc
-    φ v₀ hv₀).mpr hφCusp⟩
+  let v : S := ⟨v₀, mem_fullAEL2CuspidalSubmodule_of_normOneRestriction T i hi₀ I e hc
+    parabolicDynamic hG hf.1 hfInv hfCusp v₀ hv₀⟩
   obtain ⟨δ, hδ, hδε⟩ : ∃ δ : ℝ, 0 < δ ∧ ENNReal.ofReal δ ≤ ε := by
     by_cases ht : ε = ⊤
     · exact ⟨1, zero_lt_one, ht ▸ le_top⟩

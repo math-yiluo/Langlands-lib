@@ -1,0 +1,7 @@
+# Finite-word bounds from polynomial layers and commuting approximants
+
+`PolynomialFiltrationWordBoundStatement` concerns a linear map on a normed complex vector space with an exhaustive increasing filtration \(W_N\). On \(W_N\) its norm is bounded by \(C(1+N)^d\) times the source norm. At each positive integral scale \(t\), a linear approximant \(A_t\) has image in \(W_{t^4}\), preserves every \(W_N\), and commutes with a finite set of operators \(D_X\). Its error is bounded by \(B/t\) times the sum of the norm and the norms of \(D_Xv\). Under these hypotheses, the norm of the linear map on every vector is bounded by a constant times the sum of the norms of a fixed finite set of words in the \(D_X\). The empty word represents the original norm.
+
+For \(m=4d+1\), commutation bounds \((1-A_t)^m v\) by a constant times \(t^{-m}\) times a sum of word norms of length at most \(m\). The approximant \(v-(1-A_t)^m v\) has image in \(W_{t^4}\) and preserves the input layer. At the dyadic scales \(t=2^j\) the error therefore decays faster than the norm bound on the corresponding layer grows. `geometricApproximationBound` sums the estimates, using convergence within a fixed layer for each input vector. 
+
+This estimate is the norm comparison used with compact polynomial approximants on real principal series. Its hypotheses describe the finite operator and filtration properties needed for both directions of that comparison.

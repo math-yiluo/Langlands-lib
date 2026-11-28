@@ -27,3 +27,5 @@ This is a derived affinoid realization of the published algebraic
 equalizer and invariant-ring results. The pushout is at the level of
 ordinary rings. Recognition of its spectrum in an ambient analytic
 space requires further geometric input.
+
+The construction for a supplied finite Banach map over an arbitrary complete ultrametric normed field is given in [Finite Banach étale affinoid quotients](FiniteBanachEtaleAffinoidQuotient.md).

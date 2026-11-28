@@ -1,0 +1,9 @@
+# Iwasawa measures on the ambient norm-one group
+
+`ambientNormOneParabolicImage p` is the intersection of the image of the closed parabolic \(P(\mathbb A)\) with \(G(\mathbb A)^1\). Its norm-one equations come from characters of \(G\). It is closed by the closed embedding of the parabolic points. `compactToNormOne` lifts the compact subgroup into \(G(\mathbb A)^1\).
+
+`exists_ambientNormOneIwasawaMeasure` starts from \(G(\mathbb A)=P(\mathbb A)K\). The compact subgroup is norm one, so any such decomposition of a norm-one point uses a parabolic point in the ambient norm-one image. The compact-factorization Haar theorem gives a positive multiple of product Haar measure pushed along multiplication. Transport of Haar probability uses the homeomorphic group equivalence between the original compact subgroup and its lift. Absorbing the positive scalar into the parabolic Haar measure makes the pushforward equality exact.
+
+`exists_ambientNormOneIwasawaQuotientMeasure` uses this same parabolic Haar normalization for every discrete subgroup of the ambient norm-one group contained in the parabolic image. It takes the pullback of that subgroup to the parabolic image and restricts the parabolic Haar measure to a fundamental domain for the pullback. The quotient pushforward lemma gives the counting-normalized quotient measure. Taking the rational parabolic gives the measure before decomposing the parabolic coordinate further into its unipotent, split, and norm-one Levi factors.
+
+This is the parabolic-times-compact part of the integration used for Delorme's (7.7). The source is P. Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, pp. 5–6 and 24, (2.2) and (7.7). The journal PDF in `delorme-2023-spectral-theorem-langlands` has SHA-256 `9b2e82af72ac45c9745357d475153d43d29ec3e1ea68bf51980acf466110e2df`.

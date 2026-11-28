@@ -1,3 +1,4 @@
+import Langlands.Representation.Plancherel.FormalDegreePullbackProof
 import Langlands.HarmonicAnalysis.HarishChandraSchwartz.RationalSemistandardSourceFormalDegree
 
 /-! # Formal degree transport to the actual semistandard Levi model -/
@@ -14,60 +15,6 @@ open Langlands.Plancherel.DynamicOppositeStandardIntertwining
 open Langlands.Plancherel.DynamicOppositeCanonicalScalar
 
 namespace Langlands.HarishChandraSchwartz.RationalSemistandard.SourceDegree
-
-private theorem representationFormalDegree_pullback
-    {G : Type uG} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
-    {H : Type uH} [Group H] [TopologicalSpace H] [IsTopologicalGroup H]
-    (e : H ≃ₜ* G) (A : Subgroup G) [A.Normal] (hA : A ≤ Subgroup.center G)
-    (B : Subgroup H) [B.Normal] (hB : B ≤ Subgroup.center H)
-    (hAB : B.map e.toMulEquiv.toMonoidHom = A)
-    [MeasurableSpace (G ⧸ A)] [BorelSpace (G ⧸ A)]
-    [MeasurableSpace (H ⧸ B)] [BorelSpace (H ⧸ B)]
-    (μG : Measure (G ⧸ A)) [μG.IsHaarMeasure] [μG.IsInvInvariant]
-    (μH : Measure (H ⧸ B)) [μH.IsHaarMeasure] [μH.IsInvInvariant]
-    (hμ : μH.map (quotientContinuousMulEquiv e A B hAB) = μG)
-    (hcofG : CompactOpenCofinal G) (hcofH : CompactOpenCofinal H)
-    {V : Type uV} [AddCommGroup V] [Module ℂ V] {ρ : Representation ℂ G V}
-    (hρ : IsSquareIntegrableModCentralSubgroup A hA ρ μG) (hiρ : ρ.IsIrreducible)
-    (hσ : IsSquareIntegrableModCentralSubgroup B hB (ρ.comp e.toMonoidHom) μH)
-    (hiσ : Representation.IsIrreducible (ρ.comp e.toMonoidHom)) :
-    representationFormalDegree A hA μG hcofG hρ hiρ =
-      representationFormalDegree B hB μH hcofH hσ hiσ := by
-  let cG := Classical.choose hρ.2
-  let cH := Classical.choose hσ.2
-  let hG : ∀ (a : A) (v : V), ρ a v =
-      ((cG.character.comp (Subgroup.inclusion hA)) a : ℂ) • v :=
-    fun a v => cG.acts (Subgroup.inclusion hA a) v
-  let hH : ∀ (b : B) (v : V), (ρ.comp e.toMonoidHom) b v =
-      ((cH.character.comp (Subgroup.inclusion hB)) b : ℂ) • v :=
-    fun b v => cH.acts (Subgroup.inclusion hB b) v
-  refine formalDegree_unique A hA μG hG hcofG hρ hiρ
-    (orthogonalityIntegral_eq_representationFormalDegree A hA μG hcofG hG hρ hiρ) ?_
-  intro v₁ ℓ₁ v₂ ℓ₂
-  let ℓ₁H : SmoothDual (ρ.comp e.toMonoidHom) :=
-    ⟨ℓ₁.val, (isSmoothVector_dual_comp_continuousMulEquiv_iff ρ e ℓ₁.val).mpr ℓ₁.property⟩
-  let ℓ₂H : SmoothDual (ρ.comp e.toMonoidHom) :=
-    ⟨ℓ₂.val, (isSmoothVector_dual_comp_continuousMulEquiv_iff ρ e ℓ₂.val).mpr ℓ₂.property⟩
-  have hIntegrand :
-      orthogonalityIntegrand B hH hH v₁ ℓ₁H.val v₂ ℓ₂H.val =
-        orthogonalityIntegrand A hG hG v₁ ℓ₁.val v₂ ℓ₂.val ∘
-          quotientContinuousMulEquiv e A B hAB := by
-    funext q
-    obtain ⟨h, rfl⟩ := QuotientGroup.mk_surjective q
-    rw [Function.comp_apply, quotientContinuousMulEquiv_mk,
-      orthogonalityIntegrand_mk, orthogonalityIntegrand_mk]
-    change ℓ₁.val (ρ (e h) v₁) * ℓ₂.val (ρ (e h⁻¹) v₂) =
-      ℓ₁.val (ρ (e h) v₁) * ℓ₂.val (ρ ((e h)⁻¹) v₂)
-    rw [map_inv e]
-  calc
-    _ = orthogonalityIntegral B μH hH hH v₁ ℓ₁H v₂ ℓ₂H := by
-      unfold orthogonalityIntegral
-      rw [hIntegrand, ← hμ]
-      exact integral_map_equiv
-        (quotientContinuousMulEquiv e A B hAB).toHomeomorph.toMeasurableEquiv _
-    _ = _ :=
-      orthogonalityIntegral_eq_representationFormalDegree B hB μH hcofH hH hσ hiσ
-        v₁ ℓ₁H v₂ ℓ₂H
 
 attribute [local instance]
   DynamicOppositeCanonicalScalar.dynamicOppositeCanonicalScalarIsAffine
@@ -135,7 +82,7 @@ theorem formalDegreeTransport
         discreteSeriesFormalDegree_mk C hC mu (compactOpenCofinal_levi model d) π hπ
       _ = representationFormalDegree CL hCL muL (intrinsicCompactOpenCofinal model d)
             hπL πL.property.1 :=
-        representationFormalDegree_pullback model.pointHomeomorph C hC CL hCL rfl
+        Langlands.Plancherel.representationFormalDegree_pullback model.pointHomeomorph C hC CL hCL rfl
           mu muL hmap (compactOpenCofinal_levi model d) (intrinsicCompactOpenCofinal model d)
           hπ π.property.1 hπL πL.property.1
       _ = _ :=

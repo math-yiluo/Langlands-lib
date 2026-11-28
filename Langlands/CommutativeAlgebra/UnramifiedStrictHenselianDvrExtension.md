@@ -96,3 +96,5 @@ closure, as the Library's `strictHenselianDvrExtension` does, with residue
 separability added to the maximality condition. It makes no claim that the
 constructed ring has the universal property of the strict henselization or is
 canonical.
+
+`Langlands.AbelianScheme.injective_algebraMap_of_map_maximalIdeal` proves injectivity of a map of discrete valuation rings when the maximal ideal extends to the maximal ideal.

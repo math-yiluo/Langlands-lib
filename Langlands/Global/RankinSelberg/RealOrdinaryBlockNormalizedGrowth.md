@@ -1,0 +1,7 @@
+# Normalized reflection of exact real block coefficients
+
+`RealOrdinaryBlockNormalizedGrowthStatement` derives the normalized ordinary and reflected equations with exponential strip growth from entire ordinary continuation for the exact real coefficient models. The factors and reflection signs are those of `RealLocalUnequalGrowthAtRanks` and `RealLocalEqualGrowthAtRank`.
+
+For each test, the ascending character quotient supplies both meromorphic continuations. The standard block and position factors give the same gamma multiplier, so the continued equation carries over to the exact block factors. The exact ordinary normalization inherits the strip bound of the raw continuation after multiplication by the reciprocal block factor. Its reflection, multiplied by the entire signed epsilon factor, agrees with the normalized reflected integral on a right half-plane. To see this, use the identity theorem on the meromorphic continuations, clear denominators off their discrete zero sets, and use continuity on the half-plane to extend the equality across those sets. The reflected value inherits the strip estimate by reflecting the ordinary estimate and multiplying by the strip bound for epsilon.
+
+This is the reduction from ordinary normalization to the normalized functional equation in the conventions of Theorem 2.1(iii) of Jacquet, *Archimedean Rankin–Selberg integrals* (2009), p. 6. The exact block factor comparison uses the character-position relation of §16. [Author-posted edition](https://www.math.columbia.edu/~hj/PerfectRankinSelberg.pdf)

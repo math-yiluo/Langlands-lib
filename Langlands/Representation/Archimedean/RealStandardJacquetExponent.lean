@@ -6,6 +6,8 @@ import Langlands.Representation.Archimedean.LowerVermaDuflo
 import Langlands.Representation.Archimedean.RealBlockPositionData
 import Langlands.Representation.Archimedean.RealStandardCentralGrowth
 import Langlands.Representation.Archimedean.RealSubquotientEval
+import Langlands.Representation.Archimedean.StandardQuotientFactorization
+import Langlands.Representation.Archimedean.EnvelopingInduction
 
 /-! # The exponents of real standard module Jacquet functionals
 
@@ -126,13 +128,12 @@ private theorem eval_gel {σ : CLie n →ₗ⁅ℂ⁆ Module.End ℂ V}
   rw [LinearMap.mem_ker, map_sub, sub_eq_zero, eval_diagAction hdiag] at h
   exact h
 
-private theorem gel_sums_eq {ρ : Representation ℂ (Matrix.unitaryGroup (Fin n) ℝ) V}
+private theorem gel_action_eq_of_jacquet {ρ : Representation ℂ (Matrix.unitaryGroup (Fin n) ℝ) V}
     {π : RLie n →ₗ⁅ℂ⁆ Module.End ℂ V} (hinf : HasInfinitesimalCharacter π)
-    {ℓ ℓ' : V →ₗ[ℂ] ℂ} {a a' : Fin n → ℂ} {e e' : Fin n → Fin 2}
-    (hℓ : ℓ ≠ 0) (hℓ' : ℓ' ≠ 0)
-    (hj : IsRealJacquetFunctional n ρ π ℓ a e)
-    (hj' : IsRealJacquetFunctional n ρ π ℓ' a' e') (k : ℕ) :
-    ∑ i, gv a k i = ∑ i, gv a' k i := by
+    {ℓ : V →ₗ[ℂ] ℂ} {a : Fin n → ℂ} {e : Fin n → Fin 2}
+    (hℓ : ℓ ≠ 0) (hj : IsRealJacquetFunctional n ρ π ℓ a e) (k : ℕ) :
+    envelopingAction (π.comp (realLieEquiv n).toLieHom) (VermaCentral.gel n k) =
+      algebraMap ℂ (Module.End ℂ V) (∑ i, gv a k i) := by
   let σ := π.comp (realLieEquiv n).toLieHom
   obtain ⟨c, hc⟩ := Kostant.hasInfinitesimalCharacter_comp (realLieEquiv n).symm hinf
     (VermaCentral.gel n k) (VermaCentral.gel_mem_center n k)
@@ -140,26 +141,37 @@ private theorem gel_sums_eq {ρ : Representation ℂ (Matrix.unitaryGroup (Fin n
       GLReynolds.famOf σ i j v = π (1 ⊗ₜ Matrix.single i j 1) v := by
     change π (realLieEquiv n (Matrix.single i j 1)) v = _
     rw [realLieEquiv_single]
-  have hsum (ℓ₀ : V →ₗ[ℂ] ℂ) (a₀ : Fin n → ℂ) (e₀ : Fin n → Fin 2)
-      (hℓ₀ : ℓ₀ ≠ 0) (h₀ : IsRealJacquetFunctional n ρ π ℓ₀ a₀ e₀) :
-      ∑ i, gv a₀ k i = c := by
-    obtain ⟨v, hv⟩ := Kostant.BorelCentralIdeal.exists_ne_zero_of_ne_zero hℓ₀
-    have h := eval_gel (σ := σ) (ℓ := ℓ₀) (a := a₀)
-      (fun i j hij w => by
-        rw [hmat]
-        apply h₀.1 _ _ w
-        intro p q hpq
-        apply Matrix.single_apply_of_ne
-        rintro ⟨rfl, rfl⟩
-        exact (not_le_of_gt hij) hpq)
-      (fun i w => by
-        change ℓ₀ (GLReynolds.famOf σ i i w) = _
-        rw [hmat]
-        exact (h₀.2 i w).1) k v
-    change envelopingAction σ (VermaCentral.gel n k) = _ at hc
-    rw [hc, Module.algebraMap_end_apply, map_smul, smul_eq_mul] at h
-    exact (mul_right_cancel₀ hv h).symm
-  rw [hsum ℓ a e hℓ hj, hsum ℓ' a' e' hℓ' hj']
+  obtain ⟨v, hv⟩ := Kostant.BorelCentralIdeal.exists_ne_zero_of_ne_zero hℓ
+  have h := eval_gel (σ := σ) (ℓ := ℓ) (a := a)
+    (fun i j hij w => by
+      rw [hmat]
+      apply hj.1 _ _ w
+      intro p q hpq
+      apply Matrix.single_apply_of_ne
+      rintro ⟨rfl, rfl⟩
+      exact (not_le_of_gt hij) hpq)
+    (fun i w => by
+      change ℓ (GLReynolds.famOf σ i i w) = _
+      rw [hmat]
+      exact (hj.2 i w).1) k v
+  change envelopingAction σ (VermaCentral.gel n k) = _ at hc
+  rw [hc, Module.algebraMap_end_apply, map_smul, smul_eq_mul] at h
+  rw [← mul_right_cancel₀ hv h]
+  exact hc
+
+private theorem gel_sums_eq {ρ : Representation ℂ (Matrix.unitaryGroup (Fin n) ℝ) V}
+    {π : RLie n →ₗ⁅ℂ⁆ Module.End ℂ V} (hinf : HasInfinitesimalCharacter π)
+    {ℓ ℓ' : V →ₗ[ℂ] ℂ} {a a' : Fin n → ℂ} {e e' : Fin n → Fin 2}
+    (hℓ : ℓ ≠ 0) (hℓ' : ℓ' ≠ 0)
+    (hj : IsRealJacquetFunctional n ρ π ℓ a e)
+    (hj' : IsRealJacquetFunctional n ρ π ℓ' a' e') (k : ℕ) :
+    ∑ i, gv a k i = ∑ i, gv a' k i := by
+  obtain ⟨v, hv⟩ := Kostant.BorelCentralIdeal.exists_ne_zero_of_ne_zero hℓ
+  have he := congrArg (fun A : Module.End ℂ V => ℓ (A v))
+    ((gel_action_eq_of_jacquet hinf hℓ hj k).symm.trans
+      (gel_action_eq_of_jacquet hinf hℓ' hj' k))
+  simp only [Module.algebraMap_end_apply, map_smul, smul_eq_mul] at he
+  exact mul_right_cancel₀ hv he
 
 end Gelfand
 
@@ -259,5 +271,98 @@ theorem realStandardPositionExponent_perm_of_surjective {n : ℕ} {ds es : List 
     · simpa only [ℓ, LinearMap.comp_apply, hT.map_realStandardRep] using (hJ.2 j (T v)).2
   obtain ⟨w, hw⟩ := realStandardJacquetExponent n ds _ _ ℓ hℓ hpull
   exact ⟨w, fun j => by simpa only [expo_shiftedExponent] using hw j⟩
+
+section CommonSubquotient
+
+universe uV
+
+private abbrev StdSpace (n : ℕ) (ds : List RealBlock) :=
+  kFiniteFunctions (realStandardModule n ds) (unitaryCompact ℝ n)
+
+variable {n : ℕ} {V : Type uV} [AddCommGroup V] [Module ℂ V]
+  {ρ : Representation ℂ (Matrix.unitaryGroup (Fin n) ℝ) V}
+  {π : RLie n →ₗ⁅ℂ⁆ Module.End ℂ V}
+
+private theorem gel_action_of_standard_subquotient [Nontrivial V] {ds : List RealBlock}
+    {W : Submodule ℂ (StdSpace n ds)}
+    {hW : IsGKSubmodule (realStandardRep n ds) (realStandardLie n ds) W}
+    {q : W →ₗ[ℂ] V} (hq : IsGKSubquotientMap ρ π hW q) (k : ℕ) :
+    envelopingAction (π.comp (realLieEquiv n).toLieHom) (VermaCentral.gel n k) =
+      algebraMap ℂ (Module.End ℂ V) (∑ i, gv (RealBlockPosition.shiftedExponent n ds) k i) := by
+  obtain ⟨v, hv⟩ := exists_ne (0 : V)
+  obtain ⟨w, hw⟩ := hq.1 v
+  have hw₀ : w.val ≠ 0 := by
+    intro hz
+    exact hv (hw ▸ (show q w = 0 from by rw [show w = 0 from Subtype.ext hz, map_zero]))
+  have hstd := gel_action_eq_of_jacquet (realStandardLie_hasInfinitesimalCharacter n ds)
+    (RealStandardCentralGrowth.kFiniteEval_one_ne_zero hw₀) (eval_isJacquet n ds) k
+  let j := (realLieEquiv n).toLieHom
+  let σ := (realStandardLie n ds).comp j
+  let τ := π.comp j
+  let Z := VermaCentral.gel n k
+  let c := ∑ i, gv (RealBlockPosition.shiftedExponent n ds) k i
+  have hmap (z : VermaGL.glU n) (x : W) :
+      ∃ hz : envelopingAction σ z x.val ∈ W,
+        q ⟨envelopingAction σ z x.val, hz⟩ = envelopingAction τ z (q x) := by
+    induction z using InfinitesimalCharacter.envInduction generalizing x with
+    | algebraMap r =>
+      simp only [AlgHom.commutes, Module.algebraMap_end_apply]
+      exact ⟨W.smul_mem r x.prop, map_smul q r x⟩
+    | ι X =>
+      simp only [envelopingAction, UniversalEnvelopingAlgebra.lift_ι_apply]
+      exact ⟨hW.2 (j X) x.val x.prop, hq.2.2 (j X) x⟩
+    | mul a b ha hb =>
+      simp only [map_mul, Module.End.mul_apply]
+      obtain ⟨hbx, hbq⟩ := hb x
+      obtain ⟨hax, haq⟩ := ha ⟨envelopingAction σ b x.val, hbx⟩
+      exact ⟨hax, haq.trans (congrArg (envelopingAction τ a) hbq)⟩
+    | add a b ha hb =>
+      simp only [map_add, LinearMap.add_apply]
+      obtain ⟨hax, haq⟩ := ha x
+      obtain ⟨hbx, hbq⟩ := hb x
+      refine ⟨W.add_mem hax hbx, ?_⟩
+      change q (⟨_, hax⟩ + ⟨_, hbx⟩) = _
+      rw [map_add, haq, hbq]
+  ext y
+  obtain ⟨x, rfl⟩ := hq.1 y
+  obtain ⟨hm, he⟩ := hmap Z x
+  change envelopingAction τ Z (q x) = (algebraMap ℂ (Module.End ℂ V) c) (q x)
+  have hvec : (⟨envelopingAction σ Z x.val, hm⟩ : W) = c • x := by
+    apply Subtype.ext
+    change envelopingAction σ Z x.val = c • x.val
+    rw [show envelopingAction σ Z = algebraMap ℂ (Module.End ℂ (StdSpace n ds)) c from hstd,
+      Module.algebraMap_end_apply]
+  rw [← he, hvec, map_smul, Module.algebraMap_end_apply]
+
+/-- Real standard modules with a common nonzero compact and Lie subquotient
+have the same position exponents up to permutation. -/
+def RealStandardSubquotientExponentStatement : Prop :=
+  ∀ (n : ℕ) (ds es : List RealBlock) (V : Type uV) [AddCommGroup V] [Module ℂ V] [Nontrivial V]
+    (ρ : Representation ℂ (Matrix.unitaryGroup (Fin n) ℝ) V)
+    (π : RLie n →ₗ⁅ℂ⁆ Module.End ℂ V)
+    (W : Submodule ℂ (StdSpace n ds)) (N : Submodule ℂ (StdSpace n es))
+    (hW : IsGKSubmodule (realStandardRep n ds) (realStandardLie n ds) W)
+    (hN : IsGKSubmodule (realStandardRep n es) (realStandardLie n es) N)
+    (q : W →ₗ[ℂ] V) (p : N →ₗ[ℂ] V),
+    IsGKSubquotientMap ρ π hW q → IsGKSubquotientMap ρ π hN p →
+      ∃ w : Equiv.Perm (Fin n), ∀ j : Fin n,
+        realPositionExponent es j = realPositionExponent ds (w j)
+
+theorem realStandardSubquotientExponent : RealStandardSubquotientExponentStatement.{uV} := by
+  intro n ds es V _ _ _ ρ π W N hW hN q p hq hp
+  obtain ⟨v, hv⟩ := exists_ne (0 : V)
+  have he (k : ℕ) : ∑ i, gv (RealBlockPosition.shiftedExponent n es) k i =
+      ∑ i, gv (RealBlockPosition.shiftedExponent n ds) k i := by
+    have h := congrArg (fun A : Module.End ℂ V => A v)
+      ((gel_action_of_standard_subquotient hp k).symm.trans
+        (gel_action_of_standard_subquotient hq k))
+    simp only [Module.algebraMap_end_apply] at h
+    exact smul_left_injective ℂ hv h
+  obtain ⟨w, hw⟩ := exists_perm_of_gel_eq _ _ he
+  refine ⟨w, fun j => ?_⟩
+  unfold RealBlockPosition.shiftedExponent at hw
+  linear_combination hw j
+
+end CommonSubquotient
 
 end Langlands.Archimedean

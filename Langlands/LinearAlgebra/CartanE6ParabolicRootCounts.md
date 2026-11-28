@@ -1,0 +1,7 @@
+# Root counts for standard parabolics in type E₆
+
+The signed list gives a bijection from `Bool × Fin 36` to the root indices of any finite reduced based root datum with the numbered E₆ Cartan matrix. Each root equals the integral linear combination of simple roots with its listed coefficients. The enumeration consists of the 36 positive coefficient vectors and their 36 negatives. Existence and exhaustion come from the root-coordinate theorem. Linear independence of the simple roots and distinctness of the coefficient vectors give uniqueness.
+
+For a set of omitted vertices, the finite count tests whether the sum of the signed coefficients at those vertices is negative. This counts the negative roots with support meeting that set. The counts are 16 for either long-arm endpoint, 21 for the short-arm endpoint and 30 for the short-arm endpoint together with the central vertex. The numbering here is that of `CartanMatrix.E 6`, with long-arm endpoints `0` and `5`, short-arm endpoint `1` and central vertex `3`.
+
+These are the root counts for the parabolics in Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), §6.6, Theorem 6.26, printed pp. 354–356 (PDF pp. 364–366), and §6.8, Lemma 6.32, printed p. 380 (PDF p. 390). For the two omitted vertices, the source gives parabolic dimension 48 in ambient dimension 78. [Chapter 6, Galois cohomology](https://www.sciencedirect.com/science/article/pii/S0079816908620711).

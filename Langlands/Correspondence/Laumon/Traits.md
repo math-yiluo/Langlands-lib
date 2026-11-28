@@ -170,3 +170,5 @@ the following declarations of weil-conjectures, each of which depends only on
 
 It also uses Mathlib's `AlgebraicGeometry.AffineSpace.reindex`. Every declaration of this
 module also depends only on these three axioms.
+
+`lineCoordinate` is the global section giving the coordinate of the affine line.

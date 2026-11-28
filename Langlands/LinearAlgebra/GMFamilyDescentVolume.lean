@@ -15,7 +15,9 @@ namespace Langlands.GMFamily
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
 
-private theorem gramVolume_join_orthogonalProjection {ι κ : Type*} [Fintype ι] [Fintype κ]
+/-- Joining an orthonormal basis of `U` to a family `w` gives the Gram volume of the components
+    of `w` orthogonal to `U`; in particular it does not depend on the orthonormal basis. -/
+theorem gramVolume_join_orthogonalProjection {ι κ : Type*} [Fintype ι] [Fintype κ]
     (U : Submodule ℝ E) (b : OrthonormalBasis ι ℝ U) (w : κ → E) :
     gramVolume (Sum.elim (fun i => (b i : E)) w) =
       gramVolume (fun j => Uᗮ.starProjection (w j)) := by

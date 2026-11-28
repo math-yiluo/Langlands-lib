@@ -117,21 +117,22 @@ proof.
 
 ### The main theorems
 
-- `exists_convergence`: let `W, W'` be continuous with `W(ug)W'(ug) = W(g)W'(g)` for upper
-  unipotent `u`, both satisfying `HasGauge` (with exponents `N₁`, `N₂`), and let `Φ` be
-  continuous with rapid decay. Then
-  `σ = (N₁ + N₂ + ‖L‖ + 1)(r+1)` works, with `L` from `exists_lintegral_alphaQ`.
-  Proof: put `f(q) = kernel(q.out)` and `ℓ(q) = logDet(q.out)`. Both are continuous, as
-  descents of continuous invariant functions. For real `t > σ`, let `M` be the ceiling of
-  `(N₁ + N₂ + ‖L‖ + 1)(r+1) + t(r+1)`. Use the gauge bound of `W` with decay `M` and that of
-  `W'` with decay `0`. Use `exists_norm_le_exp` with `c = r + 1` and `K = M`, applied at
-  `x = lastRow(torus y · k)` and `m = y_r`. Write `y = alphaQ q` and `k = kpart(q.out)`.
-  Then `eq_torus_mul_kpart` and `logDet_torus_mul` bound `‖f(q)‖ exp(t ℓ(q))` by
-  `C₁C₂C₃ exp(−M rootPos y + (N₁+N₂) ∑|y_j| + t ∑ y_j − M max(y_r, 0))`. So
-  `integrable_of_toral_bound` makes `‖f‖ exp(tℓ)` integrable for every `t > σ`. For complex
-  `s` with `Re s > σ` the integrand `f · exp(sℓ)` has norm `‖f‖ exp(Re(s) ℓ)`
-  (`norm_cexp_mul_ofReal`), so it is integrable. Holomorphy is
-  `differentiableOn_integral_cexp_mul` applied to `f` and `ℓ`.
+- `HasOrdinaryToralBound A F` requires arbitrary decay order `M` both in `rootPos y`
+  and in `max(y_r, 0)` for the kernel `F(torus y · k)`, with a fixed growth allowance
+  `A ∑|y_j|` in the exponent.
+- `exists_convergence_of_toral_bound` proves `RealOrdinaryToralConvergenceStatement`.
+  Given compatible measure data, `A ≥ 0` and a real shift `c`, the same abscissa
+  works for every continuous left-unipotent invariant kernel with this toral bound.
+  Write `f(q) = F(q.out)` and `ℓ(q) = logDet(q.out)`. Both descend continuously.
+  For real `t > (A + ‖L‖ + 1)(r+1)`, choose `M` at least
+  `(A + ‖L‖ + 1)(r+1) + t(r+1)`. The toral identity for `f` and the formula
+  `ℓ(q) = ∑_j alphaQ q j` give the majorant in `integrable_of_toral_bound`
+  for `‖f‖ exp(tℓ)`. This bounds the norm of the complex kernel at `t = Re(s − c)`.
+  `differentiableOn_integral_cexp_mul` gives holomorphy before the shift, which
+  translates the half-plane by `c`.
+- `exists_convergence`: use the gauge of `W` at order `M`, the gauge of `W'` at order
+  zero, and the row estimate of `Φ` at order `M` to obtain the bound for the product
+  kernel with `A = N₁ + N₂`. Apply the common criterion with `c = 0`.
 - `realWhittakerCharacter_mul_neg`: `realWhittakerCharacter a u · realWhittakerCharacter (−a) u = 1`,
   since both are values of `x ↦ exp(2πi a x)` and `x ↦ exp(−2πi a x)` at the same point.
 - `hasRapidDecay_schwartz`: Schwartz functions have rapid decay (`SchwartzMap.decay` with zero
@@ -158,7 +159,7 @@ the compatibility (Weil formula) of the quotient measure with Haar measures on `
 to lifts `g ↦ φ(alpha g) β(npart g)` built from the toral and unipotent Iwasawa coordinates
 and to their torus translates shows that this pushforward is quasi-invariant under
 translations. Haar uniqueness on `ℝⁿ` then makes it a nonnegative multiple of
-`exp(L x) dx` for a linear form `L`. The proof of `exists_convergence` uses this formula with
+`exp(L x) dx` for a linear form `L`. The proof of `exists_convergence_of_toral_bound` uses this formula with
 `y = alphaQ q`. The linear form `L` is left unspecified, so the convergence abscissa `σ` depends on the unknown
 `‖L‖`; only its existence is claimed. The statement replaces "Whittaker function of `I_(σ,u)`" by the
 explicit regularity and uniform-growth hypotheses above, which are the properties the proof

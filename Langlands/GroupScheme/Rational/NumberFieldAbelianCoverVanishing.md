@@ -1,0 +1,7 @@
+# From prime-degree to abelian Galois covers
+
+`NumberFieldAbelianCoverVanishingStatement` considers a property of affine group schemes over number fields, stable under finite field extension. Assume that the property gives local triviality of every cocycle on a finite Galois cover. Fix a set of allowed degrees. If every cocycle for a group with this property is trivial on covers of allowed prime degree, then every cocycle on a finite abelian Galois cover whose degree has only allowed prime factors is trivial as well.
+
+The proof is by strong induction on the degree of the cover. A degree-one cover is an isomorphism. For a nontrivial abelian Galois group, a maximal proper subgroup has a cyclic quotient of prime order. Its fixed field is a prime-degree Galois subextension. The remaining degree is smaller, and its prime factors still belong to the allowed set. Apply the induction hypothesis to the scalar extension over the fixed field. The all-test comparison `GaloisCocycle.isTrivial_baseChange_of_scalarExtension` gives triviality on the full pullback cover. Then `Cocycle.isTrivial_of_baseChange_isTrivial_of_kernel` uses local triviality and the prime-degree hypothesis to descend the result.
+
+This formalizes the finite abelian tower step before Theorem 6.29 in Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), §6.8, printed p. 378. The abstract group property allows the same induction to be applied to different absolute types.

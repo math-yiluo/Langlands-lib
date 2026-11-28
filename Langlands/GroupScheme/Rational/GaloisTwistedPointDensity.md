@@ -33,3 +33,15 @@ of a twisted value lies in that open, so the entire image of its spectrum
 lies there. In characteristic zero the base field is infinite. The
 companion theorem `quadraticToralRepresentatives` applies the quadratic
 reduction to obtain a cocycle of a maximal torus over the base.
+
+The same coefficient projections also work when the coefficient field is
+finite Galois and the polynomials split in that field. The preimage of a
+nonempty open under the twisted-value morphism is nonempty because the two
+coordinates vary independently. Its image under the scalar-extension
+projection is a nonempty open in the Weil restriction. At a rational point
+the fibre of that projection consists of a single point, so membership in
+this open controls the twisted value of the corresponding cochain. The
+cochain equivalence is the tensor-unit point comparison for Weil restriction
+followed by the ordinary point comparison for the base-changed group.
+For topological fields with the module topology on the extension, both
+comparisons are homeomorphisms for the evaluation topologies on affine points.

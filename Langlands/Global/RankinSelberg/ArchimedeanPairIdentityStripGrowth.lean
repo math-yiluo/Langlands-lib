@@ -26,7 +26,8 @@ private theorem stripExpType_of_norm_re {E : ℂ → ℂ} (hE : Continuous E)
     Complex.ofReal_re, zero_mul, Real.exp_zero, mul_one]
   exact (hC (mem_image_of_mem (fun z : ℝ => ‖E (z : ℂ)‖) ⟨ha, hb⟩)).trans (le_max_left _ _)
 
-private theorem stripGrowth_of_stripExpType {D : ℂ → ℂ} (hD : StripExpType D) :
+/-- An exponential estimate valid on an entire strip gives exponential strip growth. -/
+theorem stripGrowth_of_stripExpType {D : ℂ → ℂ} (hD : StripExpType D) :
     HasStripExponentialGrowth D := by
   intro a b
   obtain ⟨C, K, hC, hK, hbound⟩ := hD a b

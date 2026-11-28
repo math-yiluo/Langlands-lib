@@ -18,6 +18,28 @@ universe uG uH uV
 
 variable {G : Type uG} {H : Type uH} [Group G] [Group H]
 
+/-- The nonnegative indices of a filtration on whose groups a class acts trivially. -/
+def trivialityParameters (U : ℝ → Subgroup G) (c : IsomorphismClasses.{0, uG, uV} ℂ G) :
+    Set ℝ :=
+  {r | 0 ≤ r ∧ c.IsTrivialOn (U r)}
+
+theorem IsomorphismClasses.isTrivialOn_of_le (c : IsomorphismClasses.{0, uG, uV} ℂ G)
+    {A B : Subgroup G} (h : A ≤ B) (hc : c.IsTrivialOn B) : c.IsTrivialOn A := by
+  induction c using Quotient.inductionOn with
+  | h C => exact h.trans hc
+
+/-- A bijection between two quotients of the same type with the same fibers. -/
+def equivOfSameFibers {A B C : Type*}
+    (f : A → B) (g : A → C) (hf : Function.Surjective f) (hg : Function.Surjective g)
+    (h : ∀ a b : A, f a = f b ↔ g a = g b) : B ≃ C := by
+  refine Equiv.ofBijective (g ∘ Function.surjInv hf) ⟨?_, ?_⟩
+  · intro b b' he
+    have hf' := (h _ _).mpr he
+    simpa only [Function.surjInv_eq] using hf'
+  · intro c
+    obtain ⟨a, rfl⟩ := hg c
+    exact ⟨f a, (h _ _).mp (Function.surjInv_eq hf _)⟩
+
 theorem restrictClass_isTrivialOn_iff (p : G →* H) (S : Subgroup G)
     (c : IsomorphismClasses.{0, uH, uV} ℂ H) :
     (restrictClass p c).IsTrivialOn S ↔ c.IsTrivialOn (S.map p) := by

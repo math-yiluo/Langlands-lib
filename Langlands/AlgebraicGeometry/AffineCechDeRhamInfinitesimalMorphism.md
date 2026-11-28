@@ -40,6 +40,8 @@ vertex \(i\) of \(\tau\), the pullback \(s^\tau_i\colon
 \Gamma(Y,V_{\beta\tau})\to\Gamma(X,U_\tau)\) is the section map of the lift
 chosen on \(U_{\tau(i)}\). Two vertices give pullbacks agreeing modulo
 \(I\,\Gamma(X,U_\tau)\), because both reduce to the section map of \(m\).
+`localPullbacksOfReduction_reduce_sections` computes this reduced section
+map on each tuple intersection.
 
 ## The degree-one map
 

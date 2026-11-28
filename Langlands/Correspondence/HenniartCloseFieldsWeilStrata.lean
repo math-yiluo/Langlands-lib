@@ -41,23 +41,13 @@ private local instance upperNormal' : (I' e).Normal :=
 local notation "π" => QuotientGroup.mk' (I e)
 local notation "π'" => QuotientGroup.mk' (I' e)
 
-private theorem trivialOn_mono {G : Type u} [Group G]
-    (c : IsomorphismClasses.{0, u, v} ℂ G) {A B : Subgroup G}
-    (h : A ≤ B) (hc : c.IsTrivialOn B) : c.IsTrivialOn A := by
-  induction c using Quotient.inductionOn with
-  | h C => exact h.trans hc
-
-private def trivialitySet {G : Type u} [Group G]
-    (A : ℝ → Subgroup G) (c : IsomorphismClasses.{0, u, v} ℂ G) : Set ℝ :=
-  {r | 0 ≤ r ∧ c.IsTrivialOn (A r)}
-
 private theorem padic_classLastBreak_eq (c : IsomorphismClasses.{0, u, v} ℂ W) :
-    VirtualRepresentation.LocalWeil.Ramification.classLastBreak F c = sInf (trivialitySet I c) :=
+    VirtualRepresentation.LocalWeil.Ramification.classLastBreak F c = sInf (trivialityParameters I c) :=
   Quotient.inductionOn c (fun _ => rfl)
 
 private theorem laurent_classLastBreak_eq (c : IsomorphismClasses.{0, u, v} ℂ W') :
     VirtualRepresentation.LocalWeil.SepClosed.Ramification.classLastBreak X Ω c =
-      sInf (trivialitySet I' c) :=
+      sInf (trivialityParameters I' c) :=
   Quotient.inductionOn c (fun _ => rfl)
 
 private theorem padic_swan_iff {k s : ℕ} (c : IrreducibleWeilClass.{u, v} F k.succPNat) :
@@ -108,15 +98,15 @@ private theorem swan_transport_iff {k s : ℕ}
   let E := continuousIrreducibleQuotientTransport φ (k + 1)
   let c₁ := weilClassForget F (n := k.succPNat) c.val
   let c₂ := LocalNumerical.weilClassForget X Ω (n := k.succPNat) (E c).val
-  have hset : trivialitySet I' c₂ = trivialitySet I c₁ := by
+  have hset : trivialityParameters I' c₂ = trivialityParameters I c₁ := by
     ext r
     refine and_congr_right fun hr => ?_
     by_cases hre : r ≤ e
     · exact continuousIrreducibleQuotientTransport_isTrivialOn_iff φ c (I r) (I' r) (hφ r hr hre)
     · exact iff_of_true
-        (trivialOn_mono c₂ (VirtualRepresentation.LocalWeil.SepClosed.Ramification.upperGroup_antitone
+        (IsomorphismClasses.isTrivialOn_of_le c₂ (VirtualRepresentation.LocalWeil.SepClosed.Ramification.upperGroup_antitone
           X Ω (le_of_not_ge hre)) (E c).property)
-        (trivialOn_mono c₁
+        (IsomorphismClasses.isTrivialOn_of_le c₁
           (VirtualRepresentation.LocalWeil.Ramification.upperGroup_antitone F (le_of_not_ge hre))
           c.property)
   refine (LocalNumerical.hasWeilSwan_iff_eq_weilSwanConductor X Ω (k := k) (s := s) (E c).val).trans
@@ -224,17 +214,6 @@ private theorem orbit_eq_iff {k : ℕ}
     exact congrArg (fun x => (⟨k.succPNat, x.val⟩ : IrreducibleBasis.{u, v} W))
       (E.injective (Subtype.ext hval))
 
-private def equiv_of_surjective_fibers {A B C : Type*}
-    (f : A → B) (g : A → C) (hf : Function.Surjective f) (hg : Function.Surjective g)
-    (h : ∀ a b : A, f a = f b ↔ g a = g b) : B ≃ C := by
-  refine Equiv.ofBijective (g ∘ Function.surjInv hf) ⟨?_, ?_⟩
-  · intro b b' he
-    have hf' := (h _ _).mpr he
-    simpa only [Function.surjInv_eq] using hf'
-  · intro c
-    obtain ⟨a, rfl⟩ := hg c
-    exact ⟨f a, (h _ _).mp (Function.surjInv_eq hf _)⟩
-
 open VirtualRepresentation.Weil in
 set_option maxHeartbeats 1800000 in
 private def refinedStratumEquivOfQuotient
@@ -254,7 +233,7 @@ private def refinedStratumEquivOfQuotient
     ⟨unramifiedOrbitClass d' ⟨k.succPNat, (E c.val).val⟩,
       ⟨(E c.val).val, rfl, (swan_transport_iff F (k := k) φ hφ c.val).mpr c.property.1,
         (torsion_transport F (k := k) φ hdeg c.val).trans c.property.2⟩⟩
-  refine equiv_of_surjective_fibers toF toX ?_ ?_ ?_
+  refine equivOfSameFibers toF toX ?_ ?_ ?_
   · rintro ⟨x, c, hcx, hcs, hcf⟩
     exact ⟨⟨⟨c, padic_trivialOn_of_swan F c hcs hs⟩, hcs, hcf⟩, Subtype.ext hcx⟩
   · rintro ⟨x, c, hcx, hcs, hcf⟩

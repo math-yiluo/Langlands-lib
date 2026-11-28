@@ -7,3 +7,5 @@ For a single block of nonzero weight in arbitrary surrounding lists, the binomia
 Pull back the restricted map and any other exact block map along the surjective ascending intertwiner. Exact character multiplicity one makes these pullbacks proportional. Surjectivity gives the same proportionality on the original standard vectors, so their coefficients all lie in the range of the restricted map.
 
 Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §11, author pp. 81–82, uses a descending principal-series inclusion and invokes Lemma 2.4, author p. 9, for nonzero restriction of the continuous Whittaker form. The compact-finite argument here derives restriction from the binomial and tail multipliers, polynomiality along the lower root, and exact character multiplicity one.
+
+`restrict_expand_ne_zero` states the nonvanishing part for any specified inclusion of the compact-finite standard modules.

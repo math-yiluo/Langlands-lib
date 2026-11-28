@@ -77,3 +77,5 @@ The statement here mirrors this to right ideals. The principal anti-automorphism
 shift `X ↦ X - ρ(𝔳)(X)` into `X ↦ X + ρ(𝔳)(X)`. For `𝔰𝔩₂ = ⟨e, h, f⟩` with `X₁ = h`, `X₂ = -h`
 and the Casimir element `z = h²/2 + ef + fe`, the components are `h²/2 - h` (modulo `e U`) and
 `h²/2 + h` (modulo `f U`). The shifts by `±1` on `h` give `h²/2 - 1/2` in both cases.
+
+`scalarShift_ι` evaluates the scalar shift on a Lie generator.

@@ -5,3 +5,6 @@
 The proof recovers measurability of each zero-parameter kernel from convergence on the right and multiplication by the inverse determinant power. The norm of a positive complex power gives the real weighted integrability used by the Mellin argument. The epsilon factor has bounded norm on each strip by continuity on the real interval. Inverse Mellin inversion constructs the Gaussian pair, and applying the given pair identity to its rescalings gives the determinant theta identity. Multiplication by the inverse signed epsilon cancels the epsilon factor in the first Mellin formula. The resulting formulas and the reciprocal denominator estimates give the normalization and its growth by `mellinPairNormalizedStripGrowth`.
 
 This is a deduction from the pair identity in Hervé Jacquet, *Archimedean Rankin–Selberg Integrals* (2009), §4.2 and Proposition 4.1, author-version pp. 22–25 (published pp. 78–81). Rescaling is equation (4.1) on author-version p. 24. The output includes the strip estimate for the entire normalized integral used by the global argument, via the Gaussian multiplier proof in `ArchimedeanMellinPairStripGrowth`.
+
+`stripGrowth_of_stripExpType` turns an exponential bound valid throughout
+a closed strip into `HasStripExponentialGrowth`, with starting height zero.

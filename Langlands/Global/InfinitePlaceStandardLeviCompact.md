@@ -5,3 +5,5 @@ Pass to the actual completion pullback. The generic cocharacter of the given max
 Each other standard Levi is the centralizer of a cocharacter of that same torus. The value at the positive scalar two lies in the minimal Levi. Its adjoint belongs to that Levi too and therefore commutes with the original value. Normality gives Hermitian weight projectors. A unitary change of basis diagonalizes the cocharacter without changing the unitary inverse image. Apply the Levi-compatible polar theorem to this diagonal realization and transport the compact and its Levi inverse images back to the original completion groups.
 
 This local existence result derives simultaneous compatibility from the published single-Levi construction and the geometry of the standard Levi family.
+
+`exists_standardLeviCompatibleCompact` retains the minimal parabolic and Levi intersection identity from the same unitary realization. It gives `IsLeviCompatibleIwasawaCompact` for the supplied minimal parabolic and Levi, in addition to maximality on all standard Levis. `infinitePlaceStandardLeviCompact` takes the simultaneous compactness and Iwasawa conclusions of this stronger result.

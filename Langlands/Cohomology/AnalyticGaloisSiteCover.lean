@@ -1,3 +1,4 @@
+import Langlands.Geometry.Analytic.EtalePretopology
 import Langlands.Cohomology.GaloisCovering
 import Langlands.Geometry.Analytic.AnalyticGaloisCoverFreeness
 import Langlands.Geometry.Analytic.EtaleOpenDomains.Proof
@@ -18,22 +19,6 @@ open _root_.CategoryTheory _root_.CategoryTheory.Limits Set Topology
 open Langlands.Cohomology
 
 variable {K : Type u} [NormedField K] [IsUltrametricDist K] [CompleteSpace K]
-
-/-- An arrow between two étale objects over the same base is étale. -/
-theorem EtaleSite.etale_left {X : LocalizedCategory.{u, v, v} (K := K)}
-    {A B : EtaleSite X} (f : A ⟶ B) : etale f.left := by
-  obtain ⟨P, p, q, h, hq⟩ := localizedEtalePullbackBaseChange B.hom A.hom B.prop
-  obtain ⟨P', q', p', h', hp'⟩ := localizedEtalePullbackBaseChange A.hom B.hom A.prop
-  let e := h.isoIsPullback _ _ h'.flip
-  have hp : etale p := by
-    rw [← h.isoIsPullback_hom_fst _ _ h'.flip]
-    exact MorphismProperty.RespectsIso.precomp etale e.hom p' hp'
-  have hw : f.left ≫ B.hom = 𝟙 A.left ≫ A.hom :=
-    (MorphismProperty.Over.w f).trans (Category.id_comp _).symm
-  obtain ⟨O, hO, i, hi⟩ := localizedEtaleSectionsOpen hq (h.lift_snd _ _ hw)
-  have hgraph : etale (h.lift f.left (𝟙 A.left) hw) :=
-    hi ▸ etale_comp (etale_of_isIso i.hom) (etaleOpenDomainStatement P O hO)
-  exact h.lift_fst _ _ hw ▸ etale_comp hgraph hp
 
 namespace AnalyticGaloisCover
 

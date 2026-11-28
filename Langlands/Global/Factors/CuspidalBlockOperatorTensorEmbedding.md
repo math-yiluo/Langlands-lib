@@ -1,0 +1,9 @@
+# The cuspidal standard tensor in the scalar block operator module
+
+`cuspidalBlockOperatorTensorEmbedding` uses the actual cuspidal realizations and spectral presentations, with irreducible admissible finite components, and the real and complex place parameters of the blocks. The finite input is smooth and has a grouped evaluation with the finite right translation law, the normalized paired parabolic law, and separation on the finite integral subgroup.
+
+`splitFiniteTensor` identifies the carrier of the common free action with the binary tensor used by `cuspidalSmoothTensorSection`. Its finite and infinite slot identities identify finite translations, compact operators at each infinite place, and the included complexified Lie generators. The compact comparison uses the section's full infinite compact law. The Lie comparison uses the normalized coefficient formula at infinite compact identity and `cuspidalSmoothTensorSection_intertwines_placeLie`.
+
+The place inclusions span the complexified Lie algebra and generate the infinite compact action. `intertwines_freeActionOfOperators_of_places` therefore extends the comparison to the common free action. The finite, compact and enveloping generators of the block section action at parameter zero act by the actual scalar section operators. Composing the linear equivalence of tensor carriers with the injective smooth section map gives the claimed embedding.
+
+This comparison combines the compact model of Getz–Hahn (2024), §10.1, printed pp. 270–271 (PDF pp. 282–283), `getz-hahn-2024-automorphic-representations`, SHA-256 `a125cf9c0f445972cbbd3552b4fb9905ca948108a05880f90eaa43558d09a507`, with the place tensor in Langlands (1979), Lemma 1 and its proof, printed p. 203 (PDF p. 198), `langlands-1979-notion-automorphic-representation`, SHA-256 `3b9fe0145da81d870ef8967be83635cd440a2581fe043e64e63324e22dec4db5`.

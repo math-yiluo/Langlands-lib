@@ -1,0 +1,7 @@
+# Ground field extension of analytic pullbacks presented by greatest charts
+
+A bounded affinoid pushout is a categorical pushout of presented affinoid algebras and bounded maps. The canonical closed-quotient construction has the bounded universal property. For any other pushout square, its unique isomorphism to the canonical one extends by the bounded scalar-extension functor. The canonical pushout comparison then proves that the extended square is again a pushout.
+
+Consider a commuting square of saturated analytic presentations with greatest charts and a bounded pushout on the four chart algebras. The extended greatest charts still contain all chart ranges, since the original ranges are the whole spaces and their extensions are inverse images under the projections. The bounded map on each extended chart is the scalar extension of the original one, transported along the identification of the stored algebras. The extended bounded pushout gives a strong analytic pullback by the greatest-chart universal property. It also gives a pullback for arbitrary localized test arrows through the refined strong pullback theorem.
+
+The construction is the greatest-chart case of the interaction of analytic fibre products with ground field extension in Berkovich, *Étale cohomology for non-Archimedean analytic spaces* (1993), §1.4, printed pp. 29–30 (PDF pp. 26–27). The retained original is `berkovich-1993-etale-cohomology`, SHA-256 `06b42aca1c8f237e607d2cf1f15a41fdc9718324a4dc9fd5bce66574254bb91c`.

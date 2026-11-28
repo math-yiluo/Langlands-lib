@@ -452,6 +452,20 @@ def splitDual (Q : StandardIndex F G 𝓕.i 𝓕.ν) : V 𝓕.T →ₗ[ℝ] Real
     simp only [map_smul, RingHom.id_apply]
     rfl
 
+omit [NumberField F] in
+/-- Character pairing with the projected vector agrees with the pairing against the
+restricted character of the maximal split torus. -/
+theorem realParameterPairing_splitDual (Q : StandardIndex F G 𝓕.i 𝓕.ν)
+    (x : RealCharacterParameter F (𝓕.P Q)) (v : V 𝓕.T) :
+    realParameterPairing F (𝓕.P Q) x (𝓕.splitDual Q v) =
+      pair 𝓕.T (𝓕.chamberEmbedding Q x) v := by
+  induction x using TensorProduct.inductionOn with
+  | tmul a χ =>
+    rw [realParameterPairing_tmul, show a ⊗ₜ[ℤ] χ = a • ((1 : ℝ) ⊗ₜ[ℤ] χ) by
+      rw [TensorProduct.smul_tmul', smul_eq_mul, mul_one], map_smul, map_smul, LinearMap.smul_apply]
+    rfl
+  | add x y hx hy => simp only [map_add, LinearMap.add_apply, hx, hy]
+
 /-- The coroot `α̌_Q ∈ 𝔞_Q^G` of `α ∈ Δ_Q`: the projection to `𝔞_Q` of the coroot `α̌` of the
 simple root of `Δ_0` restricting to `α`. The `α̌_Q` form a basis of `𝔞_Q^G` and generate the
 lattice `L_Q`. -/

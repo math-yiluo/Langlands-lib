@@ -1,0 +1,9 @@
+# Holomorphic identification of a finite regularized orthant sum
+
+The regularized cone formula (7.12) of Delorme uses affine coroot denominators. When each coefficient is a holomorphic linear combination of fixed polynomials, the sum is a finite sum of holomorphic numerators divided by products of coroot evaluations. Theorem 7.1 supplies its holomorphic representative on the imaginary axis.
+
+`FiniteOrthantHolomorphicIdentificationStatement` concerns a supplied representative holomorphic on an open neighborhood of the full imaginary axis in finite coordinates. Assume that the representative agrees with a finite orthant sum on a dense set of imaginary parameters at which every denominator is nonzero. Then the equality holds on an open neighborhood of the full axis, at every point where the coroot evaluations are nonzero. Each orthant can have its own coordinate type, vertex, and polynomial, and the coefficients and coroot evaluations are holomorphic on the same domain.
+
+The proof expands each translated polynomial using its finite monomial support. It multiplies by the product of all monomial denominators. The resulting numerator is holomorphic because the individual products omit the factor for the corresponding monomial. Continuity extends equality of the two cleared functions across the full imaginary axis. The identity theorem on balls centered on that axis shows equality of the cleared functions on their union. At points with nonzero coroot evaluations, cancellation gives the formula. This supplies the holomorphic identification used before displacing a relative imaginary plane in the boundary value calculation of Proposition 7.8.
+
+The source is Patrick Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics **426** (2023), 109107, (7.8)–(7.12), Theorem 7.1, and Proposition 7.8, pp. 24–25 and 33.

@@ -1,0 +1,9 @@
+# The normalized integral of the characteristic shell
+
+For an integrable radical-invariant function on the rational parabolic quotient, the lifted characteristic shell integral equals an integral of normalized slices on the intrinsic norm-one Levi quotient. The other factors are the unweighted relative split Haar measure restricted to the split shell and the probability Haar measure of the ambient compact.
+
+Choose the radical Haar measure with mass one on its rational fundamental domain. The rational radical quotient is compact, so its Haar mass before normalization is finite and positive. Apply the relative Iwasawa measure formula with this choice and restrict it to the actual shell. The rational parabolic lift is Borel, and its coordinate pullback is a product of the split and Levi restrictions. The Levi restriction is Borel because its preimage is cut out by finitely many continuous height inequalities. Every intrinsic norm-one Levi height already belongs to the Levi coroot span.
+
+Fubini removes the radical coordinate by invariance and mass one. Each remaining Levi slice descends through the rational Levi quotient because the split point commutes with the rational Levi and the rational Levi maps into the rational parabolic. Pushing forward the restriction to the Levi fundamental domain gives the restricted intrinsic quotient Haar measure. Applying the squared half-modulus cancellation replaces the split density by the displayed normalization of the slice.
+
+This is the integral step for the weak pairing in Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, (7.7), (7.23), and the formula for the weak shell integral on p. 29. The statement applies to a measurable integrable function on the lifted shell, so its rational invariance is on the parabolic quotient.

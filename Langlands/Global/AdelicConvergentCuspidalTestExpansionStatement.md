@@ -7,3 +7,5 @@ At each standard index \(J\), and for sufficiently regular source parameters, ta
 The difference is a finite sum of absolutely convergent pairings. Its labels are the affine unnormalized exponents coming from the competing Weyl terms. Each label's ambient real linear part is the corresponding Weyl transform of the source parameter. The label's constant offset includes the change from normalized to unnormalized exponents. The Weyl elements send the source Levi simple roots to positive roots and exclude the selected representative. The terms may vary with the regular parameter, while the finite affine label data stay fixed.
 
 Bernstein–Lapid §6.10, (6.18) and (6.20), gives the cuspidal constant-term identity and its exponent consequence before taking the norm-one tests of §6.2, (6.8).
+
+`CompetingWeylExponents.sigma` concatenates a finite family of exponent lists.

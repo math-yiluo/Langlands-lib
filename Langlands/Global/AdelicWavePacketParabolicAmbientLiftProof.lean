@@ -30,23 +30,41 @@ open scoped CategoryTheory.MonObj
 namespace Langlands.Global
 
 open GroupScheme AdelicGroupPoints Langlands.Automorphic.GroupSchemeFunctions
+  Langlands.Analysis.Meromorphic
 
-/-- **Ambient lift of a relative wave packet, retaining the parabolic.** If every regular
-parameter region is nonempty, the product of the ambient profile of a smooth compactly supported
-coefficient with a wave packet of `P` over `i(𝔞_M^G)^*` is a wave packet of `P` over `i𝔞_P^*`,
-with the concatenated coordinates `ℝ^{n+m} ≃ (𝔞_M^G)^* × 𝔞_G^* ≃ 𝔞_P^*`, the product
-coefficients, and the original inducing forms, continuations and holomorphy domain. -/
-theorem wavePacketParabolicAmbientLift_of_regularParameter
-    (hR : EisensteinRegularParameterStatement.{0}) :
-    WavePacketParabolicAmbientLiftStatement := by
-  intro F _ _ G P M U A _ _ _ _ _ _ _ p hp iU l a r _ _ _ hA hT hG hiU K hK N d rho hsmooth
-    hcalc m eG b hb hb' Θ hΘ
-  obtain ⟨n, e, k, v, c, E, D, hv, hc, hD, hE, hreg, hΘ⟩ := hΘ
-  let e' := (spectralCoordinateProduct n m).symm.trans
-    ((e.prodCongr eG).trans (relativeAmbientParameterEquiv r hG))
-  let c' := fun j => spectralProductCoefficient (c j) b
-  refine ⟨n + m, e', k, v, c', E, D, hv, fun j => ⟨(hc j).1.spectralProductCoefficient hb,
-    (hc j).2.spectralProductCoefficient hb'⟩, hD, hE, hreg, ?_⟩
+/-- The ambient product formula with the original inducing forms and the original
+number of summands retained. -/
+theorem relativeWavePacketAmbientLiftPresentation
+    (hR : EisensteinRegularParameterStatement.{0})
+    {F : Type} [Field F] [NumberField F]
+    {G P M : GroupScheme (Spec (CommRingCat.of F))}
+    {A : CommGroupScheme (Spec (CommRingCat.of F))}
+    [IsAffineHom G.X.hom] [IsAffine G.X.left] [LocallyOfFiniteType G.X.hom]
+    [IsAffine P.X.left] [LocallyOfFiniteType P.X.hom]
+    [IsAffine M.X.left] [LocallyOfFiniteType M.X.hom]
+    {p : P ⟶ G} [IsClosedImmersion p.hom.hom.left]
+    {l : M ⟶ P} {a : A.toGrp ⟶ M} (r : ParabolicRootPresentation p l a)
+    [Mono r.data.i.hom.hom.left] [Fintype (relativeWeylGroup r.data.i)]
+    [Mono (CommGroupScheme.groupHom r.data.f).hom.hom.left]
+    (hA : IsSplitTorus A.toGrp) (hT : IsSplitTorus r.data.T.toGrp)
+    (hG : IsConnectedReductive G) {K : Subgroup (AdelicGroupPoints F G)}
+    (hK : IsIwasawaCompact p K) {n m k : ℕ}
+    (e : (Fin n → ℝ) ≃ₗ[ℝ] relativeParameterSpace (F := F) p)
+    (eG : (Fin m → ℝ) ≃ₗ[ℝ] RealCharacterParameter F G)
+    (b : (Fin m → ℝ) → ℂ) (c : Fin k → (Fin n → ℝ) → ℂ)
+    (v : Fin k → AdelicGroupPoints F G → ℂ)
+    (E : Fin k → ComplexCharacterParameter F P → AdelicGroupPoints F G → ℂ)
+    (D : Set (ComplexCharacterParameter F P))
+    (hD : Set.range (imaginaryParameter F P) ⊆ D)
+    (hE : ∀ j g, IsMeromorphicInCoordinatesOn (fun lam => E j lam g) D)
+    (hreg : ∀ j, ∃ R, ∀ lam, r.IsRegularParameter hA hT R lam → E j lam = hK.eisensteinSeries (v j) lam) :
+    let e' := (spectralCoordinateProduct n m).symm.trans
+      ((e.prodCongr eG).trans (relativeAmbientParameterEquiv r hG))
+    let c' := fun j => spectralProductCoefficient (c j) b
+    (fun g => ∫ z, ∑ j, c' j z * E j (imaginaryParameter F P (e' z)) g ∂(spectralMeasure (n + m))) =
+    fun g => ambientWavePacketProfile eG b g *
+      (∫ x, ∑ j, c j x * E j (imaginaryParameter F P (e x).val) g ∂(spectralMeasure n)) := by
+  intro e' c'
   funext g
   let f : (Fin n → ℝ) → ℂ := fun x =>
     ∑ j, c j x * E j (imaginaryParameter F P (e x).val) g
@@ -77,8 +95,27 @@ theorem wavePacketParabolicAmbientLift_of_regularParameter
     intro j _
     ring
   rw [hf, integral_spectralProductCoefficient, mul_comm]
-  rw [hΘ]
   rfl
+
+/-- **Ambient lift of a relative wave packet, retaining the parabolic.** If every regular
+parameter region is nonempty, the product of the ambient profile of a smooth compactly supported
+coefficient with a wave packet of `P` over `i(𝔞_M^G)^*` is a wave packet of `P` over `i𝔞_P^*`,
+with the concatenated coordinates `ℝ^{n+m} ≃ (𝔞_M^G)^* × 𝔞_G^* ≃ 𝔞_P^*`, the product
+coefficients, and the original inducing forms, continuations and holomorphy domain. -/
+theorem wavePacketParabolicAmbientLift_of_regularParameter
+    (hR : EisensteinRegularParameterStatement.{0}) :
+    WavePacketParabolicAmbientLiftStatement := by
+  intro F _ _ G P M U A _ _ _ _ _ _ _ p hp iU l a r _ _ _ hA hT hG hiU K hK N d rho hsmooth
+    hcalc m eG b hb hb' Θ hΘ
+  obtain ⟨n, e, k, v, c, E, D, hv, hc, hD, hE, hreg, hΘ⟩ := hΘ
+  let e' := (spectralCoordinateProduct n m).symm.trans
+    ((e.prodCongr eG).trans (relativeAmbientParameterEquiv r hG))
+  let c' := fun j => spectralProductCoefficient (c j) b
+  refine ⟨n + m, e', k, v, c', E, D, hv, fun j => ⟨(hc j).1.spectralProductCoefficient hb,
+    (hc j).2.spectralProductCoefficient hb'⟩, hD, hE, hreg, ?_⟩
+  rw [hΘ]
+  let : LocallyOfFiniteType P.X.hom := IsClosedSubgroup.locallyOfFiniteType (j := p) hp
+  exact (relativeWavePacketAmbientLiftPresentation hR r hA hT hG hK e eG b c v E D hD hE hreg).symm
 
 /-- A wave packet of one presented parabolic `P` with geometric unipotent radical and
 `P(𝔸)K = G(𝔸)` is a wave packet in the sense of `IsWavePacket`, with the same data. -/

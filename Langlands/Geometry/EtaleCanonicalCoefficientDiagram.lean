@@ -48,12 +48,6 @@ theorem inverseImageComp_congr_right_app (f : Z ⟶ X) {g g' : W ⟶ Z} (e : g =
   subst g'
   simp
 
-/-- Pullback of coefficients along a commuting triangle of arbitrary schemes. -/
-def projectionInverseImageIso (p : Y ⟶ X) (q : Z ⟶ X) (f : Z ⟶ Y)
-    (e : f ≫ p = q) :
-    inverseImage p R ⋙ inverseImage f R ≅ inverseImage q R :=
-  inverseImageComp R p f ≪≫ inverseImageCongr R e
-
 /-- An identity triangle induces the actual inverse-image identity constraint. -/
 theorem projectionInverseImageIso_id (p : Y ⟶ X) (f : Y ⟶ Y)
     (e : f ≫ p = p) (e1 : f = 𝟙 Y) (M : ModuleSheaf X R) :

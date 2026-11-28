@@ -1,0 +1,7 @@
+# Coefficient bounds for graded word series
+
+`WordSeriesControl c f` says that all words in the coefficient of degree `n` have length `n` and each of their coefficient norms is at most `c`. Multiplication convolves series degrees and adds word lengths. The ultrametric inequality bounds every coefficient of a product by the product of the two bounds, with no factor for the number of words. The formal inverse constructed with constant coefficient one preserves bound one by its coefficient recursion.
+
+`ExponentialControlStatement` works over a nontrivially normed ultrametric field. It takes a homogeneous word series `f` with bound `c` and assumes `‖(k!)⁻¹‖ c^k ≤ c` for each `k > 0`. The degree `n` output of `formalExponential` uses the degree `n` coefficient of the finite sum of `f^k / k!` for `0 ≤ k ≤ n`, with the scalar inverse taken in the field. This is the cutoff for every input constant coefficient. It gives the usual formal exponential when the field has characteristic zero and `f` has zero constant coefficient.
+
+After subtracting one, the `k = 0` term cancels. The coefficient of each remaining term satisfies the bound by the product estimate, and the ultrametric inequality preserves the bound in the sum. For `c ≤ 1`, the bound on the difference from one is also preserved by products. These estimates give the coefficient bounds for the degree-by-degree construction of the conjugators. [Boyarchenko and Sabitova, *The orbit method for profinite groups and a p-adic analogue of Brown's theorem*, Lemma 2.3](https://arxiv.org/abs/math/0608126v1)

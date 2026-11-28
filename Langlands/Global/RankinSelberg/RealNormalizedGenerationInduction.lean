@@ -160,4 +160,51 @@ theorem realNormalizedGenerationInduction : RealNormalizedGenerationInductionSta
           exact ⟨_, hThird (xs ++ [x]) y ys hds hy hd he f hf, mul_ne_zero h hn⟩
         · exact hDual h
 
+/-- Some allowed scalar value is nonzero at every spectral point. -/
+def CoversAtPoints (M : ℂ → Submodule ℂ ℂ) : Prop :=
+  ∀ s : ℂ, ∃ z ∈ M s, z ≠ 0
+
+/-- The normalized generation induction only needs the scalar-value inclusions at each point. -/
+def RealNormalizedPointwiseGenerationInductionStatement : Prop :=
+  ∀ M : List RealBlock → List RealBlock → ℂ → Submodule ℂ ℂ,
+    (∀ x y, CoversAtPoints (M [x] [y])) →
+    (∀ x ys, ys ≠ [] → IsRealLanglandsOrdered ys → CoversAtPoints (M ys [x]) → CoversAtPoints (M [x] ys)) →
+    (∀ x xs y, xs ≠ [] → IsRealLanglandsOrdered (xs ++ [x]) → ∀ (s z : ℂ), z ∈ M [x] [y] s →
+      (realPairLFactor xs [y]).denominator s * z ∈ M (xs ++ [x]) [y] s) →
+    (∀ x xs ys, xs ≠ [] → ys ≠ [] → IsRealLanglandsOrdered (xs ++ [x]) →
+      IsRealLanglandsOrdered ys → ∀ (s z : ℂ), z ∈ M xs ys s →
+      (realPairLFactor [dualBlock x] (ys.map dualBlock)).denominator (1 - s) * z ∈ M (xs ++ [x]) ys s) →
+    (∀ xs y ys, xs ≠ [] → ys ≠ [] → IsRealLanglandsOrdered xs → IsRealLanglandsOrdered (y :: ys) →
+      ∀ (s z : ℂ), z ∈ M xs ys s → (realPairLFactor xs [y]).denominator s * z ∈ M xs (y :: ys) s) →
+    ∀ xs ys, xs ≠ [] → ys ≠ [] → IsRealLanglandsOrdered xs → IsRealLanglandsOrdered ys → CoversAtPoints (M xs ys)
+
+theorem realNormalizedPointwiseGenerationInduction : RealNormalizedPointwiseGenerationInductionStatement := by
+  classical
+  intro M hBase hSwap hFirst hDual hThird
+  let S (ds es : List RealBlock) : Submodule ℂ (ℂ → ℂ) := Submodule.pi Set.univ (M ds es)
+  have hMem (ds es : List RealBlock) (f : ℂ → ℂ) : f ∈ S ds es ↔ ∀ s : ℂ, f s ∈ M ds es s := by
+    simp [S, Submodule.mem_pi]
+  have hCover (ds es : List RealBlock) : Covers (S ds es) ↔ CoversAtPoints (M ds es) := by
+    constructor
+    · intro h s
+      obtain ⟨f, hf, hne⟩ := h s
+      exact ⟨f s, (hMem ds es f).1 hf s, hne⟩
+    · intro h s
+      obtain ⟨z, hz, hne⟩ := h s
+      refine ⟨Pi.single s z, (hMem ds es _).2 fun t => ?_, by simpa⟩
+      by_cases hts : t = s
+      · subst t
+        simpa using hz
+      · simpa only [Pi.single_eq_of_ne hts] using (M ds es t).zero_mem
+  intro ds es hds hes hd he
+  refine (hCover ds es).mp (realNormalizedGenerationInduction S (fun x y => (hCover _ _).mpr (hBase x y))
+    (fun x ys hys ho h => (hCover _ _).mpr (hSwap x ys hys ho ((hCover _ _).mp h)))
+    ?_ ?_ ?_ ds es hds hes hd he)
+  · intro x xs y hx ho f hf
+    exact (hMem _ _ _).2 fun s => hFirst x xs y hx ho s (f s) ((hMem _ _ _).1 hf s)
+  · intro x xs ys hx hy hox hoy f hf
+    exact (hMem _ _ _).2 fun s => hDual x xs ys hx hy hox hoy s (f s) ((hMem _ _ _).1 hf s)
+  · intro xs y ys hx hy hox hoy f hf
+    exact (hMem _ _ _).2 fun s => hThird xs y ys hx hy hox hoy s (f s) ((hMem _ _ _).1 hf s)
+
 end Langlands.Global.RankinSelbergGlobal.RealNormalizedGenerationInduction

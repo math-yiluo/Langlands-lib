@@ -1,0 +1,9 @@
+# Cyclotomic reduction for quasi-split E₆
+
+`NumberFieldQuasiSplitTypeE6CyclotomicReductionStatement` derives vanishing on every finite Galois cover of a quasi-split simply connected absolutely almost-simple E₆ group over a totally complex number field. The three inputs are the maximal-torus cocycle order bound supported on 2 and 3, cyclotomic splitting for torsion torus cocycles over number fields, and quasi-split E₆ vanishing on covers of degree two or three.
+
+Steinberg torus reduction gives a torus cocycle after a finite Galois refinement. The closed torus embeds in a maximal torus, so the order bound applies to its image there. Cyclotomic splitting makes this image trivial on the full pullback to a finite cyclotomic extension. The Galois character on the primitive root embeds the extension's Galois group into the group of units modulo the order of the root. Its degree divides the totient of that order, which has only 2 and 3 as possible prime factors by the product formula for the totient. The refined original cocycle is cohomologous to the image of the torus cocycle and thus also becomes trivial over this extension.
+
+Finite field extension preserves total complexity, quasi-splitness, simple connectedness and absolute almost-simplicity. A common separable closure compares the two actual Cartan numberings. Local vanishing then holds for every group in this class. `numberFieldAbelianCoverVanishing` applies to the cyclotomic extension using the prime-degree input. Inflation and restriction descend triviality of the refined original cocycle, which implies triviality on the starting cover.
+
+This is the finite-cover form of the quasi-split E₆ argument in Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), §6.8, printed pp. 375–382, especially the abelian extension and prime tower on printed pp. 377–378.

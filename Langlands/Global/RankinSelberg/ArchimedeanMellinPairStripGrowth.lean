@@ -198,10 +198,10 @@ private theorem norm_le_on_strip_of_norm_re {E : ℂ → ℂ} (hE : Continuous E
   rw [hEn s]
   exact (hC (mem_image_of_mem (fun x : ℝ => ‖E (x : ℂ)‖) ⟨ha, hb⟩)).trans (le_max_left _ _)
 
-/-- A Gaussian Mellin pair and exponential bounds for the two reciprocal L-denominators
-give an entire normalization of exponential strip growth. Here `E` is the inverse of
-the signed epsilon factor. -/
-def MellinPairNormalizedStripGrowthStatement : Prop :=
+/-- A Gaussian Mellin pair produces an entire value of exponential strip growth with the
+specified ordinary and reflected values in their half-planes. Here `E` is the inverse of
+the signed reflection factor. -/
+def MellinPairEntireValueStatement : Prop :=
   ∀ {X : Type u} {Y : Type v} [MeasurableSpace X] [MeasurableSpace Y]
     (μ : Measure X) (ν : Measure Y) [SFinite μ] [SFinite ν]
     (F : X → ℂ) (δ : X → ℝ) (G : Y → ℂ) (δd : Y → ℝ)
@@ -216,13 +216,14 @@ def MellinPairNormalizedStripGrowthStatement : Prop :=
     (∀ s : ℂ, mellin k (s - 1) = Complex.exp (s ^ 2) * Ld.denominator (1 - s)) →
     Differentiable ℂ E → (∀ s : ℂ, ‖E s‖ = ‖E (s.re : ℂ)‖) →
     HasStripExponentialGrowth L.denominator → HasStripExponentialGrowth Ld.denominator →
-    (∃ τ : ℝ, ∀ s : ℂ, τ < s.re → L.denominator s ≠ 0) →
-    ∃ R : OrdinaryIntegralNormalization (fun s => ∫ x, F x * (δ x : ℂ) ^ s ∂μ)
-      (fun s => (L.denominator s)⁻¹), HasStripExponentialGrowth R.value
+    ∃ R : ℂ → ℂ, Differentiable ℂ R ∧ HasStripExponentialGrowth R ∧
+      (∀ s : ℂ, N ≤ s.re → R s = (∫ x, F x * (δ x : ℂ) ^ s ∂μ) * L.denominator s) ∧
+      (∀ s : ℂ, s.re ≤ 1 - N →
+        R s = E s * ((∫ y, G y * (δd y : ℂ) ^ (1 - s) ∂ν) * Ld.denominator (1 - s)))
 
-theorem mellinPairNormalizedStripGrowth : MellinPairNormalizedStripGrowthStatement.{u, v} := by
+theorem mellinPairEntireValue : MellinPairEntireValueStatement.{u, v} := by
   intro X Y _ _ μ ν _ _ F δ G δd h k N L Ld E hF hG hδm hδdm hδ hδd hh hk hhdec hkdec
-    hFN hGN hpair hMh hMk hEa hEn hL hLd hLne
+    hFN hGN hpair hMh hMk hEa hEn hL hLd
   obtain ⟨hΘ, hΘr, hΘl⟩ := mellin_theta_entire μ ν F δ G δd hF hG hδm hδdm hδ hδd h k
     hh hk hhdec hkdec N hFN hGN hpair
   let R (s : ℂ) := E s * Complex.exp (-(s ^ 2)) * mellin (theta μ F δ h) (-s)
@@ -294,36 +295,65 @@ theorem mellinPairNormalizedStripGrowth : MellinPairNormalizedStripGrowthStateme
     obtain ⟨U, hU, hUR⟩ := vertical_line_bound hRa.continuous a
       (mul_nonneg hM (mul_nonneg hD hC)) hK htail
     exact ⟨U, K, hU, hK, hUR⟩
+  refine ⟨R, hRa, ?_, hRight, hLeft⟩
+  intro a b
+  let l := min a (1 - N) - 1
+  let r := max (max a b) N + 1
+  have hl : l < min a (1 - N) := sub_lt_self _ zero_lt_one
+  have hr : max (max a b) N < r := lt_add_one _
+  have hla : l < a := hl.trans_le (min_le_left _ _)
+  have har : a < r := ((le_max_left a b).trans (le_max_left _ _)).trans_lt hr
+  have hbr : b < r := ((le_max_right a b).trans (le_max_left _ _)).trans_lt hr
+  obtain ⟨Cl, Kl, _, _, hEl⟩ := hLline l (hl.le.trans (min_le_right _ _))
+  obtain ⟨Cr, Kr, _, _, hEr⟩ := hRline r ((le_max_right _ _).trans hr.le)
+  obtain ⟨Cq, hCq, hQ⟩ := hGauss l r
+  let C := max Cq (max Cl Cr)
+  let K := max Kl Kr
+  have hC : 0 ≤ C := hCq.trans (le_max_left _ _)
+  refine ⟨C * Real.exp ((|l| + |r|) ^ 2), K ^ 2 + 1, 1, by positivity, by positivity,
+    fun s ha hb ht => ?_⟩
+  apply norm_le_exp_of_gaussian_on_strip hRa (hla.trans har) hC zero_le_one
+    (fun w hw hw' => ?_) (fun w hw => ?_) (hla.le.trans ha) (hb.trans hbr.le) ht
+  · simpa only [one_mul] using (hQ w hw hw').trans
+      (mul_le_mul_of_nonneg_right (le_max_left Cq (max Cl Cr)) (Real.exp_pos _).le)
+  · rcases hw with hw | hw
+    · exact (hEl w hw).trans (mul_le_mul ((le_max_left Cl Cr).trans (le_max_right _ _))
+        (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_right (le_max_left _ _) (abs_nonneg _)))
+        (Real.exp_pos _).le hC)
+    · exact (hEr w hw).trans (mul_le_mul ((le_max_right Cl Cr).trans (le_max_right _ _))
+        (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_right (le_max_right _ _) (abs_nonneg _)))
+        (Real.exp_pos _).le hC)
+
+/-- A Gaussian Mellin pair and exponential bounds for the two reciprocal L-denominators
+give an entire normalization of exponential strip growth. Here `E` is the inverse of
+the signed epsilon factor. -/
+def MellinPairNormalizedStripGrowthStatement : Prop :=
+  ∀ {X : Type u} {Y : Type v} [MeasurableSpace X] [MeasurableSpace Y]
+    (μ : Measure X) (ν : Measure Y) [SFinite μ] [SFinite ν]
+    (F : X → ℂ) (δ : X → ℝ) (G : Y → ℂ) (δd : Y → ℝ)
+    (h k : ℝ → ℂ) (N : ℝ) (L Ld : ReciprocalEntire) (E : ℂ → ℂ),
+    AEStronglyMeasurable F μ → AEStronglyMeasurable G ν →
+    Measurable δ → Measurable δd → (∀ x, 0 < δ x) → (∀ y, 0 < δd y) →
+    Measurable h → Measurable k → RapidDecay h → RapidDecay k →
+    (∀ σ : ℝ, N ≤ σ → Integrable (fun x => ‖F x‖ * δ x ^ σ) μ) →
+    (∀ σ : ℝ, N ≤ σ → Integrable (fun y => ‖G y‖ * δd y ^ σ) ν) →
+    (∀ a : ℝ, 0 < a → theta μ F δ h a = (a : ℂ) * theta ν G δd k a⁻¹) →
+    (∀ s : ℂ, E s * mellin h (-s) = Complex.exp (s ^ 2) * L.denominator s) →
+    (∀ s : ℂ, mellin k (s - 1) = Complex.exp (s ^ 2) * Ld.denominator (1 - s)) →
+    Differentiable ℂ E → (∀ s : ℂ, ‖E s‖ = ‖E (s.re : ℂ)‖) →
+    HasStripExponentialGrowth L.denominator → HasStripExponentialGrowth Ld.denominator →
+    (∃ τ : ℝ, ∀ s : ℂ, τ < s.re → L.denominator s ≠ 0) →
+    ∃ R : OrdinaryIntegralNormalization (fun s => ∫ x, F x * (δ x : ℂ) ^ s ∂μ)
+      (fun s => (L.denominator s)⁻¹), HasStripExponentialGrowth R.value
+
+theorem mellinPairNormalizedStripGrowth : MellinPairNormalizedStripGrowthStatement.{u, v} := by
+  intro X Y _ _ μ ν _ _ F δ G δd h k N L Ld E hF hG hδm hδdm hδ hδd hh hk hhdec hkdec
+    hFN hGN hpair hMh hMk hEa hEn hL hLd hLne
+  obtain ⟨R, hR, hGrowth, hRight, _⟩ := mellinPairEntireValue μ ν F δ G δd h k N L Ld E
+    hF hG hδm hδdm hδ hδd hh hk hhdec hkdec hFN hGN hpair hMh hMk hEa hEn hL hLd
   obtain ⟨τ, hτ⟩ := hLne
-  refine ⟨⟨R, fun s _ => hRa.analyticAt s, ⟨max N τ, fun s hs => ?_⟩⟩, ?_⟩
-  · rw [hRight s ((le_max_left _ _).trans hs.le), mul_assoc,
-      mul_inv_cancel₀ (hτ s ((le_max_right _ _).trans_lt hs)), mul_one]
-  · intro a b
-    let l := min a (1 - N) - 1
-    let r := max (max a b) N + 1
-    have hl : l < min a (1 - N) := sub_lt_self _ zero_lt_one
-    have hr : max (max a b) N < r := lt_add_one _
-    have hla : l < a := hl.trans_le (min_le_left _ _)
-    have har : a < r := ((le_max_left a b).trans (le_max_left _ _)).trans_lt hr
-    have hbr : b < r := ((le_max_right a b).trans (le_max_left _ _)).trans_lt hr
-    obtain ⟨Cl, Kl, _, _, hEl⟩ := hLline l (hl.le.trans (min_le_right _ _))
-    obtain ⟨Cr, Kr, _, _, hEr⟩ := hRline r ((le_max_right _ _).trans hr.le)
-    obtain ⟨Cq, hCq, hQ⟩ := hGauss l r
-    let C := max Cq (max Cl Cr)
-    let K := max Kl Kr
-    have hC : 0 ≤ C := hCq.trans (le_max_left _ _)
-    refine ⟨C * Real.exp ((|l| + |r|) ^ 2), K ^ 2 + 1, 1, by positivity, by positivity,
-      fun s ha hb ht => ?_⟩
-    apply norm_le_exp_of_gaussian_on_strip hRa (hla.trans har) hC zero_le_one
-      (fun w hw hw' => ?_) (fun w hw => ?_) (hla.le.trans ha) (hb.trans hbr.le) ht
-    · simpa only [one_mul] using (hQ w hw hw').trans
-        (mul_le_mul_of_nonneg_right (le_max_left Cq (max Cl Cr)) (Real.exp_pos _).le)
-    · rcases hw with hw | hw
-      · exact (hEl w hw).trans (mul_le_mul ((le_max_left Cl Cr).trans (le_max_right _ _))
-          (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_right (le_max_left _ _) (abs_nonneg _)))
-          (Real.exp_pos _).le hC)
-      · exact (hEr w hw).trans (mul_le_mul ((le_max_right Cl Cr).trans (le_max_right _ _))
-          (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_right (le_max_right _ _) (abs_nonneg _)))
-          (Real.exp_pos _).le hC)
+  refine ⟨⟨R, fun s _ => hR.analyticAt s, ⟨max N τ, fun s hs => ?_⟩⟩, hGrowth⟩
+  rw [hRight s ((le_max_left _ _).trans hs.le), mul_assoc,
+    mul_inv_cancel₀ (hτ s ((le_max_right _ _).trans_lt hs)), mul_one]
 
 end Langlands.Global.RankinSelbergGlobal.ArchimedeanMellinPair

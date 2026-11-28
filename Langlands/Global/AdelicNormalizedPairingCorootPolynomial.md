@@ -1,0 +1,7 @@
+# The coroot polynomial in a normalized weak pairing
+
+`normalizedPairingCorootPolynomial` gives the normalized pairing of a height twist of an inducing section with a unitary exponent component. Given integrability of the untwisted pairings on every positive split slice, it proves integrability after each twist. The result on a slice with coroot coordinates `c` is one exponential with label `eta - mu` times a polynomial in `c`. The polynomial is fixed as the inducing twist `eta` varies.
+
+The untwisted pairing has a polynomial in the parabolic logarithm by the polynomial orbit formula for the tested exponent component. The normalized inducing section contributes one half modulus, and conjugating the translated test contributes the second half modulus and the negative unitary exponent. Composing the polynomial with the linear sum of the relative coroots gives a multivariate coordinate polynomial. The proof builds it first for products of real linear forms, then extends by complex linearity. At each fixed split slice the inducing twist is constant along the norm-one Levi and compact factors. The integral thus acquires the scalar character of the twist. After canceling the squared half modulus, the two characters give the difference label. Evaluation of that character on the sum of the relative coroots yields the stated exponential.
+
+This is the polynomial and label calculation used in Delorme, *On the spectral theorem of Langlands*, Advances in Mathematics 426 (2023), 109107, Remark 3.9 and (7.8)–(7.12).

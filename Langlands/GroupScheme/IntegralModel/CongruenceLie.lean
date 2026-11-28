@@ -40,7 +40,7 @@ def congruenceIdealReduction {n m : ℕ+} (h : n ≤ m) :
       change Ideal.Quotient.mk (𝔪 ^ (n : ℕ)) (a : R) = 0
       exact Ideal.Quotient.eq_zero_iff_mem.mpr a.property)
 
-private theorem congruenceIdealReduction_surjective {n m : ℕ+} (h : n ≤ m) :
+theorem congruenceIdealReduction_surjective {n m : ℕ+} (h : n ≤ m) :
     Function.Surjective (congruenceIdealReduction R h) := by
   rintro ⟨b, hb⟩
   obtain ⟨a, rfl⟩ := Ideal.Quotient.mk_surjective b

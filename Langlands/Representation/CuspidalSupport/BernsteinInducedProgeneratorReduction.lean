@@ -10,6 +10,9 @@ import Langlands.Representation.CuspidalSupport.RationalNormKernelFiniteRestrict
 import Langlands.Representation.Category.ProjectiveGeneration
 import Langlands.Representation.CuspidalSupport.RationalSummandEndCenterReduction
 import Langlands.Representation.CuspidalSupport.BernsteinBlockHomEquivalenceReduction
+import Langlands.Representation.CuspidalSupport.LeviCenterDescent
+import Langlands.Representation.Aubert.General.JacquetColimits
+import Langlands.BruhatTits.SpecialCompact.JointBasisProof
 
 /-! # The induced Bernstein progenerator from its structural inputs (Renard VI.10.1–VI.10.3)
 
@@ -21,7 +24,9 @@ supercuspidal). Then `Π_Ω = i_P^G(Π_D)` lies in the Bernstein block of its in
 there a finitely generated projective generator (`BernsteinInducedProgeneratorStatement`, the
 VI.10.1 Theorem). Its two consequences follow by the published reductions: the VI.10.2 Theorem
 (`BernsteinBlockHomEquivalenceStatement`) and the VI.10.3 Proposition
-(`BernsteinBlockJacquetFaithfulStatement`).
+(`BernsteinBlockJacquetFaithfulStatement`). The assembly from three premises uses the proved
+joint special-compact basis and derives finite generation from second adjointness and Jacquet
+coproduct preservation.
 
 Generation adapts Renard's proof on PDF p.214: an irreducible `τ` of the block has a cuspidal
 datum `c` whose representation is a quotient of the Jacquet module of `τ`; `Π_D`, transported to
@@ -34,7 +39,7 @@ noncomputable section
 
 set_option backward.isDefEq.respectTransparency.types false
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
 open Langlands.AlgebraicGeometry.PointTopology
 open Langlands.Aubert.General Langlands.Aubert.General.RationalPointFamily
 open Langlands.GroupScheme
@@ -42,7 +47,75 @@ open scoped CategoryTheory.MonObj
 
 namespace Langlands.CuspidalSupport
 
-universe uF uV uH uK
+universe uF uV uH uK uG uM
+
+open SmoothRep in
+/-- If the right adjoint preserves small colimits, the left adjoint sends a finitely generated
+object with projective image to a finitely generated object. -/
+private theorem finite_of_projective_adjoint_image
+    {G : Type uG} {M : Type uM} [Group G] [TopologicalSpace G]
+    [Group M] [TopologicalSpace M]
+    {L : SmoothRep.{0, uM, uV} ℂ M ⥤ SmoothRep.{0, uG, uV} ℂ G}
+    {R : SmoothRep.{0, uG, uV} ℂ G ⥤ SmoothRep.{0, uM, uV} ℂ M}
+    [L.Additive] [PreservesColimitsOfSize.{uV, uV} R]
+    (adj : L ⊣ R) (P : SmoothRep.{0, uM, uV} ℂ M) [Projective (L.obj P)]
+    [Module.Finite (MonoidAlgebra ℂ M) P.representation.asModule] :
+    Module.Finite (MonoidAlgebra ℂ G) (L.obj P).representation.asModule := by
+  classical
+  let Y := L.obj P
+  let A (i : Y.representation.asModule) :=
+    subrepresentation Y (finiteSpanSubrepresentation Y {i})
+  let inclusion (i : Y.representation.asModule) : A i ⟶ Y :=
+    SmoothRep.subtype Y (finiteSpanSubrepresentation Y {i})
+  let q : directSum A ⟶ Y := (directSumIsColimit A).desc (Cofan.mk Y inclusion)
+  have hq (i : Y.representation.asModule) : directSumι A i ≫ q = inclusion i :=
+    (directSumIsColimit A).fac (Cofan.mk Y inclusion) ⟨i⟩
+  have : Epi q := (epi_iff_surjective q).mpr (fun y => by
+    let i := Y.representation.asModuleEquiv.symm y
+    let z : A i := ⟨y, by
+      change y ∈ Submodule.span (MonoidAlgebra ℂ G)
+        (({i} : Finset Y.representation.asModule) : Set Y.representation.asModule)
+      apply Submodule.subset_span
+      rw [Finset.coe_singleton]
+      exact Set.mem_singleton i⟩
+    exact ⟨hom (directSumι A i) z, congrArg (fun f => hom f z) (hq i)⟩)
+  let s : Y ⟶ directSum A := Projective.factorThru (𝟙 Y) q
+  let B := fun i => R.obj (A i)
+  let hc := isColimitCofanMkObjOfIsColimit R A (directSumι A) (directSumIsColimit A)
+  let e : directSum B ≅ R.obj (directSum A) :=
+    (directSumIsColimit B).coconePointUniqueUpToIso hc
+  have he (i : Y.representation.asModule) :
+      directSumι B i ≫ e.hom = R.map (directSumι A i) :=
+    (directSumIsColimit B).comp_coconePointUniqueUpToIso_hom hc ⟨i⟩
+  let t := adj.homEquiv P (directSum A) s ≫ e.inv
+  obtain ⟨T, -, ht⟩ := finite_decomposition_hom_directSum B P t
+  let a (i : Y.representation.asModule) : Y ⟶ A i :=
+    (adj.homEquiv P (A i)).symm (t ≫ directSumπ B i)
+  have hs : s = ∑ i ∈ T, a i ≫ directSumι A i := by
+    have h := congrArg (fun f => f ≫ e.hom) ht
+    simp only [Preadditive.sum_comp, Category.assoc, he] at h
+    apply (adj.homAddEquiv P (directSum A)).injective
+    rw [map_sum]
+    simpa only [t, Category.assoc, Iso.inv_hom_id, Category.comp_id,
+      Adjunction.homAddEquiv_apply, adj.homEquiv_naturality_right, a,
+      Equiv.apply_symm_apply] using h
+  have hid : 𝟙 Y = ∑ i ∈ T, a i ≫ inclusion i := by
+    rw [← Projective.factorThru_comp (𝟙 Y) q]
+    change s ≫ q = _
+    simp only [hs, Preadditive.sum_comp, Category.assoc, hq]
+  refine Module.finite_def.mpr ⟨T, top_unique (fun y _ => ?_)⟩
+  let evalAt : (Y ⟶ Y) →+ Y :=
+    { toFun := fun f => hom f y
+      map_zero' := rfl
+      map_add' := fun _ _ => rfl }
+  have hy : y = ∑ i ∈ T, hom (inclusion i) (hom (a i) y) := by
+    have h := congrArg evalAt hid
+    rw [map_sum] at h
+    exact h
+  rw [hy]
+  apply Submodule.sum_mem
+  intro i hi
+  exact Submodule.span_mono (by simpa using hi) (hom (a i) y).property
 
 /-- Pulling back along `e` after pulling back along `e.symm` is isomorphic to the identity,
 with the identity carrier map. -/
@@ -473,6 +546,44 @@ theorem bernsteinInducedProgenerator_separates
   have h' : s ≫ f.hom = s ≫ g.hom := congrArg (fun m => m.hom) h
   rw [Preadditive.comp_sub, h', sub_self]
 
+/-- The finite-generation conjunct of Renard VI.10.1 follows from second adjointness and
+preservation of coproducts by opposite Jacquet restriction. -/
+theorem finite_bernsteinInducedProgenerator_of_secondAdjointness
+    (hAdj : RepresentedParabolic.LeviSecondAdjointnessStatement.{uF, uV})
+    (a : BernsteinCuspidalDatum.{uF, max uF uV} i ν family)
+    (ρ₀ : SmoothRep.{0, uF, max uF uV} ℂ
+      (Plancherel.rationalCommonNormKernel (bernsteinLeviScheme i ν a.roots)))
+    (hρ₀ : ρ₀.IsIrreducible)
+    (j : ρ₀ ⟶ SmoothRep.restrictSubgroup
+      (Plancherel.rationalCommonNormKernel (bernsteinLeviScheme i ν a.roots)) a.representation)
+    (hj : Function.Injective (SmoothRep.hom j)) :
+    Module.Finite (MonoidAlgebra ℂ (rationalPoints G))
+      (bernsteinInducedProgenerator.{uF, uV} i ν family a ρ₀).representation.asModule := by
+  let piD := rationalNormKernelSummandInduction (bernsteinLeviScheme i ν a.roots) ρ₀
+  let L := bernsteinStandardRepresentedInductionFunctor.{uF, uV} i ν family a.roots
+  let R := bernsteinStandardOppositeJacquetFunctor.{uF, uV} i ν family a.roots
+  let O := bernsteinStandardOpposite i ν family a.roots
+  let h := bernsteinStandardRepresentativesGeometric i ν family a.roots
+  have : L.Additive := RepresentedParabolic.leviInductionFunctor_additive
+    (Standard.parabolicHom i ν (rootSet i ν a.roots))
+    (Standard.leviToParabolic i ν (rootSet i ν a.roots))
+    (Standard.unipotentToParabolic i ν (rootSet i ν a.roots))
+    h.1 h.2.2.1 h.2.1 h.2.2.2
+  have : PreservesColimitsOfSize.{max uF uV, max uF uV} R :=
+    RepresentedParabolic.leviJacquetFunctor_preservesColimits O.inclusion O.levi O.unipotent
+      O.isParabolic O.isRadical O.isLevi O.multiplication
+  have : Projective (L.obj piD) :=
+    projective_bernsteinStandardRepresentedInduction.{uF, uV} i ν family hAdj a.roots piD
+      (projective_rationalNormKernelSummandInduction_of_datum.{uF, uV} i ν family
+        BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence a ρ₀ j hj)
+  have : Module.Finite (MonoidAlgebra ℂ (rationalPoints (bernsteinLeviScheme i ν a.roots)))
+      piD.representation.asModule :=
+    finite_rationalNormKernelSummandInduction _ ρ₀ hρ₀
+  exact moduleFinite_of_smoothRepIso
+    (bernsteinStandardRepresentedInductionIso i ν family a.roots piD)
+    (finite_of_projective_adjoint_image (L := L) (R := R)
+      (bernsteinStandardSecondAdjunction i ν family hAdj a.roots) piD)
+
 end Standard
 
 set_option maxHeartbeats 800000 in
@@ -522,5 +633,46 @@ theorem bernsteinBlockJacquetFaithful_of_secondAdjointness
     BernsteinBlockJacquetFaithfulStatement.{uF, uV} :=
   bernsteinBlockJacquetFaithful_of_inducedProgenerator
     (bernsteinInducedProgenerator_of_secondAdjointness hIndep hAdj hJoint hFT hind) hIndep hAdj
+
+set_option maxHeartbeats 800000 in
+/-- Renard VI.10.1, Theorem, from the independence of the induced progenerator (VI.10.1),
+second adjointness (VI.9.6), and the represented VI.5.2 Lemma. -/
+theorem bernsteinInducedProgenerator_of_independence
+    (hIndep : RepresentedParabolic.InducedProgeneratorIndependenceStatement.{uF, max uF uV})
+    (hAdj : RepresentedParabolic.LeviSecondAdjointnessStatement.{uF, uV})
+    (hind : RepresentedParabolic.LeviInductionNoSupercuspidalSubquotientStatement.{uF,
+      max uF uV}) :
+    BernsteinInducedProgeneratorStatement.{uF, uV} := by
+  intro F _ _ _ _ G _ _ T i ν _ _ family a ρ₀ hρ₀ j hj
+  let hJoint := BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence.{uF}
+  have hmem := bernsteinInducedProgenerator_mem.{uF, uV} i ν family hind hJoint a ρ₀ j hj
+  exact ⟨hmem,
+    bernsteinInducedProgenerator_lift_of_secondAdjointness.{uF, uV} i ν family hAdj hJoint a ρ₀
+      j hj hmem,
+    finite_bernsteinInducedProgenerator_of_secondAdjointness.{uF, uV} i ν family hAdj a ρ₀
+      hρ₀ j hj,
+    bernsteinInducedProgenerator_separates.{uF, uV} i ν family hIndep hAdj hJoint hind a ρ₀ hρ₀
+      j hj hmem⟩
+
+/-- Renard VI.10.2 from the hypotheses of `bernsteinInducedProgenerator_of_independence`. -/
+theorem bernsteinBlockHomEquivalence_of_independence
+    (hIndep : RepresentedParabolic.InducedProgeneratorIndependenceStatement.{uF, max uF uV})
+    (hAdj : RepresentedParabolic.LeviSecondAdjointnessStatement.{uF, uV})
+    (hind : RepresentedParabolic.LeviInductionNoSupercuspidalSubquotientStatement.{uF,
+      max uF uV}) :
+    BernsteinBlockHomEquivalenceStatement.{uF, uV} :=
+  bernsteinBlockHomEquivalence_of_inducedProgenerator
+    (bernsteinInducedProgenerator_of_independence hIndep hAdj hind)
+
+/-- Renard VI.10.3, Proposition, from the hypotheses of
+`bernsteinInducedProgenerator_of_independence`. -/
+theorem bernsteinBlockJacquetFaithful_of_independence
+    (hIndep : RepresentedParabolic.InducedProgeneratorIndependenceStatement.{uF, max uF uV})
+    (hAdj : RepresentedParabolic.LeviSecondAdjointnessStatement.{uF, uV})
+    (hind : RepresentedParabolic.LeviInductionNoSupercuspidalSubquotientStatement.{uF,
+      max uF uV}) :
+    BernsteinBlockJacquetFaithfulStatement.{uF, uV} :=
+  bernsteinBlockJacquetFaithful_of_inducedProgenerator
+    (bernsteinInducedProgenerator_of_independence hIndep hAdj hind) hIndep hAdj
 
 end Langlands.CuspidalSupport

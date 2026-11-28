@@ -65,3 +65,16 @@ The geometric steps use Kaletha–Prasad, *Bruhat–Tits Theory: A New
 Approach* (2023), §§5.2–5.3 and §§9.5–9.8, with the authors' corrections.
 Their use in the wave-packet argument follows Waldspurger (2003),
 I.1 and VI.3.1, printed pp. 240–241 and 302–305.
+
+`semistandardLeviCompactTrace` realizes the special compact on an actual
+semistandard Levi as the inverse image of the given ambient compact. It
+chooses a chamber in which the outer parabolic is standard and uses its
+standard Levi scheme as the actual model. In the apartment of this Levi,
+the restriction of the ambient special vertex is special. The comparison
+of the two compact stabilizers identifies the Levi stabilizer with the
+literal ambient trace. The Levi compact inherits all special compact
+properties and the minimal Iwasawa factorization at the original generic
+cocharacter, through the literal factor of the ambient split torus.
+This realizes the compatibility of the compact with the Levi in
+Waldspurger I.1, printed p. 240, used in the nested diagram of III.6
+and VIII.2.1.

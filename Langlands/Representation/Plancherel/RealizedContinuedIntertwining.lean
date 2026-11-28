@@ -151,8 +151,8 @@ private theorem realizedCompactIntertwiner_square (z : U)
 
 include hp hH hR₀ hR₁ hscale hlim hM' in
 /-- The fixed compact restrictions commute with both continuations wherever
-the two denominators are regular. The scalar is the positive comparison of
-the specified quotient measures, inserted in the source restriction. -/
+the two denominators are regular. The nonnegative comparison scale for the
+two measures is inserted in the source restriction. -/
 theorem realizedContinuedIntertwining_square {Ω Λ : Set U}
     (J : Ω → VG₀ →ₗ[ℂ] VG₁) (J' : Λ → VL₀ →ₗ[ℂ] VL₁)
     (p : RationalOperatorContinuationData Ω J) (q : RationalOperatorContinuationData Λ J')

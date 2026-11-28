@@ -47,6 +47,10 @@ trivializes the kernel cocycle. Triviality passes back through the twist and ref
 the centralizer cocycle, its inclusion into the ambient group, and the original twist and
 refinement. The conclusion has the exact type of the published E₆ vanishing statement.
 
+`TypeE6SplitLeviCocycleFactorization.isTrivial_of_derivedVanishing` applies
+the quotient argument to an individual factorization and a vanishing theorem
+for the particular derived subgroup.
+
 ## Source
 
 Platonov and Rapinchuk, *Algebraic Groups and Number Theory* (1994), registered as

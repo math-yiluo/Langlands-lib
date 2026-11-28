@@ -134,7 +134,8 @@ and for `τ > 0` (with `μ(v) ≠ 0` for all `v ∈ Δ_S`)
                   ∫_{−μ(v) X_v > 0} e^{−τ ∑_v (−μ(v)) X_v} e^{−i ∑_v X_v Λ(v)} dX
 ```
 
-(`thetaShift_I_mul_inv` and `orthant_laplace'` in `GMFamilyConeIntegrals`),
+(`thetaShift_I_mul_inv` in `GMFamilyConeIntegrals` and
+`Langlands.Analysis.orthant_laplace` in `Langlands.Analysis.ConeFourierBoundary`),
 with the Gram factor `gram(Δ_S)` of the simple roots and the orientation sign
 `orthantSign(−μ) = ∏_v sign(−μ(v))`; the damped integral converges
 absolutely. As `τ → 0⁺`, off the walls `θ_S(Λ + iτμ)⁻¹` converges pointwise

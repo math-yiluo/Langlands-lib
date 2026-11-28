@@ -88,6 +88,51 @@ theorem exists_smoothAverage_close_finiteWords (hR : IsContinuousRepresentation 
   exact hb.trans_lt (half_lt_self hε)
 
 include μ in
+/-- A closed invariant smooth submodule with norm-dense image is the whole genuine smooth space. -/
+theorem eq_top_of_invariant_of_normDense (hR : IsContinuousRepresentation R)
+    (W : Submodule ℂ D) (hW : IsClosed (W : Set D))
+    (hstable : ∀ (g : Aˣ) (v : D), v ∈ W → representation 𝓜 R g v ∈ W)
+    (hDense : Dense (W.map (derivativeCLM 𝓜 R []).toLinearMap : Set E)) : W = ⊤ := by
+  let P := derivativeCLM 𝓜 R []
+  let M := W.map P.toLinearMap
+  have hmem (κ : Aˣ → ℂ) (hκ : ContMDiff 𝓜 𝓘(ℝ, ℂ) ∞ κ) (hc : HasCompactSupport κ) (x : E) :
+      smoothAverage R μ hR κ hκ hc x ∈ W := by
+    have h : MapsTo (smoothAverage R μ hR κ hκ hc) (M : Set E) W := by
+      rintro _ ⟨v, hv, rfl⟩
+      exact smoothAverage_mem R μ hR κ hκ hc W hW hstable v hv
+    exact h.closure_left (smoothAverage R μ hR κ hκ hc).continuous hW
+      (hDense x)
+  apply le_antisymm le_top
+  intro v _
+  change v ∈ (W : Set D)
+  rw [← hW.closure_eq, (isEmbedding_derivativeCoordinates 𝓜 R).isInducing.closure_eq_preimage_closure_image]
+  apply mem_closure_of_finite_projections
+  intro I
+  rw [Metric.mem_closure_iff]
+  intro ε hε
+  obtain ⟨κ, hκ, hc, hclose⟩ := exists_smoothAverage_close_finiteWords R μ hR v I hε
+  let w := smoothAverage R μ hR κ hκ hc (P v)
+  exact ⟨finiteWords R I w,
+    ⟨derivativeCoordinates 𝓜 R w, ⟨w, hmem κ hκ hc (P v), rfl⟩, rfl⟩, hclose⟩
+
+include μ in
+/-- Norm density of an invariant smooth submodule implies density in the genuine smooth topology. -/
+theorem dense_of_invariant_of_normDense (hR : IsContinuousRepresentation R)
+    (S : Submodule ℂ D) (hstable : ∀ g : Aˣ, MapsTo (representation 𝓜 R g) S S)
+    (hDense : Dense (S.map (derivativeCLM 𝓜 R []).toLinearMap : Set E)) : Dense (S : Set D) := by
+  let W := S.topologicalClosure
+  have hw (g : Aˣ) (v : D) (hv : v ∈ W) : representation 𝓜 R g v ∈ W :=
+    (hstable g).closure ((continuous_representation_units R hR).comp
+      (continuous_const.prodMk continuous_id)) hv
+  have hm : Dense (W.map (derivativeCLM 𝓜 R []).toLinearMap : Set E) := by
+    exact hDense.mono (Submodule.map_mono (Submodule.le_topologicalClosure S))
+  have he := eq_top_of_invariant_of_normDense R μ hR W S.isClosed_topologicalClosure hw hm
+  intro v
+  change v ∈ W
+  rw [he]
+  exact Submodule.mem_top
+
+include μ in
 private theorem isTopologicallyIrreducible_of_measure (hR : IsContinuousRepresentation R)
     (hirr : Langlands.Archimedean.IsTopologicallyIrreducible R) : IsTopologicallyIrreducible R := by
   let P := derivativeCLM 𝓜 R []
@@ -128,25 +173,11 @@ private theorem isTopologicallyIrreducible_of_measure (hR : IsContinuousRepresen
     have he : P v = P 0 := by simpa only [map_zero] using (Submodule.mem_bot ℂ).mp hPv
     exact (Submodule.mem_bot ℂ).mpr (hP he)
   · right
-    have hmem (κ : Aˣ → ℂ) (hκ : ContMDiff 𝓜 𝓘(ℝ, ℂ) ∞ κ) (hc : HasCompactSupport κ) (x : E) :
-        smoothAverage R μ hR κ hκ hc x ∈ W := by
-      have h : MapsTo (smoothAverage R μ hR κ hκ hc) (M : Set E) W := by
-        rintro _ ⟨v, hv, rfl⟩
-        exact smoothAverage_mem R μ hR κ hκ hc W hW hstable v hv
-      exact h.closure_left (smoothAverage R μ hR κ hκ hc).continuous hW
-        (show x ∈ M.topologicalClosure by rw [ht]; exact Submodule.mem_top)
-    apply le_antisymm le_top
-    intro v _
-    change v ∈ (W : Set D)
-    rw [← hW.closure_eq, (isEmbedding_derivativeCoordinates 𝓜 R).isInducing.closure_eq_preimage_closure_image]
-    apply mem_closure_of_finite_projections
-    intro I
-    rw [Metric.mem_closure_iff]
-    intro ε hε
-    obtain ⟨κ, hκ, hc, hclose⟩ := exists_smoothAverage_close_finiteWords R μ hR v I hε
-    let w := smoothAverage R μ hR κ hκ hc (P v)
-    exact ⟨finiteWords R I w,
-      ⟨derivativeCoordinates 𝓜 R w, ⟨w, hmem κ hκ hc (P v), rfl⟩, rfl⟩, hclose⟩
+    exact eq_top_of_invariant_of_normDense R μ hR W hW hstable (by
+      intro x
+      change x ∈ M.topologicalClosure
+      rw [ht]
+      trivial)
 
 end Measure
 

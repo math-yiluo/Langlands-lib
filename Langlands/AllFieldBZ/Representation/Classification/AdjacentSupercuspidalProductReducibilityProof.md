@@ -99,8 +99,9 @@ supercuspidal twist `scTwist`, and the facts on the members `π_s` (`member_isIr
 
 ## Dependencies
 
-The import closure of this module (1084 `Langlands` modules) was scanned for the segment
-results of Zelevinsky 1980 §§3, 4 and 9: no module of the closure is or mentions
+At Library commit `2f86a99eb5616254ac5b9c399603c9bbbea15f7a`, this module and its
+transitive imports comprise 1106 `Langlands` modules. A scan for the segment results of
+Zelevinsky 1980 §§3, 4 and 9 found no module of the closure that is or mentions
 `SegmentFullJacquetFormula`, `SegmentHeadJacquetFormula`, `SegmentSocleJacquetFormula`,
 `SegmentSpecialJacquetExponentNormFormula`, `SegmentSocleProductIrreducibility`,
 `MultisegmentSocleExhaustion`, `OrderedMultisegmentSocleExistence`,
