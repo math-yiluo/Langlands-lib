@@ -654,6 +654,46 @@ of Borel–Tits 5.15, printed pp.100–101 (PDF pp.47–48).
   [Quotient existence](../../Langlands/GroupScheme/HomogeneousQuotientProof.md),
   [properness](../../Langlands/GroupScheme/ParabolicQuotientProperProof.md)
 
+**D15. Affine geometry and relative-root dimension of the Bruhat factor.**
+Borel–Tits 1965, §§5.12–5.13 and Theorem 5.15, printed pp.99–101
+(PDF pp.46–48), give the relative root subset and the corresponding
+unipotent intersection in the rational Bruhat product. Milne 2017,
+§25.13, printed p.548 (PDF p.564), uses the actual adjoint weights of a
+maximal split torus to define the relative roots. Milne §14.66, printed
+p.299 (PDF p.315), gives the affine-space property of split unipotent groups.
+The retained sources are `borel-tits-1965-groupes-reductifs`, SHA-256
+`ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad`,
+and `milne-2017-algebraic-groups`, SHA-256
+`899b0f44f3c3ccfbaf5ed1cf9c180be7a8016b1c0e9709ca0c206304e5bd1cd0`.
+
+- Both propositions use the field, group, maximal split torus and generic
+  cocharacter of D1. For every rational normalizer point \(n\), their
+  factor is the scheme pullback \(W_n=U(\chi)\cap nU(\chi^{-1})n^{-1}\).
+  `rationalBruhatCellAffineSpace` proves `RationalBruhatCellAffineSpaceStatement`
+  (P). The pullback represents an identity-limit subgroup of \(U(\chi)\)
+  for the transported inverse cocharacter. A finite split series of
+  length \(d\) gives its smooth relative dimension and a scheme
+  isomorphism \(W_n\simeq\mathbb A^d_k\).
+  [Statement](../../Langlands/GroupScheme/Rational/BruhatCellAffineSpaceStatement.md)
+  [Proof](../../Langlands/GroupScheme/Rational/BruhatCellAffineSpaceProof.md)
+- `rationalBruhatCellDimension` proves `RationalBruhatCellDimensionStatement`
+  (P). Write \(w\) for the Weyl class of \(n\). For the cocharacter \(\nu\)
+  of the torus, the dimension is
+  \[
+    d=\sum_{\substack{\alpha\in\Phi(G,T)\\
+                       \langle\alpha,\nu\rangle>0\\
+                       \langle w^{-1}\alpha,\nu\rangle<0}}
+         \dim_k\mathfrak g_\alpha .
+  \]
+  The calculation uses the Lie weight spaces of the closed intersection.
+  Each occurring relative root, including any occurring multiple, has its
+  own summand. The Lie dimension of the same smooth affine group
+  identifies this \(d\) with the split series length in the preceding
+  result. Both exact proofs are in Library commit
+  `19fb2c25ab3dc0b2e83bebdca35724e7a62d864a`.
+  [Statement](../../Langlands/GroupScheme/Rational/BruhatCellDimensionStatement.md)
+  [Proof](../../Langlands/GroupScheme/Rational/BruhatCellDimensionProof.md)
+
 ## E. Split components, rational characters and the centre
 
 **E1. The split component.** Source: Renard V.2.1, printed p.104 (PDF 110).

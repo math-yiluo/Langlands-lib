@@ -5,6 +5,9 @@ commit `186f3b2ccb3bfee3f9da8d4478ad38d207e354fa`. The dynamic update
 describes the field and general-base proof routes.
 [Dynamic subgroups](dynamic-relative-progress.md)
 
+The group-scheme decomposition and represented block comparisons in F2
+are in Library commit `19fb2c25ab3dc0b2e83bebdca35724e7a62d864a`.
+
 This note, dated 10 November 2026, is the source-to-declaration
 ledger for family 8 of the algebraic and reductive group-scheme program. Family 8 covers:
 
@@ -15,7 +18,7 @@ ledger for family 8 of the algebraic and reductive group-scheme program. Family 
 - relative parabolic subgroups, their normalizers and quotients, and relative Levi
   subgroups;
 - descent, and the general-base dynamic constructions, including smoothness over a ring and
-  the scheme-level decomposition `P(λ) ≅ U(λ) × Z(λ)`.
+  the represented semidirect decomposition of \(P(\lambda)\).
 
 The original snapshot is Library commit `f2c5495316f5a5631bc8c11875b7509d93271fe5`.
 Lean names are in `Langlands.GroupScheme` unless a
@@ -478,10 +481,10 @@ after Example 4.1.9, p.114, extends the theorem to arbitrary bases.
   [Statement](../../Langlands/GroupScheme/Dynamic/RingLieStatement.md),
   [proof](../../Langlands/GroupScheme/Dynamic/RingLieProof.md)
 
-**F2. The scheme-level decomposition `P(λ) ≅ U(λ) × Z(λ)` over any base.** Source: Conrad
-2014, Theorem 4.1.7(3), p.113: multiplication `Z(λ) ⋉ U(λ) → P(λ)` is an isomorphism; and
-the proof of Theorem 4.1.7, p.113, which describes `U(λ)` as the fibre over `1` of the limit
-morphism.
+**F2. The represented semidirect decomposition over any base.** Conrad
+2014, Theorem 4.1.7(3), p.113, gives the multiplication isomorphism
+`Z(λ) ⋉ U(λ) → P(λ)`. Its proof on p.113 describes `U(λ)` as the fibre
+over `1` of the limit morphism.
 - D: `Dynamic.limitGroupHom`, `Dynamic.centralizerToParabolic_comp_limitGroupHom`,
   `Dynamic.isRepresentedBy_kernel_limitGroupHom`, `Dynamic.isIso_multiplication` and
   `Dynamic.multiplicationIso` (`Dynamic/SchemeDecomposition`). Hypotheses: any scheme `S`;
@@ -494,6 +497,17 @@ morphism.
   supplies it for affine locally finitely presented `G` over any base.
 - On points, the same decomposition over every test scheme is
   `Dynamic.isComplement'_unipotent_centralizer` (section A).
+- D. Under the same separatedness and representability hypotheses,
+  `Dynamic.semidirectProductIso` gives \(U\rtimes Z\simeq P\) in
+  `Grp (Over S)`. The acting group \(Z\) acts on \(U\) by actual
+  conjugation. The construction uses the section \(Z\to P\) and the
+  inclusion of the represented kernel \(U\to P\).
+  `Dynamic.semidirectProductIso_hom` identifies the underlying scheme
+  map with `Dynamic.multiplication`, in the order \((u,z)\mapsto uz\).
+  The comparison with the centralizer-first coordinates in Conrad is
+  \(uz=z(z^{-1}uz)\). The group isomorphism induces this factorization
+  on every test scheme, including nonreduced tests.
+  [Semidirect decomposition](../../Langlands/GroupScheme/Dynamic/SemidirectDecomposition.md)
 - `GeneralLinear.DynamicStatement` (`Dynamic/GeneralLinearStatement`): for `GL_n` over every
   commutative ring and a diagonal or block-shape cocharacter, `P(λ)`, `Z(λ)`, `U(λ)` are the
   block parabolic, block Levi and block unipotent subgroup functors, with the limit map and,
@@ -502,6 +516,25 @@ morphism.
   `GeneralLinear.DiagonalCocharacterLeviDecompositionStatement` (the
   decomposition on points) is P by `GeneralLinear.diagonalCocharacterLeviDecomposition`.
   [Proof](../../Langlands/GroupScheme/Dynamic/GeneralLinearDiagonalCocharacterLeviDecompositionProof.md)
+- D. For a diagonal cocharacter of \(GL_n\), with \(n\) finite and with
+  decidable equality, `GeneralLinear.blockParabolicBaseChangeIso`,
+  `GeneralLinear.blockLeviBaseChangeIso` and
+  `GeneralLinear.blockUnipotentBaseChangeIso` compare the represented
+  block subgroups along an arbitrary \(\operatorname{Spec}R'\to
+  \operatorname{Spec}R\). They are isomorphisms of group schemes over the
+  new \(GL_n\). They commute with the subgroup maps into \(GL_n\), the
+  block diagonal limit, the Levi section and the unipotent inclusion
+  through the kernel. The underlying ordered
+  multiplication maps commute with pullback via the canonical product
+  comparison. The proof uses the subgroup functor identities on every
+  test scheme, including nonreduced schemes. The block model is the
+  finite free case of CGP 2015, Example 2.1.1 and its continuation,
+  printed pp.45–47 (PDF pp.71–73), source
+  `conrad-gabber-prasad-2015-pseudo-reductive`, SHA-256
+  `1b77af44c90211db9a3efa50896a3722f4fd2df332b7ce2ec52202eb243e7f54`.
+  The base-change source is Conrad 2014, the paragraph after
+  Example 4.1.9, p.114.
+  [Block comparisons](../../Langlands/GroupScheme/Dynamic/GeneralLinearDecompositionBaseChange.md)
 
 **F3. Relative Levi subgroups.** Conrad 2014, Definition 5.4.2, p.174,
 defines a Levi subgroup as a smooth closed subgroup whose multiplication

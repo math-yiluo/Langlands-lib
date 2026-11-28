@@ -11,7 +11,9 @@ records the exact independent proofs for C11 and the third interface of F.
 
 The additional field comparisons in A6, A10, A11, B7 and D8 are recorded at
 Library commit `cf95b60a0d1a76782b35d915d189d581090e1c62`. D9 uses the
-declarations at `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`.
+declarations at `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. The arbitrary-field
+root subgroup proof in B7 and the proposition in D10 are in Library commit
+`19fb2c25ab3dc0b2e83bebdca35724e7a62d864a`.
 
 This note, dated 10 November 2026, is the source-to-declaration
 ledger for family 4 of the algebraic and reductive group-scheme program. Family 4 covers:
@@ -316,6 +318,21 @@ is isomorphic to `𝔾_a`.
   statement in Library commit `f6b0359632cfaf9fecb86c3d848069710250b487`.
   [Statement](../../Langlands/GroupScheme/Reductive/SplitRootLieLineStatement.md)
   [Proof](../../Langlands/GroupScheme/Reductive/SplitRootLieLineIndependentProof.md)
+- `SplitRootSubgroupStatement` holds over any field \(k\) for a connected
+  reductive \(G\), a split maximal torus \(T\), and an adjoint root \(\alpha\)
+  of \(T\). It gives a closed additive parametrization of the intrinsic root
+  subgroup on every \(k\)-scheme test. The torus acts through \(\alpha\), and
+  the differential has image the full root weight space in \(\operatorname{Lie}G\).
+  A smooth closed torus-stable subgroup contains this root subgroup on all
+  tests exactly when its Lie image contains that weight space.
+- `splitRootSubgroup` proves the exact proposition (P). Linked rank-one
+  data supply the additive parametrization. The containment criterion uses
+  a smooth closed intersection with the positive root subgroup and equality
+  of their Lie images. The character law is Milne §21.19, equation (135),
+  printed p.431 (PDF p.447). Proposition 16.64(a), printed p.348 (PDF p.364),
+  gives the containment implication from the Lie inclusion.
+  [Statement](../../Langlands/GroupScheme/Absolute/SplitRootSubgroupStatement.md)
+  [Proof](../../Langlands/GroupScheme/Absolute/SplitRootSubgroupProof.md)
 
 **B8. Semisimple rank one: at most one positive root.** Source: Milne 2017, §20.e, printed
 p.412 (PDF 428), and the proof of Theorem 21.11(b), printed p.428 (PDF 444).
@@ -600,6 +617,30 @@ disjoint Borel double cosets of a split reductive group. The source is
   [Statement](../../Langlands/GroupScheme/Absolute/SplitBruhatRationalPointsStatement.md),
   [proof](../../Langlands/GroupScheme/Absolute/SplitBruhatRationalPointsProof.md)
 
+**D10. Scheme-level Bruhat partitions for a Borel pair with split maximal torus.**
+Milne 2017, Theorem 21.73(a) and Remark 21.74, printed p.447 (PDF p.463),
+describe the group and flag strata. Definition 21.76 and Proposition 21.79(b),
+printed pp.448–449 (PDF pp.464–465), use the scheme-theoretic unipotent
+intersection for the flag parametrization. The Chapter 21 erratum to
+Proposition 21.71 calls for an orbit covering argument. The retained
+errata are `milne-2017-algebraic-groups-errata-2026-11-02`, SHA-256
+`a0c3a10dc376e1c9bd1de05b33beaf7d54e5f1ea7b408d594cfd70231a7ba0cf`.
+
+- `SplitBruhatDecompositionStatement` takes a connected reductive \(G\) and
+  a Borel pair \((B,T)\) over any field \(k\), with \(T\) split. It chooses a
+  regular cocharacter \(\chi\) with \(B=P(\chi)\) and a rational normalizer
+  representative \(n_w\) for each Weyl class \(w\). For
+  \(W_w=U(\chi)\cap n_w U(\chi^{-1})n_w^{-1}\), the multiplication maps
+  \(W_w\times B\to G\) form a family of locally closed immersions. Their
+  images partition both underlying scheme points and points on each
+  field-valued test.
+- Given a smooth, surjective, quasi-compact \(q:G\to Q\) with the exact
+  right-\(B\)-coset fibre relation on every test scheme, the proposition
+  asserts the same two partitions for the flag immersions
+  \(W_w\to Q\), \(a\mapsto q(an_w)\). It uses the representatives \(n_w\)
+  of the group cells for the flag cells.
+  [Statement](../../Langlands/GroupScheme/Absolute/SplitBruhatDecompositionStatement.md)
+
 ## E. The determinant of `Ad` on `Lie U(χ)`
 
 In E1–E3, `P`, `M`, `U` are arbitrary closed subgroups representing `P(χ)`, `Z(χ)` and
@@ -687,4 +728,5 @@ equivariance on all tests and an isomorphism at the terminal stage.
   reductive group over a field, including parabolics in non-quasi-split groups.
 - The split Borel-pair proof in D9 gives covering and separation of the
   rational double cosets, including over separably closed fields.
-- The subgroup realization in B7 is over algebraically closed fields.
+- B7 includes the original algebraically closed realization and the arbitrary-field
+  root subgroup and Lie comparison for a split maximal torus.

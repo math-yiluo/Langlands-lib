@@ -1,10 +1,9 @@
-# Field tori and rational centers: verified proofs and product target
+# Field tori, rational centers and the split-torus product
 
-This focused ledger, dated 3 November 2026, records two proofs and one
-statement of the Library in the algebraic and reductive group-scheme program. It supplements the
-[transport and dynamic ledger](transport-dynamic-progress.md) in thematic
-families 2, 5 and 6. All eight families and both concrete milestones remain
-obligations of the program.
+This note records finite Galois splitting of field tori, rational-center
+comparisons and the derived and central split-torus product isogeny. It
+supplements the transport and dynamic ledger in thematic families 2, 5 and 6.
+[Transport and dynamic ledger](transport-dynamic-progress.md)
 
 The builds and the hashes of the Lean and Markdown files below were checked.
 Mathematical reuse imports the Library modules by Lean name.
@@ -121,7 +120,7 @@ files also matched.
 | `rationalCenterComparison` | `b6ea11bf7c883ae0600a98215483c75ebf3c9d25` |
 
 
-## Published derived and central split-product target
+## Derived and central split-torus product
 
 [`Langlands.GroupScheme.DerivedCentralSplitTorusProductStatement.{u}`](../../Langlands/GroupScheme/Derived/CentralSplitTorusProductStatement.lean)
 ([provenance and precise premises](../../Langlands/GroupScheme/Derived/CentralSplitTorusProductStatement.md))
@@ -153,8 +152,10 @@ compatible factors.
 The statement first appeared in the Library at
 `cee2a2bc97a749578ef334ef7bda18162ecb6e78`.
 
-The derived-factor existence target, full central-torus product to `G`,
-simply connected cover and root-data comparisons retain their separate
-obligations. The Bruhat–Tits apartment, action,
-parahoric and model results are consumers of these modules. Neither this statement nor the two
-proofs above closes those applications or the algebraic program.
+For a connected reductive group and a chosen maximal split torus \(S\),
+the derived subgroup, its split factor in \(S\) and the central split
+component in \(S\) are supplied by the declarations in family 6, row D7.
+The product proof uses the relative Weyl reflections to prove surjectivity.
+Its isogeny reduction supplies the other properties of the multiplication map.
+[Family 6 ledger](ledger-family-6-galois-central.md#d-derived-groups-and-cocentres),
+[product proof](../../Langlands/GroupScheme/Derived/CentralSplitTorusProductProof.md)

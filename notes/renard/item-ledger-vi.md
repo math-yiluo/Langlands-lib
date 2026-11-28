@@ -15,6 +15,11 @@ numbers are given first and PDF page numbers second; PDF = printed + 6. Library
 facts refer to commit `16c60abdc019c1181a2734d3052305ec3d6e7b85` unless stated
 otherwise.
 
+The VI.9.1 compression localization row, the VI.9.7 equivariance and
+all-Iwahori-index row, and the VI.10.4 first-Lemma freeness proof refer to
+Library `19fb2c25ab3dc0b2e83bebdca35724e7a62d864a`. The historical audits
+below concern the rows as they stood at their own dated Library snapshots.
+
 The F3 update of 14 November 2026 checks the VI.6.1 Proposition, VI.6.3 Corollary
 and VI.9.4 rows against Library `757a67934ac7327ca3de64f9c869f76ea240ec44`.
 The [`StandardIwahoriDecompositionStatements`](../../Langlands/Representation/Jacquet/StandardIwahoriDecompositionStatements.lean)
@@ -102,9 +107,9 @@ other row retains its earlier dated status. Proof modules are under
 | VI.6.1 Proposition, standard parabolics | `J.StandardIwahoriCanonicalSectionStatement` | `standardIwahoriCanonicalSection` | [Jacquet/StandardIwahoriCanonicalSectionProof](../../Langlands/Representation/Jacquet/StandardIwahoriCanonicalSectionProof.md) |
 | VI.10.6 Corollary | `CS.StandardLeviCompactInheritanceStatement` | `standardLeviCompactInheritance` | [CuspidalSupport/StandardLeviCompactInheritanceProof](../../Langlands/Representation/CuspidalSupport/StandardLeviCompactInheritanceProof.md) |
 
-The proof-status update of 19 November 2026 checks every row with
-status S against Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. As in the
-update of 14 November 2026, each statement named in these rows was compared with
+The proof-status update of 19 November 2026 checked the rows then marked S
+against Library `24390f9f6d7a3b7df9e5b9dd4d6e79e178c8ac85`. As in the
+update of 14 November 2026, each statement named in those rows at that time was compared with
 the Library theorems whose type is exactly that statement. Only one statement
 changes from S to P: `CS.StandardRepresentativeFixedVectorCriterionStatement`, the
 first claim of the VI.10.6 Corollary (printed p.215 / PDF p.221). For a standard
@@ -207,9 +212,9 @@ this implication. It first appeared in the Library at the checked
 commit, where both files have exactly the SHA256 recorded when it was checked. This is
 a conditional implication, not a proof of the target. Both rows keep their status. Every other row retains its earlier dated status.
 
-The proof-status update of 14 November 2026 checks every row with
-status S against Library `a163f87c7a46874f408deed853c10c83207e9f69`. Every statement
-named in these rows was compared with the Library theorems whose type is exactly that
+The proof-status update of 14 November 2026 checked the rows then marked S
+against Library `a163f87c7a46874f408deed853c10c83207e9f69`. Each statement
+named in those rows at that time was compared with the Library theorems whose type is exactly that
 statement, with no hypotheses. A statement is marked proved (P) only when such a
 theorem exists. For each one the theorem line was read; its file has no `sorry` or
 `admit`. The table gives, for each proof, the Library commit where it first appeared.
@@ -429,7 +434,7 @@ printed VI.8 assertions to their modules; this table gives the headed items.
 | VI.9.1 first Lemma (`V(N) ∩ V^K = ⋃ ker A^i`) | 196 / 202 | `powerKernelSup_eq_ker_of_iwahoriContraction` (`Jacquet/IwahoriContractionAdmissibility`), `fixedJacquetMap_kernel_locally_nilpotent` (`Jacquet/CompressionLocalization`) | P |
 | VI.9.1 second Lemma (localization) | 196 / 202 | `compressionJacquetLocalizationEquiv`, `localizationEquivOfKernelExhaustion` | D / P (proved construction) |
 | VI.9.1 Proposition (uniform stabilization) | 197 / 203 | Arbitrary parabolics: `RP.RepresentedUniformCompressionStabilizationStatement` (`Exponents/RepresentedCanonicalSectionStatements`; every compact open `K` and every `M(F)`-central `g` with `IsIwahoriContraction`; `b` chosen after `K` and `g`, for all smooth `V`; it adds the conclusions `ker j = V_0^K` and `j` bijective on `V_*^K` drawn at the end of the proof of the Theorem). Dynamic form: `RPF.UniformCompressionStabilizationStatement` (`b` chosen after `χ`, `K` and `g`) | S; dynamic form S. C for the source's class of `K`: by `RP.RepresentedIwahoriContractionStatement`, proved by `representedIwahoriContraction` (VI.6.1 Theorem row), every `K` with an Iwahori decomposition admits such a `g`. The source's `b = b(G, K)` follows from the bound clauses of the next row together with VI.2.3 |
-| VI.9.1 Proposition, localization at `A` is `(V^K_*, A)` | 197 / 203 | the proved C.II theorem `Langlands.Renard.EndomorphismLocalization.stablePowerImageStatement` (`Algebra/RenardLocalizationStabilityProof`), for any endomorphism with a stable power | C: derived from that theorem and the Proposition's stable power `A^b`; the application to `compressedAction` is not published as a separate statement |
+| VI.9.1 Proposition, localization at `A` is `(V^K_*, A)` | 197 / 203 | `J.CompressionStableImageLocalizationStatement` (`Jacquet/CompressionStableImageLocalizationStatement`): the unique equivalence for the actual compressed action intertwines the endomorphisms and identifies the localization map with projection along the power-kernel supremum | S for the specialization with a stationary compression and complementary kernel; the general stable-power localization result `Langlands.Renard.EndomorphismLocalization.stablePowerImageStatement` (C.II) is proved |
 | VI.9.1 Proposition, `b ≤ c(G, K)`; Remarks 1–3 | 197–198 / 203–204 | `RPF.GeneralizedJacquetRemarksStatement` (bound, Remarks 1–2, dynamic parabolics), `RP.GeneralizedJacquetContractingRangeStatement` (Remark 3) (`Exponents/GeneralizedJacquetRemarksStatements`, published); bound and Remarks 1–2 along actual rational parabolics: `RP.RepresentedGeneralizedJacquetRemarksStatement` (`Exponents/RepresentedCanonicalSectionStatements`) | S for the two published statements and for the represented statement |
 | VI.9.2 (VI.9.2.2) stability for the universal induced family | 198–199 / 204–205 | `Langlands.Plancherel.RationalSupercuspidalJacquetFamilyFiniteStatement` and the VI.9.1–VI.9.3 map (`uniform-compression-progress.md`) | St: step of the VI.9.1 Proposition; Jacquet-family finiteness P |
 | VI.9.3 extension to all smooth representations | 200 / 206 | conditional helpers in the VI.9.1–VI.9.3 map | St |
@@ -440,6 +445,7 @@ printed VI.8 assertions to their modules; this table gives the headed items.
 | VI.9.6 second Theorem (`r_{P̄}^G π̃ ≅ (r_P^G π)~`) and the equivalence of the two | 201–202 / 207–208 | `RP.LeviJacquetContragredientStatement`, `RP.LeviSecondAdjointnessContragredientEquivalenceStatement` | `RP.LeviJacquetContragredientStatement` S; the equivalence P: `leviSecondAdjointnessContragredientEquivalence` (`Exponents/LeviSecondAdjointnessContragredientEquivalenceProof`) |
 | VI.9.6 Proposition (pairing) | 202 / 208 | `RP.LeviJacquetOppositePairingStatement` | S |
 | VI.9.7 Theorem | 205 / 211 | `RP.LeviCompletionOppositeJacquetStatement` | S |
+| VI.9.7, equivariance and all Iwahori component indices | 205–206 / 211–212 | `RP.LeviCompletionEquivarianceStatement` gives the unique natural Levi-equivariant unnormalized comparison from the linear theorem; `RP.LeviCompletionIwahoriFormulaStatement` extends the component formula from contraction indices to every compact open Iwahori factorization index | S for both implications |
 
 ## VI.10 The Bernstein centre
 
@@ -450,7 +456,7 @@ printed VI.8 assertions to their modules; this table gives the headed items.
 | VI.10.2 Theorem, the quasi-inverse is `M ↦ M ⊗_{R_Ω} Π_Ω` | 208 / 214 | `CS.BernsteinBlockTensorQuasiInverseStatement` (first published at Library `79de65ce`; the VI.4.1 analogue is `CS.RationalSummandTensorQuasiInverseStatement`) | S |
 | VI.10.3 Proposition, Corollary | 209 / 215 | `CS.BernsteinBlockJacquetFaithfulStatement`, `RP.SupercuspidalInductionLengthStatement` | S |
 | VI.10.4 (VI.10.4.1)–(VI.10.4.2): induction of modules corresponds to `i_P^G` | 209–210 / 215–216 | none | St: step of the VI.10.4 Theorem |
-| VI.10.4 first Lemma (`R_Ω` free of rank `|W(D)|` over `R_D`) | 210 / 216 | `RP.InducedProgeneratorEndFreeStatement` | S |
+| VI.10.4 injectivity and first Lemma (`R_Ω` free of rank `|W(D)|` over `R_D`) | 209–210 / 215–216 | `RP.InducedProgeneratorEndFreeStatement` | P: `RP.inducedProgeneratorEndFree` (`CuspidalSupport/InducedProgeneratorEndFreeProof`) gives injectivity of the induction map, a right basis of rank equal to the number of twist-stabilizing double cosets, and a finite right basis over `Z(R_D)`, the centre of the Levi progenerator endomorphism ring. In both bases the right action is `x · a = x ∘ i_P^G(a)` |
 | VI.10.4 second Lemma (`ℨ_Ω ⊂ ℨ_D`) | 211 / 217 | `RP.InducedProgeneratorCenterInclusionStatement` | P: `inducedProgeneratorCenterInclusion` (`CuspidalSupport/InducedProgeneratorCenterInclusionProof`) |
 | VI.10.4 `ℨ_Ω ⊂ ℨ_D^{W(D)}`, `ℨ_Ω = ℨ_D^{W(D)}` | 211–212 / 217–218 | none | St: steps of the VI.10.4 Theorem |
 | VI.10.4 third Lemma (centralizer for filtered bimodules) | 211–212 / 217–218 | `Langlands.Algebra.RenardBimoduleFiltrationCentralizerStatement` | P: `renardBimoduleFiltrationCentralizer` (`Langlands/Algebra/RenardBimoduleFiltrationCentralizerProof`) |

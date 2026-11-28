@@ -19,7 +19,8 @@ at Library commit `1704ae21875deeabd17a51ced41447cc741572dd`.
 Rows A11, B4 and B5 use the declarations at Library commit
 `66a181ec9cda271c1ff0dcf555f386b52dc687c7`. Row B6 uses the declarations
 at `83410f0ef589431fd290293765b33c3a3adc2ac7`. Row A12 uses the
-declarations at `db940683e1d682d84831e8365720f1c79b5c9b0c`.
+declarations at `db940683e1d682d84831e8365720f1c79b5c9b0c`. The split-torus
+product in D7 uses the declarations at `31bcd67c862efa5fa1de05c0d5169105a7df4a11`.
 
 All Lean names are in `Langlands.GroupScheme` unless a namespace is shown. Module paths
 are relative to `Langlands/GroupScheme/` in that commit. "Field group" means a group
@@ -529,6 +530,29 @@ pp.599–600 (PDF 625–626).
   connected reductive `G`. The Lean statement does not identify the witness `S_D` with the
   reduced identity component of `S ∩ D(G)`.
 - Status P: `derivedMaximalSplitTorus` (`Derived/MaximalSplitTorusProof`).
+- The same theorem of CGP, with Steps 1 and 3 of its proof, printed pp. 603–605
+  (PDF pp. 629–631) (†), gives the product of the derived and central split
+  factors. For the data above and a split component \(a:A\to G\) factoring
+  as \(A\xrightarrow{c}S\xrightarrow{i}G\),
+  `DerivedCentralSplitTorusProductStatement` asserts that multiplication
+  \(S_D\times A\to S\), \((x,y)\mapsto e(x)c(y)\), is a central isogeny.
+  The map is finite, flat, surjective and locally of finite presentation,
+  with central scheme-theoretic kernel. The statement is proved by
+  `derivedCentralSplitTorusProduct` (P).
+  [Statement](../../Langlands/GroupScheme/Derived/CentralSplitTorusProductStatement.md),
+  [proof](../../Langlands/GroupScheme/Derived/CentralSplitTorusProductProof.md)
+- Given a connected reductive group over any field and a chosen maximal split
+  torus \(S\), `derivedSubgroupRepresentability` supplies \(D\to G\) and
+  `derivedMaximalSplitTorus` supplies \(S_D\to D\) and \(S_D\to S\).
+  The existence clause of `splitComponentStatement` supplies \(A\to G\),
+  and `IsSplitComponent.exists_commFactor_of_isMaximalSplitTorus` supplies
+  the closed factorization \(A\to S\). Lean checks that applying
+  `derivedCentralSplitTorusProduct` to these choices gives the isogeny.
+  [Derived subgroup](../../Langlands/GroupScheme/Derived/RepresentabilityProof.md),
+  [derived split torus](../../Langlands/GroupScheme/Derived/MaximalSplitTorusProof.md),
+  [split component](../../Langlands/GroupScheme/Rational/SplitComponentProof.md),
+  [closed factorization](../../Langlands/GroupScheme/Rational/SplitCentralEmbedding.md),
+  [field-tori note](field-tori-central-progress.md#derived-and-central-split-torus-product)
 
 **D8. The cocentre `G/D(G)` exists as a torus.** Source: Kaletha–Prasad, §2.6(a), printed
 p.93, and the proof of Lemma 2.6.27, printed p.105.

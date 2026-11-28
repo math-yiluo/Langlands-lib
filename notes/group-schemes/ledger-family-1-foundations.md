@@ -101,6 +101,14 @@ and Corollary 3.7, printed p.67 (PDF 83).
   (`AffineHopfCoordinates`): for an affine group scheme `G` over `Spec R`, `R` any
   commutative ring, the coordinate Hopf algebra and the isomorphism of Mathlib's
   `hopfSpec` of it with `G`.
+- `AlgebraicGeometry.hopfSpec.fullyFaithful` supplies the morphism comparison.
+  `AlgebraicGeometry.essImage_hopfSpec` identifies the essential image
+  with the affine objects of `Grp (Over (Spec R))`.
+  `(hopfSpec R).toEssImage.asEquivalence` then gives the equivalence
+  with the full subcategory on these objects over every commutative
+  ring. `AffineCoordinates.hopfSpecIso` gives the explicit recovery
+  from the chosen coordinate Hopf algebra.
+  [Coordinate Hopf algebra](../../Langlands/GroupScheme/AffineHopfCoordinates.md)
 
 **B2. Affine algebraic groups are linear.** Source: Milne 2017, Corollary 4.10, printed p.87
 (PDF 103).
@@ -274,6 +282,20 @@ Theorem 7.18, printed p.143 (PDF 159).
   `q : G → Q` smooth, surjective and quasi-compact, with `q(g) = q(h)` if and only if
   `g⁻¹h ∈ H`, on every test scheme.
 - Status P: `smoothSubgroupQuotientExistence` (`HomogeneousQuotientProof`).
+- Let \(H\to G\) be monic on underlying schemes over the base, with
+  \(G\) locally of finite type and \(H\) smooth over the base.
+  `HomogeneousQuotientSheaf.sheaf`
+  gives the canonical fppf quotient for the right multiplication action
+  of \(H\) on \(G\). Its projection is locally surjective in the fppf
+  topology. On each scheme test \(T\),
+  `HomogeneousQuotientSheaf.projection_eq_iff` identifies the images of
+  \(g,h\in G(T)\) exactly when \(g^{-1}h\) lies in the image of \(H(T)\),
+  so the fibres through images of \(T\)-points are the cosets \(gH(T)\).
+  `HomogeneousQuotientSheaf.representableBy_baseChange` identifies the
+  restricted sheaf with the functor of points of a supplied smooth
+  homogeneous quotient after base change, using this same relation.
+  [Homogeneous quotient sheaf](../../Langlands/GroupScheme/HomogeneousQuotientSheaf.md)
+  [Fppf coequalizer for a scheme action](../../Langlands/GroupScheme/SchemeActionQuotientSheaf.md)
 
 **E5. Quotients by parabolic subgroups are proper.** Source: derived from Milne 2017, Theorem
 17.16, printed p.356 (PDF 372).
