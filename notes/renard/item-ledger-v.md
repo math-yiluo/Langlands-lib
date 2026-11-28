@@ -57,10 +57,20 @@ The 20 November follow-up records the proof of the corrected
 (V.3.21.1) and the V.5.3 Markdown correction in the Library. Other rows
 retain their earlier audit status.
 
+The V.1 uniformizer, metric and ideal-power rows, the V.2.1 linear-topology
+row, the new V.2.1–V.2.2 radical and character rows, and the standard integral
+compact comparison in V.5 use Library `2f86a99eb5616254ac5b9c399603c9bbbea15f7a`.
+The Lean and Markdown files of the cited proofs and new propositions were
+both checked at that commit.
+
 The V.5.3 subalgebra row, issue I6 and gap 4 record the paper counterexample to
 the printed Lemma, the
-[ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md), and the
-building-assignment hypothesis needed to apply it to the Lean statement.
+[ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md).
+At Library `2f86a99eb5616254ac5b9c399603c9bbbea15f7a`,
+`Langlands.Geometry.Building.bruhatTitsAvailability` supplies the valid building assignment,
+and `Langlands.BruhatTits.SpecialCompact.jointSpecialCompactBasisExistence` supplies the
+common geometric witness for V.5.1–V.5.2. The Lean refutation of the V.5.3 subalgebra
+statement requires the comparison with the paper example described in I6.
 
 A focused 16 November 2026 update checks Library
 `b44618a4f02405d5be8c906f21cf7817e4eaafb9` for the V.3.21 topology row and
@@ -582,11 +592,10 @@ built from a proper order of `𝒪_F`, is normal in the special maximal compact 
 and satisfies the hypotheses that the Lean statement places on `K`. Then `M` lies in
 no finite left `A`-span `∑ₖ A D_k` (issue I6). The Lean statement
 quantifies over the Kaletha–Prasad building assignments available for the group, and
-the Library does not prove that one exists for this `U(1,1)`. The counterexample
-therefore refutes the Lean proposition if such an assignment exists; otherwise the
-proposition is vacuous for this group. No Lean proof of the negation exists. The
-example does not satisfy (P), since `f` violates its contraction clause, so it does not
-affect the conditional statement, now proved.
+the existence of such an assignment was open at that commit. The published
+`bruhatTitsAvailability` supplies this existence at the later commit named in the
+opening paragraphs. The Lean comparison with the example is described in I6. The
+conditional lemma requires (P), whose contraction clause fails at `f`.
 
 The status correction of
 `Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` keeps the Lean file
@@ -639,9 +648,9 @@ files match by SHA256 the versions that were checked.
 - **V.5.3 without (P).** The
   [Markdown correction](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md)
   is in the Library. It changes no Lean code. The statement pair now records the paper
-  counterexample and the unproved building-availability premise needed to refute
-  the Lean proposition with this example. The proved statement
-  under (P) and the proved module form are unaffected.
+  counterexample. Building availability was open at that commit. The later
+  `bruhatTitsAvailability` theorem supplies the valid assignment for the Lean comparison
+  described in I6.
 
 Chapter V is mostly a recall of algebraic-group and Bruhat–Tits theory with section-level
 references. The published
@@ -681,9 +690,9 @@ Status codes, as in the Chapter VI ledger:
 | Item | Lean | Status |
 | --- | --- | --- |
 | Normalized valuation, `𝔒_F`, `𝔓_F`, units, finite residue field, `\|x\|_F = q^{-v_F(x)}` | Mathlib's `IsNonarchimedeanLocalField` with `ValuativeRel`; `Langlands.FML.ord` and its laws, `LocalField.ResidueField`, `residueCardinality`, `residueNormalizedAbsoluteValue` ([ResidueNormalization](../../Langlands/LocalField/ResidueNormalization.md)); `PL.fieldNormUnits`, `PL.fieldOrderUnits` | Rec (ref. [21]); D |
-| Uniformizer decomposition of `Fˣ` for each uniformizer of order one (103 / 109) | `Langlands.LocalField.UniformizerUnitDecompositionStatement`, using `FML.unitGroup F` and integer powers of the chosen uniformizer | S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f` |
+| Uniformizer decomposition of `Fˣ` for each uniformizer of order one (103 / 109) | `Langlands.LocalField.UniformizerUnitDecompositionStatement`, using `FML.unitGroup F` and integer powers of the chosen uniformizer | P. `uniformizerUnitDecomposition` recovers the exponent by the normalized order and the unit from its kernel. [Proof](../../Langlands/LocalField/UniformizerUnitDecompositionProof.md) |
 | Additive Haar measure and `∫ f(ax) dx = \|a\|_F^{-1} ∫ f(x) dx` (104 / 110) | `Langlands.HarmonicAnalysis.LocalFieldScalarHaarIntegralStatement` for compactly supported locally constant complex functions and the actual residue-normalized absolute value | P at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. The proof `Langlands.HarmonicAnalysis.localFieldScalarHaarIntegral` uses `Langlands.BaseChange.map_mul_residueAbsolute` and Bochner change of variables. [Proof](../../Langlands/HarmonicAnalysis/LocalFieldScalarHaarIntegralProof.md) |
-| Metric topology and ideal powers at zero (103–104 / 109–110) | `Langlands.LocalField.ResidueNormalizedMetricStatement` uses the actual distance `\|x-y\|_F`. `Langlands.LocalField.MaximalIdealNeighborhoodBasisStatement` uses the images of the maximal-ideal powers in `F` | S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. Both formulations apply in either characteristic. [Metric](../../Langlands/LocalField/ResidueNormalizedMetricStatement.md), [ideal powers](../../Langlands/LocalField/MaximalIdealNeighborhoodBasisStatement.md) |
+| Metric topology and ideal powers at zero (103–104 / 109–110) | `Langlands.LocalField.ResidueNormalizedMetricStatement` uses the actual distance `\|x-y\|_F`. `Langlands.LocalField.MaximalIdealNeighborhoodBasisStatement` uses the images of the maximal-ideal powers in `F` | P in either characteristic. `residueNormalizedMetric` uses the rank-one valuation embedding, and `maximalIdealNeighborhoodBasis` uses the compact open valuation ring and multiplication by powers of a uniformizer. [Metric proof](../../Langlands/LocalField/ResidueNormalizedMetricProof.md), [ideal powers proof](../../Langlands/LocalField/MaximalIdealNeighborhoodBasisProof.md) |
 | Topology of `F`, of `GL_n(F)` and the subgroups `K_n` | Mathlib local-field topology; `rationalPointTopology` and `rationalPoint_isTopologicalGroup`, `rationalPoint_locallyCompactSpace` | Rec; D |
 
 ## V.2 Reductive p-adic groups (104–109 / 110–115)
@@ -691,10 +700,14 @@ Status codes, as in the Chapter VI ledger:
 | Item | Lean | Status |
 | --- | --- | --- |
 | V.2.1 radicals, reductive groups, derived group, centre, maximal tori, conjugacy of maximal split tori | `IsConnectedReductive`, derived subgroup representability, `GS.MaximalSplitTorusConjugacyStatement` | Rec (S02–S03); conjugacy P: `maximalSplitTorusConjugacy` |
-| V.2.1 finiteness of rational conjugacy classes of maximal tori (104 / 110) | `GS.MaximalTorusRationalConjugacyFinitenessStatement`, using finitely many actual embedded maximal tori and `GS.SubgroupConjugate` over the original field | Rec (S03); S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. The statement assumes characteristic zero. [Statement](../../Langlands/GroupScheme/Rational/MaximalTorusRationalConjugacyFinitenessStatement.md) |
+| V.2.1 geometric solvable radical and centre (104 / 110), with the torus assertion in V.2.2 (105 / 111) | `GS.ReductiveRadicalCenterStatement` asserts a central torus over the ground field and identifies its geometric subgroup functor with the reduced identity component of the geometric scheme centre. `GS.GeneralLinearSolvableRadicalStatement` uses the scalar embedding in positive size and the trivial torus in size zero | Rec (S02). S for both comparisons. [Radical and centre](../../Langlands/GroupScheme/Rational/ReductiveRadicalCenterStatement.md), [general linear radical](../../Langlands/GroupScheme/Rational/GeneralLinearSolvableRadicalStatement.md) |
+| V.2.1 generation by the solvable radical and derived subgroup and finiteness of their intersection (104 / 110) | `GS.ReductiveRadicalDerivedProductStatement` asserts scheme surjectivity of multiplication and finiteness of the scheme-theoretic pullback | Rec (S02). S. [Statement](../../Langlands/GroupScheme/Rational/ReductiveRadicalDerivedProductStatement.md) |
+| V.2.1 finiteness of rational conjugacy classes of maximal tori (104 / 110) | `GS.MaximalTorusRationalConjugacyFinitenessStatement`, using finitely many actual embedded maximal tori and `GS.SubgroupConjugate` over the original field, and its standard general linear specialization `GS.GeneralLinearMaximalTorusConjugacyFinitenessStatement` | Rec (S03). S for both statements, each in characteristic zero. [General statement](../../Langlands/GroupScheme/Rational/MaximalTorusRationalConjugacyFinitenessStatement.md), [general linear statement](../../Langlands/GroupScheme/Rational/GeneralLinearMaximalTorusConjugacyFinitenessStatement.md) |
 | V.2.1 split component and its uniqueness | `GS.IsSplitComponent`; `GS.SplitComponentStatement` (existence, uniqueness up to isomorphism over `G`) | D; P: `splitComponentStatement` |
-| V.2.1 topology independent of the embedding; `G` unimodular | `rationalPointTopology` and `GS.LocalFieldLinearTopologyStatement` for finite-type affine groups over a local field. Unimodularity is V.5.4 below | Rec (S04); D for the canonical topology, S for the comparison at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. [Topology statement](../../Langlands/GroupScheme/Rational/LocalFieldLinearTopologyStatement.md) |
+| V.2.1 topology independent of the embedding (104 / 110) | `rationalPointTopology` and `GS.LocalFieldLinearTopologyStatement` for finite-type affine groups over a nonarchimedean local field | Rec (S04). D for the canonical topology. P by `localFieldLinearTopology`, which gives a closed linear embedding, identifies the topology for every such embedding and proves the topological group properties. The unimodularity assertion is in V.5.4 below. [Proof](../../Langlands/GroupScheme/Rational/LocalFieldLinearTopologyProof.md) |
 | V.2.2 `X^*(G)`, triviality on `𝒟G`, finite-rank lattice, duals | `GroupScheme.rationalCharacters`; `GS.RationalCharacterLatticeStatement` | D; P: `rationalCharacterLattice` |
+| V.2.2 displayed abelianization formula and character identification (105 / 111) | `GS.ReductiveCocenterRadicalQuotientStatement` uses the original cocenter map restricted to the radical, with the full radical-derived intersection as its fppf kernel. Pullback along the cocenter map identifies the character groups | S (D01). [Statement](../../Langlands/GroupScheme/Rational/ReductiveCocenterRadicalQuotientStatement.md) |
+| V.2.2 rational and geometric character inclusions and the full-rank image (105 / 111) | `GS.GeometricRadicalCharacterRestrictionStatement` asserts injectivity of the base-change map on rational characters and injectivity with finite-index image of geometric restriction to the radical | S (D01). [Statement](../../Langlands/GroupScheme/Rational/GeometricRadicalCharacterRestrictionStatement.md) |
 | V.2.2 Remarks (tori): cocharacter pairing `χ(φ(t)) = t^{⟨χ,φ⟩}`, geometric coordinate algebra, anisotropic and split tori, maximal split and anisotropic subtori, almost direct product | `latticePairing`, `rationalCharacterEval_cocharacterPoints`; `IsSplitTorus` (isomorphic to `splitTorus S I`); largest split subtorus (`Rational.TorusSplitPart`); `GS.TorusAnisotropicPartStatement` ([statement](../../Langlands/GroupScheme/Rational/TorusAnisotropicPartStatement.md)) | Rec (S05). D for the listed constructions; P for the named pairing laws and largest split subtorus; P for the maximal anisotropic subtorus and finite surjective multiplication `A × T_an → T`: `torusAnisotropicPart` |
 | V.2.2 Remark 1, basis of characters in the geometric coordinate algebra (105 / 111) | `GS.GeometricTorusCoordinateAlgebraStatement` uses the character lattice of `T` over the algebraic closure and specifies the image of each monomial as the actual character function | Rec (S05); S at Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`. [Statement](../../Langlands/GroupScheme/Torus/GeometricTorusCoordinateAlgebraStatement.md) |
 | V.2.3 (V.2.3.1) `H_G`, `⁰G`, `Λ(G)`, exact sequence; `⁰G = ⋂ ker \|χ\|_F` | `PL.rationalCharacterValuation`, `PL.rationalCommonNormKernel`, `PL.rationalCharacterValuationImage`, `PL.rationalNormKernelQuotientEquiv`; `rationalCharacterValuation_ker` | D; P |
@@ -1163,12 +1176,12 @@ The section refers to [14] (Bruhat–Tits).
 
 | Item | Lean | Status |
 | --- | --- | --- |
-| V.5.1 Theorem: `K_0` with (1)–(5) | `SC.IsCompactOpenMaximal`, `SC.SpecialCompactProperties`, `SC.SpecialLeviInheritance`, `RPF.FiniteCartanCovering`; predicates `SC.HasParabolicFactorization`, `SC.HasWeylRepresentatives`. Existence: `SC.JointSpecialCompactBasisExistenceStatement` puts the special compact properties, standard-Levi inheritance, ambient and Levi Iwasawa products, Cartan comparisons and the V.5.2 basis at one apartment point. For every valid corrected KP assignment: `SC.AvailableSimultaneousStandardBasisStatement` and `Langlands.BruhatTits.Iwasawa.AvailableIwasawaStatement` | P, for valid corrected KP data, of these parts: `availableSimultaneousStandardBasis` (special compact properties, Levi inheritance and simultaneous basis at every special vertex) and `Iwasawa.availableIwasawa` (both product orders and compact-open maximality). S for unconditional existence: `JointSpecialCompactBasisExistenceStatement`. The published implication `SC.jointSpecialCompactBasisExistence_of_availability_and_basis` derives it from `AvailableSimultaneousStandardBasisStatement`, now proved, and `Langlands.Geometry.Building.BruhatTitsAvailabilityStatement` (some corrected KP assignment is valid), which is unproved (the Library derives it from `GroupAxiomsExistenceStatement` by `bruhatTitsAvailabilityReduction`). Library results that prove Waldspurger consequences take these properties as hypotheses; they are not proofs of the Theorem |
+| V.5.1 Theorem: `K_0` with (1)–(5), 122 / 128 | `SC.IsCompactOpenMaximal`, `SC.SpecialCompactProperties`, `SC.SpecialLeviInheritance`, `RPF.FiniteCartanCovering`; predicates `SC.HasParabolicFactorization`, `SC.HasWeylRepresentatives`. The joint existence target is `SC.JointSpecialCompactBasisExistenceStatement` | P: `SC.jointSpecialCompactBasisExistence` ([proof](../../Langlands/BruhatTits/SpecialCompact/JointBasisProof.md)). One special vertex supplies the compact open maximal stabilizer, both ambient and inherited Levi Iwasawa products, the Weyl and compact parabolic properties, and the Cartan and basis comparisons. The ambient and inherited Cartan comparisons classify double cosets by the dominant valuation image and give finite positive product covers. For a chamber-compatible transversal, `SpecialCompactRenardComparison` and `SpecialCompactStandardLeviCompatibility` give the rectangular parametrization and prove distinctness of the product valuations. For valid supplied data, `availableSimultaneousStandardBasis` and `Iwasawa.availableIwasawa` apply at each special vertex |
 | V.5.1 Corollary: `G/P` compact | `RP.ArbitraryParabolicQuotientCompactStatement` | P: `arbitraryParabolicQuotientCompact` |
 | V.5.1 Corollary: every parabolic is `K_0`-conjugate to a standard one | `Langlands.BruhatTits.SpecialCompactParabolicConjugacyStatement` (hypothesis: property (1) of the Theorem, `G(F) = P_∅(F) K = K P_∅(F)`, for any subgroup `K` over any field) | P: `specialCompactParabolicConjugacy` ([proof](../../Langlands/BruhatTits/Parabolic/SpecialCompactConjugacyProof.md)). For an actual `K_0`, property (1) comes from the Theorem row above |
-| V.5.2 Theorem ([24] 2.1) | `SC.AvailableSimultaneousStandardBasisStatement` (its third conjunct, `SC.SimultaneousStandardBasisAt` at every special vertex); `RP.PresentationConeContractionStatement` | P for valid corrected KP data: `availableSimultaneousStandardBasis`; existence of such data is the open `BruhatTitsAvailabilityStatement` (see the V.5.1 Theorem row). P: `presentationConeContraction` (the contraction parts on root presentations) |
+| V.5.2 Theorem ([24] 2.1), 123 / 129 | `SC.AvailableSimultaneousStandardBasisStatement` (third conjunct `SC.SimultaneousStandardBasisAt`); `SC.JointSpecialCompactBasisExistenceStatement`; `RP.PresentationConeContractionStatement` | P: `availableSimultaneousStandardBasis` at every special vertex of valid supplied data. `jointSpecialCompactBasisExistence` gives the simultaneous basis at the same compact as V.5.1 for each maximal split torus and generic cocharacter. The proof uses the valid assignment given by `Langlands.Geometry.Building.bruhatTitsAvailability` ([proof](../../Langlands/Geometry/Building/BruhatTitsAvailabilityProof.md)). P: `presentationConeContraction` on root presentations |
 | V.5.3 `H_0`, the two Lemmas, the Corollary, the finiteness Lemma in module form, the Theorem and the Remark | `Langlands.Hecke.IwahoriHeckeDecompositionStatement` | P: `Langlands.Hecke.iwahoriHeckeDecomposition`, verified below. Renard writes that `A` is generated by the `a_z`, `z ∈ C_∅`; the statement uses the dominant generators `z ∈ C_∅^+`, which is what the second Lemma and all later uses concern (see the statement's [Markdown](../../Langlands/Representation/Hecke/IwahoriHeckeDecompositionStatement.md), "Formal choices") |
-| V.5.3 finiteness Lemma for the generated subalgebra `M`: "L'algèbre `M` est un `A`-module de type fini" | the `Langlands.Hecke.IwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessStatement.md)). It keeps the data of `IwahoriHeckeDecompositionStatement` and adds one hypothesis (P): every `t ∈ C̃_∅^+` satisfies the V.5.2 (ii) clauses for the minimal standard parabolic (`t` contracts `K ∩ N_∅`, `t⁻¹` contracts `K ∩ N̄_∅`, and `t` normalizes `K ∩ M_∅`). Let `A` and `M` be the unital subalgebras generated by the `a_z`, `z ∈ C_∅^+`, and by the `a_t`, `t ∈ C̃_∅^+`. The statement asserts `A ≤ M` and `M = ∑ₖ A D_k` for finitely many `D_k ∈ M` | P: `Langlands.Hecke.iwahoriHeckeSubalgebraFiniteness` ([proof](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessProof.md)) (statement: ninth update; proof: eleventh). F for the Lemma without (P): the `Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md)) states it for Renard's chamber-compatible transversal (V.3.23, `C̃_∅^+ = C_∅^+ F_∅`), with `A` generated by the `a_z`, `z ∈ C_∅^+` (a documented correction of the printed `z ∈ C_∅`), and with `M` generated by the `a_{zf}`, `z ∈ C_∅^+`, `f ∈ F_∅`. It is false in general by the paper counterexample, the [ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md) (I6). The example refutes the Lean proposition whenever a building assignment is available for that group, which the Library does not prove; no Lean proof of the negation is published. The Markdown correction in the Library records this without changing the Lean proposition (20 November follow-up). (Statement: tenth update; counterexample: eleventh; gap 4.) The (P) statement's Markdown argues that (P) holds when `G` is split; this is not formalized. The Markdown of the module-form statement in the row above still lists the unconditional assertion as an outstanding source obligation ("Not stated"); by I6 it is false in general. The generated subalgebra can be larger than the module span (`G_m` over `ℚ_3`, `K = 1 + 3ℤ_3`, `F_0 = {-1}`: the span is `Aε` and the algebra is `A ⊕ Aε`), and the source proof treats only products `a_{z₁} a_{z₂ f}` |
+| V.5.3 finiteness Lemma for the generated subalgebra `M`: "L'algèbre `M` est un `A`-module de type fini" | the `Langlands.Hecke.IwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessStatement.md)). It keeps the data of `IwahoriHeckeDecompositionStatement` and adds one hypothesis (P): every `t ∈ C̃_∅^+` satisfies the V.5.2 (ii) clauses for the minimal standard parabolic (`t` contracts `K ∩ N_∅`, `t⁻¹` contracts `K ∩ N̄_∅`, and `t` normalizes `K ∩ M_∅`). Let `A` and `M` be the unital subalgebras generated by the `a_z`, `z ∈ C_∅^+`, and by the `a_t`, `t ∈ C̃_∅^+`. The statement asserts `A ≤ M` and `M = ∑ₖ A D_k` for finitely many `D_k ∈ M` | P: `Langlands.Hecke.iwahoriHeckeSubalgebraFiniteness` ([proof](../../Langlands/Representation/Hecke/IwahoriHeckeSubalgebraFinitenessProof.md)) (statement: ninth update; proof: eleventh). F for the Lemma without (P): the `Langlands.Hecke.RenardIwahoriHeckeSubalgebraFinitenessStatement` ([statement and scope](../../Langlands/Representation/Hecke/RenardIwahoriHeckeSubalgebraFinitenessStatement.md)) states it for Renard's chamber-compatible transversal (V.3.23, `C̃_∅^+ = C_∅^+ F_∅`), with `A` generated by the `a_z`, `z ∈ C_∅^+` (a documented correction of the printed `z ∈ C_∅`), and with `M` generated by the `a_{zf}`, `z ∈ C_∅^+`, `f ∈ F_∅`. It is false in general by the paper counterexample, the [ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md) (I6). `bruhatTitsAvailability` supplies a valid assignment. The paper refutation and the remaining comparisons needed for a Lean refutation of the same proposition are recorded in I6. (Statement: tenth update; counterexample: eleventh; gap 4.) The (P) statement's Markdown argues that (P) holds when `G` is split; this is not formalized. The Markdown of the module-form statement in the row above still lists the unconditional assertion as an outstanding source obligation ("Not stated"); by I6 it is false in general. The generated subalgebra can be larger than the module span (`G_m` over `ℚ_3`, `K = 1 + 3ℤ_3`, `F_0 = {-1}`: the span is `Aε` and the algebra is `A ⊕ Aε`), and the source proof treats only products `a_{z₁} a_{z₂ f}` |
 | V.5.4 Proposition: `G` unimodular | `RPF.RationalReductiveUnimodularityStatement` | P: `rationalReductiveUnimodularity` |
 | V.5.4 Lemma: `δ_{P\G}(m) = δ_G(m)/δ_P(m) = δ_P(m)^{-1} = δ_N(m)^{-1} = δ_{N̄}(m)` on `M`, and the root-product formula on `A` | `RPF.RationalParabolicModulusStatement`, `RPF.RationalOppositeHaarReciprocityStatement`, `RPF.DynamicUnipotentHaarDeterminantStatement`, `GS.DynamicAdjointDeterminantFormulaStatement` and `GS.Dynamic.AdjointDeterminantTorusRestrictionStatement` give the modular character, the opposite-radical reciprocity and the determinant with its full weight multiplicities | C: the proved comparisons use the inverse of Renard's `δ_P` as Mathlib's `modularCharacter`. The displayed grouping `m_γ + 2m_{2γ}` uses the minimal parabolic. For arbitrary standard `P`, the all-weight determinant keeps the contributions of higher multiples, as in the split `G_2` example in the [torus restriction statement](../../Langlands/GroupScheme/Dynamic/AdjointDeterminantTorusRestrictionStatement.md) |
 | V.5.5 Proposition (127 / 133): nearest point on the closure of an open cone `C` and its characterizations (i)–(iii); Corollary (128 / 134): the decomposition along a basis and its dual basis | `Langlands.Renard.ConeProjectionStatements`, in a corrected formulation: `C` is a nonempty convex open cone, and the equivalence with (iii) is asserted only for `C ≠ E` (for `C = E` the strict dual cone `Č` is empty and (iii) fails, although the projection is `v` itself). The Corollary has no extra hypothesis | P: `coneProjectionStatements`. See source issue I3 |
@@ -1177,7 +1190,7 @@ The section refers to [14] (Bruhat–Tits).
 
 ### The standard integral compact for the general linear group
 
-At Library `7a774d17c4fc5bddf71c088815a369b4ac0ec52f`, the following
+At Library `2f86a99eb5616254ac5b9c399603c9bbbea15f7a`, the following
 proofs use the integral points of the standard `GL_N` model at the actual
 diagonal torus. They apply in both field characteristics and to every
 generic diagonal cocharacter. Inside each standard Levi the compact is
@@ -1192,15 +1205,23 @@ intersection in the ambient group. The theorem names below are in
 | V.5.1 (4), 122 / 128, with V.3.23, 117 / 123 | `generalLinearIntegralCartan : GeneralLinearIntegralCartanStatement` | Bijectivity of the positive common-uniformizer representatives onto the integral double cosets. The residual transversal can be the singleton identity. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralCartanProof.md) |
 | V.5.1 (5), 122 / 128, comparison of the inherited compact | `generalLinearStandardLeviIntegralPoints : GeneralLinearStandardLeviIntegralPointsStatement` | Over a valuative field the Levi is the weight-block subgroup, and the inherited compact maps to the integral block matrices over the valuation ring. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearStandardLeviIntegralPointsProof.md) |
 | V.5.1 (5), 122 / 128, opening and (1) inside the Levi | `generalLinearIntegralLeviIwasawa : GeneralLinearIntegralLeviIwasawaStatement` | Compact-open maximality and the two products with the inherited minimal parabolic inside each standard Levi. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralLeviIwasawaProof.md) |
+| V.5.1 (5), 122 / 128, (2)–(3) inside the Levi | `generalLinearIntegralLeviParabolics : GeneralLinearIntegralLeviParabolicsStatement` | Weyl representatives in the inherited compact and the ordered integral factorization at each standard parabolic of the Levi. The proof lifts the ambient comparison through the inclusion of the Levi. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralLeviParabolicsProof.md) |
+| V.5.1 (5), 122 / 128, (4) inside the Levi | `generalLinearIntegralLeviCartan : GeneralLinearIntegralLeviCartanStatement` | The chamber cocharacters evaluated at the common uniformizer give a bijection with the inherited compact double cosets. The proof applies the matrix Cartan theorem on each weight block. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearIntegralLeviCartanProof.md) |
 | V.5.2 (i)–(iv), 123 / 129 | `generalLinearSimultaneousStandardBasis : GeneralLinearSimultaneousStandardBasisStatement` | The single normal compact-open basis at this integral subgroup, with the simultaneous parabolic decompositions, split-component normalization and both radical contraction assertions in `SimultaneousStandardBasisAt`. [Proof](../../Langlands/BruhatTits/SpecialCompact/GeneralLinearSimultaneousStandardBasisProof.md) |
 
-At the same commit the inherited Weyl and parabolic clauses and the
-inherited Cartan bijection are stated by
-`GeneralLinearIntegralLeviParabolicsStatement` and
-`GeneralLinearIntegralLeviCartanStatement`. The ambient and Levi
-finite covering formulas for every generic diagonal cocharacter are
-stated by `Langlands.HarishChandraSchwartz.GeneralLinearGenericCartanCoveringStatement`.
-[Generic covering statement](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/GeneralLinearGenericCartanCoveringStatement.md)
+`generalLinearSourceCompactGeometry` identifies the standard integral subgroup
+with the norm-one stabilizer of a special vertex of the actual diagonal apartment.
+For every diagonal cocharacter with strictly decreasing coordinates,
+`generalLinearPacketCompact` uses this equality for its special-vertex clause.
+It obtains the parabolic products from the integral Iwasawa pair, the simultaneous
+basis from `generalLinearSimultaneousBasis`, and the ambient and Levi Cartan
+coverings from `generalLinearCartanCovering`, all at the same integral subgroup.
+The separate covering proposition
+`Langlands.HarishChandraSchwartz.GeneralLinearGenericCartanCoveringStatement`
+quantifies over every generic diagonal cocharacter.
+[Special-vertex realization](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/GeneralLinearSourceCompactProof.md),
+[fixed-order proof](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/GeneralLinearPacketCompactProof.md),
+[generic covering statement](../../Langlands/HarmonicAnalysis/HarishChandraSchwartz/GeneralLinearGenericCartanCoveringStatement.md)
 
 ### Verified V.5.3 module-form proof
 
@@ -1332,9 +1353,13 @@ not whole-section or whole-book completion.
   treats only products `a_{z₁} a_{z₂ f}`, where the contraction properties of `z₁` and
   `z₂` suffice; in `a_f a_z` the element `f` would have to contract `K ∩ N_∅`, and it
   does not. The
-  example refutes the `RenardIwahoriHeckeSubalgebraFinitenessStatement` whenever a
-  building assignment is available for this group, which the Library does not prove. No
-  Lean proof of the negation exists. The module form, proved by
+  example refutes the printed lemma on paper. For the Lean proposition
+  `RenardIwahoriHeckeSubalgebraFinitenessStatement`, `bruhatTitsAvailability` makes
+  a valid assignment available for the group via `KPBuildingAssignment.IsValid.isAvailableFor`.
+  A formal refutation requires comparing the torus, special vertex, subgroup and
+  transversal of the example with the corresponding data of that assignment and
+  transferring the convolution and support calculations to `HeckeAlgebra.Corner`.
+  The module form, proved by
   `iwahoriHeckeDecomposition`, and the conditional statement under (P), proved by
   `iwahoriHeckeSubalgebraFiniteness`, are unaffected. This issue was recorded by the
   eleventh update.
@@ -1370,8 +1395,8 @@ not whole-section or whole-book completion.
    as recorded by the eleventh update.
 3. V.5.1 Corollary, `K_0`-conjugacy of every parabolic to a standard one: no longer a gap.
    `specialCompactParabolicConjugacy` proves the published statement for every subgroup
-   with property (1). The unconditional existence of `K_0` (V.5.1 Theorem row) still
-   depends on the unproved `BruhatTitsAvailabilityStatement`.
+   with property (1). The V.5.1 Theorem row supplies that property at the
+   common geometric `K_0` by `jointSpecialCompactBasisExistence`.
 4. V.5.3, the finiteness Lemma for the generated subalgebra `M`, without additional
    hypotheses: no longer a gap, since the Lemma is false in general (I6). The
    published `IwahoriHeckeDecompositionStatement` states the module form, which is all
@@ -1386,12 +1411,11 @@ not whole-section or whole-book completion.
    powers `t^k`, `k = [Λ(Z) : Λ(S)]`, and for every dominant `t` when `Λ(Z) = Λ(S)`. The
    published [ramified `U(1,1)` example](v53-subalgebra-finiteness-counterexample.md)
    has `Λ(Z)/Λ(S) = ℤ/2`, fails (C) at the transversal element `f`, and refutes the Lemma
-   (I6). It refutes the Lean statement whenever a building assignment is available for
-   that group, which the Library does not prove. The statement's Markdown also gives
-   `Res_{E/F} SL₃`, `E/F` ramified, as a group with no chamber-compatible transversal,
-   for which the statement is vacuous. The Markdown correction
-   is in the Library (20 November follow-up),
-   and the Lean statement is unchanged. No proof obligation remains for this Lemma.
+   (I6). The Lean proposition quantifies over available data, supplied by
+   `bruhatTitsAvailability`. I6 gives the additional obligations for formalizing the
+   paper refutation. The statement's Markdown also gives `Res_{E/F} SL₃`, with `E/F`
+   ramified, as a group with no chamber-compatible transversal, for which the
+   transversal hypothesis has no instance.
 5. V.3.20: no longer a gap. The complex-torus structure of `X(M)` recovered
    through the exponential, and `Im X(M)` as a real submanifold of `X(M)`, are stated by
    the public `RationalUnramifiedComplexTorusStatement` (eighth update). Its
